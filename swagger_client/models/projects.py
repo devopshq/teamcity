@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from swagger_client.models.project import Project  # noqa: F401,E501
+# from swagger_client.models.project import Project  # noqa: F401,E501
 
 
 class Projects(object):

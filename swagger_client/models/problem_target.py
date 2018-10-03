@@ -16,8 +16,8 @@ import re  # noqa: F401
 
 import six
 
-from swagger_client.models.problems import Problems  # noqa: F401,E501
-from swagger_client.models.tests import Tests  # noqa: F401,E501
+# from swagger_client.models.problems import Problems  # noqa: F401,E501
+# from swagger_client.models.tests import Tests  # noqa: F401,E501
 
 
 class ProblemTarget(object):

@@ -16,10 +16,10 @@ import re  # noqa: F401
 
 import six
 
-from swagger_client.models.comment import Comment  # noqa: F401,E501
-from swagger_client.models.problem_scope import ProblemScope  # noqa: F401,E501
-from swagger_client.models.problem_target import ProblemTarget  # noqa: F401,E501
-from swagger_client.models.resolution import Resolution  # noqa: F401,E501
+# from swagger_client.models.comment import Comment  # noqa: F401,E501
+# from swagger_client.models.problem_scope import ProblemScope  # noqa: F401,E501
+# from swagger_client.models.problem_target import ProblemTarget  # noqa: F401,E501
+# from swagger_client.models.resolution import Resolution  # noqa: F401,E501
 
 
 class Mute(object):

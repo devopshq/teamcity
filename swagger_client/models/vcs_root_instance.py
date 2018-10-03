@@ -16,11 +16,11 @@ import re  # noqa: F401
 
 import six
 
-from swagger_client.models.items import Items  # noqa: F401,E501
-from swagger_client.models.properties import Properties  # noqa: F401,E501
-from swagger_client.models.repository_state import RepositoryState  # noqa: F401,E501
-from swagger_client.models.vcs_root import VcsRoot  # noqa: F401,E501
-from swagger_client.models.vcs_status import VcsStatus  # noqa: F401,E501
+# from swagger_client.models.items import Items  # noqa: F401,E501
+# from swagger_client.models.properties import Properties  # noqa: F401,E501
+# from swagger_client.models.repository_state import RepositoryState  # noqa: F401,E501
+# from swagger_client.models.vcs_root import VcsRoot  # noqa: F401,E501
+# from swagger_client.models.vcs_status import VcsStatus  # noqa: F401,E501
 
 
 class VcsRootInstance(object):

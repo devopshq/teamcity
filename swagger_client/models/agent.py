@@ -17,11 +17,11 @@ import re  # noqa: F401
 import six
 
 # from swagger_client.models.agent_pool import AgentPool  # noqa: F401,E501
-from swagger_client.models.authorized_info import AuthorizedInfo  # noqa: F401,E501
-from swagger_client.models.build_types import BuildTypes  # noqa: F401,E501
-from swagger_client.models.compatibilities import Compatibilities  # noqa: F401,E501
-from swagger_client.models.enabled_info import EnabledInfo  # noqa: F401,E501
-from swagger_client.models.properties import Properties  # noqa: F401,E501
+# from swagger_client.models.authorized_info import AuthorizedInfo  # noqa: F401,E501
+# from swagger_client.models.build_types import BuildTypes  # noqa: F401,E501
+# from swagger_client.models.compatibilities import Compatibilities  # noqa: F401,E501
+# from swagger_client.models.enabled_info import EnabledInfo  # noqa: F401,E501
+# from swagger_client.models.properties import Properties  # noqa: F401,E501
 
 
 class Agent(object):

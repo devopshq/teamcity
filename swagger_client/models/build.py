@@ -16,28 +16,28 @@ import re  # noqa: F401
 
 import six
 
-from swagger_client.models.agent import Agent  # noqa: F401,E501
-from swagger_client.models.agents import Agents  # noqa: F401,E501
-from swagger_client.models.artifact_dependencies import ArtifactDependencies  # noqa: F401,E501
-from swagger_client.models.build_triggering_options import BuildTriggeringOptions  # noqa: F401,E501
-from swagger_client.models.build_type import BuildType  # noqa: F401,E501
-from swagger_client.models.builds import Builds  # noqa: F401,E501
-from swagger_client.models.changes import Changes  # noqa: F401,E501
-from swagger_client.models.comment import Comment  # noqa: F401,E501
-from swagger_client.models.datas import Datas  # noqa: F401,E501
-from swagger_client.models.entries import Entries  # noqa: F401,E501
-from swagger_client.models.files import Files  # noqa: F401,E501
-from swagger_client.models.issues_usages import IssuesUsages  # noqa: F401,E501
-from swagger_client.models.items import Items  # noqa: F401,E501
-from swagger_client.models.problem_occurrences import ProblemOccurrences  # noqa: F401,E501
-from swagger_client.models.progress_info import ProgressInfo  # noqa: F401,E501
-from swagger_client.models.properties import Properties  # noqa: F401,E501
-from swagger_client.models.revision import Revision  # noqa: F401,E501
-from swagger_client.models.revisions import Revisions  # noqa: F401,E501
-from swagger_client.models.tags import Tags  # noqa: F401,E501
-from swagger_client.models.test_occurrences import TestOccurrences  # noqa: F401,E501
-from swagger_client.models.triggered_by import TriggeredBy  # noqa: F401,E501
-from swagger_client.models.user import User  # noqa: F401,E501
+# from swagger_client.models.agent import Agent  # noqa: F401,E501
+# from swagger_client.models.agents import Agents  # noqa: F401,E501
+# from swagger_client.models.artifact_dependencies import ArtifactDependencies  # noqa: F401,E501
+# from swagger_client.models.build_triggering_options import BuildTriggeringOptions  # noqa: F401,E501
+# from swagger_client.models.build_type import BuildType  # noqa: F401,E501
+# from swagger_client.models.builds import Builds  # noqa: F401,E501
+# from swagger_client.models.changes import Changes  # noqa: F401,E501
+# from swagger_client.models.comment import Comment  # noqa: F401,E501
+# from swagger_client.models.datas import Datas  # noqa: F401,E501
+# from swagger_client.models.entries import Entries  # noqa: F401,E501
+# from swagger_client.models.files import Files  # noqa: F401,E501
+# from swagger_client.models.issues_usages import IssuesUsages  # noqa: F401,E501
+# from swagger_client.models.items import Items  # noqa: F401,E501
+# from swagger_client.models.problem_occurrences import ProblemOccurrences  # noqa: F401,E501
+# from swagger_client.models.progress_info import ProgressInfo  # noqa: F401,E501
+# from swagger_client.models.properties import Properties  # noqa: F401,E501
+# from swagger_client.models.revision import Revision  # noqa: F401,E501
+# from swagger_client.models.revisions import Revisions  # noqa: F401,E501
+# from swagger_client.models.tags import Tags  # noqa: F401,E501
+# from swagger_client.models.test_occurrences import TestOccurrences  # noqa: F401,E501
+# from swagger_client.models.triggered_by import TriggeredBy  # noqa: F401,E501
+# from swagger_client.models.user import User  # noqa: F401,E501
 
 
 class Build(object):

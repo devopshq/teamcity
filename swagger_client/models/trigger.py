@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from swagger_client.models.properties import Properties  # noqa: F401,E501
+# from swagger_client.models.properties import Properties  # noqa: F401,E501
 
 
 class Trigger(object):

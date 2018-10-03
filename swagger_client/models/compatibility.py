@@ -16,9 +16,9 @@ import re  # noqa: F401
 
 import six
 
-from swagger_client.models.agent import Agent  # noqa: F401,E501
-from swagger_client.models.build_type import BuildType  # noqa: F401,E501
-from swagger_client.models.requirements import Requirements  # noqa: F401,E501
+# from swagger_client.models.agent import Agent  # noqa: F401,E501
+# from swagger_client.models.build_type import BuildType  # noqa: F401,E501
+# from swagger_client.models.requirements import Requirements  # noqa: F401,E501
 
 
 class Compatibility(object):

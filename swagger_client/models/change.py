@@ -16,11 +16,11 @@ import re  # noqa: F401
 
 import six
 
-from swagger_client.models.changes import Changes  # noqa: F401,E501
-from swagger_client.models.file_changes import FileChanges  # noqa: F401,E501
-from swagger_client.models.items import Items  # noqa: F401,E501
-from swagger_client.models.user import User  # noqa: F401,E501
-from swagger_client.models.vcs_root_instance import VcsRootInstance  # noqa: F401,E501
+# from swagger_client.models.changes import Changes  # noqa: F401,E501
+# from swagger_client.models.file_changes import FileChanges  # noqa: F401,E501
+# from swagger_client.models.items import Items  # noqa: F401,E501
+# from swagger_client.models.user import User  # noqa: F401,E501
+# from swagger_client.models.vcs_root_instance import VcsRootInstance  # noqa: F401,E501
 
 
 class Change(object):

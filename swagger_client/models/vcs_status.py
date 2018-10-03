@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from swagger_client.models.vcs_check_status import VcsCheckStatus  # noqa: F401,E501
+# from swagger_client.models.vcs_check_status import VcsCheckStatus  # noqa: F401,E501
 
 
 class VcsStatus(object):

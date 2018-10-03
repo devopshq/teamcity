@@ -16,10 +16,10 @@ import re  # noqa: F401
 
 import six
 
-from swagger_client.models.groups import Groups  # noqa: F401,E501
-from swagger_client.models.properties import Properties  # noqa: F401,E501
-from swagger_client.models.roles import Roles  # noqa: F401,E501
-from swagger_client.models.users import Users  # noqa: F401,E501
+# from swagger_client.models.groups import Groups  # noqa: F401,E501
+# from swagger_client.models.properties import Properties  # noqa: F401,E501
+# from swagger_client.models.roles import Roles  # noqa: F401,E501
+# from swagger_client.models.users import Users  # noqa: F401,E501
 
 
 class Group(object):

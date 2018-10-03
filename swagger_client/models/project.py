@@ -16,14 +16,14 @@ import re  # noqa: F401
 
 import six
 
-from swagger_client.models.build_types import BuildTypes  # noqa: F401,E501
-from swagger_client.models.links import Links  # noqa: F401,E501
-from swagger_client.models.project import Project  # noqa: F401,E501
-from swagger_client.models.project_features import ProjectFeatures  # noqa: F401,E501
-from swagger_client.models.projects import Projects  # noqa: F401,E501
-from swagger_client.models.properties import Properties  # noqa: F401,E501
-from swagger_client.models.state_field import StateField  # noqa: F401,E501
-from swagger_client.models.vcs_roots import VcsRoots  # noqa: F401,E501
+# from swagger_client.models.build_types import BuildTypes  # noqa: F401,E501
+# from swagger_client.models.links import Links  # noqa: F401,E501
+# from swagger_client.models.project import Project  # noqa: F401,E501
+# from swagger_client.models.project_features import ProjectFeatures  # noqa: F401,E501
+# from swagger_client.models.projects import Projects  # noqa: F401,E501
+# from swagger_client.models.properties import Properties  # noqa: F401,E501
+# from swagger_client.models.state_field import StateField  # noqa: F401,E501
+# from swagger_client.models.vcs_roots import VcsRoots  # noqa: F401,E501
 
 
 class Project(object):

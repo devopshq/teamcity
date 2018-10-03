@@ -14,18 +14,18 @@ from __future__ import absolute_import
 import datetime
 import json
 import mimetypes
-from multiprocessing.pool import ThreadPool
 import os
 import re
 import tempfile
+from multiprocessing.pool import ThreadPool
 
 # python 2 and python 3 compatibility library
 import six
 from six.moves.urllib.parse import quote
 
-from swagger_client.configuration import Configuration
 import swagger_client.models
 from swagger_client import rest
+from swagger_client.configuration import Configuration
 
 
 class ApiClient(object):
@@ -68,7 +68,9 @@ class ApiClient(object):
 
         self.pool = ThreadPool()
         self.rest_client = rest.RESTClientObject(configuration)
-        self.default_headers = {}
+        self.default_headers = {'Content-type': 'application/json',
+                                'Accept': 'application/json',
+                                'Content-Encoding': 'utf-8'}
         if header_name is not None:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
@@ -136,6 +138,7 @@ class ApiClient(object):
                                                     collection_formats)
 
         # auth setting
+        auth_settings = ['Basic']
         self.update_params_for_auth(header_params, query_params, auth_settings)
 
         # body
@@ -322,13 +325,13 @@ class ApiClient(object):
                                    _preload_content, _request_timeout)
         else:
             thread = self.pool.apply_async(self.__call_api, (resource_path,
-                                           method, path_params, query_params,
-                                           header_params, body,
-                                           post_params, files,
-                                           response_type, auth_settings,
-                                           _return_http_data_only,
-                                           collection_formats,
-                                           _preload_content, _request_timeout))
+                                                             method, path_params, query_params,
+                                                             header_params, body,
+                                                             post_params, files,
+                                                             response_type, auth_settings,
+                                                             _return_http_data_only,
+                                                             collection_formats,
+                                                             _preload_content, _request_timeout))
         return thread
 
     def request(self, method, url, query_params=None, headers=None,
@@ -587,7 +590,7 @@ class ApiClient(object):
                 status=0,
                 reason=(
                     "Failed to parse `{0}` as datetime object"
-                    .format(string)
+                        .format(string)
                 )
             )
 

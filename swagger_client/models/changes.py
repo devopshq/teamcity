@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from swagger_client.models.change import Change  # noqa: F401,E501
+# from swagger_client.models.change import Change  # noqa: F401,E501
 
 
 class Changes(object):

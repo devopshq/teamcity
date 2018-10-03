@@ -16,8 +16,8 @@ import re  # noqa: F401
 
 import six
 
-from swagger_client.models.changes import Changes  # noqa: F401,E501
-from swagger_client.models.issue import Issue  # noqa: F401,E501
+# from swagger_client.models.changes import Changes  # noqa: F401,E501
+# from swagger_client.models.issue import Issue  # noqa: F401,E501
 
 
 class IssueUsage(object):

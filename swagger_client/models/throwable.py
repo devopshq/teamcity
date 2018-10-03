@@ -16,8 +16,8 @@ import re  # noqa: F401
 
 import six
 
-from swagger_client.models.stack_trace_element import StackTraceElement  # noqa: F401,E501
-from swagger_client.models.throwable import Throwable  # noqa: F401,E501
+# from swagger_client.models.stack_trace_element import StackTraceElement  # noqa: F401,E501
+# from swagger_client.models.throwable import Throwable  # noqa: F401,E501
 
 
 class Throwable(object):

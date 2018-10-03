@@ -16,9 +16,9 @@ import re  # noqa: F401
 
 import six
 
-from swagger_client.models.build import Build  # noqa: F401,E501
-from swagger_client.models.mute import Mute  # noqa: F401,E501
-from swagger_client.models.problem import Problem  # noqa: F401,E501
+# from swagger_client.models.build import Build  # noqa: F401,E501
+# from swagger_client.models.mute import Mute  # noqa: F401,E501
+# from swagger_client.models.problem import Problem  # noqa: F401,E501
 
 
 class ProblemOccurrence(object):

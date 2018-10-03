@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from swagger_client.models.problem_occurrence import ProblemOccurrence  # noqa: F401,E501
+# from swagger_client.models.problem_occurrence import ProblemOccurrence  # noqa: F401,E501
 
 
 class ProblemOccurrences(object):

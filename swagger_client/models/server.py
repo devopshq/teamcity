@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from swagger_client.models.href import Href  # noqa: F401,E501
+# from swagger_client.models.href import Href  # noqa: F401,E501
 
 
 class Server(object):

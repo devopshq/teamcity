@@ -16,20 +16,20 @@ import re  # noqa: F401
 
 import six
 
-from swagger_client.models.agent_requirements import AgentRequirements  # noqa: F401,E501
-from swagger_client.models.agents import Agents  # noqa: F401,E501
-from swagger_client.models.artifact_dependencies import ArtifactDependencies  # noqa: F401,E501
-from swagger_client.models.build_type import BuildType  # noqa: F401,E501
-from swagger_client.models.builds import Builds  # noqa: F401,E501
-from swagger_client.models.features import Features  # noqa: F401,E501
-from swagger_client.models.investigations import Investigations  # noqa: F401,E501
-from swagger_client.models.links import Links  # noqa: F401,E501
-from swagger_client.models.project import Project  # noqa: F401,E501
-from swagger_client.models.properties import Properties  # noqa: F401,E501
-from swagger_client.models.snapshot_dependencies import SnapshotDependencies  # noqa: F401,E501
-from swagger_client.models.steps import Steps  # noqa: F401,E501
-from swagger_client.models.triggers import Triggers  # noqa: F401,E501
-from swagger_client.models.vcs_root_entries import VcsRootEntries  # noqa: F401,E501
+# from swagger_client.models.agent_requirements import AgentRequirements  # noqa: F401,E501
+# from swagger_client.models.agents import Agents  # noqa: F401,E501
+# from swagger_client.models.artifact_dependencies import ArtifactDependencies  # noqa: F401,E501
+# from swagger_client.models.build_type import BuildType  # noqa: F401,E501
+# from swagger_client.models.builds import Builds  # noqa: F401,E501
+# from swagger_client.models.features import Features  # noqa: F401,E501
+# from swagger_client.models.investigations import Investigations  # noqa: F401,E501
+# from swagger_client.models.links import Links  # noqa: F401,E501
+# from swagger_client.models.project import Project  # noqa: F401,E501
+# from swagger_client.models.properties import Properties  # noqa: F401,E501
+# from swagger_client.models.snapshot_dependencies import SnapshotDependencies  # noqa: F401,E501
+# from swagger_client.models.steps import Steps  # noqa: F401,E501
+# from swagger_client.models.triggers import Triggers  # noqa: F401,E501
+# from swagger_client.models.vcs_root_entries import VcsRootEntries  # noqa: F401,E501
 
 
 class BuildType(object):
