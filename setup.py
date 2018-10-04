@@ -13,7 +13,7 @@
 
 from setuptools import setup, find_packages  # noqa: H301
 
-NAME = "swagger-client"
+NAME = "dohq-teamcity"
 VERSION = "1.0.0"
 # To install the library, run the following
 #
@@ -29,7 +29,7 @@ setup(
     version=VERSION,
     description="TeamCity REST API",
     author_email="",
-    url="",
+    url="https://github.com/devopshq/teamcity",
     keywords=["Swagger", "TeamCity REST API"],
     install_requires=REQUIRES,
     packages=find_packages(),

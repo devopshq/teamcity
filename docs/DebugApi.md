@@ -1,4 +1,4 @@
-# swagger_client.DebugApi
+# teamcity.DebugApi
 
 All URIs are relative to *https://teamcity.ptsecurity.ru*
 
@@ -36,12 +36,12 @@ Method | HTTP request | Description
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.DebugApi()
+api_instance = teamcity.DebugApi()
 
 try:
     api_instance.delete_current_remember_me()
@@ -76,12 +76,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.DebugApi()
+api_instance = teamcity.DebugApi()
 time = 'time_example' # str |  (optional)
 load = 56 # int |  (optional)
 
@@ -123,12 +123,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.DebugApi()
+api_instance = teamcity.DebugApi()
 query = 'query_example' # str | 
 field_delimiter = ', ' # str |  (optional) (default to , )
 data_retrieve_query = 'data_retrieve_query_example' # str |  (optional)
@@ -174,12 +174,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.DebugApi()
+api_instance = teamcity.DebugApi()
 fields = 'fields_example' # str |  (optional)
 
 try:
@@ -219,12 +219,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.DebugApi()
+api_instance = teamcity.DebugApi()
 
 try:
     api_response = api_instance.get_current_session_max_inactive_interval()
@@ -260,12 +260,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.DebugApi()
+api_instance = teamcity.DebugApi()
 
 try:
     api_response = api_instance.get_current_user_permissions()
@@ -301,12 +301,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.DebugApi()
+api_instance = teamcity.DebugApi()
 date_locator = 'date_locator_example' # str | 
 format = 'format_example' # str |  (optional)
 timezone = 'timezone_example' # str |  (optional)
@@ -350,12 +350,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.DebugApi()
+api_instance = teamcity.DebugApi()
 fields = 'fields_example' # str |  (optional)
 
 try:
@@ -395,12 +395,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.DebugApi()
+api_instance = teamcity.DebugApi()
 method = 'method_example' # str | 
 value = 'value_example' # str |  (optional)
 
@@ -442,12 +442,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.DebugApi()
+api_instance = teamcity.DebugApi()
 
 try:
     api_response = api_instance.get_request_details()
@@ -483,12 +483,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.DebugApi()
+api_instance = teamcity.DebugApi()
 value = 'value_example' # str |  (optional)
 
 try:
@@ -528,12 +528,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.DebugApi()
+api_instance = teamcity.DebugApi()
 manager = 789 # int |  (optional)
 fields = 'fields_example' # str |  (optional)
 
@@ -575,12 +575,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.DebugApi()
+api_instance = teamcity.DebugApi()
 fields = 'fields_example' # str |  (optional)
 
 try:
@@ -620,12 +620,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.DebugApi()
+api_instance = teamcity.DebugApi()
 locked_monitors = 'locked_monitors_example' # str |  (optional)
 locked_synchronizers = 'locked_synchronizers_example' # str |  (optional)
 detect_locks = 'detect_locks_example' # str |  (optional)
@@ -669,12 +669,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.DebugApi()
+api_instance = teamcity.DebugApi()
 value = 'value_example' # str |  (optional)
 
 try:
@@ -714,12 +714,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.DebugApi()
+api_instance = teamcity.DebugApi()
 
 try:
     api_instance.invalidate_current_session()
@@ -754,12 +754,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.DebugApi()
+api_instance = teamcity.DebugApi()
 
 try:
     api_response = api_instance.list_db_tables()
@@ -795,12 +795,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.DebugApi()
+api_instance = teamcity.DebugApi()
 
 try:
     api_response = api_instance.new_remember_me()
@@ -836,12 +836,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.DebugApi()
+api_instance = teamcity.DebugApi()
 archived = true # bool |  (optional)
 
 try:
@@ -881,12 +881,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.DebugApi()
+api_instance = teamcity.DebugApi()
 locator = 'locator_example' # str |  (optional)
 requestor = 'requestor_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
@@ -930,12 +930,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.DebugApi()
+api_instance = teamcity.DebugApi()
 body = 'body_example' # str |  (optional)
 
 try:

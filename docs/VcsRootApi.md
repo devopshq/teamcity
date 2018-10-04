@@ -1,4 +1,4 @@
-# swagger_client.VcsRootApi
+# teamcity.VcsRootApi
 
 All URIs are relative to *https://teamcity.ptsecurity.ru*
 
@@ -33,13 +33,13 @@ Method | HTTP request | Description
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootApi()
-body = swagger_client.VcsRoot() # VcsRoot |  (optional)
+api_instance = teamcity.VcsRootApi()
+body = teamcity.VcsRoot() # VcsRoot |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
@@ -80,14 +80,14 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootApi()
+api_instance = teamcity.VcsRootApi()
 vcs_root_locator = 'vcs_root_locator_example' # str | 
-body = swagger_client.Properties() # Properties |  (optional)
+body = teamcity.Properties() # Properties |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
@@ -129,12 +129,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootApi()
+api_instance = teamcity.VcsRootApi()
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 
 try:
@@ -173,12 +173,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootApi()
+api_instance = teamcity.VcsRootApi()
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 name = 'name_example' # str | 
 
@@ -219,12 +219,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootApi()
+api_instance = teamcity.VcsRootApi()
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 
 try:
@@ -263,12 +263,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootApi()
+api_instance = teamcity.VcsRootApi()
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 
 try:
@@ -308,12 +308,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootApi()
+api_instance = teamcity.VcsRootApi()
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 name = 'name_example' # str | 
 body = 'body_example' # str |  (optional)
@@ -357,12 +357,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootApi()
+api_instance = teamcity.VcsRootApi()
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 field = 'field_example' # str | 
 
@@ -404,12 +404,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootApi()
+api_instance = teamcity.VcsRootApi()
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
 field = 'field_example' # str | 
@@ -453,12 +453,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootApi()
+api_instance = teamcity.VcsRootApi()
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
@@ -500,12 +500,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootApi()
+api_instance = teamcity.VcsRootApi()
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 name = 'name_example' # str | 
 
@@ -547,12 +547,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootApi()
+api_instance = teamcity.VcsRootApi()
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
@@ -594,12 +594,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootApi()
+api_instance = teamcity.VcsRootApi()
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
@@ -643,12 +643,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootApi()
+api_instance = teamcity.VcsRootApi()
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
@@ -692,12 +692,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootApi()
+api_instance = teamcity.VcsRootApi()
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
@@ -739,12 +739,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootApi()
+api_instance = teamcity.VcsRootApi()
 locator = 'locator_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
@@ -786,12 +786,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootApi()
+api_instance = teamcity.VcsRootApi()
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 field = 'field_example' # str | 
 body = 'body_example' # str |  (optional)
@@ -835,12 +835,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootApi()
+api_instance = teamcity.VcsRootApi()
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
 field = 'field_example' # str | 

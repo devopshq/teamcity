@@ -1,4 +1,4 @@
-# swagger_client.VcsRootInstanceApi
+# teamcity.VcsRootInstanceApi
 
 All URIs are relative to *https://teamcity.ptsecurity.ru*
 
@@ -34,12 +34,12 @@ Method | HTTP request | Description
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootInstanceApi()
+api_instance = teamcity.VcsRootInstanceApi()
 vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
 field = 'field_example' # str | 
 
@@ -80,12 +80,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootInstanceApi()
+api_instance = teamcity.VcsRootInstanceApi()
 vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
 
 try:
@@ -124,12 +124,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootInstanceApi()
+api_instance = teamcity.VcsRootInstanceApi()
 path = 'path_example' # str | 
 vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
 base_path = 'base_path_example' # str |  (optional)
@@ -177,12 +177,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootInstanceApi()
+api_instance = teamcity.VcsRootInstanceApi()
 path = 'path_example' # str | 
 vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
 base_path = 'base_path_example' # str |  (optional)
@@ -230,12 +230,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootInstanceApi()
+api_instance = teamcity.VcsRootInstanceApi()
 path = 'path_example' # str | 
 vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
 
@@ -276,12 +276,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootInstanceApi()
+api_instance = teamcity.VcsRootInstanceApi()
 path = 'path_example' # str | 
 vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
 
@@ -322,12 +322,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootInstanceApi()
+api_instance = teamcity.VcsRootInstanceApi()
 path = 'path_example' # str | 
 vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
@@ -371,12 +371,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootInstanceApi()
+api_instance = teamcity.VcsRootInstanceApi()
 vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
@@ -418,12 +418,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootInstanceApi()
+api_instance = teamcity.VcsRootInstanceApi()
 vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
 
 try:
@@ -463,12 +463,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootInstanceApi()
+api_instance = teamcity.VcsRootInstanceApi()
 vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
 base_path = 'base_path_example' # str |  (optional)
 locator = 'locator_example' # str |  (optional)
@@ -514,12 +514,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootInstanceApi()
+api_instance = teamcity.VcsRootInstanceApi()
 path = 'path_example' # str | 
 vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
 base_path = 'base_path_example' # str |  (optional)
@@ -566,12 +566,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootInstanceApi()
+api_instance = teamcity.VcsRootInstanceApi()
 locator = 'locator_example' # str |  (optional)
 requestor = 'requestor_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
@@ -615,12 +615,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootInstanceApi()
+api_instance = teamcity.VcsRootInstanceApi()
 locator = 'locator_example' # str |  (optional)
 ok_on_nothing_found = true # bool |  (optional)
 
@@ -661,12 +661,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootInstanceApi()
+api_instance = teamcity.VcsRootInstanceApi()
 vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
@@ -708,12 +708,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootInstanceApi()
+api_instance = teamcity.VcsRootInstanceApi()
 vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
 field = 'field_example' # str | 
 
@@ -755,12 +755,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootInstanceApi()
+api_instance = teamcity.VcsRootInstanceApi()
 locator = 'locator_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
@@ -802,12 +802,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootInstanceApi()
+api_instance = teamcity.VcsRootInstanceApi()
 vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
@@ -849,12 +849,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootInstanceApi()
+api_instance = teamcity.VcsRootInstanceApi()
 vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
 field = 'field_example' # str | 
 body = 'body_example' # str |  (optional)
@@ -898,14 +898,14 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VcsRootInstanceApi()
+api_instance = teamcity.VcsRootInstanceApi()
 vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
-body = swagger_client.Entries() # Entries |  (optional)
+body = teamcity.Entries() # Entries |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:

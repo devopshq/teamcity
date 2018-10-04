@@ -1,4 +1,4 @@
-# swagger_client.ProblemOccurrenceApi
+# teamcity.ProblemOccurrenceApi
 
 All URIs are relative to *https://teamcity.ptsecurity.ru*
 
@@ -17,12 +17,12 @@ Method | HTTP request | Description
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ProblemOccurrenceApi()
+api_instance = teamcity.ProblemOccurrenceApi()
 locator = 'locator_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
@@ -64,12 +64,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ProblemOccurrenceApi()
+api_instance = teamcity.ProblemOccurrenceApi()
 problem_locator = 'problem_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 

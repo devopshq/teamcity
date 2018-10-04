@@ -1,4 +1,4 @@
-# swagger_client.ServerApi
+# teamcity.ServerApi
 
 All URIs are relative to *https://teamcity.ptsecurity.ru*
 
@@ -32,12 +32,12 @@ Method | HTTP request | Description
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ServerApi()
+api_instance = teamcity.ServerApi()
 body = 'body_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
@@ -79,12 +79,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ServerApi()
+api_instance = teamcity.ServerApi()
 license_key = 'license_key_example' # str | 
 
 try:
@@ -123,13 +123,13 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ServerApi()
-body = swagger_client.BackupProcessManager() # BackupProcessManager |  (optional)
+api_instance = teamcity.ServerApi()
+body = teamcity.BackupProcessManager() # BackupProcessManager |  (optional)
 
 try:
     api_response = api_instance.get_backup_status(body=body)
@@ -168,12 +168,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ServerApi()
+api_instance = teamcity.ServerApi()
 path = 'path_example' # str | 
 area_id = 'area_id_example' # str | 
 base_path = 'base_path_example' # str |  (optional)
@@ -221,12 +221,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ServerApi()
+api_instance = teamcity.ServerApi()
 path = 'path_example' # str | 
 area_id = 'area_id_example' # str | 
 base_path = 'base_path_example' # str |  (optional)
@@ -274,12 +274,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ServerApi()
+api_instance = teamcity.ServerApi()
 path = 'path_example' # str | 
 area_id = 'area_id_example' # str | 
 
@@ -320,12 +320,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ServerApi()
+api_instance = teamcity.ServerApi()
 path = 'path_example' # str | 
 area_id = 'area_id_example' # str | 
 
@@ -366,12 +366,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ServerApi()
+api_instance = teamcity.ServerApi()
 license_key = 'license_key_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
@@ -413,12 +413,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ServerApi()
+api_instance = teamcity.ServerApi()
 fields = 'fields_example' # str |  (optional)
 
 try:
@@ -458,12 +458,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ServerApi()
+api_instance = teamcity.ServerApi()
 fields = 'fields_example' # str |  (optional)
 
 try:
@@ -503,12 +503,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ServerApi()
+api_instance = teamcity.ServerApi()
 path = 'path_example' # str | 
 area_id = 'area_id_example' # str | 
 fields = 'fields_example' # str |  (optional)
@@ -552,12 +552,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ServerApi()
+api_instance = teamcity.ServerApi()
 area_id = 'area_id_example' # str | 
 base_path = 'base_path_example' # str |  (optional)
 locator = 'locator_example' # str |  (optional)
@@ -603,12 +603,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ServerApi()
+api_instance = teamcity.ServerApi()
 path = 'path_example' # str | 
 area_id = 'area_id_example' # str | 
 base_path = 'base_path_example' # str |  (optional)
@@ -655,12 +655,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ServerApi()
+api_instance = teamcity.ServerApi()
 fields = 'fields_example' # str |  (optional)
 
 try:
@@ -700,12 +700,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ServerApi()
+api_instance = teamcity.ServerApi()
 fields = 'fields_example' # str |  (optional)
 
 try:
@@ -745,12 +745,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ServerApi()
+api_instance = teamcity.ServerApi()
 field = 'field_example' # str | 
 
 try:
@@ -790,12 +790,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ServerApi()
+api_instance = teamcity.ServerApi()
 file_name = 'file_name_example' # str |  (optional)
 add_timestamp = true # bool |  (optional)
 include_configs = true # bool |  (optional)
@@ -804,7 +804,7 @@ include_build_logs = true # bool |  (optional)
 include_personal_changes = true # bool |  (optional)
 include_running_builds = true # bool |  (optional)
 include_supplimentary_data = true # bool |  (optional)
-body = swagger_client.BackupProcessManager() # BackupProcessManager |  (optional)
+body = teamcity.BackupProcessManager() # BackupProcessManager |  (optional)
 
 try:
     api_response = api_instance.start_backup(file_name=file_name, add_timestamp=add_timestamp, include_configs=include_configs, include_database=include_database, include_build_logs=include_build_logs, include_personal_changes=include_personal_changes, include_running_builds=include_running_builds, include_supplimentary_data=include_supplimentary_data, body=body)

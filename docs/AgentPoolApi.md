@@ -1,4 +1,4 @@
-# swagger_client.AgentPoolApi
+# teamcity.AgentPoolApi
 
 All URIs are relative to *https://teamcity.ptsecurity.ru*
 
@@ -29,14 +29,14 @@ Method | HTTP request | Description
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AgentPoolApi()
+api_instance = teamcity.AgentPoolApi()
 agent_pool_locator = 'agent_pool_locator_example' # str | 
-body = swagger_client.Agent() # Agent |  (optional)
+body = teamcity.Agent() # Agent |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
@@ -78,14 +78,14 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AgentPoolApi()
+api_instance = teamcity.AgentPoolApi()
 agent_pool_locator = 'agent_pool_locator_example' # str | 
-body = swagger_client.Project() # Project |  (optional)
+body = teamcity.Project() # Project |  (optional)
 
 try:
     api_response = api_instance.add_project(agent_pool_locator, body=body)
@@ -125,13 +125,13 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AgentPoolApi()
-body = swagger_client.AgentPool() # AgentPool |  (optional)
+api_instance = teamcity.AgentPoolApi()
+body = teamcity.AgentPool() # AgentPool |  (optional)
 
 try:
     api_response = api_instance.create_pool(body=body)
@@ -170,12 +170,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AgentPoolApi()
+api_instance = teamcity.AgentPoolApi()
 agent_pool_locator = 'agent_pool_locator_example' # str | 
 
 try:
@@ -214,12 +214,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AgentPoolApi()
+api_instance = teamcity.AgentPoolApi()
 agent_pool_locator = 'agent_pool_locator_example' # str | 
 project_locator = 'project_locator_example' # str | 
 
@@ -260,12 +260,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AgentPoolApi()
+api_instance = teamcity.AgentPoolApi()
 agent_pool_locator = 'agent_pool_locator_example' # str | 
 
 try:
@@ -304,12 +304,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AgentPoolApi()
+api_instance = teamcity.AgentPoolApi()
 agent_pool_locator = 'agent_pool_locator_example' # str | 
 field = 'field_example' # str | 
 
@@ -351,12 +351,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AgentPoolApi()
+api_instance = teamcity.AgentPoolApi()
 agent_pool_locator = 'agent_pool_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
@@ -398,12 +398,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AgentPoolApi()
+api_instance = teamcity.AgentPoolApi()
 agent_pool_locator = 'agent_pool_locator_example' # str | 
 locator = 'locator_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
@@ -447,12 +447,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AgentPoolApi()
+api_instance = teamcity.AgentPoolApi()
 agent_pool_locator = 'agent_pool_locator_example' # str | 
 project_locator = 'project_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
@@ -496,12 +496,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AgentPoolApi()
+api_instance = teamcity.AgentPoolApi()
 agent_pool_locator = 'agent_pool_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
@@ -543,12 +543,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AgentPoolApi()
+api_instance = teamcity.AgentPoolApi()
 locator = 'locator_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
@@ -590,14 +590,14 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AgentPoolApi()
+api_instance = teamcity.AgentPoolApi()
 agent_pool_locator = 'agent_pool_locator_example' # str | 
-body = swagger_client.Projects() # Projects |  (optional)
+body = teamcity.Projects() # Projects |  (optional)
 
 try:
     api_response = api_instance.replace_projects(agent_pool_locator, body=body)
@@ -637,12 +637,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AgentPoolApi()
+api_instance = teamcity.AgentPoolApi()
 agent_pool_locator = 'agent_pool_locator_example' # str | 
 field = 'field_example' # str | 
 body = 'body_example' # str |  (optional)

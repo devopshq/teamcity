@@ -1,4 +1,4 @@
-# swagger_client.BuildQueueApi
+# teamcity.BuildQueueApi
 
 All URIs are relative to *https://teamcity.ptsecurity.ru*
 
@@ -29,14 +29,14 @@ Method | HTTP request | Description
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.BuildQueueApi()
+api_instance = teamcity.BuildQueueApi()
 build_locator = 'build_locator_example' # str | 
-body = swagger_client.Tags() # Tags |  (optional)
+body = teamcity.Tags() # Tags |  (optional)
 
 try:
     api_instance.add_tags(build_locator, body=body)
@@ -75,12 +75,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.BuildQueueApi()
+api_instance = teamcity.BuildQueueApi()
 build_locator = 'build_locator_example' # str | 
 
 try:
@@ -120,14 +120,14 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.BuildQueueApi()
+api_instance = teamcity.BuildQueueApi()
 queued_build_locator = 'queued_build_locator_example' # str | 
-body = swagger_client.BuildCancelRequest() # BuildCancelRequest |  (optional)
+body = teamcity.BuildCancelRequest() # BuildCancelRequest |  (optional)
 
 try:
     api_response = api_instance.cancel_build_0(queued_build_locator, body=body)
@@ -167,12 +167,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.BuildQueueApi()
+api_instance = teamcity.BuildQueueApi()
 queued_build_locator = 'queued_build_locator_example' # str | 
 
 try:
@@ -211,12 +211,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.BuildQueueApi()
+api_instance = teamcity.BuildQueueApi()
 locator = 'locator_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
@@ -257,12 +257,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.BuildQueueApi()
+api_instance = teamcity.BuildQueueApi()
 queued_build_locator = 'queued_build_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
@@ -304,12 +304,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.BuildQueueApi()
+api_instance = teamcity.BuildQueueApi()
 locator = 'locator_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
@@ -351,13 +351,13 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.BuildQueueApi()
-body = swagger_client.Build() # Build |  (optional)
+api_instance = teamcity.BuildQueueApi()
+body = teamcity.Build() # Build |  (optional)
 move_to_top = true # bool |  (optional)
 
 try:
@@ -398,13 +398,13 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.BuildQueueApi()
-body = swagger_client.Builds() # Builds |  (optional)
+api_instance = teamcity.BuildQueueApi()
+body = teamcity.Builds() # Builds |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
@@ -445,15 +445,15 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.BuildQueueApi()
+api_instance = teamcity.BuildQueueApi()
 build_locator = 'build_locator_example' # str | 
 locator = 'locator_example' # str |  (optional)
-body = swagger_client.Tags() # Tags |  (optional)
+body = teamcity.Tags() # Tags |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
@@ -496,12 +496,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.BuildQueueApi()
+api_instance = teamcity.BuildQueueApi()
 build_locator = 'build_locator_example' # str | 
 field = 'field_example' # str | 
 
@@ -543,12 +543,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.BuildQueueApi()
+api_instance = teamcity.BuildQueueApi()
 queued_build_locator = 'queued_build_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
@@ -590,12 +590,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.BuildQueueApi()
+api_instance = teamcity.BuildQueueApi()
 build_locator = 'build_locator_example' # str | 
 locator = 'locator_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
@@ -639,14 +639,14 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.BuildQueueApi()
+api_instance = teamcity.BuildQueueApi()
 fields = 'fields_example' # str | 
-body = swagger_client.Builds() # Builds |  (optional)
+body = teamcity.Builds() # Builds |  (optional)
 
 try:
     api_response = api_instance.set_build_queue_order(fields, body=body)

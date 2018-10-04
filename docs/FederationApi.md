@@ -1,4 +1,4 @@
-# swagger_client.FederationApi
+# teamcity.FederationApi
 
 All URIs are relative to *https://teamcity.ptsecurity.ru*
 
@@ -17,13 +17,13 @@ Method | HTTP request | Description
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.FederationApi()
-body = swagger_client.Servers() # Servers |  (optional)
+api_instance = teamcity.FederationApi()
+body = teamcity.Servers() # Servers |  (optional)
 
 try:
     api_response = api_instance.add_server(body=body)
@@ -62,12 +62,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.FederationApi()
+api_instance = teamcity.FederationApi()
 fields = 'fields_example' # str |  (optional)
 
 try:
