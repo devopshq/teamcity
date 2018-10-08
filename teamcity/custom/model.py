@@ -3,7 +3,7 @@ import pprint
 import six
 
 
-class TeamcityObject(object):
+class TeamСityObject(object):
     swagger_types = {}
 
     def __init__(self, *args, **kwargs):
