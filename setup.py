@@ -13,18 +13,23 @@
 # TODO list
 """
 Code
-- Продумать как сделать так, чтобы можно было получать teamcity.agents.get() - и обращение сразу шло к API
+- teamcity.agents.get (Замена всех serve на get)
+- teamcity.agents.get('id:123').pool.agents - чтобы как-то возвращался pool? С возможностью БРАТЬ по умолчанию (как заглушка в gitlab)
 - Наполнение информации про agent.pool.agents
-- Добавление билд-степов напрямую к конфигурации? teamcity.build_types.get(ID).steps.add()?
-- Понять что за DebugAPI, DefaultApi, Server
+- LAZY-объекты как в https://python-gitlab.readthedocs.io/en/stable/api-usage.html
 
+- Добавление билд-степов напрямую к конфигурации? teamcity.build_types.get(ID).steps.add()?
+
+- Понять что за DebugAPI, DefaultApi, Server
 - Retry как 502 ошибку - как сейчас в teamcity
 - Рефакторинг API - аналогично, должен быть единый общий родитель? Под вопросом - нужно ли?
 
 Docs
 - Проверить что еще добавить\убрать из generate.sh
-- Ревью автогенерируемой документации
 - Документация по тому что где находится, как сгенерировать документацию
+- Ревью автогенерируемой документации
+- Дополнение документации как в документации про python-gitlab https://python-gitlab.readthedocs.io
+- Перевод документации в rst-формат
 
 """
 
