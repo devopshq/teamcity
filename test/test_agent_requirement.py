@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.agent_requirement import AgentRequirement  # noqa: E501
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.models.agent_requirement import AgentRequirement  # noqa: E501
+from teamcity.rest import ApiException
 
 
 class TestAgentRequirement(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestAgentRequirement(unittest.TestCase):
     def testAgentRequirement(self):
         """Test AgentRequirement"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.agent_requirement.AgentRequirement()  # noqa: E501
+        # model = teamcity.models.agent_requirement.AgentRequirement()  # noqa: E501
         pass
 
 

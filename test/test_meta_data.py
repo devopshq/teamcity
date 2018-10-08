@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.meta_data import MetaData  # noqa: E501
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.models.meta_data import MetaData  # noqa: E501
+from teamcity.rest import ApiException
 
 
 class TestMetaData(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestMetaData(unittest.TestCase):
     def testMetaData(self):
         """Test MetaData"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.meta_data.MetaData()  # noqa: E501
+        # model = teamcity.models.meta_data.MetaData()  # noqa: E501
         pass
 
 

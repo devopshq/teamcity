@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.trigger import Trigger  # noqa: E501
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.models.trigger import Trigger  # noqa: E501
+from teamcity.rest import ApiException
 
 
 class TestTrigger(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestTrigger(unittest.TestCase):
     def testTrigger(self):
         """Test Trigger"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.trigger.Trigger()  # noqa: E501
+        # model = teamcity.models.trigger.Trigger()  # noqa: E501
         pass
 
 

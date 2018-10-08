@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.tags import Tags  # noqa: E501
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.models.tags import Tags  # noqa: E501
+from teamcity.rest import ApiException
 
 
 class TestTags(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestTags(unittest.TestCase):
     def testTags(self):
         """Test Tags"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.tags.Tags()  # noqa: E501
+        # model = teamcity.models.tags.Tags()  # noqa: E501
         pass
 
 

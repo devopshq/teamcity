@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.revision import Revision  # noqa: E501
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.models.revision import Revision  # noqa: E501
+from teamcity.rest import ApiException
 
 
 class TestRevision(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestRevision(unittest.TestCase):
     def testRevision(self):
         """Test Revision"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.revision.Revision()  # noqa: E501
+        # model = teamcity.models.revision.Revision()  # noqa: E501
         pass
 
 

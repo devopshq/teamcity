@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.stack_trace_element import StackTraceElement  # noqa: E501
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.models.stack_trace_element import StackTraceElement  # noqa: E501
+from teamcity.rest import ApiException
 
 
 class TestStackTraceElement(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestStackTraceElement(unittest.TestCase):
     def testStackTraceElement(self):
         """Test StackTraceElement"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.stack_trace_element.StackTraceElement()  # noqa: E501
+        # model = teamcity.models.stack_trace_element.StackTraceElement()  # noqa: E501
         pass
 
 

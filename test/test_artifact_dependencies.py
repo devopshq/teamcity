@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.artifact_dependencies import ArtifactDependencies  # noqa: E501
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.models.artifact_dependencies import ArtifactDependencies  # noqa: E501
+from teamcity.rest import ApiException
 
 
 class TestArtifactDependencies(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestArtifactDependencies(unittest.TestCase):
     def testArtifactDependencies(self):
         """Test ArtifactDependencies"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.artifact_dependencies.ArtifactDependencies()  # noqa: E501
+        # model = teamcity.models.artifact_dependencies.ArtifactDependencies()  # noqa: E501
         pass
 
 

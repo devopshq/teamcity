@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.plugin import Plugin  # noqa: E501
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.models.plugin import Plugin  # noqa: E501
+from teamcity.rest import ApiException
 
 
 class TestPlugin(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestPlugin(unittest.TestCase):
     def testPlugin(self):
         """Test Plugin"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.plugin.Plugin()  # noqa: E501
+        # model = teamcity.models.plugin.Plugin()  # noqa: E501
         pass
 
 

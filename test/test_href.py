@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.href import Href  # noqa: E501
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.models.href import Href  # noqa: E501
+from teamcity.rest import ApiException
 
 
 class TestHref(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestHref(unittest.TestCase):
     def testHref(self):
         """Test Href"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.href.Href()  # noqa: E501
+        # model = teamcity.models.href.Href()  # noqa: E501
         pass
 
 

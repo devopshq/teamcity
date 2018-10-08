@@ -15,16 +15,16 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.api.build_queue_api import BuildQueueApi  # noqa: E501
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.api.build_queue_api import BuildQueueApi  # noqa: E501
+from teamcity.rest import ApiException
 
 
 class TestBuildQueueApi(unittest.TestCase):
     """BuildQueueApi unit test stubs"""
 
     def setUp(self):
-        self.api = swagger_client.api.build_queue_api.BuildQueueApi()  # noqa: E501
+        self.api = teamcity.api.build_queue_api.BuildQueueApi()  # noqa: E501
 
     def tearDown(self):
         pass

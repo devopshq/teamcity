@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.branch import Branch  # noqa: E501
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.models.branch import Branch  # noqa: E501
+from teamcity.rest import ApiException
 
 
 class TestBranch(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestBranch(unittest.TestCase):
     def testBranch(self):
         """Test Branch"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.branch.Branch()  # noqa: E501
+        # model = teamcity.models.branch.Branch()  # noqa: E501
         pass
 
 

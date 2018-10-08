@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.vcs_root_entries import VcsRootEntries  # noqa: E501
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.models.vcs_root_entries import VcsRootEntries  # noqa: E501
+from teamcity.rest import ApiException
 
 
 class TestVcsRootEntries(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestVcsRootEntries(unittest.TestCase):
     def testVcsRootEntries(self):
         """Test VcsRootEntries"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.vcs_root_entries.VcsRootEntries()  # noqa: E501
+        # model = teamcity.models.vcs_root_entries.VcsRootEntries()  # noqa: E501
         pass
 
 

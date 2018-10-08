@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.links import Links  # noqa: E501
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.models.links import Links  # noqa: E501
+from teamcity.rest import ApiException
 
 
 class TestLinks(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestLinks(unittest.TestCase):
     def testLinks(self):
         """Test Links"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.links.Links()  # noqa: E501
+        # model = teamcity.models.links.Links()  # noqa: E501
         pass
 
 

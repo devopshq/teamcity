@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.build_types import BuildTypes  # noqa: E501
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.models.build_types import BuildTypes  # noqa: E501
+from teamcity.rest import ApiException
 
 
 class TestBuildTypes(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestBuildTypes(unittest.TestCase):
     def testBuildTypes(self):
         """Test BuildTypes"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.build_types.BuildTypes()  # noqa: E501
+        # model = teamcity.models.build_types.BuildTypes()  # noqa: E501
         pass
 
 

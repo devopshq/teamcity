@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.license_key import LicenseKey  # noqa: E501
-from swagger_client.rest import ApiException
+import teamcity
+from teamcity.models.license_key import LicenseKey  # noqa: E501
+from teamcity.rest import ApiException
 
 
 class TestLicenseKey(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestLicenseKey(unittest.TestCase):
     def testLicenseKey(self):
         """Test LicenseKey"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.license_key.LicenseKey()  # noqa: E501
+        # model = teamcity.models.license_key.LicenseKey()  # noqa: E501
         pass
 
 
