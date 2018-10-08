@@ -1,6 +1,8 @@
 # Swagger template
 Original templates saved in folder `swagger/original-template` and can downloaded from [this commit](https://github.com/swagger-api/swagger-codegen/tree/56fe33b92ee6dcc1d93a1fdea8b5f02cc0ec1d41/modules/swagger-codegen/src/main/resources/python) or `master`-branch from git repositories https://github.com/swagger-api/swagger-codegen
 
+http://mustache.github.io/
+
 -----------------------
 
 # dohq-teamcity
