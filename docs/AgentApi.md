@@ -5,11 +5,11 @@ All URIs are relative to *https://teamcity.example.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete_agent**](AgentApi.md#delete_agent) | **DELETE** /app/rest/agents/{agentLocator} | 
-[**ge_incompatible_build_types**](AgentApi.md#ge_incompatible_build_types) | **GET** /app/rest/agents/{agentLocator}/incompatibleBuildTypes | 
 [**get_agent_pool**](AgentApi.md#get_agent_pool) | **GET** /app/rest/agents/{agentLocator}/pool | 
 [**get_authorized_info**](AgentApi.md#get_authorized_info) | **GET** /app/rest/agents/{agentLocator}/authorizedInfo | 
 [**get_compatible_build_types**](AgentApi.md#get_compatible_build_types) | **GET** /app/rest/agents/{agentLocator}/compatibleBuildTypes | 
 [**get_enabled_info**](AgentApi.md#get_enabled_info) | **GET** /app/rest/agents/{agentLocator}/enabledInfo | 
+[**get_incompatible_build_types**](AgentApi.md#get_incompatible_build_types) | **GET** /app/rest/agents/{agentLocator}/incompatibleBuildTypes | 
 [**serve_agent**](AgentApi.md#serve_agent) | **GET** /app/rest/agents/{agentLocator} | 
 [**serve_agent_field**](AgentApi.md#serve_agent_field) | **GET** /app/rest/agents/{agentLocator}/{field} | 
 [**serve_agents**](AgentApi.md#serve_agents) | **GET** /app/rest/agents | 
@@ -51,53 +51,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **ge_incompatible_build_types**
-> Compatibilities ge_incompatible_build_types(agent_locator, fields=fields)
-
-
-
-### Example
-```python
-from __future__ import print_function
-import time
-import teamcity
-from teamcity.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = teamcity.AgentApi()
-agent_locator = 'agent_locator_example' # str | 
-fields = 'fields_example' # str |  (optional)
-
-try:
-    api_response = api_instance.ge_incompatible_build_types(agent_locator, fields=fields)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AgentApi->ge_incompatible_build_types: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **agent_locator** | **str**|  | 
- **fields** | **str**|  | [optional] 
-
-### Return type
-
-[**Compatibilities**](Compatibilities.md)
 
 ### Authorization
 
@@ -286,6 +239,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EnabledInfo**](EnabledInfo.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_incompatible_build_types**
+> Compatibilities get_incompatible_build_types(agent_locator, fields=fields)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import teamcity
+from teamcity.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = teamcity.AgentApi()
+agent_locator = 'agent_locator_example' # str | 
+fields = 'fields_example' # str |  (optional)
+
+try:
+    api_response = api_instance.get_incompatible_build_types(agent_locator, fields=fields)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AgentApi->get_incompatible_build_types: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **agent_locator** | **str**|  | 
+ **fields** | **str**|  | [optional] 
+
+### Return type
+
+[**Compatibilities**](Compatibilities.md)
 
 ### Authorization
 

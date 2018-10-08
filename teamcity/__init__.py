@@ -18,7 +18,7 @@ from __future__ import absolute_import
 # import apis into sdk package
 
 # import ApiClient
-from teamcity.custom.client import Teamcity
+from teamcity.custom.client import TeamCity
 
 # import models into sdk package
 from teamcity.models.agent import Agent

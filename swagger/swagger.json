@@ -5083,7 +5083,7 @@
         },
         "/app/rest/agents/{agentLocator}/incompatibleBuildTypes": {
             "get": {
-                "operationId": "geIncompatibleBuildTypes",
+                "operationId": "getIncompatibleBuildTypes",
                 "parameters": [
                     {
                         "in": "path",

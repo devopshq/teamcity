@@ -3,13 +3,13 @@ from teamcity.api_client import ApiClient
 from teamcity.configuration import Configuration
 
 
-class Teamcity(ApiClient):
+class TeamCity(ApiClient):
     def __init__(self, url, auth):
         configuration = Configuration()
         configuration.host = url
         if isinstance(auth, tuple):
             configuration.username, configuration.password = auth
-        super(Teamcity, self).__init__(configuration=configuration)
+        super(TeamCity, self).__init__(configuration=configuration)
         self.default_headers.update({'Content-type': 'application/json',
                                      'Accept': 'application/json',
                                      'Content-Encoding': 'utf-8'})
@@ -41,4 +41,12 @@ class Teamcity(ApiClient):
         Quick hack for add Basic auth to swagger-codegen python
         """
         kwargs['auth_settings'] = ['Basic']
-        return super(Teamcity, self).call_api(*args, **kwargs)
+        return super(TeamCity, self).call_api(*args, **kwargs)
+
+    def to_str(self):
+        """Returns the string representation of the model"""
+        return "{}('{}')".format(self.__class__.__name__,self.configuration.host)
+
+    def __repr__(self):
+        """For `print` and `pprint`"""
+        return self.to_str()
