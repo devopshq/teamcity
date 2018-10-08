@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamcityObject
+from teamcity.custom.model import TeamCityObject
 
 
 # from teamcity.models.groups import Groups  # noqa: F401,E501

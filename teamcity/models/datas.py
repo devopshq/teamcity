@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamcityObject
+from teamcity.custom.model import TeamCityObject
 
 
 # from teamcity.models.meta_data import MetaData  # noqa: F401,E501
