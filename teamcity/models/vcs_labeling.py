@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.base_model import TeamcityObject
+from teamcity.custom.model import TeamcityObject
 
 
 # from teamcity.models.vcs_roots import VcsRoots  # noqa: F401,E501

@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.base_model import TeamcityObject
+from teamcity.custom.model import TeamcityObject
 
 
 # from teamcity.models.build_type import BuildType  # noqa: F401,E501

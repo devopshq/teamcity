@@ -4373,7 +4373,7 @@
             }
         }
     },
-    "host": "teamcity.ptsecurity.ru",
+    "host": "teamcity.example.com",
     "info": {
         "title": "TeamCity REST API",
         "version": "10.0"

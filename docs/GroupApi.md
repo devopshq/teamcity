@@ -1,6 +1,6 @@
 # teamcity.GroupApi
 
-All URIs are relative to *https://teamcity.ptsecurity.ru*
+All URIs are relative to *https://teamcity.example.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

@@ -25,3 +25,5 @@
 
 .gitignore
 setup.py
+teamcity/__init__.py
+teamcity/custom/*
