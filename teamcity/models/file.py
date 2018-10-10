@@ -242,3 +242,5 @@ class File(TeamCityObject):
 
         self._size = size
 
+
+file = File

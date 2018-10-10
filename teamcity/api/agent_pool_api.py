@@ -32,7 +32,7 @@ class AgentPoolApi(object):
     Do not edit the class manually.
     Ref: https://github.com/swagger-api/swagger-codegen
     """
-    model = AgentPool
+    base_name = 'AgentPool'
 
     def __init__(self, api_client=None):
         self.api_client = api_client
