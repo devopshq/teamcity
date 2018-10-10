@@ -3592,3 +3592,49 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
+#
+# Appended by extend_swagger.py
+#
+
+    def get(self, *args, **kwargs):
+        return self.serve_build(*args, **kwargs)
+
+    def get_aggregated_build_status(self, *args, **kwargs):
+        return self.serve_aggregated_build_status(*args, **kwargs)
+
+    def get_aggregated_build_status_icon(self, *args, **kwargs):
+        return self.serve_aggregated_build_status_icon(*args, **kwargs)
+
+    def get_all_builds(self, *args, **kwargs):
+        return self.serve_all_builds(*args, **kwargs)
+
+    def get_build(self, *args, **kwargs):
+        return self.serve_build(*args, **kwargs)
+
+    def get_build_actual_parameters(self, *args, **kwargs):
+        return self.serve_build_actual_parameters(*args, **kwargs)
+
+    def get_build_field_by_build_only(self, *args, **kwargs):
+        return self.serve_build_field_by_build_only(*args, **kwargs)
+
+    def get_build_related_issues(self, *args, **kwargs):
+        return self.serve_build_related_issues(*args, **kwargs)
+
+    def get_build_related_issues_old(self, *args, **kwargs):
+        return self.serve_build_related_issues_old(*args, **kwargs)
+
+    def get_build_statistic_value(self, *args, **kwargs):
+        return self.serve_build_statistic_value(*args, **kwargs)
+
+    def get_build_statistic_values(self, *args, **kwargs):
+        return self.serve_build_statistic_values(*args, **kwargs)
+
+    def get_build_status_icon(self, *args, **kwargs):
+        return self.serve_build_status_icon(*args, **kwargs)
+
+    def get_source_file(self, *args, **kwargs):
+        return self.serve_source_file(*args, **kwargs)
+
+    def get_tags(self, *args, **kwargs):
+        return self.serve_tags(*args, **kwargs)

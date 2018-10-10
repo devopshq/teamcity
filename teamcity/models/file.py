@@ -43,8 +43,7 @@ class File(TeamCityObject):
         'size': 'size'
     }
 
-    def __init__(self, children=None, content=None, full_name=None, href=None, modification_time=None, name=None,
-                 parent=None, size=None):  # noqa: E501
+    def __init__(self, children=None, content=None, full_name=None, href=None, modification_time=None, name=None, parent=None, size=None):  # noqa: E501
         """File - a model defined in Swagger"""  # noqa: E501
         super(File, self).__init__()
 
@@ -247,5 +246,4 @@ class File(TeamCityObject):
 #
 # Appended by extend_swagger.py
 #
-
 file = File

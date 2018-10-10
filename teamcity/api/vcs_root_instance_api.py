@@ -1891,3 +1891,22 @@ class VcsRootInstanceApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
+#
+# Appended by extend_swagger.py
+#
+
+    def get(self, *args, **kwargs):
+        return self.serve_instance(*args, **kwargs)
+
+    def get_instance(self, *args, **kwargs):
+        return self.serve_instance(*args, **kwargs)
+
+    def get_instance_field(self, *args, **kwargs):
+        return self.serve_instance_field(*args, **kwargs)
+
+    def get_instances(self, *args, **kwargs):
+        return self.serve_instances(*args, **kwargs)
+
+    def get_root_instance_properties(self, *args, **kwargs):
+        return self.serve_root_instance_properties(*args, **kwargs)

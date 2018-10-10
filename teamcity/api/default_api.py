@@ -472,3 +472,22 @@ class DefaultApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
+#
+# Appended by extend_swagger.py
+#
+
+    def get_api_version(self, *args, **kwargs):
+        return self.serve_api_version(*args, **kwargs)
+
+    def get_build_field_short(self, *args, **kwargs):
+        return self.serve_build_field_short(*args, **kwargs)
+
+    def get_plugin_info(self, *args, **kwargs):
+        return self.serve_plugin_info(*args, **kwargs)
+
+    def get_root(self, *args, **kwargs):
+        return self.serve_root(*args, **kwargs)
+
+    def get_version(self, *args, **kwargs):
+        return self.serve_version(*args, **kwargs)

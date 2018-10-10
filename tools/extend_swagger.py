@@ -31,10 +31,11 @@ def parse_args():
 
 
 def append_to_file(filename, content):
-    if not content:
-        logging.debug('Skip adding None content to "{}"'.format(filename))
     if isinstance(content, list):
-        content = "\n".join(content)
+        content = "\n".join([x for x in content if x])
+
+    if not content:
+        return
 
     with open(filename, mode='a+') as file:
         file.seek(0)
@@ -44,7 +45,6 @@ def append_to_file(filename, content):
 #
 # Appended by {}
 #
-
 {}
 """.format(os.path.basename(__file__), content)
         if content in original_content:
@@ -83,6 +83,7 @@ class Program:
                 'serve_{}'.format(lowername),  # Agent => serve_agent
                 'serve_{}'.format(lastname),  # VcsRoot => serve_root, AgentPool => serve_pool
                 'get_{}'.format(lastname),  # AgentPool => get_pool
+                'serve_instance',  # TestApi, VcsRootInstanceApi
             ]
             get_serve_ = [(name, method) for name, method in methods if name in get_method]
 
@@ -93,7 +94,7 @@ class Program:
         return self.{}(*args, **kwargs)"""
                 append.append(get_format.format(get_serve_[0][0]))
             elif len(get_serve_) == 0:
-                logging.debug("Serve\get method not fount in api '{}'".format(cls_name))
+                logging.debug("Serve\get method not found in api '{}'".format(cls_name))
             elif len(get_serve_) > 1:
                 logging.error("Something wrong, get method must be unique")
                 sys.exit(11)

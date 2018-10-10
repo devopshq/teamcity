@@ -11330,3 +11330,31 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
+#
+# Appended by extend_swagger.py
+#
+
+    def get_branches(self, *args, **kwargs):
+        return self.serve_branches(*args, **kwargs)
+
+    def get_build_field(self, *args, **kwargs):
+        return self.serve_build_field(*args, **kwargs)
+
+    def get_build_type_builds_tags(self, *args, **kwargs):
+        return self.serve_build_type_builds_tags(*args, **kwargs)
+
+    def get_build_type_field(self, *args, **kwargs):
+        return self.serve_build_type_field(*args, **kwargs)
+
+    def get_build_type_template(self, *args, **kwargs):
+        return self.serve_build_type_template(*args, **kwargs)
+
+    def get_build_type_xml(self, *args, **kwargs):
+        return self.serve_build_type_xml(*args, **kwargs)
+
+    def get_build_with_project(self, *args, **kwargs):
+        return self.serve_build_with_project(*args, **kwargs)
+
+    def get_builds(self, *args, **kwargs):
+        return self.serve_builds(*args, **kwargs)

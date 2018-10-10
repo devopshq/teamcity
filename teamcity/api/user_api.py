@@ -2337,3 +2337,25 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
+#
+# Appended by extend_swagger.py
+#
+
+    def get(self, *args, **kwargs):
+        return self.serve_user(*args, **kwargs)
+
+    def get_user(self, *args, **kwargs):
+        return self.serve_user(*args, **kwargs)
+
+    def get_user_field(self, *args, **kwargs):
+        return self.serve_user_field(*args, **kwargs)
+
+    def get_user_properties(self, *args, **kwargs):
+        return self.serve_user_properties(*args, **kwargs)
+
+    def get_user_property(self, *args, **kwargs):
+        return self.serve_user_property(*args, **kwargs)
+
+    def get_users(self, *args, **kwargs):
+        return self.serve_users(*args, **kwargs)

@@ -214,3 +214,13 @@ class ProblemApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
+#
+# Appended by extend_swagger.py
+#
+
+    def get(self, *args, **kwargs):
+        return self.serve_instance(*args, **kwargs)
+
+    def get_instance(self, *args, **kwargs):
+        return self.serve_instance(*args, **kwargs)

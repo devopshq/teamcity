@@ -1675,3 +1675,16 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
+#
+# Appended by extend_swagger.py
+#
+
+    def get_plugins(self, *args, **kwargs):
+        return self.serve_plugins(*args, **kwargs)
+
+    def get_server_info(self, *args, **kwargs):
+        return self.serve_server_info(*args, **kwargs)
+
+    def get_server_version(self, *args, **kwargs):
+        return self.serve_server_version(*args, **kwargs)

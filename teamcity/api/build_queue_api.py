@@ -1329,3 +1329,16 @@ class BuildQueueApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
+#
+# Appended by extend_swagger.py
+#
+
+    def get_build_field_by_build_only(self, *args, **kwargs):
+        return self.serve_build_field_by_build_only(*args, **kwargs)
+
+    def get_compatible_agents(self, *args, **kwargs):
+        return self.serve_compatible_agents(*args, **kwargs)
+
+    def get_tags(self, *args, **kwargs):
+        return self.serve_tags(*args, **kwargs)
