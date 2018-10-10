@@ -1,4 +1,4 @@
-from teamcity.api import *
+from teamcity.custom.api import *
 from teamcity.api_client import ApiClient
 from teamcity.configuration import Configuration
 
