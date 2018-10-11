@@ -1,39 +1,43 @@
-dohq_teamcity package
-==============
+dohq\_teamcity package
+======================
 
 Subpackages
 -----------
 
 .. toctree::
+    :maxdepth: 4
 
-    dohq_teamcity
+    dohq_teamcity.api
+    dohq_teamcity.custom
+    dohq_teamcity.models
 
 Submodules
 ----------
 
-dohq_teamcity.api module
-------------------
+dohq\_teamcity.api\_client module
+---------------------------------
 
-.. automodule:: dohq_teamcity.api
+.. automodule:: dohq_teamcity.api_client
     :members:
     :undoc-members:
     :show-inheritance:
 
-dohq_teamcity.custom module
------------------
+dohq\_teamcity.configuration module
+-----------------------------------
 
-.. automodule:: dohq_teamcity.custom
+.. automodule:: dohq_teamcity.configuration
     :members:
     :undoc-members:
     :show-inheritance:
 
-dohq_teamcity.models module
------------------
+dohq\_teamcity.rest module
+--------------------------
 
-.. automodule:: dohq_teamcity.models
+.. automodule:: dohq_teamcity.rest
     :members:
     :undoc-members:
     :show-inheritance:
+
 
 Module contents
 ---------------
