@@ -9,11 +9,29 @@ except:
     pass
 
 
+class TeamCityException(Exception):
+    pass
+
+
+class TeamCityCodeException(Exception):
+    pass
+
+
+class TeamCityRuntimeException(Exception):
+    pass
+
+
 class TeamCityObject(object):
     swagger_types = {}
 
     def __init__(self, teamcity=None, *args, **kwargs):
         self.teamcity = teamcity  # type: TeamCity
+
+    @property
+    def locator(self):
+        if self.id is None:
+            raise TeamCityRuntimeException("object does not have attribute id: ''".format(self))
+        return "id:{}".format(self.id)
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -59,18 +77,6 @@ class TeamCityObject(object):
         return not self == other
 
 
-class TeamCityException(Exception):
-    pass
-
-
-class TeamCityCodeException(Exception):
-    pass
-
-
-class TeamCityRuntimeException(Exception):
-    pass
-
-
 class ReadMixin(object):
     def _read(self):
         return None
@@ -79,8 +85,5 @@ class ReadMixin(object):
         load_func = self._read()
         if load_func is None:
             raise TeamCityCodeException("load_function is not defined in class '{}'".format(self.__class__.__name__))
-        if self.id is None:
-            raise TeamCityRuntimeException("object does not have attribute id: ''".format(self))
-
-        self = load_func('id:{}'.format(self.id))
+        self = load_func(self.locator)
         return self
