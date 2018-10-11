@@ -243,7 +243,4 @@ class File(TeamCityObject):
         self._size = size
 
 
-#
-# Appended by extend_swagger.py
-#
 file = File

@@ -60,9 +60,6 @@ class Program:
         self.value = value
 
     def run(self):
-        # swagger generate `File` class, but import `file`. Fix it :)
-        append_to_file('../teamcity/models/file.py', 'file = File')
-
         # import after some fix
         import teamcity.api
 
@@ -88,13 +85,14 @@ class Program:
             get_serve_ = [(name, method) for name, method in methods if name in get_method]
 
             if len(get_serve_) == 1:
-                logging.debug("Found serve\get method '{}' in api '{}'".format(get_serve_, cls_name))
+                # logging.debug("Found serve\get method '{}' in api '{}'".format(get_serve_, cls_name))
                 get_format = """
     def get(self, *args, **kwargs):
         return self.{}(*args, **kwargs)"""
                 append.append(get_format.format(get_serve_[0][0]))
             elif len(get_serve_) == 0:
-                logging.debug("Serve\get method not found in api '{}'".format(cls_name))
+                # logging.debug("Serve\get method not found in api '{}'".format(cls_name))
+                pass
             elif len(get_serve_) > 1:
                 logging.error("Something wrong, get method must be unique")
                 sys.exit(11)
@@ -111,7 +109,9 @@ class Program:
                 append.append(get_serve_format.format(name=name))
 
             filename = inspect.getfile(cls)
-            append_to_file(filename, content=append)
+            # append_to_file(filename, content=append)
+            print("class {}({}):".format(cls_name, cls_name))
+            print('\n'.join(append))
 
         pass
 
