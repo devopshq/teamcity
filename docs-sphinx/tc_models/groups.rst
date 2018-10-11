@@ -12,9 +12,9 @@ Reference
 
   + :class:`teamcity.v4.objects.Group`
   + :class:`teamcity.v4.objects.GroupManager`
-  + :attr:`teamcity.Gitlab.groups`
+  + :attr:`teamcity.TeamCity.groups`
 
-* GitLab API: https://docs.teamcity.com/ce/api/groups.html
+* TeamCity API: https://docs.teamcity.com/ce/api/groups.html
 
 Examples
 --------
@@ -106,7 +106,7 @@ Reference
   + :class:`teamcity.v4.objects.GroupCustomAttributeManager`
   + :attr:`teamcity.v4.objects.Group.customattributes`
 
-* GitLab API: https://docs.teamcity.com/ce/api/custom_attributes.html
+* TeamCity API: https://docs.teamcity.com/ce/api/custom_attributes.html
 
 Examples
 --------
@@ -154,7 +154,7 @@ Reference
   + :class:`teamcity.v4.objects.GroupMemberManager`
   + :attr:`teamcity.v4.objects.Group.members`
 
-* GitLab API: https://docs.teamcity.com/ce/api/groups.html
+* TeamCity API: https://docs.teamcity.com/ce/api/groups.html
 
 
 Examples
@@ -187,7 +187,7 @@ Remove a member from the group::
 LDAP group links
 ================
 
-Add an LDAP group link to an existing GitLab group::
+Add an LDAP group link to an existing TeamCity group::
 
     group.add_ldap_group_link(ldap_group_cn, teamcity.DEVELOPER_ACCESS, 'ldapmain')
 

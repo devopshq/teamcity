@@ -37,7 +37,7 @@ Reference
   + :class:`teamcity.v4.objects.ProjectSnippetDiscussionNoteManager`
   + :attr:`teamcity.v4.objects.ProjectSnippet.notes`
 
-* GitLab API: https://docs.teamcity.com/ce/api/discussions.html
+* TeamCity API: https://docs.teamcity.com/ce/api/discussions.html
 
 Examples
 ========

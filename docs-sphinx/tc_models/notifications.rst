@@ -22,7 +22,7 @@ Reference
 
   + :class:`teamcity.v4.objects.NotificationSettings`
   + :class:`teamcity.v4.objects.NotificationSettingsManager`
-  + :attr:`teamcity.Gitlab.notificationsettings`
+  + :attr:`teamcity.TeamCity.notificationsettings`
   + :class:`teamcity.v4.objects.GroupNotificationSettings`
   + :class:`teamcity.v4.objects.GroupNotificationSettingsManager`
   + :attr:`teamcity.v4.objects.Group.notificationsettings`
@@ -30,7 +30,7 @@ Reference
   + :class:`teamcity.v4.objects.ProjectNotificationSettingsManager`
   + :attr:`teamcity.v4.objects.Project.notificationsettings`
 
-* GitLab API: https://docs.teamcity.com/ce/api/notification_settings.html
+* TeamCity API: https://docs.teamcity.com/ce/api/notification_settings.html
 
 Examples
 --------

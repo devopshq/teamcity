@@ -17,7 +17,7 @@ References
   + :class:`teamcity.v4.objects.ProjectMergeRequestApprovalManager`
   + :attr:`teamcity.v4.objects.ProjectMergeRequest.approvals`
 
-* GitLab API: https://docs.teamcity.com/ee/api/merge_request_approvals.html
+* TeamCity API: https://docs.teamcity.com/ee/api/merge_request_approvals.html
 
 Examples
 --------

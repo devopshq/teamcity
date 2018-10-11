@@ -21,7 +21,7 @@ Reference
   + :class:`teamcity.v4.objects.GroupBoardManager`
   + :attr:`teamcity.v4.objects.Group.boards`
 
-* GitLab API:
+* TeamCity API:
 
   + https://docs.teamcity.com/ce/api/boards.html
   + https://docs.teamcity.com/ce/api/group_boards.html
@@ -42,7 +42,7 @@ Create a board::
 
     board = project_or_group.boards.create({'name': 'new-board'})
 
-.. note:: Board creation is not supported in the GitLab CE edition.
+.. note:: Board creation is not supported in the TeamCity CE edition.
 
 Delete a board::
 
@@ -50,7 +50,7 @@ Delete a board::
     # or
     project_or_group.boards.delete(board_id)
 
-.. note:: Board deletion is not supported in the GitLab CE edition.
+.. note:: Board deletion is not supported in the TeamCity CE edition.
 
 Board lists
 ===========
@@ -70,7 +70,7 @@ Reference
   + :class:`teamcity.v4.objects.GroupBoardListManager`
   + :attr:`teamcity.v4.objects.GroupBoard.lists`
 
-* GitLab API:
+* TeamCity API:
 
   + https://docs.teamcity.com/ce/api/boards.html
   + https://docs.teamcity.com/ce/api/group_boards.html

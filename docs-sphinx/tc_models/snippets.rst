@@ -9,9 +9,9 @@ Reference
 
   + :class:`teamcity.v4.objects.Snippet`
   + :class:`teamcity.v4.objects.SnipptManager`
-  + :attr:`teamcity.Gitlab.snippets`
+  + :attr:`teamcity.TeamCity.snippets`
 
-* GitLab API: https://docs.teamcity.com/ce/api/snippets.html
+* TeamCity API: https://docs.teamcity.com/ce/api/snippets.html
 
 Examples
 ========

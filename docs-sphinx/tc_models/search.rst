@@ -11,11 +11,11 @@ Reference
 
 * v4 API:
 
-  + :attr:`teamcity.Gitlab.search`
+  + :attr:`teamcity.TeamCity.search`
   + :attr:`teamcity.v4.objects.Group.search`
   + :attr:`teamcity.v4.objects.Project.search`
 
-* GitLab API: https://docs.teamcity.com/ce/api/search.html
+* TeamCity API: https://docs.teamcity.com/ce/api/search.html
 
 Examples
 --------

@@ -9,9 +9,9 @@ Reference
 
   + :class:`teamcity.v4.objects.ApplicationSettings`
   + :class:`teamcity.v4.objects.ApplicationSettingsManager`
-  + :attr:`teamcity.Gitlab.settings`
+  + :attr:`teamcity.TeamCity.settings`
 
-* GitLab API: https://docs.teamcity.com/ce/api/settings.html
+* TeamCity API: https://docs.teamcity.com/ce/api/settings.html
 
 Examples
 --------

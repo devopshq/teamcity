@@ -11,7 +11,7 @@ Reference
   + :class:`teamcity.v4.objects.ProjectEnvironmentManager`
   + :attr:`teamcity.v4.objects.Project.environments`
 
-* GitLab API: https://docs.teamcity.com/ce/api/environments.html
+* TeamCity API: https://docs.teamcity.com/ce/api/environments.html
 
 Examples
 --------

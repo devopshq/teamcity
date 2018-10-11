@@ -25,12 +25,12 @@ Reference
   + :class:`teamcity.v4.objects.MergeRequestManager`
   + :attr:`teamcity.Gtilab.mergerequests`
 
-* GitLab API: https://docs.teamcity.com/ce/api/merge_requests.html
+* TeamCity API: https://docs.teamcity.com/ce/api/merge_requests.html
 
 Examples
 --------
 
-List the merge requests available on the GitLab server::
+List the merge requests available on the TeamCity server::
 
     mrs = gl.mergerequests.list()
 
@@ -63,7 +63,7 @@ Reference
   + :class:`teamcity.v4.objects.ProjectMergeRequestManager`
   + :attr:`teamcity.v4.objects.Project.mergerequests`
 
-* GitLab API: https://docs.teamcity.com/ce/api/merge_requests.html
+* TeamCity API: https://docs.teamcity.com/ce/api/merge_requests.html
 
 Examples
 --------
@@ -156,7 +156,7 @@ Get time tracking stats::
 
     merge request.time_stats()
 
-On recent versions of Gitlab the time stats are also returned as a merge
+On recent versions of TeamCity the time stats are also returned as a merge
 request object attribute::
 
     mr = project.mergerequests.get(id)

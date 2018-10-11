@@ -15,7 +15,7 @@ Reference
   + :class:`teamcity.v4.objects.GroupMilestoneManager`
   + :attr:`teamcity.v4.objects.Group.milestones`
 
-* GitLab API:
+* TeamCity API:
 
   + https://docs.teamcity.com/ce/api/milestones.html
   + https://docs.teamcity.com/ce/api/group_milestones.html

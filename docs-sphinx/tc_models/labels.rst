@@ -11,7 +11,7 @@ Reference
   + :class:`teamcity.v4.objects.ProjectLabelManager`
   + :attr:`teamcity.v4.objects.Project.labels`
 
-* GitLab API: https://docs.teamcity.com/ce/api/labels.html
+* TeamCity API: https://docs.teamcity.com/ce/api/labels.html
 
 Examples
 --------

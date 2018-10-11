@@ -21,7 +21,7 @@ Reference
   + :class:`teamcity.v4.objects.ProjectSnippetNoteAwardEmojiManager`
 
 
-* GitLab API: https://docs.teamcity.com/ce/api/award_emoji.html
+* TeamCity API: https://docs.teamcity.com/ce/api/award_emoji.html
 
 Examples
 --------

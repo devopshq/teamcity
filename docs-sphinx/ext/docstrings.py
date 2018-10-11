@@ -32,13 +32,13 @@ def setup(app):
 
 def _process_docstring(app, what, name, obj, options, lines):
     result_lines = lines
-    docstring = GitlabDocstring(result_lines, app.config, app, what, name, obj,
+    docstring = TeamCityDocstring(result_lines, app.config, app, what, name, obj,
                                 options)
     result_lines = docstring.lines()
     lines[:] = result_lines[:]
 
 
-class GitlabDocstring(GoogleDocstring):
+class TeamCityDocstring(GoogleDocstring):
     def _build_doc(self, tmpl, **kwargs):
         env = jinja2.Environment(loader=jinja2.FileSystemLoader(
             os.path.dirname(__file__)), trim_blocks=False)
@@ -50,7 +50,7 @@ class GitlabDocstring(GoogleDocstring):
 
     def __init__(self, docstring, config=None, app=None, what='', name='',
                  obj=None, options=None):
-        super(GitlabDocstring, self).__init__(docstring, config, app, what,
+        super(TeamCityDocstring, self).__init__(docstring, config, app, what,
                                               name, obj, options)
 
         if name.startswith('teamcity.v4.objects') and name.endswith('Manager'):

@@ -2,7 +2,7 @@
 Users and current user
 ######################
 
-The Gitlab API exposes user-related method that can be manipulated by admins
+The TeamCity API exposes user-related method that can be manipulated by admins
 only.
 
 The currently logged-in user is also exposed.
@@ -17,9 +17,9 @@ References
 
   + :class:`teamcity.v4.objects.User`
   + :class:`teamcity.v4.objects.UserManager`
-  + :attr:`teamcity.Gitlab.users`
+  + :attr:`teamcity.TeamCity.users`
 
-* GitLab API: https://docs.teamcity.com/ce/api/users.html
+* TeamCity API: https://docs.teamcity.com/ce/api/users.html
 
 Examples
 --------
@@ -87,7 +87,7 @@ References
   + :class:`teamcity.v4.objects.UserCustomAttributeManager`
   + :attr:`teamcity.v4.objects.User.customattributes`
 
-* GitLab API: https://docs.teamcity.com/ce/api/custom_attributes.html
+* TeamCity API: https://docs.teamcity.com/ce/api/custom_attributes.html
 
 Examples
 --------
@@ -127,7 +127,7 @@ References
   + :class:`teamcity.v4.objects.UserImpersonationTokenManager`
   + :attr:`teamcity.v4.objects.User.impersonationtokens`
 
-* GitLab API: https://docs.teamcity.com/ce/api/users.html#get-all-impersonation-tokens-of-a-user
+* TeamCity API: https://docs.teamcity.com/ce/api/users.html#get-all-impersonation-tokens-of-a-user
 
 List impersonation tokens for a user::
 
@@ -142,7 +142,7 @@ Create and use an impersonation token for a user::
 
     i_t = user.impersonationtokens.create({'name': 'token1', 'scopes': ['api']})
     # use the token to create a new teamcity connection
-    user_gl = teamcity.Gitlab(teamcity_url, private_token=i_t.token)
+    user_gl = teamcity.TeamCity(teamcity_url, private_token=i_t.token)
 
 Revoke (delete) an impersonation token for a user::
 
@@ -158,9 +158,9 @@ References
 
   + :class:`teamcity.v4.objects.CurrentUser`
   + :class:`teamcity.v4.objects.CurrentUserManager`
-  + :attr:`teamcity.Gitlab.user`
+  + :attr:`teamcity.TeamCity.user`
 
-* GitLab API: https://docs.teamcity.com/ce/api/users.html
+* TeamCity API: https://docs.teamcity.com/ce/api/users.html
 
 Examples
 --------
@@ -188,7 +188,7 @@ are admin.
   + :class:`teamcity.v4.objects.UserGPGKeyManager`
   + :attr:`teamcity.v4.objects.User.gpgkeys`
 
-* GitLab API: https://docs.teamcity.com/ce/api/users.html#list-all-gpg-keys
+* TeamCity API: https://docs.teamcity.com/ce/api/users.html#list-all-gpg-keys
 
 Exemples
 --------
@@ -230,7 +230,7 @@ are admin.
   + :class:`teamcity.v4.objects.UserKeyManager`
   + :attr:`teamcity.v4.objects.User.keys`
 
-* GitLab API: https://docs.teamcity.com/ce/api/users.html#list-ssh-keys
+* TeamCity API: https://docs.teamcity.com/ce/api/users.html#list-ssh-keys
 
 Exemples
 --------
@@ -268,7 +268,7 @@ are admin.
   + :class:`teamcity.v4.objects.UserEmailManager`
   + :attr:`teamcity.v4.objects.User.emails`
 
-* GitLab API: https://docs.teamcity.com/ce/api/users.html#list-emails
+* TeamCity API: https://docs.teamcity.com/ce/api/users.html#list-emails
 
 Exemples
 --------
@@ -303,9 +303,9 @@ References
 
   + :class:`teamcity.v4.objects.UserActivities`
   + :class:`teamcity.v4.objects.UserActivitiesManager`
-  + :attr:`teamcity.Gitlab.user_activities`
+  + :attr:`teamcity.TeamCity.user_activities`
 
-* GitLab API: https://docs.teamcity.com/ce/api/users.html#get-user-activities-admin-only
+* TeamCity API: https://docs.teamcity.com/ce/api/users.html#get-user-activities-admin-only
 
 Examples
 --------

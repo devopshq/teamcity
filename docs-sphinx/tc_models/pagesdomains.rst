@@ -12,9 +12,9 @@ References
 
   + :class:`teamcity.v4.objects.PagesDomain`
   + :class:`teamcity.v4.objects.PagesDomainManager`
-  + :attr:`teamcity.Gitlab.pagesdomains`
+  + :attr:`teamcity.TeamCity.pagesdomains`
 
-* GitLab API: https://docs.teamcity.com/ce/api/pages_domains.html#list-all-pages-domains
+* TeamCity API: https://docs.teamcity.com/ce/api/pages_domains.html#list-all-pages-domains
 
 Examples
 --------
@@ -35,7 +35,7 @@ References
   + :class:`teamcity.v4.objects.ProjectPagesDomainManager`
   + :attr:`teamcity.v4.objects.Project.pagesdomains`
 
-* GitLab API: https://docs.teamcity.com/ce/api/pages_domains.html#list-pages-domains
+* TeamCity API: https://docs.teamcity.com/ce/api/pages_domains.html#list-pages-domains
 
 Examples
 --------

@@ -3,7 +3,7 @@ Runners
 #######
 
 Runners are external processes used to run CI jobs. They are deployed by the
-administrator and registered to the GitLab instance.
+administrator and registered to the TeamCity instance.
 
 Shared runners are available for all projects. Specific runners are enabled for
 a list of projects.
@@ -18,9 +18,9 @@ Reference
 
   + :class:`teamcity.v4.objects.Runner`
   + :class:`teamcity.v4.objects.RunnerManager`
-  + :attr:`teamcity.Gitlab.runners`
+  + :attr:`teamcity.TeamCity.runners`
 
-* GitLab API: https://docs.teamcity.com/ce/api/runners.html
+* TeamCity API: https://docs.teamcity.com/ce/api/runners.html
 
 Examples
 --------
@@ -75,7 +75,7 @@ Verify a registered runner token::
     try:
         gl.runners.verify(runner_token)
         print("Valid token")
-    except GitlabVerifyError:
+    except TeamCityVerifyError:
         print("Invalid token")
 
 Project runners
@@ -90,7 +90,7 @@ Reference
   + :class:`teamcity.v4.objects.ProjectRunnerManager`
   + :attr:`teamcity.v4.objects.Project.runners`
 
-* GitLab API: https://docs.teamcity.com/ce/api/runners.html
+* TeamCity API: https://docs.teamcity.com/ce/api/runners.html
 
 Examples
 --------
@@ -119,7 +119,7 @@ Reference
   + :class:`teamcity.v4.objects.RunnerJobManager`
   + :attr:`teamcity.v4.objects.Runner.jobs`
 
-* GitLab API: https://docs.teamcity.com/ce/api/runners.html
+* TeamCity API: https://docs.teamcity.com/ce/api/runners.html
 
 Examples
 --------

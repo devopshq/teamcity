@@ -30,7 +30,7 @@ pip install git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git
 
 Then import the package:
 ```python
-import teamcity 
+import dohq_teamcity 
 ```
 
 ### Setuptools
@@ -44,7 +44,7 @@ python setup.py install --user
 
 Then import the package:
 ```python
-import teamcity
+import dohq_teamcity
 ```
 
 ## Getting Started
@@ -54,21 +54,20 @@ Please follow the [installation procedure](#installation--usage) and then run th
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
+# create an instance of the API class
+api_instance = dohq_teamcity.AgentApi(dohq_teamcity.ApiClient(configuration))
+agent_locator = 'agent_locator_example' # str | 
+
+try:
+    api_instance.delete_agent(agent_locator)
+except ApiException as e:
+    print("Exception when calling AgentApi->delete_agent: %s\n" % e)
+
 ```
-
-## Documentation for API Endpoints
-
-All URIs are relative to *https://teamcity.example.com*
-
-Class | Method | HTTP request | Description
------------- | ------------- | ------------- | -------------
-
-
-## Documentation For Models
 
 
 

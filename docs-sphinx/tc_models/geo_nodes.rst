@@ -9,9 +9,9 @@ Reference
 
   + :class:`teamcity.v4.objects.GeoNode`
   + :class:`teamcity.v4.objects.GeoNodeManager`
-  + :attr:`teamcity.Gitlab.geonodes`
+  + :attr:`teamcity.TeamCity.geonodes`
 
-* GitLab API: https://docs.teamcity.com/ee/api/geo_nodes.html (EE feature)
+* TeamCity API: https://docs.teamcity.com/ee/api/geo_nodes.html (EE feature)
 
 Examples
 --------

@@ -11,7 +11,7 @@ Reference
   + :class:`teamcity.v4.objects.ProjectDeploymentManager`
   + :attr:`teamcity.v4.objects.Project.deployments`
 
-* GitLab API: https://docs.teamcity.com/ce/api/deployments.html
+* TeamCity API: https://docs.teamcity.com/ce/api/deployments.html
 
 Examples
 --------

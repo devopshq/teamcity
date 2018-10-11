@@ -6,7 +6,7 @@ You can request templates for different type of files:
 
 * License files
 * .gitignore files
-* GitLab CI configuration files
+* TeamCity CI configuration files
 * Dockerfiles
 
 License templates
@@ -19,9 +19,9 @@ Reference
 
   + :class:`teamcity.v4.objects.License`
   + :class:`teamcity.v4.objects.LicenseManager`
-  + :attr:`teamcity.Gitlab.licenses`
+  + :attr:`teamcity.TeamCity.licenses`
 
-* GitLab API: https://docs.teamcity.com/ce/api/templates/licenses.html
+* TeamCity API: https://docs.teamcity.com/ce/api/templates/licenses.html
 
 Examples
 --------
@@ -45,9 +45,9 @@ Reference
 
   + :class:`teamcity.v4.objects.Gitignore`
   + :class:`teamcity.v4.objects.GitignoreManager`
-  + :attr:`teamcity.Gitlab.gitignores`
+  + :attr:`teamcity.TeamCity.gitignores`
 
-* GitLab API: https://docs.teamcity.com/ce/api/templates/gitignores.html
+* TeamCity API: https://docs.teamcity.com/ce/api/templates/gitignores.html
 
 Examples
 --------
@@ -61,7 +61,7 @@ Get a gitignore template::
     gitignore = gl.gitignores.get('Python')
     print(gitignore.content)
 
-GitLab CI templates
+TeamCity CI templates
 ===================
 
 Reference
@@ -69,20 +69,20 @@ Reference
 
 * v4 API:
 
-  + :class:`teamcity.v4.objects.Gitlabciyml`
-  + :class:`teamcity.v4.objects.GitlabciymlManager`
-  + :attr:`teamcity.Gitlab.teamcityciymls`
+  + :class:`teamcity.v4.objects.TeamCityciyml`
+  + :class:`teamcity.v4.objects.TeamCityciymlManager`
+  + :attr:`teamcity.TeamCity.teamcityciymls`
 
-* GitLab API: https://docs.teamcity.com/ce/api/templates/teamcity_ci_ymls.html
+* TeamCity API: https://docs.teamcity.com/ce/api/templates/teamcity_ci_ymls.html
 
 Examples
 --------
 
-List known GitLab CI templates::
+List known TeamCity CI templates::
 
     teamcityciymls = gl.teamcityciymls.list()
 
-Get a GitLab CI template::
+Get a TeamCity CI template::
 
     teamcityciyml = gl.teamcityciymls.get('Pelican')
     print(teamcityciyml.content)
@@ -97,9 +97,9 @@ Reference
 
   + :class:`teamcity.v4.objects.Dockerfile`
   + :class:`teamcity.v4.objects.DockerfileManager`
-  + :attr:`teamcity.Gitlab.teamcityciymls`
+  + :attr:`teamcity.TeamCity.teamcityciymls`
 
-* GitLab API: Not documented.
+* TeamCity API: Not documented.
 
 Examples
 --------

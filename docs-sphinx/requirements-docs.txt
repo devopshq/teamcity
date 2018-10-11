@@ -2,4 +2,4 @@
 Sphinx
 sphinx_rtd_theme
 #python-docs-theme
-#m2r
+recommonmark

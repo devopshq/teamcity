@@ -25,7 +25,7 @@ References
   + :class:`teamcity.v4.objects.GroupAccessRequestManager`
   + :attr:`teamcity.v4.objects.Group.accessrequests`
 
-* GitLab API: https://docs.teamcity.com/ce/api/access_requests.html
+* TeamCity API: https://docs.teamcity.com/ce/api/access_requests.html
 
 Examples
 --------

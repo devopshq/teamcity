@@ -14,9 +14,9 @@ Reference
 
   + :class:`teamcity.v4.objects.Issue`
   + :class:`teamcity.v4.objects.IssueManager`
-  + :attr:`teamcity.Gitlab.issues`
+  + :attr:`teamcity.TeamCity.issues`
 
-* GitLab API: https://docs.teamcity.com/ce/api/issues.html
+* TeamCity API: https://docs.teamcity.com/ce/api/issues.html
 
 Examples
 --------
@@ -55,7 +55,7 @@ Reference
   + :class:`teamcity.v4.objects.GroupIssueManager`
   + :attr:`teamcity.v4.objects.Group.issues`
 
-* GitLab API: https://docs.teamcity.com/ce/api/issues.html
+* TeamCity API: https://docs.teamcity.com/ce/api/issues.html
 
 Examples
 --------
@@ -91,7 +91,7 @@ Reference
   + :class:`teamcity.v4.objects.ProjectIssueManager`
   + :attr:`teamcity.v4.objects.Project.issues`
 
-* GitLab API: https://docs.teamcity.com/ce/api/issues.html
+* TeamCity API: https://docs.teamcity.com/ce/api/issues.html
 
 Examples
 --------
@@ -150,7 +150,7 @@ Get time tracking stats::
 
     issue.time_stats()
 
-On recent versions of Gitlab the time stats are also returned as an issue
+On recent versions of TeamCity the time stats are also returned as an issue
 object attribute::
 
     issue = project.issue.get(iid)
@@ -196,7 +196,7 @@ Reference
   + :class:`teamcity.v4.objects.ProjectIssueLinkManager`
   + :attr:`teamcity.v4.objects.ProjectIssue.links`
 
-* GitLab API: https://docs.teamcity.com/ee/api/issue_links.html (EE feature)
+* TeamCity API: https://docs.teamcity.com/ee/api/issue_links.html (EE feature)
 
 Examples
 --------

@@ -9,9 +9,9 @@ Reference
 
   + :class:`~teamcity.objects.Todo`
   + :class:`~teamcity.objects.TodoManager`
-  + :attr:`teamcity.Gitlab.todos`
+  + :attr:`teamcity.TeamCity.todos`
 
-* GitLab API: https://docs.teamcity.com/ce/api/todos.html
+* TeamCity API: https://docs.teamcity.com/ce/api/todos.html
 
 Examples
 --------

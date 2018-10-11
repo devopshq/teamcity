@@ -30,7 +30,7 @@ Reference
   + :class:`teamcity.v4.objects.ProjectSnippetNoteManager`
   + :attr:`teamcity.v4.objects.ProjectSnippet.notes`
 
-* GitLab API: https://docs.teamcity.com/ce/api/notes.html
+* TeamCity API: https://docs.teamcity.com/ce/api/notes.html
 
 Examples
 --------

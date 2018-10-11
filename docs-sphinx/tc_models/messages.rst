@@ -13,9 +13,9 @@ References
 
   + :class:`teamcity.v4.objects.BroadcastMessage`
   + :class:`teamcity.v4.objects.BroadcastMessageManager`
-  + :attr:`teamcity.Gitlab.broadcastmessages`
+  + :attr:`teamcity.TeamCity.broadcastmessages`
 
-* GitLab API: https://docs.teamcity.com/ce/api/broadcast_messages.html
+* TeamCity API: https://docs.teamcity.com/ce/api/broadcast_messages.html
 
 Examples
 --------

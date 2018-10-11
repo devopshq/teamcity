@@ -9,9 +9,9 @@ Reference
 
   + :class:`teamcity.v4.objects.Feature`
   + :class:`teamcity.v4.objects.FeatureManager`
-  + :attr:`teamcity.Gitlab.features`
+  + :attr:`teamcity.TeamCity.features`
 
-* GitLab API: https://docs.teamcity.com/ce/api/features.html
+* TeamCity API: https://docs.teamcity.com/ce/api/features.html
 
 Examples
 --------

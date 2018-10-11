@@ -28,4 +28,4 @@ setup.py
 teamcity/__init__.py
 teamcity/api_client.py
 teamcity/custom/*
-README.md
+#README.md

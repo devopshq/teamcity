@@ -9,7 +9,7 @@ Reference
 
   + :class:`teamcity.v4.objects.Event`
   + :class:`teamcity.v4.objects.EventManager`
-  + :attr:`teamcity.Gitlab.events`
+  + :attr:`teamcity.TeamCity.events`
   + :class:`teamcity.v4.objects.ProjectEvent`
   + :class:`teamcity.v4.objects.ProjectEventManager`
   + :attr:`teamcity.v4.objects.Project.events`
@@ -17,12 +17,12 @@ Reference
   + :class:`teamcity.v4.objects.UserEventManager`
   + :attr:`teamcity.v4.objects.User.events`
 
-* GitLab API: https://docs.teamcity.com/ce/api/events.html
+* TeamCity API: https://docs.teamcity.com/ce/api/events.html
 
 Examples
 --------
 
-You can list events for an entire Gitlab instance (admin), users and projects.
+You can list events for an entire TeamCity instance (admin), users and projects.
 You can filter you events you want to retrieve using the ``action`` and
 ``target_type`` attributes. The possible values for these attributes are
 available on `the teamcity documentation

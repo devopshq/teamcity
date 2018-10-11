@@ -12,9 +12,9 @@ Reference
 
   + :class:`teamcity.v4.objects.DeployKey`
   + :class:`teamcity.v4.objects.DeployKeyManager`
-  + :attr:`teamcity.Gitlab.deploykeys`
+  + :attr:`teamcity.TeamCity.deploykeys`
 
-* GitLab API: https://docs.teamcity.com/ce/api/deploy_keys.html
+* TeamCity API: https://docs.teamcity.com/ce/api/deploy_keys.html
 
 Examples
 --------
@@ -37,7 +37,7 @@ Reference
   + :class:`teamcity.v4.objects.ProjectKeyManager`
   + :attr:`teamcity.v4.objects.Project.keys`
 
-* GitLab API: https://docs.teamcity.com/ce/api/deploy_keys.html
+* TeamCity API: https://docs.teamcity.com/ce/api/deploy_keys.html
 
 Examples
 --------

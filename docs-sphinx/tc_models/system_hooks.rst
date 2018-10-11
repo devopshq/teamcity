@@ -9,9 +9,9 @@ Reference
 
   + :class:`teamcity.v4.objects.Hook`
   + :class:`teamcity.v4.objects.HookManager`
-  + :attr:`teamcity.Gitlab.hooks`
+  + :attr:`teamcity.TeamCity.hooks`
 
-* GitLab API: https://docs.teamcity.com/ce/api/system_hooks.html
+* TeamCity API: https://docs.teamcity.com/ce/api/system_hooks.html
 
 Examples
 --------

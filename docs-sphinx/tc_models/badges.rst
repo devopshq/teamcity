@@ -16,7 +16,7 @@ Reference
   + :class:`teamcity.v4.objects.ProjectBadgeManager`
   + :attr:`teamcity.v4.objects.Project.badges`
 
-* GitLab API:
+* TeamCity API:
 
   + https://docs.teamcity.com/ce/api/group_badges.html
   + https://docs.teamcity.com/ce/api/project_badges.html

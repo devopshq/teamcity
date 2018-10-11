@@ -12,7 +12,7 @@ References
   + :class:`teamcity.v4.objects.ProjectWikiManager`
   + :attr:`teamcity.v4.objects.Project.wikis`
 
-* GitLab API: https://docs.teamcity.com/ce/api/wikis.html
+* TeamCity API: https://docs.teamcity.com/ce/api/wikis.html
 
 Examples
 --------

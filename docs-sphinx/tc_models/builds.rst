@@ -5,7 +5,7 @@ Pipelines and Jobs
 Project pipelines
 =================
 
-A pipeline is a group of jobs executed by GitLab CI.
+A pipeline is a group of jobs executed by TeamCity CI.
 
 Reference
 ---------
@@ -16,7 +16,7 @@ Reference
   + :class:`teamcity.v4.objects.ProjectPipelineManager`
   + :attr:`teamcity.v4.objects.Project.pipelines`
 
-* GitLab API: https://docs.teamcity.com/ce/api/pipelines.html
+* TeamCity API: https://docs.teamcity.com/ce/api/pipelines.html
 
 Examples
 --------
@@ -44,7 +44,7 @@ Cancel builds in a pipeline::
 Triggers
 ========
 
-Triggers provide a way to interact with the GitLab CI. Using a trigger a user
+Triggers provide a way to interact with the TeamCity CI. Using a trigger a user
 or an application can run a new build/job for a specific commit.
 
 Reference
@@ -56,7 +56,7 @@ Reference
   + :class:`teamcity.v4.objects.ProjectTriggerManager`
   + :attr:`teamcity.v4.objects.Project.triggers`
 
-* GitLab API: https://docs.teamcity.com/ce/api/pipeline_triggers.html
+* TeamCity API: https://docs.teamcity.com/ce/api/pipeline_triggers.html
 
 Examples
 --------
@@ -112,7 +112,7 @@ Reference
   + :class:`teamcity.v4.objects.ProjectPipelineScheduleVariableManager`
   + :attr:`teamcity.v4.objects.Project.pipelineschedules`
 
-* GitLab API: https://docs.teamcity.com/ce/api/pipeline_schedules.html
+* TeamCity API: https://docs.teamcity.com/ce/api/pipeline_schedules.html
 
 Examples
 --------
@@ -172,7 +172,7 @@ Reference
   + :class:`teamcity.v4.objects.GroupVariableManager`
   + :attr:`teamcity.v4.objects.Group.variables`
 
-* GitLab API
+* TeamCity API
 
   + https://docs.teamcity.com/ce/api/project_level_variables.html
   + https://docs.teamcity.com/ce/api/group_level_variables.html
@@ -223,7 +223,7 @@ Reference
   + :class:`teamcity.v4.objects.ProjectJobManager`
   + :attr:`teamcity.v4.objects.Project.jobs`
 
-* GitLab API: https://docs.teamcity.com/ce/api/jobs.html
+* TeamCity API: https://docs.teamcity.com/ce/api/jobs.html
 
 Examples
 --------

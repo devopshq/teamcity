@@ -8,9 +8,9 @@ Reference
 * v4 API:
 
   + :class:`teamcity.v4.objects.SidekiqManager`
-  + :attr:`teamcity.Gitlab.sidekiq`
+  + :attr:`teamcity.TeamCity.sidekiq`
 
-* GitLab API: https://docs.teamcity.com/ce/api/sidekiq_metrics.html
+* TeamCity API: https://docs.teamcity.com/ce/api/sidekiq_metrics.html
 
 Examples
 --------

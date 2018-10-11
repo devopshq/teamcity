@@ -1,15 +1,15 @@
 .. _switching_to_v4:
 
 ##########################
-Switching to GitLab API v4
+Switching to TeamCity API v4
 ##########################
 
-GitLab provides a new API version (v4) since its 9.0 release. ``dohq-teamcity``
+TeamCity provides a new API version (v4) since its 9.0 release. ``dohq-teamcity``
 provides support for this new version, but the python API has been modified to
 solve some problems with the existing one.
 
-GitLab will stop supporting the v3 API soon, and you should consider switching
-to v4 if you use a recent version of GitLab (>= 9.0), or if you use
+TeamCity will stop supporting the v3 API soon, and you should consider switching
+to v4 if you use a recent version of TeamCity (>= 9.0), or if you use
 https://teamcity.com.
 
 
@@ -17,11 +17,11 @@ Using the v4 API
 ================
 
 dohq-teamcity uses the v4 API by default since the 1.3.0 release. To use the
-old v3 API, explicitly define ``api_version`` in the ``Gitlab`` constructor:
+old v3 API, explicitly define ``api_version`` in the ``TeamCity`` constructor:
 
 .. code-block:: python
 
-   gl = teamcity.Gitlab(..., api_version=3)
+   gl = teamcity.TeamCity(..., api_version=3)
 
 
 If you use the configuration file, also explicitly define the version:
@@ -36,13 +36,13 @@ If you use the configuration file, also explicitly define the version:
 Changes between v3 and v4 API
 =============================
 
-For a list of GitLab (upstream) API changes, see
+For a list of TeamCity (upstream) API changes, see
 https://docs.teamcity.com/ce/api/v3_to_v4.html.
 
 The ``dohq-teamcity`` API reflects these changes. But also consider the
 following important changes in the python API:
 
-* managers and objects don't inherit from ``GitlabObject`` and ``BaseManager``
+* managers and objects don't inherit from ``TeamCityObject`` and ``BaseManager``
   anymore. They inherit from :class:`~teamcity.base.RESTManager` and
   :class:`~teamcity.base.RESTObject`.
 
@@ -52,14 +52,14 @@ following important changes in the python API:
 
   .. code-block:: python
 
-     gl = teamcity.Gitlab(...)
+     gl = teamcity.TeamCity(...)
      p = Project(gl, project_id)
 
   Should be replaced with:
 
   .. code-block:: python
 
-     gl = teamcity.Gitlab(...)
+     gl = teamcity.TeamCity(...)
      p = gl.projects.get(project_id)
 
 * Listing methods (``manager.list()`` for instance) can now return generators
@@ -95,7 +95,7 @@ following important changes in the python API:
 
   This will make only one API call, instead of two if ``lazy`` is not used.
 
-* The following :class:`~teamcity.Gitlab` methods should not be used anymore for
+* The following :class:`~teamcity.TeamCity` methods should not be used anymore for
   v4:
 
   + ``list()``
@@ -104,12 +104,12 @@ following important changes in the python API:
   + ``update()``
   + ``delete()``
 
-* If you need to perform HTTP requests to the GitLab server (which you
-  shouldn't), you can use the following :class:`~teamcity.Gitlab` methods:
+* If you need to perform HTTP requests to the TeamCity server (which you
+  shouldn't), you can use the following :class:`~teamcity.TeamCity` methods:
 
-  + :attr:`~teamcity.Gitlab.http_request`
-  + :attr:`~teamcity.Gitlab.http_get`
-  + :attr:`~teamcity.Gitlab.http_list`
-  + :attr:`~teamcity.Gitlab.http_post`
-  + :attr:`~teamcity.Gitlab.http_put`
-  + :attr:`~teamcity.Gitlab.http_delete`
+  + :attr:`~teamcity.TeamCity.http_request`
+  + :attr:`~teamcity.TeamCity.http_get`
+  + :attr:`~teamcity.TeamCity.http_list`
+  + :attr:`~teamcity.TeamCity.http_post`
+  + :attr:`~teamcity.TeamCity.http_put`
+  + :attr:`~teamcity.TeamCity.http_delete`

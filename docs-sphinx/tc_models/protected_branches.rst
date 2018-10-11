@@ -14,7 +14,7 @@ References
   + :class:`teamcity.v4.objects.ProjectProtectedBranchManager`
   + :attr:`teamcity.v4.objects.Project.protectedbranches`
 
-* GitLab API: https://docs.teamcity.com/ce/api/protected_branches.html#protected-branches-api
+* TeamCity API: https://docs.teamcity.com/ce/api/protected_branches.html#protected-branches-api
 
 Examples
 --------

@@ -87,7 +87,7 @@ Reference
   + :class:`teamcity.v4.objects.ProjectCommitCommentManager`
   + :attr:`teamcity.v4.objects.ProjectCommit.comments`
 
-* GitLab API: https://docs.teamcity.com/ce/api/commits.html
+* TeamCity API: https://docs.teamcity.com/ce/api/commits.html
 
 Examples
 --------
@@ -118,7 +118,7 @@ Reference
   + :class:`teamcity.v4.objects.ProjectCommitStatusManager`
   + :attr:`teamcity.v4.objects.ProjectCommit.statuses`
 
-* GitLab API: https://docs.teamcity.com/ce/api/commits.html
+* TeamCity API: https://docs.teamcity.com/ce/api/commits.html
 
 Examples
 --------

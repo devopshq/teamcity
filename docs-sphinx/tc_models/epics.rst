@@ -12,9 +12,9 @@ Reference
 
   + :class:`teamcity.v4.objects.GroupEpic`
   + :class:`teamcity.v4.objects.GroupEpicManager`
-  + :attr:`teamcity.Gitlab.Group.epics`
+  + :attr:`teamcity.TeamCity.Group.epics`
 
-* GitLab API: https://docs.teamcity.com/ee/api/epics.html (EE feature)
+* TeamCity API: https://docs.teamcity.com/ee/api/epics.html (EE feature)
 
 Examples
 --------
@@ -51,9 +51,9 @@ Reference
 
   + :class:`teamcity.v4.objects.GroupEpicIssue`
   + :class:`teamcity.v4.objects.GroupEpicIssueManager`
-  + :attr:`teamcity.Gitlab.GroupEpic.issues`
+  + :attr:`teamcity.TeamCity.GroupEpic.issues`
 
-* GitLab API: https://docs.teamcity.com/ee/api/epic_issues.html (EE feature)
+* TeamCity API: https://docs.teamcity.com/ee/api/epic_issues.html (EE feature)
 
 Examples
 --------
