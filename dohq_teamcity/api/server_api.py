@@ -12,6 +12,7 @@
 
 
 from __future__ import absolute_import
+from dohq_teamcity.custom.base_model import TeamCityObject
 
 import re  # noqa: F401
 
@@ -546,7 +547,10 @@ class ServerApi(object):
 
         path_params = {}
         if 'license_key' in params:
-            path_params['licenseKey'] = params['license_key']  # noqa: E501
+            if isinstance(params['license_key'], TeamCityObject):
+                path_params['licenseKey'] = params['license_key'].locator_id
+            else:
+                path_params['licenseKey'] = params['license_key']  # noqa: E501
 
         query_params = []
 
@@ -686,9 +690,15 @@ class ServerApi(object):
 
         path_params = {}
         if 'path' in params:
-            path_params['path'] = params['path']  # noqa: E501
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
         if 'area_id' in params:
-            path_params['areaId'] = params['area_id']  # noqa: E501
+            if isinstance(params['area_id'], TeamCityObject):
+                path_params['areaId'] = params['area_id'].locator_id
+            else:
+                path_params['areaId'] = params['area_id']  # noqa: E501
 
         query_params = []
         if 'base_path' in params:
@@ -771,9 +781,15 @@ class ServerApi(object):
 
         path_params = {}
         if 'path' in params:
-            path_params['path'] = params['path']  # noqa: E501
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
         if 'area_id' in params:
-            path_params['areaId'] = params['area_id']  # noqa: E501
+            if isinstance(params['area_id'], TeamCityObject):
+                path_params['areaId'] = params['area_id'].locator_id
+            else:
+                path_params['areaId'] = params['area_id']  # noqa: E501
 
         query_params = []
         if 'base_path' in params:
@@ -853,9 +869,15 @@ class ServerApi(object):
 
         path_params = {}
         if 'path' in params:
-            path_params['path'] = params['path']  # noqa: E501
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
         if 'area_id' in params:
-            path_params['areaId'] = params['area_id']  # noqa: E501
+            if isinstance(params['area_id'], TeamCityObject):
+                path_params['areaId'] = params['area_id'].locator_id
+            else:
+                path_params['areaId'] = params['area_id']  # noqa: E501
 
         query_params = []
 
@@ -929,9 +951,15 @@ class ServerApi(object):
 
         path_params = {}
         if 'path' in params:
-            path_params['path'] = params['path']  # noqa: E501
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
         if 'area_id' in params:
-            path_params['areaId'] = params['area_id']  # noqa: E501
+            if isinstance(params['area_id'], TeamCityObject):
+                path_params['areaId'] = params['area_id'].locator_id
+            else:
+                path_params['areaId'] = params['area_id']  # noqa: E501
 
         query_params = []
 
@@ -999,7 +1027,10 @@ class ServerApi(object):
 
         path_params = {}
         if 'license_key' in params:
-            path_params['licenseKey'] = params['license_key']  # noqa: E501
+            if isinstance(params['license_key'], TeamCityObject):
+                path_params['licenseKey'] = params['license_key'].locator_id
+            else:
+                path_params['licenseKey'] = params['license_key']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -1202,9 +1233,15 @@ class ServerApi(object):
 
         path_params = {}
         if 'path' in params:
-            path_params['path'] = params['path']  # noqa: E501
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
         if 'area_id' in params:
-            path_params['areaId'] = params['area_id']  # noqa: E501
+            if isinstance(params['area_id'], TeamCityObject):
+                path_params['areaId'] = params['area_id'].locator_id
+            else:
+                path_params['areaId'] = params['area_id']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -1276,7 +1313,10 @@ class ServerApi(object):
 
         path_params = {}
         if 'area_id' in params:
-            path_params['areaId'] = params['area_id']  # noqa: E501
+            if isinstance(params['area_id'], TeamCityObject):
+                path_params['areaId'] = params['area_id'].locator_id
+            else:
+                path_params['areaId'] = params['area_id']  # noqa: E501
 
         query_params = []
         if 'base_path' in params:
@@ -1359,9 +1399,15 @@ class ServerApi(object):
 
         path_params = {}
         if 'path' in params:
-            path_params['path'] = params['path']  # noqa: E501
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
         if 'area_id' in params:
-            path_params['areaId'] = params['area_id']  # noqa: E501
+            if isinstance(params['area_id'], TeamCityObject):
+                path_params['areaId'] = params['area_id'].locator_id
+            else:
+                path_params['areaId'] = params['area_id']  # noqa: E501
 
         query_params = []
         if 'base_path' in params:
@@ -1560,7 +1606,10 @@ class ServerApi(object):
 
         path_params = {}
         if 'field' in params:
-            path_params['field'] = params['field']  # noqa: E501
+            if isinstance(params['field'], TeamCityObject):
+                path_params['field'] = params['field'].locator_id
+            else:
+                path_params['field'] = params['field']  # noqa: E501
 
         query_params = []
 

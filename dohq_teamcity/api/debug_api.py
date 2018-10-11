@@ -12,6 +12,7 @@
 
 
 from __future__ import absolute_import
+from dohq_teamcity.custom.base_model import TeamCityObject
 
 import re  # noqa: F401
 
@@ -669,7 +670,10 @@ class DebugApi(object):
 
         path_params = {}
         if 'query' in params:
-            path_params['query'] = params['query']  # noqa: E501
+            if isinstance(params['query'], TeamCityObject):
+                path_params['query'] = params['query'].locator_id
+            else:
+                path_params['query'] = params['query']  # noqa: E501
 
         query_params = []
         if 'field_delimiter' in params:
@@ -927,7 +931,10 @@ class DebugApi(object):
 
         path_params = {}
         if 'date_locator' in params:
-            path_params['dateLocator'] = params['date_locator']  # noqa: E501
+            if isinstance(params['date_locator'], TeamCityObject):
+                path_params['dateLocator'] = params['date_locator'].locator_id
+            else:
+                path_params['dateLocator'] = params['date_locator']  # noqa: E501
 
         query_params = []
         if 'format' in params:
@@ -1062,7 +1069,10 @@ class DebugApi(object):
 
         path_params = {}
         if 'method' in params:
-            path_params['method'] = params['method']  # noqa: E501
+            if isinstance(params['method'], TeamCityObject):
+                path_params['method'] = params['method'].locator_id
+            else:
+                path_params['method'] = params['method']  # noqa: E501
 
         query_params = []
         if 'value' in params:

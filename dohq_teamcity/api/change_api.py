@@ -12,6 +12,7 @@
 
 
 from __future__ import absolute_import
+from dohq_teamcity.custom.base_model import TeamCityObject
 
 import re  # noqa: F401
 
@@ -359,7 +360,10 @@ class ChangeApi(object):
 
         path_params = {}
         if 'change_locator' in params:
-            path_params['changeLocator'] = params['change_locator']  # noqa: E501
+            if isinstance(params['change_locator'], TeamCityObject):
+                path_params['changeLocator'] = params['change_locator'].locator_id
+            else:
+                path_params['changeLocator'] = params['change_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -429,7 +433,10 @@ class ChangeApi(object):
 
         path_params = {}
         if 'change_locator' in params:
-            path_params['changeLocator'] = params['change_locator']  # noqa: E501
+            if isinstance(params['change_locator'], TeamCityObject):
+                path_params['changeLocator'] = params['change_locator'].locator_id
+            else:
+                path_params['changeLocator'] = params['change_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -503,9 +510,15 @@ class ChangeApi(object):
 
         path_params = {}
         if 'change_locator' in params:
-            path_params['changeLocator'] = params['change_locator']  # noqa: E501
+            if isinstance(params['change_locator'], TeamCityObject):
+                path_params['changeLocator'] = params['change_locator'].locator_id
+            else:
+                path_params['changeLocator'] = params['change_locator']  # noqa: E501
         if 'field' in params:
-            path_params['field'] = params['field']  # noqa: E501
+            if isinstance(params['field'], TeamCityObject):
+                path_params['field'] = params['field'].locator_id
+            else:
+                path_params['field'] = params['field']  # noqa: E501
 
         query_params = []
 
@@ -573,7 +586,10 @@ class ChangeApi(object):
 
         path_params = {}
         if 'change_locator' in params:
-            path_params['changeLocator'] = params['change_locator']  # noqa: E501
+            if isinstance(params['change_locator'], TeamCityObject):
+                path_params['changeLocator'] = params['change_locator'].locator_id
+            else:
+                path_params['changeLocator'] = params['change_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -642,7 +658,10 @@ class ChangeApi(object):
 
         path_params = {}
         if 'change_locator' in params:
-            path_params['changeLocator'] = params['change_locator']  # noqa: E501
+            if isinstance(params['change_locator'], TeamCityObject):
+                path_params['changeLocator'] = params['change_locator'].locator_id
+            else:
+                path_params['changeLocator'] = params['change_locator']  # noqa: E501
 
         query_params = []
 
@@ -709,7 +728,10 @@ class ChangeApi(object):
 
         path_params = {}
         if 'change_locator' in params:
-            path_params['changeLocator'] = params['change_locator']  # noqa: E501
+            if isinstance(params['change_locator'], TeamCityObject):
+                path_params['changeLocator'] = params['change_locator'].locator_id
+            else:
+                path_params['changeLocator'] = params['change_locator']  # noqa: E501
 
         query_params = []
 
@@ -777,7 +799,10 @@ class ChangeApi(object):
 
         path_params = {}
         if 'change_locator' in params:
-            path_params['changeLocator'] = params['change_locator']  # noqa: E501
+            if isinstance(params['change_locator'], TeamCityObject):
+                path_params['changeLocator'] = params['change_locator'].locator_id
+            else:
+                path_params['changeLocator'] = params['change_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -847,7 +872,10 @@ class ChangeApi(object):
 
         path_params = {}
         if 'change_locator' in params:
-            path_params['changeLocator'] = params['change_locator']  # noqa: E501
+            if isinstance(params['change_locator'], TeamCityObject):
+                path_params['changeLocator'] = params['change_locator'].locator_id
+            else:
+                path_params['changeLocator'] = params['change_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -917,7 +945,10 @@ class ChangeApi(object):
 
         path_params = {}
         if 'change_locator' in params:
-            path_params['changeLocator'] = params['change_locator']  # noqa: E501
+            if isinstance(params['change_locator'], TeamCityObject):
+                path_params['changeLocator'] = params['change_locator'].locator_id
+            else:
+                path_params['changeLocator'] = params['change_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -987,7 +1018,10 @@ class ChangeApi(object):
 
         path_params = {}
         if 'change_locator' in params:
-            path_params['changeLocator'] = params['change_locator']  # noqa: E501
+            if isinstance(params['change_locator'], TeamCityObject):
+                path_params['changeLocator'] = params['change_locator'].locator_id
+            else:
+                path_params['changeLocator'] = params['change_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -1057,7 +1091,10 @@ class ChangeApi(object):
 
         path_params = {}
         if 'change_locator' in params:
-            path_params['changeLocator'] = params['change_locator']  # noqa: E501
+            if isinstance(params['change_locator'], TeamCityObject):
+                path_params['changeLocator'] = params['change_locator'].locator_id
+            else:
+                path_params['changeLocator'] = params['change_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:

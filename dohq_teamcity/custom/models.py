@@ -32,7 +32,7 @@ class BuildType(ReadMixin, BuildType):
         :param str fields:
         :return: ModelProperty
         """
-        self.api.set_parameter(self.locator_id, **kwargs)
+        self.api.set_parameter(self, **kwargs)
 
 
 class Group(Group, ReadMixin):

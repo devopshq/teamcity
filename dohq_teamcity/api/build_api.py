@@ -12,6 +12,7 @@
 
 
 from __future__ import absolute_import
+from dohq_teamcity.custom.base_model import TeamCityObject
 
 import re  # noqa: F401
 
@@ -946,7 +947,10 @@ class BuildApi(object):
 
         path_params = {}
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -1019,7 +1023,10 @@ class BuildApi(object):
 
         path_params = {}
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -1090,7 +1097,10 @@ class BuildApi(object):
 
         path_params = {}
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
 
@@ -1157,7 +1167,10 @@ class BuildApi(object):
 
         path_params = {}
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
 
@@ -1287,7 +1300,10 @@ class BuildApi(object):
 
         path_params = {}
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
 
@@ -1354,7 +1370,10 @@ class BuildApi(object):
 
         path_params = {}
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
 
@@ -1422,7 +1441,10 @@ class BuildApi(object):
 
         path_params = {}
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -1503,9 +1525,15 @@ class BuildApi(object):
 
         path_params = {}
         if 'path' in params:
-            path_params['path'] = params['path']  # noqa: E501
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
         if 'base_path' in params:
@@ -1594,9 +1622,15 @@ class BuildApi(object):
 
         path_params = {}
         if 'path' in params:
-            path_params['path'] = params['path']  # noqa: E501
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
         if 'base_path' in params:
@@ -1682,9 +1716,15 @@ class BuildApi(object):
 
         path_params = {}
         if 'path' in params:
-            path_params['path'] = params['path']  # noqa: E501
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
         if 'resolve_parameters' in params:
@@ -1764,9 +1804,15 @@ class BuildApi(object):
 
         path_params = {}
         if 'path' in params:
-            path_params['path'] = params['path']  # noqa: E501
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
         if 'resolve_parameters' in params:
@@ -1847,9 +1893,15 @@ class BuildApi(object):
 
         path_params = {}
         if 'path' in params:
-            path_params['path'] = params['path']  # noqa: E501
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -1927,9 +1979,15 @@ class BuildApi(object):
 
         path_params = {}
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
         if 'property_name' in params:
-            path_params['propertyName'] = params['property_name']  # noqa: E501
+            if isinstance(params['property_name'], TeamCityObject):
+                path_params['propertyName'] = params['property_name'].locator_id
+            else:
+                path_params['propertyName'] = params['property_name']  # noqa: E501
 
         query_params = []
 
@@ -1996,7 +2054,10 @@ class BuildApi(object):
 
         path_params = {}
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
 
@@ -2064,7 +2125,10 @@ class BuildApi(object):
 
         path_params = {}
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -2138,7 +2202,10 @@ class BuildApi(object):
 
         path_params = {}
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
         if 'base_path' in params:
@@ -2216,7 +2283,10 @@ class BuildApi(object):
 
         path_params = {}
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -2297,9 +2367,15 @@ class BuildApi(object):
 
         path_params = {}
         if 'path' in params:
-            path_params['path'] = params['path']  # noqa: E501
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
         if 'base_path' in params:
@@ -2377,7 +2453,10 @@ class BuildApi(object):
 
         path_params = {}
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
 
@@ -2447,7 +2526,10 @@ class BuildApi(object):
 
         path_params = {}
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
 
@@ -2519,7 +2601,10 @@ class BuildApi(object):
 
         path_params = {}
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
         if 'locator' in params:
@@ -2592,7 +2677,10 @@ class BuildApi(object):
 
         path_params = {}
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
 
@@ -2666,9 +2754,15 @@ class BuildApi(object):
 
         path_params = {}
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
         if 'suffix' in params:
-            path_params['suffix'] = params['suffix']  # noqa: E501
+            if isinstance(params['suffix'], TeamCityObject):
+                path_params['suffix'] = params['suffix'].locator_id
+            else:
+                path_params['suffix'] = params['suffix']  # noqa: E501
 
         query_params = []
 
@@ -2839,7 +2933,10 @@ class BuildApi(object):
 
         path_params = {}
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -2909,7 +3006,10 @@ class BuildApi(object):
 
         path_params = {}
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -2983,9 +3083,15 @@ class BuildApi(object):
 
         path_params = {}
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
         if 'field' in params:
-            path_params['field'] = params['field']  # noqa: E501
+            if isinstance(params['field'], TeamCityObject):
+                path_params['field'] = params['field'].locator_id
+            else:
+                path_params['field'] = params['field']  # noqa: E501
 
         query_params = []
 
@@ -3053,7 +3159,10 @@ class BuildApi(object):
 
         path_params = {}
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -3123,7 +3232,10 @@ class BuildApi(object):
 
         path_params = {}
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -3197,9 +3309,15 @@ class BuildApi(object):
 
         path_params = {}
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
         if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
 
         query_params = []
 
@@ -3267,7 +3385,10 @@ class BuildApi(object):
 
         path_params = {}
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -3343,9 +3464,15 @@ class BuildApi(object):
 
         path_params = {}
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
         if 'suffix' in params:
-            path_params['suffix'] = params['suffix']  # noqa: E501
+            if isinstance(params['suffix'], TeamCityObject):
+                path_params['suffix'] = params['suffix'].locator_id
+            else:
+                path_params['suffix'] = params['suffix']  # noqa: E501
 
         query_params = []
 
@@ -3419,9 +3546,15 @@ class BuildApi(object):
 
         path_params = {}
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
         if 'file_name' in params:
-            path_params['fileName'] = params['file_name']  # noqa: E501
+            if isinstance(params['file_name'], TeamCityObject):
+                path_params['fileName'] = params['file_name'].locator_id
+            else:
+                path_params['fileName'] = params['file_name']  # noqa: E501
 
         query_params = []
 
@@ -3490,7 +3623,10 @@ class BuildApi(object):
 
         path_params = {}
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
         if 'locator' in params:
@@ -3562,7 +3698,10 @@ class BuildApi(object):
 
         path_params = {}
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
 

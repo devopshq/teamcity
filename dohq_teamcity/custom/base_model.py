@@ -85,5 +85,5 @@ class ReadMixin(object):
         load_func = self._read()
         if load_func is None:
             raise TeamCityCodeException("load_function is not defined in class '{}'".format(self.__class__.__name__))
-        self = load_func(self.locator_id)
+        self = load_func(self)
         return self

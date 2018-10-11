@@ -12,6 +12,7 @@
 
 
 from __future__ import absolute_import
+from dohq_teamcity.custom.base_model import TeamCityObject
 
 import re  # noqa: F401
 
@@ -2807,7 +2808,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -2880,7 +2884,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -3019,7 +3026,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -3101,11 +3111,20 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'feature_id' in params:
-            path_params['featureId'] = params['feature_id']  # noqa: E501
+            if isinstance(params['feature_id'], TeamCityObject):
+                path_params['featureId'] = params['feature_id'].locator_id
+            else:
+                path_params['featureId'] = params['feature_id']  # noqa: E501
         if 'parameter_name' in params:
-            path_params['parameterName'] = params['parameter_name']  # noqa: E501
+            if isinstance(params['parameter_name'], TeamCityObject):
+                path_params['parameterName'] = params['parameter_name'].locator_id
+            else:
+                path_params['parameterName'] = params['parameter_name']  # noqa: E501
 
         query_params = []
 
@@ -3176,7 +3195,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -3249,7 +3271,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -3331,11 +3356,20 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'step_id' in params:
-            path_params['stepId'] = params['step_id']  # noqa: E501
+            if isinstance(params['step_id'], TeamCityObject):
+                path_params['stepId'] = params['step_id'].locator_id
+            else:
+                path_params['stepId'] = params['step_id']  # noqa: E501
         if 'parameter_name' in params:
-            path_params['parameterName'] = params['parameter_name']  # noqa: E501
+            if isinstance(params['parameter_name'], TeamCityObject):
+                path_params['parameterName'] = params['parameter_name'].locator_id
+            else:
+                path_params['parameterName'] = params['parameter_name']  # noqa: E501
 
         query_params = []
 
@@ -3406,7 +3440,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -3479,7 +3516,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -3561,11 +3601,20 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'artifact_dep_locator' in params:
-            path_params['artifactDepLocator'] = params['artifact_dep_locator']  # noqa: E501
+            if isinstance(params['artifact_dep_locator'], TeamCityObject):
+                path_params['artifactDepLocator'] = params['artifact_dep_locator'].locator_id
+            else:
+                path_params['artifactDepLocator'] = params['artifact_dep_locator']  # noqa: E501
         if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
+            if isinstance(params['field_name'], TeamCityObject):
+                path_params['fieldName'] = params['field_name'].locator_id
+            else:
+                path_params['fieldName'] = params['field_name']  # noqa: E501
 
         query_params = []
 
@@ -3645,11 +3694,20 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'feature_id' in params:
-            path_params['featureId'] = params['feature_id']  # noqa: E501
+            if isinstance(params['feature_id'], TeamCityObject):
+                path_params['featureId'] = params['feature_id'].locator_id
+            else:
+                path_params['featureId'] = params['feature_id']  # noqa: E501
         if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
 
         query_params = []
 
@@ -3729,11 +3787,20 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'agent_requirement_locator' in params:
-            path_params['agentRequirementLocator'] = params['agent_requirement_locator']  # noqa: E501
+            if isinstance(params['agent_requirement_locator'], TeamCityObject):
+                path_params['agentRequirementLocator'] = params['agent_requirement_locator'].locator_id
+            else:
+                path_params['agentRequirementLocator'] = params['agent_requirement_locator']  # noqa: E501
         if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
+            if isinstance(params['field_name'], TeamCityObject):
+                path_params['fieldName'] = params['field_name'].locator_id
+            else:
+                path_params['fieldName'] = params['field_name']  # noqa: E501
 
         query_params = []
 
@@ -3813,11 +3880,20 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'step_id' in params:
-            path_params['stepId'] = params['step_id']  # noqa: E501
+            if isinstance(params['step_id'], TeamCityObject):
+                path_params['stepId'] = params['step_id'].locator_id
+            else:
+                path_params['stepId'] = params['step_id']  # noqa: E501
         if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
+            if isinstance(params['field_name'], TeamCityObject):
+                path_params['fieldName'] = params['field_name'].locator_id
+            else:
+                path_params['fieldName'] = params['field_name']  # noqa: E501
 
         query_params = []
 
@@ -3897,11 +3973,20 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'trigger_locator' in params:
-            path_params['triggerLocator'] = params['trigger_locator']  # noqa: E501
+            if isinstance(params['trigger_locator'], TeamCityObject):
+                path_params['triggerLocator'] = params['trigger_locator'].locator_id
+            else:
+                path_params['triggerLocator'] = params['trigger_locator']  # noqa: E501
         if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
+            if isinstance(params['field_name'], TeamCityObject):
+                path_params['fieldName'] = params['field_name'].locator_id
+            else:
+                path_params['fieldName'] = params['field_name']  # noqa: E501
 
         query_params = []
 
@@ -3975,9 +4060,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'agent_requirement_locator' in params:
-            path_params['agentRequirementLocator'] = params['agent_requirement_locator']  # noqa: E501
+            if isinstance(params['agent_requirement_locator'], TeamCityObject):
+                path_params['agentRequirementLocator'] = params['agent_requirement_locator'].locator_id
+            else:
+                path_params['agentRequirementLocator'] = params['agent_requirement_locator']  # noqa: E501
 
         query_params = []
 
@@ -4044,7 +4135,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
 
@@ -4111,7 +4205,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
 
@@ -4183,9 +4280,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'artifact_dep_locator' in params:
-            path_params['artifactDepLocator'] = params['artifact_dep_locator']  # noqa: E501
+            if isinstance(params['artifact_dep_locator'], TeamCityObject):
+                path_params['artifactDepLocator'] = params['artifact_dep_locator'].locator_id
+            else:
+                path_params['artifactDepLocator'] = params['artifact_dep_locator']  # noqa: E501
 
         query_params = []
 
@@ -4252,7 +4355,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
 
@@ -4324,9 +4430,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'feature_id' in params:
-            path_params['featureId'] = params['feature_id']  # noqa: E501
+            if isinstance(params['feature_id'], TeamCityObject):
+                path_params['featureId'] = params['feature_id'].locator_id
+            else:
+                path_params['featureId'] = params['feature_id']  # noqa: E501
 
         query_params = []
 
@@ -4398,9 +4510,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
 
@@ -4472,9 +4590,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
 
@@ -4546,9 +4670,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'snapshot_dep_locator' in params:
-            path_params['snapshotDepLocator'] = params['snapshot_dep_locator']  # noqa: E501
+            if isinstance(params['snapshot_dep_locator'], TeamCityObject):
+                path_params['snapshotDepLocator'] = params['snapshot_dep_locator'].locator_id
+            else:
+                path_params['snapshotDepLocator'] = params['snapshot_dep_locator']  # noqa: E501
 
         query_params = []
 
@@ -4620,9 +4750,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'step_id' in params:
-            path_params['stepId'] = params['step_id']  # noqa: E501
+            if isinstance(params['step_id'], TeamCityObject):
+                path_params['stepId'] = params['step_id'].locator_id
+            else:
+                path_params['stepId'] = params['step_id']  # noqa: E501
 
         query_params = []
 
@@ -4689,7 +4825,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
 
@@ -4761,9 +4900,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'trigger_locator' in params:
-            path_params['triggerLocator'] = params['trigger_locator']  # noqa: E501
+            if isinstance(params['trigger_locator'], TeamCityObject):
+                path_params['triggerLocator'] = params['trigger_locator'].locator_id
+            else:
+                path_params['triggerLocator'] = params['trigger_locator']  # noqa: E501
 
         query_params = []
 
@@ -4835,9 +4980,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'vcs_root_locator' in params:
-            path_params['vcsRootLocator'] = params['vcs_root_locator']  # noqa: E501
+            if isinstance(params['vcs_root_locator'], TeamCityObject):
+                path_params['vcsRootLocator'] = params['vcs_root_locator'].locator_id
+            else:
+                path_params['vcsRootLocator'] = params['vcs_root_locator']  # noqa: E501
 
         query_params = []
 
@@ -4910,9 +5061,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'agent_requirement_locator' in params:
-            path_params['agentRequirementLocator'] = params['agent_requirement_locator']  # noqa: E501
+            if isinstance(params['agent_requirement_locator'], TeamCityObject):
+                path_params['agentRequirementLocator'] = params['agent_requirement_locator'].locator_id
+            else:
+                path_params['agentRequirementLocator'] = params['agent_requirement_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -4982,7 +5139,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -5056,9 +5216,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'field' in params:
-            path_params['field'] = params['field']  # noqa: E501
+            if isinstance(params['field'], TeamCityObject):
+                path_params['field'] = params['field'].locator_id
+            else:
+                path_params['field'] = params['field']  # noqa: E501
 
         query_params = []
 
@@ -5131,9 +5297,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'artifact_dep_locator' in params:
-            path_params['artifactDepLocator'] = params['artifact_dep_locator']  # noqa: E501
+            if isinstance(params['artifact_dep_locator'], TeamCityObject):
+                path_params['artifactDepLocator'] = params['artifact_dep_locator'].locator_id
+            else:
+                path_params['artifactDepLocator'] = params['artifact_dep_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -5212,11 +5384,20 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'artifact_dep_locator' in params:
-            path_params['artifactDepLocator'] = params['artifact_dep_locator']  # noqa: E501
+            if isinstance(params['artifact_dep_locator'], TeamCityObject):
+                path_params['artifactDepLocator'] = params['artifact_dep_locator'].locator_id
+            else:
+                path_params['artifactDepLocator'] = params['artifact_dep_locator']  # noqa: E501
         if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
+            if isinstance(params['field_name'], TeamCityObject):
+                path_params['fieldName'] = params['field_name'].locator_id
+            else:
+                path_params['fieldName'] = params['field_name']  # noqa: E501
 
         query_params = []
 
@@ -5284,7 +5465,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -5430,9 +5614,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'path' in params:
-            path_params['path'] = params['path']  # noqa: E501
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'base_path' in params:
@@ -5518,9 +5708,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'path' in params:
-            path_params['path'] = params['path']  # noqa: E501
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'base_path' in params:
@@ -5603,9 +5799,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'path' in params:
-            path_params['path'] = params['path']  # noqa: E501
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'resolve_parameters' in params:
@@ -5682,9 +5884,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'path' in params:
-            path_params['path'] = params['path']  # noqa: E501
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'resolve_parameters' in params:
@@ -5754,7 +5962,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -5823,7 +6034,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
 
@@ -5890,7 +6104,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
 
@@ -5963,9 +6180,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'feature_id' in params:
-            path_params['featureId'] = params['feature_id']  # noqa: E501
+            if isinstance(params['feature_id'], TeamCityObject):
+                path_params['featureId'] = params['feature_id'].locator_id
+            else:
+                path_params['featureId'] = params['feature_id']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -6044,11 +6267,20 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'feature_id' in params:
-            path_params['featureId'] = params['feature_id']  # noqa: E501
+            if isinstance(params['feature_id'], TeamCityObject):
+                path_params['featureId'] = params['feature_id'].locator_id
+            else:
+                path_params['featureId'] = params['feature_id']  # noqa: E501
         if 'parameter_name' in params:
-            path_params['parameterName'] = params['parameter_name']  # noqa: E501
+            if isinstance(params['parameter_name'], TeamCityObject):
+                path_params['parameterName'] = params['parameter_name'].locator_id
+            else:
+                path_params['parameterName'] = params['parameter_name']  # noqa: E501
 
         query_params = []
 
@@ -6121,9 +6353,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'feature_id' in params:
-            path_params['featureId'] = params['feature_id']  # noqa: E501
+            if isinstance(params['feature_id'], TeamCityObject):
+                path_params['featureId'] = params['feature_id'].locator_id
+            else:
+                path_params['featureId'] = params['feature_id']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -6202,11 +6440,20 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'feature_id' in params:
-            path_params['featureId'] = params['feature_id']  # noqa: E501
+            if isinstance(params['feature_id'], TeamCityObject):
+                path_params['featureId'] = params['feature_id'].locator_id
+            else:
+                path_params['featureId'] = params['feature_id']  # noqa: E501
         if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
 
         query_params = []
 
@@ -6274,7 +6521,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -6344,7 +6594,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -6422,9 +6675,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'path' in params:
-            path_params['path'] = params['path']  # noqa: E501
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -6501,9 +6760,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -6578,9 +6843,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -6654,9 +6925,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
 
@@ -6728,9 +7005,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
 
@@ -6802,9 +7085,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
 
@@ -6876,9 +7165,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
 
@@ -6947,7 +7242,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'locator' in params:
@@ -7020,7 +7318,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'locator' in params:
@@ -7101,11 +7402,20 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'agent_requirement_locator' in params:
-            path_params['agentRequirementLocator'] = params['agent_requirement_locator']  # noqa: E501
+            if isinstance(params['agent_requirement_locator'], TeamCityObject):
+                path_params['agentRequirementLocator'] = params['agent_requirement_locator'].locator_id
+            else:
+                path_params['agentRequirementLocator'] = params['agent_requirement_locator']  # noqa: E501
         if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
+            if isinstance(params['field_name'], TeamCityObject):
+                path_params['fieldName'] = params['field_name'].locator_id
+            else:
+                path_params['fieldName'] = params['field_name']  # noqa: E501
 
         query_params = []
 
@@ -7176,7 +7486,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'base_path' in params:
@@ -7251,7 +7564,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
 
@@ -7324,9 +7640,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'snapshot_dep_locator' in params:
-            path_params['snapshotDepLocator'] = params['snapshot_dep_locator']  # noqa: E501
+            if isinstance(params['snapshot_dep_locator'], TeamCityObject):
+                path_params['snapshotDepLocator'] = params['snapshot_dep_locator'].locator_id
+            else:
+                path_params['snapshotDepLocator'] = params['snapshot_dep_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -7396,7 +7718,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -7471,9 +7796,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'step_id' in params:
-            path_params['stepId'] = params['step_id']  # noqa: E501
+            if isinstance(params['step_id'], TeamCityObject):
+                path_params['stepId'] = params['step_id'].locator_id
+            else:
+                path_params['stepId'] = params['step_id']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -7552,11 +7883,20 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'step_id' in params:
-            path_params['stepId'] = params['step_id']  # noqa: E501
+            if isinstance(params['step_id'], TeamCityObject):
+                path_params['stepId'] = params['step_id'].locator_id
+            else:
+                path_params['stepId'] = params['step_id']  # noqa: E501
         if 'parameter_name' in params:
-            path_params['parameterName'] = params['parameter_name']  # noqa: E501
+            if isinstance(params['parameter_name'], TeamCityObject):
+                path_params['parameterName'] = params['parameter_name'].locator_id
+            else:
+                path_params['parameterName'] = params['parameter_name']  # noqa: E501
 
         query_params = []
 
@@ -7629,9 +7969,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'step_id' in params:
-            path_params['stepId'] = params['step_id']  # noqa: E501
+            if isinstance(params['step_id'], TeamCityObject):
+                path_params['stepId'] = params['step_id'].locator_id
+            else:
+                path_params['stepId'] = params['step_id']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -7710,11 +8056,20 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'step_id' in params:
-            path_params['stepId'] = params['step_id']  # noqa: E501
+            if isinstance(params['step_id'], TeamCityObject):
+                path_params['stepId'] = params['step_id'].locator_id
+            else:
+                path_params['stepId'] = params['step_id']  # noqa: E501
         if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
+            if isinstance(params['field_name'], TeamCityObject):
+                path_params['fieldName'] = params['field_name'].locator_id
+            else:
+                path_params['fieldName'] = params['field_name']  # noqa: E501
 
         query_params = []
 
@@ -7782,7 +8137,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -7853,7 +8211,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -7930,9 +8291,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'trigger_locator' in params:
-            path_params['triggerLocator'] = params['trigger_locator']  # noqa: E501
+            if isinstance(params['trigger_locator'], TeamCityObject):
+                path_params['triggerLocator'] = params['trigger_locator'].locator_id
+            else:
+                path_params['triggerLocator'] = params['trigger_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -8011,11 +8378,20 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'trigger_locator' in params:
-            path_params['triggerLocator'] = params['trigger_locator']  # noqa: E501
+            if isinstance(params['trigger_locator'], TeamCityObject):
+                path_params['triggerLocator'] = params['trigger_locator'].locator_id
+            else:
+                path_params['triggerLocator'] = params['trigger_locator']  # noqa: E501
         if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
+            if isinstance(params['field_name'], TeamCityObject):
+                path_params['fieldName'] = params['field_name'].locator_id
+            else:
+                path_params['fieldName'] = params['field_name']  # noqa: E501
 
         query_params = []
 
@@ -8083,7 +8459,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -8152,7 +8531,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
 
@@ -8220,7 +8602,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -8295,9 +8680,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'vcs_root_locator' in params:
-            path_params['vcsRootLocator'] = params['vcs_root_locator']  # noqa: E501
+            if isinstance(params['vcs_root_locator'], TeamCityObject):
+                path_params['vcsRootLocator'] = params['vcs_root_locator'].locator_id
+            else:
+                path_params['vcsRootLocator'] = params['vcs_root_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -8371,9 +8762,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'vcs_root_locator' in params:
-            path_params['vcsRootLocator'] = params['vcs_root_locator']  # noqa: E501
+            if isinstance(params['vcs_root_locator'], TeamCityObject):
+                path_params['vcsRootLocator'] = params['vcs_root_locator'].locator_id
+            else:
+                path_params['vcsRootLocator'] = params['vcs_root_locator']  # noqa: E501
 
         query_params = []
 
@@ -8451,9 +8848,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'path' in params:
-            path_params['path'] = params['path']  # noqa: E501
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'base_path' in params:
@@ -8535,9 +8938,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'agent_requirement_locator' in params:
-            path_params['agentRequirementLocator'] = params['agent_requirement_locator']  # noqa: E501
+            if isinstance(params['agent_requirement_locator'], TeamCityObject):
+                path_params['agentRequirementLocator'] = params['agent_requirement_locator'].locator_id
+            else:
+                path_params['agentRequirementLocator'] = params['agent_requirement_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -8610,7 +9019,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -8688,9 +9100,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'artifact_dep_locator' in params:
-            path_params['artifactDepLocator'] = params['artifact_dep_locator']  # noqa: E501
+            if isinstance(params['artifact_dep_locator'], TeamCityObject):
+                path_params['artifactDepLocator'] = params['artifact_dep_locator'].locator_id
+            else:
+                path_params['artifactDepLocator'] = params['artifact_dep_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -8763,7 +9181,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -8841,9 +9262,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'feature_id' in params:
-            path_params['featureId'] = params['feature_id']  # noqa: E501
+            if isinstance(params['feature_id'], TeamCityObject):
+                path_params['featureId'] = params['feature_id'].locator_id
+            else:
+                path_params['featureId'] = params['feature_id']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -8921,9 +9348,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'feature_id' in params:
-            path_params['featureId'] = params['feature_id']  # noqa: E501
+            if isinstance(params['feature_id'], TeamCityObject):
+                path_params['featureId'] = params['feature_id'].locator_id
+            else:
+                path_params['featureId'] = params['feature_id']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -8996,7 +9429,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -9074,9 +9510,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'snapshot_dep_locator' in params:
-            path_params['snapshotDepLocator'] = params['snapshot_dep_locator']  # noqa: E501
+            if isinstance(params['snapshot_dep_locator'], TeamCityObject):
+                path_params['snapshotDepLocator'] = params['snapshot_dep_locator'].locator_id
+            else:
+                path_params['snapshotDepLocator'] = params['snapshot_dep_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -9149,7 +9591,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -9227,9 +9672,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'step_id' in params:
-            path_params['stepId'] = params['step_id']  # noqa: E501
+            if isinstance(params['step_id'], TeamCityObject):
+                path_params['stepId'] = params['step_id'].locator_id
+            else:
+                path_params['stepId'] = params['step_id']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -9307,9 +9758,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'step_id' in params:
-            path_params['stepId'] = params['step_id']  # noqa: E501
+            if isinstance(params['step_id'], TeamCityObject):
+                path_params['stepId'] = params['step_id'].locator_id
+            else:
+                path_params['stepId'] = params['step_id']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -9382,7 +9839,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -9460,9 +9920,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'trigger_locator' in params:
-            path_params['triggerLocator'] = params['trigger_locator']  # noqa: E501
+            if isinstance(params['trigger_locator'], TeamCityObject):
+                path_params['triggerLocator'] = params['trigger_locator'].locator_id
+            else:
+                path_params['triggerLocator'] = params['trigger_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -9535,7 +10001,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -9608,7 +10077,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -9681,7 +10153,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'locator' in params:
@@ -9762,11 +10237,20 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
         if 'field' in params:
-            path_params['field'] = params['field']  # noqa: E501
+            if isinstance(params['field'], TeamCityObject):
+                path_params['field'] = params['field'].locator_id
+            else:
+                path_params['field'] = params['field']  # noqa: E501
 
         query_params = []
 
@@ -9838,9 +10322,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'field' in params:
-            path_params['field'] = params['field']  # noqa: E501
+            if isinstance(params['field'], TeamCityObject):
+                path_params['field'] = params['field'].locator_id
+            else:
+                path_params['field'] = params['field']  # noqa: E501
 
         query_params = []
 
@@ -9912,9 +10402,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'field' in params:
-            path_params['field'] = params['field']  # noqa: E501
+            if isinstance(params['field'], TeamCityObject):
+                path_params['field'] = params['field'].locator_id
+            else:
+                path_params['field'] = params['field']  # noqa: E501
 
         query_params = []
 
@@ -9982,7 +10478,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -10052,7 +10551,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -10127,9 +10629,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'build_locator' in params:
-            path_params['buildLocator'] = params['build_locator']  # noqa: E501
+            if isinstance(params['build_locator'], TeamCityObject):
+                path_params['buildLocator'] = params['build_locator'].locator_id
+            else:
+                path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -10211,7 +10719,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'status' in params:
@@ -10311,9 +10822,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'field' in params:
-            path_params['field'] = params['field']  # noqa: E501
+            if isinstance(params['field'], TeamCityObject):
+                path_params['field'] = params['field'].locator_id
+            else:
+                path_params['field'] = params['field']  # noqa: E501
 
         query_params = []
 
@@ -10384,7 +10901,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -10462,9 +10982,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -10537,7 +11063,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -10615,9 +11144,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -10694,9 +11229,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
 
@@ -10771,9 +11312,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
 
@@ -10848,9 +11395,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
 
@@ -10925,9 +11478,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
 
@@ -10998,7 +11557,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -11071,7 +11633,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -11143,7 +11708,10 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
 
@@ -11219,9 +11787,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'vcs_root_locator' in params:
-            path_params['vcsRootLocator'] = params['vcs_root_locator']  # noqa: E501
+            if isinstance(params['vcs_root_locator'], TeamCityObject):
+                path_params['vcsRootLocator'] = params['vcs_root_locator'].locator_id
+            else:
+                path_params['vcsRootLocator'] = params['vcs_root_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -11298,9 +11872,15 @@ class BuildTypeApi(object):
 
         path_params = {}
         if 'bt_locator' in params:
-            path_params['btLocator'] = params['bt_locator']  # noqa: E501
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
         if 'vcs_root_locator' in params:
-            path_params['vcsRootLocator'] = params['vcs_root_locator']  # noqa: E501
+            if isinstance(params['vcs_root_locator'], TeamCityObject):
+                path_params['vcsRootLocator'] = params['vcs_root_locator'].locator_id
+            else:
+                path_params['vcsRootLocator'] = params['vcs_root_locator']  # noqa: E501
 
         query_params = []
 

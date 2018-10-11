@@ -12,6 +12,7 @@
 
 
 from __future__ import absolute_import
+from dohq_teamcity.custom.base_model import TeamCityObject
 
 import re  # noqa: F401
 
@@ -486,7 +487,10 @@ class GroupApi(object):
 
         path_params = {}
         if 'group_locator' in params:
-            path_params['groupLocator'] = params['group_locator']  # noqa: E501
+            if isinstance(params['group_locator'], TeamCityObject):
+                path_params['groupLocator'] = params['group_locator'].locator_id
+            else:
+                path_params['groupLocator'] = params['group_locator']  # noqa: E501
 
         query_params = []
 
@@ -556,7 +560,10 @@ class GroupApi(object):
 
         path_params = {}
         if 'group_locator' in params:
-            path_params['groupLocator'] = params['group_locator']  # noqa: E501
+            if isinstance(params['group_locator'], TeamCityObject):
+                path_params['groupLocator'] = params['group_locator'].locator_id
+            else:
+                path_params['groupLocator'] = params['group_locator']  # noqa: E501
 
         query_params = []
 
@@ -635,11 +642,20 @@ class GroupApi(object):
 
         path_params = {}
         if 'group_locator' in params:
-            path_params['groupLocator'] = params['group_locator']  # noqa: E501
+            if isinstance(params['group_locator'], TeamCityObject):
+                path_params['groupLocator'] = params['group_locator'].locator_id
+            else:
+                path_params['groupLocator'] = params['group_locator']  # noqa: E501
         if 'role_id' in params:
-            path_params['roleId'] = params['role_id']  # noqa: E501
+            if isinstance(params['role_id'], TeamCityObject):
+                path_params['roleId'] = params['role_id'].locator_id
+            else:
+                path_params['roleId'] = params['role_id']  # noqa: E501
         if 'scope' in params:
-            path_params['scope'] = params['scope']  # noqa: E501
+            if isinstance(params['scope'], TeamCityObject):
+                path_params['scope'] = params['scope'].locator_id
+            else:
+                path_params['scope'] = params['scope']  # noqa: E501
 
         query_params = []
 
@@ -706,7 +722,10 @@ class GroupApi(object):
 
         path_params = {}
         if 'group_locator' in params:
-            path_params['groupLocator'] = params['group_locator']  # noqa: E501
+            if isinstance(params['group_locator'], TeamCityObject):
+                path_params['groupLocator'] = params['group_locator'].locator_id
+            else:
+                path_params['groupLocator'] = params['group_locator']  # noqa: E501
 
         query_params = []
 
@@ -783,11 +802,20 @@ class GroupApi(object):
 
         path_params = {}
         if 'group_locator' in params:
-            path_params['groupLocator'] = params['group_locator']  # noqa: E501
+            if isinstance(params['group_locator'], TeamCityObject):
+                path_params['groupLocator'] = params['group_locator'].locator_id
+            else:
+                path_params['groupLocator'] = params['group_locator']  # noqa: E501
         if 'role_id' in params:
-            path_params['roleId'] = params['role_id']  # noqa: E501
+            if isinstance(params['role_id'], TeamCityObject):
+                path_params['roleId'] = params['role_id'].locator_id
+            else:
+                path_params['roleId'] = params['role_id']  # noqa: E501
         if 'scope' in params:
-            path_params['scope'] = params['scope']  # noqa: E501
+            if isinstance(params['scope'], TeamCityObject):
+                path_params['scope'] = params['scope'].locator_id
+            else:
+                path_params['scope'] = params['scope']  # noqa: E501
 
         query_params = []
 
@@ -854,7 +882,10 @@ class GroupApi(object):
 
         path_params = {}
         if 'group_locator' in params:
-            path_params['groupLocator'] = params['group_locator']  # noqa: E501
+            if isinstance(params['group_locator'], TeamCityObject):
+                path_params['groupLocator'] = params['group_locator'].locator_id
+            else:
+                path_params['groupLocator'] = params['group_locator']  # noqa: E501
 
         query_params = []
 
@@ -922,7 +953,10 @@ class GroupApi(object):
 
         path_params = {}
         if 'group_locator' in params:
-            path_params['groupLocator'] = params['group_locator']  # noqa: E501
+            if isinstance(params['group_locator'], TeamCityObject):
+                path_params['groupLocator'] = params['group_locator'].locator_id
+            else:
+                path_params['groupLocator'] = params['group_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -1001,11 +1035,20 @@ class GroupApi(object):
 
         path_params = {}
         if 'group_locator' in params:
-            path_params['groupLocator'] = params['group_locator']  # noqa: E501
+            if isinstance(params['group_locator'], TeamCityObject):
+                path_params['groupLocator'] = params['group_locator'].locator_id
+            else:
+                path_params['groupLocator'] = params['group_locator']  # noqa: E501
         if 'role_id' in params:
-            path_params['roleId'] = params['role_id']  # noqa: E501
+            if isinstance(params['role_id'], TeamCityObject):
+                path_params['roleId'] = params['role_id'].locator_id
+            else:
+                path_params['roleId'] = params['role_id']  # noqa: E501
         if 'scope' in params:
-            path_params['scope'] = params['scope']  # noqa: E501
+            if isinstance(params['scope'], TeamCityObject):
+                path_params['scope'] = params['scope'].locator_id
+            else:
+                path_params['scope'] = params['scope']  # noqa: E501
 
         query_params = []
 
@@ -1072,7 +1115,10 @@ class GroupApi(object):
 
         path_params = {}
         if 'group_locator' in params:
-            path_params['groupLocator'] = params['group_locator']  # noqa: E501
+            if isinstance(params['group_locator'], TeamCityObject):
+                path_params['groupLocator'] = params['group_locator'].locator_id
+            else:
+                path_params['groupLocator'] = params['group_locator']  # noqa: E501
 
         query_params = []
 
@@ -1145,9 +1191,15 @@ class GroupApi(object):
 
         path_params = {}
         if 'group_locator' in params:
-            path_params['groupLocator'] = params['group_locator']  # noqa: E501
+            if isinstance(params['group_locator'], TeamCityObject):
+                path_params['groupLocator'] = params['group_locator'].locator_id
+            else:
+                path_params['groupLocator'] = params['group_locator']  # noqa: E501
         if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
 
         query_params = []
 
@@ -1221,9 +1273,15 @@ class GroupApi(object):
 
         path_params = {}
         if 'group_locator' in params:
-            path_params['groupLocator'] = params['group_locator']  # noqa: E501
+            if isinstance(params['group_locator'], TeamCityObject):
+                path_params['groupLocator'] = params['group_locator'].locator_id
+            else:
+                path_params['groupLocator'] = params['group_locator']  # noqa: E501
         if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
 
         query_params = []
 
@@ -1291,7 +1349,10 @@ class GroupApi(object):
 
         path_params = {}
         if 'group_locator' in params:
-            path_params['groupLocator'] = params['group_locator']  # noqa: E501
+            if isinstance(params['group_locator'], TeamCityObject):
+                path_params['groupLocator'] = params['group_locator'].locator_id
+            else:
+                path_params['groupLocator'] = params['group_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -1428,9 +1489,15 @@ class GroupApi(object):
 
         path_params = {}
         if 'group_locator' in params:
-            path_params['groupLocator'] = params['group_locator']  # noqa: E501
+            if isinstance(params['group_locator'], TeamCityObject):
+                path_params['groupLocator'] = params['group_locator'].locator_id
+            else:
+                path_params['groupLocator'] = params['group_locator']  # noqa: E501
         if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
 
         query_params = []
 

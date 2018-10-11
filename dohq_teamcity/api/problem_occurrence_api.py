@@ -12,6 +12,7 @@
 
 
 from __future__ import absolute_import
+from dohq_teamcity.custom.base_model import TeamCityObject
 
 import re  # noqa: F401
 
@@ -184,7 +185,10 @@ class ProblemOccurrenceApi(object):
 
         path_params = {}
         if 'problem_locator' in params:
-            path_params['problemLocator'] = params['problem_locator']  # noqa: E501
+            if isinstance(params['problem_locator'], TeamCityObject):
+                path_params['problemLocator'] = params['problem_locator'].locator_id
+            else:
+                path_params['problemLocator'] = params['problem_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:

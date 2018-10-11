@@ -3,6 +3,7 @@
 {{>partial_header}}
 
 from __future__ import absolute_import
+from dohq_teamcity.custom.base_model import TeamCityObject
 
 import re  # noqa: F401
 
@@ -152,7 +153,10 @@ class {{classname}}(object):
         path_params = {}
 {{#pathParams}}
         if '{{paramName}}' in params:
-            path_params['{{baseName}}'] = params['{{paramName}}']{{#isListContainer}}  # noqa: E501
+            if isinstance(params['{{paramName}}'], TeamCityObject):
+                path_params['{{baseName}}'] = params['{{paramName}}'].locator_id
+            else:
+                path_params['{{baseName}}'] = params['{{paramName}}']{{#isListContainer}}  # noqa: E501
             collection_formats['{{baseName}}'] = '{{collectionFormat}}'{{/isListContainer}}  # noqa: E501
 {{/pathParams}}
 

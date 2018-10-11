@@ -12,6 +12,7 @@
 
 
 from __future__ import absolute_import
+from dohq_teamcity.custom.base_model import TeamCityObject
 
 import re  # noqa: F401
 
@@ -530,9 +531,15 @@ class VcsRootInstanceApi(object):
 
         path_params = {}
         if 'vcs_root_instance_locator' in params:
-            path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
+            if isinstance(params['vcs_root_instance_locator'], TeamCityObject):
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator'].locator_id
+            else:
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
         if 'field' in params:
-            path_params['field'] = params['field']  # noqa: E501
+            if isinstance(params['field'], TeamCityObject):
+                path_params['field'] = params['field'].locator_id
+            else:
+                path_params['field'] = params['field']  # noqa: E501
 
         query_params = []
 
@@ -599,7 +606,10 @@ class VcsRootInstanceApi(object):
 
         path_params = {}
         if 'vcs_root_instance_locator' in params:
-            path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
+            if isinstance(params['vcs_root_instance_locator'], TeamCityObject):
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator'].locator_id
+            else:
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
 
         query_params = []
 
@@ -676,9 +686,15 @@ class VcsRootInstanceApi(object):
 
         path_params = {}
         if 'path' in params:
-            path_params['path'] = params['path']  # noqa: E501
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
         if 'vcs_root_instance_locator' in params:
-            path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
+            if isinstance(params['vcs_root_instance_locator'], TeamCityObject):
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator'].locator_id
+            else:
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
 
         query_params = []
         if 'base_path' in params:
@@ -761,9 +777,15 @@ class VcsRootInstanceApi(object):
 
         path_params = {}
         if 'path' in params:
-            path_params['path'] = params['path']  # noqa: E501
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
         if 'vcs_root_instance_locator' in params:
-            path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
+            if isinstance(params['vcs_root_instance_locator'], TeamCityObject):
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator'].locator_id
+            else:
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
 
         query_params = []
         if 'base_path' in params:
@@ -843,9 +865,15 @@ class VcsRootInstanceApi(object):
 
         path_params = {}
         if 'path' in params:
-            path_params['path'] = params['path']  # noqa: E501
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
         if 'vcs_root_instance_locator' in params:
-            path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
+            if isinstance(params['vcs_root_instance_locator'], TeamCityObject):
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator'].locator_id
+            else:
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
 
         query_params = []
 
@@ -919,9 +947,15 @@ class VcsRootInstanceApi(object):
 
         path_params = {}
         if 'path' in params:
-            path_params['path'] = params['path']  # noqa: E501
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
         if 'vcs_root_instance_locator' in params:
-            path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
+            if isinstance(params['vcs_root_instance_locator'], TeamCityObject):
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator'].locator_id
+            else:
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
 
         query_params = []
 
@@ -996,9 +1030,15 @@ class VcsRootInstanceApi(object):
 
         path_params = {}
         if 'path' in params:
-            path_params['path'] = params['path']  # noqa: E501
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
         if 'vcs_root_instance_locator' in params:
-            path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
+            if isinstance(params['vcs_root_instance_locator'], TeamCityObject):
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator'].locator_id
+            else:
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -1068,7 +1108,10 @@ class VcsRootInstanceApi(object):
 
         path_params = {}
         if 'vcs_root_instance_locator' in params:
-            path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
+            if isinstance(params['vcs_root_instance_locator'], TeamCityObject):
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator'].locator_id
+            else:
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -1137,7 +1180,10 @@ class VcsRootInstanceApi(object):
 
         path_params = {}
         if 'vcs_root_instance_locator' in params:
-            path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
+            if isinstance(params['vcs_root_instance_locator'], TeamCityObject):
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator'].locator_id
+            else:
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
 
         query_params = []
 
@@ -1207,7 +1253,10 @@ class VcsRootInstanceApi(object):
 
         path_params = {}
         if 'vcs_root_instance_locator' in params:
-            path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
+            if isinstance(params['vcs_root_instance_locator'], TeamCityObject):
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator'].locator_id
+            else:
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
 
         query_params = []
         if 'base_path' in params:
@@ -1290,9 +1339,15 @@ class VcsRootInstanceApi(object):
 
         path_params = {}
         if 'path' in params:
-            path_params['path'] = params['path']  # noqa: E501
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
         if 'vcs_root_instance_locator' in params:
-            path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
+            if isinstance(params['vcs_root_instance_locator'], TeamCityObject):
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator'].locator_id
+            else:
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
 
         query_params = []
         if 'base_path' in params:
@@ -1501,7 +1556,10 @@ class VcsRootInstanceApi(object):
 
         path_params = {}
         if 'vcs_root_instance_locator' in params:
-            path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
+            if isinstance(params['vcs_root_instance_locator'], TeamCityObject):
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator'].locator_id
+            else:
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -1575,9 +1633,15 @@ class VcsRootInstanceApi(object):
 
         path_params = {}
         if 'vcs_root_instance_locator' in params:
-            path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
+            if isinstance(params['vcs_root_instance_locator'], TeamCityObject):
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator'].locator_id
+            else:
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
         if 'field' in params:
-            path_params['field'] = params['field']  # noqa: E501
+            if isinstance(params['field'], TeamCityObject):
+                path_params['field'] = params['field'].locator_id
+            else:
+                path_params['field'] = params['field']  # noqa: E501
 
         query_params = []
 
@@ -1711,7 +1775,10 @@ class VcsRootInstanceApi(object):
 
         path_params = {}
         if 'vcs_root_instance_locator' in params:
-            path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
+            if isinstance(params['vcs_root_instance_locator'], TeamCityObject):
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator'].locator_id
+            else:
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -1786,9 +1853,15 @@ class VcsRootInstanceApi(object):
 
         path_params = {}
         if 'vcs_root_instance_locator' in params:
-            path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
+            if isinstance(params['vcs_root_instance_locator'], TeamCityObject):
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator'].locator_id
+            else:
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
         if 'field' in params:
-            path_params['field'] = params['field']  # noqa: E501
+            if isinstance(params['field'], TeamCityObject):
+                path_params['field'] = params['field'].locator_id
+            else:
+                path_params['field'] = params['field']  # noqa: E501
 
         query_params = []
 
@@ -1859,7 +1932,10 @@ class VcsRootInstanceApi(object):
 
         path_params = {}
         if 'vcs_root_instance_locator' in params:
-            path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
+            if isinstance(params['vcs_root_instance_locator'], TeamCityObject):
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator'].locator_id
+            else:
+                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
