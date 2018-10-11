@@ -17,9 +17,22 @@ class Build(Build, ReadMixin):
         return self.teamcity.builds.get
 
 
-class BuildType(BuildType, ReadMixin):
+class BuildType(ReadMixin, BuildType):
+    @property
+    def api(self):
+        return self.teamcity.build_types
+
     def _read(self):
-        return self.teamcity.build_types.get
+        return self.api.get
+
+    def set_parameter(self, **kwargs):
+        """
+        :param str bt_locator: (required)
+        :param ModelProperty body:
+        :param str fields:
+        :return: ModelProperty
+        """
+        self.api.set_parameter(self.locator_id, **kwargs)
 
 
 class Group(Group, ReadMixin):

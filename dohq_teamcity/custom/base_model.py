@@ -28,7 +28,7 @@ class TeamCityObject(object):
         self.teamcity = teamcity  # type: TeamCity
 
     @property
-    def locator(self):
+    def locator_id(self):
         if self.id is None:
             raise TeamCityRuntimeException("object does not have attribute id: ''".format(self))
         return "id:{}".format(self.id)
@@ -85,5 +85,5 @@ class ReadMixin(object):
         load_func = self._read()
         if load_func is None:
             raise TeamCityCodeException("load_function is not defined in class '{}'".format(self.__class__.__name__))
-        self = load_func(self.locator)
+        self = load_func(self.locator_id)
         return self
