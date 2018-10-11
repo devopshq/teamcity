@@ -1,4 +1,4 @@
-# teamcity.UserApi
+# dohq_teamcity.UserApi
 
 All URIs are relative to *https://teamcity.example.com*
 
@@ -39,14 +39,14 @@ Method | HTTP request | Description
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.UserApi()
+api_instance = dohq_teamcity.UserApi()
 user_locator = 'user_locator_example' # str | 
-body = teamcity.Group() # Group |  (optional)
+body = dohq_teamcity.Group() # Group |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
@@ -88,14 +88,14 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.UserApi()
+api_instance = dohq_teamcity.UserApi()
 user_locator = 'user_locator_example' # str | 
-body = teamcity.Role() # Role |  (optional)
+body = dohq_teamcity.Role() # Role |  (optional)
 
 try:
     api_response = api_instance.add_role(user_locator, body=body)
@@ -135,12 +135,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.UserApi()
+api_instance = dohq_teamcity.UserApi()
 user_locator = 'user_locator_example' # str | 
 role_id = 'role_id_example' # str | 
 scope = 'scope_example' # str | 
@@ -184,12 +184,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.UserApi()
+api_instance = dohq_teamcity.UserApi()
 user_locator = 'user_locator_example' # str | 
 role_id = 'role_id_example' # str | 
 scope = 'scope_example' # str | 
@@ -232,13 +232,13 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.UserApi()
-body = teamcity.User() # User |  (optional)
+api_instance = dohq_teamcity.UserApi()
+body = dohq_teamcity.User() # User |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
@@ -279,12 +279,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.UserApi()
+api_instance = dohq_teamcity.UserApi()
 user_locator = 'user_locator_example' # str | 
 
 try:
@@ -323,12 +323,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.UserApi()
+api_instance = dohq_teamcity.UserApi()
 user_locator = 'user_locator_example' # str | 
 role_id = 'role_id_example' # str | 
 scope = 'scope_example' # str | 
@@ -371,12 +371,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.UserApi()
+api_instance = dohq_teamcity.UserApi()
 user_locator = 'user_locator_example' # str | 
 
 try:
@@ -415,12 +415,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.UserApi()
+api_instance = dohq_teamcity.UserApi()
 user_locator = 'user_locator_example' # str | 
 field = 'field_example' # str | 
 
@@ -461,12 +461,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.UserApi()
+api_instance = dohq_teamcity.UserApi()
 user_locator = 'user_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
@@ -508,12 +508,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.UserApi()
+api_instance = dohq_teamcity.UserApi()
 user_locator = 'user_locator_example' # str | 
 
 try:
@@ -553,12 +553,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.UserApi()
+api_instance = dohq_teamcity.UserApi()
 user_locator = 'user_locator_example' # str | 
 role_id = 'role_id_example' # str | 
 scope = 'scope_example' # str | 
@@ -602,12 +602,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.UserApi()
+api_instance = dohq_teamcity.UserApi()
 user_locator = 'user_locator_example' # str | 
 
 try:
@@ -647,12 +647,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.UserApi()
+api_instance = dohq_teamcity.UserApi()
 user_locator = 'user_locator_example' # str | 
 name = 'name_example' # str | 
 body = 'body_example' # str |  (optional)
@@ -696,12 +696,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.UserApi()
+api_instance = dohq_teamcity.UserApi()
 user_locator = 'user_locator_example' # str | 
 name = 'name_example' # str | 
 
@@ -742,14 +742,14 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.UserApi()
+api_instance = dohq_teamcity.UserApi()
 user_locator = 'user_locator_example' # str | 
-body = teamcity.Groups() # Groups |  (optional)
+body = dohq_teamcity.Groups() # Groups |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
@@ -791,14 +791,14 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.UserApi()
+api_instance = dohq_teamcity.UserApi()
 user_locator = 'user_locator_example' # str | 
-body = teamcity.Roles() # Roles |  (optional)
+body = dohq_teamcity.Roles() # Roles |  (optional)
 
 try:
     api_response = api_instance.replace_roles(user_locator, body=body)
@@ -838,12 +838,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.UserApi()
+api_instance = dohq_teamcity.UserApi()
 user_locator = 'user_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
@@ -885,12 +885,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.UserApi()
+api_instance = dohq_teamcity.UserApi()
 user_locator = 'user_locator_example' # str | 
 field = 'field_example' # str | 
 
@@ -932,12 +932,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.UserApi()
+api_instance = dohq_teamcity.UserApi()
 user_locator = 'user_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
@@ -979,12 +979,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.UserApi()
+api_instance = dohq_teamcity.UserApi()
 user_locator = 'user_locator_example' # str | 
 name = 'name_example' # str | 
 
@@ -1026,12 +1026,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.UserApi()
+api_instance = dohq_teamcity.UserApi()
 locator = 'locator_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
@@ -1073,12 +1073,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.UserApi()
+api_instance = dohq_teamcity.UserApi()
 user_locator = 'user_locator_example' # str | 
 field = 'field_example' # str | 
 body = 'body_example' # str |  (optional)
@@ -1122,14 +1122,14 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.UserApi()
+api_instance = dohq_teamcity.UserApi()
 user_locator = 'user_locator_example' # str | 
-body = teamcity.User() # User |  (optional)
+body = dohq_teamcity.User() # User |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:

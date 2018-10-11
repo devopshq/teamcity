@@ -1,4 +1,4 @@
-# teamcity.ProblemApi
+# dohq_teamcity.ProblemApi
 
 All URIs are relative to *https://teamcity.example.com*
 
@@ -17,12 +17,12 @@ Method | HTTP request | Description
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.ProblemApi()
+api_instance = dohq_teamcity.ProblemApi()
 locator = 'locator_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
@@ -64,12 +64,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.ProblemApi()
+api_instance = dohq_teamcity.ProblemApi()
 problem_locator = 'problem_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 

@@ -1,4 +1,4 @@
-# teamcity.FederationApi
+# dohq_teamcity.FederationApi
 
 All URIs are relative to *https://teamcity.example.com*
 
@@ -17,13 +17,13 @@ Method | HTTP request | Description
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.FederationApi()
-body = teamcity.Servers() # Servers |  (optional)
+api_instance = dohq_teamcity.FederationApi()
+body = dohq_teamcity.Servers() # Servers |  (optional)
 
 try:
     api_response = api_instance.add_server(body=body)
@@ -62,12 +62,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.FederationApi()
+api_instance = dohq_teamcity.FederationApi()
 fields = 'fields_example' # str |  (optional)
 
 try:

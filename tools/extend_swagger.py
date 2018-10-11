@@ -61,10 +61,10 @@ class Program:
 
     def run(self):
         # import after some fix
-        import teamcity.api
+        import dohq_teamcity.api
 
         # APIs load
-        apis = [(name, cls) for name, cls in inspect.getmembers(teamcity.api, inspect.isclass)]
+        apis = [(name, cls) for name, cls in inspect.getmembers(dohq_teamcity.api, inspect.isclass)]
 
         for cls_name, cls in apis:
             append = [""]

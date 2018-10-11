@@ -1,5 +1,5 @@
 {
-  "packageName" : "teamcity",
-  "projectName": "dohq-teamcity",
+  "packageName" : "dohq_teamcity",
+  "projectName": "dohq_teamcity",
   "packageUrl": "https://github.com/devopshq/teamcity"
 }

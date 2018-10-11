@@ -15,16 +15,16 @@ from __future__ import absolute_import
 
 import unittest
 
-import teamcity
-from teamcity.api.group_api import GroupApi  # noqa: E501
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.api.group_api import GroupApi  # noqa: E501
+from dohq_teamcity.rest import ApiException
 
 
 class TestGroupApi(unittest.TestCase):
     """GroupApi unit test stubs"""
 
     def setUp(self):
-        self.api = teamcity.api.group_api.GroupApi()  # noqa: E501
+        self.api = dohq_teamcity.api.group_api.GroupApi()  # noqa: E501
 
     def tearDown(self):
         pass

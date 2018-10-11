@@ -1,4 +1,4 @@
-# teamcity.ChangeApi
+# dohq_teamcity.ChangeApi
 
 All URIs are relative to *https://teamcity.example.com*
 
@@ -27,12 +27,12 @@ Method | HTTP request | Description
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.ChangeApi()
+api_instance = dohq_teamcity.ChangeApi()
 change_locator = 'change_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
@@ -74,12 +74,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.ChangeApi()
+api_instance = dohq_teamcity.ChangeApi()
 change_locator = 'change_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
@@ -121,12 +121,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.ChangeApi()
+api_instance = dohq_teamcity.ChangeApi()
 change_locator = 'change_locator_example' # str | 
 field = 'field_example' # str | 
 
@@ -168,12 +168,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.ChangeApi()
+api_instance = dohq_teamcity.ChangeApi()
 change_locator = 'change_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
@@ -215,12 +215,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.ChangeApi()
+api_instance = dohq_teamcity.ChangeApi()
 change_locator = 'change_locator_example' # str | 
 
 try:
@@ -260,12 +260,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.ChangeApi()
+api_instance = dohq_teamcity.ChangeApi()
 change_locator = 'change_locator_example' # str | 
 
 try:
@@ -305,12 +305,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.ChangeApi()
+api_instance = dohq_teamcity.ChangeApi()
 change_locator = 'change_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
@@ -352,12 +352,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.ChangeApi()
+api_instance = dohq_teamcity.ChangeApi()
 change_locator = 'change_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
@@ -399,12 +399,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.ChangeApi()
+api_instance = dohq_teamcity.ChangeApi()
 change_locator = 'change_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
@@ -446,12 +446,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.ChangeApi()
+api_instance = dohq_teamcity.ChangeApi()
 change_locator = 'change_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
@@ -493,12 +493,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.ChangeApi()
+api_instance = dohq_teamcity.ChangeApi()
 change_locator = 'change_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
@@ -540,12 +540,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.ChangeApi()
+api_instance = dohq_teamcity.ChangeApi()
 project = 'project_example' # str |  (optional)
 build_type = 'build_type_example' # str |  (optional)
 build = 'build_example' # str |  (optional)

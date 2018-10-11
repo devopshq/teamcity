@@ -1,4 +1,4 @@
-# teamcity.DefaultApi
+# dohq_teamcity.DefaultApi
 
 All URIs are relative to *https://teamcity.example.com*
 
@@ -20,12 +20,12 @@ Method | HTTP request | Description
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.DefaultApi()
+api_instance = dohq_teamcity.DefaultApi()
 
 try:
     api_response = api_instance.serve_api_version()
@@ -61,12 +61,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.DefaultApi()
+api_instance = dohq_teamcity.DefaultApi()
 project_locator = 'project_locator_example' # str | 
 bt_locator = 'bt_locator_example' # str | 
 build_locator = 'build_locator_example' # str | 
@@ -112,12 +112,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.DefaultApi()
+api_instance = dohq_teamcity.DefaultApi()
 fields = 'fields_example' # str |  (optional)
 
 try:
@@ -157,12 +157,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.DefaultApi()
+api_instance = dohq_teamcity.DefaultApi()
 
 try:
     api_response = api_instance.serve_root()
@@ -198,12 +198,12 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import teamcity
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = teamcity.DefaultApi()
+api_instance = dohq_teamcity.DefaultApi()
 
 try:
     api_response = api_instance.serve_version()

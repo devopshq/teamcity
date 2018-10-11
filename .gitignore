@@ -1,3 +1,4 @@
+docs-sphinx/_build
 test.py
 index.html
 # Byte-compiled / optimized / DLL files

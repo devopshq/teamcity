@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import teamcity
-from teamcity.models.servers import Servers  # noqa: E501
-from teamcity.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.models.servers import Servers  # noqa: E501
+from dohq_teamcity.rest import ApiException
 
 
 class TestServers(unittest.TestCase):
