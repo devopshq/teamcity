@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 
@@ -25,9 +25,9 @@ class Href(TeamCityObject):
         'href': 'href'
     }
 
-    def __init__(self, href=None):  # noqa: E501
+    def __init__(self, href=None, teamcity=None):  # noqa: E501
         """Href - a model defined in Swagger"""  # noqa: E501
-        super(Href, self).__init__()
+        super(Href, self).__init__(teamcity=teamcity)
 
         self._href = None
         self.discriminator = None

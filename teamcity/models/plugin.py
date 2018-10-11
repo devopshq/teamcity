@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.properties import Properties  # noqa: F401,E501
@@ -35,9 +35,9 @@ class Plugin(TeamCityObject):
         'version': 'version'
     }
 
-    def __init__(self, display_name=None, load_path=None, name=None, parameters=None, version=None):  # noqa: E501
+    def __init__(self, display_name=None, load_path=None, name=None, parameters=None, version=None, teamcity=None):  # noqa: E501
         """Plugin - a model defined in Swagger"""  # noqa: E501
-        super(Plugin, self).__init__()
+        super(Plugin, self).__init__(teamcity=teamcity)
 
         self._display_name = None
         self._load_path = None

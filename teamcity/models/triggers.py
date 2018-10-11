@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.trigger import Trigger  # noqa: F401,E501
@@ -29,9 +29,9 @@ class Triggers(TeamCityObject):
         'trigger': 'trigger'
     }
 
-    def __init__(self, count=None, trigger=None):  # noqa: E501
+    def __init__(self, count=None, trigger=None, teamcity=None):  # noqa: E501
         """Triggers - a model defined in Swagger"""  # noqa: E501
-        super(Triggers, self).__init__()
+        super(Triggers, self).__init__(teamcity=teamcity)
 
         self._count = None
         self._trigger = None

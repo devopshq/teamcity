@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.type import Type  # noqa: F401,E501
@@ -33,9 +33,9 @@ class ModelProperty(TeamCityObject):
         'value': 'value'
     }
 
-    def __init__(self, inherited=False, name=None, type=None, value=None):  # noqa: E501
+    def __init__(self, inherited=False, name=None, type=None, value=None, teamcity=None):  # noqa: E501
         """ModelProperty - a model defined in Swagger"""  # noqa: E501
-        super(ModelProperty, self).__init__()
+        super(ModelProperty, self).__init__(teamcity=teamcity)
 
         self._inherited = None
         self._name = None

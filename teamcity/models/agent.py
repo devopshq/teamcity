@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.agent_pool import AgentPool  # noqa: F401,E501
@@ -64,9 +64,9 @@ class Agent(TeamCityObject):
         'uptodate': 'uptodate'
     }
 
-    def __init__(self, authorized=False, authorized_info=None, compatible_build_types=None, connected=False, enabled=False, enabled_info=None, href=None, id=None, incompatible_build_types=None, ip=None, locator=None, name=None, pool=None, properties=None, protocol=None, type_id=None, uptodate=False):  # noqa: E501
+    def __init__(self, authorized=False, authorized_info=None, compatible_build_types=None, connected=False, enabled=False, enabled_info=None, href=None, id=None, incompatible_build_types=None, ip=None, locator=None, name=None, pool=None, properties=None, protocol=None, type_id=None, uptodate=False, teamcity=None):  # noqa: E501
         """Agent - a model defined in Swagger"""  # noqa: E501
-        super(Agent, self).__init__()
+        super(Agent, self).__init__(teamcity=teamcity)
 
         self._authorized = None
         self._authorized_info = None

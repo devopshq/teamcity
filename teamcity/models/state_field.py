@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 
@@ -27,9 +27,9 @@ class StateField(TeamCityObject):
         'value': 'value'
     }
 
-    def __init__(self, inherited=False, value=False):  # noqa: E501
+    def __init__(self, inherited=False, value=False, teamcity=None):  # noqa: E501
         """StateField - a model defined in Swagger"""  # noqa: E501
-        super(StateField, self).__init__()
+        super(StateField, self).__init__(teamcity=teamcity)
 
         self._inherited = None
         self._value = None

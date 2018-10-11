@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.build_type import BuildType  # noqa: F401,E501
@@ -41,9 +41,9 @@ class TriggeredBy(TeamCityObject):
         'user': 'user'
     }
 
-    def __init__(self, build_type=None, _date=None, details=None, properties=None, raw_value=None, type=None, user=None):  # noqa: E501
+    def __init__(self, build_type=None, _date=None, details=None, properties=None, raw_value=None, type=None, user=None, teamcity=None):  # noqa: E501
         """TriggeredBy - a model defined in Swagger"""  # noqa: E501
-        super(TriggeredBy, self).__init__()
+        super(TriggeredBy, self).__init__(teamcity=teamcity)
 
         self._build_type = None
         self.__date = None

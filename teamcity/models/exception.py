@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.stack_trace_element import StackTraceElement  # noqa: F401,E501
@@ -36,9 +36,9 @@ class Exception(TeamCityObject):
         'suppressed': 'suppressed'
     }
 
-    def __init__(self, cause=None, localized_message=None, message=None, stack_trace=None, suppressed=None):  # noqa: E501
+    def __init__(self, cause=None, localized_message=None, message=None, stack_trace=None, suppressed=None, teamcity=None):  # noqa: E501
         """Exception - a model defined in Swagger"""  # noqa: E501
-        super(Exception, self).__init__()
+        super(Exception, self).__init__(teamcity=teamcity)
 
         self._cause = None
         self._localized_message = None

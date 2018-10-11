@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 
@@ -25,9 +25,9 @@ class Items(TeamCityObject):
         'item': 'item'
     }
 
-    def __init__(self, item=None):  # noqa: E501
+    def __init__(self, item=None, teamcity=None):  # noqa: E501
         """Items - a model defined in Swagger"""  # noqa: E501
-        super(Items, self).__init__()
+        super(Items, self).__init__(teamcity=teamcity)
 
         self._item = None
         self.discriminator = None

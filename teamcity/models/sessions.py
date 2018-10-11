@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.session import Session  # noqa: F401,E501
@@ -39,9 +39,9 @@ class Sessions(TeamCityObject):
         'session_max_alive_time': 'sessionMaxAliveTime'
     }
 
-    def __init__(self, count=None, max_active=None, session=None, session_counter=None, session_create_rate=None, session_expire_rate=None, session_max_alive_time=None):  # noqa: E501
+    def __init__(self, count=None, max_active=None, session=None, session_counter=None, session_create_rate=None, session_expire_rate=None, session_max_alive_time=None, teamcity=None):  # noqa: E501
         """Sessions - a model defined in Swagger"""  # noqa: E501
-        super(Sessions, self).__init__()
+        super(Sessions, self).__init__(teamcity=teamcity)
 
         self._count = None
         self._max_active = None

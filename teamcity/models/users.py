@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.user import User  # noqa: F401,E501
@@ -29,9 +29,9 @@ class Users(TeamCityObject):
         'user': 'user'
     }
 
-    def __init__(self, count=None, user=None):  # noqa: E501
+    def __init__(self, count=None, user=None, teamcity=None):  # noqa: E501
         """Users - a model defined in Swagger"""  # noqa: E501
-        super(Users, self).__init__()
+        super(Users, self).__init__(teamcity=teamcity)
 
         self._count = None
         self._user = None

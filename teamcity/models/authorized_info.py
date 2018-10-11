@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.comment import Comment  # noqa: F401,E501
@@ -29,9 +29,9 @@ class AuthorizedInfo(TeamCityObject):
         'status': 'status'
     }
 
-    def __init__(self, comment=None, status=False):  # noqa: E501
+    def __init__(self, comment=None, status=False, teamcity=None):  # noqa: E501
         """AuthorizedInfo - a model defined in Swagger"""  # noqa: E501
-        super(AuthorizedInfo, self).__init__()
+        super(AuthorizedInfo, self).__init__(teamcity=teamcity)
 
         self._comment = None
         self._status = None

@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 
@@ -25,9 +25,9 @@ class Type(TeamCityObject):
         'raw_value': 'rawValue'
     }
 
-    def __init__(self, raw_value=None):  # noqa: E501
+    def __init__(self, raw_value=None, teamcity=None):  # noqa: E501
         """Type - a model defined in Swagger"""  # noqa: E501
-        super(Type, self).__init__()
+        super(Type, self).__init__(teamcity=teamcity)
 
         self._raw_value = None
         self.discriminator = None

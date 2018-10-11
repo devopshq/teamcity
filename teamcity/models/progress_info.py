@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 
@@ -35,9 +35,9 @@ class ProgressInfo(TeamCityObject):
         'probably_hanging': 'probablyHanging'
     }
 
-    def __init__(self, current_stage_text=None, elapsed_seconds=None, estimated_total_seconds=None, outdated=False, percentage_complete=None, probably_hanging=False):  # noqa: E501
+    def __init__(self, current_stage_text=None, elapsed_seconds=None, estimated_total_seconds=None, outdated=False, percentage_complete=None, probably_hanging=False, teamcity=None):  # noqa: E501
         """ProgressInfo - a model defined in Swagger"""  # noqa: E501
-        super(ProgressInfo, self).__init__()
+        super(ProgressInfo, self).__init__(teamcity=teamcity)
 
         self._current_stage_text = None
         self._elapsed_seconds = None

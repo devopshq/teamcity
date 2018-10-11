@@ -59,6 +59,288 @@ class AgentApi(object):
             (data) = self.__delete_agent_with_http_info(agent_locator, **kwargs)  # noqa: E501
             return data
 
+
+    def get_agent_pool(self, agent_locator, **kwargs):  # noqa: E501
+        """get_agent_pool  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_agent_pool(agent_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str agent_locator: (required)
+        :param str fields:
+        :return: AgentPool
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_agent_pool_with_http_info(agent_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_agent_pool_with_http_info(agent_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_authorized_info(self, agent_locator, **kwargs):  # noqa: E501
+        """get_authorized_info  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_authorized_info(agent_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str agent_locator: (required)
+        :param str fields:
+        :return: AuthorizedInfo
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_authorized_info_with_http_info(agent_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_authorized_info_with_http_info(agent_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_compatible_build_types(self, agent_locator, **kwargs):  # noqa: E501
+        """get_compatible_build_types  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_compatible_build_types(agent_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str agent_locator: (required)
+        :param str fields:
+        :return: BuildTypes
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_compatible_build_types_with_http_info(agent_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_compatible_build_types_with_http_info(agent_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_enabled_info(self, agent_locator, **kwargs):  # noqa: E501
+        """get_enabled_info  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_enabled_info(agent_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str agent_locator: (required)
+        :param str fields:
+        :return: EnabledInfo
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_enabled_info_with_http_info(agent_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_enabled_info_with_http_info(agent_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_incompatible_build_types(self, agent_locator, **kwargs):  # noqa: E501
+        """get_incompatible_build_types  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_incompatible_build_types(agent_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str agent_locator: (required)
+        :param str fields:
+        :return: Compatibilities
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_incompatible_build_types_with_http_info(agent_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_incompatible_build_types_with_http_info(agent_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def serve_agent(self, agent_locator, **kwargs):  # noqa: E501
+        """serve_agent  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.serve_agent(agent_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str agent_locator: (required)
+        :param str fields:
+        :return: Agent
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__serve_agent_with_http_info(agent_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__serve_agent_with_http_info(agent_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def serve_agent_field(self, agent_locator, field, **kwargs):  # noqa: E501
+        """serve_agent_field  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.serve_agent_field(agent_locator, field, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str agent_locator: (required)
+        :param str field: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__serve_agent_field_with_http_info(agent_locator, field, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__serve_agent_field_with_http_info(agent_locator, field, **kwargs)  # noqa: E501
+            return data
+
+
+    def serve_agents(self, **kwargs):  # noqa: E501
+        """serve_agents  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.serve_agents(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param bool include_disconnected:
+        :param bool include_unauthorized:
+        :param str locator:
+        :param str fields:
+        :return: Agents
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__serve_agents_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__serve_agents_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+
+    def set_agent_field(self, agent_locator, field, **kwargs):  # noqa: E501
+        """set_agent_field  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.set_agent_field(agent_locator, field, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str agent_locator: (required)
+        :param str field: (required)
+        :param str body:
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__set_agent_field_with_http_info(agent_locator, field, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__set_agent_field_with_http_info(agent_locator, field, **kwargs)  # noqa: E501
+            return data
+
+
+    def set_agent_pool(self, agent_locator, **kwargs):  # noqa: E501
+        """set_agent_pool  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.set_agent_pool(agent_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str agent_locator: (required)
+        :param AgentPool body:
+        :param str fields:
+        :return: AgentPool
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__set_agent_pool_with_http_info(agent_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__set_agent_pool_with_http_info(agent_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def set_authorized_info(self, agent_locator, **kwargs):  # noqa: E501
+        """set_authorized_info  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.set_authorized_info(agent_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str agent_locator: (required)
+        :param AuthorizedInfo body:
+        :param str fields:
+        :return: AuthorizedInfo
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__set_authorized_info_with_http_info(agent_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__set_authorized_info_with_http_info(agent_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def set_enabled_info(self, agent_locator, **kwargs):  # noqa: E501
+        """set_enabled_info  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.set_enabled_info(agent_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str agent_locator: (required)
+        :param EnabledInfo body:
+        :param str fields:
+        :return: EnabledInfo
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__set_enabled_info_with_http_info(agent_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__set_enabled_info_with_http_info(agent_locator, **kwargs)  # noqa: E501
+            return data
+
     def __delete_agent_with_http_info(self, agent_locator, **kwargs):  # noqa: E501
         """delete_agent  # noqa: E501
 
@@ -126,29 +408,6 @@ class AgentApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_agent_pool(self, agent_locator, **kwargs):  # noqa: E501
-        """get_agent_pool  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_agent_pool(agent_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str agent_locator: (required)
-        :param str fields:
-        :return: AgentPool
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_agent_pool_with_http_info(agent_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_agent_pool_with_http_info(agent_locator, **kwargs)  # noqa: E501
-            return data
-
     def __get_agent_pool_with_http_info(self, agent_locator, **kwargs):  # noqa: E501
         """get_agent_pool  # noqa: E501
 
@@ -219,29 +478,6 @@ class AgentApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_authorized_info(self, agent_locator, **kwargs):  # noqa: E501
-        """get_authorized_info  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_authorized_info(agent_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str agent_locator: (required)
-        :param str fields:
-        :return: AuthorizedInfo
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_authorized_info_with_http_info(agent_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_authorized_info_with_http_info(agent_locator, **kwargs)  # noqa: E501
-            return data
-
     def __get_authorized_info_with_http_info(self, agent_locator, **kwargs):  # noqa: E501
         """get_authorized_info  # noqa: E501
 
@@ -312,29 +548,6 @@ class AgentApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_compatible_build_types(self, agent_locator, **kwargs):  # noqa: E501
-        """get_compatible_build_types  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_compatible_build_types(agent_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str agent_locator: (required)
-        :param str fields:
-        :return: BuildTypes
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_compatible_build_types_with_http_info(agent_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_compatible_build_types_with_http_info(agent_locator, **kwargs)  # noqa: E501
-            return data
-
     def __get_compatible_build_types_with_http_info(self, agent_locator, **kwargs):  # noqa: E501
         """get_compatible_build_types  # noqa: E501
 
@@ -405,29 +618,6 @@ class AgentApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_enabled_info(self, agent_locator, **kwargs):  # noqa: E501
-        """get_enabled_info  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_enabled_info(agent_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str agent_locator: (required)
-        :param str fields:
-        :return: EnabledInfo
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_enabled_info_with_http_info(agent_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_enabled_info_with_http_info(agent_locator, **kwargs)  # noqa: E501
-            return data
-
     def __get_enabled_info_with_http_info(self, agent_locator, **kwargs):  # noqa: E501
         """get_enabled_info  # noqa: E501
 
@@ -498,29 +688,6 @@ class AgentApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_incompatible_build_types(self, agent_locator, **kwargs):  # noqa: E501
-        """get_incompatible_build_types  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_incompatible_build_types(agent_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str agent_locator: (required)
-        :param str fields:
-        :return: Compatibilities
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_incompatible_build_types_with_http_info(agent_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_incompatible_build_types_with_http_info(agent_locator, **kwargs)  # noqa: E501
-            return data
-
     def __get_incompatible_build_types_with_http_info(self, agent_locator, **kwargs):  # noqa: E501
         """get_incompatible_build_types  # noqa: E501
 
@@ -591,29 +758,6 @@ class AgentApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def serve_agent(self, agent_locator, **kwargs):  # noqa: E501
-        """serve_agent  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_agent(agent_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str agent_locator: (required)
-        :param str fields:
-        :return: Agent
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_agent_with_http_info(agent_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_agent_with_http_info(agent_locator, **kwargs)  # noqa: E501
-            return data
-
     def __serve_agent_with_http_info(self, agent_locator, **kwargs):  # noqa: E501
         """serve_agent  # noqa: E501
 
@@ -684,29 +828,6 @@ class AgentApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def serve_agent_field(self, agent_locator, field, **kwargs):  # noqa: E501
-        """serve_agent_field  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_agent_field(agent_locator, field, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str agent_locator: (required)
-        :param str field: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_agent_field_with_http_info(agent_locator, field, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_agent_field_with_http_info(agent_locator, field, **kwargs)  # noqa: E501
-            return data
-
     def __serve_agent_field_with_http_info(self, agent_locator, field, **kwargs):  # noqa: E501
         """serve_agent_field  # noqa: E501
 
@@ -781,31 +902,6 @@ class AgentApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def serve_agents(self, **kwargs):  # noqa: E501
-        """serve_agents  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_agents(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param bool include_disconnected:
-        :param bool include_unauthorized:
-        :param str locator:
-        :param str fields:
-        :return: Agents
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_agents_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_agents_with_http_info(**kwargs)  # noqa: E501
-            return data
-
     def __serve_agents_with_http_info(self, **kwargs):  # noqa: E501
         """serve_agents  # noqa: E501
 
@@ -878,30 +974,6 @@ class AgentApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def set_agent_field(self, agent_locator, field, **kwargs):  # noqa: E501
-        """set_agent_field  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_agent_field(agent_locator, field, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str agent_locator: (required)
-        :param str field: (required)
-        :param str body:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__set_agent_field_with_http_info(agent_locator, field, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__set_agent_field_with_http_info(agent_locator, field, **kwargs)  # noqa: E501
-            return data
-
     def __set_agent_field_with_http_info(self, agent_locator, field, **kwargs):  # noqa: E501
         """set_agent_field  # noqa: E501
 
@@ -979,30 +1051,6 @@ class AgentApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def set_agent_pool(self, agent_locator, **kwargs):  # noqa: E501
-        """set_agent_pool  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_agent_pool(agent_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str agent_locator: (required)
-        :param AgentPool body:
-        :param str fields:
-        :return: AgentPool
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__set_agent_pool_with_http_info(agent_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__set_agent_pool_with_http_info(agent_locator, **kwargs)  # noqa: E501
-            return data
-
     def __set_agent_pool_with_http_info(self, agent_locator, **kwargs):  # noqa: E501
         """set_agent_pool  # noqa: E501
 
@@ -1076,30 +1124,6 @@ class AgentApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def set_authorized_info(self, agent_locator, **kwargs):  # noqa: E501
-        """set_authorized_info  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_authorized_info(agent_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str agent_locator: (required)
-        :param AuthorizedInfo body:
-        :param str fields:
-        :return: AuthorizedInfo
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__set_authorized_info_with_http_info(agent_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__set_authorized_info_with_http_info(agent_locator, **kwargs)  # noqa: E501
-            return data
-
     def __set_authorized_info_with_http_info(self, agent_locator, **kwargs):  # noqa: E501
         """set_authorized_info  # noqa: E501
 
@@ -1173,30 +1197,6 @@ class AgentApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def set_enabled_info(self, agent_locator, **kwargs):  # noqa: E501
-        """set_enabled_info  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_enabled_info(agent_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str agent_locator: (required)
-        :param EnabledInfo body:
-        :param str fields:
-        :return: EnabledInfo
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__set_enabled_info_with_http_info(agent_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__set_enabled_info_with_http_info(agent_locator, **kwargs)  # noqa: E501
-            return data
-
     def __set_enabled_info_with_http_info(self, agent_locator, **kwargs):  # noqa: E501
         """set_enabled_info  # noqa: E501
 

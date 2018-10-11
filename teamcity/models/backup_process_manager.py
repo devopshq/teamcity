@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.backup_process import BackupProcess  # noqa: F401,E501
@@ -27,9 +27,9 @@ class BackupProcessManager(TeamCityObject):
         'current_backup_process': 'currentBackupProcess'
     }
 
-    def __init__(self, current_backup_process=None):  # noqa: E501
+    def __init__(self, current_backup_process=None, teamcity=None):  # noqa: E501
         """BackupProcessManager - a model defined in Swagger"""  # noqa: E501
-        super(BackupProcessManager, self).__init__()
+        super(BackupProcessManager, self).__init__(teamcity=teamcity)
 
         self._current_backup_process = None
         self.discriminator = None

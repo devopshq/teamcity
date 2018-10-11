@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.investigation import Investigation  # noqa: F401,E501
@@ -35,9 +35,9 @@ class Investigations(TeamCityObject):
         'prev_href': 'prevHref'
     }
 
-    def __init__(self, count=None, href=None, investigation=None, next_href=None, prev_href=None):  # noqa: E501
+    def __init__(self, count=None, href=None, investigation=None, next_href=None, prev_href=None, teamcity=None):  # noqa: E501
         """Investigations - a model defined in Swagger"""  # noqa: E501
-        super(Investigations, self).__init__()
+        super(Investigations, self).__init__(teamcity=teamcity)
 
         self._count = None
         self._href = None

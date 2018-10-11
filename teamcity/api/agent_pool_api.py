@@ -60,6 +60,305 @@ class AgentPoolApi(object):
             (data) = self.__add_agent_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
             return data
 
+
+    def add_project(self, agent_pool_locator, **kwargs):  # noqa: E501
+        """add_project  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.add_project(agent_pool_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str agent_pool_locator: (required)
+        :param Project body:
+        :return: Project
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__add_project_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__add_project_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def create_pool(self, **kwargs):  # noqa: E501
+        """create_pool  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_pool(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param AgentPool body:
+        :return: AgentPool
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__create_pool_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__create_pool_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+
+    def delete_pool(self, agent_pool_locator, **kwargs):  # noqa: E501
+        """delete_pool  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_pool(agent_pool_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str agent_pool_locator: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__delete_pool_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__delete_pool_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def delete_pool_project(self, agent_pool_locator, project_locator, **kwargs):  # noqa: E501
+        """delete_pool_project  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_pool_project(agent_pool_locator, project_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str agent_pool_locator: (required)
+        :param str project_locator: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__delete_pool_project_with_http_info(agent_pool_locator, project_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__delete_pool_project_with_http_info(agent_pool_locator, project_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def delete_projects(self, agent_pool_locator, **kwargs):  # noqa: E501
+        """delete_projects  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_projects(agent_pool_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str agent_pool_locator: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__delete_projects_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__delete_projects_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_field(self, agent_pool_locator, field, **kwargs):  # noqa: E501
+        """get_field  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_field(agent_pool_locator, field, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str agent_pool_locator: (required)
+        :param str field: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_field_with_http_info(agent_pool_locator, field, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_field_with_http_info(agent_pool_locator, field, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_pool(self, agent_pool_locator, **kwargs):  # noqa: E501
+        """get_pool  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_pool(agent_pool_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str agent_pool_locator: (required)
+        :param str fields:
+        :return: AgentPool
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_pool_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_pool_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_pool_agents(self, agent_pool_locator, **kwargs):  # noqa: E501
+        """get_pool_agents  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_pool_agents(agent_pool_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str agent_pool_locator: (required)
+        :param str locator:
+        :param str fields:
+        :return: Agents
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_pool_agents_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_pool_agents_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_pool_project(self, agent_pool_locator, project_locator, **kwargs):  # noqa: E501
+        """get_pool_project  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_pool_project(agent_pool_locator, project_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str agent_pool_locator: (required)
+        :param str project_locator: (required)
+        :param str fields:
+        :return: Project
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_pool_project_with_http_info(agent_pool_locator, project_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_pool_project_with_http_info(agent_pool_locator, project_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_pool_projects(self, agent_pool_locator, **kwargs):  # noqa: E501
+        """get_pool_projects  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_pool_projects(agent_pool_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str agent_pool_locator: (required)
+        :param str fields:
+        :return: Projects
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_pool_projects_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_pool_projects_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_pools(self, **kwargs):  # noqa: E501
+        """get_pools  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_pools(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str locator:
+        :param str fields:
+        :return: AgentPools
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_pools_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_pools_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+
+    def replace_projects(self, agent_pool_locator, **kwargs):  # noqa: E501
+        """replace_projects  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.replace_projects(agent_pool_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str agent_pool_locator: (required)
+        :param Projects body:
+        :return: Projects
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__replace_projects_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__replace_projects_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def set_field(self, agent_pool_locator, field, **kwargs):  # noqa: E501
+        """set_field  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.set_field(agent_pool_locator, field, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str agent_pool_locator: (required)
+        :param str field: (required)
+        :param str body:
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__set_field_with_http_info(agent_pool_locator, field, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__set_field_with_http_info(agent_pool_locator, field, **kwargs)  # noqa: E501
+            return data
+
     def __add_agent_with_http_info(self, agent_pool_locator, **kwargs):  # noqa: E501
         """add_agent  # noqa: E501
 
@@ -133,29 +432,6 @@ class AgentPoolApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def add_project(self, agent_pool_locator, **kwargs):  # noqa: E501
-        """add_project  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_project(agent_pool_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str agent_pool_locator: (required)
-        :param Project body:
-        :return: Project
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__add_project_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__add_project_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
-            return data
-
     def __add_project_with_http_info(self, agent_pool_locator, **kwargs):  # noqa: E501
         """add_project  # noqa: E501
 
@@ -226,28 +502,6 @@ class AgentPoolApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def create_pool(self, **kwargs):  # noqa: E501
-        """create_pool  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_pool(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param AgentPool body:
-        :return: AgentPool
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__create_pool_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__create_pool_with_http_info(**kwargs)  # noqa: E501
-            return data
-
     def __create_pool_with_http_info(self, **kwargs):  # noqa: E501
         """create_pool  # noqa: E501
 
@@ -311,28 +565,6 @@ class AgentPoolApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def delete_pool(self, agent_pool_locator, **kwargs):  # noqa: E501
-        """delete_pool  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_pool(agent_pool_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str agent_pool_locator: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__delete_pool_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__delete_pool_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
-            return data
-
     def __delete_pool_with_http_info(self, agent_pool_locator, **kwargs):  # noqa: E501
         """delete_pool  # noqa: E501
 
@@ -400,29 +632,6 @@ class AgentPoolApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def delete_pool_project(self, agent_pool_locator, project_locator, **kwargs):  # noqa: E501
-        """delete_pool_project  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_pool_project(agent_pool_locator, project_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str agent_pool_locator: (required)
-        :param str project_locator: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__delete_pool_project_with_http_info(agent_pool_locator, project_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__delete_pool_project_with_http_info(agent_pool_locator, project_locator, **kwargs)  # noqa: E501
-            return data
-
     def __delete_pool_project_with_http_info(self, agent_pool_locator, project_locator, **kwargs):  # noqa: E501
         """delete_pool_project  # noqa: E501
 
@@ -497,28 +706,6 @@ class AgentPoolApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def delete_projects(self, agent_pool_locator, **kwargs):  # noqa: E501
-        """delete_projects  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_projects(agent_pool_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str agent_pool_locator: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__delete_projects_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__delete_projects_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
-            return data
-
     def __delete_projects_with_http_info(self, agent_pool_locator, **kwargs):  # noqa: E501
         """delete_projects  # noqa: E501
 
@@ -586,29 +773,6 @@ class AgentPoolApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_field(self, agent_pool_locator, field, **kwargs):  # noqa: E501
-        """get_field  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_field(agent_pool_locator, field, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str agent_pool_locator: (required)
-        :param str field: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_field_with_http_info(agent_pool_locator, field, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_field_with_http_info(agent_pool_locator, field, **kwargs)  # noqa: E501
-            return data
-
     def __get_field_with_http_info(self, agent_pool_locator, field, **kwargs):  # noqa: E501
         """get_field  # noqa: E501
 
@@ -683,29 +847,6 @@ class AgentPoolApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_pool(self, agent_pool_locator, **kwargs):  # noqa: E501
-        """get_pool  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_pool(agent_pool_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str agent_pool_locator: (required)
-        :param str fields:
-        :return: AgentPool
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_pool_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_pool_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
-            return data
-
     def __get_pool_with_http_info(self, agent_pool_locator, **kwargs):  # noqa: E501
         """get_pool  # noqa: E501
 
@@ -776,30 +917,6 @@ class AgentPoolApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_pool_agents(self, agent_pool_locator, **kwargs):  # noqa: E501
-        """get_pool_agents  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_pool_agents(agent_pool_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str agent_pool_locator: (required)
-        :param str locator:
-        :param str fields:
-        :return: Agents
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_pool_agents_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_pool_agents_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
-            return data
-
     def __get_pool_agents_with_http_info(self, agent_pool_locator, **kwargs):  # noqa: E501
         """get_pool_agents  # noqa: E501
 
@@ -873,30 +990,6 @@ class AgentPoolApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_pool_project(self, agent_pool_locator, project_locator, **kwargs):  # noqa: E501
-        """get_pool_project  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_pool_project(agent_pool_locator, project_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str agent_pool_locator: (required)
-        :param str project_locator: (required)
-        :param str fields:
-        :return: Project
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_pool_project_with_http_info(agent_pool_locator, project_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_pool_project_with_http_info(agent_pool_locator, project_locator, **kwargs)  # noqa: E501
-            return data
-
     def __get_pool_project_with_http_info(self, agent_pool_locator, project_locator, **kwargs):  # noqa: E501
         """get_pool_project  # noqa: E501
 
@@ -974,29 +1067,6 @@ class AgentPoolApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_pool_projects(self, agent_pool_locator, **kwargs):  # noqa: E501
-        """get_pool_projects  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_pool_projects(agent_pool_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str agent_pool_locator: (required)
-        :param str fields:
-        :return: Projects
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_pool_projects_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_pool_projects_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
-            return data
-
     def __get_pool_projects_with_http_info(self, agent_pool_locator, **kwargs):  # noqa: E501
         """get_pool_projects  # noqa: E501
 
@@ -1067,29 +1137,6 @@ class AgentPoolApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_pools(self, **kwargs):  # noqa: E501
-        """get_pools  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_pools(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str locator:
-        :param str fields:
-        :return: AgentPools
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_pools_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_pools_with_http_info(**kwargs)  # noqa: E501
-            return data
-
     def __get_pools_with_http_info(self, **kwargs):  # noqa: E501
         """get_pools  # noqa: E501
 
@@ -1156,29 +1203,6 @@ class AgentPoolApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def replace_projects(self, agent_pool_locator, **kwargs):  # noqa: E501
-        """replace_projects  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.replace_projects(agent_pool_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str agent_pool_locator: (required)
-        :param Projects body:
-        :return: Projects
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__replace_projects_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__replace_projects_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
-            return data
-
     def __replace_projects_with_http_info(self, agent_pool_locator, **kwargs):  # noqa: E501
         """replace_projects  # noqa: E501
 
@@ -1249,30 +1273,6 @@ class AgentPoolApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def set_field(self, agent_pool_locator, field, **kwargs):  # noqa: E501
-        """set_field  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_field(agent_pool_locator, field, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str agent_pool_locator: (required)
-        :param str field: (required)
-        :param str body:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__set_field_with_http_info(agent_pool_locator, field, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__set_field_with_http_info(agent_pool_locator, field, **kwargs)  # noqa: E501
-            return data
-
     def __set_field_with_http_info(self, agent_pool_locator, field, **kwargs):  # noqa: E501
         """set_field  # noqa: E501
 

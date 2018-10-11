@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.group import Group  # noqa: F401,E501
@@ -29,9 +29,9 @@ class Groups(TeamCityObject):
         'group': 'group'
     }
 
-    def __init__(self, count=None, group=None):  # noqa: E501
+    def __init__(self, count=None, group=None, teamcity=None):  # noqa: E501
         """Groups - a model defined in Swagger"""  # noqa: E501
-        super(Groups, self).__init__()
+        super(Groups, self).__init__(teamcity=teamcity)
 
         self._count = None
         self._group = None

@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.changes import Changes  # noqa: F401,E501
@@ -61,9 +61,9 @@ class Change(TeamCityObject):
         'web_url': 'webUrl'
     }
 
-    def __init__(self, comment=None, _date=None, files=None, href=None, id=None, internal_version=None, locator=None, parent_changes=None, parent_revisions=None, personal=False, registration_date=None, user=None, username=None, vcs_root_instance=None, version=None, web_url=None):  # noqa: E501
+    def __init__(self, comment=None, _date=None, files=None, href=None, id=None, internal_version=None, locator=None, parent_changes=None, parent_revisions=None, personal=False, registration_date=None, user=None, username=None, vcs_root_instance=None, version=None, web_url=None, teamcity=None):  # noqa: E501
         """Change - a model defined in Swagger"""  # noqa: E501
-        super(Change, self).__init__()
+        super(Change, self).__init__(teamcity=teamcity)
 
         self._comment = None
         self.__date = None

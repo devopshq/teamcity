@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.agent import Agent  # noqa: F401,E501
@@ -35,9 +35,9 @@ class Compatibility(TeamCityObject):
         'unmet_requirements': 'unmetRequirements'
     }
 
-    def __init__(self, agent=None, build_type=None, compatible=False, unmet_requirements=None):  # noqa: E501
+    def __init__(self, agent=None, build_type=None, compatible=False, unmet_requirements=None, teamcity=None):  # noqa: E501
         """Compatibility - a model defined in Swagger"""  # noqa: E501
-        super(Compatibility, self).__init__()
+        super(Compatibility, self).__init__(teamcity=teamcity)
 
         self._agent = None
         self._build_type = None

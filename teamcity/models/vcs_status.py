@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.vcs_check_status import VcsCheckStatus  # noqa: F401,E501
@@ -29,9 +29,9 @@ class VcsStatus(TeamCityObject):
         'previous': 'previous'
     }
 
-    def __init__(self, current=None, previous=None):  # noqa: E501
+    def __init__(self, current=None, previous=None, teamcity=None):  # noqa: E501
         """VcsStatus - a model defined in Swagger"""  # noqa: E501
-        super(VcsStatus, self).__init__()
+        super(VcsStatus, self).__init__(teamcity=teamcity)
 
         self._current = None
         self._previous = None

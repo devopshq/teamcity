@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.build_type import BuildType  # noqa: F401,E501
@@ -42,9 +42,9 @@ class NewBuildTypeDescription(TeamCityObject):
         'vcs_roots_ids_map': 'vcsRootsIdsMap'
     }
 
-    def __init__(self, build_types_ids_map=None, copy_all_associated_settings=False, id=None, name=None, projects_ids_map=None, source_build_type=None, source_build_type_locator=None, vcs_roots_ids_map=None):  # noqa: E501
+    def __init__(self, build_types_ids_map=None, copy_all_associated_settings=False, id=None, name=None, projects_ids_map=None, source_build_type=None, source_build_type_locator=None, vcs_roots_ids_map=None, teamcity=None):  # noqa: E501
         """NewBuildTypeDescription - a model defined in Swagger"""  # noqa: E501
-        super(NewBuildTypeDescription, self).__init__()
+        super(NewBuildTypeDescription, self).__init__(teamcity=teamcity)
 
         self._build_types_ids_map = None
         self._copy_all_associated_settings = None

@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.feature import Feature  # noqa: F401,E501
@@ -29,9 +29,9 @@ class Features(TeamCityObject):
         'feature': 'feature'
     }
 
-    def __init__(self, count=None, feature=None):  # noqa: E501
+    def __init__(self, count=None, feature=None, teamcity=None):  # noqa: E501
         """Features - a model defined in Swagger"""  # noqa: E501
-        super(Features, self).__init__()
+        super(Features, self).__init__(teamcity=teamcity)
 
         self._count = None
         self._feature = None

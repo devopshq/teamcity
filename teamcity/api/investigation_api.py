@@ -55,6 +55,29 @@ class InvestigationApi(object):
             (data) = self.__get_investigations_with_http_info(**kwargs)  # noqa: E501
             return data
 
+
+    def serve_instance(self, investigation_locator, **kwargs):  # noqa: E501
+        """serve_instance  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.serve_instance(investigation_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str investigation_locator: (required)
+        :param str fields:
+        :return: Investigation
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__serve_instance_with_http_info(investigation_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__serve_instance_with_http_info(investigation_locator, **kwargs)  # noqa: E501
+            return data
+
     def __get_investigations_with_http_info(self, **kwargs):  # noqa: E501
         """get_investigations  # noqa: E501
 
@@ -121,29 +144,6 @@ class InvestigationApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def serve_instance(self, investigation_locator, **kwargs):  # noqa: E501
-        """serve_instance  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_instance(investigation_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str investigation_locator: (required)
-        :param str fields:
-        :return: Investigation
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_instance_with_http_info(investigation_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_instance_with_http_info(investigation_locator, **kwargs)  # noqa: E501
-            return data
-
     def __serve_instance_with_http_info(self, investigation_locator, **kwargs):  # noqa: E501
         """serve_instance  # noqa: E501
 

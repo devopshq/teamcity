@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.agent import Agent  # noqa: F401,E501
@@ -160,9 +160,9 @@ class Build(TeamCityObject):
         'web_url': 'webUrl'
     }
 
-    def __init__(self, agent=None, artifact_dependencies=None, artifacts=None, attributes=None, branch_name=None, build_type=None, build_type_id=None, build_type_internal_id=None, canceled_info=None, chain_modification_id=None, changes=None, comment=None, compatible_agents=None, current_settings_hash=None, custom_artifact_dependencies=None, default_branch=False, failed_to_start=False, finish_date=None, history=False, href=None, id=None, last_changes=None, locator=None, metadata=None, modification_id=None, number=None, percentage_complete=None, personal=False, pin_info=None, pinned=False, problem_occurrences=None, properties=None, queued_date=None, related_issues=None, replacement_ids=None, resulting_properties=None, revisions=None, running=False, running_info=None, settings_hash=None, snapshot_dependencies=None, start_date=None, start_estimate=None, state=None, statistics=None, status=None, status_text=None, tags=None, task_id=None, test_occurrences=None, triggered=None, triggering_options=None, unspecified_branch=False, user=None, versioned_settings_revision=None, wait_reason=None, web_url=None):  # noqa: E501
+    def __init__(self, agent=None, artifact_dependencies=None, artifacts=None, attributes=None, branch_name=None, build_type=None, build_type_id=None, build_type_internal_id=None, canceled_info=None, chain_modification_id=None, changes=None, comment=None, compatible_agents=None, current_settings_hash=None, custom_artifact_dependencies=None, default_branch=False, failed_to_start=False, finish_date=None, history=False, href=None, id=None, last_changes=None, locator=None, metadata=None, modification_id=None, number=None, percentage_complete=None, personal=False, pin_info=None, pinned=False, problem_occurrences=None, properties=None, queued_date=None, related_issues=None, replacement_ids=None, resulting_properties=None, revisions=None, running=False, running_info=None, settings_hash=None, snapshot_dependencies=None, start_date=None, start_estimate=None, state=None, statistics=None, status=None, status_text=None, tags=None, task_id=None, test_occurrences=None, triggered=None, triggering_options=None, unspecified_branch=False, user=None, versioned_settings_revision=None, wait_reason=None, web_url=None, teamcity=None):  # noqa: E501
         """Build - a model defined in Swagger"""  # noqa: E501
-        super(Build, self).__init__()
+        super(Build, self).__init__(teamcity=teamcity)
 
         self._agent = None
         self._artifact_dependencies = None

@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 
@@ -25,9 +25,9 @@ class Requirements(TeamCityObject):
         'description': 'description'
     }
 
-    def __init__(self, description=None):  # noqa: E501
+    def __init__(self, description=None, teamcity=None):  # noqa: E501
         """Requirements - a model defined in Swagger"""  # noqa: E501
-        super(Requirements, self).__init__()
+        super(Requirements, self).__init__(teamcity=teamcity)
 
         self._description = None
         self.discriminator = None

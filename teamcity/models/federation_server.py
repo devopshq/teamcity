@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 
@@ -27,9 +27,9 @@ class FederationServer(TeamCityObject):
         'url': 'url'
     }
 
-    def __init__(self, name=None, url=None):  # noqa: E501
+    def __init__(self, name=None, url=None, teamcity=None):  # noqa: E501
         """FederationServer - a model defined in Swagger"""  # noqa: E501
-        super(FederationServer, self).__init__()
+        super(FederationServer, self).__init__(teamcity=teamcity)
 
         self._name = None
         self._url = None

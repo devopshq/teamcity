@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.comment import Comment  # noqa: F401,E501
@@ -38,9 +38,9 @@ class Mute(TeamCityObject):
         'target': 'target'
     }
 
-    def __init__(self, assignment=None, id=None, resolution=None, scope=None, target=None):  # noqa: E501
+    def __init__(self, assignment=None, id=None, resolution=None, scope=None, target=None, teamcity=None):  # noqa: E501
         """Mute - a model defined in Swagger"""  # noqa: E501
-        super(Mute, self).__init__()
+        super(Mute, self).__init__(teamcity=teamcity)
 
         self._assignment = None
         self._id = None

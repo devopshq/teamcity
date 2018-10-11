@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.vcs_roots import VcsRoots  # noqa: F401,E501
@@ -33,9 +33,9 @@ class VcsLabeling(TeamCityObject):
         'vcs_roots': 'vcsRoots'
     }
 
-    def __init__(self, branch_filter=None, label_name=None, type=None, vcs_roots=None):  # noqa: E501
+    def __init__(self, branch_filter=None, label_name=None, type=None, vcs_roots=None, teamcity=None):  # noqa: E501
         """VcsLabeling - a model defined in Swagger"""  # noqa: E501
-        super(VcsLabeling, self).__init__()
+        super(VcsLabeling, self).__init__(teamcity=teamcity)
 
         self._branch_filter = None
         self._label_name = None

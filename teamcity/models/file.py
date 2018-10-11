@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.file import file  # noqa: F401,E501
@@ -43,9 +43,9 @@ class File(TeamCityObject):
         'size': 'size'
     }
 
-    def __init__(self, children=None, content=None, full_name=None, href=None, modification_time=None, name=None, parent=None, size=None):  # noqa: E501
+    def __init__(self, children=None, content=None, full_name=None, href=None, modification_time=None, name=None, parent=None, size=None, teamcity=None):  # noqa: E501
         """File - a model defined in Swagger"""  # noqa: E501
-        super(File, self).__init__()
+        super(File, self).__init__(teamcity=teamcity)
 
         self._children = None
         self._content = None

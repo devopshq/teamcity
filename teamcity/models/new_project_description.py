@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.project import Project  # noqa: F401,E501
@@ -44,9 +44,9 @@ class NewProjectDescription(TeamCityObject):
         'vcs_roots_ids_map': 'vcsRootsIdsMap'
     }
 
-    def __init__(self, build_types_ids_map=None, copy_all_associated_settings=False, id=None, name=None, parent_project=None, projects_ids_map=None, source_project=None, source_project_locator=None, vcs_roots_ids_map=None):  # noqa: E501
+    def __init__(self, build_types_ids_map=None, copy_all_associated_settings=False, id=None, name=None, parent_project=None, projects_ids_map=None, source_project=None, source_project_locator=None, vcs_roots_ids_map=None, teamcity=None):  # noqa: E501
         """NewProjectDescription - a model defined in Swagger"""  # noqa: E501
-        super(NewProjectDescription, self).__init__()
+        super(NewProjectDescription, self).__init__(teamcity=teamcity)
 
         self._build_types_ids_map = None
         self._copy_all_associated_settings = None

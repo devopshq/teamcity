@@ -55,6 +55,29 @@ class ProblemApi(object):
             (data) = self.__get_problems_with_http_info(**kwargs)  # noqa: E501
             return data
 
+
+    def serve_instance(self, problem_locator, **kwargs):  # noqa: E501
+        """serve_instance  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.serve_instance(problem_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str problem_locator: (required)
+        :param str fields:
+        :return: Problem
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__serve_instance_with_http_info(problem_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__serve_instance_with_http_info(problem_locator, **kwargs)  # noqa: E501
+            return data
+
     def __get_problems_with_http_info(self, **kwargs):  # noqa: E501
         """get_problems  # noqa: E501
 
@@ -121,29 +144,6 @@ class ProblemApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def serve_instance(self, problem_locator, **kwargs):  # noqa: E501
-        """serve_instance  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_instance(problem_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str problem_locator: (required)
-        :param str fields:
-        :return: Problem
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_instance_with_http_info(problem_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_instance_with_http_info(problem_locator, **kwargs)  # noqa: E501
-            return data
-
     def __serve_instance_with_http_info(self, problem_locator, **kwargs):  # noqa: E501
         """serve_instance  # noqa: E501
 

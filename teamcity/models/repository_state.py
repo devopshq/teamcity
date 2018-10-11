@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.branch_version import BranchVersion  # noqa: F401,E501
@@ -31,9 +31,9 @@ class RepositoryState(TeamCityObject):
         'timestamp': 'timestamp'
     }
 
-    def __init__(self, branch=None, count=None, timestamp=None):  # noqa: E501
+    def __init__(self, branch=None, count=None, timestamp=None, teamcity=None):  # noqa: E501
         """RepositoryState - a model defined in Swagger"""  # noqa: E501
-        super(RepositoryState, self).__init__()
+        super(RepositoryState, self).__init__(teamcity=teamcity)
 
         self._branch = None
         self._count = None

@@ -58,6 +58,328 @@ class GroupApi(object):
             (data) = self.__add_group_with_http_info(**kwargs)  # noqa: E501
             return data
 
+
+    def add_role(self, group_locator, **kwargs):  # noqa: E501
+        """add_role  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.add_role(group_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str group_locator: (required)
+        :param Role body:
+        :return: Role
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__add_role_with_http_info(group_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__add_role_with_http_info(group_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def add_role_put(self, group_locator, **kwargs):  # noqa: E501
+        """add_role_put  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.add_role_put(group_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str group_locator: (required)
+        :param Roles body:
+        :return: Roles
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__add_role_put_with_http_info(group_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__add_role_put_with_http_info(group_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def add_role_simple(self, group_locator, role_id, scope, **kwargs):  # noqa: E501
+        """add_role_simple  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.add_role_simple(group_locator, role_id, scope, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str group_locator: (required)
+        :param str role_id: (required)
+        :param str scope: (required)
+        :return: Role
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__add_role_simple_with_http_info(group_locator, role_id, scope, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__add_role_simple_with_http_info(group_locator, role_id, scope, **kwargs)  # noqa: E501
+            return data
+
+
+    def delete_group(self, group_locator, **kwargs):  # noqa: E501
+        """delete_group  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_group(group_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str group_locator: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__delete_group_with_http_info(group_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__delete_group_with_http_info(group_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def delete_role(self, group_locator, role_id, scope, **kwargs):  # noqa: E501
+        """delete_role  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_role(group_locator, role_id, scope, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str group_locator: (required)
+        :param str role_id: (required)
+        :param str scope: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__delete_role_with_http_info(group_locator, role_id, scope, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__delete_role_with_http_info(group_locator, role_id, scope, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_permissions(self, group_locator, **kwargs):  # noqa: E501
+        """get_permissions  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_permissions(group_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str group_locator: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_permissions_with_http_info(group_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_permissions_with_http_info(group_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_properties(self, group_locator, **kwargs):  # noqa: E501
+        """get_properties  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_properties(group_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str group_locator: (required)
+        :param str fields:
+        :return: Properties
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_properties_with_http_info(group_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_properties_with_http_info(group_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def list_role(self, group_locator, role_id, scope, **kwargs):  # noqa: E501
+        """list_role  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_role(group_locator, role_id, scope, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str group_locator: (required)
+        :param str role_id: (required)
+        :param str scope: (required)
+        :return: Role
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__list_role_with_http_info(group_locator, role_id, scope, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__list_role_with_http_info(group_locator, role_id, scope, **kwargs)  # noqa: E501
+            return data
+
+
+    def list_roles(self, group_locator, **kwargs):  # noqa: E501
+        """list_roles  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_roles(group_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str group_locator: (required)
+        :return: Roles
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__list_roles_with_http_info(group_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__list_roles_with_http_info(group_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def put_user_property(self, group_locator, name, **kwargs):  # noqa: E501
+        """put_user_property  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.put_user_property(group_locator, name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str group_locator: (required)
+        :param str name: (required)
+        :param str body:
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__put_user_property_with_http_info(group_locator, name, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__put_user_property_with_http_info(group_locator, name, **kwargs)  # noqa: E501
+            return data
+
+
+    def remove_user_property(self, group_locator, name, **kwargs):  # noqa: E501
+        """remove_user_property  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.remove_user_property(group_locator, name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str group_locator: (required)
+        :param str name: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__remove_user_property_with_http_info(group_locator, name, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__remove_user_property_with_http_info(group_locator, name, **kwargs)  # noqa: E501
+            return data
+
+
+    def serve_group(self, group_locator, **kwargs):  # noqa: E501
+        """serve_group  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.serve_group(group_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str group_locator: (required)
+        :param str fields:
+        :return: Group
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__serve_group_with_http_info(group_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__serve_group_with_http_info(group_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def serve_groups(self, **kwargs):  # noqa: E501
+        """serve_groups  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.serve_groups(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str fields:
+        :return: Groups
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__serve_groups_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__serve_groups_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+
+    def serve_user_properties(self, group_locator, name, **kwargs):  # noqa: E501
+        """serve_user_properties  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.serve_user_properties(group_locator, name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str group_locator: (required)
+        :param str name: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__serve_user_properties_with_http_info(group_locator, name, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__serve_user_properties_with_http_info(group_locator, name, **kwargs)  # noqa: E501
+            return data
+
     def __add_group_with_http_info(self, **kwargs):  # noqa: E501
         """add_group  # noqa: E501
 
@@ -124,29 +446,6 @@ class GroupApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def add_role(self, group_locator, **kwargs):  # noqa: E501
-        """add_role  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_role(group_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str group_locator: (required)
-        :param Role body:
-        :return: Role
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__add_role_with_http_info(group_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__add_role_with_http_info(group_locator, **kwargs)  # noqa: E501
-            return data
-
     def __add_role_with_http_info(self, group_locator, **kwargs):  # noqa: E501
         """add_role  # noqa: E501
 
@@ -217,29 +516,6 @@ class GroupApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def add_role_put(self, group_locator, **kwargs):  # noqa: E501
-        """add_role_put  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_role_put(group_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str group_locator: (required)
-        :param Roles body:
-        :return: Roles
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__add_role_put_with_http_info(group_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__add_role_put_with_http_info(group_locator, **kwargs)  # noqa: E501
-            return data
-
     def __add_role_put_with_http_info(self, group_locator, **kwargs):  # noqa: E501
         """add_role_put  # noqa: E501
 
@@ -310,30 +586,6 @@ class GroupApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def add_role_simple(self, group_locator, role_id, scope, **kwargs):  # noqa: E501
-        """add_role_simple  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_role_simple(group_locator, role_id, scope, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str group_locator: (required)
-        :param str role_id: (required)
-        :param str scope: (required)
-        :return: Role
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__add_role_simple_with_http_info(group_locator, role_id, scope, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__add_role_simple_with_http_info(group_locator, role_id, scope, **kwargs)  # noqa: E501
-            return data
-
     def __add_role_simple_with_http_info(self, group_locator, role_id, scope, **kwargs):  # noqa: E501
         """add_role_simple  # noqa: E501
 
@@ -415,28 +667,6 @@ class GroupApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def delete_group(self, group_locator, **kwargs):  # noqa: E501
-        """delete_group  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_group(group_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str group_locator: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__delete_group_with_http_info(group_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__delete_group_with_http_info(group_locator, **kwargs)  # noqa: E501
-            return data
-
     def __delete_group_with_http_info(self, group_locator, **kwargs):  # noqa: E501
         """delete_group  # noqa: E501
 
@@ -504,30 +734,6 @@ class GroupApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def delete_role(self, group_locator, role_id, scope, **kwargs):  # noqa: E501
-        """delete_role  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_role(group_locator, role_id, scope, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str group_locator: (required)
-        :param str role_id: (required)
-        :param str scope: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__delete_role_with_http_info(group_locator, role_id, scope, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__delete_role_with_http_info(group_locator, role_id, scope, **kwargs)  # noqa: E501
-            return data
-
     def __delete_role_with_http_info(self, group_locator, role_id, scope, **kwargs):  # noqa: E501
         """delete_role  # noqa: E501
 
@@ -609,28 +815,6 @@ class GroupApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_permissions(self, group_locator, **kwargs):  # noqa: E501
-        """get_permissions  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_permissions(group_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str group_locator: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_permissions_with_http_info(group_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_permissions_with_http_info(group_locator, **kwargs)  # noqa: E501
-            return data
-
     def __get_permissions_with_http_info(self, group_locator, **kwargs):  # noqa: E501
         """get_permissions  # noqa: E501
 
@@ -698,29 +882,6 @@ class GroupApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_properties(self, group_locator, **kwargs):  # noqa: E501
-        """get_properties  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_properties(group_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str group_locator: (required)
-        :param str fields:
-        :return: Properties
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_properties_with_http_info(group_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_properties_with_http_info(group_locator, **kwargs)  # noqa: E501
-            return data
-
     def __get_properties_with_http_info(self, group_locator, **kwargs):  # noqa: E501
         """get_properties  # noqa: E501
 
@@ -791,30 +952,6 @@ class GroupApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def list_role(self, group_locator, role_id, scope, **kwargs):  # noqa: E501
-        """list_role  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_role(group_locator, role_id, scope, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str group_locator: (required)
-        :param str role_id: (required)
-        :param str scope: (required)
-        :return: Role
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__list_role_with_http_info(group_locator, role_id, scope, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__list_role_with_http_info(group_locator, role_id, scope, **kwargs)  # noqa: E501
-            return data
-
     def __list_role_with_http_info(self, group_locator, role_id, scope, **kwargs):  # noqa: E501
         """list_role  # noqa: E501
 
@@ -896,28 +1033,6 @@ class GroupApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def list_roles(self, group_locator, **kwargs):  # noqa: E501
-        """list_roles  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_roles(group_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str group_locator: (required)
-        :return: Roles
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__list_roles_with_http_info(group_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__list_roles_with_http_info(group_locator, **kwargs)  # noqa: E501
-            return data
-
     def __list_roles_with_http_info(self, group_locator, **kwargs):  # noqa: E501
         """list_roles  # noqa: E501
 
@@ -985,30 +1100,6 @@ class GroupApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def put_user_property(self, group_locator, name, **kwargs):  # noqa: E501
-        """put_user_property  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.put_user_property(group_locator, name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str group_locator: (required)
-        :param str name: (required)
-        :param str body:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__put_user_property_with_http_info(group_locator, name, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__put_user_property_with_http_info(group_locator, name, **kwargs)  # noqa: E501
-            return data
-
     def __put_user_property_with_http_info(self, group_locator, name, **kwargs):  # noqa: E501
         """put_user_property  # noqa: E501
 
@@ -1086,29 +1177,6 @@ class GroupApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def remove_user_property(self, group_locator, name, **kwargs):  # noqa: E501
-        """remove_user_property  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.remove_user_property(group_locator, name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str group_locator: (required)
-        :param str name: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__remove_user_property_with_http_info(group_locator, name, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__remove_user_property_with_http_info(group_locator, name, **kwargs)  # noqa: E501
-            return data
-
     def __remove_user_property_with_http_info(self, group_locator, name, **kwargs):  # noqa: E501
         """remove_user_property  # noqa: E501
 
@@ -1183,29 +1251,6 @@ class GroupApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def serve_group(self, group_locator, **kwargs):  # noqa: E501
-        """serve_group  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_group(group_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str group_locator: (required)
-        :param str fields:
-        :return: Group
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_group_with_http_info(group_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_group_with_http_info(group_locator, **kwargs)  # noqa: E501
-            return data
-
     def __serve_group_with_http_info(self, group_locator, **kwargs):  # noqa: E501
         """serve_group  # noqa: E501
 
@@ -1276,28 +1321,6 @@ class GroupApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def serve_groups(self, **kwargs):  # noqa: E501
-        """serve_groups  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_groups(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str fields:
-        :return: Groups
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_groups_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_groups_with_http_info(**kwargs)  # noqa: E501
-            return data
-
     def __serve_groups_with_http_info(self, **kwargs):  # noqa: E501
         """serve_groups  # noqa: E501
 
@@ -1361,29 +1384,6 @@ class GroupApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def serve_user_properties(self, group_locator, name, **kwargs):  # noqa: E501
-        """serve_user_properties  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_user_properties(group_locator, name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str group_locator: (required)
-        :param str name: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_user_properties_with_http_info(group_locator, name, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_user_properties_with_http_info(group_locator, name, **kwargs)  # noqa: E501
-            return data
-
     def __serve_user_properties_with_http_info(self, group_locator, name, **kwargs):  # noqa: E501
         """serve_user_properties  # noqa: E501
 

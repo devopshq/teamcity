@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.build_type import BuildType  # noqa: F401,E501
@@ -33,9 +33,9 @@ class ProblemScope(TeamCityObject):
         'project': 'project'
     }
 
-    def __init__(self, build_type=None, build_types=None, project=None):  # noqa: E501
+    def __init__(self, build_type=None, build_types=None, project=None, teamcity=None):  # noqa: E501
         """ProblemScope - a model defined in Swagger"""  # noqa: E501
-        super(ProblemScope, self).__init__()
+        super(ProblemScope, self).__init__(teamcity=teamcity)
 
         self._build_type = None
         self._build_types = None

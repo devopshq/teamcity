@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.properties import Properties  # noqa: F401,E501
@@ -39,9 +39,9 @@ class Step(TeamCityObject):
         'type': 'type'
     }
 
-    def __init__(self, disabled=False, href=None, id=None, inherited=False, name=None, properties=None, type=None):  # noqa: E501
+    def __init__(self, disabled=False, href=None, id=None, inherited=False, name=None, properties=None, type=None, teamcity=None):  # noqa: E501
         """Step - a model defined in Swagger"""  # noqa: E501
-        super(Step, self).__init__()
+        super(Step, self).__init__(teamcity=teamcity)
 
         self._disabled = None
         self._href = None

@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.user import User  # noqa: F401,E501
@@ -33,9 +33,9 @@ class Session(TeamCityObject):
         'user': 'user'
     }
 
-    def __init__(self, creation_date=None, id=None, last_accessed_date=None, user=None):  # noqa: E501
+    def __init__(self, creation_date=None, id=None, last_accessed_date=None, user=None, teamcity=None):  # noqa: E501
         """Session - a model defined in Swagger"""  # noqa: E501
-        super(Session, self).__init__()
+        super(Session, self).__init__(teamcity=teamcity)
 
         self._creation_date = None
         self._id = None

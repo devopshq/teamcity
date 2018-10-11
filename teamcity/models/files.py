@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.file import file  # noqa: F401,E501
@@ -31,9 +31,9 @@ class Files(TeamCityObject):
         'href': 'href'
     }
 
-    def __init__(self, count=None, file=None, href=None):  # noqa: E501
+    def __init__(self, count=None, file=None, href=None, teamcity=None):  # noqa: E501
         """Files - a model defined in Swagger"""  # noqa: E501
-        super(Files, self).__init__()
+        super(Files, self).__init__(teamcity=teamcity)
 
         self._count = None
         self._file = None

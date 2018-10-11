@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.agents import Agents  # noqa: F401,E501
@@ -40,9 +40,9 @@ class AgentPool(TeamCityObject):
         'projects': 'projects'
     }
 
-    def __init__(self, agents=None, href=None, id=None, locator=None, max_agents=None, name=None, projects=None):  # noqa: E501
+    def __init__(self, agents=None, href=None, id=None, locator=None, max_agents=None, name=None, projects=None, teamcity=None):  # noqa: E501
         """AgentPool - a model defined in Swagger"""  # noqa: E501
-        super(AgentPool, self).__init__()
+        super(AgentPool, self).__init__(teamcity=teamcity)
 
         self._agents = None
         self._href = None

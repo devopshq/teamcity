@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 
@@ -29,9 +29,9 @@ class Role(TeamCityObject):
         'scope': 'scope'
     }
 
-    def __init__(self, href=None, role_id=None, scope=None):  # noqa: E501
+    def __init__(self, href=None, role_id=None, scope=None, teamcity=None):  # noqa: E501
         """Role - a model defined in Swagger"""  # noqa: E501
-        super(Role, self).__init__()
+        super(Role, self).__init__(teamcity=teamcity)
 
         self._href = None
         self._role_id = None

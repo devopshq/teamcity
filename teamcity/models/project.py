@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.build_types import BuildTypes  # noqa: F401,E501
@@ -74,9 +74,9 @@ class Project(TeamCityObject):
         'web_url': 'webUrl'
     }
 
-    def __init__(self, archived=False, build_types=None, description=None, href=None, id=None, internal_id=None, links=None, locator=None, name=None, parameters=None, parent_project=None, parent_project_id=None, parent_project_internal_id=None, parent_project_name=None, project_features=None, projects=None, read_only_ui=None, templates=None, uuid=None, vcs_roots=None, web_url=None):  # noqa: E501
+    def __init__(self, archived=False, build_types=None, description=None, href=None, id=None, internal_id=None, links=None, locator=None, name=None, parameters=None, parent_project=None, parent_project_id=None, parent_project_internal_id=None, parent_project_name=None, project_features=None, projects=None, read_only_ui=None, templates=None, uuid=None, vcs_roots=None, web_url=None, teamcity=None):  # noqa: E501
         """Project - a model defined in Swagger"""  # noqa: E501
-        super(Project, self).__init__()
+        super(Project, self).__init__(teamcity=teamcity)
 
         self._archived = None
         self._build_types = None

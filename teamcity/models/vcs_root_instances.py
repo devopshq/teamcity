@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.vcs_root_instance import VcsRootInstance  # noqa: F401,E501
@@ -35,9 +35,9 @@ class VcsRootInstances(TeamCityObject):
         'vcs_root_instance': 'vcs-root-instance'
     }
 
-    def __init__(self, count=None, href=None, next_href=None, prev_href=None, vcs_root_instance=None):  # noqa: E501
+    def __init__(self, count=None, href=None, next_href=None, prev_href=None, vcs_root_instance=None, teamcity=None):  # noqa: E501
         """VcsRootInstances - a model defined in Swagger"""  # noqa: E501
-        super(VcsRootInstances, self).__init__()
+        super(VcsRootInstances, self).__init__(teamcity=teamcity)
 
         self._count = None
         self._href = None

@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 
@@ -29,9 +29,9 @@ class Branch(TeamCityObject):
         'unspecified': 'unspecified'
     }
 
-    def __init__(self, default=False, name=None, unspecified=False):  # noqa: E501
+    def __init__(self, default=False, name=None, unspecified=False, teamcity=None):  # noqa: E501
         """Branch - a model defined in Swagger"""  # noqa: E501
-        super(Branch, self).__init__()
+        super(Branch, self).__init__(teamcity=teamcity)
 
         self._default = None
         self._name = None

@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.change import Change  # noqa: F401,E501
@@ -35,9 +35,9 @@ class Changes(TeamCityObject):
         'prev_href': 'prevHref'
     }
 
-    def __init__(self, change=None, count=None, href=None, next_href=None, prev_href=None):  # noqa: E501
+    def __init__(self, change=None, count=None, href=None, next_href=None, prev_href=None, teamcity=None):  # noqa: E501
         """Changes - a model defined in Swagger"""  # noqa: E501
-        super(Changes, self).__init__()
+        super(Changes, self).__init__(teamcity=teamcity)
 
         self._change = None
         self._count = None

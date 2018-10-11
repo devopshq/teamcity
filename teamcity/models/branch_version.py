@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 
@@ -31,9 +31,9 @@ class BranchVersion(TeamCityObject):
         'version': 'version'
     }
 
-    def __init__(self, default=False, name=None, unspecified=False, version=None):  # noqa: E501
+    def __init__(self, default=False, name=None, unspecified=False, version=None, teamcity=None):  # noqa: E501
         """BranchVersion - a model defined in Swagger"""  # noqa: E501
-        super(BranchVersion, self).__init__()
+        super(BranchVersion, self).__init__(teamcity=teamcity)
 
         self._default = None
         self._name = None

@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.user import User  # noqa: F401,E501
@@ -31,9 +31,9 @@ class Comment(TeamCityObject):
         'user': 'user'
     }
 
-    def __init__(self, text=None, timestamp=None, user=None):  # noqa: E501
+    def __init__(self, text=None, timestamp=None, user=None, teamcity=None):  # noqa: E501
         """Comment - a model defined in Swagger"""  # noqa: E501
-        super(Comment, self).__init__()
+        super(Comment, self).__init__(teamcity=teamcity)
 
         self._text = None
         self._timestamp = None

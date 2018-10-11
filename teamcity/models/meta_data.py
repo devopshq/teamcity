@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.entries import Entries  # noqa: F401,E501
@@ -29,9 +29,9 @@ class MetaData(TeamCityObject):
         'id': 'id'
     }
 
-    def __init__(self, entries=None, id=None):  # noqa: E501
+    def __init__(self, entries=None, id=None, teamcity=None):  # noqa: E501
         """MetaData - a model defined in Swagger"""  # noqa: E501
-        super(MetaData, self).__init__()
+        super(MetaData, self).__init__(teamcity=teamcity)
 
         self._entries = None
         self._id = None

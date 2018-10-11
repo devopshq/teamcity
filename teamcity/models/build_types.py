@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.build_type import BuildType  # noqa: F401,E501
@@ -35,9 +35,9 @@ class BuildTypes(TeamCityObject):
         'prev_href': 'prevHref'
     }
 
-    def __init__(self, build_type=None, count=None, href=None, next_href=None, prev_href=None):  # noqa: E501
+    def __init__(self, build_type=None, count=None, href=None, next_href=None, prev_href=None, teamcity=None):  # noqa: E501
         """BuildTypes - a model defined in Swagger"""  # noqa: E501
-        super(BuildTypes, self).__init__()
+        super(BuildTypes, self).__init__(teamcity=teamcity)
 
         self._build_type = None
         self._count = None

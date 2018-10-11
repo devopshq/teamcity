@@ -55,6 +55,452 @@ class DebugApi(object):
             (data) = self.__delete_current_remember_me_with_http_info(**kwargs)  # noqa: E501
             return data
 
+
+    def empty_task(self, **kwargs):  # noqa: E501
+        """empty_task  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.empty_task(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str time:
+        :param int load:
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__empty_task_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__empty_task_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+
+    def execute_db_query(self, query, **kwargs):  # noqa: E501
+        """execute_db_query  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.execute_db_query(query, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str query: (required)
+        :param str field_delimiter:
+        :param str data_retrieve_query:
+        :param int count:
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__execute_db_query_with_http_info(query, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__execute_db_query_with_http_info(query, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_current_session(self, **kwargs):  # noqa: E501
+        """get_current_session  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_current_session(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str fields:
+        :return: Session
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_current_session_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_current_session_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+
+    def get_current_session_max_inactive_interval(self, **kwargs):  # noqa: E501
+        """get_current_session_max_inactive_interval  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_current_session_max_inactive_interval(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_current_session_max_inactive_interval_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_current_session_max_inactive_interval_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+
+    def get_current_user_permissions(self, **kwargs):  # noqa: E501
+        """get_current_user_permissions  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_current_user_permissions(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_current_user_permissions_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_current_user_permissions_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+
+    def get_date(self, date_locator, **kwargs):  # noqa: E501
+        """get_date  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_date(date_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str date_locator: (required)
+        :param str format:
+        :param str timezone:
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_date_with_http_info(date_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_date_with_http_info(date_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_environment_variables(self, **kwargs):  # noqa: E501
+        """get_environment_variables  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_environment_variables(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str fields:
+        :return: Properties
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_environment_variables_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_environment_variables_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+
+    def get_hashed(self, method, **kwargs):  # noqa: E501
+        """get_hashed  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_hashed(method, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str method: (required)
+        :param str value:
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_hashed_with_http_info(method, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_hashed_with_http_info(method, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_request_details(self, **kwargs):  # noqa: E501
+        """get_request_details  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_request_details(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_request_details_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_request_details_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+
+    def get_scrambled(self, **kwargs):  # noqa: E501
+        """get_scrambled  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_scrambled(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str value:
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_scrambled_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_scrambled_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+
+    def get_sessions(self, **kwargs):  # noqa: E501
+        """get_sessions  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_sessions(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int manager:
+        :param str fields:
+        :return: Sessions
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_sessions_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_sessions_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+
+    def get_system_properties(self, **kwargs):  # noqa: E501
+        """get_system_properties  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_system_properties(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str fields:
+        :return: Properties
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_system_properties_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_system_properties_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+
+    def get_thread_dump(self, **kwargs):  # noqa: E501
+        """get_thread_dump  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_thread_dump(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str locked_monitors:
+        :param str locked_synchronizers:
+        :param str detect_locks:
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_thread_dump_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_thread_dump_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+
+    def get_unscrambled(self, **kwargs):  # noqa: E501
+        """get_unscrambled  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_unscrambled(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str value:
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_unscrambled_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_unscrambled_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+
+    def invalidate_current_session(self, **kwargs):  # noqa: E501
+        """invalidate_current_session  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.invalidate_current_session(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__invalidate_current_session_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__invalidate_current_session_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+
+    def list_db_tables(self, **kwargs):  # noqa: E501
+        """list_db_tables  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_db_tables(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__list_db_tables_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__list_db_tables_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+
+    def new_remember_me(self, **kwargs):  # noqa: E501
+        """new_remember_me  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.new_remember_me(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__new_remember_me_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__new_remember_me_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+
+    def save_memory_dump(self, **kwargs):  # noqa: E501
+        """save_memory_dump  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.save_memory_dump(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param bool archived:
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__save_memory_dump_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__save_memory_dump_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+
+    def schedule_checking_for_changes(self, **kwargs):  # noqa: E501
+        """schedule_checking_for_changes  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.schedule_checking_for_changes(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str locator:
+        :param str requestor:
+        :param str fields:
+        :return: VcsRootInstances
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__schedule_checking_for_changes_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__schedule_checking_for_changes_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+
+    def set_current_session_max_inactive_interval(self, **kwargs):  # noqa: E501
+        """set_current_session_max_inactive_interval  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.set_current_session_max_inactive_interval(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str body:
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__set_current_session_max_inactive_interval_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__set_current_session_max_inactive_interval_with_http_info(**kwargs)  # noqa: E501
+            return data
+
     def __delete_current_remember_me_with_http_info(self, **kwargs):  # noqa: E501
         """delete_current_remember_me  # noqa: E501
 
@@ -115,29 +561,6 @@ class DebugApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def empty_task(self, **kwargs):  # noqa: E501
-        """empty_task  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.empty_task(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str time:
-        :param int load:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__empty_task_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__empty_task_with_http_info(**kwargs)  # noqa: E501
-            return data
-
     def __empty_task_with_http_info(self, **kwargs):  # noqa: E501
         """empty_task  # noqa: E501
 
@@ -204,31 +627,6 @@ class DebugApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def execute_db_query(self, query, **kwargs):  # noqa: E501
-        """execute_db_query  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.execute_db_query(query, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str query: (required)
-        :param str field_delimiter:
-        :param str data_retrieve_query:
-        :param int count:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__execute_db_query_with_http_info(query, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__execute_db_query_with_http_info(query, **kwargs)  # noqa: E501
-            return data
-
     def __execute_db_query_with_http_info(self, query, **kwargs):  # noqa: E501
         """execute_db_query  # noqa: E501
 
@@ -305,28 +703,6 @@ class DebugApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_current_session(self, **kwargs):  # noqa: E501
-        """get_current_session  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_current_session(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str fields:
-        :return: Session
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_current_session_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_current_session_with_http_info(**kwargs)  # noqa: E501
-            return data
-
     def __get_current_session_with_http_info(self, **kwargs):  # noqa: E501
         """get_current_session  # noqa: E501
 
@@ -390,27 +766,6 @@ class DebugApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_current_session_max_inactive_interval(self, **kwargs):  # noqa: E501
-        """get_current_session_max_inactive_interval  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_current_session_max_inactive_interval(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_current_session_max_inactive_interval_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_current_session_max_inactive_interval_with_http_info(**kwargs)  # noqa: E501
-            return data
-
     def __get_current_session_max_inactive_interval_with_http_info(self, **kwargs):  # noqa: E501
         """get_current_session_max_inactive_interval  # noqa: E501
 
@@ -471,27 +826,6 @@ class DebugApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_current_user_permissions(self, **kwargs):  # noqa: E501
-        """get_current_user_permissions  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_current_user_permissions(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_current_user_permissions_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_current_user_permissions_with_http_info(**kwargs)  # noqa: E501
-            return data
-
     def __get_current_user_permissions_with_http_info(self, **kwargs):  # noqa: E501
         """get_current_user_permissions  # noqa: E501
 
@@ -552,30 +886,6 @@ class DebugApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_date(self, date_locator, **kwargs):  # noqa: E501
-        """get_date  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_date(date_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str date_locator: (required)
-        :param str format:
-        :param str timezone:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_date_with_http_info(date_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_date_with_http_info(date_locator, **kwargs)  # noqa: E501
-            return data
-
     def __get_date_with_http_info(self, date_locator, **kwargs):  # noqa: E501
         """get_date  # noqa: E501
 
@@ -649,28 +959,6 @@ class DebugApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_environment_variables(self, **kwargs):  # noqa: E501
-        """get_environment_variables  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_environment_variables(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str fields:
-        :return: Properties
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_environment_variables_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_environment_variables_with_http_info(**kwargs)  # noqa: E501
-            return data
-
     def __get_environment_variables_with_http_info(self, **kwargs):  # noqa: E501
         """get_environment_variables  # noqa: E501
 
@@ -734,29 +1022,6 @@ class DebugApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_hashed(self, method, **kwargs):  # noqa: E501
-        """get_hashed  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_hashed(method, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str method: (required)
-        :param str value:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_hashed_with_http_info(method, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_hashed_with_http_info(method, **kwargs)  # noqa: E501
-            return data
-
     def __get_hashed_with_http_info(self, method, **kwargs):  # noqa: E501
         """get_hashed  # noqa: E501
 
@@ -827,27 +1092,6 @@ class DebugApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_request_details(self, **kwargs):  # noqa: E501
-        """get_request_details  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_request_details(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_request_details_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_request_details_with_http_info(**kwargs)  # noqa: E501
-            return data
-
     def __get_request_details_with_http_info(self, **kwargs):  # noqa: E501
         """get_request_details  # noqa: E501
 
@@ -908,28 +1152,6 @@ class DebugApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_scrambled(self, **kwargs):  # noqa: E501
-        """get_scrambled  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_scrambled(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str value:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_scrambled_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_scrambled_with_http_info(**kwargs)  # noqa: E501
-            return data
-
     def __get_scrambled_with_http_info(self, **kwargs):  # noqa: E501
         """get_scrambled  # noqa: E501
 
@@ -993,29 +1215,6 @@ class DebugApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_sessions(self, **kwargs):  # noqa: E501
-        """get_sessions  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_sessions(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param int manager:
-        :param str fields:
-        :return: Sessions
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_sessions_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_sessions_with_http_info(**kwargs)  # noqa: E501
-            return data
-
     def __get_sessions_with_http_info(self, **kwargs):  # noqa: E501
         """get_sessions  # noqa: E501
 
@@ -1082,28 +1281,6 @@ class DebugApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_system_properties(self, **kwargs):  # noqa: E501
-        """get_system_properties  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_system_properties(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str fields:
-        :return: Properties
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_system_properties_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_system_properties_with_http_info(**kwargs)  # noqa: E501
-            return data
-
     def __get_system_properties_with_http_info(self, **kwargs):  # noqa: E501
         """get_system_properties  # noqa: E501
 
@@ -1167,30 +1344,6 @@ class DebugApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_thread_dump(self, **kwargs):  # noqa: E501
-        """get_thread_dump  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_thread_dump(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str locked_monitors:
-        :param str locked_synchronizers:
-        :param str detect_locks:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_thread_dump_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_thread_dump_with_http_info(**kwargs)  # noqa: E501
-            return data
-
     def __get_thread_dump_with_http_info(self, **kwargs):  # noqa: E501
         """get_thread_dump  # noqa: E501
 
@@ -1260,28 +1413,6 @@ class DebugApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_unscrambled(self, **kwargs):  # noqa: E501
-        """get_unscrambled  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_unscrambled(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str value:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_unscrambled_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_unscrambled_with_http_info(**kwargs)  # noqa: E501
-            return data
-
     def __get_unscrambled_with_http_info(self, **kwargs):  # noqa: E501
         """get_unscrambled  # noqa: E501
 
@@ -1345,27 +1476,6 @@ class DebugApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def invalidate_current_session(self, **kwargs):  # noqa: E501
-        """invalidate_current_session  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.invalidate_current_session(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__invalidate_current_session_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__invalidate_current_session_with_http_info(**kwargs)  # noqa: E501
-            return data
-
     def __invalidate_current_session_with_http_info(self, **kwargs):  # noqa: E501
         """invalidate_current_session  # noqa: E501
 
@@ -1426,27 +1536,6 @@ class DebugApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def list_db_tables(self, **kwargs):  # noqa: E501
-        """list_db_tables  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_db_tables(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__list_db_tables_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__list_db_tables_with_http_info(**kwargs)  # noqa: E501
-            return data
-
     def __list_db_tables_with_http_info(self, **kwargs):  # noqa: E501
         """list_db_tables  # noqa: E501
 
@@ -1507,27 +1596,6 @@ class DebugApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def new_remember_me(self, **kwargs):  # noqa: E501
-        """new_remember_me  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.new_remember_me(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__new_remember_me_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__new_remember_me_with_http_info(**kwargs)  # noqa: E501
-            return data
-
     def __new_remember_me_with_http_info(self, **kwargs):  # noqa: E501
         """new_remember_me  # noqa: E501
 
@@ -1588,28 +1656,6 @@ class DebugApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def save_memory_dump(self, **kwargs):  # noqa: E501
-        """save_memory_dump  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.save_memory_dump(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param bool archived:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__save_memory_dump_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__save_memory_dump_with_http_info(**kwargs)  # noqa: E501
-            return data
-
     def __save_memory_dump_with_http_info(self, **kwargs):  # noqa: E501
         """save_memory_dump  # noqa: E501
 
@@ -1673,30 +1719,6 @@ class DebugApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def schedule_checking_for_changes(self, **kwargs):  # noqa: E501
-        """schedule_checking_for_changes  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.schedule_checking_for_changes(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str locator:
-        :param str requestor:
-        :param str fields:
-        :return: VcsRootInstances
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__schedule_checking_for_changes_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__schedule_checking_for_changes_with_http_info(**kwargs)  # noqa: E501
-            return data
-
     def __schedule_checking_for_changes_with_http_info(self, **kwargs):  # noqa: E501
         """schedule_checking_for_changes  # noqa: E501
 
@@ -1766,28 +1788,6 @@ class DebugApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def set_current_session_max_inactive_interval(self, **kwargs):  # noqa: E501
-        """set_current_session_max_inactive_interval  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_current_session_max_inactive_interval(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str body:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__set_current_session_max_inactive_interval_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__set_current_session_max_inactive_interval_with_http_info(**kwargs)  # noqa: E501
-            return data
-
     def __set_current_session_max_inactive_interval_with_http_info(self, **kwargs):  # noqa: E501
         """set_current_session_max_inactive_interval  # noqa: E501
 

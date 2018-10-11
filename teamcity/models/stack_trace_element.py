@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 
@@ -33,9 +33,9 @@ class StackTraceElement(TeamCityObject):
         'native_method': 'nativeMethod'
     }
 
-    def __init__(self, class_name=None, file_name=None, line_number=None, method_name=None, native_method=False):  # noqa: E501
+    def __init__(self, class_name=None, file_name=None, line_number=None, method_name=None, native_method=False, teamcity=None):  # noqa: E501
         """StackTraceElement - a model defined in Swagger"""  # noqa: E501
-        super(StackTraceElement, self).__init__()
+        super(StackTraceElement, self).__init__(teamcity=teamcity)
 
         self._class_name = None
         self._file_name = None

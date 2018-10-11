@@ -58,6 +58,8 @@ class {{classname}}(object):
             (data) = self.__{{operationId}}_with_http_info({{#sortParamsByRequiredFlag}}{{#allParams}}{{#required}}{{paramName}}, {{/required}}{{/allParams}}{{/sortParamsByRequiredFlag}}**kwargs)  # noqa: E501
             return data
 
+{{/operation}}
+{{#operation}}
     def __{{operationId}}_with_http_info(self, {{#sortParamsByRequiredFlag}}{{#allParams}}{{#required}}{{paramName}}, {{/required}}{{/allParams}}{{/sortParamsByRequiredFlag}}**kwargs):  # noqa: E501
         """{{#summary}}{{.}}{{/summary}}{{^summary}}{{operationId}}{{/summary}}  # noqa: E501
 

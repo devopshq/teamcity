@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.href import Href  # noqa: F401,E501
@@ -61,9 +61,9 @@ class Server(TeamCityObject):
         'web_url': 'webUrl'
     }
 
-    def __init__(self, agent_pools=None, agents=None, build_date=None, build_number=None, build_queue=None, builds=None, current_time=None, internal_id=None, projects=None, role=None, start_time=None, user_groups=None, users=None, vcs_roots=None, version=None, version_major=None, version_minor=None, web_url=None):  # noqa: E501
+    def __init__(self, agent_pools=None, agents=None, build_date=None, build_number=None, build_queue=None, builds=None, current_time=None, internal_id=None, projects=None, role=None, start_time=None, user_groups=None, users=None, vcs_roots=None, version=None, version_major=None, version_minor=None, web_url=None, teamcity=None):  # noqa: E501
         """Server - a model defined in Swagger"""  # noqa: E501
-        super(Server, self).__init__()
+        super(Server, self).__init__(teamcity=teamcity)
 
         self._agent_pools = None
         self._agents = None

@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.agent_requirement import AgentRequirement  # noqa: F401,E501
@@ -29,9 +29,9 @@ class AgentRequirements(TeamCityObject):
         'count': 'count'
     }
 
-    def __init__(self, agent_requirement=None, count=None):  # noqa: E501
+    def __init__(self, agent_requirement=None, count=None, teamcity=None):  # noqa: E501
         """AgentRequirements - a model defined in Swagger"""  # noqa: E501
-        super(AgentRequirements, self).__init__()
+        super(AgentRequirements, self).__init__(teamcity=teamcity)
 
         self._agent_requirement = None
         self._count = None

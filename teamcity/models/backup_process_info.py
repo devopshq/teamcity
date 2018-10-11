@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 
@@ -35,9 +35,9 @@ class BackupProcessInfo(TeamCityObject):
         'status': 'status'
     }
 
-    def __init__(self, file_name=None, file_size=None, finish_timestamp=None, id=None, start_timestamp=None, status=None):  # noqa: E501
+    def __init__(self, file_name=None, file_size=None, finish_timestamp=None, id=None, start_timestamp=None, status=None, teamcity=None):  # noqa: E501
         """BackupProcessInfo - a model defined in Swagger"""  # noqa: E501
-        super(BackupProcessInfo, self).__init__()
+        super(BackupProcessInfo, self).__init__(teamcity=teamcity)
 
         self._file_name = None
         self._file_size = None

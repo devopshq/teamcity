@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.federation_server import FederationServer  # noqa: F401,E501
@@ -29,9 +29,9 @@ class Servers(TeamCityObject):
         'server': 'server'
     }
 
-    def __init__(self, count=None, server=None):  # noqa: E501
+    def __init__(self, count=None, server=None, teamcity=None):  # noqa: E501
         """Servers - a model defined in Swagger"""  # noqa: E501
-        super(Servers, self).__init__()
+        super(Servers, self).__init__(teamcity=teamcity)
 
         self._count = None
         self._server = None

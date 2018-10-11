@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.agent_requirements import AgentRequirements  # noqa: F401,E501
@@ -94,9 +94,9 @@ class BuildType(TeamCityObject):
         'web_url': 'webUrl'
     }
 
-    def __init__(self, agent_requirements=None, artifact_dependencies=None, builds=None, compatible_agents=None, description=None, features=None, href=None, id=None, internal_id=None, investigations=None, links=None, locator=None, name=None, parameters=None, paused=False, project=None, project_id=None, project_internal_id=None, project_name=None, settings=None, snapshot_dependencies=None, steps=None, template=None, template_flag=False, triggers=None, uuid=None, vcs_root_entries=None, web_url=None):  # noqa: E501
+    def __init__(self, agent_requirements=None, artifact_dependencies=None, builds=None, compatible_agents=None, description=None, features=None, href=None, id=None, internal_id=None, investigations=None, links=None, locator=None, name=None, parameters=None, paused=False, project=None, project_id=None, project_internal_id=None, project_name=None, settings=None, snapshot_dependencies=None, steps=None, template=None, template_flag=False, triggers=None, uuid=None, vcs_root_entries=None, web_url=None, teamcity=None):  # noqa: E501
         """BuildType - a model defined in Swagger"""  # noqa: E501
-        super(BuildType, self).__init__()
+        super(BuildType, self).__init__(teamcity=teamcity)
 
         self._agent_requirements = None
         self._artifact_dependencies = None

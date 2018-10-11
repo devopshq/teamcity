@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.build_types import BuildTypes  # noqa: F401,E501
@@ -33,9 +33,9 @@ class BuildTriggeringOptions(TeamCityObject):
         'rebuild_dependencies': 'rebuildDependencies'
     }
 
-    def __init__(self, clean_sources=False, queue_at_top=False, rebuild_all_dependencies=False, rebuild_dependencies=None):  # noqa: E501
+    def __init__(self, clean_sources=False, queue_at_top=False, rebuild_all_dependencies=False, rebuild_dependencies=None, teamcity=None):  # noqa: E501
         """BuildTriggeringOptions - a model defined in Swagger"""  # noqa: E501
-        super(BuildTriggeringOptions, self).__init__()
+        super(BuildTriggeringOptions, self).__init__(teamcity=teamcity)
 
         self._clean_sources = None
         self._queue_at_top = None

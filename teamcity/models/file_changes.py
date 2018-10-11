@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.file_change import FileChange  # noqa: F401,E501
@@ -29,9 +29,9 @@ class FileChanges(TeamCityObject):
         'file': 'file'
     }
 
-    def __init__(self, count=None, file=None):  # noqa: E501
+    def __init__(self, count=None, file=None, teamcity=None):  # noqa: E501
         """FileChanges - a model defined in Swagger"""  # noqa: E501
-        super(FileChanges, self).__init__()
+        super(FileChanges, self).__init__(teamcity=teamcity)
 
         self._count = None
         self._file = None

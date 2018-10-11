@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 
@@ -29,9 +29,9 @@ class Link(TeamCityObject):
         'url': 'url'
     }
 
-    def __init__(self, relative_url=None, type=None, url=None):  # noqa: E501
+    def __init__(self, relative_url=None, type=None, url=None, teamcity=None):  # noqa: E501
         """Link - a model defined in Swagger"""  # noqa: E501
-        super(Link, self).__init__()
+        super(Link, self).__init__(teamcity=teamcity)
 
         self._relative_url = None
         self._type = None

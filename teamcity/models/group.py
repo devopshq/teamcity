@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.groups import Groups  # noqa: F401,E501
@@ -46,9 +46,9 @@ class Group(TeamCityObject):
         'users': 'users'
     }
 
-    def __init__(self, child_groups=None, description=None, href=None, key=None, name=None, parent_groups=None, properties=None, roles=None, users=None):  # noqa: E501
+    def __init__(self, child_groups=None, description=None, href=None, key=None, name=None, parent_groups=None, properties=None, roles=None, users=None, teamcity=None):  # noqa: E501
         """Group - a model defined in Swagger"""  # noqa: E501
-        super(Group, self).__init__()
+        super(Group, self).__init__(teamcity=teamcity)
 
         self._child_groups = None
         self._description = None

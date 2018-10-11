@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 
@@ -27,9 +27,9 @@ class BuildCancelRequest(TeamCityObject):
         'readd_into_queue': 'readdIntoQueue'
     }
 
-    def __init__(self, comment=None, readd_into_queue=False):  # noqa: E501
+    def __init__(self, comment=None, readd_into_queue=False, teamcity=None):  # noqa: E501
         """BuildCancelRequest - a model defined in Swagger"""  # noqa: E501
-        super(BuildCancelRequest, self).__init__()
+        super(BuildCancelRequest, self).__init__(teamcity=teamcity)
 
         self._comment = None
         self._readd_into_queue = None

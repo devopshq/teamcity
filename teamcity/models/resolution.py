@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 
@@ -27,9 +27,9 @@ class Resolution(TeamCityObject):
         'type': 'type'
     }
 
-    def __init__(self, time=None, type=None):  # noqa: E501
+    def __init__(self, time=None, type=None, teamcity=None):  # noqa: E501
         """Resolution - a model defined in Swagger"""  # noqa: E501
-        super(Resolution, self).__init__()
+        super(Resolution, self).__init__(teamcity=teamcity)
 
         self._time = None
         self._type = None

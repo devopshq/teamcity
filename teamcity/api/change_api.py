@@ -61,6 +61,264 @@ class ChangeApi(object):
             (data) = self.__get_change_attributes_with_http_info(change_locator, **kwargs)  # noqa: E501
             return data
 
+
+    def get_change_duplicates(self, change_locator, **kwargs):  # noqa: E501
+        """get_change_duplicates  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_change_duplicates(change_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str change_locator: (required)
+        :param str fields:
+        :return: Changes
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_change_duplicates_with_http_info(change_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_change_duplicates_with_http_info(change_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_change_field(self, change_locator, field, **kwargs):  # noqa: E501
+        """get_change_field  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_change_field(change_locator, field, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str change_locator: (required)
+        :param str field: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_change_field_with_http_info(change_locator, field, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_change_field_with_http_info(change_locator, field, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_change_first_builds(self, change_locator, **kwargs):  # noqa: E501
+        """get_change_first_builds  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_change_first_builds(change_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str change_locator: (required)
+        :param str fields:
+        :return: Builds
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_change_first_builds_with_http_info(change_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_change_first_builds_with_http_info(change_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_change_issue(self, change_locator, **kwargs):  # noqa: E501
+        """get_change_issue  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_change_issue(change_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str change_locator: (required)
+        :return: Issues
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_change_issue_with_http_info(change_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_change_issue_with_http_info(change_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_change_parent_revisions(self, change_locator, **kwargs):  # noqa: E501
+        """get_change_parent_revisions  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_change_parent_revisions(change_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str change_locator: (required)
+        :return: Items
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_change_parent_revisions_with_http_info(change_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_change_parent_revisions_with_http_info(change_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_change_vcs_root(self, change_locator, **kwargs):  # noqa: E501
+        """get_change_vcs_root  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_change_vcs_root(change_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str change_locator: (required)
+        :param str fields:
+        :return: VcsRootInstance
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_change_vcs_root_with_http_info(change_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_change_vcs_root_with_http_info(change_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_change_vcs_root_instance(self, change_locator, **kwargs):  # noqa: E501
+        """get_change_vcs_root_instance  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_change_vcs_root_instance(change_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str change_locator: (required)
+        :param str fields:
+        :return: VcsRootInstance
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_change_vcs_root_instance_with_http_info(change_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_change_vcs_root_instance_with_http_info(change_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_parent_changes(self, change_locator, **kwargs):  # noqa: E501
+        """get_parent_changes  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_parent_changes(change_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str change_locator: (required)
+        :param str fields:
+        :return: Changes
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_parent_changes_with_http_info(change_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_parent_changes_with_http_info(change_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_related_build_types(self, change_locator, **kwargs):  # noqa: E501
+        """get_related_build_types  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_related_build_types(change_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str change_locator: (required)
+        :param str fields:
+        :return: BuildTypes
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_related_build_types_with_http_info(change_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_related_build_types_with_http_info(change_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def serve_change(self, change_locator, **kwargs):  # noqa: E501
+        """serve_change  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.serve_change(change_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str change_locator: (required)
+        :param str fields:
+        :return: Change
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__serve_change_with_http_info(change_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__serve_change_with_http_info(change_locator, **kwargs)  # noqa: E501
+            return data
+
+
+    def serve_changes(self, **kwargs):  # noqa: E501
+        """serve_changes  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.serve_changes(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str project:
+        :param str build_type:
+        :param str build:
+        :param str vcs_root:
+        :param str since_change:
+        :param int start:
+        :param int count:
+        :param str locator:
+        :param str fields:
+        :return: Changes
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__serve_changes_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__serve_changes_with_http_info(**kwargs)  # noqa: E501
+            return data
+
     def __get_change_attributes_with_http_info(self, change_locator, **kwargs):  # noqa: E501
         """get_change_attributes  # noqa: E501
 
@@ -131,29 +389,6 @@ class ChangeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_change_duplicates(self, change_locator, **kwargs):  # noqa: E501
-        """get_change_duplicates  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_change_duplicates(change_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str change_locator: (required)
-        :param str fields:
-        :return: Changes
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_change_duplicates_with_http_info(change_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_change_duplicates_with_http_info(change_locator, **kwargs)  # noqa: E501
-            return data
-
     def __get_change_duplicates_with_http_info(self, change_locator, **kwargs):  # noqa: E501
         """get_change_duplicates  # noqa: E501
 
@@ -224,29 +459,6 @@ class ChangeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_change_field(self, change_locator, field, **kwargs):  # noqa: E501
-        """get_change_field  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_change_field(change_locator, field, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str change_locator: (required)
-        :param str field: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_change_field_with_http_info(change_locator, field, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_change_field_with_http_info(change_locator, field, **kwargs)  # noqa: E501
-            return data
-
     def __get_change_field_with_http_info(self, change_locator, field, **kwargs):  # noqa: E501
         """get_change_field  # noqa: E501
 
@@ -321,29 +533,6 @@ class ChangeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_change_first_builds(self, change_locator, **kwargs):  # noqa: E501
-        """get_change_first_builds  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_change_first_builds(change_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str change_locator: (required)
-        :param str fields:
-        :return: Builds
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_change_first_builds_with_http_info(change_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_change_first_builds_with_http_info(change_locator, **kwargs)  # noqa: E501
-            return data
-
     def __get_change_first_builds_with_http_info(self, change_locator, **kwargs):  # noqa: E501
         """get_change_first_builds  # noqa: E501
 
@@ -414,28 +603,6 @@ class ChangeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_change_issue(self, change_locator, **kwargs):  # noqa: E501
-        """get_change_issue  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_change_issue(change_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str change_locator: (required)
-        :return: Issues
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_change_issue_with_http_info(change_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_change_issue_with_http_info(change_locator, **kwargs)  # noqa: E501
-            return data
-
     def __get_change_issue_with_http_info(self, change_locator, **kwargs):  # noqa: E501
         """get_change_issue  # noqa: E501
 
@@ -503,28 +670,6 @@ class ChangeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_change_parent_revisions(self, change_locator, **kwargs):  # noqa: E501
-        """get_change_parent_revisions  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_change_parent_revisions(change_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str change_locator: (required)
-        :return: Items
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_change_parent_revisions_with_http_info(change_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_change_parent_revisions_with_http_info(change_locator, **kwargs)  # noqa: E501
-            return data
-
     def __get_change_parent_revisions_with_http_info(self, change_locator, **kwargs):  # noqa: E501
         """get_change_parent_revisions  # noqa: E501
 
@@ -592,29 +737,6 @@ class ChangeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_change_vcs_root(self, change_locator, **kwargs):  # noqa: E501
-        """get_change_vcs_root  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_change_vcs_root(change_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str change_locator: (required)
-        :param str fields:
-        :return: VcsRootInstance
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_change_vcs_root_with_http_info(change_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_change_vcs_root_with_http_info(change_locator, **kwargs)  # noqa: E501
-            return data
-
     def __get_change_vcs_root_with_http_info(self, change_locator, **kwargs):  # noqa: E501
         """get_change_vcs_root  # noqa: E501
 
@@ -685,29 +807,6 @@ class ChangeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_change_vcs_root_instance(self, change_locator, **kwargs):  # noqa: E501
-        """get_change_vcs_root_instance  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_change_vcs_root_instance(change_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str change_locator: (required)
-        :param str fields:
-        :return: VcsRootInstance
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_change_vcs_root_instance_with_http_info(change_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_change_vcs_root_instance_with_http_info(change_locator, **kwargs)  # noqa: E501
-            return data
-
     def __get_change_vcs_root_instance_with_http_info(self, change_locator, **kwargs):  # noqa: E501
         """get_change_vcs_root_instance  # noqa: E501
 
@@ -778,29 +877,6 @@ class ChangeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_parent_changes(self, change_locator, **kwargs):  # noqa: E501
-        """get_parent_changes  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_parent_changes(change_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str change_locator: (required)
-        :param str fields:
-        :return: Changes
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_parent_changes_with_http_info(change_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_parent_changes_with_http_info(change_locator, **kwargs)  # noqa: E501
-            return data
-
     def __get_parent_changes_with_http_info(self, change_locator, **kwargs):  # noqa: E501
         """get_parent_changes  # noqa: E501
 
@@ -871,29 +947,6 @@ class ChangeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_related_build_types(self, change_locator, **kwargs):  # noqa: E501
-        """get_related_build_types  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_related_build_types(change_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str change_locator: (required)
-        :param str fields:
-        :return: BuildTypes
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_related_build_types_with_http_info(change_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_related_build_types_with_http_info(change_locator, **kwargs)  # noqa: E501
-            return data
-
     def __get_related_build_types_with_http_info(self, change_locator, **kwargs):  # noqa: E501
         """get_related_build_types  # noqa: E501
 
@@ -964,29 +1017,6 @@ class ChangeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def serve_change(self, change_locator, **kwargs):  # noqa: E501
-        """serve_change  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_change(change_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str change_locator: (required)
-        :param str fields:
-        :return: Change
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_change_with_http_info(change_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_change_with_http_info(change_locator, **kwargs)  # noqa: E501
-            return data
-
     def __serve_change_with_http_info(self, change_locator, **kwargs):  # noqa: E501
         """serve_change  # noqa: E501
 
@@ -1057,36 +1087,6 @@ class ChangeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def serve_changes(self, **kwargs):  # noqa: E501
-        """serve_changes  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_changes(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str project:
-        :param str build_type:
-        :param str build:
-        :param str vcs_root:
-        :param str since_change:
-        :param int start:
-        :param int count:
-        :param str locator:
-        :param str fields:
-        :return: Changes
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_changes_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_changes_with_http_info(**kwargs)  # noqa: E501
-            return data
-
     def __serve_changes_with_http_info(self, **kwargs):  # noqa: E501
         """serve_changes  # noqa: E501
 

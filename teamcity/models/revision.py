@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.vcs_root_instance import VcsRootInstance  # noqa: F401,E501
@@ -35,9 +35,9 @@ class Revision(TeamCityObject):
         'version': 'version'
     }
 
-    def __init__(self, checkout_rules=None, internal_version=None, vcs_root_instance=None, vcs_branch_name=None, version=None):  # noqa: E501
+    def __init__(self, checkout_rules=None, internal_version=None, vcs_root_instance=None, vcs_branch_name=None, version=None, teamcity=None):  # noqa: E501
         """Revision - a model defined in Swagger"""  # noqa: E501
-        super(Revision, self).__init__()
+        super(Revision, self).__init__(teamcity=teamcity)
 
         self._checkout_rules = None
         self._internal_version = None

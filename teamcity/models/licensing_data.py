@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.license_keys import LicenseKeys  # noqa: F401,E501
@@ -45,9 +45,9 @@ class LicensingData(TeamCityObject):
         'unlimited_build_types': 'unlimitedBuildTypes'
     }
 
-    def __init__(self, agents_left=None, build_types_left=None, license_keys=None, license_use_exceeded=False, max_agents=None, max_build_types=None, server_effective_release_date=None, server_license_type=None, unlimited_agents=False, unlimited_build_types=False):  # noqa: E501
+    def __init__(self, agents_left=None, build_types_left=None, license_keys=None, license_use_exceeded=False, max_agents=None, max_build_types=None, server_effective_release_date=None, server_license_type=None, unlimited_agents=False, unlimited_build_types=False, teamcity=None):  # noqa: E501
         """LicensingData - a model defined in Swagger"""  # noqa: E501
-        super(LicensingData, self).__init__()
+        super(LicensingData, self).__init__(teamcity=teamcity)
 
         self._agents_left = None
         self._build_types_left = None

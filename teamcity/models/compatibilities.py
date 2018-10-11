@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.compatibility import Compatibility  # noqa: F401,E501
@@ -29,9 +29,9 @@ class Compatibilities(TeamCityObject):
         'count': 'count'
     }
 
-    def __init__(self, compatibility=None, count=None):  # noqa: E501
+    def __init__(self, compatibility=None, count=None, teamcity=None):  # noqa: E501
         """Compatibilities - a model defined in Swagger"""  # noqa: E501
-        super(Compatibilities, self).__init__()
+        super(Compatibilities, self).__init__(teamcity=teamcity)
 
         self._compatibility = None
         self._count = None

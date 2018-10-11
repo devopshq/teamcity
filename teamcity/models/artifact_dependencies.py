@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.artifact_dependency import ArtifactDependency  # noqa: F401,E501
@@ -31,9 +31,9 @@ class ArtifactDependencies(TeamCityObject):
         'replace': 'replace'
     }
 
-    def __init__(self, artifact_dependency=None, count=None, replace=None):  # noqa: E501
+    def __init__(self, artifact_dependency=None, count=None, replace=None, teamcity=None):  # noqa: E501
         """ArtifactDependencies - a model defined in Swagger"""  # noqa: E501
-        super(ArtifactDependencies, self).__init__()
+        super(ArtifactDependencies, self).__init__(teamcity=teamcity)
 
         self._artifact_dependency = None
         self._count = None

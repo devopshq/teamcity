@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.comment import Comment  # noqa: F401,E501
@@ -31,9 +31,9 @@ class EnabledInfo(TeamCityObject):
         'status_switch_time': 'statusSwitchTime'
     }
 
-    def __init__(self, comment=None, status=False, status_switch_time=None):  # noqa: E501
+    def __init__(self, comment=None, status=False, status_switch_time=None, teamcity=None):  # noqa: E501
         """EnabledInfo - a model defined in Swagger"""  # noqa: E501
-        super(EnabledInfo, self).__init__()
+        super(EnabledInfo, self).__init__(teamcity=teamcity)
 
         self._comment = None
         self._status = None

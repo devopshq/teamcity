@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.build_type import BuildType  # noqa: F401,E501
@@ -42,9 +42,9 @@ class SnapshotDependency(TeamCityObject):
         'type': 'type'
     }
 
-    def __init__(self, disabled=False, href=None, id=None, inherited=False, name=None, properties=None, source_build_type=None, type=None):  # noqa: E501
+    def __init__(self, disabled=False, href=None, id=None, inherited=False, name=None, properties=None, source_build_type=None, type=None, teamcity=None):  # noqa: E501
         """SnapshotDependency - a model defined in Swagger"""  # noqa: E501
-        super(SnapshotDependency, self).__init__()
+        super(SnapshotDependency, self).__init__(teamcity=teamcity)
 
         self._disabled = None
         self._href = None

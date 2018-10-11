@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.project import Project  # noqa: F401,E501
@@ -35,9 +35,9 @@ class Projects(TeamCityObject):
         'project': 'project'
     }
 
-    def __init__(self, count=None, href=None, next_href=None, prev_href=None, project=None):  # noqa: E501
+    def __init__(self, count=None, href=None, next_href=None, prev_href=None, project=None, teamcity=None):  # noqa: E501
         """Projects - a model defined in Swagger"""  # noqa: E501
-        super(Projects, self).__init__()
+        super(Projects, self).__init__(teamcity=teamcity)
 
         self._count = None
         self._href = None

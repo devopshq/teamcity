@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 # from teamcity.models.role import Role  # noqa: F401,E501
@@ -27,9 +27,9 @@ class Roles(TeamCityObject):
         'role': 'role'
     }
 
-    def __init__(self, role=None):  # noqa: E501
+    def __init__(self, role=None, teamcity=None):  # noqa: E501
         """Roles - a model defined in Swagger"""  # noqa: E501
-        super(Roles, self).__init__()
+        super(Roles, self).__init__(teamcity=teamcity)
 
         self._role = None
         self.discriminator = None

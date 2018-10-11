@@ -6,8 +6,8 @@ import six
 class TeamCityObject(object):
     swagger_types = {}
 
-    def __init__(self, *args, **kwargs):
-        pass
+    def __init__(self, teamcity=None, *args, **kwargs):
+        self.teamcity = teamcity
 
     def to_dict(self):
         """Returns the model properties as a dict"""

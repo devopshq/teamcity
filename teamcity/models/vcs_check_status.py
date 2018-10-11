@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from teamcity.custom.model import TeamCityObject
+from teamcity.custom.base_model import TeamCityObject
 
 
 
@@ -29,9 +29,9 @@ class VcsCheckStatus(TeamCityObject):
         'timestamp': 'timestamp'
     }
 
-    def __init__(self, requestor_type=None, status=None, timestamp=None):  # noqa: E501
+    def __init__(self, requestor_type=None, status=None, timestamp=None, teamcity=None):  # noqa: E501
         """VcsCheckStatus - a model defined in Swagger"""  # noqa: E501
-        super(VcsCheckStatus, self).__init__()
+        super(VcsCheckStatus, self).__init__(teamcity=teamcity)
 
         self._requestor_type = None
         self._status = None
