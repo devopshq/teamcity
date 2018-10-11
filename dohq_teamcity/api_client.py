@@ -24,7 +24,7 @@ import six
 from six.moves.urllib.parse import quote
 
 from dohq_teamcity.configuration import Configuration
-import dohq_teamcity.models
+import dohq_teamcity.custom.models
 from dohq_teamcity import rest
 
 
@@ -258,7 +258,7 @@ class ApiClient(object):
             if klass in self.NATIVE_TYPES_MAPPING:
                 klass = self.NATIVE_TYPES_MAPPING[klass]
             else:
-                klass = getattr(dohq_teamcity.models, klass)
+                klass = getattr(dohq_teamcity.custom.models, klass)
 
         if klass in self.PRIMITIVE_TYPES:
             return self.__deserialize_primitive(data, klass)
@@ -612,7 +612,7 @@ class ApiClient(object):
                     value = data[klass.attribute_map[attr]]
                     kwargs[attr] = self.__deserialize(value, attr_type)
 
-        instance = klass(**kwargs)
+        instance = klass(teamcity=self, **kwargs)
 
         if (isinstance(instance, dict) and
                 klass.swagger_types is not None and

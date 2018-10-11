@@ -2,12 +2,18 @@ import pprint
 
 import six
 
+# import for typing only
+try:
+    from dohq_teamcity.custom.client import TeamCity
+except:
+    pass
+
 
 class TeamCityObject(object):
     swagger_types = {}
 
     def __init__(self, teamcity=None, *args, **kwargs):
-        self.teamcity = teamcity
+        self.teamcity = teamcity  # type: TeamCity
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -51,3 +57,30 @@ class TeamCityObject(object):
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
         return not self == other
+
+
+class TeamCityException(Exception):
+    pass
+
+
+class TeamCityCodeException(Exception):
+    pass
+
+
+class TeamCityRuntimeException(Exception):
+    pass
+
+
+class ReadMixin(object):
+    def _read(self):
+        return None
+
+    def read(self):
+        load_func = self._read()
+        if load_func is None:
+            raise TeamCityCodeException("load_function is not defined in class '{}'".format(self.__class__.__name__))
+        if self.id is None:
+            raise TeamCityRuntimeException("object does not have attribute id: ''".format(self))
+
+        self = load_func('id:{}'.format(self.id))
+        return self
