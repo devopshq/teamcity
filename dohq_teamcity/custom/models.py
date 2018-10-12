@@ -66,6 +66,16 @@ class Project(Project, ReadMixin, DeleteMixin):
     def _delete(self):
         return self.teamcity.projects.delete_project
 
+    def set_parameter(self, **kwargs):
+        """
+        :param async_req bool
+        :param str project_locator: (required)
+        :param ModelProperty body:
+        :param str fields:
+        :return: ModelProperty
+        """
+        self.teamcity.projects.set_parameter(self, **kwargs)
+
 
 class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
     def _read(self):

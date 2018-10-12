@@ -5,6 +5,8 @@
 
 Welcome to dohq-teamcity's documentation!
 =========================================
+This library is a python API client for TeamCity JetBrains
+
 
 Contents:
 

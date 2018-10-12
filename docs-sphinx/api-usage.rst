@@ -2,72 +2,24 @@
 Getting started with the API
 ############################
 
-dohq-teamcity supports both TeamCity v3 and v4 APIs.
-
-.. note::
-
-   To use the v3 make sure to install dohq-teamcity 1.4. Only the v4 API is
-   documented here. See the documentation of earlier versions for the v3 API.
-
-``teamcity.TeamCity`` class
+``dohq_teamcity.TeamCity`` class
 =======================
 
-To connect to a TeamCity server, create a ``teamcity.TeamCity`` object:
+To connect to a TeamCity server, create a ``dohq_teamcity.TeamCity`` object:
 
 .. code-block:: python
 
-   import teamcity
+   import dohq_teamcity
 
-   # private token or personal token authentication
-   gl = teamcity.TeamCity('http://10.0.0.1', private_token='JVNSESs8EwWRx5yDxM5q')
+   # username/password authentication
+   tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-   # oauth token authentication
-   gl = teamcity.TeamCity('http://10.0.0.1', oauth_token='my_long_token_here')
 
-   # username/password authentication (for TeamCity << 10.2)
-   gl = teamcity.TeamCity('http://10.0.0.1', email='jdoe', password='s3cr3t')
-
-   # anonymous teamcity instance, read-only for public resources
-   gl = teamcity.TeamCity('http://10.0.0.1')
-
-   # make an API request to create the gl.user object. This is mandatory if you
-   # use the username/password authentication.
-   gl.auth()
-
-You can also use configuration files to create ``teamcity.TeamCity`` objects:
-
-.. code-block:: python
-
-   gl = teamcity.TeamCity.from_config('somewhere', ['/tmp/gl.cfg'])
-
-See the :ref:`cli_configuration` section for more information about
-configuration files.
-
-.. warning::
-
-   If the TeamCity server you are using redirects requests from http to https,
-   make sure to use the ``https://`` protocol in the URL definition.
-
-Note on password authentication
--------------------------------
-
-The ``/session`` API endpoint used for username/password authentication has
-been removed from TeamCity in version 10.2, and is not available on teamcity.com
-anymore. Personal token authentication is the preferred authentication method.
-
-If you need username/password authentication, you can use cookie-based
-authentication. You can use the web UI form to authenticate, retrieve cookies,
-and then use a custom ``requests.Session`` object to connect to the TeamCity API.
-The following code snippet demonstrates how to automate this:
-https://gist.github.com/gpocentek/bd4c3fbf8a6ce226ebddc4aad6b46c0a.
-
-See `issue 380 <https://github.com/dohq-teamcity/dohq-teamcity/issues/380>`_
-for a detailed discussion.
 
 Managers
 ========
 
-The ``teamcity.TeamCity`` class provides managers to access the TeamCity resources.
+The ``dohq_teamcity.TeamCity`` class provides managers (APIs) to access the TeamCity resources.
 Each manager provides a set of methods to act on the resources. The available
 methods depend on the resource type.
 
@@ -76,30 +28,29 @@ Examples:
 .. code-block:: python
 
    # list all the projects
-   projects = gl.projects.list()
+   projects = tc.projects.get_projects()
    for project in projects:
        print(project)
 
-   # get the group with id == 2
-   group = gl.groups.get(2)
-   for group in groups:
-       print()
-
-   # create a new user
-   user_data = {'email': 'jen@foo.com', 'username': 'jen', 'name': 'Jen'}
-   user = gl.users.create(user_data)
+   # get the group with name = groupname
+   group = tc.group.get('name:groupname')
+   print(group)
+       
+   # get the user with name = username
+   user = tc.user.get('username:devopshq')
    print(user)
 
-You can list the mandatory and optional attributes for object creation and
-update with the manager's ``get_create_attrs()`` and ``get_update_attrs()``
-methods. They return 2 tuples, the first one is the list of mandatory
-attributes, the second one is the list of optional attribute:
+   # create a new user and delete
+    from dohq_teamcity import User
+    new_user = User(name='New user', username='new_user')
+    new_user = tc.users.create_user(body=new_user)
+    new_user.delete()
 
-.. code-block:: python
+    # other way - create object, connect with exist instance and load it
+    import dohq_teamcity
+    bt = dohq_teamcity.BuildType(id='MyBuildTypeId', teamcity=tc)
+    bt = bt.read()
 
-   # v4 only
-   print(gl.projects.get_create_attrs())
-   (('name',), ('path', 'namespace_id', ...))
 
 The attributes of objects are defined upon object creation, and depend on the
 TeamCity API itself. To list the available information associated with an object
@@ -107,31 +58,30 @@ use the ``attributes`` attribute:
 
 .. code-block:: python
 
-   project = gl.projects.get(1)
-   print(project.attributes)
+   project = tc.projects.get(1)
+   print(project.attribute_map.keys())
 
-Some objects also provide managers to access related TeamCity resources:
+If some objects contains other object (eg - ``Project`` contain ``BuildType``) we need execute ``read()`` function to get **full** object, because it does not contain full information about related object and we must reload object.
 
 .. code-block:: python
 
-   # list the issues for a project
-   project = gl.projects.get(1)
-   issues = project.issues.list()
+   # list the build_type properties for a project
+   project = tc.projects.get('id:MyProject')
+   bt = project.build_types.build_type[0]
+   bt.parameters # None
+   bt = bt.load()
+   bt.parameters # Properties object like list[Property]
+
 
 TeamCity Objects
 ==============
 
-You can update or delete a remote object when it exists locally:
+You can delete a remote object when it exists locally:
 
 .. code-block:: python
 
-   # update the attributes of a resource
-   project = gl.projects.get(1)
-   project.wall_enabled = False
-   # don't forget to apply your changes on the server:
-   project.save()
-
    # delete the resource
+   project = tc.projects.get('id:MyProject')
    project.delete()
 
 Some classes provide additional methods, allowing more actions on the TeamCity
@@ -139,180 +89,94 @@ resources. For example:
 
 .. code-block:: python
 
-   # star a git repository
-   project = gl.projects.get(1)
-   project.star()
+   # Add property to build type
+   from dohq_teamcit import Type, ModeProperty
+   bt1 = tc.build_types.get('id:MyBuildType')
+   tp = Type(raw_value="text display='normal' validationMode='any'")
+   pr = ModelProperty(name="from_script", value="testnew", type=tp)
+   pr = bt.set_parameter(body=pr)
 
 Base types
 ==========
 
-The ``teamcity`` package provides some base types.
+The ``dohq_teamcity`` package provides some base types.
 
-* ``teamcity.TeamCity`` is the primary class, handling the HTTP requests. It holds
+* ``dohq_teamcity.TeamCity`` is the primary class, handling the HTTP requests. It holds
   the TeamCity URL and authentication information.
-* ``teamcity.base.RESTObject`` is the base class for all the TeamCity v4 objects.
+* ``dohq_teamcity.custom.base_model`` is the base class for all the TeamCity objects.
   These objects provide an abstraction for TeamCity resources (projects, groups,
   and so on).
-* ``teamcity.base.RESTManager`` is the base class for v4 objects managers,
+* ``dohq_teamcity.custom.models`` is the extended class for  objects managers,
   providing the API to manipulate the resources and their attributes.
+* ``dohq_teamcity.custom.api`` is the extended class for  objects, providing the friendly API to manipulate the resources.
+* ``dohq_teamcity.models.*`` autogenerated Models object by swagger.
+* ``dohq_teamcity.api.*`` autogenerated objects Managers and APIs by swagger.
+
+.. note::
+
+    Most objects and managers and their functions genereted automatically by https://github.com/swagger-api/swagger-codegen - see more ``swagger.sh`` file and other swagger files.
+    Custom interfaces for apis and objects are in folder **dohq_teamcity/custom**
 
 Lazy objects
 ============
 
-To avoid useless API calls to the server you can create lazy objects. These
-objects are created locally using a known ID, and give access to other managers
-and methods.
+All objects are a ``lazy``-object - it's not make API call on create, only on get\read\update
 
 The following example will only make one API call to the TeamCity server to star
 a project (the previous example used 2 API calls):
 
 .. code-block:: python
 
-   # star a git repository
-   project = gl.projects.get(1, lazy=True)  # no API call
-   project.star()  # API call
+   # project
+   project = tc.projects.get('id:MyProject')  # API call, full object
+   project.set_parameter(body=parameter_obj)  # API call
 
-Pagination
+   # project lazy
+   from dohq_teamcity import Project
+   project = Project(id='MyProject', teamcity=tc) # no API call
+   project.set_parameter(body=parameter_obj)  # API call
+
+   # project lazy 2
+   from dohq_teamcity import Project
+   project = Project(id='MyProject') # no API call
+   tc.projects.set_parameter(project, body=parameter_obj)  # API call
+
+Managers function
 ==========
+Many Managers function contains this parameters:
 
-You can use pagination to iterate over long lists. All the TeamCity objects
-listing methods support the ``page`` and ``per_page`` parameters:
+* ``get_*`` and ``serve_*`` function - ``some_locator`` - positional argument, can be string or one ``dohq_teamcity.TeamCityObject`` class.
+  TeamCity use https://confluence.jetbrains.com/display/TCD10/REST+API#RESTAPI-Locator for find objects.
+* ``set_*`` and ``update_*`` function - ``body`` - named argument, must be one of ``dohq_teamcity.TeamCityObject`` class.
+* ``async_req`` - read more below
 
-.. code-block:: python
-
-   ten_first_groups = gl.groups.list(page=1, per_page=10)
-
-.. warning::
-
-   The first page is page 1, not page 0.
-
-By default TeamCity does not return the complete list of items. Use the ``all``
-parameter to get all the items when using listing methods:
-
-.. code-block:: python
-
-   all_groups = gl.groups.list(all=True)
-   all_owned_projects = gl.projects.list(owned=True, all=True)
-
-You can define the ``per_page`` value globally to avoid passing it to every
-``list()`` method call:
-
-.. code-block:: python
-
-   gl = teamcity.TeamCity(url, token, per_page=50)
-
-``list()`` methods can also return a generator object which will handle the
-next calls to the API when required. This is the recommended way to iterate
-through a large number of items:
-
-.. code-block:: python
-
-   items = gl.groups.list(as_list=False)
-   for item in items:
-       print(item.attributes)
-
-The generator exposes extra listing information as received from the server:
-
-* ``current_page``: current page number (first page is 1)
-* ``prev_page``: if ``None`` the current page is the first one
-* ``next_page``: if ``None`` the current page is the last one
-* ``per_page``: number of items per page
-* ``total_pages``: total number of pages available
-* ``total``: total number of items in the list
-
-Sudo
-====
-
-If you have the administrator status, you can use ``sudo`` to act as another
-user. For example:
-
-.. code-block:: python
-
-   p = gl.projects.create({'name': 'awesome_project'}, sudo='user1')
 
 Advanced HTTP configuration
 ===========================
 
-dohq-teamcity relies on ``requests`` ``Session`` objects to perform all the
+``dohq-teamcity`` relies on ``urllib3`` objects to perform all the
 HTTP requests to the TeamCity servers.
 
-You can provide your own ``Session`` object with custom configuration when
-you create a ``TeamCity`` object.
 
-Context manager
+Asynchronous request
 ---------------
-
-You can use ``TeamCity`` objects as context managers. This makes sure that the
-``requests.Session`` object associated with a ``TeamCity`` instance is always
-properly closed when you exit a ``with`` block:
+All method makes a synchronous HTTP request by default. To make an asynchronous HTTP request, please pass ``async_req=True``:
 
 .. code-block:: python
 
-   with teamcity.TeamCity(host, token) as gl:
-       gl.projects.list()
-
-.. warning::
-
-   The context manager will also close the custom ``Session`` object you might
-   have used to build the ``TeamCity`` instance.
-
-Proxy configuration
--------------------
-
-The following sample illustrates how to define a proxy configuration when using
-dohq-teamcity:
+    thread = tc.builds.get(bt_locator, async_req=True)
+    result = thread.get()
 
 .. code-block:: python
 
-   import teamcity
-   import requests
-
-   session = requests.Session()
-   session.proxies = {
-       'https': os.environ.get('https_proxy'),
-       'http': os.environ.get('http_proxy'),
-   }
-   gl = teamcity.teamcity(url, token, api_version=4, session=session)
-
-Reference:
-http://docs.python-requests.org/en/master/user/advanced/#proxies
-
-Client side certificate
------------------------
-
-The following sample illustrates how to use a client-side certificate:
-
-.. code-block:: python
-
-   import teamcity
-   import requests
-
-   session = requests.Session()
-   session.cert = ('/path/to/client.cert', '/path/to/client.key')
-   gl = teamcity.teamcity(url, token, api_version=4, session=session)
-
-Reference:
-http://docs.python-requests.org/en/master/user/advanced/#client-side-certificates
-
-Rate limits
------------
-
-dohq-teamcity obeys the rate limit of the TeamCity server by default.  On
-receiving a 429 response (Too Many Requests), dohq-teamcity sleeps for the
-amount of time in the Retry-After header that TeamCity sends back.
-
-If you don't want to wait, you can disable the rate-limiting feature, by
-supplying the ``obey_rate_limit`` argument.
-
-.. code-block:: python
-
-   import teamcity
-   import requests
-
-   gl = teamcity.teamcity(url, token, api_version=4)
-   gl.projects.list(all=True, obey_rate_limit=False)
+   # get all archived projects build types ids
+    prs = tc.projects.get_projects(locator='archived:true') #
+    hr = [x.read(async_req=True) for x in prs.project[]] # async request
+    rs = [x.get() for x in thr]
+    bt_ids = list()
+    for pr in prs:
+        bt_pr = [x.id for x in pr.build_types.build_type]
+        bt_ids.extend(bt_pr)
+    print('\n'.join(bt_pr))
 
 
-.. warning::
-
-   You will get an Exception, if you then go over the rate limit of your TeamCity instance.
