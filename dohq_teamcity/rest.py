@@ -214,6 +214,7 @@ class RESTClientObject(object):
             raise ApiException(status=0, reason=msg)
 
         if _preload_content:
+            logging.debug('%s - "%s" - query: "%s"', method, url, query_params)
             r = RESTResponse(r)
 
             # In the python 3, the response.data is bytes.
@@ -222,7 +223,7 @@ class RESTClientObject(object):
                 r.data = r.data.decode('utf8')
 
             # log response body
-            logger.debug("response body: %s", r.data)
+            # logger.debug("response body: %s", r.data)
 
         if not 200 <= r.status <= 299:
             raise ApiException(http_resp=r)

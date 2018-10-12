@@ -31,6 +31,26 @@ class BuildApi(BuildApi):
         return self.serve_aggregated_build_status_icon(*args, **kwargs)
 
     def get_all_builds(self, *args, **kwargs):
+        """
+        :param async_req bool
+        :param str build_type:
+        :param str status:
+        :param str triggered_by_user:
+        :param bool include_personal:
+        :param bool include_canceled:
+        :param bool only_pinned:
+        :param list[str] tag:
+        :param str agent_name:
+        :param str since_build:
+        :param str since_date:
+        :param int start:
+        :param int count:
+        :param str locator:
+        :param str fields:
+        :return: Builds
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
         return self.serve_all_builds(*args, **kwargs)
 
     def get_build(self, *args, **kwargs):

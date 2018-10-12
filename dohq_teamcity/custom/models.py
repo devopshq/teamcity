@@ -1,4 +1,4 @@
-from dohq_teamcity.custom.base_model import ReadMixin
+from dohq_teamcity.custom.base_model import ReadMixin, DeleteMixin
 from dohq_teamcity.models import *
 
 
@@ -12,9 +12,12 @@ class AgentPool(AgentPool, ReadMixin):
         return self.teamcity.agent_pools.get
 
 
-class Build(Build, ReadMixin):
+class Build(Build, ReadMixin, DeleteMixin):
     def _read(self):
         return self.teamcity.builds.get
+
+    def _delete(self):
+        return self.teamcity.builds.delete_build
 
 
 class BuildType(ReadMixin, BuildType):
