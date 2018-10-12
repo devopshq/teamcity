@@ -148,7 +148,7 @@ Many Managers function contains this parameters:
 * ``get_*`` and ``serve_*`` function - ``some_locator`` - positional argument, can be string or one ``dohq_teamcity.TeamCityObject`` class.
   TeamCity use https://confluence.jetbrains.com/display/TCD10/REST+API#RESTAPI-Locator for find objects.
 * ``set_*`` and ``update_*`` function - ``body`` - named argument, must be one of ``dohq_teamcity.TeamCityObject`` class.
-* ``async_req`` - read more below
+* All function - ``async_req`` - read more below.
 
 
 Advanced HTTP configuration
