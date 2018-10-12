@@ -2,14 +2,20 @@ from dohq_teamcity.custom.base_model import ReadMixin, DeleteMixin
 from dohq_teamcity.models import *
 
 
-class Agent(Agent, ReadMixin):
+class Agent(Agent, ReadMixin, DeleteMixin):
     def _read(self):
         return self.teamcity.agents.get
 
+    def _delete(self):
+        return self.teamcity.agents.delete_agent
 
-class AgentPool(AgentPool, ReadMixin):
+
+class AgentPool(AgentPool, ReadMixin, DeleteMixin):
     def _read(self):
         return self.teamcity.agent_pools.get
+
+    def _delete(self):
+        return self.teamcity.agent_pools.delete_pool
 
 
 class Build(Build, ReadMixin, DeleteMixin):
@@ -20,13 +26,12 @@ class Build(Build, ReadMixin, DeleteMixin):
         return self.teamcity.builds.delete_build
 
 
-class BuildType(ReadMixin, BuildType):
-    @property
-    def api(self):
-        return self.teamcity.build_types
-
+class BuildType(BuildType, ReadMixin, DeleteMixin):
     def _read(self):
-        return self.api.get
+        return self.teamcity.build_types.get
+
+    def _delete(self):
+        return self.teamcity.build_types.delete_build_type
 
     def set_parameter(self, **kwargs):
         """
@@ -35,29 +40,42 @@ class BuildType(ReadMixin, BuildType):
         :param str fields:
         :return: ModelProperty
         """
-        self.api.set_parameter(self, **kwargs)
+        self.teamcity.build_types.set_parameter(self, **kwargs)
 
 
-class Group(Group, ReadMixin):
+class Group(Group, ReadMixin, DeleteMixin):
     def _read(self):
         return self.teamcity.groups.get
 
+    def _delete(self):
+        return self.teamcity.groups.delete_group
 
-class User(User, ReadMixin):
+
+class User(User, ReadMixin, DeleteMixin):
     def _read(self):
         return self.teamcity.users.get
 
+    def _delete(self):
+        return self.teamcity.users.delete_user
 
-class Project(Project, ReadMixin):
+
+class Project(Project, ReadMixin, DeleteMixin):
     def _read(self):
         return self.teamcity.projects.get
 
+    def _delete(self):
+        return self.teamcity.projects.delete_project
 
-class VcsRoot(VcsRoot, ReadMixin):
+
+class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
     def _read(self):
         return self.teamcity.vcs_root.get
+
+    def _delete(self):
+        return self.teamcity.vcs_root.delete_root
 
 
 class VcsRootInstance(VcsRootInstance, ReadMixin):
     def _read(self):
         return self.teamcity.vcs_root_instance.get
+
