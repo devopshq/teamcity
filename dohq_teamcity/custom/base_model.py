@@ -31,7 +31,7 @@ class TeamCityObject(object):
         # Hack for ContainerMixin init
         if hasattr(self, 'container') and self.container:
             UserList.__init__(self)
-            self.data = self._data
+            self.data = self._container_mixin_data
 
     @property
     def locator_id(self):
@@ -107,7 +107,7 @@ class DeleteMixin(object):
         return self
 
 
-class ContainerMixin(object):
+class ContainerMixin(UserList):
     """
     Object will response like container::
 
