@@ -177,6 +177,13 @@ class Program:
         pass
 
     def model(self, api, model, locator):
+        """
+        Extend model by functions in apis
+        :param api:
+        :param model:
+        :param locator:
+        :return:
+        """
         import dohq_teamcity.custom.api
         apis = {name: cls for name, cls in inspect.getmembers(dohq_teamcity.custom.api, inspect.isclass)}
         api = apis[api]
@@ -194,8 +201,10 @@ class Program:
 if __name__ == "__main__":
     args = parse_args()
     init_logging()
+    # APIs
+    Program(**vars(args)).api()
 
-    # Model
+    # Models
     # Program(**vars(args)).model(api='AgentApi', model='Agent', locator='agent_locator')
     # Program(**vars(args)).model(api='AgentPoolApi', model='AgentPool', locator='agent_pool_locator')
     # Program(**vars(args)).model(api='BuildApi', model='Build', locator='build_locator')
@@ -204,4 +213,4 @@ if __name__ == "__main__":
     # Program(**vars(args)).model(api='UserApi', model='User', locator='user_locator')
     # Program(**vars(args)).model(api='ProjectApi', model='Project', locator='project_locator')
     # Program(**vars(args)).model(api='VcsRootApi', model='VcsRoot', locator='vcs_root_locator')
-    Program(**vars(args)).model(api='VcsRootInstanceApi', model='VcsRootInstance', locator='vcs_root_instance_locator')
+    # Program(**vars(args)).model(api='VcsRootInstanceApi', model='VcsRootInstance', locator='vcs_root_instance_locator')
