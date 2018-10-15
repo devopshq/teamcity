@@ -22,11 +22,12 @@
 # Then explicitly reverse the ignore rule for a single file:
 #!docs/README.md
 
-
 .gitignore
 setup.py
+.travis.yml
+teamcity/custom/*
 teamcity/__init__.py
 teamcity/api_client.py
+teamcity/configuration.py
 teamcity/rest.py # we save cookie between request
-teamcity/custom/*
 README.md
