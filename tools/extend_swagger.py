@@ -5,6 +5,7 @@ import logging
 import os
 import re
 import sys
+from copy import copy
 
 
 def init_logging():
@@ -82,6 +83,35 @@ def new_api_function(method, new_name=None):
     return txt
 
 
+def new_model_function(method, locator, new_name=None):
+    if new_name is None:
+        new_name = method.__name__
+    func_format = """    def {new_name}({args}**kwargs):
+        \"\"\"
+{doc}
+        \"\"\"
+        return self.api.{name}({args_no}{locator_str}, **kwargs)
+        
+"""
+
+    args = inspect.getargspec(method)[0]
+    args.remove(locator)
+
+    args_no = copy(args)
+    args_no.remove('self')
+    doc = re.findall(r'(^ *:.*)', method.__doc__, flags=re.MULTILINE)
+    doc = [x for x in doc if locator not in x]
+    locator_str = "{}=self".format(locator)
+    txt = func_format.format(new_name=new_name,
+                             name=method.__name__,
+                             args=join(args, ', '),
+                             args_no=join(args_no, ', '),
+                             doc='\n'.join(doc),
+                             locator_str=locator_str
+                             )
+    return txt
+
+
 class Program:
     def __init__(self, value):
         self.value = value
@@ -91,7 +121,6 @@ class Program:
         Extend API
         :return:
         """
-        # import after some fix
         import dohq_teamcity.api
 
         # APIs load
@@ -147,8 +176,32 @@ class Program:
 
         pass
 
+    def model(self, api, model, locator):
+        import dohq_teamcity.custom.api
+        apis = {name: cls for name, cls in inspect.getmembers(dohq_teamcity.custom.api, inspect.isclass)}
+        api = apis[api]
+        methods = inspect.getmembers(api, lambda x: inspect.isfunction(x)
+                                                    and locator in inspect.getargspec(x)[0]
+                                                    and not x.__name__.startswith('__'))
+        append = [new_model_function(method, locator) for name, method in methods]
+        if append != [""]:
+            print(''.join(append))
+        else:
+            pass
+        pass
+
 
 if __name__ == "__main__":
     args = parse_args()
     init_logging()
-    Program(**vars(args)).api()
+
+    # Model
+    # Program(**vars(args)).model(api='AgentApi', model='Agent', locator='agent_locator')
+    # Program(**vars(args)).model(api='AgentPoolApi', model='AgentPool', locator='agent_pool_locator')
+    # Program(**vars(args)).model(api='BuildApi', model='Build', locator='build_locator')
+    # Program(**vars(args)).model(api='BuildTypeApi', model='BuildType', locator='bt_locator')
+    # Program(**vars(args)).model(api='GroupApi', model='Group', locator='group_locator')
+    # Program(**vars(args)).model(api='UserApi', model='User', locator='user_locator')
+    # Program(**vars(args)).model(api='ProjectApi', model='Project', locator='project_locator')
+    # Program(**vars(args)).model(api='VcsRootApi', model='VcsRoot', locator='vcs_root_locator')
+    Program(**vars(args)).model(api='VcsRootInstanceApi', model='VcsRootInstance', locator='vcs_root_instance_locator')
