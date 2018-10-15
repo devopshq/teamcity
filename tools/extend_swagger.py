@@ -55,11 +55,42 @@ def append_to_file(filename, content):
             file.write(content)
 
 
+def join(iterator, seperator):
+    string = seperator.join(iterator)
+    if string:
+        string += seperator
+    return string
+
+
+def new_api_function(method, new_name=None):
+    func_format = """    def {new_name}({args}**kwargs):
+        \"\"\"
+{doc}
+        \"\"\"
+        return self.{name}({args_no_self}**kwargs)
+        
+"""
+
+    args = inspect.getargspec(method)[0]
+    doc = re.findall(r'(^ *:.*)', method.__doc__, flags=re.MULTILINE)
+    txt = func_format.format(new_name=new_name,
+                             name=method.__name__,
+                             args=join(args, ', '),
+                             args_no_self=join(args[1:], ', '),
+                             doc='\n'.join(doc)
+                             )
+    return txt
+
+
 class Program:
     def __init__(self, value):
         self.value = value
 
-    def run(self):
+    def api(self):
+        """
+        Extend API
+        :return:
+        """
         # import after some fix
         import dohq_teamcity.api
 
@@ -81,15 +112,15 @@ class Program:
                 'serve_{}'.format(lastname),  # VcsRoot => serve_root, AgentPool => serve_pool
                 'get_{}'.format(lastname),  # AgentPool => get_pool
                 'serve_instance',  # TestApi, VcsRootInstanceApi
+                'serve_build_type_xml'  # BuildType
             ]
             get_serve_ = [(name, method) for name, method in methods if name in get_method]
 
             if len(get_serve_) == 1:
                 # logging.debug("Found serve\get method '{}' in api '{}'".format(get_serve_, cls_name))
-                get_format = """
-    def get(self, *args, **kwargs):
-        return self.{}(*args, **kwargs)"""
-                append.append(get_format.format(get_serve_[0][0]))
+                txt = new_api_function(get_serve_[0][1], 'get')
+                append.append(txt)
+
             elif len(get_serve_) == 0:
                 # logging.debug("Serve\get method not found in api '{}'".format(cls_name))
                 pass
@@ -101,17 +132,18 @@ class Program:
             # get_N => serve_N
             #
             serve_methods = inspect.getmembers(cls, lambda x: inspect.isfunction(x) and x.__name__.startswith('serve_'))
-            get_serve_format = """
-    def get_{name}(self, *args, **kwargs):
-        return self.serve_{name}(*args, **kwargs)"""
             for name, method in serve_methods:
-                name = name.replace('serve_', '')
-                append.append(get_serve_format.format(name=name))
+                new_name = name.replace('serve_', 'get_')
+                txt = new_api_function(method, new_name)
+                append.append(txt)
 
             filename = inspect.getfile(cls)
             # append_to_file(filename, content=append)
-            print("class {}({}):".format(cls_name, cls_name))
-            print('\n'.join(append))
+            if append != [""]:
+                print("class {}({}):".format(cls_name, cls_name))
+                print(''.join(append))
+            else:
+                pass
 
         pass
 
@@ -119,4 +151,4 @@ class Program:
 if __name__ == "__main__":
     args = parse_args()
     init_logging()
-    Program(**vars(args)).run()
+    Program(**vars(args)).api()

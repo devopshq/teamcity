@@ -160,11 +160,12 @@ HTTP requests to the TeamCity servers.
 
 Asynchronous request
 ---------------
-All method makes a synchronous HTTP request by default. To make an asynchronous HTTP request, please pass ``async_req=True``:
+All method makes a synchronous HTTP request by default. To make an asynchronous HTTP request, please pass ``async_req=True``.
 
 .. code-block:: python
 
     thread = tc.builds.get(bt_locator, async_req=True)
+    # If the method is called asynchronously, returns the request thread.
     result = thread.get()
 
 .. code-block:: python
