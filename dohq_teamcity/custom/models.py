@@ -1,5 +1,3 @@
-from collections import UserList
-
 from dohq_teamcity.custom.base_model import ReadMixin, DeleteMixin, ContainerMixin
 from dohq_teamcity.models import *
 
@@ -3160,7 +3158,223 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
         return self.api.set_repository_state(vcs_root_instance_locator=self, **kwargs)
 
 
+class Sessions(Sessions, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.session
+
+
+class Groups(Groups, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.group
+
+
+class Tests(Tests, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.test
+
+
+class Roles(Roles, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.role
+
+
+class Compatibilities(Compatibilities, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.compatibility
+
+
+class Tags(Tags, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.tag
+
+
+class Changes(Changes, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.change
+
+
+class LicenseKeys(LicenseKeys, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.license_key
+
+
+class VcsRoots(VcsRoots, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.vcs_root
+
+
+class Problems(Problems, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.problem
+
+
+class Mutes(Mutes, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.mute
+
+
+class ArtifactDependencies(ArtifactDependencies, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.artifact_dependency
+
+
+class Features(Features, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.feature
+
+
+class AgentPools(AgentPools, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.agent_pool
+
+
+class Users(Users, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.user
+
+
+class Projects(Projects, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.project
+
+
+class ProjectFeatures(ProjectFeatures, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.project_feature
+
+
 class BuildTypes(BuildTypes, ContainerMixin):
     @property
     def _container_mixin_data(self):
         return self.build_type
+
+
+class Issues(Issues, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.issues
+
+
+class FileChanges(FileChanges, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.file
+
+
+class ProblemOccurrences(ProblemOccurrences, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.problem_occurrence
+
+
+class Investigations(Investigations, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.investigation
+
+
+class Revisions(Revisions, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.revision
+
+
+class Properties(Properties, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self._property
+
+
+class VcsRootEntries(VcsRootEntries, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.vcs_root_entry
+
+
+class Triggers(Triggers, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.trigger
+
+
+class VcsRootInstances(VcsRootInstances, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.vcs_root_instance
+
+
+class Agents(Agents, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.agent
+
+
+class Steps(Steps, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.step
+
+
+class AgentRequirements(AgentRequirements, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.agent_requirement
+
+
+class Builds(Builds, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.build
+
+
+class Plugins(Plugins, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.plugin
+
+
+class Branches(Branches, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.branch
+
+
+class TestOccurrences(TestOccurrences, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.test_occurrence
+
+
+class Links(Links, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.link
+
+
+class Entries(Entries, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.entry
+
+
+class SnapshotDependencies(SnapshotDependencies, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.snapshot_dependency

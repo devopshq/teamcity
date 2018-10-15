@@ -197,12 +197,49 @@ class Program:
             pass
         pass
 
+    def container(self):
+        """
+        Extend list object with ContainerMixin
+        :return:
+        """
+        import dohq_teamcity.custom.models
+        from dohq_teamcity.custom.base_model import TeamCityObject
+
+        txt_format = """class {model}({model}, ContainerMixin):
+    @property
+    def _container_mixin_data(self):
+        return self.{property_}
+
+"""
+        models = {name: cls for name, cls in
+                  inspect.getmembers(dohq_teamcity.custom.models,
+                                     lambda x: inspect.isclass(x) and issubclass(x, TeamCityObject))}
+        for model_name, model in models.items():
+            if model_name.endswith('s'):
+
+                # Convert multiple name to single
+                if model_name.endswith('ies'):
+                    # Dependencies => Dependency
+                    single_classname = model_name[:-3] + 'y'
+                elif model_name.endswith('es') and model_name[:-2] in models:
+                    # Branches => Branch
+                    single_classname = model_name[:-2]
+                else:
+                    # Agents => Agent
+                    single_classname = model_name[:-1]
+
+                single_attribute = [x for x, y in model.swagger_types.items() if
+                                    y == 'list[{}]'.format(single_classname) or y == 'list[Model{}]'.format(
+                                        single_classname)]
+                if single_attribute:
+                    print(txt_format.format(model=model_name, property_=single_attribute[0]))
+
 
 if __name__ == "__main__":
     args = parse_args()
     init_logging()
     # APIs
-    Program(**vars(args)).api()
+    # Program(**vars(args)).api()
 
     # Models
     # Program(**vars(args)).model(api='AgentApi', model='Agent', locator='agent_locator')
@@ -216,3 +253,4 @@ if __name__ == "__main__":
     # Program(**vars(args)).model(api='VcsRootInstanceApi', model='VcsRootInstance', locator='vcs_root_instance_locator')
 
     # List model extented
+    Program(**vars(args)).container()
