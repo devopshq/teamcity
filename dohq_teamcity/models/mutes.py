@@ -39,7 +39,6 @@ class Mutes(TeamCityObject):
 
     def __init__(self, count=None, default=False, href=None, mute=None, next_href=None, prev_href=None, teamcity=None):  # noqa: E501
         """Mutes - a model defined in Swagger"""  # noqa: E501
-        super(Mutes, self).__init__(teamcity=teamcity)
 
         self._count = None
         self._default = None
@@ -61,6 +60,7 @@ class Mutes(TeamCityObject):
             self.next_href = next_href
         if prev_href is not None:
             self.prev_href = prev_href
+        super(Mutes, self).__init__(teamcity=teamcity)
 
     @property
     def count(self):

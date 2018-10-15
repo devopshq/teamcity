@@ -33,7 +33,6 @@ class EnabledInfo(TeamCityObject):
 
     def __init__(self, comment=None, status=False, status_switch_time=None, teamcity=None):  # noqa: E501
         """EnabledInfo - a model defined in Swagger"""  # noqa: E501
-        super(EnabledInfo, self).__init__(teamcity=teamcity)
 
         self._comment = None
         self._status = None
@@ -46,6 +45,7 @@ class EnabledInfo(TeamCityObject):
             self.status = status
         if status_switch_time is not None:
             self.status_switch_time = status_switch_time
+        super(EnabledInfo, self).__init__(teamcity=teamcity)
 
     @property
     def comment(self):

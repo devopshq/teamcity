@@ -33,7 +33,6 @@ class IssuesUsages(TeamCityObject):
 
     def __init__(self, count=None, href=None, issue_usage=None, teamcity=None):  # noqa: E501
         """IssuesUsages - a model defined in Swagger"""  # noqa: E501
-        super(IssuesUsages, self).__init__(teamcity=teamcity)
 
         self._count = None
         self._href = None
@@ -46,6 +45,7 @@ class IssuesUsages(TeamCityObject):
             self.href = href
         if issue_usage is not None:
             self.issue_usage = issue_usage
+        super(IssuesUsages, self).__init__(teamcity=teamcity)
 
     @property
     def count(self):

@@ -29,13 +29,13 @@ class Roles(TeamCityObject):
 
     def __init__(self, role=None, teamcity=None):  # noqa: E501
         """Roles - a model defined in Swagger"""  # noqa: E501
-        super(Roles, self).__init__(teamcity=teamcity)
 
         self._role = None
         self.discriminator = None
 
         if role is not None:
             self.role = role
+        super(Roles, self).__init__(teamcity=teamcity)
 
     @property
     def role(self):

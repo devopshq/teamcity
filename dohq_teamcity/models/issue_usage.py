@@ -32,7 +32,6 @@ class IssueUsage(TeamCityObject):
 
     def __init__(self, changes=None, issue=None, teamcity=None):  # noqa: E501
         """IssueUsage - a model defined in Swagger"""  # noqa: E501
-        super(IssueUsage, self).__init__(teamcity=teamcity)
 
         self._changes = None
         self._issue = None
@@ -42,6 +41,7 @@ class IssueUsage(TeamCityObject):
             self.changes = changes
         if issue is not None:
             self.issue = issue
+        super(IssueUsage, self).__init__(teamcity=teamcity)
 
     @property
     def changes(self):

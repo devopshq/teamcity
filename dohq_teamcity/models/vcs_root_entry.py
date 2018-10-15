@@ -35,7 +35,6 @@ class VcsRootEntry(TeamCityObject):
 
     def __init__(self, checkout_rules=None, id=None, inherited=False, vcs_root=None, teamcity=None):  # noqa: E501
         """VcsRootEntry - a model defined in Swagger"""  # noqa: E501
-        super(VcsRootEntry, self).__init__(teamcity=teamcity)
 
         self._checkout_rules = None
         self._id = None
@@ -51,6 +50,7 @@ class VcsRootEntry(TeamCityObject):
             self.inherited = inherited
         if vcs_root is not None:
             self.vcs_root = vcs_root
+        super(VcsRootEntry, self).__init__(teamcity=teamcity)
 
     @property
     def checkout_rules(self):

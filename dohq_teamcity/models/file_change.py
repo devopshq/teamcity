@@ -39,7 +39,6 @@ class FileChange(TeamCityObject):
 
     def __init__(self, after_revision=None, before_revision=None, change_type=None, change_type_comment=None, directory=False, file=None, relative_file=None, teamcity=None):  # noqa: E501
         """FileChange - a model defined in Swagger"""  # noqa: E501
-        super(FileChange, self).__init__(teamcity=teamcity)
 
         self._after_revision = None
         self._before_revision = None
@@ -64,6 +63,7 @@ class FileChange(TeamCityObject):
             self.file = file
         if relative_file is not None:
             self.relative_file = relative_file
+        super(FileChange, self).__init__(teamcity=teamcity)
 
     @property
     def after_revision(self):

@@ -55,7 +55,6 @@ class LicenseKey(TeamCityObject):
 
     def __init__(self, active=False, agents=None, build_types=None, error_details=None, expiration_date=None, expired=False, key=None, maintenance_end_date=None, obsolete=False, raw_type=None, servers=None, type=None, unlimited_agents=False, unlimited_build_types=False, valid=False, teamcity=None):  # noqa: E501
         """LicenseKey - a model defined in Swagger"""  # noqa: E501
-        super(LicenseKey, self).__init__(teamcity=teamcity)
 
         self._active = None
         self._agents = None
@@ -104,6 +103,7 @@ class LicenseKey(TeamCityObject):
             self.unlimited_build_types = unlimited_build_types
         if valid is not None:
             self.valid = valid
+        super(LicenseKey, self).__init__(teamcity=teamcity)
 
     @property
     def active(self):

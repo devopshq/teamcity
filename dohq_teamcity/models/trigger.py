@@ -41,7 +41,6 @@ class Trigger(TeamCityObject):
 
     def __init__(self, disabled=False, href=None, id=None, inherited=False, name=None, properties=None, type=None, teamcity=None):  # noqa: E501
         """Trigger - a model defined in Swagger"""  # noqa: E501
-        super(Trigger, self).__init__(teamcity=teamcity)
 
         self._disabled = None
         self._href = None
@@ -66,6 +65,7 @@ class Trigger(TeamCityObject):
             self.properties = properties
         if type is not None:
             self.type = type
+        super(Trigger, self).__init__(teamcity=teamcity)
 
     @property
     def disabled(self):

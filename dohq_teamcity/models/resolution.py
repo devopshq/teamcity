@@ -29,7 +29,6 @@ class Resolution(TeamCityObject):
 
     def __init__(self, time=None, type=None, teamcity=None):  # noqa: E501
         """Resolution - a model defined in Swagger"""  # noqa: E501
-        super(Resolution, self).__init__(teamcity=teamcity)
 
         self._time = None
         self._type = None
@@ -39,6 +38,7 @@ class Resolution(TeamCityObject):
             self.time = time
         if type is not None:
             self.type = type
+        super(Resolution, self).__init__(teamcity=teamcity)
 
     @property
     def time(self):

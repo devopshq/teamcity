@@ -37,7 +37,6 @@ class Investigations(TeamCityObject):
 
     def __init__(self, count=None, href=None, investigation=None, next_href=None, prev_href=None, teamcity=None):  # noqa: E501
         """Investigations - a model defined in Swagger"""  # noqa: E501
-        super(Investigations, self).__init__(teamcity=teamcity)
 
         self._count = None
         self._href = None
@@ -56,6 +55,7 @@ class Investigations(TeamCityObject):
             self.next_href = next_href
         if prev_href is not None:
             self.prev_href = prev_href
+        super(Investigations, self).__init__(teamcity=teamcity)
 
     @property
     def count(self):

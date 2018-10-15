@@ -33,7 +33,6 @@ class ArtifactDependencies(TeamCityObject):
 
     def __init__(self, artifact_dependency=None, count=None, replace=None, teamcity=None):  # noqa: E501
         """ArtifactDependencies - a model defined in Swagger"""  # noqa: E501
-        super(ArtifactDependencies, self).__init__(teamcity=teamcity)
 
         self._artifact_dependency = None
         self._count = None
@@ -46,6 +45,7 @@ class ArtifactDependencies(TeamCityObject):
             self.count = count
         if replace is not None:
             self.replace = replace
+        super(ArtifactDependencies, self).__init__(teamcity=teamcity)
 
     @property
     def artifact_dependency(self):

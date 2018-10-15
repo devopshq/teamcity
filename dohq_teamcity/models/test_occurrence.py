@@ -67,7 +67,6 @@ class TestOccurrence(TeamCityObject):
 
     def __init__(self, build=None, currently_investigated=False, currently_muted=False, details=None, duration=None, first_failed=None, href=None, id=None, ignore_details=None, ignored=False, invocations=None, mute=None, muted=False, name=None, next_fixed=None, run_order=None, status=None, test=None, teamcity=None):  # noqa: E501
         """TestOccurrence - a model defined in Swagger"""  # noqa: E501
-        super(TestOccurrence, self).__init__(teamcity=teamcity)
 
         self._build = None
         self._currently_investigated = None
@@ -125,6 +124,7 @@ class TestOccurrence(TeamCityObject):
             self.status = status
         if test is not None:
             self.test = test
+        super(TestOccurrence, self).__init__(teamcity=teamcity)
 
     @property
     def build(self):

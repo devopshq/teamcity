@@ -37,7 +37,6 @@ class Revision(TeamCityObject):
 
     def __init__(self, checkout_rules=None, internal_version=None, vcs_root_instance=None, vcs_branch_name=None, version=None, teamcity=None):  # noqa: E501
         """Revision - a model defined in Swagger"""  # noqa: E501
-        super(Revision, self).__init__(teamcity=teamcity)
 
         self._checkout_rules = None
         self._internal_version = None
@@ -56,6 +55,7 @@ class Revision(TeamCityObject):
             self.vcs_branch_name = vcs_branch_name
         if version is not None:
             self.version = version
+        super(Revision, self).__init__(teamcity=teamcity)
 
     @property
     def checkout_rules(self):

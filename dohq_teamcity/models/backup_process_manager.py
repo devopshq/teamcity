@@ -29,13 +29,13 @@ class BackupProcessManager(TeamCityObject):
 
     def __init__(self, current_backup_process=None, teamcity=None):  # noqa: E501
         """BackupProcessManager - a model defined in Swagger"""  # noqa: E501
-        super(BackupProcessManager, self).__init__(teamcity=teamcity)
 
         self._current_backup_process = None
         self.discriminator = None
 
         if current_backup_process is not None:
             self.current_backup_process = current_backup_process
+        super(BackupProcessManager, self).__init__(teamcity=teamcity)
 
     @property
     def current_backup_process(self):

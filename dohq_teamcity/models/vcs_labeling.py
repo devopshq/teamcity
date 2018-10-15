@@ -35,7 +35,6 @@ class VcsLabeling(TeamCityObject):
 
     def __init__(self, branch_filter=None, label_name=None, type=None, vcs_roots=None, teamcity=None):  # noqa: E501
         """VcsLabeling - a model defined in Swagger"""  # noqa: E501
-        super(VcsLabeling, self).__init__(teamcity=teamcity)
 
         self._branch_filter = None
         self._label_name = None
@@ -51,6 +50,7 @@ class VcsLabeling(TeamCityObject):
             self.type = type
         if vcs_roots is not None:
             self.vcs_roots = vcs_roots
+        super(VcsLabeling, self).__init__(teamcity=teamcity)
 
     @property
     def branch_filter(self):

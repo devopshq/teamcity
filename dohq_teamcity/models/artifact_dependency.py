@@ -44,7 +44,6 @@ class ArtifactDependency(TeamCityObject):
 
     def __init__(self, disabled=False, href=None, id=None, inherited=False, name=None, properties=None, source_build_type=None, type=None, teamcity=None):  # noqa: E501
         """ArtifactDependency - a model defined in Swagger"""  # noqa: E501
-        super(ArtifactDependency, self).__init__(teamcity=teamcity)
 
         self._disabled = None
         self._href = None
@@ -72,6 +71,7 @@ class ArtifactDependency(TeamCityObject):
             self.source_build_type = source_build_type
         if type is not None:
             self.type = type
+        super(ArtifactDependency, self).__init__(teamcity=teamcity)
 
     @property
     def disabled(self):

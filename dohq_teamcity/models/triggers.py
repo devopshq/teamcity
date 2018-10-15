@@ -31,7 +31,6 @@ class Triggers(TeamCityObject):
 
     def __init__(self, count=None, trigger=None, teamcity=None):  # noqa: E501
         """Triggers - a model defined in Swagger"""  # noqa: E501
-        super(Triggers, self).__init__(teamcity=teamcity)
 
         self._count = None
         self._trigger = None
@@ -41,6 +40,7 @@ class Triggers(TeamCityObject):
             self.count = count
         if trigger is not None:
             self.trigger = trigger
+        super(Triggers, self).__init__(teamcity=teamcity)
 
     @property
     def count(self):

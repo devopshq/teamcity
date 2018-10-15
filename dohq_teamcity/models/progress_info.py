@@ -37,7 +37,6 @@ class ProgressInfo(TeamCityObject):
 
     def __init__(self, current_stage_text=None, elapsed_seconds=None, estimated_total_seconds=None, outdated=False, percentage_complete=None, probably_hanging=False, teamcity=None):  # noqa: E501
         """ProgressInfo - a model defined in Swagger"""  # noqa: E501
-        super(ProgressInfo, self).__init__(teamcity=teamcity)
 
         self._current_stage_text = None
         self._elapsed_seconds = None
@@ -59,6 +58,7 @@ class ProgressInfo(TeamCityObject):
             self.percentage_complete = percentage_complete
         if probably_hanging is not None:
             self.probably_hanging = probably_hanging
+        super(ProgressInfo, self).__init__(teamcity=teamcity)
 
     @property
     def current_stage_text(self):

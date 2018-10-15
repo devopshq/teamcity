@@ -31,7 +31,6 @@ class Role(TeamCityObject):
 
     def __init__(self, href=None, role_id=None, scope=None, teamcity=None):  # noqa: E501
         """Role - a model defined in Swagger"""  # noqa: E501
-        super(Role, self).__init__(teamcity=teamcity)
 
         self._href = None
         self._role_id = None
@@ -44,6 +43,7 @@ class Role(TeamCityObject):
             self.role_id = role_id
         if scope is not None:
             self.scope = scope
+        super(Role, self).__init__(teamcity=teamcity)
 
     @property
     def href(self):

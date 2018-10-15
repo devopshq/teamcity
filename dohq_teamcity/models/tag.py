@@ -33,7 +33,6 @@ class Tag(TeamCityObject):
 
     def __init__(self, name=None, owner=None, private=False, teamcity=None):  # noqa: E501
         """Tag - a model defined in Swagger"""  # noqa: E501
-        super(Tag, self).__init__(teamcity=teamcity)
 
         self._name = None
         self._owner = None
@@ -46,6 +45,7 @@ class Tag(TeamCityObject):
             self.owner = owner
         if private is not None:
             self.private = private
+        super(Tag, self).__init__(teamcity=teamcity)
 
     @property
     def name(self):

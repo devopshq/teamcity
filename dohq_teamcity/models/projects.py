@@ -37,7 +37,6 @@ class Projects(TeamCityObject):
 
     def __init__(self, count=None, href=None, next_href=None, prev_href=None, project=None, teamcity=None):  # noqa: E501
         """Projects - a model defined in Swagger"""  # noqa: E501
-        super(Projects, self).__init__(teamcity=teamcity)
 
         self._count = None
         self._href = None
@@ -56,6 +55,7 @@ class Projects(TeamCityObject):
             self.prev_href = prev_href
         if project is not None:
             self.project = project
+        super(Projects, self).__init__(teamcity=teamcity)
 
     @property
     def count(self):

@@ -35,7 +35,6 @@ class Session(TeamCityObject):
 
     def __init__(self, creation_date=None, id=None, last_accessed_date=None, user=None, teamcity=None):  # noqa: E501
         """Session - a model defined in Swagger"""  # noqa: E501
-        super(Session, self).__init__(teamcity=teamcity)
 
         self._creation_date = None
         self._id = None
@@ -51,6 +50,7 @@ class Session(TeamCityObject):
             self.last_accessed_date = last_accessed_date
         if user is not None:
             self.user = user
+        super(Session, self).__init__(teamcity=teamcity)
 
     @property
     def creation_date(self):

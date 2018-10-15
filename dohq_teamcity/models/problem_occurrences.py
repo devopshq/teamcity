@@ -49,7 +49,6 @@ class ProblemOccurrences(TeamCityObject):
 
     def __init__(self, count=None, default=False, failed=None, href=None, ignored=None, muted=None, new_failed=None, next_href=None, passed=None, prev_href=None, problem_occurrence=None, teamcity=None):  # noqa: E501
         """ProblemOccurrences - a model defined in Swagger"""  # noqa: E501
-        super(ProblemOccurrences, self).__init__(teamcity=teamcity)
 
         self._count = None
         self._default = None
@@ -86,6 +85,7 @@ class ProblemOccurrences(TeamCityObject):
             self.prev_href = prev_href
         if problem_occurrence is not None:
             self.problem_occurrence = problem_occurrence
+        super(ProblemOccurrences, self).__init__(teamcity=teamcity)
 
     @property
     def count(self):

@@ -43,7 +43,6 @@ class Problem(TeamCityObject):
 
     def __init__(self, href=None, id=None, identity=None, investigations=None, mutes=None, problem_occurrences=None, type=None, teamcity=None):  # noqa: E501
         """Problem - a model defined in Swagger"""  # noqa: E501
-        super(Problem, self).__init__(teamcity=teamcity)
 
         self._href = None
         self._id = None
@@ -68,6 +67,7 @@ class Problem(TeamCityObject):
             self.problem_occurrences = problem_occurrences
         if type is not None:
             self.type = type
+        super(Problem, self).__init__(teamcity=teamcity)
 
     @property
     def href(self):

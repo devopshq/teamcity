@@ -35,7 +35,6 @@ class ModelProperty(TeamCityObject):
 
     def __init__(self, inherited=False, name=None, type=None, value=None, teamcity=None):  # noqa: E501
         """ModelProperty - a model defined in Swagger"""  # noqa: E501
-        super(ModelProperty, self).__init__(teamcity=teamcity)
 
         self._inherited = None
         self._name = None
@@ -51,6 +50,7 @@ class ModelProperty(TeamCityObject):
             self.type = type
         if value is not None:
             self.value = value
+        super(ModelProperty, self).__init__(teamcity=teamcity)
 
     @property
     def inherited(self):

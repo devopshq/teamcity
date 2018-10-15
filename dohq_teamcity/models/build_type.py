@@ -96,7 +96,6 @@ class BuildType(TeamCityObject):
 
     def __init__(self, agent_requirements=None, artifact_dependencies=None, builds=None, compatible_agents=None, description=None, features=None, href=None, id=None, internal_id=None, investigations=None, links=None, locator=None, name=None, parameters=None, paused=False, project=None, project_id=None, project_internal_id=None, project_name=None, settings=None, snapshot_dependencies=None, steps=None, template=None, template_flag=False, triggers=None, uuid=None, vcs_root_entries=None, web_url=None, teamcity=None):  # noqa: E501
         """BuildType - a model defined in Swagger"""  # noqa: E501
-        super(BuildType, self).__init__(teamcity=teamcity)
 
         self._agent_requirements = None
         self._artifact_dependencies = None
@@ -184,6 +183,7 @@ class BuildType(TeamCityObject):
             self.vcs_root_entries = vcs_root_entries
         if web_url is not None:
             self.web_url = web_url
+        super(BuildType, self).__init__(teamcity=teamcity)
 
     @property
     def agent_requirements(self):

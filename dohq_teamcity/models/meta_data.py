@@ -31,7 +31,6 @@ class MetaData(TeamCityObject):
 
     def __init__(self, entries=None, id=None, teamcity=None):  # noqa: E501
         """MetaData - a model defined in Swagger"""  # noqa: E501
-        super(MetaData, self).__init__(teamcity=teamcity)
 
         self._entries = None
         self._id = None
@@ -41,6 +40,7 @@ class MetaData(TeamCityObject):
             self.entries = entries
         if id is not None:
             self.id = id
+        super(MetaData, self).__init__(teamcity=teamcity)
 
     @property
     def entries(self):

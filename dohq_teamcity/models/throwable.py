@@ -38,7 +38,6 @@ class Throwable(TeamCityObject):
 
     def __init__(self, cause=None, localized_message=None, message=None, stack_trace=None, suppressed=None, teamcity=None):  # noqa: E501
         """Throwable - a model defined in Swagger"""  # noqa: E501
-        super(Throwable, self).__init__(teamcity=teamcity)
 
         self._cause = None
         self._localized_message = None
@@ -57,6 +56,7 @@ class Throwable(TeamCityObject):
             self.stack_trace = stack_trace
         if suppressed is not None:
             self.suppressed = suppressed
+        super(Throwable, self).__init__(teamcity=teamcity)
 
     @property
     def cause(self):

@@ -31,7 +31,6 @@ class FileChanges(TeamCityObject):
 
     def __init__(self, count=None, file=None, teamcity=None):  # noqa: E501
         """FileChanges - a model defined in Swagger"""  # noqa: E501
-        super(FileChanges, self).__init__(teamcity=teamcity)
 
         self._count = None
         self._file = None
@@ -41,6 +40,7 @@ class FileChanges(TeamCityObject):
             self.count = count
         if file is not None:
             self.file = file
+        super(FileChanges, self).__init__(teamcity=teamcity)
 
     @property
     def count(self):

@@ -1,4 +1,5 @@
 import pprint
+from collections import UserList
 
 import six
 
@@ -26,6 +27,11 @@ class TeamCityObject(object):
 
     def __init__(self, teamcity=None, *args, **kwargs):
         self.teamcity = teamcity  # type: TeamCity
+
+        # Hack for ContainerMixin init
+        if hasattr(self, 'container') and self.container:
+            UserList.__init__(self)
+            self.data = self._data
 
     @property
     def locator_id(self):
@@ -99,3 +105,13 @@ class DeleteMixin(object):
             raise TeamCityCodeException("delete function is not defined in class '{}'".format(self.__class__.__name__))
         self = func(self, *args, **kwargs)
         return self
+
+
+class ContainerMixin(object):
+    """
+    Object will response like container::
+
+        for build in builds:
+            print(build.id)
+    """
+    container = True

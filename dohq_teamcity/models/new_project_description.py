@@ -46,7 +46,6 @@ class NewProjectDescription(TeamCityObject):
 
     def __init__(self, build_types_ids_map=None, copy_all_associated_settings=False, id=None, name=None, parent_project=None, projects_ids_map=None, source_project=None, source_project_locator=None, vcs_roots_ids_map=None, teamcity=None):  # noqa: E501
         """NewProjectDescription - a model defined in Swagger"""  # noqa: E501
-        super(NewProjectDescription, self).__init__(teamcity=teamcity)
 
         self._build_types_ids_map = None
         self._copy_all_associated_settings = None
@@ -77,6 +76,7 @@ class NewProjectDescription(TeamCityObject):
             self.source_project_locator = source_project_locator
         if vcs_roots_ids_map is not None:
             self.vcs_roots_ids_map = vcs_roots_ids_map
+        super(NewProjectDescription, self).__init__(teamcity=teamcity)
 
     @property
     def build_types_ids_map(self):

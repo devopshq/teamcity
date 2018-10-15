@@ -37,7 +37,6 @@ class Compatibility(TeamCityObject):
 
     def __init__(self, agent=None, build_type=None, compatible=False, unmet_requirements=None, teamcity=None):  # noqa: E501
         """Compatibility - a model defined in Swagger"""  # noqa: E501
-        super(Compatibility, self).__init__(teamcity=teamcity)
 
         self._agent = None
         self._build_type = None
@@ -53,6 +52,7 @@ class Compatibility(TeamCityObject):
             self.compatible = compatible
         if unmet_requirements is not None:
             self.unmet_requirements = unmet_requirements
+        super(Compatibility, self).__init__(teamcity=teamcity)
 
     @property
     def agent(self):

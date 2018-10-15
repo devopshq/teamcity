@@ -35,7 +35,6 @@ class BuildTriggeringOptions(TeamCityObject):
 
     def __init__(self, clean_sources=False, queue_at_top=False, rebuild_all_dependencies=False, rebuild_dependencies=None, teamcity=None):  # noqa: E501
         """BuildTriggeringOptions - a model defined in Swagger"""  # noqa: E501
-        super(BuildTriggeringOptions, self).__init__(teamcity=teamcity)
 
         self._clean_sources = None
         self._queue_at_top = None
@@ -51,6 +50,7 @@ class BuildTriggeringOptions(TeamCityObject):
             self.rebuild_all_dependencies = rebuild_all_dependencies
         if rebuild_dependencies is not None:
             self.rebuild_dependencies = rebuild_dependencies
+        super(BuildTriggeringOptions, self).__init__(teamcity=teamcity)
 
     @property
     def clean_sources(self):

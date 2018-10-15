@@ -31,7 +31,6 @@ class Groups(TeamCityObject):
 
     def __init__(self, count=None, group=None, teamcity=None):  # noqa: E501
         """Groups - a model defined in Swagger"""  # noqa: E501
-        super(Groups, self).__init__(teamcity=teamcity)
 
         self._count = None
         self._group = None
@@ -41,6 +40,7 @@ class Groups(TeamCityObject):
             self.count = count
         if group is not None:
             self.group = group
+        super(Groups, self).__init__(teamcity=teamcity)
 
     @property
     def count(self):

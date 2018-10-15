@@ -29,7 +29,6 @@ class StateField(TeamCityObject):
 
     def __init__(self, inherited=False, value=False, teamcity=None):  # noqa: E501
         """StateField - a model defined in Swagger"""  # noqa: E501
-        super(StateField, self).__init__(teamcity=teamcity)
 
         self._inherited = None
         self._value = None
@@ -39,6 +38,7 @@ class StateField(TeamCityObject):
             self.inherited = inherited
         if value is not None:
             self.value = value
+        super(StateField, self).__init__(teamcity=teamcity)
 
     @property
     def inherited(self):

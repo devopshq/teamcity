@@ -31,7 +31,6 @@ class Link(TeamCityObject):
 
     def __init__(self, relative_url=None, type=None, url=None, teamcity=None):  # noqa: E501
         """Link - a model defined in Swagger"""  # noqa: E501
-        super(Link, self).__init__(teamcity=teamcity)
 
         self._relative_url = None
         self._type = None
@@ -44,6 +43,7 @@ class Link(TeamCityObject):
             self.type = type
         if url is not None:
             self.url = url
+        super(Link, self).__init__(teamcity=teamcity)
 
     @property
     def relative_url(self):

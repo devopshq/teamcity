@@ -45,7 +45,6 @@ class File(TeamCityObject):
 
     def __init__(self, children=None, content=None, full_name=None, href=None, modification_time=None, name=None, parent=None, size=None, teamcity=None):  # noqa: E501
         """File - a model defined in Swagger"""  # noqa: E501
-        super(File, self).__init__(teamcity=teamcity)
 
         self._children = None
         self._content = None
@@ -73,6 +72,7 @@ class File(TeamCityObject):
             self.parent = parent
         if size is not None:
             self.size = size
+        super(File, self).__init__(teamcity=teamcity)
 
     @property
     def children(self):

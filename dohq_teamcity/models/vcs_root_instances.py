@@ -37,7 +37,6 @@ class VcsRootInstances(TeamCityObject):
 
     def __init__(self, count=None, href=None, next_href=None, prev_href=None, vcs_root_instance=None, teamcity=None):  # noqa: E501
         """VcsRootInstances - a model defined in Swagger"""  # noqa: E501
-        super(VcsRootInstances, self).__init__(teamcity=teamcity)
 
         self._count = None
         self._href = None
@@ -56,6 +55,7 @@ class VcsRootInstances(TeamCityObject):
             self.prev_href = prev_href
         if vcs_root_instance is not None:
             self.vcs_root_instance = vcs_root_instance
+        super(VcsRootInstances, self).__init__(teamcity=teamcity)
 
     @property
     def count(self):

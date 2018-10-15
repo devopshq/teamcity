@@ -35,7 +35,6 @@ class ProblemScope(TeamCityObject):
 
     def __init__(self, build_type=None, build_types=None, project=None, teamcity=None):  # noqa: E501
         """ProblemScope - a model defined in Swagger"""  # noqa: E501
-        super(ProblemScope, self).__init__(teamcity=teamcity)
 
         self._build_type = None
         self._build_types = None
@@ -48,6 +47,7 @@ class ProblemScope(TeamCityObject):
             self.build_types = build_types
         if project is not None:
             self.project = project
+        super(ProblemScope, self).__init__(teamcity=teamcity)
 
     @property
     def build_type(self):

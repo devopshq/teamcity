@@ -31,7 +31,6 @@ class AgentRequirements(TeamCityObject):
 
     def __init__(self, agent_requirement=None, count=None, teamcity=None):  # noqa: E501
         """AgentRequirements - a model defined in Swagger"""  # noqa: E501
-        super(AgentRequirements, self).__init__(teamcity=teamcity)
 
         self._agent_requirement = None
         self._count = None
@@ -41,6 +40,7 @@ class AgentRequirements(TeamCityObject):
             self.agent_requirement = agent_requirement
         if count is not None:
             self.count = count
+        super(AgentRequirements, self).__init__(teamcity=teamcity)
 
     @property
     def agent_requirement(self):

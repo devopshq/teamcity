@@ -49,7 +49,6 @@ class Investigation(TeamCityObject):
 
     def __init__(self, assignee=None, assignment=None, href=None, id=None, resolution=None, responsible=None, scope=None, state=None, target=None, teamcity=None):  # noqa: E501
         """Investigation - a model defined in Swagger"""  # noqa: E501
-        super(Investigation, self).__init__(teamcity=teamcity)
 
         self._assignee = None
         self._assignment = None
@@ -80,6 +79,7 @@ class Investigation(TeamCityObject):
             self.state = state
         if target is not None:
             self.target = target
+        super(Investigation, self).__init__(teamcity=teamcity)
 
     @property
     def assignee(self):

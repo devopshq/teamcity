@@ -37,7 +37,6 @@ class BackupProcessInfo(TeamCityObject):
 
     def __init__(self, file_name=None, file_size=None, finish_timestamp=None, id=None, start_timestamp=None, status=None, teamcity=None):  # noqa: E501
         """BackupProcessInfo - a model defined in Swagger"""  # noqa: E501
-        super(BackupProcessInfo, self).__init__(teamcity=teamcity)
 
         self._file_name = None
         self._file_size = None
@@ -59,6 +58,7 @@ class BackupProcessInfo(TeamCityObject):
             self.start_timestamp = start_timestamp
         if status is not None:
             self.status = status
+        super(BackupProcessInfo, self).__init__(teamcity=teamcity)
 
     @property
     def file_name(self):

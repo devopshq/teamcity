@@ -31,7 +31,6 @@ class Links(TeamCityObject):
 
     def __init__(self, count=None, link=None, teamcity=None):  # noqa: E501
         """Links - a model defined in Swagger"""  # noqa: E501
-        super(Links, self).__init__(teamcity=teamcity)
 
         self._count = None
         self._link = None
@@ -41,6 +40,7 @@ class Links(TeamCityObject):
             self.count = count
         if link is not None:
             self.link = link
+        super(Links, self).__init__(teamcity=teamcity)
 
     @property
     def count(self):

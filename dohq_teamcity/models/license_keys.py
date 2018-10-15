@@ -33,7 +33,6 @@ class LicenseKeys(TeamCityObject):
 
     def __init__(self, count=None, href=None, license_key=None, teamcity=None):  # noqa: E501
         """LicenseKeys - a model defined in Swagger"""  # noqa: E501
-        super(LicenseKeys, self).__init__(teamcity=teamcity)
 
         self._count = None
         self._href = None
@@ -46,6 +45,7 @@ class LicenseKeys(TeamCityObject):
             self.href = href
         if license_key is not None:
             self.license_key = license_key
+        super(LicenseKeys, self).__init__(teamcity=teamcity)
 
     @property
     def count(self):

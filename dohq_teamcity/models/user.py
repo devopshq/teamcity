@@ -55,7 +55,6 @@ class User(TeamCityObject):
 
     def __init__(self, email=None, groups=None, has_password=False, href=None, id=None, last_login=None, locator=None, name=None, password=None, properties=None, realm=None, roles=None, username=None, teamcity=None):  # noqa: E501
         """User - a model defined in Swagger"""  # noqa: E501
-        super(User, self).__init__(teamcity=teamcity)
 
         self._email = None
         self._groups = None
@@ -98,6 +97,7 @@ class User(TeamCityObject):
             self.roles = roles
         if username is not None:
             self.username = username
+        super(User, self).__init__(teamcity=teamcity)
 
     @property
     def email(self):

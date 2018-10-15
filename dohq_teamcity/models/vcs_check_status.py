@@ -31,7 +31,6 @@ class VcsCheckStatus(TeamCityObject):
 
     def __init__(self, requestor_type=None, status=None, timestamp=None, teamcity=None):  # noqa: E501
         """VcsCheckStatus - a model defined in Swagger"""  # noqa: E501
-        super(VcsCheckStatus, self).__init__(teamcity=teamcity)
 
         self._requestor_type = None
         self._status = None
@@ -44,6 +43,7 @@ class VcsCheckStatus(TeamCityObject):
             self.status = status
         if timestamp is not None:
             self.timestamp = timestamp
+        super(VcsCheckStatus, self).__init__(teamcity=teamcity)
 
     @property
     def requestor_type(self):

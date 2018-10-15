@@ -27,13 +27,13 @@ class Requirements(TeamCityObject):
 
     def __init__(self, description=None, teamcity=None):  # noqa: E501
         """Requirements - a model defined in Swagger"""  # noqa: E501
-        super(Requirements, self).__init__(teamcity=teamcity)
 
         self._description = None
         self.discriminator = None
 
         if description is not None:
             self.description = description
+        super(Requirements, self).__init__(teamcity=teamcity)
 
     @property
     def description(self):

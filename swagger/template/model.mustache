@@ -52,7 +52,6 @@ class {{classname}}({{#parent}}{{parent}}{{/parent}}{{^parent}}TeamCityObject{{/
 
     def __init__(self{{#vars}}, {{name}}={{#defaultValue}}{{{defaultValue}}}{{/defaultValue}}{{^defaultValue}}None{{/defaultValue}}{{/vars}}, teamcity=None):  # noqa: E501
         """{{classname}} - a model defined in Swagger"""  # noqa: E501
-        super({{classname}}, self).__init__(teamcity=teamcity)
 {{#vars}}{{#-first}}
 {{/-first}}
         self._{{name}} = None
@@ -68,6 +67,7 @@ class {{classname}}({{#parent}}{{parent}}{{/parent}}{{^parent}}TeamCityObject{{/
             self.{{name}} = {{name}}
 {{/required}}
 {{/vars}}
+        super({{classname}}, self).__init__(teamcity=teamcity)
 
 {{#vars}}
     @property

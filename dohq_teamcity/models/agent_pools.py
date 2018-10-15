@@ -37,7 +37,6 @@ class AgentPools(TeamCityObject):
 
     def __init__(self, agent_pool=None, count=None, href=None, next_href=None, prev_href=None, teamcity=None):  # noqa: E501
         """AgentPools - a model defined in Swagger"""  # noqa: E501
-        super(AgentPools, self).__init__(teamcity=teamcity)
 
         self._agent_pool = None
         self._count = None
@@ -56,6 +55,7 @@ class AgentPools(TeamCityObject):
             self.next_href = next_href
         if prev_href is not None:
             self.prev_href = prev_href
+        super(AgentPools, self).__init__(teamcity=teamcity)
 
     @property
     def agent_pool(self):

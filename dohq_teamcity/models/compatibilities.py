@@ -31,7 +31,6 @@ class Compatibilities(TeamCityObject):
 
     def __init__(self, compatibility=None, count=None, teamcity=None):  # noqa: E501
         """Compatibilities - a model defined in Swagger"""  # noqa: E501
-        super(Compatibilities, self).__init__(teamcity=teamcity)
 
         self._compatibility = None
         self._count = None
@@ -41,6 +40,7 @@ class Compatibilities(TeamCityObject):
             self.compatibility = compatibility
         if count is not None:
             self.count = count
+        super(Compatibilities, self).__init__(teamcity=teamcity)
 
     @property
     def compatibility(self):

@@ -29,7 +29,6 @@ class FederationServer(TeamCityObject):
 
     def __init__(self, name=None, url=None, teamcity=None):  # noqa: E501
         """FederationServer - a model defined in Swagger"""  # noqa: E501
-        super(FederationServer, self).__init__(teamcity=teamcity)
 
         self._name = None
         self._url = None
@@ -39,6 +38,7 @@ class FederationServer(TeamCityObject):
             self.name = name
         if url is not None:
             self.url = url
+        super(FederationServer, self).__init__(teamcity=teamcity)
 
     @property
     def name(self):

@@ -56,7 +56,6 @@ class VcsRoot(TeamCityObject):
 
     def __init__(self, href=None, id=None, internal_id=None, locator=None, modification_check_interval=None, name=None, project=None, project_locator=None, properties=None, repository_id_strings=None, uuid=None, vcs_name=None, vcs_root_instances=None, teamcity=None):  # noqa: E501
         """VcsRoot - a model defined in Swagger"""  # noqa: E501
-        super(VcsRoot, self).__init__(teamcity=teamcity)
 
         self._href = None
         self._id = None
@@ -99,6 +98,7 @@ class VcsRoot(TeamCityObject):
             self.vcs_name = vcs_name
         if vcs_root_instances is not None:
             self.vcs_root_instances = vcs_root_instances
+        super(VcsRoot, self).__init__(teamcity=teamcity)
 
     @property
     def href(self):

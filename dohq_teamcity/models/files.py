@@ -33,7 +33,6 @@ class Files(TeamCityObject):
 
     def __init__(self, count=None, file=None, href=None, teamcity=None):  # noqa: E501
         """Files - a model defined in Swagger"""  # noqa: E501
-        super(Files, self).__init__(teamcity=teamcity)
 
         self._count = None
         self._file = None
@@ -46,6 +45,7 @@ class Files(TeamCityObject):
             self.file = file
         if href is not None:
             self.href = href
+        super(Files, self).__init__(teamcity=teamcity)
 
     @property
     def count(self):

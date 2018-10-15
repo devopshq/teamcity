@@ -29,7 +29,6 @@ class Entry(TeamCityObject):
 
     def __init__(self, name=None, value=None, teamcity=None):  # noqa: E501
         """Entry - a model defined in Swagger"""  # noqa: E501
-        super(Entry, self).__init__(teamcity=teamcity)
 
         self._name = None
         self._value = None
@@ -39,6 +38,7 @@ class Entry(TeamCityObject):
             self.name = name
         if value is not None:
             self.value = value
+        super(Entry, self).__init__(teamcity=teamcity)
 
     @property
     def name(self):

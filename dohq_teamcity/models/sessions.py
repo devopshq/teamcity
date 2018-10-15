@@ -41,7 +41,6 @@ class Sessions(TeamCityObject):
 
     def __init__(self, count=None, max_active=None, session=None, session_counter=None, session_create_rate=None, session_expire_rate=None, session_max_alive_time=None, teamcity=None):  # noqa: E501
         """Sessions - a model defined in Swagger"""  # noqa: E501
-        super(Sessions, self).__init__(teamcity=teamcity)
 
         self._count = None
         self._max_active = None
@@ -66,6 +65,7 @@ class Sessions(TeamCityObject):
             self.session_expire_rate = session_expire_rate
         if session_max_alive_time is not None:
             self.session_max_alive_time = session_max_alive_time
+        super(Sessions, self).__init__(teamcity=teamcity)
 
     @property
     def count(self):

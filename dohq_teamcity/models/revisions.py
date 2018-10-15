@@ -31,7 +31,6 @@ class Revisions(TeamCityObject):
 
     def __init__(self, count=None, revision=None, teamcity=None):  # noqa: E501
         """Revisions - a model defined in Swagger"""  # noqa: E501
-        super(Revisions, self).__init__(teamcity=teamcity)
 
         self._count = None
         self._revision = None
@@ -41,6 +40,7 @@ class Revisions(TeamCityObject):
             self.count = count
         if revision is not None:
             self.revision = revision
+        super(Revisions, self).__init__(teamcity=teamcity)
 
     @property
     def count(self):

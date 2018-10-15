@@ -214,3 +214,5 @@ if __name__ == "__main__":
     # Program(**vars(args)).model(api='ProjectApi', model='Project', locator='project_locator')
     # Program(**vars(args)).model(api='VcsRootApi', model='VcsRoot', locator='vcs_root_locator')
     # Program(**vars(args)).model(api='VcsRootInstanceApi', model='VcsRootInstance', locator='vcs_root_instance_locator')
+
+    # List model extented

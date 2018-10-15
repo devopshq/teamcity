@@ -53,7 +53,6 @@ class ProblemOccurrence(TeamCityObject):
 
     def __init__(self, additional_data=None, build=None, currently_investigated=False, currently_muted=False, details=None, href=None, id=None, identity=None, mute=None, muted=False, problem=None, type=None, teamcity=None):  # noqa: E501
         """ProblemOccurrence - a model defined in Swagger"""  # noqa: E501
-        super(ProblemOccurrence, self).__init__(teamcity=teamcity)
 
         self._additional_data = None
         self._build = None
@@ -93,6 +92,7 @@ class ProblemOccurrence(TeamCityObject):
             self.problem = problem
         if type is not None:
             self.type = type
+        super(ProblemOccurrence, self).__init__(teamcity=teamcity)
 
     @property
     def additional_data(self):

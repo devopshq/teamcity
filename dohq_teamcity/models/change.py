@@ -63,7 +63,6 @@ class Change(TeamCityObject):
 
     def __init__(self, comment=None, _date=None, files=None, href=None, id=None, internal_version=None, locator=None, parent_changes=None, parent_revisions=None, personal=False, registration_date=None, user=None, username=None, vcs_root_instance=None, version=None, web_url=None, teamcity=None):  # noqa: E501
         """Change - a model defined in Swagger"""  # noqa: E501
-        super(Change, self).__init__(teamcity=teamcity)
 
         self._comment = None
         self.__date = None
@@ -115,6 +114,7 @@ class Change(TeamCityObject):
             self.version = version
         if web_url is not None:
             self.web_url = web_url
+        super(Change, self).__init__(teamcity=teamcity)
 
     @property
     def comment(self):

@@ -1,3 +1,5 @@
+from collections import UserList
+
 from dohq_teamcity.custom.base_model import ReadMixin, DeleteMixin
 from dohq_teamcity.models import *
 
@@ -3156,3 +3158,11 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
         :return: Entries
         """
         return self.api.set_repository_state(vcs_root_instance_locator=self, **kwargs)
+
+
+class BuildTypes(BuildTypes, UserList):
+    container = True
+
+    @property
+    def _data(self):
+        return self.build_type

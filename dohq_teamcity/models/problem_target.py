@@ -34,7 +34,6 @@ class ProblemTarget(TeamCityObject):
 
     def __init__(self, any_problem=False, problems=None, tests=None, teamcity=None):  # noqa: E501
         """ProblemTarget - a model defined in Swagger"""  # noqa: E501
-        super(ProblemTarget, self).__init__(teamcity=teamcity)
 
         self._any_problem = None
         self._problems = None
@@ -47,6 +46,7 @@ class ProblemTarget(TeamCityObject):
             self.problems = problems
         if tests is not None:
             self.tests = tests
+        super(ProblemTarget, self).__init__(teamcity=teamcity)
 
     @property
     def any_problem(self):

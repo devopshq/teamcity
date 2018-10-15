@@ -63,7 +63,6 @@ class VcsRootInstance(TeamCityObject):
 
     def __init__(self, commit_hook_mode=False, href=None, id=None, last_version=None, last_version_internal=None, modification_check_interval=None, name=None, project_locator=None, properties=None, repository_id_strings=None, repository_state=None, status=None, vcs_root=None, vcs_root_id=None, vcs_name=None, vcs_root_internal_id=None, teamcity=None):  # noqa: E501
         """VcsRootInstance - a model defined in Swagger"""  # noqa: E501
-        super(VcsRootInstance, self).__init__(teamcity=teamcity)
 
         self._commit_hook_mode = None
         self._href = None
@@ -115,6 +114,7 @@ class VcsRootInstance(TeamCityObject):
             self.vcs_name = vcs_name
         if vcs_root_internal_id is not None:
             self.vcs_root_internal_id = vcs_root_internal_id
+        super(VcsRootInstance, self).__init__(teamcity=teamcity)
 
     @property
     def commit_hook_mode(self):

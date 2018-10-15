@@ -47,7 +47,6 @@ class LicensingData(TeamCityObject):
 
     def __init__(self, agents_left=None, build_types_left=None, license_keys=None, license_use_exceeded=False, max_agents=None, max_build_types=None, server_effective_release_date=None, server_license_type=None, unlimited_agents=False, unlimited_build_types=False, teamcity=None):  # noqa: E501
         """LicensingData - a model defined in Swagger"""  # noqa: E501
-        super(LicensingData, self).__init__(teamcity=teamcity)
 
         self._agents_left = None
         self._build_types_left = None
@@ -81,6 +80,7 @@ class LicensingData(TeamCityObject):
             self.unlimited_agents = unlimited_agents
         if unlimited_build_types is not None:
             self.unlimited_build_types = unlimited_build_types
+        super(LicensingData, self).__init__(teamcity=teamcity)
 
     @property
     def agents_left(self):

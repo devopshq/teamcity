@@ -31,7 +31,6 @@ class VcsRootEntries(TeamCityObject):
 
     def __init__(self, count=None, vcs_root_entry=None, teamcity=None):  # noqa: E501
         """VcsRootEntries - a model defined in Swagger"""  # noqa: E501
-        super(VcsRootEntries, self).__init__(teamcity=teamcity)
 
         self._count = None
         self._vcs_root_entry = None
@@ -41,6 +40,7 @@ class VcsRootEntries(TeamCityObject):
             self.count = count
         if vcs_root_entry is not None:
             self.vcs_root_entry = vcs_root_entry
+        super(VcsRootEntries, self).__init__(teamcity=teamcity)
 
     @property
     def count(self):

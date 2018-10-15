@@ -27,13 +27,13 @@ class Href(TeamCityObject):
 
     def __init__(self, href=None, teamcity=None):  # noqa: E501
         """Href - a model defined in Swagger"""  # noqa: E501
-        super(Href, self).__init__(teamcity=teamcity)
 
         self._href = None
         self.discriminator = None
 
         if href is not None:
             self.href = href
+        super(Href, self).__init__(teamcity=teamcity)
 
     @property
     def href(self):

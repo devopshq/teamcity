@@ -27,13 +27,13 @@ class Items(TeamCityObject):
 
     def __init__(self, item=None, teamcity=None):  # noqa: E501
         """Items - a model defined in Swagger"""  # noqa: E501
-        super(Items, self).__init__(teamcity=teamcity)
 
         self._item = None
         self.discriminator = None
 
         if item is not None:
             self.item = item
+        super(Items, self).__init__(teamcity=teamcity)
 
     @property
     def item(self):

@@ -33,7 +33,6 @@ class Comment(TeamCityObject):
 
     def __init__(self, text=None, timestamp=None, user=None, teamcity=None):  # noqa: E501
         """Comment - a model defined in Swagger"""  # noqa: E501
-        super(Comment, self).__init__(teamcity=teamcity)
 
         self._text = None
         self._timestamp = None
@@ -46,6 +45,7 @@ class Comment(TeamCityObject):
             self.timestamp = timestamp
         if user is not None:
             self.user = user
+        super(Comment, self).__init__(teamcity=teamcity)
 
     @property
     def text(self):

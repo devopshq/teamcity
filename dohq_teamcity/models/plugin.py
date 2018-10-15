@@ -37,7 +37,6 @@ class Plugin(TeamCityObject):
 
     def __init__(self, display_name=None, load_path=None, name=None, parameters=None, version=None, teamcity=None):  # noqa: E501
         """Plugin - a model defined in Swagger"""  # noqa: E501
-        super(Plugin, self).__init__(teamcity=teamcity)
 
         self._display_name = None
         self._load_path = None
@@ -56,6 +55,7 @@ class Plugin(TeamCityObject):
             self.parameters = parameters
         if version is not None:
             self.version = version
+        super(Plugin, self).__init__(teamcity=teamcity)
 
     @property
     def display_name(self):

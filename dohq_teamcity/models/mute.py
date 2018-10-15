@@ -40,7 +40,6 @@ class Mute(TeamCityObject):
 
     def __init__(self, assignment=None, id=None, resolution=None, scope=None, target=None, teamcity=None):  # noqa: E501
         """Mute - a model defined in Swagger"""  # noqa: E501
-        super(Mute, self).__init__(teamcity=teamcity)
 
         self._assignment = None
         self._id = None
@@ -59,6 +58,7 @@ class Mute(TeamCityObject):
             self.scope = scope
         if target is not None:
             self.target = target
+        super(Mute, self).__init__(teamcity=teamcity)
 
     @property
     def assignment(self):

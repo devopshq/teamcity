@@ -37,7 +37,6 @@ class BuildTypes(TeamCityObject):
 
     def __init__(self, build_type=None, count=None, href=None, next_href=None, prev_href=None, teamcity=None):  # noqa: E501
         """BuildTypes - a model defined in Swagger"""  # noqa: E501
-        super(BuildTypes, self).__init__(teamcity=teamcity)
 
         self._build_type = None
         self._count = None
@@ -56,6 +55,7 @@ class BuildTypes(TeamCityObject):
             self.next_href = next_href
         if prev_href is not None:
             self.prev_href = prev_href
+        super(BuildTypes, self).__init__(teamcity=teamcity)
 
     @property
     def build_type(self):

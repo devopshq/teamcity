@@ -33,7 +33,6 @@ class RepositoryState(TeamCityObject):
 
     def __init__(self, branch=None, count=None, timestamp=None, teamcity=None):  # noqa: E501
         """RepositoryState - a model defined in Swagger"""  # noqa: E501
-        super(RepositoryState, self).__init__(teamcity=teamcity)
 
         self._branch = None
         self._count = None
@@ -46,6 +45,7 @@ class RepositoryState(TeamCityObject):
             self.count = count
         if timestamp is not None:
             self.timestamp = timestamp
+        super(RepositoryState, self).__init__(teamcity=teamcity)
 
     @property
     def branch(self):

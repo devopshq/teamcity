@@ -31,7 +31,6 @@ class Branch(TeamCityObject):
 
     def __init__(self, default=False, name=None, unspecified=False, teamcity=None):  # noqa: E501
         """Branch - a model defined in Swagger"""  # noqa: E501
-        super(Branch, self).__init__(teamcity=teamcity)
 
         self._default = None
         self._name = None
@@ -44,6 +43,7 @@ class Branch(TeamCityObject):
             self.name = name
         if unspecified is not None:
             self.unspecified = unspecified
+        super(Branch, self).__init__(teamcity=teamcity)
 
     @property
     def default(self):

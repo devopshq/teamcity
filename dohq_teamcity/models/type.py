@@ -27,13 +27,13 @@ class Type(TeamCityObject):
 
     def __init__(self, raw_value=None, teamcity=None):  # noqa: E501
         """Type - a model defined in Swagger"""  # noqa: E501
-        super(Type, self).__init__(teamcity=teamcity)
 
         self._raw_value = None
         self.discriminator = None
 
         if raw_value is not None:
             self.raw_value = raw_value
+        super(Type, self).__init__(teamcity=teamcity)
 
     @property
     def raw_value(self):

@@ -31,7 +31,6 @@ class AuthorizedInfo(TeamCityObject):
 
     def __init__(self, comment=None, status=False, teamcity=None):  # noqa: E501
         """AuthorizedInfo - a model defined in Swagger"""  # noqa: E501
-        super(AuthorizedInfo, self).__init__(teamcity=teamcity)
 
         self._comment = None
         self._status = None
@@ -41,6 +40,7 @@ class AuthorizedInfo(TeamCityObject):
             self.comment = comment
         if status is not None:
             self.status = status
+        super(AuthorizedInfo, self).__init__(teamcity=teamcity)
 
     @property
     def comment(self):

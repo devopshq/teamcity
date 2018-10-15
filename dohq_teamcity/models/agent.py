@@ -64,9 +64,11 @@ class Agent(TeamCityObject):
         'uptodate': 'uptodate'
     }
 
-    def __init__(self, authorized=False, authorized_info=None, compatible_build_types=None, connected=False, enabled=False, enabled_info=None, href=None, id=None, incompatible_build_types=None, ip=None, locator=None, name=None, pool=None, properties=None, protocol=None, type_id=None, uptodate=False, teamcity=None):  # noqa: E501
+    def __init__(self, authorized=False, authorized_info=None, compatible_build_types=None, connected=False,
+                 enabled=False, enabled_info=None, href=None, id=None, incompatible_build_types=None, ip=None,
+                 locator=None, name=None, pool=None, properties=None, protocol=None, type_id=None, uptodate=False,
+                 teamcity=None):  # noqa: E501
         """Agent - a model defined in Swagger"""  # noqa: E501
-        super(Agent, self).__init__(teamcity=teamcity)
 
         self._authorized = None
         self._authorized_info = None
@@ -121,6 +123,7 @@ class Agent(TeamCityObject):
             self.type_id = type_id
         if uptodate is not None:
             self.uptodate = uptodate
+        super(Agent, self).__init__(teamcity=teamcity)
 
     @property
     def authorized(self):
@@ -478,4 +481,3 @@ class Agent(TeamCityObject):
         """
 
         self._uptodate = uptodate
-

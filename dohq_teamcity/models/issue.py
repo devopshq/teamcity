@@ -29,7 +29,6 @@ class Issue(TeamCityObject):
 
     def __init__(self, id=None, url=None, teamcity=None):  # noqa: E501
         """Issue - a model defined in Swagger"""  # noqa: E501
-        super(Issue, self).__init__(teamcity=teamcity)
 
         self._id = None
         self._url = None
@@ -39,6 +38,7 @@ class Issue(TeamCityObject):
             self.id = id
         if url is not None:
             self.url = url
+        super(Issue, self).__init__(teamcity=teamcity)
 
     @property
     def id(self):

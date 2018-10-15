@@ -31,7 +31,6 @@ class VcsStatus(TeamCityObject):
 
     def __init__(self, current=None, previous=None, teamcity=None):  # noqa: E501
         """VcsStatus - a model defined in Swagger"""  # noqa: E501
-        super(VcsStatus, self).__init__(teamcity=teamcity)
 
         self._current = None
         self._previous = None
@@ -41,6 +40,7 @@ class VcsStatus(TeamCityObject):
             self.current = current
         if previous is not None:
             self.previous = previous
+        super(VcsStatus, self).__init__(teamcity=teamcity)
 
     @property
     def current(self):

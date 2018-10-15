@@ -48,7 +48,6 @@ class Group(TeamCityObject):
 
     def __init__(self, child_groups=None, description=None, href=None, key=None, name=None, parent_groups=None, properties=None, roles=None, users=None, teamcity=None):  # noqa: E501
         """Group - a model defined in Swagger"""  # noqa: E501
-        super(Group, self).__init__(teamcity=teamcity)
 
         self._child_groups = None
         self._description = None
@@ -79,6 +78,7 @@ class Group(TeamCityObject):
             self.roles = roles
         if users is not None:
             self.users = users
+        super(Group, self).__init__(teamcity=teamcity)
 
     @property
     def child_groups(self):

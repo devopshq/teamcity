@@ -31,7 +31,6 @@ class Plugins(TeamCityObject):
 
     def __init__(self, count=None, plugin=None, teamcity=None):  # noqa: E501
         """Plugins - a model defined in Swagger"""  # noqa: E501
-        super(Plugins, self).__init__(teamcity=teamcity)
 
         self._count = None
         self._plugin = None
@@ -41,6 +40,7 @@ class Plugins(TeamCityObject):
             self.count = count
         if plugin is not None:
             self.plugin = plugin
+        super(Plugins, self).__init__(teamcity=teamcity)
 
     @property
     def count(self):

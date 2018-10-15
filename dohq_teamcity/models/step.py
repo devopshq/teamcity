@@ -41,7 +41,6 @@ class Step(TeamCityObject):
 
     def __init__(self, disabled=False, href=None, id=None, inherited=False, name=None, properties=None, type=None, teamcity=None):  # noqa: E501
         """Step - a model defined in Swagger"""  # noqa: E501
-        super(Step, self).__init__(teamcity=teamcity)
 
         self._disabled = None
         self._href = None
@@ -66,6 +65,7 @@ class Step(TeamCityObject):
             self.properties = properties
         if type is not None:
             self.type = type
+        super(Step, self).__init__(teamcity=teamcity)
 
     @property
     def disabled(self):

@@ -31,7 +31,6 @@ class SnapshotDependencies(TeamCityObject):
 
     def __init__(self, count=None, snapshot_dependency=None, teamcity=None):  # noqa: E501
         """SnapshotDependencies - a model defined in Swagger"""  # noqa: E501
-        super(SnapshotDependencies, self).__init__(teamcity=teamcity)
 
         self._count = None
         self._snapshot_dependency = None
@@ -41,6 +40,7 @@ class SnapshotDependencies(TeamCityObject):
             self.count = count
         if snapshot_dependency is not None:
             self.snapshot_dependency = snapshot_dependency
+        super(SnapshotDependencies, self).__init__(teamcity=teamcity)
 
     @property
     def count(self):

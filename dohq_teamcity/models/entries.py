@@ -31,7 +31,6 @@ class Entries(TeamCityObject):
 
     def __init__(self, count=None, entry=None, teamcity=None):  # noqa: E501
         """Entries - a model defined in Swagger"""  # noqa: E501
-        super(Entries, self).__init__(teamcity=teamcity)
 
         self._count = None
         self._entry = None
@@ -41,6 +40,7 @@ class Entries(TeamCityObject):
             self.count = count
         if entry is not None:
             self.entry = entry
+        super(Entries, self).__init__(teamcity=teamcity)
 
     @property
     def count(self):

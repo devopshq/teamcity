@@ -42,7 +42,6 @@ class AgentPool(TeamCityObject):
 
     def __init__(self, agents=None, href=None, id=None, locator=None, max_agents=None, name=None, projects=None, teamcity=None):  # noqa: E501
         """AgentPool - a model defined in Swagger"""  # noqa: E501
-        super(AgentPool, self).__init__(teamcity=teamcity)
 
         self._agents = None
         self._href = None
@@ -67,6 +66,7 @@ class AgentPool(TeamCityObject):
             self.name = name
         if projects is not None:
             self.projects = projects
+        super(AgentPool, self).__init__(teamcity=teamcity)
 
     @property
     def agents(self):
