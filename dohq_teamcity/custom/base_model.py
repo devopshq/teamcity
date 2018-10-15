@@ -82,10 +82,10 @@ class ReadMixin(object):
         return None
 
     def read(self, *args, **kwargs):
-        load_func = self._read()
-        if load_func is None:
+        func = self._read()
+        if func is None:
             raise TeamCityCodeException("read function is not defined in class '{}'".format(self.__class__.__name__))
-        self = load_func(self, *args, **kwargs)
+        self = func(self, *args, **kwargs)
         return self
 
 
@@ -94,8 +94,8 @@ class DeleteMixin(object):
         return None
 
     def delete(self, *args, **kwargs):
-        load_func = self._delete()
-        if load_func is None:
+        func = self._delete()
+        if func is None:
             raise TeamCityCodeException("delete function is not defined in class '{}'".format(self.__class__.__name__))
-        self = load_func(self, *args, **kwargs)
+        self = func(self, *args, **kwargs)
         return self

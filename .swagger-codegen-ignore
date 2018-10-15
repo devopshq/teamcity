@@ -27,5 +27,6 @@
 setup.py
 teamcity/__init__.py
 teamcity/api_client.py
+teamcity/rest.py # we save cookie between request
 teamcity/custom/*
 README.md
