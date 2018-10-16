@@ -62,8 +62,6 @@ class Compatibility(TeamCityObject):
         :return: The agent of this Compatibility.  # noqa: E501
         :rtype: Agent
         """
-        if self._agent is None:
-            self._read_if_needed()
         return self._agent
 
     @agent.setter
@@ -85,8 +83,6 @@ class Compatibility(TeamCityObject):
         :return: The build_type of this Compatibility.  # noqa: E501
         :rtype: BuildType
         """
-        if self._build_type is None:
-            self._read_if_needed()
         return self._build_type
 
     @build_type.setter
@@ -108,8 +104,6 @@ class Compatibility(TeamCityObject):
         :return: The compatible of this Compatibility.  # noqa: E501
         :rtype: bool
         """
-        if self._compatible is None:
-            self._read_if_needed()
         return self._compatible
 
     @compatible.setter
@@ -131,8 +125,6 @@ class Compatibility(TeamCityObject):
         :return: The unmet_requirements of this Compatibility.  # noqa: E501
         :rtype: Requirements
         """
-        if self._unmet_requirements is None:
-            self._read_if_needed()
         return self._unmet_requirements
 
     @unmet_requirements.setter

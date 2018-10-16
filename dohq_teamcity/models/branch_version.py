@@ -58,8 +58,6 @@ class BranchVersion(TeamCityObject):
         :return: The default of this BranchVersion.  # noqa: E501
         :rtype: bool
         """
-        if self._default is None:
-            self._read_if_needed()
         return self._default
 
     @default.setter
@@ -81,8 +79,6 @@ class BranchVersion(TeamCityObject):
         :return: The name of this BranchVersion.  # noqa: E501
         :rtype: str
         """
-        if self._name is None:
-            self._read_if_needed()
         return self._name
 
     @name.setter
@@ -104,8 +100,6 @@ class BranchVersion(TeamCityObject):
         :return: The unspecified of this BranchVersion.  # noqa: E501
         :rtype: bool
         """
-        if self._unspecified is None:
-            self._read_if_needed()
         return self._unspecified
 
     @unspecified.setter
@@ -127,8 +121,6 @@ class BranchVersion(TeamCityObject):
         :return: The version of this BranchVersion.  # noqa: E501
         :rtype: str
         """
-        if self._version is None:
-            self._read_if_needed()
         return self._version
 
     @version.setter

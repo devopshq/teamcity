@@ -50,8 +50,6 @@ class Servers(TeamCityObject):
         :return: The count of this Servers.  # noqa: E501
         :rtype: int
         """
-        if self._count is None:
-            self._read_if_needed()
         return self._count
 
     @count.setter
@@ -73,8 +71,6 @@ class Servers(TeamCityObject):
         :return: The server of this Servers.  # noqa: E501
         :rtype: list[FederationServer]
         """
-        if self._server is None:
-            self._read_if_needed()
         return self._server
 
     @server.setter

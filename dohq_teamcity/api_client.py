@@ -230,9 +230,9 @@ class ApiClient(object):
         except ValueError:
             data = response.data
 
-        return self.__deserialize(data, response_type, root=True)
+        return self.__deserialize(data, response_type)
 
-    def __deserialize(self, data, klass, root=False):
+    def __deserialize(self, data, klass):
         """Deserializes dict, list, str into an object.
 
         :param data: dict, list or str.
@@ -270,7 +270,7 @@ class ApiClient(object):
         elif klass == datetime.datetime:
             return self.__deserialize_datatime(data)
         else:
-            return self.__deserialize_model(data, klass, root)
+            return self.__deserialize_model(data, klass)
 
     def call_api(self, resource_path, method,
                  path_params=None, query_params=None, header_params=None,
@@ -592,7 +592,7 @@ class ApiClient(object):
                 )
             )
 
-    def __deserialize_model(self, data, klass, root):
+    def __deserialize_model(self, data, klass):
         """Deserializes list or dict to model.
 
         :param data: dict, list.
@@ -614,8 +614,6 @@ class ApiClient(object):
                     kwargs[attr] = self.__deserialize(value, attr_type)
 
         instance = klass(teamcity=self, **kwargs)
-        if root:
-            instance.readed = True
 
         if (isinstance(instance, dict) and
                 klass.swagger_types is not None and

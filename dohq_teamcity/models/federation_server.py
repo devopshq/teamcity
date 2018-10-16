@@ -48,8 +48,6 @@ class FederationServer(TeamCityObject):
         :return: The name of this FederationServer.  # noqa: E501
         :rtype: str
         """
-        if self._name is None:
-            self._read_if_needed()
         return self._name
 
     @name.setter
@@ -71,8 +69,6 @@ class FederationServer(TeamCityObject):
         :return: The url of this FederationServer.  # noqa: E501
         :rtype: str
         """
-        if self._url is None:
-            self._read_if_needed()
         return self._url
 
     @url.setter

@@ -68,8 +68,6 @@ class Mute(TeamCityObject):
         :return: The assignment of this Mute.  # noqa: E501
         :rtype: Comment
         """
-        if self._assignment is None:
-            self._read_if_needed()
         return self._assignment
 
     @assignment.setter
@@ -91,8 +89,6 @@ class Mute(TeamCityObject):
         :return: The id of this Mute.  # noqa: E501
         :rtype: int
         """
-        if self._id is None:
-            self._read_if_needed()
         return self._id
 
     @id.setter
@@ -114,8 +110,6 @@ class Mute(TeamCityObject):
         :return: The resolution of this Mute.  # noqa: E501
         :rtype: Resolution
         """
-        if self._resolution is None:
-            self._read_if_needed()
         return self._resolution
 
     @resolution.setter
@@ -137,8 +131,6 @@ class Mute(TeamCityObject):
         :return: The scope of this Mute.  # noqa: E501
         :rtype: ProblemScope
         """
-        if self._scope is None:
-            self._read_if_needed()
         return self._scope
 
     @scope.setter
@@ -160,8 +152,6 @@ class Mute(TeamCityObject):
         :return: The target of this Mute.  # noqa: E501
         :rtype: ProblemTarget
         """
-        if self._target is None:
-            self._read_if_needed()
         return self._target
 
     @target.setter

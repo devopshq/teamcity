@@ -124,8 +124,6 @@ class VcsRootInstance(TeamCityObject):
         :return: The commit_hook_mode of this VcsRootInstance.  # noqa: E501
         :rtype: bool
         """
-        if self._commit_hook_mode is None:
-            self._read_if_needed()
         return self._commit_hook_mode
 
     @commit_hook_mode.setter
@@ -147,8 +145,6 @@ class VcsRootInstance(TeamCityObject):
         :return: The href of this VcsRootInstance.  # noqa: E501
         :rtype: str
         """
-        if self._href is None:
-            self._read_if_needed()
         return self._href
 
     @href.setter
@@ -170,8 +166,6 @@ class VcsRootInstance(TeamCityObject):
         :return: The id of this VcsRootInstance.  # noqa: E501
         :rtype: str
         """
-        if self._id is None:
-            self._read_if_needed()
         return self._id
 
     @id.setter
@@ -193,8 +187,6 @@ class VcsRootInstance(TeamCityObject):
         :return: The last_version of this VcsRootInstance.  # noqa: E501
         :rtype: str
         """
-        if self._last_version is None:
-            self._read_if_needed()
         return self._last_version
 
     @last_version.setter
@@ -216,8 +208,6 @@ class VcsRootInstance(TeamCityObject):
         :return: The last_version_internal of this VcsRootInstance.  # noqa: E501
         :rtype: str
         """
-        if self._last_version_internal is None:
-            self._read_if_needed()
         return self._last_version_internal
 
     @last_version_internal.setter
@@ -239,8 +229,6 @@ class VcsRootInstance(TeamCityObject):
         :return: The modification_check_interval of this VcsRootInstance.  # noqa: E501
         :rtype: int
         """
-        if self._modification_check_interval is None:
-            self._read_if_needed()
         return self._modification_check_interval
 
     @modification_check_interval.setter
@@ -262,8 +250,6 @@ class VcsRootInstance(TeamCityObject):
         :return: The name of this VcsRootInstance.  # noqa: E501
         :rtype: str
         """
-        if self._name is None:
-            self._read_if_needed()
         return self._name
 
     @name.setter
@@ -285,8 +271,6 @@ class VcsRootInstance(TeamCityObject):
         :return: The project_locator of this VcsRootInstance.  # noqa: E501
         :rtype: str
         """
-        if self._project_locator is None:
-            self._read_if_needed()
         return self._project_locator
 
     @project_locator.setter
@@ -308,8 +292,6 @@ class VcsRootInstance(TeamCityObject):
         :return: The properties of this VcsRootInstance.  # noqa: E501
         :rtype: Properties
         """
-        if self._properties is None:
-            self._read_if_needed()
         return self._properties
 
     @properties.setter
@@ -331,8 +313,6 @@ class VcsRootInstance(TeamCityObject):
         :return: The repository_id_strings of this VcsRootInstance.  # noqa: E501
         :rtype: Items
         """
-        if self._repository_id_strings is None:
-            self._read_if_needed()
         return self._repository_id_strings
 
     @repository_id_strings.setter
@@ -354,8 +334,6 @@ class VcsRootInstance(TeamCityObject):
         :return: The repository_state of this VcsRootInstance.  # noqa: E501
         :rtype: RepositoryState
         """
-        if self._repository_state is None:
-            self._read_if_needed()
         return self._repository_state
 
     @repository_state.setter
@@ -377,8 +355,6 @@ class VcsRootInstance(TeamCityObject):
         :return: The status of this VcsRootInstance.  # noqa: E501
         :rtype: VcsStatus
         """
-        if self._status is None:
-            self._read_if_needed()
         return self._status
 
     @status.setter
@@ -400,8 +376,6 @@ class VcsRootInstance(TeamCityObject):
         :return: The vcs_root of this VcsRootInstance.  # noqa: E501
         :rtype: VcsRoot
         """
-        if self._vcs_root is None:
-            self._read_if_needed()
         return self._vcs_root
 
     @vcs_root.setter
@@ -423,8 +397,6 @@ class VcsRootInstance(TeamCityObject):
         :return: The vcs_root_id of this VcsRootInstance.  # noqa: E501
         :rtype: str
         """
-        if self._vcs_root_id is None:
-            self._read_if_needed()
         return self._vcs_root_id
 
     @vcs_root_id.setter
@@ -446,8 +418,6 @@ class VcsRootInstance(TeamCityObject):
         :return: The vcs_name of this VcsRootInstance.  # noqa: E501
         :rtype: str
         """
-        if self._vcs_name is None:
-            self._read_if_needed()
         return self._vcs_name
 
     @vcs_name.setter
@@ -469,8 +439,6 @@ class VcsRootInstance(TeamCityObject):
         :return: The vcs_root_internal_id of this VcsRootInstance.  # noqa: E501
         :rtype: str
         """
-        if self._vcs_root_internal_id is None:
-            self._read_if_needed()
         return self._vcs_root_internal_id
 
     @vcs_root_internal_id.setter

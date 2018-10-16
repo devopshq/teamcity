@@ -50,8 +50,6 @@ class Users(TeamCityObject):
         :return: The count of this Users.  # noqa: E501
         :rtype: int
         """
-        if self._count is None:
-            self._read_if_needed()
         return self._count
 
     @count.setter
@@ -73,8 +71,6 @@ class Users(TeamCityObject):
         :return: The user of this Users.  # noqa: E501
         :rtype: list[User]
         """
-        if self._user is None:
-            self._read_if_needed()
         return self._user
 
     @user.setter

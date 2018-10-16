@@ -43,8 +43,6 @@ class Requirements(TeamCityObject):
         :return: The description of this Requirements.  # noqa: E501
         :rtype: str
         """
-        if self._description is None:
-            self._read_if_needed()
         return self._description
 
     @description.setter

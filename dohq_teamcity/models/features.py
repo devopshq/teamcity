@@ -50,8 +50,6 @@ class Features(TeamCityObject):
         :return: The count of this Features.  # noqa: E501
         :rtype: int
         """
-        if self._count is None:
-            self._read_if_needed()
         return self._count
 
     @count.setter
@@ -73,8 +71,6 @@ class Features(TeamCityObject):
         :return: The feature of this Features.  # noqa: E501
         :rtype: list[Feature]
         """
-        if self._feature is None:
-            self._read_if_needed()
         return self._feature
 
     @feature.setter

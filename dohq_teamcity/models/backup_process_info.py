@@ -68,8 +68,6 @@ class BackupProcessInfo(TeamCityObject):
         :return: The file_name of this BackupProcessInfo.  # noqa: E501
         :rtype: str
         """
-        if self._file_name is None:
-            self._read_if_needed()
         return self._file_name
 
     @file_name.setter
@@ -91,8 +89,6 @@ class BackupProcessInfo(TeamCityObject):
         :return: The file_size of this BackupProcessInfo.  # noqa: E501
         :rtype: int
         """
-        if self._file_size is None:
-            self._read_if_needed()
         return self._file_size
 
     @file_size.setter
@@ -114,8 +110,6 @@ class BackupProcessInfo(TeamCityObject):
         :return: The finish_timestamp of this BackupProcessInfo.  # noqa: E501
         :rtype: datetime
         """
-        if self._finish_timestamp is None:
-            self._read_if_needed()
         return self._finish_timestamp
 
     @finish_timestamp.setter
@@ -137,8 +131,6 @@ class BackupProcessInfo(TeamCityObject):
         :return: The id of this BackupProcessInfo.  # noqa: E501
         :rtype: int
         """
-        if self._id is None:
-            self._read_if_needed()
         return self._id
 
     @id.setter
@@ -160,8 +152,6 @@ class BackupProcessInfo(TeamCityObject):
         :return: The start_timestamp of this BackupProcessInfo.  # noqa: E501
         :rtype: datetime
         """
-        if self._start_timestamp is None:
-            self._read_if_needed()
         return self._start_timestamp
 
     @start_timestamp.setter
@@ -183,8 +173,6 @@ class BackupProcessInfo(TeamCityObject):
         :return: The status of this BackupProcessInfo.  # noqa: E501
         :rtype: str
         """
-        if self._status is None:
-            self._read_if_needed()
         return self._status
 
     @status.setter

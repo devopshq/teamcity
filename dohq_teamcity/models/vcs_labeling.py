@@ -60,8 +60,6 @@ class VcsLabeling(TeamCityObject):
         :return: The branch_filter of this VcsLabeling.  # noqa: E501
         :rtype: str
         """
-        if self._branch_filter is None:
-            self._read_if_needed()
         return self._branch_filter
 
     @branch_filter.setter
@@ -83,8 +81,6 @@ class VcsLabeling(TeamCityObject):
         :return: The label_name of this VcsLabeling.  # noqa: E501
         :rtype: str
         """
-        if self._label_name is None:
-            self._read_if_needed()
         return self._label_name
 
     @label_name.setter
@@ -106,8 +102,6 @@ class VcsLabeling(TeamCityObject):
         :return: The type of this VcsLabeling.  # noqa: E501
         :rtype: str
         """
-        if self._type is None:
-            self._read_if_needed()
         return self._type
 
     @type.setter
@@ -129,8 +123,6 @@ class VcsLabeling(TeamCityObject):
         :return: The vcs_roots of this VcsLabeling.  # noqa: E501
         :rtype: VcsRoots
         """
-        if self._vcs_roots is None:
-            self._read_if_needed()
         return self._vcs_roots
 
     @vcs_roots.setter

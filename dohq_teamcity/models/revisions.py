@@ -50,8 +50,6 @@ class Revisions(TeamCityObject):
         :return: The count of this Revisions.  # noqa: E501
         :rtype: int
         """
-        if self._count is None:
-            self._read_if_needed()
         return self._count
 
     @count.setter
@@ -73,8 +71,6 @@ class Revisions(TeamCityObject):
         :return: The revision of this Revisions.  # noqa: E501
         :rtype: list[Revision]
         """
-        if self._revision is None:
-            self._read_if_needed()
         return self._revision
 
     @revision.setter

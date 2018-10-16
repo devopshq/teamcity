@@ -55,8 +55,6 @@ class LicenseKeys(TeamCityObject):
         :return: The count of this LicenseKeys.  # noqa: E501
         :rtype: int
         """
-        if self._count is None:
-            self._read_if_needed()
         return self._count
 
     @count.setter
@@ -78,8 +76,6 @@ class LicenseKeys(TeamCityObject):
         :return: The href of this LicenseKeys.  # noqa: E501
         :rtype: str
         """
-        if self._href is None:
-            self._read_if_needed()
         return self._href
 
     @href.setter
@@ -101,8 +97,6 @@ class LicenseKeys(TeamCityObject):
         :return: The license_key of this LicenseKeys.  # noqa: E501
         :rtype: list[LicenseKey]
         """
-        if self._license_key is None:
-            self._read_if_needed()
         return self._license_key
 
     @license_key.setter

@@ -50,8 +50,6 @@ class Tags(TeamCityObject):
         :return: The count of this Tags.  # noqa: E501
         :rtype: int
         """
-        if self._count is None:
-            self._read_if_needed()
         return self._count
 
     @count.setter
@@ -73,8 +71,6 @@ class Tags(TeamCityObject):
         :return: The tag of this Tags.  # noqa: E501
         :rtype: list[Tag]
         """
-        if self._tag is None:
-            self._read_if_needed()
         return self._tag
 
     @tag.setter

@@ -43,8 +43,6 @@ class Items(TeamCityObject):
         :return: The item of this Items.  # noqa: E501
         :rtype: list[str]
         """
-        if self._item is None:
-            self._read_if_needed()
         return self._item
 
     @item.setter

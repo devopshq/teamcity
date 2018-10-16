@@ -77,8 +77,6 @@ class BackupProcess(TeamCityObject):
         :return: The brief_info of this BackupProcess.  # noqa: E501
         :rtype: BackupProcessInfo
         """
-        if self._brief_info is None:
-            self._read_if_needed()
         return self._brief_info
 
     @brief_info.setter
@@ -100,8 +98,6 @@ class BackupProcess(TeamCityObject):
         :return: The exceptions of this BackupProcess.  # noqa: E501
         :rtype: list[Exception]
         """
-        if self._exceptions is None:
-            self._read_if_needed()
         return self._exceptions
 
     @exceptions.setter
@@ -123,8 +119,6 @@ class BackupProcess(TeamCityObject):
         :return: The finished of this BackupProcess.  # noqa: E501
         :rtype: bool
         """
-        if self._finished is None:
-            self._read_if_needed()
         return self._finished
 
     @finished.setter
@@ -146,8 +140,6 @@ class BackupProcess(TeamCityObject):
         :return: The process_id of this BackupProcess.  # noqa: E501
         :rtype: int
         """
-        if self._process_id is None:
-            self._read_if_needed()
         return self._process_id
 
     @process_id.setter
@@ -169,8 +161,6 @@ class BackupProcess(TeamCityObject):
         :return: The process_kind of this BackupProcess.  # noqa: E501
         :rtype: str
         """
-        if self._process_kind is None:
-            self._read_if_needed()
         return self._process_kind
 
     @process_kind.setter
@@ -198,8 +188,6 @@ class BackupProcess(TeamCityObject):
         :return: The progress_info of this BackupProcess.  # noqa: E501
         :rtype: ProgressInfo
         """
-        if self._progress_info is None:
-            self._read_if_needed()
         return self._progress_info
 
     @progress_info.setter
@@ -221,8 +209,6 @@ class BackupProcess(TeamCityObject):
         :return: The progress_status of this BackupProcess.  # noqa: E501
         :rtype: str
         """
-        if self._progress_status is None:
-            self._read_if_needed()
         return self._progress_status
 
     @progress_status.setter

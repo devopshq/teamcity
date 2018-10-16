@@ -50,8 +50,6 @@ class VcsRootEntries(TeamCityObject):
         :return: The count of this VcsRootEntries.  # noqa: E501
         :rtype: int
         """
-        if self._count is None:
-            self._read_if_needed()
         return self._count
 
     @count.setter
@@ -73,8 +71,6 @@ class VcsRootEntries(TeamCityObject):
         :return: The vcs_root_entry of this VcsRootEntries.  # noqa: E501
         :rtype: list[VcsRootEntry]
         """
-        if self._vcs_root_entry is None:
-            self._read_if_needed()
         return self._vcs_root_entry
 
     @vcs_root_entry.setter

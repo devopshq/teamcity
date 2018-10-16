@@ -53,8 +53,6 @@ class Link(TeamCityObject):
         :return: The relative_url of this Link.  # noqa: E501
         :rtype: str
         """
-        if self._relative_url is None:
-            self._read_if_needed()
         return self._relative_url
 
     @relative_url.setter
@@ -76,8 +74,6 @@ class Link(TeamCityObject):
         :return: The type of this Link.  # noqa: E501
         :rtype: str
         """
-        if self._type is None:
-            self._read_if_needed()
         return self._type
 
     @type.setter
@@ -99,8 +95,6 @@ class Link(TeamCityObject):
         :return: The url of this Link.  # noqa: E501
         :rtype: str
         """
-        if self._url is None:
-            self._read_if_needed()
         return self._url
 
     @url.setter

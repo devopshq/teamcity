@@ -77,8 +77,6 @@ class TriggeredBy(TeamCityObject):
         :return: The build_type of this TriggeredBy.  # noqa: E501
         :rtype: BuildType
         """
-        if self._build_type is None:
-            self._read_if_needed()
         return self._build_type
 
     @build_type.setter
@@ -100,8 +98,6 @@ class TriggeredBy(TeamCityObject):
         :return: The _date of this TriggeredBy.  # noqa: E501
         :rtype: str
         """
-        if self.__date is None:
-            self._read_if_needed()
         return self.__date
 
     @_date.setter
@@ -123,8 +119,6 @@ class TriggeredBy(TeamCityObject):
         :return: The details of this TriggeredBy.  # noqa: E501
         :rtype: str
         """
-        if self._details is None:
-            self._read_if_needed()
         return self._details
 
     @details.setter
@@ -146,8 +140,6 @@ class TriggeredBy(TeamCityObject):
         :return: The properties of this TriggeredBy.  # noqa: E501
         :rtype: Properties
         """
-        if self._properties is None:
-            self._read_if_needed()
         return self._properties
 
     @properties.setter
@@ -169,8 +161,6 @@ class TriggeredBy(TeamCityObject):
         :return: The raw_value of this TriggeredBy.  # noqa: E501
         :rtype: str
         """
-        if self._raw_value is None:
-            self._read_if_needed()
         return self._raw_value
 
     @raw_value.setter
@@ -192,8 +182,6 @@ class TriggeredBy(TeamCityObject):
         :return: The type of this TriggeredBy.  # noqa: E501
         :rtype: str
         """
-        if self._type is None:
-            self._read_if_needed()
         return self._type
 
     @type.setter
@@ -215,8 +203,6 @@ class TriggeredBy(TeamCityObject):
         :return: The user of this TriggeredBy.  # noqa: E501
         :rtype: User
         """
-        if self._user is None:
-            self._read_if_needed()
         return self._user
 
     @user.setter

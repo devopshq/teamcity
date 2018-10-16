@@ -50,8 +50,6 @@ class MetaData(TeamCityObject):
         :return: The entries of this MetaData.  # noqa: E501
         :rtype: Entries
         """
-        if self._entries is None:
-            self._read_if_needed()
         return self._entries
 
     @entries.setter
@@ -73,8 +71,6 @@ class MetaData(TeamCityObject):
         :return: The id of this MetaData.  # noqa: E501
         :rtype: str
         """
-        if self._id is None:
-            self._read_if_needed()
         return self._id
 
     @id.setter

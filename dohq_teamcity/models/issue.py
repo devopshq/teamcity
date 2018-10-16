@@ -48,8 +48,6 @@ class Issue(TeamCityObject):
         :return: The id of this Issue.  # noqa: E501
         :rtype: str
         """
-        if self._id is None:
-            self._read_if_needed()
         return self._id
 
     @id.setter
@@ -71,8 +69,6 @@ class Issue(TeamCityObject):
         :return: The url of this Issue.  # noqa: E501
         :rtype: str
         """
-        if self._url is None:
-            self._read_if_needed()
         return self._url
 
     @url.setter

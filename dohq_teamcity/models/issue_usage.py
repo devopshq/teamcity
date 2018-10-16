@@ -51,8 +51,6 @@ class IssueUsage(TeamCityObject):
         :return: The changes of this IssueUsage.  # noqa: E501
         :rtype: Changes
         """
-        if self._changes is None:
-            self._read_if_needed()
         return self._changes
 
     @changes.setter
@@ -74,8 +72,6 @@ class IssueUsage(TeamCityObject):
         :return: The issue of this IssueUsage.  # noqa: E501
         :rtype: Issue
         """
-        if self._issue is None:
-            self._read_if_needed()
         return self._issue
 
     @issue.setter

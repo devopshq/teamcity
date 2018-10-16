@@ -50,8 +50,6 @@ class FileChanges(TeamCityObject):
         :return: The count of this FileChanges.  # noqa: E501
         :rtype: int
         """
-        if self._count is None:
-            self._read_if_needed()
         return self._count
 
     @count.setter
@@ -73,8 +71,6 @@ class FileChanges(TeamCityObject):
         :return: The file of this FileChanges.  # noqa: E501
         :rtype: list[FileChange]
         """
-        if self._file is None:
-            self._read_if_needed()
         return self._file
 
     @file.setter

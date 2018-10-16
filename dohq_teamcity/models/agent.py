@@ -64,10 +64,7 @@ class Agent(TeamCityObject):
         'uptodate': 'uptodate'
     }
 
-    def __init__(self, authorized=False, authorized_info=None, compatible_build_types=None, connected=False,
-                 enabled=False, enabled_info=None, href=None, id=None, incompatible_build_types=None, ip=None,
-                 locator=None, name=None, pool=None, properties=None, protocol=None, type_id=None, uptodate=False,
-                 teamcity=None):  # noqa: E501
+    def __init__(self, authorized=False, authorized_info=None, compatible_build_types=None, connected=False, enabled=False, enabled_info=None, href=None, id=None, incompatible_build_types=None, ip=None, locator=None, name=None, pool=None, properties=None, protocol=None, type_id=None, uptodate=False, teamcity=None):  # noqa: E501
         """Agent - a model defined in Swagger"""  # noqa: E501
 
         self._authorized = None
@@ -133,8 +130,6 @@ class Agent(TeamCityObject):
         :return: The authorized of this Agent.  # noqa: E501
         :rtype: bool
         """
-        if self._authorized is None:
-            self._read_if_needed()
         return self._authorized
 
     @authorized.setter
@@ -156,8 +151,6 @@ class Agent(TeamCityObject):
         :return: The authorized_info of this Agent.  # noqa: E501
         :rtype: AuthorizedInfo
         """
-        if self._authorized_info is None:
-            self._read_if_needed()
         return self._authorized_info
 
     @authorized_info.setter
@@ -179,8 +172,6 @@ class Agent(TeamCityObject):
         :return: The compatible_build_types of this Agent.  # noqa: E501
         :rtype: BuildTypes
         """
-        if self._compatible_build_types is None:
-            self._read_if_needed()
         return self._compatible_build_types
 
     @compatible_build_types.setter
@@ -202,8 +193,6 @@ class Agent(TeamCityObject):
         :return: The connected of this Agent.  # noqa: E501
         :rtype: bool
         """
-        if self._connected is None:
-            self._read_if_needed()
         return self._connected
 
     @connected.setter
@@ -225,8 +214,6 @@ class Agent(TeamCityObject):
         :return: The enabled of this Agent.  # noqa: E501
         :rtype: bool
         """
-        if self._enabled is None:
-            self._read_if_needed()
         return self._enabled
 
     @enabled.setter
@@ -248,8 +235,6 @@ class Agent(TeamCityObject):
         :return: The enabled_info of this Agent.  # noqa: E501
         :rtype: EnabledInfo
         """
-        if self._enabled_info is None:
-            self._read_if_needed()
         return self._enabled_info
 
     @enabled_info.setter
@@ -271,8 +256,6 @@ class Agent(TeamCityObject):
         :return: The href of this Agent.  # noqa: E501
         :rtype: str
         """
-        if self._href is None:
-            self._read_if_needed()
         return self._href
 
     @href.setter
@@ -294,8 +277,6 @@ class Agent(TeamCityObject):
         :return: The id of this Agent.  # noqa: E501
         :rtype: int
         """
-        if self._id is None:
-            self._read_if_needed()
         return self._id
 
     @id.setter
@@ -317,8 +298,6 @@ class Agent(TeamCityObject):
         :return: The incompatible_build_types of this Agent.  # noqa: E501
         :rtype: Compatibilities
         """
-        if self._incompatible_build_types is None:
-            self._read_if_needed()
         return self._incompatible_build_types
 
     @incompatible_build_types.setter
@@ -340,8 +319,6 @@ class Agent(TeamCityObject):
         :return: The ip of this Agent.  # noqa: E501
         :rtype: str
         """
-        if self._ip is None:
-            self._read_if_needed()
         return self._ip
 
     @ip.setter
@@ -363,8 +340,6 @@ class Agent(TeamCityObject):
         :return: The locator of this Agent.  # noqa: E501
         :rtype: str
         """
-        if self._locator is None:
-            self._read_if_needed()
         return self._locator
 
     @locator.setter
@@ -386,8 +361,6 @@ class Agent(TeamCityObject):
         :return: The name of this Agent.  # noqa: E501
         :rtype: str
         """
-        if self._name is None:
-            self._read_if_needed()
         return self._name
 
     @name.setter
@@ -409,8 +382,6 @@ class Agent(TeamCityObject):
         :return: The pool of this Agent.  # noqa: E501
         :rtype: AgentPool
         """
-        if self._pool is None:
-            self._read_if_needed()
         return self._pool
 
     @pool.setter
@@ -432,8 +403,6 @@ class Agent(TeamCityObject):
         :return: The properties of this Agent.  # noqa: E501
         :rtype: Properties
         """
-        if self._properties is None:
-            self._read_if_needed()
         return self._properties
 
     @properties.setter
@@ -455,8 +424,6 @@ class Agent(TeamCityObject):
         :return: The protocol of this Agent.  # noqa: E501
         :rtype: str
         """
-        if self._protocol is None:
-            self._read_if_needed()
         return self._protocol
 
     @protocol.setter
@@ -478,8 +445,6 @@ class Agent(TeamCityObject):
         :return: The type_id of this Agent.  # noqa: E501
         :rtype: int
         """
-        if self._type_id is None:
-            self._read_if_needed()
         return self._type_id
 
     @type_id.setter
@@ -501,8 +466,6 @@ class Agent(TeamCityObject):
         :return: The uptodate of this Agent.  # noqa: E501
         :rtype: bool
         """
-        if self._uptodate is None:
-            self._read_if_needed()
         return self._uptodate
 
     @uptodate.setter
@@ -515,3 +478,4 @@ class Agent(TeamCityObject):
         """
 
         self._uptodate = uptodate
+

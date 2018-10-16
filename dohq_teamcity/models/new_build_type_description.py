@@ -81,8 +81,6 @@ class NewBuildTypeDescription(TeamCityObject):
         :return: The build_types_ids_map of this NewBuildTypeDescription.  # noqa: E501
         :rtype: Properties
         """
-        if self._build_types_ids_map is None:
-            self._read_if_needed()
         return self._build_types_ids_map
 
     @build_types_ids_map.setter
@@ -104,8 +102,6 @@ class NewBuildTypeDescription(TeamCityObject):
         :return: The copy_all_associated_settings of this NewBuildTypeDescription.  # noqa: E501
         :rtype: bool
         """
-        if self._copy_all_associated_settings is None:
-            self._read_if_needed()
         return self._copy_all_associated_settings
 
     @copy_all_associated_settings.setter
@@ -127,8 +123,6 @@ class NewBuildTypeDescription(TeamCityObject):
         :return: The id of this NewBuildTypeDescription.  # noqa: E501
         :rtype: str
         """
-        if self._id is None:
-            self._read_if_needed()
         return self._id
 
     @id.setter
@@ -150,8 +144,6 @@ class NewBuildTypeDescription(TeamCityObject):
         :return: The name of this NewBuildTypeDescription.  # noqa: E501
         :rtype: str
         """
-        if self._name is None:
-            self._read_if_needed()
         return self._name
 
     @name.setter
@@ -173,8 +165,6 @@ class NewBuildTypeDescription(TeamCityObject):
         :return: The projects_ids_map of this NewBuildTypeDescription.  # noqa: E501
         :rtype: Properties
         """
-        if self._projects_ids_map is None:
-            self._read_if_needed()
         return self._projects_ids_map
 
     @projects_ids_map.setter
@@ -196,8 +186,6 @@ class NewBuildTypeDescription(TeamCityObject):
         :return: The source_build_type of this NewBuildTypeDescription.  # noqa: E501
         :rtype: BuildType
         """
-        if self._source_build_type is None:
-            self._read_if_needed()
         return self._source_build_type
 
     @source_build_type.setter
@@ -219,8 +207,6 @@ class NewBuildTypeDescription(TeamCityObject):
         :return: The source_build_type_locator of this NewBuildTypeDescription.  # noqa: E501
         :rtype: str
         """
-        if self._source_build_type_locator is None:
-            self._read_if_needed()
         return self._source_build_type_locator
 
     @source_build_type_locator.setter
@@ -242,8 +228,6 @@ class NewBuildTypeDescription(TeamCityObject):
         :return: The vcs_roots_ids_map of this NewBuildTypeDescription.  # noqa: E501
         :rtype: Properties
         """
-        if self._vcs_roots_ids_map is None:
-            self._read_if_needed()
         return self._vcs_roots_ids_map
 
     @vcs_roots_ids_map.setter

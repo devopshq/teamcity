@@ -65,8 +65,6 @@ class Revision(TeamCityObject):
         :return: The checkout_rules of this Revision.  # noqa: E501
         :rtype: str
         """
-        if self._checkout_rules is None:
-            self._read_if_needed()
         return self._checkout_rules
 
     @checkout_rules.setter
@@ -88,8 +86,6 @@ class Revision(TeamCityObject):
         :return: The internal_version of this Revision.  # noqa: E501
         :rtype: str
         """
-        if self._internal_version is None:
-            self._read_if_needed()
         return self._internal_version
 
     @internal_version.setter
@@ -111,8 +107,6 @@ class Revision(TeamCityObject):
         :return: The vcs_root_instance of this Revision.  # noqa: E501
         :rtype: VcsRootInstance
         """
-        if self._vcs_root_instance is None:
-            self._read_if_needed()
         return self._vcs_root_instance
 
     @vcs_root_instance.setter
@@ -134,8 +128,6 @@ class Revision(TeamCityObject):
         :return: The vcs_branch_name of this Revision.  # noqa: E501
         :rtype: str
         """
-        if self._vcs_branch_name is None:
-            self._read_if_needed()
         return self._vcs_branch_name
 
     @vcs_branch_name.setter
@@ -157,8 +149,6 @@ class Revision(TeamCityObject):
         :return: The version of this Revision.  # noqa: E501
         :rtype: str
         """
-        if self._version is None:
-            self._read_if_needed()
         return self._version
 
     @version.setter

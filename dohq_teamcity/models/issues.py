@@ -45,8 +45,6 @@ class Issues(TeamCityObject):
         :return: The issues of this Issues.  # noqa: E501
         :rtype: list[Issue]
         """
-        if self._issues is None:
-            self._read_if_needed()
         return self._issues
 
     @issues.setter

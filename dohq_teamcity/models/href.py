@@ -43,8 +43,6 @@ class Href(TeamCityObject):
         :return: The href of this Href.  # noqa: E501
         :rtype: str
         """
-        if self._href is None:
-            self._read_if_needed()
         return self._href
 
     @href.setter

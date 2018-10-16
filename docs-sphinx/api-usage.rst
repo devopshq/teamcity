@@ -1,9 +1,11 @@
+.. include:: <isonum.txt>
+
 ############################
 Getting started with the API
 ############################
 
 ``dohq_teamcity.TeamCity`` class
-=======================
+================================
 
 To connect to a TeamCity server, create a ``dohq_teamcity.TeamCity`` object:
 
@@ -61,22 +63,28 @@ use the ``attributes`` attribute:
    project = tc.projects.get(1)
    print(project.attribute_map.keys())
 
-If some objects contains other object (eg - ``Project`` contain ``BuildType``) we need execute ``read()`` function to get **full** object, because it does not contain full information about related object and we must reload object.
+Managers functions
+-----------------
+Many Managers function have parameters:
 
-.. code-block:: python
+.. list-table::
+   :widths: 15 15 70
+   :header-rows: 1
 
-   # list the build_type properties for a project
-   project = tc.projects.get('id:MyProject')
-   bt = project.build_types[0]
-   bt.parameters # None
-   bt = bt.read()
-   bt.parameters # Properties object like list[Property]
+   * - Functions
+     - Parameters
+     - Description
+   * - ``get_*`` and ``serve_*``
+     - ``some_locator``
+     - Positional or named argument, can be string or one of ``dohq_teamcity.TeamCityObject``.
 
-   # get agents for pool which used in build
-   build = tc.builds.get('id:123456') # Make 1 API call
-   agents = build.read().agent.read().pool.read().agents # Make 3 API calls
-   print([x.name for agents])
-
+       Read more about locator in `TeamCity Documantation <https://confluence.jetbrains.com/display/TCD10/REST+API#RESTAPI-Locator>`_
+   * - ``set_*``, ``add_**`` or ``create_*``
+     - ``body``
+     - **named** argument, must be one of ``dohq_teamcity.TeamCityObject`` object
+   * - All functions
+     - ``async_req=True|False``
+     - For asynchronous requests. Read more in `Asynchronous requests`__
 
 TeamCity Objects
 ==============
@@ -101,6 +109,79 @@ resources. For example:
    pr = ModelProperty(name="from_script", value="testnew", type=tp)
    pr = bt.set_parameter(body=pr)
 
+Read function
+-------------
+If some objects contains other object (eg - ``Project`` contain ``BuildType``) we need execute ``read()`` function to get **full** object, because it does not contain full information about related object and we must reload object.
+
+.. code-block:: python
+
+   # list the build_type properties for a project
+   project = tc.projects.get('id:MyProject')
+   bt = project.build_types[0]
+   bt.parameters # None
+   bt = bt.read()
+   bt.parameters # Properties object like list[Property]
+
+   # get agents for pool which used in build
+   build = tc.builds.get('id:123456') # Make 1 API call
+   agents = build.read().agent.read().pool.read().agents # Make 3 API calls
+   print([x.name for agents])
+
+We try to user auto-read when we get property and if ``self._property_name is None``,
+but this way have problem in debug-mode (PyCharm Debug Configuration)
+- it makes endless recursive API calls for viewing object in debugger.
+
+We also try detect "Debug-mode", and don't make call, but but then the behavior in Debug-mode is different
+from Production-mode. And for now, we have ``read`` function which
+must be called before accessing the nested object if we want to get the full object :)
+
+    Explicit is better than implicit |copy| PEP 20
+
+
+Lazy objects
+------------
+
+All objects are a ``lazy``-object - it's not make API call on create, only on `get read update` operations. You can create object directly and not make API call.
+
+The following example will only make one API call to the TeamCity server to set parameter in a project:
+
+.. code-block:: python
+
+   # project
+   project = tc.projects.get('id:MyProject')  # API call, full object
+   project.set_parameter(body=parameter_obj)  # API call
+
+   # project lazy
+   from dohq_teamcity import Project
+   project = Project(id='MyProject', teamcity=tc) # no API call
+   project.set_parameter(body=parameter_obj)  # API call
+
+   # project lazy 2
+   from dohq_teamcity import Project
+   project = Project(id='MyProject') # no API call
+   tc.projects.set_parameter(project, body=parameter_obj)  # API call
+
+List objects
+------------
+Some ``TeamCityObject`` are essentially containers and their purpose is only to store other objects.
+
+For example, when searching, we get a list, we can see how its attributes, and make a cycle on objects:
+
+.. code-block:: python
+
+    builds = tc.builds.get_all_builds(count=100)
+    print(builds.count)
+    ids_ = [x.id for x in builds.build]
+    ids = [x.id for x in builds]
+    print(ids)
+    print(ids_)
+    print(ids == ids_)
+
+    # If you need work with some build - don't forget use read() function
+    agent_0 = builds[0].read().agent
+
+
+
 Base types
 ==========
 
@@ -122,38 +203,8 @@ The ``dohq_teamcity`` package provides some base types.
     Most objects and managers and their functions genereted automatically by https://github.com/swagger-api/swagger-codegen - see more ``swagger.sh`` file and other swagger files.
     Custom interfaces for apis and objects are in folder **dohq_teamcity/custom**
 
-Lazy objects
-============
+    For more information, please see the section on :doc:`development`.
 
-All objects are a ``lazy``-object - it's not make API call on create, only on get\read\update
-
-The following example will only make one API call to the TeamCity server to star
-a project (the previous example used 2 API calls):
-
-.. code-block:: python
-
-   # project
-   project = tc.projects.get('id:MyProject')  # API call, full object
-   project.set_parameter(body=parameter_obj)  # API call
-
-   # project lazy
-   from dohq_teamcity import Project
-   project = Project(id='MyProject', teamcity=tc) # no API call
-   project.set_parameter(body=parameter_obj)  # API call
-
-   # project lazy 2
-   from dohq_teamcity import Project
-   project = Project(id='MyProject') # no API call
-   tc.projects.set_parameter(project, body=parameter_obj)  # API call
-
-Managers function
-==========
-Many Managers function contains this parameters:
-
-* ``get_*`` and ``serve_*`` function - ``some_locator`` - positional argument, can be string or one ``dohq_teamcity.TeamCityObject`` class.
-  TeamCity use https://confluence.jetbrains.com/display/TCD10/REST+API#RESTAPI-Locator for find objects.
-* ``set_*`` and ``update_*`` function - ``body`` - named argument, must be one of ``dohq_teamcity.TeamCityObject`` class.
-* All function - ``async_req`` - read more below.
 
 
 Advanced HTTP configuration
@@ -163,8 +214,8 @@ Advanced HTTP configuration
 HTTP requests to the TeamCity servers.
 
 
-Asynchronous request
----------------
+Asynchronous requests
+---------------------
 All method makes a synchronous HTTP request by default. To make an asynchronous HTTP request, please pass ``async_req=True``.
 
 .. code-block:: python

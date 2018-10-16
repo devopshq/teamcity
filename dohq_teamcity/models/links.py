@@ -50,8 +50,6 @@ class Links(TeamCityObject):
         :return: The count of this Links.  # noqa: E501
         :rtype: int
         """
-        if self._count is None:
-            self._read_if_needed()
         return self._count
 
     @count.setter
@@ -73,8 +71,6 @@ class Links(TeamCityObject):
         :return: The link of this Links.  # noqa: E501
         :rtype: list[Link]
         """
-        if self._link is None:
-            self._read_if_needed()
         return self._link
 
     @link.setter

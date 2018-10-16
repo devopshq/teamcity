@@ -65,8 +65,6 @@ class Agents(TeamCityObject):
         :return: The agent of this Agents.  # noqa: E501
         :rtype: list[Agent]
         """
-        if self._agent is None:
-            self._read_if_needed()
         return self._agent
 
     @agent.setter
@@ -88,8 +86,6 @@ class Agents(TeamCityObject):
         :return: The count of this Agents.  # noqa: E501
         :rtype: int
         """
-        if self._count is None:
-            self._read_if_needed()
         return self._count
 
     @count.setter
@@ -111,8 +107,6 @@ class Agents(TeamCityObject):
         :return: The href of this Agents.  # noqa: E501
         :rtype: str
         """
-        if self._href is None:
-            self._read_if_needed()
         return self._href
 
     @href.setter
@@ -134,8 +128,6 @@ class Agents(TeamCityObject):
         :return: The next_href of this Agents.  # noqa: E501
         :rtype: str
         """
-        if self._next_href is None:
-            self._read_if_needed()
         return self._next_href
 
     @next_href.setter
@@ -157,8 +149,6 @@ class Agents(TeamCityObject):
         :return: The prev_href of this Agents.  # noqa: E501
         :rtype: str
         """
-        if self._prev_href is None:
-            self._read_if_needed()
         return self._prev_href
 
     @prev_href.setter

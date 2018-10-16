@@ -53,8 +53,6 @@ class VcsCheckStatus(TeamCityObject):
         :return: The requestor_type of this VcsCheckStatus.  # noqa: E501
         :rtype: str
         """
-        if self._requestor_type is None:
-            self._read_if_needed()
         return self._requestor_type
 
     @requestor_type.setter
@@ -76,8 +74,6 @@ class VcsCheckStatus(TeamCityObject):
         :return: The status of this VcsCheckStatus.  # noqa: E501
         :rtype: str
         """
-        if self._status is None:
-            self._read_if_needed()
         return self._status
 
     @status.setter
@@ -99,8 +95,6 @@ class VcsCheckStatus(TeamCityObject):
         :return: The timestamp of this VcsCheckStatus.  # noqa: E501
         :rtype: str
         """
-        if self._timestamp is None:
-            self._read_if_needed()
         return self._timestamp
 
     @timestamp.setter

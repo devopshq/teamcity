@@ -50,8 +50,6 @@ class Plugins(TeamCityObject):
         :return: The count of this Plugins.  # noqa: E501
         :rtype: int
         """
-        if self._count is None:
-            self._read_if_needed()
         return self._count
 
     @count.setter
@@ -73,8 +71,6 @@ class Plugins(TeamCityObject):
         :return: The plugin of this Plugins.  # noqa: E501
         :rtype: list[Plugin]
         """
-        if self._plugin is None:
-            self._read_if_needed()
         return self._plugin
 
     @plugin.setter

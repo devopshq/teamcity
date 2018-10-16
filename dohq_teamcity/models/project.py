@@ -152,8 +152,6 @@ class Project(TeamCityObject):
         :return: The archived of this Project.  # noqa: E501
         :rtype: bool
         """
-        if self._archived is None:
-            self._read_if_needed()
         return self._archived
 
     @archived.setter
@@ -175,8 +173,6 @@ class Project(TeamCityObject):
         :return: The build_types of this Project.  # noqa: E501
         :rtype: BuildTypes
         """
-        if self._build_types is None:
-            self._read_if_needed()
         return self._build_types
 
     @build_types.setter
@@ -198,8 +194,6 @@ class Project(TeamCityObject):
         :return: The description of this Project.  # noqa: E501
         :rtype: str
         """
-        if self._description is None:
-            self._read_if_needed()
         return self._description
 
     @description.setter
@@ -221,8 +215,6 @@ class Project(TeamCityObject):
         :return: The href of this Project.  # noqa: E501
         :rtype: str
         """
-        if self._href is None:
-            self._read_if_needed()
         return self._href
 
     @href.setter
@@ -244,8 +236,6 @@ class Project(TeamCityObject):
         :return: The id of this Project.  # noqa: E501
         :rtype: str
         """
-        if self._id is None:
-            self._read_if_needed()
         return self._id
 
     @id.setter
@@ -267,8 +257,6 @@ class Project(TeamCityObject):
         :return: The internal_id of this Project.  # noqa: E501
         :rtype: str
         """
-        if self._internal_id is None:
-            self._read_if_needed()
         return self._internal_id
 
     @internal_id.setter
@@ -290,8 +278,6 @@ class Project(TeamCityObject):
         :return: The links of this Project.  # noqa: E501
         :rtype: Links
         """
-        if self._links is None:
-            self._read_if_needed()
         return self._links
 
     @links.setter
@@ -313,8 +299,6 @@ class Project(TeamCityObject):
         :return: The locator of this Project.  # noqa: E501
         :rtype: str
         """
-        if self._locator is None:
-            self._read_if_needed()
         return self._locator
 
     @locator.setter
@@ -336,8 +320,6 @@ class Project(TeamCityObject):
         :return: The name of this Project.  # noqa: E501
         :rtype: str
         """
-        if self._name is None:
-            self._read_if_needed()
         return self._name
 
     @name.setter
@@ -359,8 +341,6 @@ class Project(TeamCityObject):
         :return: The parameters of this Project.  # noqa: E501
         :rtype: Properties
         """
-        if self._parameters is None:
-            self._read_if_needed()
         return self._parameters
 
     @parameters.setter
@@ -382,8 +362,6 @@ class Project(TeamCityObject):
         :return: The parent_project of this Project.  # noqa: E501
         :rtype: Project
         """
-        if self._parent_project is None:
-            self._read_if_needed()
         return self._parent_project
 
     @parent_project.setter
@@ -405,8 +383,6 @@ class Project(TeamCityObject):
         :return: The parent_project_id of this Project.  # noqa: E501
         :rtype: str
         """
-        if self._parent_project_id is None:
-            self._read_if_needed()
         return self._parent_project_id
 
     @parent_project_id.setter
@@ -428,8 +404,6 @@ class Project(TeamCityObject):
         :return: The parent_project_internal_id of this Project.  # noqa: E501
         :rtype: str
         """
-        if self._parent_project_internal_id is None:
-            self._read_if_needed()
         return self._parent_project_internal_id
 
     @parent_project_internal_id.setter
@@ -451,8 +425,6 @@ class Project(TeamCityObject):
         :return: The parent_project_name of this Project.  # noqa: E501
         :rtype: str
         """
-        if self._parent_project_name is None:
-            self._read_if_needed()
         return self._parent_project_name
 
     @parent_project_name.setter
@@ -474,8 +446,6 @@ class Project(TeamCityObject):
         :return: The project_features of this Project.  # noqa: E501
         :rtype: ProjectFeatures
         """
-        if self._project_features is None:
-            self._read_if_needed()
         return self._project_features
 
     @project_features.setter
@@ -497,8 +467,6 @@ class Project(TeamCityObject):
         :return: The projects of this Project.  # noqa: E501
         :rtype: Projects
         """
-        if self._projects is None:
-            self._read_if_needed()
         return self._projects
 
     @projects.setter
@@ -520,8 +488,6 @@ class Project(TeamCityObject):
         :return: The read_only_ui of this Project.  # noqa: E501
         :rtype: StateField
         """
-        if self._read_only_ui is None:
-            self._read_if_needed()
         return self._read_only_ui
 
     @read_only_ui.setter
@@ -543,8 +509,6 @@ class Project(TeamCityObject):
         :return: The templates of this Project.  # noqa: E501
         :rtype: BuildTypes
         """
-        if self._templates is None:
-            self._read_if_needed()
         return self._templates
 
     @templates.setter
@@ -566,8 +530,6 @@ class Project(TeamCityObject):
         :return: The uuid of this Project.  # noqa: E501
         :rtype: str
         """
-        if self._uuid is None:
-            self._read_if_needed()
         return self._uuid
 
     @uuid.setter
@@ -589,8 +551,6 @@ class Project(TeamCityObject):
         :return: The vcs_roots of this Project.  # noqa: E501
         :rtype: VcsRoots
         """
-        if self._vcs_roots is None:
-            self._read_if_needed()
         return self._vcs_roots
 
     @vcs_roots.setter
@@ -612,8 +572,6 @@ class Project(TeamCityObject):
         :return: The web_url of this Project.  # noqa: E501
         :rtype: str
         """
-        if self._web_url is None:
-            self._read_if_needed()
         return self._web_url
 
     @web_url.setter

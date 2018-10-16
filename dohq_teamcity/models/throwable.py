@@ -66,8 +66,6 @@ class Throwable(TeamCityObject):
         :return: The cause of this Throwable.  # noqa: E501
         :rtype: Throwable
         """
-        if self._cause is None:
-            self._read_if_needed()
         return self._cause
 
     @cause.setter
@@ -89,8 +87,6 @@ class Throwable(TeamCityObject):
         :return: The localized_message of this Throwable.  # noqa: E501
         :rtype: str
         """
-        if self._localized_message is None:
-            self._read_if_needed()
         return self._localized_message
 
     @localized_message.setter
@@ -112,8 +108,6 @@ class Throwable(TeamCityObject):
         :return: The message of this Throwable.  # noqa: E501
         :rtype: str
         """
-        if self._message is None:
-            self._read_if_needed()
         return self._message
 
     @message.setter
@@ -135,8 +129,6 @@ class Throwable(TeamCityObject):
         :return: The stack_trace of this Throwable.  # noqa: E501
         :rtype: list[StackTraceElement]
         """
-        if self._stack_trace is None:
-            self._read_if_needed()
         return self._stack_trace
 
     @stack_trace.setter
@@ -158,8 +150,6 @@ class Throwable(TeamCityObject):
         :return: The suppressed of this Throwable.  # noqa: E501
         :rtype: list[Throwable]
         """
-        if self._suppressed is None:
-            self._read_if_needed()
         return self._suppressed
 
     @suppressed.setter

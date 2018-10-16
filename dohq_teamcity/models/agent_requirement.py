@@ -75,8 +75,6 @@ class AgentRequirement(TeamCityObject):
         :return: The disabled of this AgentRequirement.  # noqa: E501
         :rtype: bool
         """
-        if self._disabled is None:
-            self._read_if_needed()
         return self._disabled
 
     @disabled.setter
@@ -98,8 +96,6 @@ class AgentRequirement(TeamCityObject):
         :return: The href of this AgentRequirement.  # noqa: E501
         :rtype: str
         """
-        if self._href is None:
-            self._read_if_needed()
         return self._href
 
     @href.setter
@@ -121,8 +117,6 @@ class AgentRequirement(TeamCityObject):
         :return: The id of this AgentRequirement.  # noqa: E501
         :rtype: str
         """
-        if self._id is None:
-            self._read_if_needed()
         return self._id
 
     @id.setter
@@ -144,8 +138,6 @@ class AgentRequirement(TeamCityObject):
         :return: The inherited of this AgentRequirement.  # noqa: E501
         :rtype: bool
         """
-        if self._inherited is None:
-            self._read_if_needed()
         return self._inherited
 
     @inherited.setter
@@ -167,8 +159,6 @@ class AgentRequirement(TeamCityObject):
         :return: The name of this AgentRequirement.  # noqa: E501
         :rtype: str
         """
-        if self._name is None:
-            self._read_if_needed()
         return self._name
 
     @name.setter
@@ -190,8 +180,6 @@ class AgentRequirement(TeamCityObject):
         :return: The properties of this AgentRequirement.  # noqa: E501
         :rtype: Properties
         """
-        if self._properties is None:
-            self._read_if_needed()
         return self._properties
 
     @properties.setter
@@ -213,8 +201,6 @@ class AgentRequirement(TeamCityObject):
         :return: The type of this AgentRequirement.  # noqa: E501
         :rtype: str
         """
-        if self._type is None:
-            self._read_if_needed()
         return self._type
 
     @type.setter

@@ -60,8 +60,6 @@ class VcsRootEntry(TeamCityObject):
         :return: The checkout_rules of this VcsRootEntry.  # noqa: E501
         :rtype: str
         """
-        if self._checkout_rules is None:
-            self._read_if_needed()
         return self._checkout_rules
 
     @checkout_rules.setter
@@ -83,8 +81,6 @@ class VcsRootEntry(TeamCityObject):
         :return: The id of this VcsRootEntry.  # noqa: E501
         :rtype: str
         """
-        if self._id is None:
-            self._read_if_needed()
         return self._id
 
     @id.setter
@@ -106,8 +102,6 @@ class VcsRootEntry(TeamCityObject):
         :return: The inherited of this VcsRootEntry.  # noqa: E501
         :rtype: bool
         """
-        if self._inherited is None:
-            self._read_if_needed()
         return self._inherited
 
     @inherited.setter
@@ -129,8 +123,6 @@ class VcsRootEntry(TeamCityObject):
         :return: The vcs_root of this VcsRootEntry.  # noqa: E501
         :rtype: VcsRoot
         """
-        if self._vcs_root is None:
-            self._read_if_needed()
         return self._vcs_root
 
     @vcs_root.setter

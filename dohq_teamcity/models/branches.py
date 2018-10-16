@@ -50,8 +50,6 @@ class Branches(TeamCityObject):
         :return: The branch of this Branches.  # noqa: E501
         :rtype: list[Branch]
         """
-        if self._branch is None:
-            self._read_if_needed()
         return self._branch
 
     @branch.setter
@@ -73,8 +71,6 @@ class Branches(TeamCityObject):
         :return: The count of this Branches.  # noqa: E501
         :rtype: int
         """
-        if self._count is None:
-            self._read_if_needed()
         return self._count
 
     @count.setter

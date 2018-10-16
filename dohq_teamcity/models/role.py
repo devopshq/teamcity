@@ -53,8 +53,6 @@ class Role(TeamCityObject):
         :return: The href of this Role.  # noqa: E501
         :rtype: str
         """
-        if self._href is None:
-            self._read_if_needed()
         return self._href
 
     @href.setter
@@ -76,8 +74,6 @@ class Role(TeamCityObject):
         :return: The role_id of this Role.  # noqa: E501
         :rtype: str
         """
-        if self._role_id is None:
-            self._read_if_needed()
         return self._role_id
 
     @role_id.setter
@@ -99,8 +95,6 @@ class Role(TeamCityObject):
         :return: The scope of this Role.  # noqa: E501
         :rtype: str
         """
-        if self._scope is None:
-            self._read_if_needed()
         return self._scope
 
     @scope.setter

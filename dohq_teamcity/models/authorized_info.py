@@ -50,8 +50,6 @@ class AuthorizedInfo(TeamCityObject):
         :return: The comment of this AuthorizedInfo.  # noqa: E501
         :rtype: Comment
         """
-        if self._comment is None:
-            self._read_if_needed()
         return self._comment
 
     @comment.setter
@@ -73,8 +71,6 @@ class AuthorizedInfo(TeamCityObject):
         :return: The status of this AuthorizedInfo.  # noqa: E501
         :rtype: bool
         """
-        if self._status is None:
-            self._read_if_needed()
         return self._status
 
     @status.setter

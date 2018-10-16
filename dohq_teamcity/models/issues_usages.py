@@ -55,8 +55,6 @@ class IssuesUsages(TeamCityObject):
         :return: The count of this IssuesUsages.  # noqa: E501
         :rtype: int
         """
-        if self._count is None:
-            self._read_if_needed()
         return self._count
 
     @count.setter
@@ -78,8 +76,6 @@ class IssuesUsages(TeamCityObject):
         :return: The href of this IssuesUsages.  # noqa: E501
         :rtype: str
         """
-        if self._href is None:
-            self._read_if_needed()
         return self._href
 
     @href.setter
@@ -101,8 +97,6 @@ class IssuesUsages(TeamCityObject):
         :return: The issue_usage of this IssuesUsages.  # noqa: E501
         :rtype: list[IssueUsage]
         """
-        if self._issue_usage is None:
-            self._read_if_needed()
         return self._issue_usage
 
     @issue_usage.setter

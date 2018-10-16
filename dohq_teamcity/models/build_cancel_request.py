@@ -48,8 +48,6 @@ class BuildCancelRequest(TeamCityObject):
         :return: The comment of this BuildCancelRequest.  # noqa: E501
         :rtype: str
         """
-        if self._comment is None:
-            self._read_if_needed()
         return self._comment
 
     @comment.setter
@@ -71,8 +69,6 @@ class BuildCancelRequest(TeamCityObject):
         :return: The readd_into_queue of this BuildCancelRequest.  # noqa: E501
         :rtype: bool
         """
-        if self._readd_into_queue is None:
-            self._read_if_needed()
         return self._readd_into_queue
 
     @readd_into_queue.setter

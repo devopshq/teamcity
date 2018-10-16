@@ -76,8 +76,6 @@ class AgentPool(TeamCityObject):
         :return: The agents of this AgentPool.  # noqa: E501
         :rtype: Agents
         """
-        if self._agents is None:
-            self._read_if_needed()
         return self._agents
 
     @agents.setter
@@ -99,8 +97,6 @@ class AgentPool(TeamCityObject):
         :return: The href of this AgentPool.  # noqa: E501
         :rtype: str
         """
-        if self._href is None:
-            self._read_if_needed()
         return self._href
 
     @href.setter
@@ -122,8 +118,6 @@ class AgentPool(TeamCityObject):
         :return: The id of this AgentPool.  # noqa: E501
         :rtype: int
         """
-        if self._id is None:
-            self._read_if_needed()
         return self._id
 
     @id.setter
@@ -145,8 +139,6 @@ class AgentPool(TeamCityObject):
         :return: The locator of this AgentPool.  # noqa: E501
         :rtype: str
         """
-        if self._locator is None:
-            self._read_if_needed()
         return self._locator
 
     @locator.setter
@@ -168,8 +160,6 @@ class AgentPool(TeamCityObject):
         :return: The max_agents of this AgentPool.  # noqa: E501
         :rtype: int
         """
-        if self._max_agents is None:
-            self._read_if_needed()
         return self._max_agents
 
     @max_agents.setter
@@ -191,8 +181,6 @@ class AgentPool(TeamCityObject):
         :return: The name of this AgentPool.  # noqa: E501
         :rtype: str
         """
-        if self._name is None:
-            self._read_if_needed()
         return self._name
 
     @name.setter
@@ -214,8 +202,6 @@ class AgentPool(TeamCityObject):
         :return: The projects of this AgentPool.  # noqa: E501
         :rtype: Projects
         """
-        if self._projects is None:
-            self._read_if_needed()
         return self._projects
 
     @projects.setter

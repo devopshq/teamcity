@@ -55,8 +55,6 @@ class ArtifactDependencies(TeamCityObject):
         :return: The artifact_dependency of this ArtifactDependencies.  # noqa: E501
         :rtype: list[ArtifactDependency]
         """
-        if self._artifact_dependency is None:
-            self._read_if_needed()
         return self._artifact_dependency
 
     @artifact_dependency.setter
@@ -78,8 +76,6 @@ class ArtifactDependencies(TeamCityObject):
         :return: The count of this ArtifactDependencies.  # noqa: E501
         :rtype: int
         """
-        if self._count is None:
-            self._read_if_needed()
         return self._count
 
     @count.setter
@@ -101,8 +97,6 @@ class ArtifactDependencies(TeamCityObject):
         :return: The replace of this ArtifactDependencies.  # noqa: E501
         :rtype: str
         """
-        if self._replace is None:
-            self._read_if_needed()
         return self._replace
 
     @replace.setter

@@ -70,8 +70,6 @@ class Mutes(TeamCityObject):
         :return: The count of this Mutes.  # noqa: E501
         :rtype: int
         """
-        if self._count is None:
-            self._read_if_needed()
         return self._count
 
     @count.setter
@@ -93,8 +91,6 @@ class Mutes(TeamCityObject):
         :return: The default of this Mutes.  # noqa: E501
         :rtype: bool
         """
-        if self._default is None:
-            self._read_if_needed()
         return self._default
 
     @default.setter
@@ -116,8 +112,6 @@ class Mutes(TeamCityObject):
         :return: The href of this Mutes.  # noqa: E501
         :rtype: str
         """
-        if self._href is None:
-            self._read_if_needed()
         return self._href
 
     @href.setter
@@ -139,8 +133,6 @@ class Mutes(TeamCityObject):
         :return: The mute of this Mutes.  # noqa: E501
         :rtype: list[Mute]
         """
-        if self._mute is None:
-            self._read_if_needed()
         return self._mute
 
     @mute.setter
@@ -162,8 +154,6 @@ class Mutes(TeamCityObject):
         :return: The next_href of this Mutes.  # noqa: E501
         :rtype: str
         """
-        if self._next_href is None:
-            self._read_if_needed()
         return self._next_href
 
     @next_href.setter
@@ -185,8 +175,6 @@ class Mutes(TeamCityObject):
         :return: The prev_href of this Mutes.  # noqa: E501
         :rtype: str
         """
-        if self._prev_href is None:
-            self._read_if_needed()
         return self._prev_href
 
     @prev_href.setter

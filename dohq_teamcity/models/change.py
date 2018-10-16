@@ -124,8 +124,6 @@ class Change(TeamCityObject):
         :return: The comment of this Change.  # noqa: E501
         :rtype: str
         """
-        if self._comment is None:
-            self._read_if_needed()
         return self._comment
 
     @comment.setter
@@ -147,8 +145,6 @@ class Change(TeamCityObject):
         :return: The _date of this Change.  # noqa: E501
         :rtype: str
         """
-        if self.__date is None:
-            self._read_if_needed()
         return self.__date
 
     @_date.setter
@@ -170,8 +166,6 @@ class Change(TeamCityObject):
         :return: The files of this Change.  # noqa: E501
         :rtype: FileChanges
         """
-        if self._files is None:
-            self._read_if_needed()
         return self._files
 
     @files.setter
@@ -193,8 +187,6 @@ class Change(TeamCityObject):
         :return: The href of this Change.  # noqa: E501
         :rtype: str
         """
-        if self._href is None:
-            self._read_if_needed()
         return self._href
 
     @href.setter
@@ -216,8 +208,6 @@ class Change(TeamCityObject):
         :return: The id of this Change.  # noqa: E501
         :rtype: int
         """
-        if self._id is None:
-            self._read_if_needed()
         return self._id
 
     @id.setter
@@ -239,8 +229,6 @@ class Change(TeamCityObject):
         :return: The internal_version of this Change.  # noqa: E501
         :rtype: str
         """
-        if self._internal_version is None:
-            self._read_if_needed()
         return self._internal_version
 
     @internal_version.setter
@@ -262,8 +250,6 @@ class Change(TeamCityObject):
         :return: The locator of this Change.  # noqa: E501
         :rtype: str
         """
-        if self._locator is None:
-            self._read_if_needed()
         return self._locator
 
     @locator.setter
@@ -285,8 +271,6 @@ class Change(TeamCityObject):
         :return: The parent_changes of this Change.  # noqa: E501
         :rtype: Changes
         """
-        if self._parent_changes is None:
-            self._read_if_needed()
         return self._parent_changes
 
     @parent_changes.setter
@@ -308,8 +292,6 @@ class Change(TeamCityObject):
         :return: The parent_revisions of this Change.  # noqa: E501
         :rtype: Items
         """
-        if self._parent_revisions is None:
-            self._read_if_needed()
         return self._parent_revisions
 
     @parent_revisions.setter
@@ -331,8 +313,6 @@ class Change(TeamCityObject):
         :return: The personal of this Change.  # noqa: E501
         :rtype: bool
         """
-        if self._personal is None:
-            self._read_if_needed()
         return self._personal
 
     @personal.setter
@@ -354,8 +334,6 @@ class Change(TeamCityObject):
         :return: The registration_date of this Change.  # noqa: E501
         :rtype: str
         """
-        if self._registration_date is None:
-            self._read_if_needed()
         return self._registration_date
 
     @registration_date.setter
@@ -377,8 +355,6 @@ class Change(TeamCityObject):
         :return: The user of this Change.  # noqa: E501
         :rtype: User
         """
-        if self._user is None:
-            self._read_if_needed()
         return self._user
 
     @user.setter
@@ -400,8 +376,6 @@ class Change(TeamCityObject):
         :return: The username of this Change.  # noqa: E501
         :rtype: str
         """
-        if self._username is None:
-            self._read_if_needed()
         return self._username
 
     @username.setter
@@ -423,8 +397,6 @@ class Change(TeamCityObject):
         :return: The vcs_root_instance of this Change.  # noqa: E501
         :rtype: VcsRootInstance
         """
-        if self._vcs_root_instance is None:
-            self._read_if_needed()
         return self._vcs_root_instance
 
     @vcs_root_instance.setter
@@ -446,8 +418,6 @@ class Change(TeamCityObject):
         :return: The version of this Change.  # noqa: E501
         :rtype: str
         """
-        if self._version is None:
-            self._read_if_needed()
         return self._version
 
     @version.setter
@@ -469,8 +439,6 @@ class Change(TeamCityObject):
         :return: The web_url of this Change.  # noqa: E501
         :rtype: str
         """
-        if self._web_url is None:
-            self._read_if_needed()
         return self._web_url
 
     @web_url.setter
