@@ -50,6 +50,8 @@ class Compatibilities(TeamCityObject):
         :return: The compatibility of this Compatibilities.  # noqa: E501
         :rtype: list[Compatibility]
         """
+        if self._compatibility is None:
+            self._read_if_needed()
         return self._compatibility
 
     @compatibility.setter
@@ -71,6 +73,8 @@ class Compatibilities(TeamCityObject):
         :return: The count of this Compatibilities.  # noqa: E501
         :rtype: int
         """
+        if self._count is None:
+            self._read_if_needed()
         return self._count
 
     @count.setter

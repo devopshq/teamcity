@@ -65,6 +65,8 @@ class Tests(TeamCityObject):
         :return: The count of this Tests.  # noqa: E501
         :rtype: int
         """
+        if self._count is None:
+            self._read_if_needed()
         return self._count
 
     @count.setter
@@ -86,6 +88,8 @@ class Tests(TeamCityObject):
         :return: The default of this Tests.  # noqa: E501
         :rtype: bool
         """
+        if self._default is None:
+            self._read_if_needed()
         return self._default
 
     @default.setter
@@ -107,6 +111,8 @@ class Tests(TeamCityObject):
         :return: The next_href of this Tests.  # noqa: E501
         :rtype: str
         """
+        if self._next_href is None:
+            self._read_if_needed()
         return self._next_href
 
     @next_href.setter
@@ -128,6 +134,8 @@ class Tests(TeamCityObject):
         :return: The prev_href of this Tests.  # noqa: E501
         :rtype: str
         """
+        if self._prev_href is None:
+            self._read_if_needed()
         return self._prev_href
 
     @prev_href.setter
@@ -149,6 +157,8 @@ class Tests(TeamCityObject):
         :return: The test of this Tests.  # noqa: E501
         :rtype: list[Test]
         """
+        if self._test is None:
+            self._read_if_needed()
         return self._test
 
     @test.setter

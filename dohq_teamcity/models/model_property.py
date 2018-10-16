@@ -60,6 +60,8 @@ class ModelProperty(TeamCityObject):
         :return: The inherited of this ModelProperty.  # noqa: E501
         :rtype: bool
         """
+        if self._inherited is None:
+            self._read_if_needed()
         return self._inherited
 
     @inherited.setter
@@ -81,6 +83,8 @@ class ModelProperty(TeamCityObject):
         :return: The name of this ModelProperty.  # noqa: E501
         :rtype: str
         """
+        if self._name is None:
+            self._read_if_needed()
         return self._name
 
     @name.setter
@@ -102,6 +106,8 @@ class ModelProperty(TeamCityObject):
         :return: The type of this ModelProperty.  # noqa: E501
         :rtype: Type
         """
+        if self._type is None:
+            self._read_if_needed()
         return self._type
 
     @type.setter
@@ -123,6 +129,8 @@ class ModelProperty(TeamCityObject):
         :return: The value of this ModelProperty.  # noqa: E501
         :rtype: str
         """
+        if self._value is None:
+            self._read_if_needed()
         return self._value
 
     @value.setter

@@ -45,6 +45,8 @@ class BackupProcessManager(TeamCityObject):
         :return: The current_backup_process of this BackupProcessManager.  # noqa: E501
         :rtype: BackupProcess
         """
+        if self._current_backup_process is None:
+            self._read_if_needed()
         return self._current_backup_process
 
     @current_backup_process.setter

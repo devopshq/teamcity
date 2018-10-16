@@ -55,6 +55,8 @@ class EnabledInfo(TeamCityObject):
         :return: The comment of this EnabledInfo.  # noqa: E501
         :rtype: Comment
         """
+        if self._comment is None:
+            self._read_if_needed()
         return self._comment
 
     @comment.setter
@@ -76,6 +78,8 @@ class EnabledInfo(TeamCityObject):
         :return: The status of this EnabledInfo.  # noqa: E501
         :rtype: bool
         """
+        if self._status is None:
+            self._read_if_needed()
         return self._status
 
     @status.setter
@@ -97,6 +101,8 @@ class EnabledInfo(TeamCityObject):
         :return: The status_switch_time of this EnabledInfo.  # noqa: E501
         :rtype: str
         """
+        if self._status_switch_time is None:
+            self._read_if_needed()
         return self._status_switch_time
 
     @status_switch_time.setter

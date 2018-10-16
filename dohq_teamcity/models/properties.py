@@ -55,6 +55,8 @@ class Properties(TeamCityObject):
         :return: The count of this Properties.  # noqa: E501
         :rtype: int
         """
+        if self._count is None:
+            self._read_if_needed()
         return self._count
 
     @count.setter
@@ -76,6 +78,8 @@ class Properties(TeamCityObject):
         :return: The href of this Properties.  # noqa: E501
         :rtype: str
         """
+        if self._href is None:
+            self._read_if_needed()
         return self._href
 
     @href.setter
@@ -97,6 +101,8 @@ class Properties(TeamCityObject):
         :return: The _property of this Properties.  # noqa: E501
         :rtype: list[ModelProperty]
         """
+        if self.__property is None:
+            self._read_if_needed()
         return self.__property
 
     @_property.setter

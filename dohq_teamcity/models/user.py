@@ -107,6 +107,8 @@ class User(TeamCityObject):
         :return: The email of this User.  # noqa: E501
         :rtype: str
         """
+        if self._email is None:
+            self._read_if_needed()
         return self._email
 
     @email.setter
@@ -128,6 +130,8 @@ class User(TeamCityObject):
         :return: The groups of this User.  # noqa: E501
         :rtype: Groups
         """
+        if self._groups is None:
+            self._read_if_needed()
         return self._groups
 
     @groups.setter
@@ -149,6 +153,8 @@ class User(TeamCityObject):
         :return: The has_password of this User.  # noqa: E501
         :rtype: bool
         """
+        if self._has_password is None:
+            self._read_if_needed()
         return self._has_password
 
     @has_password.setter
@@ -170,6 +176,8 @@ class User(TeamCityObject):
         :return: The href of this User.  # noqa: E501
         :rtype: str
         """
+        if self._href is None:
+            self._read_if_needed()
         return self._href
 
     @href.setter
@@ -191,6 +199,8 @@ class User(TeamCityObject):
         :return: The id of this User.  # noqa: E501
         :rtype: int
         """
+        if self._id is None:
+            self._read_if_needed()
         return self._id
 
     @id.setter
@@ -212,6 +222,8 @@ class User(TeamCityObject):
         :return: The last_login of this User.  # noqa: E501
         :rtype: str
         """
+        if self._last_login is None:
+            self._read_if_needed()
         return self._last_login
 
     @last_login.setter
@@ -233,6 +245,8 @@ class User(TeamCityObject):
         :return: The locator of this User.  # noqa: E501
         :rtype: str
         """
+        if self._locator is None:
+            self._read_if_needed()
         return self._locator
 
     @locator.setter
@@ -254,6 +268,8 @@ class User(TeamCityObject):
         :return: The name of this User.  # noqa: E501
         :rtype: str
         """
+        if self._name is None:
+            self._read_if_needed()
         return self._name
 
     @name.setter
@@ -275,6 +291,8 @@ class User(TeamCityObject):
         :return: The password of this User.  # noqa: E501
         :rtype: str
         """
+        if self._password is None:
+            self._read_if_needed()
         return self._password
 
     @password.setter
@@ -296,6 +314,8 @@ class User(TeamCityObject):
         :return: The properties of this User.  # noqa: E501
         :rtype: Properties
         """
+        if self._properties is None:
+            self._read_if_needed()
         return self._properties
 
     @properties.setter
@@ -317,6 +337,8 @@ class User(TeamCityObject):
         :return: The realm of this User.  # noqa: E501
         :rtype: str
         """
+        if self._realm is None:
+            self._read_if_needed()
         return self._realm
 
     @realm.setter
@@ -338,6 +360,8 @@ class User(TeamCityObject):
         :return: The roles of this User.  # noqa: E501
         :rtype: Roles
         """
+        if self._roles is None:
+            self._read_if_needed()
         return self._roles
 
     @roles.setter
@@ -359,6 +383,8 @@ class User(TeamCityObject):
         :return: The username of this User.  # noqa: E501
         :rtype: str
         """
+        if self._username is None:
+            self._read_if_needed()
         return self._username
 
     @username.setter

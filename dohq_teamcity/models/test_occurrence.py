@@ -134,6 +134,8 @@ class TestOccurrence(TeamCityObject):
         :return: The build of this TestOccurrence.  # noqa: E501
         :rtype: Build
         """
+        if self._build is None:
+            self._read_if_needed()
         return self._build
 
     @build.setter
@@ -155,6 +157,8 @@ class TestOccurrence(TeamCityObject):
         :return: The currently_investigated of this TestOccurrence.  # noqa: E501
         :rtype: bool
         """
+        if self._currently_investigated is None:
+            self._read_if_needed()
         return self._currently_investigated
 
     @currently_investigated.setter
@@ -176,6 +180,8 @@ class TestOccurrence(TeamCityObject):
         :return: The currently_muted of this TestOccurrence.  # noqa: E501
         :rtype: bool
         """
+        if self._currently_muted is None:
+            self._read_if_needed()
         return self._currently_muted
 
     @currently_muted.setter
@@ -197,6 +203,8 @@ class TestOccurrence(TeamCityObject):
         :return: The details of this TestOccurrence.  # noqa: E501
         :rtype: str
         """
+        if self._details is None:
+            self._read_if_needed()
         return self._details
 
     @details.setter
@@ -218,6 +226,8 @@ class TestOccurrence(TeamCityObject):
         :return: The duration of this TestOccurrence.  # noqa: E501
         :rtype: int
         """
+        if self._duration is None:
+            self._read_if_needed()
         return self._duration
 
     @duration.setter
@@ -239,6 +249,8 @@ class TestOccurrence(TeamCityObject):
         :return: The first_failed of this TestOccurrence.  # noqa: E501
         :rtype: TestOccurrence
         """
+        if self._first_failed is None:
+            self._read_if_needed()
         return self._first_failed
 
     @first_failed.setter
@@ -260,6 +272,8 @@ class TestOccurrence(TeamCityObject):
         :return: The href of this TestOccurrence.  # noqa: E501
         :rtype: str
         """
+        if self._href is None:
+            self._read_if_needed()
         return self._href
 
     @href.setter
@@ -281,6 +295,8 @@ class TestOccurrence(TeamCityObject):
         :return: The id of this TestOccurrence.  # noqa: E501
         :rtype: str
         """
+        if self._id is None:
+            self._read_if_needed()
         return self._id
 
     @id.setter
@@ -302,6 +318,8 @@ class TestOccurrence(TeamCityObject):
         :return: The ignore_details of this TestOccurrence.  # noqa: E501
         :rtype: str
         """
+        if self._ignore_details is None:
+            self._read_if_needed()
         return self._ignore_details
 
     @ignore_details.setter
@@ -323,6 +341,8 @@ class TestOccurrence(TeamCityObject):
         :return: The ignored of this TestOccurrence.  # noqa: E501
         :rtype: bool
         """
+        if self._ignored is None:
+            self._read_if_needed()
         return self._ignored
 
     @ignored.setter
@@ -344,6 +364,8 @@ class TestOccurrence(TeamCityObject):
         :return: The invocations of this TestOccurrence.  # noqa: E501
         :rtype: TestOccurrences
         """
+        if self._invocations is None:
+            self._read_if_needed()
         return self._invocations
 
     @invocations.setter
@@ -365,6 +387,8 @@ class TestOccurrence(TeamCityObject):
         :return: The mute of this TestOccurrence.  # noqa: E501
         :rtype: Mute
         """
+        if self._mute is None:
+            self._read_if_needed()
         return self._mute
 
     @mute.setter
@@ -386,6 +410,8 @@ class TestOccurrence(TeamCityObject):
         :return: The muted of this TestOccurrence.  # noqa: E501
         :rtype: bool
         """
+        if self._muted is None:
+            self._read_if_needed()
         return self._muted
 
     @muted.setter
@@ -407,6 +433,8 @@ class TestOccurrence(TeamCityObject):
         :return: The name of this TestOccurrence.  # noqa: E501
         :rtype: str
         """
+        if self._name is None:
+            self._read_if_needed()
         return self._name
 
     @name.setter
@@ -428,6 +456,8 @@ class TestOccurrence(TeamCityObject):
         :return: The next_fixed of this TestOccurrence.  # noqa: E501
         :rtype: TestOccurrence
         """
+        if self._next_fixed is None:
+            self._read_if_needed()
         return self._next_fixed
 
     @next_fixed.setter
@@ -449,6 +479,8 @@ class TestOccurrence(TeamCityObject):
         :return: The run_order of this TestOccurrence.  # noqa: E501
         :rtype: str
         """
+        if self._run_order is None:
+            self._read_if_needed()
         return self._run_order
 
     @run_order.setter
@@ -470,6 +502,8 @@ class TestOccurrence(TeamCityObject):
         :return: The status of this TestOccurrence.  # noqa: E501
         :rtype: str
         """
+        if self._status is None:
+            self._read_if_needed()
         return self._status
 
     @status.setter
@@ -491,6 +525,8 @@ class TestOccurrence(TeamCityObject):
         :return: The test of this TestOccurrence.  # noqa: E501
         :rtype: Test
         """
+        if self._test is None:
+            self._read_if_needed()
         return self._test
 
     @test.setter

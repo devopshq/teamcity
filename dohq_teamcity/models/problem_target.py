@@ -56,6 +56,8 @@ class ProblemTarget(TeamCityObject):
         :return: The any_problem of this ProblemTarget.  # noqa: E501
         :rtype: bool
         """
+        if self._any_problem is None:
+            self._read_if_needed()
         return self._any_problem
 
     @any_problem.setter
@@ -77,6 +79,8 @@ class ProblemTarget(TeamCityObject):
         :return: The problems of this ProblemTarget.  # noqa: E501
         :rtype: Problems
         """
+        if self._problems is None:
+            self._read_if_needed()
         return self._problems
 
     @problems.setter
@@ -98,6 +102,8 @@ class ProblemTarget(TeamCityObject):
         :return: The tests of this ProblemTarget.  # noqa: E501
         :rtype: Tests
         """
+        if self._tests is None:
+            self._read_if_needed()
         return self._tests
 
     @tests.setter

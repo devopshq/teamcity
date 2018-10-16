@@ -82,6 +82,8 @@ class File(TeamCityObject):
         :return: The children of this File.  # noqa: E501
         :rtype: Files
         """
+        if self._children is None:
+            self._read_if_needed()
         return self._children
 
     @children.setter
@@ -103,6 +105,8 @@ class File(TeamCityObject):
         :return: The content of this File.  # noqa: E501
         :rtype: Href
         """
+        if self._content is None:
+            self._read_if_needed()
         return self._content
 
     @content.setter
@@ -124,6 +128,8 @@ class File(TeamCityObject):
         :return: The full_name of this File.  # noqa: E501
         :rtype: str
         """
+        if self._full_name is None:
+            self._read_if_needed()
         return self._full_name
 
     @full_name.setter
@@ -145,6 +151,8 @@ class File(TeamCityObject):
         :return: The href of this File.  # noqa: E501
         :rtype: str
         """
+        if self._href is None:
+            self._read_if_needed()
         return self._href
 
     @href.setter
@@ -166,6 +174,8 @@ class File(TeamCityObject):
         :return: The modification_time of this File.  # noqa: E501
         :rtype: str
         """
+        if self._modification_time is None:
+            self._read_if_needed()
         return self._modification_time
 
     @modification_time.setter
@@ -187,6 +197,8 @@ class File(TeamCityObject):
         :return: The name of this File.  # noqa: E501
         :rtype: str
         """
+        if self._name is None:
+            self._read_if_needed()
         return self._name
 
     @name.setter
@@ -208,6 +220,8 @@ class File(TeamCityObject):
         :return: The parent of this File.  # noqa: E501
         :rtype: file
         """
+        if self._parent is None:
+            self._read_if_needed()
         return self._parent
 
     @parent.setter
@@ -229,6 +243,8 @@ class File(TeamCityObject):
         :return: The size of this File.  # noqa: E501
         :rtype: int
         """
+        if self._size is None:
+            self._read_if_needed()
         return self._size
 
     @size.setter

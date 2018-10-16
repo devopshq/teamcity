@@ -50,6 +50,8 @@ class Triggers(TeamCityObject):
         :return: The count of this Triggers.  # noqa: E501
         :rtype: int
         """
+        if self._count is None:
+            self._read_if_needed()
         return self._count
 
     @count.setter
@@ -71,6 +73,8 @@ class Triggers(TeamCityObject):
         :return: The trigger of this Triggers.  # noqa: E501
         :rtype: list[Trigger]
         """
+        if self._trigger is None:
+            self._read_if_needed()
         return self._trigger
 
     @trigger.setter

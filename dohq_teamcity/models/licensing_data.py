@@ -90,6 +90,8 @@ class LicensingData(TeamCityObject):
         :return: The agents_left of this LicensingData.  # noqa: E501
         :rtype: int
         """
+        if self._agents_left is None:
+            self._read_if_needed()
         return self._agents_left
 
     @agents_left.setter
@@ -111,6 +113,8 @@ class LicensingData(TeamCityObject):
         :return: The build_types_left of this LicensingData.  # noqa: E501
         :rtype: int
         """
+        if self._build_types_left is None:
+            self._read_if_needed()
         return self._build_types_left
 
     @build_types_left.setter
@@ -132,6 +136,8 @@ class LicensingData(TeamCityObject):
         :return: The license_keys of this LicensingData.  # noqa: E501
         :rtype: LicenseKeys
         """
+        if self._license_keys is None:
+            self._read_if_needed()
         return self._license_keys
 
     @license_keys.setter
@@ -153,6 +159,8 @@ class LicensingData(TeamCityObject):
         :return: The license_use_exceeded of this LicensingData.  # noqa: E501
         :rtype: bool
         """
+        if self._license_use_exceeded is None:
+            self._read_if_needed()
         return self._license_use_exceeded
 
     @license_use_exceeded.setter
@@ -174,6 +182,8 @@ class LicensingData(TeamCityObject):
         :return: The max_agents of this LicensingData.  # noqa: E501
         :rtype: int
         """
+        if self._max_agents is None:
+            self._read_if_needed()
         return self._max_agents
 
     @max_agents.setter
@@ -195,6 +205,8 @@ class LicensingData(TeamCityObject):
         :return: The max_build_types of this LicensingData.  # noqa: E501
         :rtype: int
         """
+        if self._max_build_types is None:
+            self._read_if_needed()
         return self._max_build_types
 
     @max_build_types.setter
@@ -216,6 +228,8 @@ class LicensingData(TeamCityObject):
         :return: The server_effective_release_date of this LicensingData.  # noqa: E501
         :rtype: str
         """
+        if self._server_effective_release_date is None:
+            self._read_if_needed()
         return self._server_effective_release_date
 
     @server_effective_release_date.setter
@@ -237,6 +251,8 @@ class LicensingData(TeamCityObject):
         :return: The server_license_type of this LicensingData.  # noqa: E501
         :rtype: str
         """
+        if self._server_license_type is None:
+            self._read_if_needed()
         return self._server_license_type
 
     @server_license_type.setter
@@ -258,6 +274,8 @@ class LicensingData(TeamCityObject):
         :return: The unlimited_agents of this LicensingData.  # noqa: E501
         :rtype: bool
         """
+        if self._unlimited_agents is None:
+            self._read_if_needed()
         return self._unlimited_agents
 
     @unlimited_agents.setter
@@ -279,6 +297,8 @@ class LicensingData(TeamCityObject):
         :return: The unlimited_build_types of this LicensingData.  # noqa: E501
         :rtype: bool
         """
+        if self._unlimited_build_types is None:
+            self._read_if_needed()
         return self._unlimited_build_types
 
     @unlimited_build_types.setter

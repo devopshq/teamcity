@@ -53,6 +53,8 @@ class Branch(TeamCityObject):
         :return: The default of this Branch.  # noqa: E501
         :rtype: bool
         """
+        if self._default is None:
+            self._read_if_needed()
         return self._default
 
     @default.setter
@@ -74,6 +76,8 @@ class Branch(TeamCityObject):
         :return: The name of this Branch.  # noqa: E501
         :rtype: str
         """
+        if self._name is None:
+            self._read_if_needed()
         return self._name
 
     @name.setter
@@ -95,6 +99,8 @@ class Branch(TeamCityObject):
         :return: The unspecified of this Branch.  # noqa: E501
         :rtype: bool
         """
+        if self._unspecified is None:
+            self._read_if_needed()
         return self._unspecified
 
     @unspecified.setter

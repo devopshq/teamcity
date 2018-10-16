@@ -50,6 +50,8 @@ class Steps(TeamCityObject):
         :return: The count of this Steps.  # noqa: E501
         :rtype: int
         """
+        if self._count is None:
+            self._read_if_needed()
         return self._count
 
     @count.setter
@@ -71,6 +73,8 @@ class Steps(TeamCityObject):
         :return: The step of this Steps.  # noqa: E501
         :rtype: list[Step]
         """
+        if self._step is None:
+            self._read_if_needed()
         return self._step
 
     @step.setter

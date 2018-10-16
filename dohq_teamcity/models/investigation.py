@@ -89,6 +89,8 @@ class Investigation(TeamCityObject):
         :return: The assignee of this Investigation.  # noqa: E501
         :rtype: User
         """
+        if self._assignee is None:
+            self._read_if_needed()
         return self._assignee
 
     @assignee.setter
@@ -110,6 +112,8 @@ class Investigation(TeamCityObject):
         :return: The assignment of this Investigation.  # noqa: E501
         :rtype: Comment
         """
+        if self._assignment is None:
+            self._read_if_needed()
         return self._assignment
 
     @assignment.setter
@@ -131,6 +135,8 @@ class Investigation(TeamCityObject):
         :return: The href of this Investigation.  # noqa: E501
         :rtype: str
         """
+        if self._href is None:
+            self._read_if_needed()
         return self._href
 
     @href.setter
@@ -152,6 +158,8 @@ class Investigation(TeamCityObject):
         :return: The id of this Investigation.  # noqa: E501
         :rtype: str
         """
+        if self._id is None:
+            self._read_if_needed()
         return self._id
 
     @id.setter
@@ -173,6 +181,8 @@ class Investigation(TeamCityObject):
         :return: The resolution of this Investigation.  # noqa: E501
         :rtype: Resolution
         """
+        if self._resolution is None:
+            self._read_if_needed()
         return self._resolution
 
     @resolution.setter
@@ -194,6 +204,8 @@ class Investigation(TeamCityObject):
         :return: The responsible of this Investigation.  # noqa: E501
         :rtype: User
         """
+        if self._responsible is None:
+            self._read_if_needed()
         return self._responsible
 
     @responsible.setter
@@ -215,6 +227,8 @@ class Investigation(TeamCityObject):
         :return: The scope of this Investigation.  # noqa: E501
         :rtype: ProblemScope
         """
+        if self._scope is None:
+            self._read_if_needed()
         return self._scope
 
     @scope.setter
@@ -236,6 +250,8 @@ class Investigation(TeamCityObject):
         :return: The state of this Investigation.  # noqa: E501
         :rtype: str
         """
+        if self._state is None:
+            self._read_if_needed()
         return self._state
 
     @state.setter
@@ -257,6 +273,8 @@ class Investigation(TeamCityObject):
         :return: The target of this Investigation.  # noqa: E501
         :rtype: ProblemTarget
         """
+        if self._target is None:
+            self._read_if_needed()
         return self._target
 
     @target.setter

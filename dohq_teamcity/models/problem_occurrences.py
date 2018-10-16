@@ -95,6 +95,8 @@ class ProblemOccurrences(TeamCityObject):
         :return: The count of this ProblemOccurrences.  # noqa: E501
         :rtype: int
         """
+        if self._count is None:
+            self._read_if_needed()
         return self._count
 
     @count.setter
@@ -116,6 +118,8 @@ class ProblemOccurrences(TeamCityObject):
         :return: The default of this ProblemOccurrences.  # noqa: E501
         :rtype: bool
         """
+        if self._default is None:
+            self._read_if_needed()
         return self._default
 
     @default.setter
@@ -137,6 +141,8 @@ class ProblemOccurrences(TeamCityObject):
         :return: The failed of this ProblemOccurrences.  # noqa: E501
         :rtype: int
         """
+        if self._failed is None:
+            self._read_if_needed()
         return self._failed
 
     @failed.setter
@@ -158,6 +164,8 @@ class ProblemOccurrences(TeamCityObject):
         :return: The href of this ProblemOccurrences.  # noqa: E501
         :rtype: str
         """
+        if self._href is None:
+            self._read_if_needed()
         return self._href
 
     @href.setter
@@ -179,6 +187,8 @@ class ProblemOccurrences(TeamCityObject):
         :return: The ignored of this ProblemOccurrences.  # noqa: E501
         :rtype: int
         """
+        if self._ignored is None:
+            self._read_if_needed()
         return self._ignored
 
     @ignored.setter
@@ -200,6 +210,8 @@ class ProblemOccurrences(TeamCityObject):
         :return: The muted of this ProblemOccurrences.  # noqa: E501
         :rtype: int
         """
+        if self._muted is None:
+            self._read_if_needed()
         return self._muted
 
     @muted.setter
@@ -221,6 +233,8 @@ class ProblemOccurrences(TeamCityObject):
         :return: The new_failed of this ProblemOccurrences.  # noqa: E501
         :rtype: int
         """
+        if self._new_failed is None:
+            self._read_if_needed()
         return self._new_failed
 
     @new_failed.setter
@@ -242,6 +256,8 @@ class ProblemOccurrences(TeamCityObject):
         :return: The next_href of this ProblemOccurrences.  # noqa: E501
         :rtype: str
         """
+        if self._next_href is None:
+            self._read_if_needed()
         return self._next_href
 
     @next_href.setter
@@ -263,6 +279,8 @@ class ProblemOccurrences(TeamCityObject):
         :return: The passed of this ProblemOccurrences.  # noqa: E501
         :rtype: int
         """
+        if self._passed is None:
+            self._read_if_needed()
         return self._passed
 
     @passed.setter
@@ -284,6 +302,8 @@ class ProblemOccurrences(TeamCityObject):
         :return: The prev_href of this ProblemOccurrences.  # noqa: E501
         :rtype: str
         """
+        if self._prev_href is None:
+            self._read_if_needed()
         return self._prev_href
 
     @prev_href.setter
@@ -305,6 +325,8 @@ class ProblemOccurrences(TeamCityObject):
         :return: The problem_occurrence of this ProblemOccurrences.  # noqa: E501
         :rtype: list[ProblemOccurrence]
         """
+        if self._problem_occurrence is None:
+            self._read_if_needed()
         return self._problem_occurrence
 
     @problem_occurrence.setter

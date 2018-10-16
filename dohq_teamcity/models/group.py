@@ -88,6 +88,8 @@ class Group(TeamCityObject):
         :return: The child_groups of this Group.  # noqa: E501
         :rtype: Groups
         """
+        if self._child_groups is None:
+            self._read_if_needed()
         return self._child_groups
 
     @child_groups.setter
@@ -109,6 +111,8 @@ class Group(TeamCityObject):
         :return: The description of this Group.  # noqa: E501
         :rtype: str
         """
+        if self._description is None:
+            self._read_if_needed()
         return self._description
 
     @description.setter
@@ -130,6 +134,8 @@ class Group(TeamCityObject):
         :return: The href of this Group.  # noqa: E501
         :rtype: str
         """
+        if self._href is None:
+            self._read_if_needed()
         return self._href
 
     @href.setter
@@ -151,6 +157,8 @@ class Group(TeamCityObject):
         :return: The key of this Group.  # noqa: E501
         :rtype: str
         """
+        if self._key is None:
+            self._read_if_needed()
         return self._key
 
     @key.setter
@@ -172,6 +180,8 @@ class Group(TeamCityObject):
         :return: The name of this Group.  # noqa: E501
         :rtype: str
         """
+        if self._name is None:
+            self._read_if_needed()
         return self._name
 
     @name.setter
@@ -193,6 +203,8 @@ class Group(TeamCityObject):
         :return: The parent_groups of this Group.  # noqa: E501
         :rtype: Groups
         """
+        if self._parent_groups is None:
+            self._read_if_needed()
         return self._parent_groups
 
     @parent_groups.setter
@@ -214,6 +226,8 @@ class Group(TeamCityObject):
         :return: The properties of this Group.  # noqa: E501
         :rtype: Properties
         """
+        if self._properties is None:
+            self._read_if_needed()
         return self._properties
 
     @properties.setter
@@ -235,6 +249,8 @@ class Group(TeamCityObject):
         :return: The roles of this Group.  # noqa: E501
         :rtype: Roles
         """
+        if self._roles is None:
+            self._read_if_needed()
         return self._roles
 
     @roles.setter
@@ -256,6 +272,8 @@ class Group(TeamCityObject):
         :return: The users of this Group.  # noqa: E501
         :rtype: Users
         """
+        if self._users is None:
+            self._read_if_needed()
         return self._users
 
     @users.setter

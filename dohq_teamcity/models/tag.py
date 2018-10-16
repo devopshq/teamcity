@@ -55,6 +55,8 @@ class Tag(TeamCityObject):
         :return: The name of this Tag.  # noqa: E501
         :rtype: str
         """
+        if self._name is None:
+            self._read_if_needed()
         return self._name
 
     @name.setter
@@ -76,6 +78,8 @@ class Tag(TeamCityObject):
         :return: The owner of this Tag.  # noqa: E501
         :rtype: User
         """
+        if self._owner is None:
+            self._read_if_needed()
         return self._owner
 
     @owner.setter
@@ -97,6 +101,8 @@ class Tag(TeamCityObject):
         :return: The private of this Tag.  # noqa: E501
         :rtype: bool
         """
+        if self._private is None:
+            self._read_if_needed()
         return self._private
 
     @private.setter

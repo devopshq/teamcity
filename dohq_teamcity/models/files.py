@@ -55,6 +55,8 @@ class Files(TeamCityObject):
         :return: The count of this Files.  # noqa: E501
         :rtype: int
         """
+        if self._count is None:
+            self._read_if_needed()
         return self._count
 
     @count.setter
@@ -76,6 +78,8 @@ class Files(TeamCityObject):
         :return: The file of this Files.  # noqa: E501
         :rtype: list[file]
         """
+        if self._file is None:
+            self._read_if_needed()
         return self._file
 
     @file.setter
@@ -97,6 +101,8 @@ class Files(TeamCityObject):
         :return: The href of this Files.  # noqa: E501
         :rtype: str
         """
+        if self._href is None:
+            self._read_if_needed()
         return self._href
 
     @href.setter

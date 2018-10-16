@@ -63,6 +63,8 @@ class StackTraceElement(TeamCityObject):
         :return: The class_name of this StackTraceElement.  # noqa: E501
         :rtype: str
         """
+        if self._class_name is None:
+            self._read_if_needed()
         return self._class_name
 
     @class_name.setter
@@ -84,6 +86,8 @@ class StackTraceElement(TeamCityObject):
         :return: The file_name of this StackTraceElement.  # noqa: E501
         :rtype: str
         """
+        if self._file_name is None:
+            self._read_if_needed()
         return self._file_name
 
     @file_name.setter
@@ -105,6 +109,8 @@ class StackTraceElement(TeamCityObject):
         :return: The line_number of this StackTraceElement.  # noqa: E501
         :rtype: int
         """
+        if self._line_number is None:
+            self._read_if_needed()
         return self._line_number
 
     @line_number.setter
@@ -126,6 +132,8 @@ class StackTraceElement(TeamCityObject):
         :return: The method_name of this StackTraceElement.  # noqa: E501
         :rtype: str
         """
+        if self._method_name is None:
+            self._read_if_needed()
         return self._method_name
 
     @method_name.setter
@@ -147,6 +155,8 @@ class StackTraceElement(TeamCityObject):
         :return: The native_method of this StackTraceElement.  # noqa: E501
         :rtype: bool
         """
+        if self._native_method is None:
+            self._read_if_needed()
         return self._native_method
 
     @native_method.setter

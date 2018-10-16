@@ -27,6 +27,8 @@ class TeamCityObject(object):
 
     def __init__(self, teamcity=None, *args, **kwargs):
         self.teamcity = teamcity  # type: TeamCity
+        self.readed = False
+        self.lazy = False
 
         # Hack for ContainerMixin init
         if hasattr(self, 'container') and self.container:
@@ -38,6 +40,16 @@ class TeamCityObject(object):
         if self.id is None:
             raise TeamCityRuntimeException("object does not have attribute id: ''".format(self))
         return "id:{}".format(self.id)
+
+    def _read_if_needed(self):
+        """
+        Read object if they not readed yet, attribute None and object is not lazy-object
+        """
+        # Only for object with ReadMixin
+        if hasattr(self, 'read'):
+            if self.readed or self.lazy:
+                return
+            self.read()
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -91,7 +103,8 @@ class ReadMixin(object):
         func = self._read()
         if func is None:
             raise TeamCityCodeException("read function is not defined in class '{}'".format(self.__class__.__name__))
-        self = func(self, *args, **kwargs)
+        obj = func(self, *args, **kwargs)
+        self.__dict__ = obj.__dict__
         return self
 
 

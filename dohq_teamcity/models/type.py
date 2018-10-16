@@ -43,6 +43,8 @@ class Type(TeamCityObject):
         :return: The raw_value of this Type.  # noqa: E501
         :rtype: str
         """
+        if self._raw_value is None:
+            self._read_if_needed()
         return self._raw_value
 
     @raw_value.setter

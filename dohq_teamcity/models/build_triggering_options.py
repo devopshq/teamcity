@@ -60,6 +60,8 @@ class BuildTriggeringOptions(TeamCityObject):
         :return: The clean_sources of this BuildTriggeringOptions.  # noqa: E501
         :rtype: bool
         """
+        if self._clean_sources is None:
+            self._read_if_needed()
         return self._clean_sources
 
     @clean_sources.setter
@@ -81,6 +83,8 @@ class BuildTriggeringOptions(TeamCityObject):
         :return: The queue_at_top of this BuildTriggeringOptions.  # noqa: E501
         :rtype: bool
         """
+        if self._queue_at_top is None:
+            self._read_if_needed()
         return self._queue_at_top
 
     @queue_at_top.setter
@@ -102,6 +106,8 @@ class BuildTriggeringOptions(TeamCityObject):
         :return: The rebuild_all_dependencies of this BuildTriggeringOptions.  # noqa: E501
         :rtype: bool
         """
+        if self._rebuild_all_dependencies is None:
+            self._read_if_needed()
         return self._rebuild_all_dependencies
 
     @rebuild_all_dependencies.setter
@@ -123,6 +129,8 @@ class BuildTriggeringOptions(TeamCityObject):
         :return: The rebuild_dependencies of this BuildTriggeringOptions.  # noqa: E501
         :rtype: BuildTypes
         """
+        if self._rebuild_dependencies is None:
+            self._read_if_needed()
         return self._rebuild_dependencies
 
     @rebuild_dependencies.setter

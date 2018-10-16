@@ -346,6 +346,8 @@ class Build(TeamCityObject):
         :return: The agent of this Build.  # noqa: E501
         :rtype: Agent
         """
+        if self._agent is None:
+            self._read_if_needed()
         return self._agent
 
     @agent.setter
@@ -367,6 +369,8 @@ class Build(TeamCityObject):
         :return: The artifact_dependencies of this Build.  # noqa: E501
         :rtype: Builds
         """
+        if self._artifact_dependencies is None:
+            self._read_if_needed()
         return self._artifact_dependencies
 
     @artifact_dependencies.setter
@@ -388,6 +392,8 @@ class Build(TeamCityObject):
         :return: The artifacts of this Build.  # noqa: E501
         :rtype: Files
         """
+        if self._artifacts is None:
+            self._read_if_needed()
         return self._artifacts
 
     @artifacts.setter
@@ -409,6 +415,8 @@ class Build(TeamCityObject):
         :return: The attributes of this Build.  # noqa: E501
         :rtype: Entries
         """
+        if self._attributes is None:
+            self._read_if_needed()
         return self._attributes
 
     @attributes.setter
@@ -430,6 +438,8 @@ class Build(TeamCityObject):
         :return: The branch_name of this Build.  # noqa: E501
         :rtype: str
         """
+        if self._branch_name is None:
+            self._read_if_needed()
         return self._branch_name
 
     @branch_name.setter
@@ -451,6 +461,8 @@ class Build(TeamCityObject):
         :return: The build_type of this Build.  # noqa: E501
         :rtype: BuildType
         """
+        if self._build_type is None:
+            self._read_if_needed()
         return self._build_type
 
     @build_type.setter
@@ -472,6 +484,8 @@ class Build(TeamCityObject):
         :return: The build_type_id of this Build.  # noqa: E501
         :rtype: str
         """
+        if self._build_type_id is None:
+            self._read_if_needed()
         return self._build_type_id
 
     @build_type_id.setter
@@ -493,6 +507,8 @@ class Build(TeamCityObject):
         :return: The build_type_internal_id of this Build.  # noqa: E501
         :rtype: str
         """
+        if self._build_type_internal_id is None:
+            self._read_if_needed()
         return self._build_type_internal_id
 
     @build_type_internal_id.setter
@@ -514,6 +530,8 @@ class Build(TeamCityObject):
         :return: The canceled_info of this Build.  # noqa: E501
         :rtype: Comment
         """
+        if self._canceled_info is None:
+            self._read_if_needed()
         return self._canceled_info
 
     @canceled_info.setter
@@ -535,6 +553,8 @@ class Build(TeamCityObject):
         :return: The chain_modification_id of this Build.  # noqa: E501
         :rtype: str
         """
+        if self._chain_modification_id is None:
+            self._read_if_needed()
         return self._chain_modification_id
 
     @chain_modification_id.setter
@@ -556,6 +576,8 @@ class Build(TeamCityObject):
         :return: The changes of this Build.  # noqa: E501
         :rtype: Changes
         """
+        if self._changes is None:
+            self._read_if_needed()
         return self._changes
 
     @changes.setter
@@ -577,6 +599,8 @@ class Build(TeamCityObject):
         :return: The comment of this Build.  # noqa: E501
         :rtype: Comment
         """
+        if self._comment is None:
+            self._read_if_needed()
         return self._comment
 
     @comment.setter
@@ -598,6 +622,8 @@ class Build(TeamCityObject):
         :return: The compatible_agents of this Build.  # noqa: E501
         :rtype: Agents
         """
+        if self._compatible_agents is None:
+            self._read_if_needed()
         return self._compatible_agents
 
     @compatible_agents.setter
@@ -619,6 +645,8 @@ class Build(TeamCityObject):
         :return: The current_settings_hash of this Build.  # noqa: E501
         :rtype: str
         """
+        if self._current_settings_hash is None:
+            self._read_if_needed()
         return self._current_settings_hash
 
     @current_settings_hash.setter
@@ -640,6 +668,8 @@ class Build(TeamCityObject):
         :return: The custom_artifact_dependencies of this Build.  # noqa: E501
         :rtype: ArtifactDependencies
         """
+        if self._custom_artifact_dependencies is None:
+            self._read_if_needed()
         return self._custom_artifact_dependencies
 
     @custom_artifact_dependencies.setter
@@ -661,6 +691,8 @@ class Build(TeamCityObject):
         :return: The default_branch of this Build.  # noqa: E501
         :rtype: bool
         """
+        if self._default_branch is None:
+            self._read_if_needed()
         return self._default_branch
 
     @default_branch.setter
@@ -682,6 +714,8 @@ class Build(TeamCityObject):
         :return: The failed_to_start of this Build.  # noqa: E501
         :rtype: bool
         """
+        if self._failed_to_start is None:
+            self._read_if_needed()
         return self._failed_to_start
 
     @failed_to_start.setter
@@ -703,6 +737,8 @@ class Build(TeamCityObject):
         :return: The finish_date of this Build.  # noqa: E501
         :rtype: str
         """
+        if self._finish_date is None:
+            self._read_if_needed()
         return self._finish_date
 
     @finish_date.setter
@@ -724,6 +760,8 @@ class Build(TeamCityObject):
         :return: The history of this Build.  # noqa: E501
         :rtype: bool
         """
+        if self._history is None:
+            self._read_if_needed()
         return self._history
 
     @history.setter
@@ -745,6 +783,8 @@ class Build(TeamCityObject):
         :return: The href of this Build.  # noqa: E501
         :rtype: str
         """
+        if self._href is None:
+            self._read_if_needed()
         return self._href
 
     @href.setter
@@ -766,6 +806,8 @@ class Build(TeamCityObject):
         :return: The id of this Build.  # noqa: E501
         :rtype: int
         """
+        if self._id is None:
+            self._read_if_needed()
         return self._id
 
     @id.setter
@@ -787,6 +829,8 @@ class Build(TeamCityObject):
         :return: The last_changes of this Build.  # noqa: E501
         :rtype: Changes
         """
+        if self._last_changes is None:
+            self._read_if_needed()
         return self._last_changes
 
     @last_changes.setter
@@ -808,6 +852,8 @@ class Build(TeamCityObject):
         :return: The locator of this Build.  # noqa: E501
         :rtype: str
         """
+        if self._locator is None:
+            self._read_if_needed()
         return self._locator
 
     @locator.setter
@@ -829,6 +875,8 @@ class Build(TeamCityObject):
         :return: The metadata of this Build.  # noqa: E501
         :rtype: Datas
         """
+        if self._metadata is None:
+            self._read_if_needed()
         return self._metadata
 
     @metadata.setter
@@ -850,6 +898,8 @@ class Build(TeamCityObject):
         :return: The modification_id of this Build.  # noqa: E501
         :rtype: str
         """
+        if self._modification_id is None:
+            self._read_if_needed()
         return self._modification_id
 
     @modification_id.setter
@@ -871,6 +921,8 @@ class Build(TeamCityObject):
         :return: The number of this Build.  # noqa: E501
         :rtype: str
         """
+        if self._number is None:
+            self._read_if_needed()
         return self._number
 
     @number.setter
@@ -892,6 +944,8 @@ class Build(TeamCityObject):
         :return: The percentage_complete of this Build.  # noqa: E501
         :rtype: int
         """
+        if self._percentage_complete is None:
+            self._read_if_needed()
         return self._percentage_complete
 
     @percentage_complete.setter
@@ -913,6 +967,8 @@ class Build(TeamCityObject):
         :return: The personal of this Build.  # noqa: E501
         :rtype: bool
         """
+        if self._personal is None:
+            self._read_if_needed()
         return self._personal
 
     @personal.setter
@@ -934,6 +990,8 @@ class Build(TeamCityObject):
         :return: The pin_info of this Build.  # noqa: E501
         :rtype: Comment
         """
+        if self._pin_info is None:
+            self._read_if_needed()
         return self._pin_info
 
     @pin_info.setter
@@ -955,6 +1013,8 @@ class Build(TeamCityObject):
         :return: The pinned of this Build.  # noqa: E501
         :rtype: bool
         """
+        if self._pinned is None:
+            self._read_if_needed()
         return self._pinned
 
     @pinned.setter
@@ -976,6 +1036,8 @@ class Build(TeamCityObject):
         :return: The problem_occurrences of this Build.  # noqa: E501
         :rtype: ProblemOccurrences
         """
+        if self._problem_occurrences is None:
+            self._read_if_needed()
         return self._problem_occurrences
 
     @problem_occurrences.setter
@@ -997,6 +1059,8 @@ class Build(TeamCityObject):
         :return: The properties of this Build.  # noqa: E501
         :rtype: Properties
         """
+        if self._properties is None:
+            self._read_if_needed()
         return self._properties
 
     @properties.setter
@@ -1018,6 +1082,8 @@ class Build(TeamCityObject):
         :return: The queued_date of this Build.  # noqa: E501
         :rtype: str
         """
+        if self._queued_date is None:
+            self._read_if_needed()
         return self._queued_date
 
     @queued_date.setter
@@ -1039,6 +1105,8 @@ class Build(TeamCityObject):
         :return: The related_issues of this Build.  # noqa: E501
         :rtype: IssuesUsages
         """
+        if self._related_issues is None:
+            self._read_if_needed()
         return self._related_issues
 
     @related_issues.setter
@@ -1060,6 +1128,8 @@ class Build(TeamCityObject):
         :return: The replacement_ids of this Build.  # noqa: E501
         :rtype: Items
         """
+        if self._replacement_ids is None:
+            self._read_if_needed()
         return self._replacement_ids
 
     @replacement_ids.setter
@@ -1081,6 +1151,8 @@ class Build(TeamCityObject):
         :return: The resulting_properties of this Build.  # noqa: E501
         :rtype: Properties
         """
+        if self._resulting_properties is None:
+            self._read_if_needed()
         return self._resulting_properties
 
     @resulting_properties.setter
@@ -1102,6 +1174,8 @@ class Build(TeamCityObject):
         :return: The revisions of this Build.  # noqa: E501
         :rtype: Revisions
         """
+        if self._revisions is None:
+            self._read_if_needed()
         return self._revisions
 
     @revisions.setter
@@ -1123,6 +1197,8 @@ class Build(TeamCityObject):
         :return: The running of this Build.  # noqa: E501
         :rtype: bool
         """
+        if self._running is None:
+            self._read_if_needed()
         return self._running
 
     @running.setter
@@ -1144,6 +1220,8 @@ class Build(TeamCityObject):
         :return: The running_info of this Build.  # noqa: E501
         :rtype: ProgressInfo
         """
+        if self._running_info is None:
+            self._read_if_needed()
         return self._running_info
 
     @running_info.setter
@@ -1165,6 +1243,8 @@ class Build(TeamCityObject):
         :return: The settings_hash of this Build.  # noqa: E501
         :rtype: str
         """
+        if self._settings_hash is None:
+            self._read_if_needed()
         return self._settings_hash
 
     @settings_hash.setter
@@ -1186,6 +1266,8 @@ class Build(TeamCityObject):
         :return: The snapshot_dependencies of this Build.  # noqa: E501
         :rtype: Builds
         """
+        if self._snapshot_dependencies is None:
+            self._read_if_needed()
         return self._snapshot_dependencies
 
     @snapshot_dependencies.setter
@@ -1207,6 +1289,8 @@ class Build(TeamCityObject):
         :return: The start_date of this Build.  # noqa: E501
         :rtype: str
         """
+        if self._start_date is None:
+            self._read_if_needed()
         return self._start_date
 
     @start_date.setter
@@ -1228,6 +1312,8 @@ class Build(TeamCityObject):
         :return: The start_estimate of this Build.  # noqa: E501
         :rtype: str
         """
+        if self._start_estimate is None:
+            self._read_if_needed()
         return self._start_estimate
 
     @start_estimate.setter
@@ -1249,6 +1335,8 @@ class Build(TeamCityObject):
         :return: The state of this Build.  # noqa: E501
         :rtype: str
         """
+        if self._state is None:
+            self._read_if_needed()
         return self._state
 
     @state.setter
@@ -1270,6 +1358,8 @@ class Build(TeamCityObject):
         :return: The statistics of this Build.  # noqa: E501
         :rtype: Properties
         """
+        if self._statistics is None:
+            self._read_if_needed()
         return self._statistics
 
     @statistics.setter
@@ -1291,6 +1381,8 @@ class Build(TeamCityObject):
         :return: The status of this Build.  # noqa: E501
         :rtype: str
         """
+        if self._status is None:
+            self._read_if_needed()
         return self._status
 
     @status.setter
@@ -1312,6 +1404,8 @@ class Build(TeamCityObject):
         :return: The status_text of this Build.  # noqa: E501
         :rtype: str
         """
+        if self._status_text is None:
+            self._read_if_needed()
         return self._status_text
 
     @status_text.setter
@@ -1333,6 +1427,8 @@ class Build(TeamCityObject):
         :return: The tags of this Build.  # noqa: E501
         :rtype: Tags
         """
+        if self._tags is None:
+            self._read_if_needed()
         return self._tags
 
     @tags.setter
@@ -1354,6 +1450,8 @@ class Build(TeamCityObject):
         :return: The task_id of this Build.  # noqa: E501
         :rtype: int
         """
+        if self._task_id is None:
+            self._read_if_needed()
         return self._task_id
 
     @task_id.setter
@@ -1375,6 +1473,8 @@ class Build(TeamCityObject):
         :return: The test_occurrences of this Build.  # noqa: E501
         :rtype: TestOccurrences
         """
+        if self._test_occurrences is None:
+            self._read_if_needed()
         return self._test_occurrences
 
     @test_occurrences.setter
@@ -1396,6 +1496,8 @@ class Build(TeamCityObject):
         :return: The triggered of this Build.  # noqa: E501
         :rtype: TriggeredBy
         """
+        if self._triggered is None:
+            self._read_if_needed()
         return self._triggered
 
     @triggered.setter
@@ -1417,6 +1519,8 @@ class Build(TeamCityObject):
         :return: The triggering_options of this Build.  # noqa: E501
         :rtype: BuildTriggeringOptions
         """
+        if self._triggering_options is None:
+            self._read_if_needed()
         return self._triggering_options
 
     @triggering_options.setter
@@ -1438,6 +1542,8 @@ class Build(TeamCityObject):
         :return: The unspecified_branch of this Build.  # noqa: E501
         :rtype: bool
         """
+        if self._unspecified_branch is None:
+            self._read_if_needed()
         return self._unspecified_branch
 
     @unspecified_branch.setter
@@ -1459,6 +1565,8 @@ class Build(TeamCityObject):
         :return: The user of this Build.  # noqa: E501
         :rtype: User
         """
+        if self._user is None:
+            self._read_if_needed()
         return self._user
 
     @user.setter
@@ -1480,6 +1588,8 @@ class Build(TeamCityObject):
         :return: The versioned_settings_revision of this Build.  # noqa: E501
         :rtype: Revision
         """
+        if self._versioned_settings_revision is None:
+            self._read_if_needed()
         return self._versioned_settings_revision
 
     @versioned_settings_revision.setter
@@ -1501,6 +1611,8 @@ class Build(TeamCityObject):
         :return: The wait_reason of this Build.  # noqa: E501
         :rtype: str
         """
+        if self._wait_reason is None:
+            self._read_if_needed()
         return self._wait_reason
 
     @wait_reason.setter
@@ -1522,6 +1634,8 @@ class Build(TeamCityObject):
         :return: The web_url of this Build.  # noqa: E501
         :rtype: str
         """
+        if self._web_url is None:
+            self._read_if_needed()
         return self._web_url
 
     @web_url.setter

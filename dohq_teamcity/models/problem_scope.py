@@ -57,6 +57,8 @@ class ProblemScope(TeamCityObject):
         :return: The build_type of this ProblemScope.  # noqa: E501
         :rtype: BuildType
         """
+        if self._build_type is None:
+            self._read_if_needed()
         return self._build_type
 
     @build_type.setter
@@ -78,6 +80,8 @@ class ProblemScope(TeamCityObject):
         :return: The build_types of this ProblemScope.  # noqa: E501
         :rtype: BuildTypes
         """
+        if self._build_types is None:
+            self._read_if_needed()
         return self._build_types
 
     @build_types.setter
@@ -99,6 +103,8 @@ class ProblemScope(TeamCityObject):
         :return: The project of this ProblemScope.  # noqa: E501
         :rtype: Project
         """
+        if self._project is None:
+            self._read_if_needed()
         return self._project
 
     @project.setter

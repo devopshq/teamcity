@@ -75,6 +75,8 @@ class Feature(TeamCityObject):
         :return: The disabled of this Feature.  # noqa: E501
         :rtype: bool
         """
+        if self._disabled is None:
+            self._read_if_needed()
         return self._disabled
 
     @disabled.setter
@@ -96,6 +98,8 @@ class Feature(TeamCityObject):
         :return: The href of this Feature.  # noqa: E501
         :rtype: str
         """
+        if self._href is None:
+            self._read_if_needed()
         return self._href
 
     @href.setter
@@ -117,6 +121,8 @@ class Feature(TeamCityObject):
         :return: The id of this Feature.  # noqa: E501
         :rtype: str
         """
+        if self._id is None:
+            self._read_if_needed()
         return self._id
 
     @id.setter
@@ -138,6 +144,8 @@ class Feature(TeamCityObject):
         :return: The inherited of this Feature.  # noqa: E501
         :rtype: bool
         """
+        if self._inherited is None:
+            self._read_if_needed()
         return self._inherited
 
     @inherited.setter
@@ -159,6 +167,8 @@ class Feature(TeamCityObject):
         :return: The name of this Feature.  # noqa: E501
         :rtype: str
         """
+        if self._name is None:
+            self._read_if_needed()
         return self._name
 
     @name.setter
@@ -180,6 +190,8 @@ class Feature(TeamCityObject):
         :return: The properties of this Feature.  # noqa: E501
         :rtype: Properties
         """
+        if self._properties is None:
+            self._read_if_needed()
         return self._properties
 
     @properties.setter
@@ -201,6 +213,8 @@ class Feature(TeamCityObject):
         :return: The type of this Feature.  # noqa: E501
         :rtype: str
         """
+        if self._type is None:
+            self._read_if_needed()
         return self._type
 
     @type.setter

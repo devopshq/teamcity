@@ -81,6 +81,8 @@ class {{classname}}({{#parent}}{{parent}}{{/parent}}{{^parent}}TeamCityObject{{/
         :return: The {{name}} of this {{classname}}.  # noqa: E501
         :rtype: {{datatype}}
         """
+        if self._{{name}} is None:
+            self._read_if_needed()
         return self._{{name}}
 
     @{{name}}.setter

@@ -55,6 +55,8 @@ class RepositoryState(TeamCityObject):
         :return: The branch of this RepositoryState.  # noqa: E501
         :rtype: list[BranchVersion]
         """
+        if self._branch is None:
+            self._read_if_needed()
         return self._branch
 
     @branch.setter
@@ -76,6 +78,8 @@ class RepositoryState(TeamCityObject):
         :return: The count of this RepositoryState.  # noqa: E501
         :rtype: int
         """
+        if self._count is None:
+            self._read_if_needed()
         return self._count
 
     @count.setter
@@ -97,6 +101,8 @@ class RepositoryState(TeamCityObject):
         :return: The timestamp of this RepositoryState.  # noqa: E501
         :rtype: str
         """
+        if self._timestamp is None:
+            self._read_if_needed()
         return self._timestamp
 
     @timestamp.setter

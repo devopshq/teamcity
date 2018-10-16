@@ -50,6 +50,8 @@ class VcsStatus(TeamCityObject):
         :return: The current of this VcsStatus.  # noqa: E501
         :rtype: VcsCheckStatus
         """
+        if self._current is None:
+            self._read_if_needed()
         return self._current
 
     @current.setter
@@ -71,6 +73,8 @@ class VcsStatus(TeamCityObject):
         :return: The previous of this VcsStatus.  # noqa: E501
         :rtype: VcsCheckStatus
         """
+        if self._previous is None:
+            self._read_if_needed()
         return self._previous
 
     @previous.setter

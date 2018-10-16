@@ -60,6 +60,8 @@ class Session(TeamCityObject):
         :return: The creation_date of this Session.  # noqa: E501
         :rtype: str
         """
+        if self._creation_date is None:
+            self._read_if_needed()
         return self._creation_date
 
     @creation_date.setter
@@ -81,6 +83,8 @@ class Session(TeamCityObject):
         :return: The id of this Session.  # noqa: E501
         :rtype: str
         """
+        if self._id is None:
+            self._read_if_needed()
         return self._id
 
     @id.setter
@@ -102,6 +106,8 @@ class Session(TeamCityObject):
         :return: The last_accessed_date of this Session.  # noqa: E501
         :rtype: str
         """
+        if self._last_accessed_date is None:
+            self._read_if_needed()
         return self._last_accessed_date
 
     @last_accessed_date.setter
@@ -123,6 +129,8 @@ class Session(TeamCityObject):
         :return: The user of this Session.  # noqa: E501
         :rtype: User
         """
+        if self._user is None:
+            self._read_if_needed()
         return self._user
 
     @user.setter

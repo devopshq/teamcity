@@ -50,6 +50,8 @@ class SnapshotDependencies(TeamCityObject):
         :return: The count of this SnapshotDependencies.  # noqa: E501
         :rtype: int
         """
+        if self._count is None:
+            self._read_if_needed()
         return self._count
 
     @count.setter
@@ -71,6 +73,8 @@ class SnapshotDependencies(TeamCityObject):
         :return: The snapshot_dependency of this SnapshotDependencies.  # noqa: E501
         :rtype: list[SnapshotDependency]
         """
+        if self._snapshot_dependency is None:
+            self._read_if_needed()
         return self._snapshot_dependency
 
     @snapshot_dependency.setter

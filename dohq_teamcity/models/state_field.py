@@ -48,6 +48,8 @@ class StateField(TeamCityObject):
         :return: The inherited of this StateField.  # noqa: E501
         :rtype: bool
         """
+        if self._inherited is None:
+            self._read_if_needed()
         return self._inherited
 
     @inherited.setter
@@ -69,6 +71,8 @@ class StateField(TeamCityObject):
         :return: The value of this StateField.  # noqa: E501
         :rtype: bool
         """
+        if self._value is None:
+            self._read_if_needed()
         return self._value
 
     @value.setter

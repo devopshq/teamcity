@@ -50,6 +50,8 @@ class Entries(TeamCityObject):
         :return: The count of this Entries.  # noqa: E501
         :rtype: int
         """
+        if self._count is None:
+            self._read_if_needed()
         return self._count
 
     @count.setter
@@ -71,6 +73,8 @@ class Entries(TeamCityObject):
         :return: The entry of this Entries.  # noqa: E501
         :rtype: list[Entry]
         """
+        if self._entry is None:
+            self._read_if_needed()
         return self._entry
 
     @entry.setter

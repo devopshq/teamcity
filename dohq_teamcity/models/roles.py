@@ -45,6 +45,8 @@ class Roles(TeamCityObject):
         :return: The role of this Roles.  # noqa: E501
         :rtype: list[Role]
         """
+        if self._role is None:
+            self._read_if_needed()
         return self._role
 
     @role.setter

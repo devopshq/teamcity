@@ -55,6 +55,8 @@ class Comment(TeamCityObject):
         :return: The text of this Comment.  # noqa: E501
         :rtype: str
         """
+        if self._text is None:
+            self._read_if_needed()
         return self._text
 
     @text.setter
@@ -76,6 +78,8 @@ class Comment(TeamCityObject):
         :return: The timestamp of this Comment.  # noqa: E501
         :rtype: str
         """
+        if self._timestamp is None:
+            self._read_if_needed()
         return self._timestamp
 
     @timestamp.setter
@@ -97,6 +101,8 @@ class Comment(TeamCityObject):
         :return: The user of this Comment.  # noqa: E501
         :rtype: User
         """
+        if self._user is None:
+            self._read_if_needed()
         return self._user
 
     @user.setter

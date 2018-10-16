@@ -102,6 +102,8 @@ class ProblemOccurrence(TeamCityObject):
         :return: The additional_data of this ProblemOccurrence.  # noqa: E501
         :rtype: str
         """
+        if self._additional_data is None:
+            self._read_if_needed()
         return self._additional_data
 
     @additional_data.setter
@@ -123,6 +125,8 @@ class ProblemOccurrence(TeamCityObject):
         :return: The build of this ProblemOccurrence.  # noqa: E501
         :rtype: Build
         """
+        if self._build is None:
+            self._read_if_needed()
         return self._build
 
     @build.setter
@@ -144,6 +148,8 @@ class ProblemOccurrence(TeamCityObject):
         :return: The currently_investigated of this ProblemOccurrence.  # noqa: E501
         :rtype: bool
         """
+        if self._currently_investigated is None:
+            self._read_if_needed()
         return self._currently_investigated
 
     @currently_investigated.setter
@@ -165,6 +171,8 @@ class ProblemOccurrence(TeamCityObject):
         :return: The currently_muted of this ProblemOccurrence.  # noqa: E501
         :rtype: bool
         """
+        if self._currently_muted is None:
+            self._read_if_needed()
         return self._currently_muted
 
     @currently_muted.setter
@@ -186,6 +194,8 @@ class ProblemOccurrence(TeamCityObject):
         :return: The details of this ProblemOccurrence.  # noqa: E501
         :rtype: str
         """
+        if self._details is None:
+            self._read_if_needed()
         return self._details
 
     @details.setter
@@ -207,6 +217,8 @@ class ProblemOccurrence(TeamCityObject):
         :return: The href of this ProblemOccurrence.  # noqa: E501
         :rtype: str
         """
+        if self._href is None:
+            self._read_if_needed()
         return self._href
 
     @href.setter
@@ -228,6 +240,8 @@ class ProblemOccurrence(TeamCityObject):
         :return: The id of this ProblemOccurrence.  # noqa: E501
         :rtype: str
         """
+        if self._id is None:
+            self._read_if_needed()
         return self._id
 
     @id.setter
@@ -249,6 +263,8 @@ class ProblemOccurrence(TeamCityObject):
         :return: The identity of this ProblemOccurrence.  # noqa: E501
         :rtype: str
         """
+        if self._identity is None:
+            self._read_if_needed()
         return self._identity
 
     @identity.setter
@@ -270,6 +286,8 @@ class ProblemOccurrence(TeamCityObject):
         :return: The mute of this ProblemOccurrence.  # noqa: E501
         :rtype: Mute
         """
+        if self._mute is None:
+            self._read_if_needed()
         return self._mute
 
     @mute.setter
@@ -291,6 +309,8 @@ class ProblemOccurrence(TeamCityObject):
         :return: The muted of this ProblemOccurrence.  # noqa: E501
         :rtype: bool
         """
+        if self._muted is None:
+            self._read_if_needed()
         return self._muted
 
     @muted.setter
@@ -312,6 +332,8 @@ class ProblemOccurrence(TeamCityObject):
         :return: The problem of this ProblemOccurrence.  # noqa: E501
         :rtype: Problem
         """
+        if self._problem is None:
+            self._read_if_needed()
         return self._problem
 
     @problem.setter
@@ -333,6 +355,8 @@ class ProblemOccurrence(TeamCityObject):
         :return: The type of this ProblemOccurrence.  # noqa: E501
         :rtype: str
         """
+        if self._type is None:
+            self._read_if_needed()
         return self._type
 
     @type.setter

@@ -73,6 +73,8 @@ class FileChange(TeamCityObject):
         :return: The after_revision of this FileChange.  # noqa: E501
         :rtype: str
         """
+        if self._after_revision is None:
+            self._read_if_needed()
         return self._after_revision
 
     @after_revision.setter
@@ -94,6 +96,8 @@ class FileChange(TeamCityObject):
         :return: The before_revision of this FileChange.  # noqa: E501
         :rtype: str
         """
+        if self._before_revision is None:
+            self._read_if_needed()
         return self._before_revision
 
     @before_revision.setter
@@ -115,6 +119,8 @@ class FileChange(TeamCityObject):
         :return: The change_type of this FileChange.  # noqa: E501
         :rtype: str
         """
+        if self._change_type is None:
+            self._read_if_needed()
         return self._change_type
 
     @change_type.setter
@@ -136,6 +142,8 @@ class FileChange(TeamCityObject):
         :return: The change_type_comment of this FileChange.  # noqa: E501
         :rtype: str
         """
+        if self._change_type_comment is None:
+            self._read_if_needed()
         return self._change_type_comment
 
     @change_type_comment.setter
@@ -157,6 +165,8 @@ class FileChange(TeamCityObject):
         :return: The directory of this FileChange.  # noqa: E501
         :rtype: bool
         """
+        if self._directory is None:
+            self._read_if_needed()
         return self._directory
 
     @directory.setter
@@ -178,6 +188,8 @@ class FileChange(TeamCityObject):
         :return: The file of this FileChange.  # noqa: E501
         :rtype: str
         """
+        if self._file is None:
+            self._read_if_needed()
         return self._file
 
     @file.setter
@@ -199,6 +211,8 @@ class FileChange(TeamCityObject):
         :return: The relative_file of this FileChange.  # noqa: E501
         :rtype: str
         """
+        if self._relative_file is None:
+            self._read_if_needed()
         return self._relative_file
 
     @relative_file.setter

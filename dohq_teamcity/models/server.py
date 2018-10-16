@@ -130,6 +130,8 @@ class Server(TeamCityObject):
         :return: The agent_pools of this Server.  # noqa: E501
         :rtype: Href
         """
+        if self._agent_pools is None:
+            self._read_if_needed()
         return self._agent_pools
 
     @agent_pools.setter
@@ -151,6 +153,8 @@ class Server(TeamCityObject):
         :return: The agents of this Server.  # noqa: E501
         :rtype: Href
         """
+        if self._agents is None:
+            self._read_if_needed()
         return self._agents
 
     @agents.setter
@@ -172,6 +176,8 @@ class Server(TeamCityObject):
         :return: The build_date of this Server.  # noqa: E501
         :rtype: str
         """
+        if self._build_date is None:
+            self._read_if_needed()
         return self._build_date
 
     @build_date.setter
@@ -193,6 +199,8 @@ class Server(TeamCityObject):
         :return: The build_number of this Server.  # noqa: E501
         :rtype: str
         """
+        if self._build_number is None:
+            self._read_if_needed()
         return self._build_number
 
     @build_number.setter
@@ -214,6 +222,8 @@ class Server(TeamCityObject):
         :return: The build_queue of this Server.  # noqa: E501
         :rtype: Href
         """
+        if self._build_queue is None:
+            self._read_if_needed()
         return self._build_queue
 
     @build_queue.setter
@@ -235,6 +245,8 @@ class Server(TeamCityObject):
         :return: The builds of this Server.  # noqa: E501
         :rtype: Href
         """
+        if self._builds is None:
+            self._read_if_needed()
         return self._builds
 
     @builds.setter
@@ -256,6 +268,8 @@ class Server(TeamCityObject):
         :return: The current_time of this Server.  # noqa: E501
         :rtype: str
         """
+        if self._current_time is None:
+            self._read_if_needed()
         return self._current_time
 
     @current_time.setter
@@ -277,6 +291,8 @@ class Server(TeamCityObject):
         :return: The internal_id of this Server.  # noqa: E501
         :rtype: str
         """
+        if self._internal_id is None:
+            self._read_if_needed()
         return self._internal_id
 
     @internal_id.setter
@@ -298,6 +314,8 @@ class Server(TeamCityObject):
         :return: The projects of this Server.  # noqa: E501
         :rtype: Href
         """
+        if self._projects is None:
+            self._read_if_needed()
         return self._projects
 
     @projects.setter
@@ -319,6 +337,8 @@ class Server(TeamCityObject):
         :return: The role of this Server.  # noqa: E501
         :rtype: str
         """
+        if self._role is None:
+            self._read_if_needed()
         return self._role
 
     @role.setter
@@ -340,6 +360,8 @@ class Server(TeamCityObject):
         :return: The start_time of this Server.  # noqa: E501
         :rtype: str
         """
+        if self._start_time is None:
+            self._read_if_needed()
         return self._start_time
 
     @start_time.setter
@@ -361,6 +383,8 @@ class Server(TeamCityObject):
         :return: The user_groups of this Server.  # noqa: E501
         :rtype: Href
         """
+        if self._user_groups is None:
+            self._read_if_needed()
         return self._user_groups
 
     @user_groups.setter
@@ -382,6 +406,8 @@ class Server(TeamCityObject):
         :return: The users of this Server.  # noqa: E501
         :rtype: Href
         """
+        if self._users is None:
+            self._read_if_needed()
         return self._users
 
     @users.setter
@@ -403,6 +429,8 @@ class Server(TeamCityObject):
         :return: The vcs_roots of this Server.  # noqa: E501
         :rtype: Href
         """
+        if self._vcs_roots is None:
+            self._read_if_needed()
         return self._vcs_roots
 
     @vcs_roots.setter
@@ -424,6 +452,8 @@ class Server(TeamCityObject):
         :return: The version of this Server.  # noqa: E501
         :rtype: str
         """
+        if self._version is None:
+            self._read_if_needed()
         return self._version
 
     @version.setter
@@ -445,6 +475,8 @@ class Server(TeamCityObject):
         :return: The version_major of this Server.  # noqa: E501
         :rtype: int
         """
+        if self._version_major is None:
+            self._read_if_needed()
         return self._version_major
 
     @version_major.setter
@@ -466,6 +498,8 @@ class Server(TeamCityObject):
         :return: The version_minor of this Server.  # noqa: E501
         :rtype: int
         """
+        if self._version_minor is None:
+            self._read_if_needed()
         return self._version_minor
 
     @version_minor.setter
@@ -487,6 +521,8 @@ class Server(TeamCityObject):
         :return: The web_url of this Server.  # noqa: E501
         :rtype: str
         """
+        if self._web_url is None:
+            self._read_if_needed()
         return self._web_url
 
     @web_url.setter

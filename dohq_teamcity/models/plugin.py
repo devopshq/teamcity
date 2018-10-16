@@ -65,6 +65,8 @@ class Plugin(TeamCityObject):
         :return: The display_name of this Plugin.  # noqa: E501
         :rtype: str
         """
+        if self._display_name is None:
+            self._read_if_needed()
         return self._display_name
 
     @display_name.setter
@@ -86,6 +88,8 @@ class Plugin(TeamCityObject):
         :return: The load_path of this Plugin.  # noqa: E501
         :rtype: str
         """
+        if self._load_path is None:
+            self._read_if_needed()
         return self._load_path
 
     @load_path.setter
@@ -107,6 +111,8 @@ class Plugin(TeamCityObject):
         :return: The name of this Plugin.  # noqa: E501
         :rtype: str
         """
+        if self._name is None:
+            self._read_if_needed()
         return self._name
 
     @name.setter
@@ -128,6 +134,8 @@ class Plugin(TeamCityObject):
         :return: The parameters of this Plugin.  # noqa: E501
         :rtype: Properties
         """
+        if self._parameters is None:
+            self._read_if_needed()
         return self._parameters
 
     @parameters.setter
@@ -149,6 +157,8 @@ class Plugin(TeamCityObject):
         :return: The version of this Plugin.  # noqa: E501
         :rtype: str
         """
+        if self._version is None:
+            self._read_if_needed()
         return self._version
 
     @version.setter

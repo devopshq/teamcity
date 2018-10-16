@@ -77,6 +77,8 @@ class Problem(TeamCityObject):
         :return: The href of this Problem.  # noqa: E501
         :rtype: str
         """
+        if self._href is None:
+            self._read_if_needed()
         return self._href
 
     @href.setter
@@ -98,6 +100,8 @@ class Problem(TeamCityObject):
         :return: The id of this Problem.  # noqa: E501
         :rtype: str
         """
+        if self._id is None:
+            self._read_if_needed()
         return self._id
 
     @id.setter
@@ -119,6 +123,8 @@ class Problem(TeamCityObject):
         :return: The identity of this Problem.  # noqa: E501
         :rtype: str
         """
+        if self._identity is None:
+            self._read_if_needed()
         return self._identity
 
     @identity.setter
@@ -140,6 +146,8 @@ class Problem(TeamCityObject):
         :return: The investigations of this Problem.  # noqa: E501
         :rtype: Investigations
         """
+        if self._investigations is None:
+            self._read_if_needed()
         return self._investigations
 
     @investigations.setter
@@ -161,6 +169,8 @@ class Problem(TeamCityObject):
         :return: The mutes of this Problem.  # noqa: E501
         :rtype: Mutes
         """
+        if self._mutes is None:
+            self._read_if_needed()
         return self._mutes
 
     @mutes.setter
@@ -182,6 +192,8 @@ class Problem(TeamCityObject):
         :return: The problem_occurrences of this Problem.  # noqa: E501
         :rtype: ProblemOccurrences
         """
+        if self._problem_occurrences is None:
+            self._read_if_needed()
         return self._problem_occurrences
 
     @problem_occurrences.setter
@@ -203,6 +215,8 @@ class Problem(TeamCityObject):
         :return: The type of this Problem.  # noqa: E501
         :rtype: str
         """
+        if self._type is None:
+            self._read_if_needed()
         return self._type
 
     @type.setter

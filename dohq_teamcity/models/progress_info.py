@@ -68,6 +68,8 @@ class ProgressInfo(TeamCityObject):
         :return: The current_stage_text of this ProgressInfo.  # noqa: E501
         :rtype: str
         """
+        if self._current_stage_text is None:
+            self._read_if_needed()
         return self._current_stage_text
 
     @current_stage_text.setter
@@ -89,6 +91,8 @@ class ProgressInfo(TeamCityObject):
         :return: The elapsed_seconds of this ProgressInfo.  # noqa: E501
         :rtype: int
         """
+        if self._elapsed_seconds is None:
+            self._read_if_needed()
         return self._elapsed_seconds
 
     @elapsed_seconds.setter
@@ -110,6 +114,8 @@ class ProgressInfo(TeamCityObject):
         :return: The estimated_total_seconds of this ProgressInfo.  # noqa: E501
         :rtype: int
         """
+        if self._estimated_total_seconds is None:
+            self._read_if_needed()
         return self._estimated_total_seconds
 
     @estimated_total_seconds.setter
@@ -131,6 +137,8 @@ class ProgressInfo(TeamCityObject):
         :return: The outdated of this ProgressInfo.  # noqa: E501
         :rtype: bool
         """
+        if self._outdated is None:
+            self._read_if_needed()
         return self._outdated
 
     @outdated.setter
@@ -152,6 +160,8 @@ class ProgressInfo(TeamCityObject):
         :return: The percentage_complete of this ProgressInfo.  # noqa: E501
         :rtype: int
         """
+        if self._percentage_complete is None:
+            self._read_if_needed()
         return self._percentage_complete
 
     @percentage_complete.setter
@@ -173,6 +183,8 @@ class ProgressInfo(TeamCityObject):
         :return: The probably_hanging of this ProgressInfo.  # noqa: E501
         :rtype: bool
         """
+        if self._probably_hanging is None:
+            self._read_if_needed()
         return self._probably_hanging
 
     @probably_hanging.setter

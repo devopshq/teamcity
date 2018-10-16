@@ -67,10 +67,15 @@ If some objects contains other object (eg - ``Project`` contain ``BuildType``) w
 
    # list the build_type properties for a project
    project = tc.projects.get('id:MyProject')
-   bt = project.build_types.build_type[0]
+   bt = project.build_types[0]
    bt.parameters # None
-   bt = bt.load()
+   bt = bt.read()
    bt.parameters # Properties object like list[Property]
+
+   # get agents for pool which used in build
+   build = tc.builds.get('id:123456') # Make 1 API call
+   agents = build.read().agent.read().pool.read().agents # Make 3 API calls
+   print([x.name for agents])
 
 
 TeamCity Objects

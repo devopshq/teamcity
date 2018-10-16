@@ -75,6 +75,8 @@ class Sessions(TeamCityObject):
         :return: The count of this Sessions.  # noqa: E501
         :rtype: int
         """
+        if self._count is None:
+            self._read_if_needed()
         return self._count
 
     @count.setter
@@ -96,6 +98,8 @@ class Sessions(TeamCityObject):
         :return: The max_active of this Sessions.  # noqa: E501
         :rtype: int
         """
+        if self._max_active is None:
+            self._read_if_needed()
         return self._max_active
 
     @max_active.setter
@@ -117,6 +121,8 @@ class Sessions(TeamCityObject):
         :return: The session of this Sessions.  # noqa: E501
         :rtype: list[Session]
         """
+        if self._session is None:
+            self._read_if_needed()
         return self._session
 
     @session.setter
@@ -138,6 +144,8 @@ class Sessions(TeamCityObject):
         :return: The session_counter of this Sessions.  # noqa: E501
         :rtype: int
         """
+        if self._session_counter is None:
+            self._read_if_needed()
         return self._session_counter
 
     @session_counter.setter
@@ -159,6 +167,8 @@ class Sessions(TeamCityObject):
         :return: The session_create_rate of this Sessions.  # noqa: E501
         :rtype: int
         """
+        if self._session_create_rate is None:
+            self._read_if_needed()
         return self._session_create_rate
 
     @session_create_rate.setter
@@ -180,6 +190,8 @@ class Sessions(TeamCityObject):
         :return: The session_expire_rate of this Sessions.  # noqa: E501
         :rtype: int
         """
+        if self._session_expire_rate is None:
+            self._read_if_needed()
         return self._session_expire_rate
 
     @session_expire_rate.setter
@@ -201,6 +213,8 @@ class Sessions(TeamCityObject):
         :return: The session_max_alive_time of this Sessions.  # noqa: E501
         :rtype: int
         """
+        if self._session_max_alive_time is None:
+            self._read_if_needed()
         return self._session_max_alive_time
 
     @session_max_alive_time.setter

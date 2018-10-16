@@ -50,6 +50,8 @@ class AgentRequirements(TeamCityObject):
         :return: The agent_requirement of this AgentRequirements.  # noqa: E501
         :rtype: list[AgentRequirement]
         """
+        if self._agent_requirement is None:
+            self._read_if_needed()
         return self._agent_requirement
 
     @agent_requirement.setter
@@ -71,6 +73,8 @@ class AgentRequirements(TeamCityObject):
         :return: The count of this AgentRequirements.  # noqa: E501
         :rtype: int
         """
+        if self._count is None:
+            self._read_if_needed()
         return self._count
 
     @count.setter

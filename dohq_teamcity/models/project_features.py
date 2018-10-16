@@ -55,6 +55,8 @@ class ProjectFeatures(TeamCityObject):
         :return: The count of this ProjectFeatures.  # noqa: E501
         :rtype: int
         """
+        if self._count is None:
+            self._read_if_needed()
         return self._count
 
     @count.setter
@@ -76,6 +78,8 @@ class ProjectFeatures(TeamCityObject):
         :return: The href of this ProjectFeatures.  # noqa: E501
         :rtype: str
         """
+        if self._href is None:
+            self._read_if_needed()
         return self._href
 
     @href.setter
@@ -97,6 +101,8 @@ class ProjectFeatures(TeamCityObject):
         :return: The project_feature of this ProjectFeatures.  # noqa: E501
         :rtype: list[ProjectFeature]
         """
+        if self._project_feature is None:
+            self._read_if_needed()
         return self._project_feature
 
     @project_feature.setter

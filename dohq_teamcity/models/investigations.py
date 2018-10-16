@@ -65,6 +65,8 @@ class Investigations(TeamCityObject):
         :return: The count of this Investigations.  # noqa: E501
         :rtype: int
         """
+        if self._count is None:
+            self._read_if_needed()
         return self._count
 
     @count.setter
@@ -86,6 +88,8 @@ class Investigations(TeamCityObject):
         :return: The href of this Investigations.  # noqa: E501
         :rtype: str
         """
+        if self._href is None:
+            self._read_if_needed()
         return self._href
 
     @href.setter
@@ -107,6 +111,8 @@ class Investigations(TeamCityObject):
         :return: The investigation of this Investigations.  # noqa: E501
         :rtype: list[Investigation]
         """
+        if self._investigation is None:
+            self._read_if_needed()
         return self._investigation
 
     @investigation.setter
@@ -128,6 +134,8 @@ class Investigations(TeamCityObject):
         :return: The next_href of this Investigations.  # noqa: E501
         :rtype: str
         """
+        if self._next_href is None:
+            self._read_if_needed()
         return self._next_href
 
     @next_href.setter
@@ -149,6 +157,8 @@ class Investigations(TeamCityObject):
         :return: The prev_href of this Investigations.  # noqa: E501
         :rtype: str
         """
+        if self._prev_href is None:
+            self._read_if_needed()
         return self._prev_href
 
     @prev_href.setter

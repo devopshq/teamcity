@@ -50,6 +50,8 @@ class Groups(TeamCityObject):
         :return: The count of this Groups.  # noqa: E501
         :rtype: int
         """
+        if self._count is None:
+            self._read_if_needed()
         return self._count
 
     @count.setter
@@ -71,6 +73,8 @@ class Groups(TeamCityObject):
         :return: The group of this Groups.  # noqa: E501
         :rtype: list[Group]
         """
+        if self._group is None:
+            self._read_if_needed()
         return self._group
 
     @group.setter

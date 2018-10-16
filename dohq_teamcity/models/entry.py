@@ -48,6 +48,8 @@ class Entry(TeamCityObject):
         :return: The name of this Entry.  # noqa: E501
         :rtype: str
         """
+        if self._name is None:
+            self._read_if_needed()
         return self._name
 
     @name.setter
@@ -69,6 +71,8 @@ class Entry(TeamCityObject):
         :return: The value of this Entry.  # noqa: E501
         :rtype: str
         """
+        if self._value is None:
+            self._read_if_needed()
         return self._value
 
     @value.setter

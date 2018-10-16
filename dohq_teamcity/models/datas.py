@@ -50,6 +50,8 @@ class Datas(TeamCityObject):
         :return: The count of this Datas.  # noqa: E501
         :rtype: int
         """
+        if self._count is None:
+            self._read_if_needed()
         return self._count
 
     @count.setter
@@ -71,6 +73,8 @@ class Datas(TeamCityObject):
         :return: The data of this Datas.  # noqa: E501
         :rtype: list[MetaData]
         """
+        if self._data is None:
+            self._read_if_needed()
         return self._data
 
     @data.setter

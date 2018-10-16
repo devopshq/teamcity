@@ -113,6 +113,8 @@ class LicenseKey(TeamCityObject):
         :return: The active of this LicenseKey.  # noqa: E501
         :rtype: bool
         """
+        if self._active is None:
+            self._read_if_needed()
         return self._active
 
     @active.setter
@@ -134,6 +136,8 @@ class LicenseKey(TeamCityObject):
         :return: The agents of this LicenseKey.  # noqa: E501
         :rtype: int
         """
+        if self._agents is None:
+            self._read_if_needed()
         return self._agents
 
     @agents.setter
@@ -155,6 +159,8 @@ class LicenseKey(TeamCityObject):
         :return: The build_types of this LicenseKey.  # noqa: E501
         :rtype: int
         """
+        if self._build_types is None:
+            self._read_if_needed()
         return self._build_types
 
     @build_types.setter
@@ -176,6 +182,8 @@ class LicenseKey(TeamCityObject):
         :return: The error_details of this LicenseKey.  # noqa: E501
         :rtype: str
         """
+        if self._error_details is None:
+            self._read_if_needed()
         return self._error_details
 
     @error_details.setter
@@ -197,6 +205,8 @@ class LicenseKey(TeamCityObject):
         :return: The expiration_date of this LicenseKey.  # noqa: E501
         :rtype: str
         """
+        if self._expiration_date is None:
+            self._read_if_needed()
         return self._expiration_date
 
     @expiration_date.setter
@@ -218,6 +228,8 @@ class LicenseKey(TeamCityObject):
         :return: The expired of this LicenseKey.  # noqa: E501
         :rtype: bool
         """
+        if self._expired is None:
+            self._read_if_needed()
         return self._expired
 
     @expired.setter
@@ -239,6 +251,8 @@ class LicenseKey(TeamCityObject):
         :return: The key of this LicenseKey.  # noqa: E501
         :rtype: str
         """
+        if self._key is None:
+            self._read_if_needed()
         return self._key
 
     @key.setter
@@ -260,6 +274,8 @@ class LicenseKey(TeamCityObject):
         :return: The maintenance_end_date of this LicenseKey.  # noqa: E501
         :rtype: str
         """
+        if self._maintenance_end_date is None:
+            self._read_if_needed()
         return self._maintenance_end_date
 
     @maintenance_end_date.setter
@@ -281,6 +297,8 @@ class LicenseKey(TeamCityObject):
         :return: The obsolete of this LicenseKey.  # noqa: E501
         :rtype: bool
         """
+        if self._obsolete is None:
+            self._read_if_needed()
         return self._obsolete
 
     @obsolete.setter
@@ -302,6 +320,8 @@ class LicenseKey(TeamCityObject):
         :return: The raw_type of this LicenseKey.  # noqa: E501
         :rtype: str
         """
+        if self._raw_type is None:
+            self._read_if_needed()
         return self._raw_type
 
     @raw_type.setter
@@ -323,6 +343,8 @@ class LicenseKey(TeamCityObject):
         :return: The servers of this LicenseKey.  # noqa: E501
         :rtype: int
         """
+        if self._servers is None:
+            self._read_if_needed()
         return self._servers
 
     @servers.setter
@@ -344,6 +366,8 @@ class LicenseKey(TeamCityObject):
         :return: The type of this LicenseKey.  # noqa: E501
         :rtype: str
         """
+        if self._type is None:
+            self._read_if_needed()
         return self._type
 
     @type.setter
@@ -365,6 +389,8 @@ class LicenseKey(TeamCityObject):
         :return: The unlimited_agents of this LicenseKey.  # noqa: E501
         :rtype: bool
         """
+        if self._unlimited_agents is None:
+            self._read_if_needed()
         return self._unlimited_agents
 
     @unlimited_agents.setter
@@ -386,6 +412,8 @@ class LicenseKey(TeamCityObject):
         :return: The unlimited_build_types of this LicenseKey.  # noqa: E501
         :rtype: bool
         """
+        if self._unlimited_build_types is None:
+            self._read_if_needed()
         return self._unlimited_build_types
 
     @unlimited_build_types.setter
@@ -407,6 +435,8 @@ class LicenseKey(TeamCityObject):
         :return: The valid of this LicenseKey.  # noqa: E501
         :rtype: bool
         """
+        if self._valid is None:
+            self._read_if_needed()
         return self._valid
 
     @valid.setter

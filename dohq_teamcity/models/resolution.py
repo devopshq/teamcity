@@ -48,6 +48,8 @@ class Resolution(TeamCityObject):
         :return: The time of this Resolution.  # noqa: E501
         :rtype: str
         """
+        if self._time is None:
+            self._read_if_needed()
         return self._time
 
     @time.setter
@@ -69,6 +71,8 @@ class Resolution(TeamCityObject):
         :return: The type of this Resolution.  # noqa: E501
         :rtype: str
         """
+        if self._type is None:
+            self._read_if_needed()
         return self._type
 
     @type.setter

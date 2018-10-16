@@ -86,6 +86,8 @@ class NewProjectDescription(TeamCityObject):
         :return: The build_types_ids_map of this NewProjectDescription.  # noqa: E501
         :rtype: Properties
         """
+        if self._build_types_ids_map is None:
+            self._read_if_needed()
         return self._build_types_ids_map
 
     @build_types_ids_map.setter
@@ -107,6 +109,8 @@ class NewProjectDescription(TeamCityObject):
         :return: The copy_all_associated_settings of this NewProjectDescription.  # noqa: E501
         :rtype: bool
         """
+        if self._copy_all_associated_settings is None:
+            self._read_if_needed()
         return self._copy_all_associated_settings
 
     @copy_all_associated_settings.setter
@@ -128,6 +132,8 @@ class NewProjectDescription(TeamCityObject):
         :return: The id of this NewProjectDescription.  # noqa: E501
         :rtype: str
         """
+        if self._id is None:
+            self._read_if_needed()
         return self._id
 
     @id.setter
@@ -149,6 +155,8 @@ class NewProjectDescription(TeamCityObject):
         :return: The name of this NewProjectDescription.  # noqa: E501
         :rtype: str
         """
+        if self._name is None:
+            self._read_if_needed()
         return self._name
 
     @name.setter
@@ -170,6 +178,8 @@ class NewProjectDescription(TeamCityObject):
         :return: The parent_project of this NewProjectDescription.  # noqa: E501
         :rtype: Project
         """
+        if self._parent_project is None:
+            self._read_if_needed()
         return self._parent_project
 
     @parent_project.setter
@@ -191,6 +201,8 @@ class NewProjectDescription(TeamCityObject):
         :return: The projects_ids_map of this NewProjectDescription.  # noqa: E501
         :rtype: Properties
         """
+        if self._projects_ids_map is None:
+            self._read_if_needed()
         return self._projects_ids_map
 
     @projects_ids_map.setter
@@ -212,6 +224,8 @@ class NewProjectDescription(TeamCityObject):
         :return: The source_project of this NewProjectDescription.  # noqa: E501
         :rtype: Project
         """
+        if self._source_project is None:
+            self._read_if_needed()
         return self._source_project
 
     @source_project.setter
@@ -233,6 +247,8 @@ class NewProjectDescription(TeamCityObject):
         :return: The source_project_locator of this NewProjectDescription.  # noqa: E501
         :rtype: str
         """
+        if self._source_project_locator is None:
+            self._read_if_needed()
         return self._source_project_locator
 
     @source_project_locator.setter
@@ -254,6 +270,8 @@ class NewProjectDescription(TeamCityObject):
         :return: The vcs_roots_ids_map of this NewProjectDescription.  # noqa: E501
         :rtype: Properties
         """
+        if self._vcs_roots_ids_map is None:
+            self._read_if_needed()
         return self._vcs_roots_ids_map
 
     @vcs_roots_ids_map.setter
