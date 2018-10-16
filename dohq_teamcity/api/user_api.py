@@ -12,20 +12,13 @@
 
 
 from __future__ import absolute_import
-from dohq_teamcity.custom.base_model import TeamCityObject
 
 import re  # noqa: F401
 
 # python 2 and python 3 compatibility library
 import six
 
-from dohq_teamcity.models.group import Group  # noqa: F401,E501
-from dohq_teamcity.models.groups import Groups  # noqa: F401,E501
-from dohq_teamcity.models.properties import Properties  # noqa: F401,E501
-from dohq_teamcity.models.role import Role  # noqa: F401,E501
-from dohq_teamcity.models.roles import Roles  # noqa: F401,E501
-from dohq_teamcity.models.user import User  # noqa: F401,E501
-from dohq_teamcity.models.users import Users  # noqa: F401,E501
+from dohq_teamcity.api_client import ApiClient
 
 
 class UserApi(object):
@@ -34,9 +27,10 @@ class UserApi(object):
     Do not edit the class manually.
     Ref: https://github.com/swagger-api/swagger-codegen
     """
-    base_name = 'User'
 
     def __init__(self, api_client=None):
+        if api_client is None:
+            api_client = ApiClient()
         self.api_client = api_client
 
     def add_group(self, user_locator, **kwargs):  # noqa: E501
@@ -57,550 +51,17 @@ class UserApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__add_group_with_http_info(user_locator, **kwargs)  # noqa: E501
+            return self.add_group_with_http_info(user_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__add_group_with_http_info(user_locator, **kwargs)  # noqa: E501
+            (data) = self.add_group_with_http_info(user_locator, **kwargs)  # noqa: E501
             return data
 
-
-    def add_role(self, user_locator, **kwargs):  # noqa: E501
-        """add_role  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_role(user_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str user_locator: (required)
-        :param Role body:
-        :return: Role
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__add_role_with_http_info(user_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__add_role_with_http_info(user_locator, **kwargs)  # noqa: E501
-            return data
-
-
-    def add_role_simple(self, user_locator, role_id, scope, **kwargs):  # noqa: E501
-        """add_role_simple  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_role_simple(user_locator, role_id, scope, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str user_locator: (required)
-        :param str role_id: (required)
-        :param str scope: (required)
-        :return: Role
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__add_role_simple_with_http_info(user_locator, role_id, scope, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__add_role_simple_with_http_info(user_locator, role_id, scope, **kwargs)  # noqa: E501
-            return data
-
-
-    def add_role_simple_post(self, user_locator, role_id, scope, **kwargs):  # noqa: E501
-        """add_role_simple_post  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_role_simple_post(user_locator, role_id, scope, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str user_locator: (required)
-        :param str role_id: (required)
-        :param str scope: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__add_role_simple_post_with_http_info(user_locator, role_id, scope, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__add_role_simple_post_with_http_info(user_locator, role_id, scope, **kwargs)  # noqa: E501
-            return data
-
-
-    def create_user(self, **kwargs):  # noqa: E501
-        """create_user  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_user(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param User body:
-        :param str fields:
-        :return: User
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__create_user_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__create_user_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-
-    def delete_remember_me(self, user_locator, **kwargs):  # noqa: E501
-        """delete_remember_me  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_remember_me(user_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str user_locator: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__delete_remember_me_with_http_info(user_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__delete_remember_me_with_http_info(user_locator, **kwargs)  # noqa: E501
-            return data
-
-
-    def delete_role(self, user_locator, role_id, scope, **kwargs):  # noqa: E501
-        """delete_role  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_role(user_locator, role_id, scope, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str user_locator: (required)
-        :param str role_id: (required)
-        :param str scope: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__delete_role_with_http_info(user_locator, role_id, scope, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__delete_role_with_http_info(user_locator, role_id, scope, **kwargs)  # noqa: E501
-            return data
-
-
-    def delete_user(self, user_locator, **kwargs):  # noqa: E501
-        """delete_user  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_user(user_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str user_locator: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__delete_user_with_http_info(user_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__delete_user_with_http_info(user_locator, **kwargs)  # noqa: E501
-            return data
-
-
-    def delete_user_field(self, user_locator, field, **kwargs):  # noqa: E501
-        """delete_user_field  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_user_field(user_locator, field, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str user_locator: (required)
-        :param str field: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__delete_user_field_with_http_info(user_locator, field, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__delete_user_field_with_http_info(user_locator, field, **kwargs)  # noqa: E501
-            return data
-
-
-    def get_groups(self, user_locator, **kwargs):  # noqa: E501
-        """get_groups  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_groups(user_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str user_locator: (required)
-        :param str fields:
-        :return: Groups
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_groups_with_http_info(user_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_groups_with_http_info(user_locator, **kwargs)  # noqa: E501
-            return data
-
-
-    def get_permissions(self, user_locator, **kwargs):  # noqa: E501
-        """get_permissions  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_permissions(user_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str user_locator: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_permissions_with_http_info(user_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_permissions_with_http_info(user_locator, **kwargs)  # noqa: E501
-            return data
-
-
-    def list_role(self, user_locator, role_id, scope, **kwargs):  # noqa: E501
-        """list_role  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_role(user_locator, role_id, scope, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str user_locator: (required)
-        :param str role_id: (required)
-        :param str scope: (required)
-        :return: Role
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__list_role_with_http_info(user_locator, role_id, scope, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__list_role_with_http_info(user_locator, role_id, scope, **kwargs)  # noqa: E501
-            return data
-
-
-    def list_roles(self, user_locator, **kwargs):  # noqa: E501
-        """list_roles  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_roles(user_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str user_locator: (required)
-        :return: Roles
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__list_roles_with_http_info(user_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__list_roles_with_http_info(user_locator, **kwargs)  # noqa: E501
-            return data
-
-
-    def put_user_property(self, user_locator, name, **kwargs):  # noqa: E501
-        """put_user_property  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.put_user_property(user_locator, name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str user_locator: (required)
-        :param str name: (required)
-        :param str body:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__put_user_property_with_http_info(user_locator, name, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__put_user_property_with_http_info(user_locator, name, **kwargs)  # noqa: E501
-            return data
-
-
-    def remove_user_property(self, user_locator, name, **kwargs):  # noqa: E501
-        """remove_user_property  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.remove_user_property(user_locator, name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str user_locator: (required)
-        :param str name: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__remove_user_property_with_http_info(user_locator, name, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__remove_user_property_with_http_info(user_locator, name, **kwargs)  # noqa: E501
-            return data
-
-
-    def replace_groups(self, user_locator, **kwargs):  # noqa: E501
-        """replace_groups  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.replace_groups(user_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str user_locator: (required)
-        :param Groups body:
-        :param str fields:
-        :return: Groups
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__replace_groups_with_http_info(user_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__replace_groups_with_http_info(user_locator, **kwargs)  # noqa: E501
-            return data
-
-
-    def replace_roles(self, user_locator, **kwargs):  # noqa: E501
-        """replace_roles  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.replace_roles(user_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str user_locator: (required)
-        :param Roles body:
-        :return: Roles
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__replace_roles_with_http_info(user_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__replace_roles_with_http_info(user_locator, **kwargs)  # noqa: E501
-            return data
-
-
-    def serve_user(self, user_locator, **kwargs):  # noqa: E501
-        """serve_user  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_user(user_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str user_locator: (required)
-        :param str fields:
-        :return: User
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_user_with_http_info(user_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_user_with_http_info(user_locator, **kwargs)  # noqa: E501
-            return data
-
-
-    def serve_user_field(self, user_locator, field, **kwargs):  # noqa: E501
-        """serve_user_field  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_user_field(user_locator, field, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str user_locator: (required)
-        :param str field: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_user_field_with_http_info(user_locator, field, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_user_field_with_http_info(user_locator, field, **kwargs)  # noqa: E501
-            return data
-
-
-    def serve_user_properties(self, user_locator, **kwargs):  # noqa: E501
-        """serve_user_properties  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_user_properties(user_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str user_locator: (required)
-        :param str fields:
-        :return: Properties
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_user_properties_with_http_info(user_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_user_properties_with_http_info(user_locator, **kwargs)  # noqa: E501
-            return data
-
-
-    def serve_user_property(self, user_locator, name, **kwargs):  # noqa: E501
-        """serve_user_property  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_user_property(user_locator, name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str user_locator: (required)
-        :param str name: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_user_property_with_http_info(user_locator, name, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_user_property_with_http_info(user_locator, name, **kwargs)  # noqa: E501
-            return data
-
-
-    def serve_users(self, **kwargs):  # noqa: E501
-        """serve_users  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_users(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str locator:
-        :param str fields:
-        :return: Users
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_users_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_users_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-
-    def set_user_field(self, user_locator, field, **kwargs):  # noqa: E501
-        """set_user_field  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_user_field(user_locator, field, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str user_locator: (required)
-        :param str field: (required)
-        :param str body:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__set_user_field_with_http_info(user_locator, field, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__set_user_field_with_http_info(user_locator, field, **kwargs)  # noqa: E501
-            return data
-
-
-    def update_user(self, user_locator, **kwargs):  # noqa: E501
-        """update_user  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_user(user_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str user_locator: (required)
-        :param User body:
-        :param str fields:
-        :return: User
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__update_user_with_http_info(user_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__update_user_with_http_info(user_locator, **kwargs)  # noqa: E501
-            return data
-
-    def __add_group_with_http_info(self, user_locator, **kwargs):  # noqa: E501
+    def add_group_with_http_info(self, user_locator, **kwargs):  # noqa: E501
         """add_group  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__add_group_with_http_info(user_locator, async_req=True)
+        >>> thread = api.add_group_with_http_info(user_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -636,10 +97,7 @@ class UserApi(object):
 
         path_params = {}
         if 'user_locator' in params:
-            if isinstance(params['user_locator'], TeamCityObject):
-                path_params['userLocator'] = params['user_locator'].locator_id
-            else:
-                path_params['userLocator'] = params['user_locator']  # noqa: E501
+            path_params['userLocator'] = params['user_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -671,12 +129,35 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-    def __add_role_with_http_info(self, user_locator, **kwargs):  # noqa: E501
+
+    def add_role(self, user_locator, **kwargs):  # noqa: E501
         """add_role  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__add_role_with_http_info(user_locator, async_req=True)
+        >>> thread = api.add_role(user_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str user_locator: (required)
+        :param Role body:
+        :return: Role
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.add_role_with_http_info(user_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.add_role_with_http_info(user_locator, **kwargs)  # noqa: E501
+            return data
+
+    def add_role_with_http_info(self, user_locator, **kwargs):  # noqa: E501
+        """add_role  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.add_role_with_http_info(user_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -711,10 +192,7 @@ class UserApi(object):
 
         path_params = {}
         if 'user_locator' in params:
-            if isinstance(params['user_locator'], TeamCityObject):
-                path_params['userLocator'] = params['user_locator'].locator_id
-            else:
-                path_params['userLocator'] = params['user_locator']  # noqa: E501
+            path_params['userLocator'] = params['user_locator']  # noqa: E501
 
         query_params = []
 
@@ -744,12 +222,36 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-    def __add_role_simple_with_http_info(self, user_locator, role_id, scope, **kwargs):  # noqa: E501
+
+    def add_role_simple(self, user_locator, role_id, scope, **kwargs):  # noqa: E501
         """add_role_simple  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__add_role_simple_with_http_info(user_locator, role_id, scope, async_req=True)
+        >>> thread = api.add_role_simple(user_locator, role_id, scope, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str user_locator: (required)
+        :param str role_id: (required)
+        :param str scope: (required)
+        :return: Role
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.add_role_simple_with_http_info(user_locator, role_id, scope, **kwargs)  # noqa: E501
+        else:
+            (data) = self.add_role_simple_with_http_info(user_locator, role_id, scope, **kwargs)  # noqa: E501
+            return data
+
+    def add_role_simple_with_http_info(self, user_locator, role_id, scope, **kwargs):  # noqa: E501
+        """add_role_simple  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.add_role_simple_with_http_info(user_locator, role_id, scope, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -793,20 +295,11 @@ class UserApi(object):
 
         path_params = {}
         if 'user_locator' in params:
-            if isinstance(params['user_locator'], TeamCityObject):
-                path_params['userLocator'] = params['user_locator'].locator_id
-            else:
-                path_params['userLocator'] = params['user_locator']  # noqa: E501
+            path_params['userLocator'] = params['user_locator']  # noqa: E501
         if 'role_id' in params:
-            if isinstance(params['role_id'], TeamCityObject):
-                path_params['roleId'] = params['role_id'].locator_id
-            else:
-                path_params['roleId'] = params['role_id']  # noqa: E501
+            path_params['roleId'] = params['role_id']  # noqa: E501
         if 'scope' in params:
-            if isinstance(params['scope'], TeamCityObject):
-                path_params['scope'] = params['scope'].locator_id
-            else:
-                path_params['scope'] = params['scope']  # noqa: E501
+            path_params['scope'] = params['scope']  # noqa: E501
 
         query_params = []
 
@@ -834,12 +327,36 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-    def __add_role_simple_post_with_http_info(self, user_locator, role_id, scope, **kwargs):  # noqa: E501
+
+    def add_role_simple_post(self, user_locator, role_id, scope, **kwargs):  # noqa: E501
         """add_role_simple_post  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__add_role_simple_post_with_http_info(user_locator, role_id, scope, async_req=True)
+        >>> thread = api.add_role_simple_post(user_locator, role_id, scope, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str user_locator: (required)
+        :param str role_id: (required)
+        :param str scope: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.add_role_simple_post_with_http_info(user_locator, role_id, scope, **kwargs)  # noqa: E501
+        else:
+            (data) = self.add_role_simple_post_with_http_info(user_locator, role_id, scope, **kwargs)  # noqa: E501
+            return data
+
+    def add_role_simple_post_with_http_info(self, user_locator, role_id, scope, **kwargs):  # noqa: E501
+        """add_role_simple_post  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.add_role_simple_post_with_http_info(user_locator, role_id, scope, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -883,20 +400,11 @@ class UserApi(object):
 
         path_params = {}
         if 'user_locator' in params:
-            if isinstance(params['user_locator'], TeamCityObject):
-                path_params['userLocator'] = params['user_locator'].locator_id
-            else:
-                path_params['userLocator'] = params['user_locator']  # noqa: E501
+            path_params['userLocator'] = params['user_locator']  # noqa: E501
         if 'role_id' in params:
-            if isinstance(params['role_id'], TeamCityObject):
-                path_params['roleId'] = params['role_id'].locator_id
-            else:
-                path_params['roleId'] = params['role_id']  # noqa: E501
+            path_params['roleId'] = params['role_id']  # noqa: E501
         if 'scope' in params:
-            if isinstance(params['scope'], TeamCityObject):
-                path_params['scope'] = params['scope'].locator_id
-            else:
-                path_params['scope'] = params['scope']  # noqa: E501
+            path_params['scope'] = params['scope']  # noqa: E501
 
         query_params = []
 
@@ -924,12 +432,35 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-    def __create_user_with_http_info(self, **kwargs):  # noqa: E501
+
+    def create_user(self, **kwargs):  # noqa: E501
         """create_user  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__create_user_with_http_info(async_req=True)
+        >>> thread = api.create_user(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param User body:
+        :param str fields:
+        :return: User
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.create_user_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.create_user_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def create_user_with_http_info(self, **kwargs):  # noqa: E501
+        """create_user  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_user_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -990,12 +521,34 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-    def __delete_remember_me_with_http_info(self, user_locator, **kwargs):  # noqa: E501
+
+    def delete_remember_me(self, user_locator, **kwargs):  # noqa: E501
         """delete_remember_me  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__delete_remember_me_with_http_info(user_locator, async_req=True)
+        >>> thread = api.delete_remember_me(user_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str user_locator: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.delete_remember_me_with_http_info(user_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.delete_remember_me_with_http_info(user_locator, **kwargs)  # noqa: E501
+            return data
+
+    def delete_remember_me_with_http_info(self, user_locator, **kwargs):  # noqa: E501
+        """delete_remember_me  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_remember_me_with_http_info(user_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1029,10 +582,7 @@ class UserApi(object):
 
         path_params = {}
         if 'user_locator' in params:
-            if isinstance(params['user_locator'], TeamCityObject):
-                path_params['userLocator'] = params['user_locator'].locator_id
-            else:
-                path_params['userLocator'] = params['user_locator']  # noqa: E501
+            path_params['userLocator'] = params['user_locator']  # noqa: E501
 
         query_params = []
 
@@ -1060,12 +610,36 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-    def __delete_role_with_http_info(self, user_locator, role_id, scope, **kwargs):  # noqa: E501
+
+    def delete_role(self, user_locator, role_id, scope, **kwargs):  # noqa: E501
         """delete_role  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__delete_role_with_http_info(user_locator, role_id, scope, async_req=True)
+        >>> thread = api.delete_role(user_locator, role_id, scope, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str user_locator: (required)
+        :param str role_id: (required)
+        :param str scope: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.delete_role_with_http_info(user_locator, role_id, scope, **kwargs)  # noqa: E501
+        else:
+            (data) = self.delete_role_with_http_info(user_locator, role_id, scope, **kwargs)  # noqa: E501
+            return data
+
+    def delete_role_with_http_info(self, user_locator, role_id, scope, **kwargs):  # noqa: E501
+        """delete_role  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_role_with_http_info(user_locator, role_id, scope, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1109,20 +683,11 @@ class UserApi(object):
 
         path_params = {}
         if 'user_locator' in params:
-            if isinstance(params['user_locator'], TeamCityObject):
-                path_params['userLocator'] = params['user_locator'].locator_id
-            else:
-                path_params['userLocator'] = params['user_locator']  # noqa: E501
+            path_params['userLocator'] = params['user_locator']  # noqa: E501
         if 'role_id' in params:
-            if isinstance(params['role_id'], TeamCityObject):
-                path_params['roleId'] = params['role_id'].locator_id
-            else:
-                path_params['roleId'] = params['role_id']  # noqa: E501
+            path_params['roleId'] = params['role_id']  # noqa: E501
         if 'scope' in params:
-            if isinstance(params['scope'], TeamCityObject):
-                path_params['scope'] = params['scope'].locator_id
-            else:
-                path_params['scope'] = params['scope']  # noqa: E501
+            path_params['scope'] = params['scope']  # noqa: E501
 
         query_params = []
 
@@ -1150,12 +715,34 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-    def __delete_user_with_http_info(self, user_locator, **kwargs):  # noqa: E501
+
+    def delete_user(self, user_locator, **kwargs):  # noqa: E501
         """delete_user  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__delete_user_with_http_info(user_locator, async_req=True)
+        >>> thread = api.delete_user(user_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str user_locator: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.delete_user_with_http_info(user_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.delete_user_with_http_info(user_locator, **kwargs)  # noqa: E501
+            return data
+
+    def delete_user_with_http_info(self, user_locator, **kwargs):  # noqa: E501
+        """delete_user  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_user_with_http_info(user_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1189,10 +776,7 @@ class UserApi(object):
 
         path_params = {}
         if 'user_locator' in params:
-            if isinstance(params['user_locator'], TeamCityObject):
-                path_params['userLocator'] = params['user_locator'].locator_id
-            else:
-                path_params['userLocator'] = params['user_locator']  # noqa: E501
+            path_params['userLocator'] = params['user_locator']  # noqa: E501
 
         query_params = []
 
@@ -1220,12 +804,35 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-    def __delete_user_field_with_http_info(self, user_locator, field, **kwargs):  # noqa: E501
+
+    def delete_user_field(self, user_locator, field, **kwargs):  # noqa: E501
         """delete_user_field  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__delete_user_field_with_http_info(user_locator, field, async_req=True)
+        >>> thread = api.delete_user_field(user_locator, field, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str user_locator: (required)
+        :param str field: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.delete_user_field_with_http_info(user_locator, field, **kwargs)  # noqa: E501
+        else:
+            (data) = self.delete_user_field_with_http_info(user_locator, field, **kwargs)  # noqa: E501
+            return data
+
+    def delete_user_field_with_http_info(self, user_locator, field, **kwargs):  # noqa: E501
+        """delete_user_field  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_user_field_with_http_info(user_locator, field, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1264,15 +871,9 @@ class UserApi(object):
 
         path_params = {}
         if 'user_locator' in params:
-            if isinstance(params['user_locator'], TeamCityObject):
-                path_params['userLocator'] = params['user_locator'].locator_id
-            else:
-                path_params['userLocator'] = params['user_locator']  # noqa: E501
+            path_params['userLocator'] = params['user_locator']  # noqa: E501
         if 'field' in params:
-            if isinstance(params['field'], TeamCityObject):
-                path_params['field'] = params['field'].locator_id
-            else:
-                path_params['field'] = params['field']  # noqa: E501
+            path_params['field'] = params['field']  # noqa: E501
 
         query_params = []
 
@@ -1300,12 +901,35 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-    def __get_groups_with_http_info(self, user_locator, **kwargs):  # noqa: E501
+
+    def get_groups(self, user_locator, **kwargs):  # noqa: E501
         """get_groups  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_groups_with_http_info(user_locator, async_req=True)
+        >>> thread = api.get_groups(user_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str user_locator: (required)
+        :param str fields:
+        :return: Groups
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_groups_with_http_info(user_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_groups_with_http_info(user_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_groups_with_http_info(self, user_locator, **kwargs):  # noqa: E501
+        """get_groups  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_groups_with_http_info(user_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1340,10 +964,7 @@ class UserApi(object):
 
         path_params = {}
         if 'user_locator' in params:
-            if isinstance(params['user_locator'], TeamCityObject):
-                path_params['userLocator'] = params['user_locator'].locator_id
-            else:
-                path_params['userLocator'] = params['user_locator']  # noqa: E501
+            path_params['userLocator'] = params['user_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -1373,12 +994,34 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-    def __get_permissions_with_http_info(self, user_locator, **kwargs):  # noqa: E501
+
+    def get_permissions(self, user_locator, **kwargs):  # noqa: E501
         """get_permissions  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_permissions_with_http_info(user_locator, async_req=True)
+        >>> thread = api.get_permissions(user_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str user_locator: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_permissions_with_http_info(user_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_permissions_with_http_info(user_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_permissions_with_http_info(self, user_locator, **kwargs):  # noqa: E501
+        """get_permissions  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_permissions_with_http_info(user_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1412,10 +1055,7 @@ class UserApi(object):
 
         path_params = {}
         if 'user_locator' in params:
-            if isinstance(params['user_locator'], TeamCityObject):
-                path_params['userLocator'] = params['user_locator'].locator_id
-            else:
-                path_params['userLocator'] = params['user_locator']  # noqa: E501
+            path_params['userLocator'] = params['user_locator']  # noqa: E501
 
         query_params = []
 
@@ -1443,12 +1083,36 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-    def __list_role_with_http_info(self, user_locator, role_id, scope, **kwargs):  # noqa: E501
+
+    def list_role(self, user_locator, role_id, scope, **kwargs):  # noqa: E501
         """list_role  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__list_role_with_http_info(user_locator, role_id, scope, async_req=True)
+        >>> thread = api.list_role(user_locator, role_id, scope, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str user_locator: (required)
+        :param str role_id: (required)
+        :param str scope: (required)
+        :return: Role
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.list_role_with_http_info(user_locator, role_id, scope, **kwargs)  # noqa: E501
+        else:
+            (data) = self.list_role_with_http_info(user_locator, role_id, scope, **kwargs)  # noqa: E501
+            return data
+
+    def list_role_with_http_info(self, user_locator, role_id, scope, **kwargs):  # noqa: E501
+        """list_role  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_role_with_http_info(user_locator, role_id, scope, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1492,20 +1156,11 @@ class UserApi(object):
 
         path_params = {}
         if 'user_locator' in params:
-            if isinstance(params['user_locator'], TeamCityObject):
-                path_params['userLocator'] = params['user_locator'].locator_id
-            else:
-                path_params['userLocator'] = params['user_locator']  # noqa: E501
+            path_params['userLocator'] = params['user_locator']  # noqa: E501
         if 'role_id' in params:
-            if isinstance(params['role_id'], TeamCityObject):
-                path_params['roleId'] = params['role_id'].locator_id
-            else:
-                path_params['roleId'] = params['role_id']  # noqa: E501
+            path_params['roleId'] = params['role_id']  # noqa: E501
         if 'scope' in params:
-            if isinstance(params['scope'], TeamCityObject):
-                path_params['scope'] = params['scope'].locator_id
-            else:
-                path_params['scope'] = params['scope']  # noqa: E501
+            path_params['scope'] = params['scope']  # noqa: E501
 
         query_params = []
 
@@ -1533,12 +1188,34 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-    def __list_roles_with_http_info(self, user_locator, **kwargs):  # noqa: E501
+
+    def list_roles(self, user_locator, **kwargs):  # noqa: E501
         """list_roles  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__list_roles_with_http_info(user_locator, async_req=True)
+        >>> thread = api.list_roles(user_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str user_locator: (required)
+        :return: Roles
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.list_roles_with_http_info(user_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.list_roles_with_http_info(user_locator, **kwargs)  # noqa: E501
+            return data
+
+    def list_roles_with_http_info(self, user_locator, **kwargs):  # noqa: E501
+        """list_roles  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_roles_with_http_info(user_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1572,10 +1249,7 @@ class UserApi(object):
 
         path_params = {}
         if 'user_locator' in params:
-            if isinstance(params['user_locator'], TeamCityObject):
-                path_params['userLocator'] = params['user_locator'].locator_id
-            else:
-                path_params['userLocator'] = params['user_locator']  # noqa: E501
+            path_params['userLocator'] = params['user_locator']  # noqa: E501
 
         query_params = []
 
@@ -1603,12 +1277,36 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-    def __put_user_property_with_http_info(self, user_locator, name, **kwargs):  # noqa: E501
+
+    def put_user_property(self, user_locator, name, **kwargs):  # noqa: E501
         """put_user_property  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__put_user_property_with_http_info(user_locator, name, async_req=True)
+        >>> thread = api.put_user_property(user_locator, name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str user_locator: (required)
+        :param str name: (required)
+        :param str body:
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.put_user_property_with_http_info(user_locator, name, **kwargs)  # noqa: E501
+        else:
+            (data) = self.put_user_property_with_http_info(user_locator, name, **kwargs)  # noqa: E501
+            return data
+
+    def put_user_property_with_http_info(self, user_locator, name, **kwargs):  # noqa: E501
+        """put_user_property  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.put_user_property_with_http_info(user_locator, name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1648,15 +1346,9 @@ class UserApi(object):
 
         path_params = {}
         if 'user_locator' in params:
-            if isinstance(params['user_locator'], TeamCityObject):
-                path_params['userLocator'] = params['user_locator'].locator_id
-            else:
-                path_params['userLocator'] = params['user_locator']  # noqa: E501
+            path_params['userLocator'] = params['user_locator']  # noqa: E501
         if 'name' in params:
-            if isinstance(params['name'], TeamCityObject):
-                path_params['name'] = params['name'].locator_id
-            else:
-                path_params['name'] = params['name']  # noqa: E501
+            path_params['name'] = params['name']  # noqa: E501
 
         query_params = []
 
@@ -1686,12 +1378,35 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-    def __remove_user_property_with_http_info(self, user_locator, name, **kwargs):  # noqa: E501
+
+    def remove_user_property(self, user_locator, name, **kwargs):  # noqa: E501
         """remove_user_property  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__remove_user_property_with_http_info(user_locator, name, async_req=True)
+        >>> thread = api.remove_user_property(user_locator, name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str user_locator: (required)
+        :param str name: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.remove_user_property_with_http_info(user_locator, name, **kwargs)  # noqa: E501
+        else:
+            (data) = self.remove_user_property_with_http_info(user_locator, name, **kwargs)  # noqa: E501
+            return data
+
+    def remove_user_property_with_http_info(self, user_locator, name, **kwargs):  # noqa: E501
+        """remove_user_property  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.remove_user_property_with_http_info(user_locator, name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1730,15 +1445,9 @@ class UserApi(object):
 
         path_params = {}
         if 'user_locator' in params:
-            if isinstance(params['user_locator'], TeamCityObject):
-                path_params['userLocator'] = params['user_locator'].locator_id
-            else:
-                path_params['userLocator'] = params['user_locator']  # noqa: E501
+            path_params['userLocator'] = params['user_locator']  # noqa: E501
         if 'name' in params:
-            if isinstance(params['name'], TeamCityObject):
-                path_params['name'] = params['name'].locator_id
-            else:
-                path_params['name'] = params['name']  # noqa: E501
+            path_params['name'] = params['name']  # noqa: E501
 
         query_params = []
 
@@ -1766,12 +1475,36 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-    def __replace_groups_with_http_info(self, user_locator, **kwargs):  # noqa: E501
+
+    def replace_groups(self, user_locator, **kwargs):  # noqa: E501
         """replace_groups  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__replace_groups_with_http_info(user_locator, async_req=True)
+        >>> thread = api.replace_groups(user_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str user_locator: (required)
+        :param Groups body:
+        :param str fields:
+        :return: Groups
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.replace_groups_with_http_info(user_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.replace_groups_with_http_info(user_locator, **kwargs)  # noqa: E501
+            return data
+
+    def replace_groups_with_http_info(self, user_locator, **kwargs):  # noqa: E501
+        """replace_groups  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.replace_groups_with_http_info(user_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1807,10 +1540,7 @@ class UserApi(object):
 
         path_params = {}
         if 'user_locator' in params:
-            if isinstance(params['user_locator'], TeamCityObject):
-                path_params['userLocator'] = params['user_locator'].locator_id
-            else:
-                path_params['userLocator'] = params['user_locator']  # noqa: E501
+            path_params['userLocator'] = params['user_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -1842,12 +1572,35 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-    def __replace_roles_with_http_info(self, user_locator, **kwargs):  # noqa: E501
+
+    def replace_roles(self, user_locator, **kwargs):  # noqa: E501
         """replace_roles  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__replace_roles_with_http_info(user_locator, async_req=True)
+        >>> thread = api.replace_roles(user_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str user_locator: (required)
+        :param Roles body:
+        :return: Roles
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.replace_roles_with_http_info(user_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.replace_roles_with_http_info(user_locator, **kwargs)  # noqa: E501
+            return data
+
+    def replace_roles_with_http_info(self, user_locator, **kwargs):  # noqa: E501
+        """replace_roles  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.replace_roles_with_http_info(user_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1882,10 +1635,7 @@ class UserApi(object):
 
         path_params = {}
         if 'user_locator' in params:
-            if isinstance(params['user_locator'], TeamCityObject):
-                path_params['userLocator'] = params['user_locator'].locator_id
-            else:
-                path_params['userLocator'] = params['user_locator']  # noqa: E501
+            path_params['userLocator'] = params['user_locator']  # noqa: E501
 
         query_params = []
 
@@ -1915,12 +1665,35 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-    def __serve_user_with_http_info(self, user_locator, **kwargs):  # noqa: E501
+
+    def serve_user(self, user_locator, **kwargs):  # noqa: E501
         """serve_user  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_user_with_http_info(user_locator, async_req=True)
+        >>> thread = api.serve_user(user_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str user_locator: (required)
+        :param str fields:
+        :return: User
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.serve_user_with_http_info(user_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.serve_user_with_http_info(user_locator, **kwargs)  # noqa: E501
+            return data
+
+    def serve_user_with_http_info(self, user_locator, **kwargs):  # noqa: E501
+        """serve_user  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.serve_user_with_http_info(user_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1955,10 +1728,7 @@ class UserApi(object):
 
         path_params = {}
         if 'user_locator' in params:
-            if isinstance(params['user_locator'], TeamCityObject):
-                path_params['userLocator'] = params['user_locator'].locator_id
-            else:
-                path_params['userLocator'] = params['user_locator']  # noqa: E501
+            path_params['userLocator'] = params['user_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -1988,12 +1758,35 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-    def __serve_user_field_with_http_info(self, user_locator, field, **kwargs):  # noqa: E501
+
+    def serve_user_field(self, user_locator, field, **kwargs):  # noqa: E501
         """serve_user_field  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_user_field_with_http_info(user_locator, field, async_req=True)
+        >>> thread = api.serve_user_field(user_locator, field, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str user_locator: (required)
+        :param str field: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.serve_user_field_with_http_info(user_locator, field, **kwargs)  # noqa: E501
+        else:
+            (data) = self.serve_user_field_with_http_info(user_locator, field, **kwargs)  # noqa: E501
+            return data
+
+    def serve_user_field_with_http_info(self, user_locator, field, **kwargs):  # noqa: E501
+        """serve_user_field  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.serve_user_field_with_http_info(user_locator, field, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -2032,15 +1825,9 @@ class UserApi(object):
 
         path_params = {}
         if 'user_locator' in params:
-            if isinstance(params['user_locator'], TeamCityObject):
-                path_params['userLocator'] = params['user_locator'].locator_id
-            else:
-                path_params['userLocator'] = params['user_locator']  # noqa: E501
+            path_params['userLocator'] = params['user_locator']  # noqa: E501
         if 'field' in params:
-            if isinstance(params['field'], TeamCityObject):
-                path_params['field'] = params['field'].locator_id
-            else:
-                path_params['field'] = params['field']  # noqa: E501
+            path_params['field'] = params['field']  # noqa: E501
 
         query_params = []
 
@@ -2068,12 +1855,35 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-    def __serve_user_properties_with_http_info(self, user_locator, **kwargs):  # noqa: E501
+
+    def serve_user_properties(self, user_locator, **kwargs):  # noqa: E501
         """serve_user_properties  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_user_properties_with_http_info(user_locator, async_req=True)
+        >>> thread = api.serve_user_properties(user_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str user_locator: (required)
+        :param str fields:
+        :return: Properties
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.serve_user_properties_with_http_info(user_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.serve_user_properties_with_http_info(user_locator, **kwargs)  # noqa: E501
+            return data
+
+    def serve_user_properties_with_http_info(self, user_locator, **kwargs):  # noqa: E501
+        """serve_user_properties  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.serve_user_properties_with_http_info(user_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -2108,10 +1918,7 @@ class UserApi(object):
 
         path_params = {}
         if 'user_locator' in params:
-            if isinstance(params['user_locator'], TeamCityObject):
-                path_params['userLocator'] = params['user_locator'].locator_id
-            else:
-                path_params['userLocator'] = params['user_locator']  # noqa: E501
+            path_params['userLocator'] = params['user_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -2141,12 +1948,35 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-    def __serve_user_property_with_http_info(self, user_locator, name, **kwargs):  # noqa: E501
+
+    def serve_user_property(self, user_locator, name, **kwargs):  # noqa: E501
         """serve_user_property  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_user_property_with_http_info(user_locator, name, async_req=True)
+        >>> thread = api.serve_user_property(user_locator, name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str user_locator: (required)
+        :param str name: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.serve_user_property_with_http_info(user_locator, name, **kwargs)  # noqa: E501
+        else:
+            (data) = self.serve_user_property_with_http_info(user_locator, name, **kwargs)  # noqa: E501
+            return data
+
+    def serve_user_property_with_http_info(self, user_locator, name, **kwargs):  # noqa: E501
+        """serve_user_property  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.serve_user_property_with_http_info(user_locator, name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -2185,15 +2015,9 @@ class UserApi(object):
 
         path_params = {}
         if 'user_locator' in params:
-            if isinstance(params['user_locator'], TeamCityObject):
-                path_params['userLocator'] = params['user_locator'].locator_id
-            else:
-                path_params['userLocator'] = params['user_locator']  # noqa: E501
+            path_params['userLocator'] = params['user_locator']  # noqa: E501
         if 'name' in params:
-            if isinstance(params['name'], TeamCityObject):
-                path_params['name'] = params['name'].locator_id
-            else:
-                path_params['name'] = params['name']  # noqa: E501
+            path_params['name'] = params['name']  # noqa: E501
 
         query_params = []
 
@@ -2221,12 +2045,35 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-    def __serve_users_with_http_info(self, **kwargs):  # noqa: E501
+
+    def serve_users(self, **kwargs):  # noqa: E501
         """serve_users  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_users_with_http_info(async_req=True)
+        >>> thread = api.serve_users(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str locator:
+        :param str fields:
+        :return: Users
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.serve_users_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.serve_users_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def serve_users_with_http_info(self, **kwargs):  # noqa: E501
+        """serve_users  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.serve_users_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -2287,12 +2134,36 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-    def __set_user_field_with_http_info(self, user_locator, field, **kwargs):  # noqa: E501
+
+    def set_user_field(self, user_locator, field, **kwargs):  # noqa: E501
         """set_user_field  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__set_user_field_with_http_info(user_locator, field, async_req=True)
+        >>> thread = api.set_user_field(user_locator, field, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str user_locator: (required)
+        :param str field: (required)
+        :param str body:
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.set_user_field_with_http_info(user_locator, field, **kwargs)  # noqa: E501
+        else:
+            (data) = self.set_user_field_with_http_info(user_locator, field, **kwargs)  # noqa: E501
+            return data
+
+    def set_user_field_with_http_info(self, user_locator, field, **kwargs):  # noqa: E501
+        """set_user_field  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.set_user_field_with_http_info(user_locator, field, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -2332,15 +2203,9 @@ class UserApi(object):
 
         path_params = {}
         if 'user_locator' in params:
-            if isinstance(params['user_locator'], TeamCityObject):
-                path_params['userLocator'] = params['user_locator'].locator_id
-            else:
-                path_params['userLocator'] = params['user_locator']  # noqa: E501
+            path_params['userLocator'] = params['user_locator']  # noqa: E501
         if 'field' in params:
-            if isinstance(params['field'], TeamCityObject):
-                path_params['field'] = params['field'].locator_id
-            else:
-                path_params['field'] = params['field']  # noqa: E501
+            path_params['field'] = params['field']  # noqa: E501
 
         query_params = []
 
@@ -2370,12 +2235,36 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-    def __update_user_with_http_info(self, user_locator, **kwargs):  # noqa: E501
+
+    def update_user(self, user_locator, **kwargs):  # noqa: E501
         """update_user  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__update_user_with_http_info(user_locator, async_req=True)
+        >>> thread = api.update_user(user_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str user_locator: (required)
+        :param User body:
+        :param str fields:
+        :return: User
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.update_user_with_http_info(user_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.update_user_with_http_info(user_locator, **kwargs)  # noqa: E501
+            return data
+
+    def update_user_with_http_info(self, user_locator, **kwargs):  # noqa: E501
+        """update_user  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_user_with_http_info(user_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -2411,10 +2300,7 @@ class UserApi(object):
 
         path_params = {}
         if 'user_locator' in params:
-            if isinstance(params['user_locator'], TeamCityObject):
-                path_params['userLocator'] = params['user_locator'].locator_id
-            else:
-                path_params['userLocator'] = params['user_locator']  # noqa: E501
+            path_params['userLocator'] = params['user_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:

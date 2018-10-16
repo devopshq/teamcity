@@ -16,7 +16,7 @@ Contents:
     install
     api-usage
     faq
-    api-objects
+    api-examples
     api/dohq_teamcity
     development
 

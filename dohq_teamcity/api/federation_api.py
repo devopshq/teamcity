@@ -12,14 +12,13 @@
 
 
 from __future__ import absolute_import
-from dohq_teamcity.custom.base_model import TeamCityObject
 
 import re  # noqa: F401
 
 # python 2 and python 3 compatibility library
 import six
 
-from dohq_teamcity.models.servers import Servers  # noqa: F401,E501
+from dohq_teamcity.api_client import ApiClient
 
 
 class FederationApi(object):
@@ -28,9 +27,10 @@ class FederationApi(object):
     Do not edit the class manually.
     Ref: https://github.com/swagger-api/swagger-codegen
     """
-    base_name = 'Federation'
 
     def __init__(self, api_client=None):
+        if api_client is None:
+            api_client = ApiClient()
         self.api_client = api_client
 
     def add_server(self, **kwargs):  # noqa: E501
@@ -49,39 +49,17 @@ class FederationApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__add_server_with_http_info(**kwargs)  # noqa: E501
+            return self.add_server_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.__add_server_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.add_server_with_http_info(**kwargs)  # noqa: E501
             return data
 
-
-    def servers(self, **kwargs):  # noqa: E501
-        """servers  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.servers(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str fields:
-        :return: Servers
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__servers_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__servers_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def __add_server_with_http_info(self, **kwargs):  # noqa: E501
+    def add_server_with_http_info(self, **kwargs):  # noqa: E501
         """add_server  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__add_server_with_http_info(async_req=True)
+        >>> thread = api.add_server_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -139,12 +117,34 @@ class FederationApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-    def __servers_with_http_info(self, **kwargs):  # noqa: E501
+
+    def servers(self, **kwargs):  # noqa: E501
         """servers  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__servers_with_http_info(async_req=True)
+        >>> thread = api.servers(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str fields:
+        :return: Servers
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.servers_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.servers_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def servers_with_http_info(self, **kwargs):  # noqa: E501
+        """servers  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.servers_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool

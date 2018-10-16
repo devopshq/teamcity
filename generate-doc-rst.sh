@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# RST docs - for single running only
+java -Xmx1024m -Xms256m -jar ./swagger-codegen-cli.jar generate \
+    -l python \
+    -c ./swagger/swagger-config.json \
+    -t ./swagger/docs-rst-template/ \
+    -D docs \
+    -i ./swagger/swagger.json
+rm -rf ./docs-sphinx/teamcity_apis || echo "not exist"
+rm -rf ./docs-sphinx/teamcity_models  || echo "not exist"
+mkdir ./docs-sphinx/teamcity_apis || echo "folder exist"
+mkdir ./docs-sphinx/teamcity_models || echo "folder exitst"
+mv -vf docs/*Api.md ./docs-sphinx/teamcity_apis
+
+pushd ./docs-sphinx/teamcity_apis
+for file in *.md
+do
+  mv "$file" "${file%.md}.rst"
+done
+popd
+
+mv -vf docs/*.md ./docs-sphinx/teamcity_models/
+pushd ./docs-sphinx/teamcity_models
+for file in *.md
+do
+  mv "$file" "${file%.md}.rst"
+done
+popd
+rmdir docs
