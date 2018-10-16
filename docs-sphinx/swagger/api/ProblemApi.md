@@ -16,7 +16,7 @@ Method | HTTP request | Description
 ### Example
 ```python
 from pprint import pprint
-import dohq_teamcity
+from dohq_teamcity import TeamCity, ApiException
 
 # username/password authentication
 tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
@@ -40,17 +40,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Problems**](Problems.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
+[**Problems**](../models/Problems.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -63,7 +53,7 @@ No authorization required
 ### Example
 ```python
 from pprint import pprint
-import dohq_teamcity
+from dohq_teamcity import TeamCity, ApiException
 
 # username/password authentication
 tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
@@ -87,17 +77,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Problem**](Problem.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
+[**Problem**](../models/Problem.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

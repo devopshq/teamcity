@@ -39,7 +39,7 @@ class TeamCity(ApiClient):
         # Add "Managers" with _api - legacy for .md documantation
         self.agent_api = self.agents
 
-        self.agent_api = self.agent_pools
+        self.agent_pool_api = self.agent_pools
         self.build_api = self.builds
         self.build_queue_api = self.build_queues
         self.build_type_api = self.build_types

@@ -19,7 +19,7 @@ Method | HTTP request | Description
 ### Example
 ```python
 from pprint import pprint
-import dohq_teamcity
+from dohq_teamcity import TeamCity, ApiException
 
 # username/password authentication
 tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
@@ -39,16 +39,6 @@ This endpoint does not need any parameter.
 
 **str**
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
@@ -60,7 +50,7 @@ No authorization required
 ### Example
 ```python
 from pprint import pprint
-import dohq_teamcity
+from dohq_teamcity import TeamCity, ApiException
 
 # username/password authentication
 tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
@@ -90,16 +80,6 @@ Name | Type | Description  | Notes
 
 **str**
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
@@ -111,7 +91,7 @@ No authorization required
 ### Example
 ```python
 from pprint import pprint
-import dohq_teamcity
+from dohq_teamcity import TeamCity, ApiException
 
 # username/password authentication
 tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
@@ -133,17 +113,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Plugin**](Plugin.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
+[**Plugin**](../models/Plugin.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -156,7 +126,7 @@ No authorization required
 ### Example
 ```python
 from pprint import pprint
-import dohq_teamcity
+from dohq_teamcity import TeamCity, ApiException
 
 # username/password authentication
 tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
@@ -176,16 +146,6 @@ This endpoint does not need any parameter.
 
 **str**
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
@@ -197,7 +157,7 @@ No authorization required
 ### Example
 ```python
 from pprint import pprint
-import dohq_teamcity
+from dohq_teamcity import TeamCity, ApiException
 
 # username/password authentication
 tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
@@ -216,16 +176,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 **str**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

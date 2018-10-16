@@ -244,3 +244,11 @@ All method makes a synchronous HTTP request by default. To make an asynchronous 
     print('\n'.join(bt_pr))
 
 
+Debug and troubleshooting
+--------------------------
+You can use logging for debug query
+
+.. code-block:: python
+
+    logging.getLogger("urllib3").setLevel(logging.DEBUG)
+    logging.getLogger("dohq_teamcity").setLevel(logging.DEBUG)
