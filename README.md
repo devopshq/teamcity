@@ -8,8 +8,15 @@
 
 ## Installation
 ```
+# Latest release
 pip install dohq-teamcity
+
+# Develop branch
+git clone https://github.com/devopshq/teamcity
+cd dohq-teamcity
+python setup.py install
 ```
+
 
 ## Usage
 
