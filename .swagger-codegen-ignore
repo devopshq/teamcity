@@ -25,9 +25,9 @@
 .gitignore
 setup.py
 .travis.yml
-teamcity/custom/*
-teamcity/__init__.py
-teamcity/api_client.py
-teamcity/configuration.py
-teamcity/rest.py # we save cookie between request
+dohq_teamcity/custom/*
+dohq_teamcity/__init__.py
+dohq_teamcity/api_client.py
+dohq_teamcity/configuration.py
+dohq_teamcity/rest.py # we save cookie between request
 README.md

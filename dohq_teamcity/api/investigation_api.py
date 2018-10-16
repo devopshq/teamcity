@@ -12,13 +12,15 @@
 
 
 from __future__ import absolute_import
+from dohq_teamcity.custom.base_model import TeamCityObject
 
 import re  # noqa: F401
 
 # python 2 and python 3 compatibility library
 import six
 
-from dohq_teamcity.api_client import ApiClient
+from dohq_teamcity.models.investigation import Investigation  # noqa: F401,E501
+from dohq_teamcity.models.investigations import Investigations  # noqa: F401,E501
 
 
 class InvestigationApi(object):
@@ -27,10 +29,9 @@ class InvestigationApi(object):
     Do not edit the class manually.
     Ref: https://github.com/swagger-api/swagger-codegen
     """
+    base_name = 'Investigation'
 
     def __init__(self, api_client=None):
-        if api_client is None:
-            api_client = ApiClient()
         self.api_client = api_client
 
     def get_investigations(self, **kwargs):  # noqa: E501
@@ -50,17 +51,40 @@ class InvestigationApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_investigations_with_http_info(**kwargs)  # noqa: E501
+            return self.__get_investigations_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_investigations_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.__get_investigations_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_investigations_with_http_info(self, **kwargs):  # noqa: E501
+
+    def serve_instance(self, investigation_locator, **kwargs):  # noqa: E501
+        """serve_instance  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.serve_instance(investigation_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str investigation_locator: (required)
+        :param str fields:
+        :return: Investigation
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__serve_instance_with_http_info(investigation_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__serve_instance_with_http_info(investigation_locator, **kwargs)  # noqa: E501
+            return data
+
+    def __get_investigations_with_http_info(self, **kwargs):  # noqa: E501
         """get_investigations  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_investigations_with_http_info(async_req=True)
+        >>> thread = api.__get_investigations_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -121,35 +145,12 @@ class InvestigationApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def serve_instance(self, investigation_locator, **kwargs):  # noqa: E501
+    def __serve_instance_with_http_info(self, investigation_locator, **kwargs):  # noqa: E501
         """serve_instance  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_instance(investigation_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str investigation_locator: (required)
-        :param str fields:
-        :return: Investigation
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.serve_instance_with_http_info(investigation_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.serve_instance_with_http_info(investigation_locator, **kwargs)  # noqa: E501
-            return data
-
-    def serve_instance_with_http_info(self, investigation_locator, **kwargs):  # noqa: E501
-        """serve_instance  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_instance_with_http_info(investigation_locator, async_req=True)
+        >>> thread = api.__serve_instance_with_http_info(investigation_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -184,7 +185,10 @@ class InvestigationApi(object):
 
         path_params = {}
         if 'investigation_locator' in params:
-            path_params['investigationLocator'] = params['investigation_locator']  # noqa: E501
+            if isinstance(params['investigation_locator'], TeamCityObject):
+                path_params['investigationLocator'] = params['investigation_locator'].locator_id
+            else:
+                path_params['investigationLocator'] = params['investigation_locator']  # noqa: E501
 
         query_params = []
         if 'fields' in params:

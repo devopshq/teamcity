@@ -4,7 +4,7 @@ java -Xmx1024m -Xms256m -jar ./swagger-codegen-cli.jar generate \
     -l python \
     -c ./swagger/swagger-config.json \
     -t ./swagger/docs-rst-template/ \
-    -D docs \
+    -Ddocs \
     -i ./swagger/swagger.json
 rm -rf ./docs-sphinx/teamcity_apis || echo "not exist"
 rm -rf ./docs-sphinx/teamcity_models  || echo "not exist"

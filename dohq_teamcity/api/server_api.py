@@ -12,13 +12,21 @@
 
 
 from __future__ import absolute_import
+from dohq_teamcity.custom.base_model import TeamCityObject
 
 import re  # noqa: F401
 
 # python 2 and python 3 compatibility library
 import six
 
-from dohq_teamcity.api_client import ApiClient
+from dohq_teamcity.models.backup_process_manager import BackupProcessManager  # noqa: F401,E501
+from dohq_teamcity.models.files import Files  # noqa: F401,E501
+from dohq_teamcity.models.license_key import LicenseKey  # noqa: F401,E501
+from dohq_teamcity.models.license_keys import LicenseKeys  # noqa: F401,E501
+from dohq_teamcity.models.licensing_data import LicensingData  # noqa: F401,E501
+from dohq_teamcity.models.plugins import Plugins  # noqa: F401,E501
+from dohq_teamcity.models.server import Server  # noqa: F401,E501
+from dohq_teamcity.models.file import file  # noqa: F401,E501
 
 
 class ServerApi(object):
@@ -27,10 +35,9 @@ class ServerApi(object):
     Do not edit the class manually.
     Ref: https://github.com/swagger-api/swagger-codegen
     """
+    base_name = 'Server'
 
     def __init__(self, api_client=None):
-        if api_client is None:
-            api_client = ApiClient()
         self.api_client = api_client
 
     def add_license_keys(self, **kwargs):  # noqa: E501
@@ -50,17 +57,397 @@ class ServerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.add_license_keys_with_http_info(**kwargs)  # noqa: E501
+            return self.__add_license_keys_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.add_license_keys_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.__add_license_keys_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def add_license_keys_with_http_info(self, **kwargs):  # noqa: E501
+
+    def delete_license_key(self, license_key, **kwargs):  # noqa: E501
+        """delete_license_key  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_license_key(license_key, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str license_key: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__delete_license_key_with_http_info(license_key, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__delete_license_key_with_http_info(license_key, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_backup_status(self, **kwargs):  # noqa: E501
+        """get_backup_status  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_backup_status(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param BackupProcessManager body:
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_backup_status_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_backup_status_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+
+    def get_children(self, path, area_id, **kwargs):  # noqa: E501
+        """get_children  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_children(path, area_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str path: (required)
+        :param str area_id: (required)
+        :param str base_path:
+        :param str locator:
+        :param str fields:
+        :return: Files
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_children_with_http_info(path, area_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_children_with_http_info(path, area_id, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_children_alias(self, path, area_id, **kwargs):  # noqa: E501
+        """get_children_alias  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_children_alias(path, area_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str path: (required)
+        :param str area_id: (required)
+        :param str base_path:
+        :param str locator:
+        :param str fields:
+        :return: Files
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_children_alias_with_http_info(path, area_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_children_alias_with_http_info(path, area_id, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_content(self, path, area_id, **kwargs):  # noqa: E501
+        """get_content  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_content(path, area_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str path: (required)
+        :param str area_id: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_content_with_http_info(path, area_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_content_with_http_info(path, area_id, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_content_alias(self, path, area_id, **kwargs):  # noqa: E501
+        """get_content_alias  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_content_alias(path, area_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str path: (required)
+        :param str area_id: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_content_alias_with_http_info(path, area_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_content_alias_with_http_info(path, area_id, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_license_key(self, license_key, **kwargs):  # noqa: E501
+        """get_license_key  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_license_key(license_key, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str license_key: (required)
+        :param str fields:
+        :return: LicenseKey
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_license_key_with_http_info(license_key, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_license_key_with_http_info(license_key, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_license_keys(self, **kwargs):  # noqa: E501
+        """get_license_keys  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_license_keys(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str fields:
+        :return: LicenseKeys
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_license_keys_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_license_keys_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+
+    def get_licensing_data(self, **kwargs):  # noqa: E501
+        """get_licensing_data  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_licensing_data(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str fields:
+        :return: LicensingData
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_licensing_data_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_licensing_data_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+
+    def get_metadata(self, path, area_id, **kwargs):  # noqa: E501
+        """get_metadata  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_metadata(path, area_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str path: (required)
+        :param str area_id: (required)
+        :param str fields:
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_metadata_with_http_info(path, area_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_metadata_with_http_info(path, area_id, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_root(self, area_id, **kwargs):  # noqa: E501
+        """get_root  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_root(area_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str area_id: (required)
+        :param str base_path:
+        :param str locator:
+        :param str fields:
+        :return: Files
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_root_with_http_info(area_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_root_with_http_info(area_id, **kwargs)  # noqa: E501
+            return data
+
+
+    def get_zipped(self, path, area_id, **kwargs):  # noqa: E501
+        """get_zipped  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_zipped(path, area_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str path: (required)
+        :param str area_id: (required)
+        :param str base_path:
+        :param str locator:
+        :param str name:
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_zipped_with_http_info(path, area_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_zipped_with_http_info(path, area_id, **kwargs)  # noqa: E501
+            return data
+
+
+    def serve_plugins(self, **kwargs):  # noqa: E501
+        """serve_plugins  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.serve_plugins(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str fields:
+        :return: Plugins
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__serve_plugins_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__serve_plugins_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+
+    def serve_server_info(self, **kwargs):  # noqa: E501
+        """serve_server_info  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.serve_server_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str fields:
+        :return: Server
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__serve_server_info_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__serve_server_info_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+
+    def serve_server_version(self, field, **kwargs):  # noqa: E501
+        """serve_server_version  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.serve_server_version(field, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str field: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__serve_server_version_with_http_info(field, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__serve_server_version_with_http_info(field, **kwargs)  # noqa: E501
+            return data
+
+
+    def start_backup(self, **kwargs):  # noqa: E501
+        """start_backup  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.start_backup(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str file_name:
+        :param bool add_timestamp:
+        :param bool include_configs:
+        :param bool include_database:
+        :param bool include_build_logs:
+        :param bool include_personal_changes:
+        :param bool include_running_builds:
+        :param bool include_supplimentary_data:
+        :param BackupProcessManager body:
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__start_backup_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__start_backup_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def __add_license_keys_with_http_info(self, **kwargs):  # noqa: E501
         """add_license_keys  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_license_keys_with_http_info(async_req=True)
+        >>> thread = api.__add_license_keys_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -121,34 +508,12 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def delete_license_key(self, license_key, **kwargs):  # noqa: E501
+    def __delete_license_key_with_http_info(self, license_key, **kwargs):  # noqa: E501
         """delete_license_key  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_license_key(license_key, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str license_key: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.delete_license_key_with_http_info(license_key, **kwargs)  # noqa: E501
-        else:
-            (data) = self.delete_license_key_with_http_info(license_key, **kwargs)  # noqa: E501
-            return data
-
-    def delete_license_key_with_http_info(self, license_key, **kwargs):  # noqa: E501
-        """delete_license_key  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_license_key_with_http_info(license_key, async_req=True)
+        >>> thread = api.__delete_license_key_with_http_info(license_key, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -182,7 +547,10 @@ class ServerApi(object):
 
         path_params = {}
         if 'license_key' in params:
-            path_params['licenseKey'] = params['license_key']  # noqa: E501
+            if isinstance(params['license_key'], TeamCityObject):
+                path_params['licenseKey'] = params['license_key'].locator_id
+            else:
+                path_params['licenseKey'] = params['license_key']  # noqa: E501
 
         query_params = []
 
@@ -210,34 +578,12 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_backup_status(self, **kwargs):  # noqa: E501
+    def __get_backup_status_with_http_info(self, **kwargs):  # noqa: E501
         """get_backup_status  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_backup_status(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param BackupProcessManager body:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_backup_status_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.get_backup_status_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def get_backup_status_with_http_info(self, **kwargs):  # noqa: E501
-        """get_backup_status  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_backup_status_with_http_info(async_req=True)
+        >>> thread = api.__get_backup_status_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -295,38 +641,12 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_children(self, path, area_id, **kwargs):  # noqa: E501
+    def __get_children_with_http_info(self, path, area_id, **kwargs):  # noqa: E501
         """get_children  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_children(path, area_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str path: (required)
-        :param str area_id: (required)
-        :param str base_path:
-        :param str locator:
-        :param str fields:
-        :return: Files
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_children_with_http_info(path, area_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_children_with_http_info(path, area_id, **kwargs)  # noqa: E501
-            return data
-
-    def get_children_with_http_info(self, path, area_id, **kwargs):  # noqa: E501
-        """get_children  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_children_with_http_info(path, area_id, async_req=True)
+        >>> thread = api.__get_children_with_http_info(path, area_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -370,9 +690,15 @@ class ServerApi(object):
 
         path_params = {}
         if 'path' in params:
-            path_params['path'] = params['path']  # noqa: E501
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
         if 'area_id' in params:
-            path_params['areaId'] = params['area_id']  # noqa: E501
+            if isinstance(params['area_id'], TeamCityObject):
+                path_params['areaId'] = params['area_id'].locator_id
+            else:
+                path_params['areaId'] = params['area_id']  # noqa: E501
 
         query_params = []
         if 'base_path' in params:
@@ -406,38 +732,12 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_children_alias(self, path, area_id, **kwargs):  # noqa: E501
+    def __get_children_alias_with_http_info(self, path, area_id, **kwargs):  # noqa: E501
         """get_children_alias  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_children_alias(path, area_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str path: (required)
-        :param str area_id: (required)
-        :param str base_path:
-        :param str locator:
-        :param str fields:
-        :return: Files
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_children_alias_with_http_info(path, area_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_children_alias_with_http_info(path, area_id, **kwargs)  # noqa: E501
-            return data
-
-    def get_children_alias_with_http_info(self, path, area_id, **kwargs):  # noqa: E501
-        """get_children_alias  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_children_alias_with_http_info(path, area_id, async_req=True)
+        >>> thread = api.__get_children_alias_with_http_info(path, area_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -481,9 +781,15 @@ class ServerApi(object):
 
         path_params = {}
         if 'path' in params:
-            path_params['path'] = params['path']  # noqa: E501
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
         if 'area_id' in params:
-            path_params['areaId'] = params['area_id']  # noqa: E501
+            if isinstance(params['area_id'], TeamCityObject):
+                path_params['areaId'] = params['area_id'].locator_id
+            else:
+                path_params['areaId'] = params['area_id']  # noqa: E501
 
         query_params = []
         if 'base_path' in params:
@@ -517,35 +823,12 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_content(self, path, area_id, **kwargs):  # noqa: E501
+    def __get_content_with_http_info(self, path, area_id, **kwargs):  # noqa: E501
         """get_content  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_content(path, area_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str path: (required)
-        :param str area_id: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_content_with_http_info(path, area_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_content_with_http_info(path, area_id, **kwargs)  # noqa: E501
-            return data
-
-    def get_content_with_http_info(self, path, area_id, **kwargs):  # noqa: E501
-        """get_content  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_content_with_http_info(path, area_id, async_req=True)
+        >>> thread = api.__get_content_with_http_info(path, area_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -586,9 +869,15 @@ class ServerApi(object):
 
         path_params = {}
         if 'path' in params:
-            path_params['path'] = params['path']  # noqa: E501
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
         if 'area_id' in params:
-            path_params['areaId'] = params['area_id']  # noqa: E501
+            if isinstance(params['area_id'], TeamCityObject):
+                path_params['areaId'] = params['area_id'].locator_id
+            else:
+                path_params['areaId'] = params['area_id']  # noqa: E501
 
         query_params = []
 
@@ -616,35 +905,12 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_content_alias(self, path, area_id, **kwargs):  # noqa: E501
+    def __get_content_alias_with_http_info(self, path, area_id, **kwargs):  # noqa: E501
         """get_content_alias  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_content_alias(path, area_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str path: (required)
-        :param str area_id: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_content_alias_with_http_info(path, area_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_content_alias_with_http_info(path, area_id, **kwargs)  # noqa: E501
-            return data
-
-    def get_content_alias_with_http_info(self, path, area_id, **kwargs):  # noqa: E501
-        """get_content_alias  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_content_alias_with_http_info(path, area_id, async_req=True)
+        >>> thread = api.__get_content_alias_with_http_info(path, area_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -685,9 +951,15 @@ class ServerApi(object):
 
         path_params = {}
         if 'path' in params:
-            path_params['path'] = params['path']  # noqa: E501
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
         if 'area_id' in params:
-            path_params['areaId'] = params['area_id']  # noqa: E501
+            if isinstance(params['area_id'], TeamCityObject):
+                path_params['areaId'] = params['area_id'].locator_id
+            else:
+                path_params['areaId'] = params['area_id']  # noqa: E501
 
         query_params = []
 
@@ -715,35 +987,12 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_license_key(self, license_key, **kwargs):  # noqa: E501
+    def __get_license_key_with_http_info(self, license_key, **kwargs):  # noqa: E501
         """get_license_key  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_license_key(license_key, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str license_key: (required)
-        :param str fields:
-        :return: LicenseKey
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_license_key_with_http_info(license_key, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_license_key_with_http_info(license_key, **kwargs)  # noqa: E501
-            return data
-
-    def get_license_key_with_http_info(self, license_key, **kwargs):  # noqa: E501
-        """get_license_key  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_license_key_with_http_info(license_key, async_req=True)
+        >>> thread = api.__get_license_key_with_http_info(license_key, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -778,7 +1027,10 @@ class ServerApi(object):
 
         path_params = {}
         if 'license_key' in params:
-            path_params['licenseKey'] = params['license_key']  # noqa: E501
+            if isinstance(params['license_key'], TeamCityObject):
+                path_params['licenseKey'] = params['license_key'].locator_id
+            else:
+                path_params['licenseKey'] = params['license_key']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -808,34 +1060,12 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_license_keys(self, **kwargs):  # noqa: E501
+    def __get_license_keys_with_http_info(self, **kwargs):  # noqa: E501
         """get_license_keys  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_license_keys(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str fields:
-        :return: LicenseKeys
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_license_keys_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.get_license_keys_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def get_license_keys_with_http_info(self, **kwargs):  # noqa: E501
-        """get_license_keys  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_license_keys_with_http_info(async_req=True)
+        >>> thread = api.__get_license_keys_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -893,34 +1123,12 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_licensing_data(self, **kwargs):  # noqa: E501
+    def __get_licensing_data_with_http_info(self, **kwargs):  # noqa: E501
         """get_licensing_data  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_licensing_data(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str fields:
-        :return: LicensingData
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_licensing_data_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.get_licensing_data_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def get_licensing_data_with_http_info(self, **kwargs):  # noqa: E501
-        """get_licensing_data  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_licensing_data_with_http_info(async_req=True)
+        >>> thread = api.__get_licensing_data_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -978,36 +1186,12 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_metadata(self, path, area_id, **kwargs):  # noqa: E501
+    def __get_metadata_with_http_info(self, path, area_id, **kwargs):  # noqa: E501
         """get_metadata  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_metadata(path, area_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str path: (required)
-        :param str area_id: (required)
-        :param str fields:
-        :return: file
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_metadata_with_http_info(path, area_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_metadata_with_http_info(path, area_id, **kwargs)  # noqa: E501
-            return data
-
-    def get_metadata_with_http_info(self, path, area_id, **kwargs):  # noqa: E501
-        """get_metadata  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_metadata_with_http_info(path, area_id, async_req=True)
+        >>> thread = api.__get_metadata_with_http_info(path, area_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1049,9 +1233,15 @@ class ServerApi(object):
 
         path_params = {}
         if 'path' in params:
-            path_params['path'] = params['path']  # noqa: E501
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
         if 'area_id' in params:
-            path_params['areaId'] = params['area_id']  # noqa: E501
+            if isinstance(params['area_id'], TeamCityObject):
+                path_params['areaId'] = params['area_id'].locator_id
+            else:
+                path_params['areaId'] = params['area_id']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -1081,37 +1271,12 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_root(self, area_id, **kwargs):  # noqa: E501
+    def __get_root_with_http_info(self, area_id, **kwargs):  # noqa: E501
         """get_root  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_root(area_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str area_id: (required)
-        :param str base_path:
-        :param str locator:
-        :param str fields:
-        :return: Files
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_root_with_http_info(area_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_root_with_http_info(area_id, **kwargs)  # noqa: E501
-            return data
-
-    def get_root_with_http_info(self, area_id, **kwargs):  # noqa: E501
-        """get_root  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_root_with_http_info(area_id, async_req=True)
+        >>> thread = api.__get_root_with_http_info(area_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1148,7 +1313,10 @@ class ServerApi(object):
 
         path_params = {}
         if 'area_id' in params:
-            path_params['areaId'] = params['area_id']  # noqa: E501
+            if isinstance(params['area_id'], TeamCityObject):
+                path_params['areaId'] = params['area_id'].locator_id
+            else:
+                path_params['areaId'] = params['area_id']  # noqa: E501
 
         query_params = []
         if 'base_path' in params:
@@ -1182,38 +1350,12 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def get_zipped(self, path, area_id, **kwargs):  # noqa: E501
+    def __get_zipped_with_http_info(self, path, area_id, **kwargs):  # noqa: E501
         """get_zipped  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_zipped(path, area_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str path: (required)
-        :param str area_id: (required)
-        :param str base_path:
-        :param str locator:
-        :param str name:
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_zipped_with_http_info(path, area_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_zipped_with_http_info(path, area_id, **kwargs)  # noqa: E501
-            return data
-
-    def get_zipped_with_http_info(self, path, area_id, **kwargs):  # noqa: E501
-        """get_zipped  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_zipped_with_http_info(path, area_id, async_req=True)
+        >>> thread = api.__get_zipped_with_http_info(path, area_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1257,9 +1399,15 @@ class ServerApi(object):
 
         path_params = {}
         if 'path' in params:
-            path_params['path'] = params['path']  # noqa: E501
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
         if 'area_id' in params:
-            path_params['areaId'] = params['area_id']  # noqa: E501
+            if isinstance(params['area_id'], TeamCityObject):
+                path_params['areaId'] = params['area_id'].locator_id
+            else:
+                path_params['areaId'] = params['area_id']  # noqa: E501
 
         query_params = []
         if 'base_path' in params:
@@ -1293,34 +1441,12 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def serve_plugins(self, **kwargs):  # noqa: E501
+    def __serve_plugins_with_http_info(self, **kwargs):  # noqa: E501
         """serve_plugins  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_plugins(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str fields:
-        :return: Plugins
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.serve_plugins_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.serve_plugins_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def serve_plugins_with_http_info(self, **kwargs):  # noqa: E501
-        """serve_plugins  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_plugins_with_http_info(async_req=True)
+        >>> thread = api.__serve_plugins_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1378,34 +1504,12 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def serve_server_info(self, **kwargs):  # noqa: E501
+    def __serve_server_info_with_http_info(self, **kwargs):  # noqa: E501
         """serve_server_info  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_server_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str fields:
-        :return: Server
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.serve_server_info_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.serve_server_info_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def serve_server_info_with_http_info(self, **kwargs):  # noqa: E501
-        """serve_server_info  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_server_info_with_http_info(async_req=True)
+        >>> thread = api.__serve_server_info_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1463,34 +1567,12 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def serve_server_version(self, field, **kwargs):  # noqa: E501
+    def __serve_server_version_with_http_info(self, field, **kwargs):  # noqa: E501
         """serve_server_version  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_server_version(field, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str field: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.serve_server_version_with_http_info(field, **kwargs)  # noqa: E501
-        else:
-            (data) = self.serve_server_version_with_http_info(field, **kwargs)  # noqa: E501
-            return data
-
-    def serve_server_version_with_http_info(self, field, **kwargs):  # noqa: E501
-        """serve_server_version  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_server_version_with_http_info(field, async_req=True)
+        >>> thread = api.__serve_server_version_with_http_info(field, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1524,7 +1606,10 @@ class ServerApi(object):
 
         path_params = {}
         if 'field' in params:
-            path_params['field'] = params['field']  # noqa: E501
+            if isinstance(params['field'], TeamCityObject):
+                path_params['field'] = params['field'].locator_id
+            else:
+                path_params['field'] = params['field']  # noqa: E501
 
         query_params = []
 
@@ -1552,42 +1637,12 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
-    def start_backup(self, **kwargs):  # noqa: E501
+    def __start_backup_with_http_info(self, **kwargs):  # noqa: E501
         """start_backup  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.start_backup(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str file_name:
-        :param bool add_timestamp:
-        :param bool include_configs:
-        :param bool include_database:
-        :param bool include_build_logs:
-        :param bool include_personal_changes:
-        :param bool include_running_builds:
-        :param bool include_supplimentary_data:
-        :param BackupProcessManager body:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.start_backup_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.start_backup_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def start_backup_with_http_info(self, **kwargs):  # noqa: E501
-        """start_backup  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.start_backup_with_http_info(async_req=True)
+        >>> thread = api.__start_backup_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
