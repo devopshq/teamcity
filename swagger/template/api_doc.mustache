@@ -1,0 +1,56 @@
+# {{packageName}}.{{classname}}{{#description}}
+{{description}}{{/description}}
+
+[[API examples]](http://devopshq.github.io/teamcity/teamcity_apis/{{classname}}.html)
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+{{#operations}}{{#operation}}[**{{operationId}}**]({{classname}}.md#{{operationId}}) | **{{httpMethod}}** {{path}} | {{#summary}}{{summary}}{{/summary}}
+{{/operation}}{{/operations}}
+
+{{#operations}}
+{{#operation}}
+# **{{{operationId}}}**
+> {{#returnType}}{{{returnType}}} {{/returnType}}{{{operationId}}}({{#allParams}}{{#required}}{{{paramName}}}{{/required}}{{^required}}{{{paramName}}}={{{paramName}}}{{/required}}{{#hasMore}}, {{/hasMore}}{{/allParams}})
+
+{{{summary}}}{{#notes}}
+
+{{{notes}}}{{/notes}}
+
+### Example
+```python
+from pprint import pprint
+from dohq_teamcity import TeamCity, ApiException
+
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+{{^hasAuthMethods}}
+{{#allParams}}{{paramName}} = {{{example}}} # {{{dataType}}} | {{{description}}}{{^required}} (optional){{/required}}{{#defaultValue}} (default to {{{.}}}){{/defaultValue}}
+{{/allParams}}
+{{/hasAuthMethods}}
+
+try:
+{{#summary}}    # {{{.}}}
+{{/summary}}    {{#returnType}}api_response = {{/returnType}}tc.{{classFilename}}.{{{operationId}}}({{#allParams}}{{#required}}{{paramName}}{{/required}}{{^required}}{{paramName}}={{paramName}}{{/required}}{{#hasMore}}, {{/hasMore}}{{/allParams}}){{#returnType}}
+    pprint(api_response){{/returnType}}
+except ApiException as e:
+    print("Exception when calling {{classname}}->{{operationId}}: %s\n" % e)
+```
+
+### Parameters
+{{^allParams}}This endpoint does not need any parameter.{{/allParams}}{{#allParams}}{{#-last}}
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------{{/-last}}{{/allParams}}
+{{#allParams}} **{{paramName}}** | {{#isFile}}**{{dataType}}**{{/isFile}}{{^isFile}}{{#isPrimitiveType}}**{{dataType}}**{{/isPrimitiveType}}{{^isPrimitiveType}}[**{{dataType}}**]({{baseType}}.md){{/isPrimitiveType}}{{/isFile}}| {{description}} | {{^required}}[optional] {{/required}}{{#defaultValue}}[default to {{defaultValue}}]{{/defaultValue}}
+{{/allParams}}
+
+### Return type
+
+{{#returnType}}{{#returnTypeIsPrimitive}}**{{{returnType}}}**{{/returnTypeIsPrimitive}}{{^returnTypeIsPrimitive}}[**{{{returnType}}}**](../models/{{returnBaseType}}.md){{/returnTypeIsPrimitive}}{{/returnType}}{{^returnType}}void (empty response body){{/returnType}}
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+{{/operation}}
+{{/operations}}

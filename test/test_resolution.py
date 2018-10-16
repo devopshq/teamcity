@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.resolution import Resolution  # noqa: E501
-from swagger_client.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.models.resolution import Resolution  # noqa: E501
+from dohq_teamcity.rest import ApiException
 
 
 class TestResolution(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestResolution(unittest.TestCase):
     def testResolution(self):
         """Test Resolution"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.resolution.Resolution()  # noqa: E501
+        # model = teamcity.models.resolution.Resolution()  # noqa: E501
         pass
 
 

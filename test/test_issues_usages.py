@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.issues_usages import IssuesUsages  # noqa: E501
-from swagger_client.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.models.issues_usages import IssuesUsages  # noqa: E501
+from dohq_teamcity.rest import ApiException
 
 
 class TestIssuesUsages(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestIssuesUsages(unittest.TestCase):
     def testIssuesUsages(self):
         """Test IssuesUsages"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.issues_usages.IssuesUsages()  # noqa: E501
+        # model = teamcity.models.issues_usages.IssuesUsages()  # noqa: E501
         pass
 
 

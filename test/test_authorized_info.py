@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.authorized_info import AuthorizedInfo  # noqa: E501
-from swagger_client.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.models.authorized_info import AuthorizedInfo  # noqa: E501
+from dohq_teamcity.rest import ApiException
 
 
 class TestAuthorizedInfo(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestAuthorizedInfo(unittest.TestCase):
     def testAuthorizedInfo(self):
         """Test AuthorizedInfo"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.authorized_info.AuthorizedInfo()  # noqa: E501
+        # model = teamcity.models.authorized_info.AuthorizedInfo()  # noqa: E501
         pass
 
 

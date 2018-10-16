@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.backup_process_info import BackupProcessInfo  # noqa: E501
-from swagger_client.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.models.backup_process_info import BackupProcessInfo  # noqa: E501
+from dohq_teamcity.rest import ApiException
 
 
 class TestBackupProcessInfo(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestBackupProcessInfo(unittest.TestCase):
     def testBackupProcessInfo(self):
         """Test BackupProcessInfo"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.backup_process_info.BackupProcessInfo()  # noqa: E501
+        # model = teamcity.models.backup_process_info.BackupProcessInfo()  # noqa: E501
         pass
 
 

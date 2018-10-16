@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.new_build_type_description import NewBuildTypeDescription  # noqa: E501
-from swagger_client.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.models.new_build_type_description import NewBuildTypeDescription  # noqa: E501
+from dohq_teamcity.rest import ApiException
 
 
 class TestNewBuildTypeDescription(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestNewBuildTypeDescription(unittest.TestCase):
     def testNewBuildTypeDescription(self):
         """Test NewBuildTypeDescription"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.new_build_type_description.NewBuildTypeDescription()  # noqa: E501
+        # model = teamcity.models.new_build_type_description.NewBuildTypeDescription()  # noqa: E501
         pass
 
 

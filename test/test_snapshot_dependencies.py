@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.snapshot_dependencies import SnapshotDependencies  # noqa: E501
-from swagger_client.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.models.snapshot_dependencies import SnapshotDependencies  # noqa: E501
+from dohq_teamcity.rest import ApiException
 
 
 class TestSnapshotDependencies(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestSnapshotDependencies(unittest.TestCase):
     def testSnapshotDependencies(self):
         """Test SnapshotDependencies"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.snapshot_dependencies.SnapshotDependencies()  # noqa: E501
+        # model = teamcity.models.snapshot_dependencies.SnapshotDependencies()  # noqa: E501
         pass
 
 

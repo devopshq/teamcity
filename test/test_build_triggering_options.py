@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.build_triggering_options import BuildTriggeringOptions  # noqa: E501
-from swagger_client.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.models.build_triggering_options import BuildTriggeringOptions  # noqa: E501
+from dohq_teamcity.rest import ApiException
 
 
 class TestBuildTriggeringOptions(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestBuildTriggeringOptions(unittest.TestCase):
     def testBuildTriggeringOptions(self):
         """Test BuildTriggeringOptions"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.build_triggering_options.BuildTriggeringOptions()  # noqa: E501
+        # model = teamcity.models.build_triggering_options.BuildTriggeringOptions()  # noqa: E501
         pass
 
 

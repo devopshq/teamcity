@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.file_changes import FileChanges  # noqa: E501
-from swagger_client.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.models.file_changes import FileChanges  # noqa: E501
+from dohq_teamcity.rest import ApiException
 
 
 class TestFileChanges(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestFileChanges(unittest.TestCase):
     def testFileChanges(self):
         """Test FileChanges"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.file_changes.FileChanges()  # noqa: E501
+        # model = teamcity.models.file_changes.FileChanges()  # noqa: E501
         pass
 
 

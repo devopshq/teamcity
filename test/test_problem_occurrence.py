@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.problem_occurrence import ProblemOccurrence  # noqa: E501
-from swagger_client.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.models.problem_occurrence import ProblemOccurrence  # noqa: E501
+from dohq_teamcity.rest import ApiException
 
 
 class TestProblemOccurrence(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestProblemOccurrence(unittest.TestCase):
     def testProblemOccurrence(self):
         """Test ProblemOccurrence"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.problem_occurrence.ProblemOccurrence()  # noqa: E501
+        # model = teamcity.models.problem_occurrence.ProblemOccurrence()  # noqa: E501
         pass
 
 

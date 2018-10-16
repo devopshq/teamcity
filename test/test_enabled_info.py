@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.enabled_info import EnabledInfo  # noqa: E501
-from swagger_client.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.models.enabled_info import EnabledInfo  # noqa: E501
+from dohq_teamcity.rest import ApiException
 
 
 class TestEnabledInfo(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestEnabledInfo(unittest.TestCase):
     def testEnabledInfo(self):
         """Test EnabledInfo"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.enabled_info.EnabledInfo()  # noqa: E501
+        # model = teamcity.models.enabled_info.EnabledInfo()  # noqa: E501
         pass
 
 

@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.mute import Mute  # noqa: E501
-from swagger_client.rest import ApiException
+import dohq_teamcity
+from dohq_teamcity.models.mute import Mute  # noqa: E501
+from dohq_teamcity.rest import ApiException
 
 
 class TestMute(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestMute(unittest.TestCase):
     def testMute(self):
         """Test Mute"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.mute.Mute()  # noqa: E501
+        # model = teamcity.models.mute.Mute()  # noqa: E501
         pass
 
 
