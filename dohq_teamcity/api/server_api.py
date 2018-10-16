@@ -48,7 +48,7 @@ class ServerApi(object):
         >>> thread = api.add_license_keys(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str body:
         :param str fields:
         :return: LicenseKeys
@@ -71,7 +71,7 @@ class ServerApi(object):
         >>> thread = api.delete_license_key(license_key, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str license_key: (required)
         :return: None
                  If the method is called asynchronously,
@@ -93,7 +93,7 @@ class ServerApi(object):
         >>> thread = api.get_backup_status(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param BackupProcessManager body:
         :return: str
                  If the method is called asynchronously,
@@ -115,7 +115,7 @@ class ServerApi(object):
         >>> thread = api.get_children(path, area_id, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str area_id: (required)
         :param str base_path:
@@ -141,7 +141,7 @@ class ServerApi(object):
         >>> thread = api.get_children_alias(path, area_id, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str area_id: (required)
         :param str base_path:
@@ -167,7 +167,7 @@ class ServerApi(object):
         >>> thread = api.get_content(path, area_id, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str area_id: (required)
         :return: None
@@ -190,7 +190,7 @@ class ServerApi(object):
         >>> thread = api.get_content_alias(path, area_id, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str area_id: (required)
         :return: None
@@ -213,7 +213,7 @@ class ServerApi(object):
         >>> thread = api.get_license_key(license_key, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str license_key: (required)
         :param str fields:
         :return: LicenseKey
@@ -236,7 +236,7 @@ class ServerApi(object):
         >>> thread = api.get_license_keys(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: LicenseKeys
                  If the method is called asynchronously,
@@ -258,7 +258,7 @@ class ServerApi(object):
         >>> thread = api.get_licensing_data(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: LicensingData
                  If the method is called asynchronously,
@@ -280,7 +280,7 @@ class ServerApi(object):
         >>> thread = api.get_metadata(path, area_id, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str area_id: (required)
         :param str fields:
@@ -304,7 +304,7 @@ class ServerApi(object):
         >>> thread = api.get_root(area_id, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str area_id: (required)
         :param str base_path:
         :param str locator:
@@ -329,7 +329,7 @@ class ServerApi(object):
         >>> thread = api.get_zipped(path, area_id, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str area_id: (required)
         :param str base_path:
@@ -355,7 +355,7 @@ class ServerApi(object):
         >>> thread = api.serve_plugins(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Plugins
                  If the method is called asynchronously,
@@ -377,7 +377,7 @@ class ServerApi(object):
         >>> thread = api.serve_server_info(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Server
                  If the method is called asynchronously,
@@ -399,7 +399,7 @@ class ServerApi(object):
         >>> thread = api.serve_server_version(field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :return: str
                  If the method is called asynchronously,
@@ -421,7 +421,7 @@ class ServerApi(object):
         >>> thread = api.start_backup(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str file_name:
         :param bool add_timestamp:
         :param bool include_configs:

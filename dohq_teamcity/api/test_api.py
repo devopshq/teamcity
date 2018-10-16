@@ -42,7 +42,7 @@ class TestApi(object):
         >>> thread = api.get_tests(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str locator:
         :param str fields:
         :return: Tests
@@ -65,7 +65,7 @@ class TestApi(object):
         >>> thread = api.serve_instance(test_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str test_locator: (required)
         :param str fields:
         :return: Test

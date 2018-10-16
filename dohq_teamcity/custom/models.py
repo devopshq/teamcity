@@ -15,14 +15,17 @@ class Agent(Agent, ReadMixin, DeleteMixin):
 
     def delete_agent(self, **kwargs):
         """
-        :param async_req bool
+
+        :param async_req: bool
         :return: None
+
         """
         return self.api.delete_agent(agent_locator=self, **kwargs)
 
     def get(self, **kwargs):
-        """
-        :param async_req bool
+        """ Test msg
+
+        :param async_req: bool
         :param str fields:
         :return: Agent
         """
@@ -30,7 +33,7 @@ class Agent(Agent, ReadMixin, DeleteMixin):
 
     def get_agent(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Agent
         """
@@ -38,7 +41,7 @@ class Agent(Agent, ReadMixin, DeleteMixin):
 
     def get_agent_field(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :return: str
         """
@@ -46,7 +49,7 @@ class Agent(Agent, ReadMixin, DeleteMixin):
 
     def get_agent_pool(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: AgentPool
         """
@@ -54,7 +57,7 @@ class Agent(Agent, ReadMixin, DeleteMixin):
 
     def get_authorized_info(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: AuthorizedInfo
         """
@@ -62,7 +65,7 @@ class Agent(Agent, ReadMixin, DeleteMixin):
 
     def get_compatible_build_types(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: BuildTypes
         """
@@ -70,7 +73,7 @@ class Agent(Agent, ReadMixin, DeleteMixin):
 
     def get_enabled_info(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: EnabledInfo
         """
@@ -78,7 +81,7 @@ class Agent(Agent, ReadMixin, DeleteMixin):
 
     def get_incompatible_build_types(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Compatibilities
         """
@@ -86,7 +89,7 @@ class Agent(Agent, ReadMixin, DeleteMixin):
 
     def serve_agent(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Agent
         """
@@ -94,7 +97,7 @@ class Agent(Agent, ReadMixin, DeleteMixin):
 
     def serve_agent_field(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :return: str
         """
@@ -102,7 +105,7 @@ class Agent(Agent, ReadMixin, DeleteMixin):
 
     def set_agent_field(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :param str body:
         :return: str
@@ -111,7 +114,7 @@ class Agent(Agent, ReadMixin, DeleteMixin):
 
     def set_agent_pool(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param AgentPool body:
         :param str fields:
         :return: AgentPool
@@ -120,7 +123,7 @@ class Agent(Agent, ReadMixin, DeleteMixin):
 
     def set_authorized_info(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param AuthorizedInfo body:
         :param str fields:
         :return: AuthorizedInfo
@@ -129,7 +132,7 @@ class Agent(Agent, ReadMixin, DeleteMixin):
 
     def set_enabled_info(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param EnabledInfo body:
         :param str fields:
         :return: EnabledInfo
@@ -150,7 +153,7 @@ class AgentPool(AgentPool, ReadMixin, DeleteMixin):
 
     def add_agent(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param Agent body:
         :param str fields:
         :return: Agent
@@ -159,7 +162,7 @@ class AgentPool(AgentPool, ReadMixin, DeleteMixin):
 
     def add_project(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param Project body:
         :return: Project
         """
@@ -167,14 +170,14 @@ class AgentPool(AgentPool, ReadMixin, DeleteMixin):
 
     def delete_pool(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: None
         """
         return self.api.delete_pool(agent_pool_locator=self, **kwargs)
 
     def delete_pool_project(self, project_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :return: None
         """
@@ -182,14 +185,14 @@ class AgentPool(AgentPool, ReadMixin, DeleteMixin):
 
     def delete_projects(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: None
         """
         return self.api.delete_projects(agent_pool_locator=self, **kwargs)
 
     def get(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: AgentPool
         """
@@ -197,7 +200,7 @@ class AgentPool(AgentPool, ReadMixin, DeleteMixin):
 
     def get_field(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :return: str
         """
@@ -205,7 +208,7 @@ class AgentPool(AgentPool, ReadMixin, DeleteMixin):
 
     def get_pool(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: AgentPool
         """
@@ -213,7 +216,7 @@ class AgentPool(AgentPool, ReadMixin, DeleteMixin):
 
     def get_pool_agents(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str locator:
         :param str fields:
         :return: Agents
@@ -222,7 +225,7 @@ class AgentPool(AgentPool, ReadMixin, DeleteMixin):
 
     def get_pool_project(self, project_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str fields:
         :return: Project
@@ -231,7 +234,7 @@ class AgentPool(AgentPool, ReadMixin, DeleteMixin):
 
     def get_pool_projects(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Projects
         """
@@ -239,7 +242,7 @@ class AgentPool(AgentPool, ReadMixin, DeleteMixin):
 
     def replace_projects(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param Projects body:
         :return: Projects
         """
@@ -247,7 +250,7 @@ class AgentPool(AgentPool, ReadMixin, DeleteMixin):
 
     def set_field(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :param str body:
         :return: str
@@ -268,7 +271,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def add_tags(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param Tags body:
         :param str fields:
         :return: Tags
@@ -277,7 +280,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def cancel_build(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param BuildCancelRequest body:
         :param str fields:
         :return: Build
@@ -286,28 +289,28 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def cancel_build_0(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: BuildCancelRequest
         """
         return self.api.cancel_build_0(build_locator=self, **kwargs)
 
     def delete_build(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: None
         """
         return self.api.delete_build(build_locator=self, **kwargs)
 
     def delete_comment(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: None
         """
         return self.api.delete_comment(build_locator=self, **kwargs)
 
     def get(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Build
         """
@@ -315,14 +318,14 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def get_aggregated_build_status(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: str
         """
         return self.api.get_aggregated_build_status(build_locator=self, **kwargs)
 
     def get_aggregated_build_status_icon(self, suffix, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str suffix: (required)
         :return: None
         """
@@ -330,14 +333,14 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def get_artifacts_directory(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: str
         """
         return self.api.get_artifacts_directory(build_locator=self, **kwargs)
 
     def get_build(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Build
         """
@@ -345,7 +348,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def get_build_actual_parameters(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Properties
         """
@@ -353,7 +356,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def get_build_field_by_build_only(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :return: str
         """
@@ -361,7 +364,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def get_build_related_issues(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: IssuesUsages
         """
@@ -369,7 +372,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def get_build_related_issues_old(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: IssuesUsages
         """
@@ -377,7 +380,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def get_build_statistic_value(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :return: str
         """
@@ -385,7 +388,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def get_build_statistic_values(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Properties
         """
@@ -393,7 +396,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def get_build_status_icon(self, suffix, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str suffix: (required)
         :return: None
         """
@@ -401,7 +404,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def get_canceled_info(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Comment
         """
@@ -409,7 +412,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def get_children(self, path, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str base_path:
         :param str locator:
@@ -422,7 +425,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def get_children_alias(self, path, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str base_path:
         :param str locator:
@@ -435,7 +438,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def get_content(self, path, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param bool resolve_parameters:
         :param bool log_build_usage:
@@ -445,7 +448,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def get_content_alias(self, path, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param bool resolve_parameters:
         :param bool log_build_usage:
@@ -455,7 +458,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def get_metadata(self, path, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str fields:
         :param bool resolve_parameters:
@@ -466,7 +469,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def get_parameter(self, property_name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str property_name: (required)
         :return: str
         """
@@ -474,14 +477,14 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def get_pinned(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: str
         """
         return self.api.get_pinned(build_locator=self, **kwargs)
 
     def get_problems(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: ProblemOccurrences
         """
@@ -489,7 +492,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def get_root(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str base_path:
         :param str locator:
         :param str fields:
@@ -501,7 +504,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def get_source_file(self, file_name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str file_name: (required)
         :return: None
         """
@@ -509,7 +512,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def get_tags(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str locator:
         :param str fields:
         :return: Tags
@@ -518,7 +521,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def get_tests(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: TestOccurrences
         """
@@ -526,7 +529,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def get_zipped(self, path, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str base_path:
         :param str locator:
@@ -539,7 +542,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def pin_build(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str body:
         :return: None
         """
@@ -547,7 +550,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def replace_comment(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str body:
         :return: None
         """
@@ -555,7 +558,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def replace_tags(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str locator:
         :param Tags body:
         :param str fields:
@@ -565,14 +568,14 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def serve_aggregated_build_status(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: str
         """
         return self.api.serve_aggregated_build_status(build_locator=self, **kwargs)
 
     def serve_aggregated_build_status_icon(self, suffix, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str suffix: (required)
         :return: None
         """
@@ -580,7 +583,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def serve_build(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Build
         """
@@ -588,7 +591,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def serve_build_actual_parameters(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Properties
         """
@@ -596,7 +599,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def serve_build_field_by_build_only(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :return: str
         """
@@ -604,7 +607,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def serve_build_related_issues(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: IssuesUsages
         """
@@ -612,7 +615,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def serve_build_related_issues_old(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: IssuesUsages
         """
@@ -620,7 +623,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def serve_build_statistic_value(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :return: str
         """
@@ -628,7 +631,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def serve_build_statistic_values(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Properties
         """
@@ -636,7 +639,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def serve_build_status_icon(self, suffix, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str suffix: (required)
         :return: None
         """
@@ -644,7 +647,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def serve_source_file(self, file_name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str file_name: (required)
         :return: None
         """
@@ -652,7 +655,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def serve_tags(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str locator:
         :param str fields:
         :return: Tags
@@ -661,7 +664,7 @@ class Build(Build, ReadMixin, DeleteMixin):
 
     def unpin_build(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str body:
         :return: None
         """
@@ -681,7 +684,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def add_agent_requirement(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :param AgentRequirement body:
         :return: AgentRequirement
@@ -690,7 +693,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def add_artifact_dep(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :param ArtifactDependency body:
         :return: ArtifactDependency
@@ -699,7 +702,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def add_feature(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :param Feature body:
         :return: Feature
@@ -708,7 +711,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def add_feature_parameter(self, feature_id, parameter_name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str feature_id: (required)
         :param str parameter_name: (required)
         :param str body:
@@ -718,7 +721,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def add_snapshot_dep(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :param SnapshotDependency body:
         :return: SnapshotDependency
@@ -727,7 +730,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def add_step(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :param Step body:
         :return: Step
@@ -736,7 +739,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def add_step_parameter(self, step_id, parameter_name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str step_id: (required)
         :param str parameter_name: (required)
         :param str body:
@@ -746,7 +749,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def add_trigger(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :param Trigger body:
         :return: Trigger
@@ -755,7 +758,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def add_vcs_root_entry(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param VcsRootEntry body:
         :param str fields:
         :return: VcsRootEntry
@@ -764,7 +767,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def change_artifact_dep_setting(self, artifact_dep_locator, field_name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str artifact_dep_locator: (required)
         :param str field_name: (required)
         :param str body:
@@ -774,7 +777,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def change_feature_setting(self, feature_id, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str feature_id: (required)
         :param str name: (required)
         :param str body:
@@ -784,7 +787,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def change_requirement_setting(self, agent_requirement_locator, field_name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str agent_requirement_locator: (required)
         :param str field_name: (required)
         :param str body:
@@ -794,7 +797,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def change_step_setting(self, step_id, field_name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str step_id: (required)
         :param str field_name: (required)
         :param str body:
@@ -804,7 +807,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def change_trigger_setting(self, trigger_locator, field_name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str trigger_locator: (required)
         :param str field_name: (required)
         :param str body:
@@ -814,7 +817,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def delete_agent_requirement(self, agent_requirement_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str agent_requirement_locator: (required)
         :return: None
         """
@@ -822,21 +825,21 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def delete_all_parameters(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: None
         """
         return self.api.delete_all_parameters(bt_locator=self, **kwargs)
 
     def delete_all_parameters_0(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: None
         """
         return self.api.delete_all_parameters_0(bt_locator=self, **kwargs)
 
     def delete_artifact_dep(self, artifact_dep_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str artifact_dep_locator: (required)
         :return: None
         """
@@ -844,14 +847,14 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def delete_build_type(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: None
         """
         return self.api.delete_build_type(bt_locator=self, **kwargs)
 
     def delete_feature(self, feature_id, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str feature_id: (required)
         :return: None
         """
@@ -859,7 +862,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def delete_parameter(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :return: None
         """
@@ -867,7 +870,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def delete_parameter_0(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :return: None
         """
@@ -875,7 +878,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def delete_snapshot_dep(self, snapshot_dep_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str snapshot_dep_locator: (required)
         :return: None
         """
@@ -883,7 +886,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def delete_step(self, step_id, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str step_id: (required)
         :return: None
         """
@@ -891,14 +894,14 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def delete_template_association(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: None
         """
         return self.api.delete_template_association(bt_locator=self, **kwargs)
 
     def delete_trigger(self, trigger_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str trigger_locator: (required)
         :return: None
         """
@@ -906,7 +909,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def delete_vcs_root_entry(self, vcs_root_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_locator: (required)
         :return: None
         """
@@ -914,7 +917,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: BuildType
         """
@@ -922,7 +925,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_agent_requirement(self, agent_requirement_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str agent_requirement_locator: (required)
         :param str fields:
         :return: AgentRequirement
@@ -931,7 +934,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_agent_requirements(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: AgentRequirements
         """
@@ -939,7 +942,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_aliases(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :return: Items
         """
@@ -947,7 +950,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_artifact_dep(self, artifact_dep_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str artifact_dep_locator: (required)
         :param str fields:
         :return: ArtifactDependency
@@ -956,7 +959,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_artifact_dep_setting(self, artifact_dep_locator, field_name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str artifact_dep_locator: (required)
         :param str field_name: (required)
         :return: str
@@ -965,7 +968,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_artifact_deps(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: ArtifactDependencies
         """
@@ -973,7 +976,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_branches(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str locator:
         :param str fields:
         :return: Branches
@@ -982,7 +985,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_build_field(self, build_locator, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str field: (required)
         :return: str
@@ -991,7 +994,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_build_type_builds_tags(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :return: Tags
         """
@@ -999,7 +1002,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_build_type_field(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :return: str
         """
@@ -1007,7 +1010,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_build_type_template(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: BuildType
         """
@@ -1015,7 +1018,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_build_type_xml(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: BuildType
         """
@@ -1023,7 +1026,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_build_with_project(self, build_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str fields:
         :return: Build
@@ -1032,7 +1035,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_builds(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str status:
         :param str triggered_by_user:
         :param bool include_personal:
@@ -1052,7 +1055,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_children(self, path, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str base_path:
         :param str locator:
@@ -1064,7 +1067,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_children_alias(self, path, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str base_path:
         :param str locator:
@@ -1076,7 +1079,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_content(self, path, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param bool resolve_parameters:
         :return: None
@@ -1085,7 +1088,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_content_alias(self, path, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param bool resolve_parameters:
         :return: None
@@ -1094,7 +1097,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_current_vcs_instances(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: VcsRootInstances
         """
@@ -1102,21 +1105,21 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_example_new_project_description(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: NewBuildTypeDescription
         """
         return self.api.get_example_new_project_description(bt_locator=self, **kwargs)
 
     def get_example_new_project_description_compatibility_version1(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: NewBuildTypeDescription
         """
         return self.api.get_example_new_project_description_compatibility_version1(bt_locator=self, **kwargs)
 
     def get_feature(self, feature_id, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str feature_id: (required)
         :param str fields:
         :return: Feature
@@ -1125,7 +1128,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_feature_parameter(self, feature_id, parameter_name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str feature_id: (required)
         :param str parameter_name: (required)
         :return: str
@@ -1134,7 +1137,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_feature_parameters(self, feature_id, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str feature_id: (required)
         :param str fields:
         :return: Properties
@@ -1143,7 +1146,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_feature_setting(self, feature_id, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str feature_id: (required)
         :param str name: (required)
         :return: str
@@ -1152,7 +1155,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_features(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Features
         """
@@ -1160,7 +1163,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_investigations(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Investigations
         """
@@ -1168,7 +1171,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_metadata(self, path, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str fields:
         :param bool resolve_parameters:
@@ -1178,7 +1181,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_parameter(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str fields:
         :return: ModelProperty
@@ -1187,7 +1190,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_parameter_0(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str fields:
         :return: ModelProperty
@@ -1196,7 +1199,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_parameter_type(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :return: Type
         """
@@ -1204,7 +1207,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_parameter_type_raw_value(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :return: str
         """
@@ -1212,7 +1215,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_parameter_value_long(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :return: str
         """
@@ -1220,7 +1223,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_parameter_value_long_0(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :return: str
         """
@@ -1228,7 +1231,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_parameters(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str locator:
         :param str fields:
         :return: Properties
@@ -1237,7 +1240,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_parameters_0(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str locator:
         :param str fields:
         :return: Properties
@@ -1246,7 +1249,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_requirement_setting(self, agent_requirement_locator, field_name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str agent_requirement_locator: (required)
         :param str field_name: (required)
         :return: str
@@ -1255,7 +1258,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_root(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str base_path:
         :param str locator:
         :param str fields:
@@ -1266,14 +1269,14 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_settings_file(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: str
         """
         return self.api.get_settings_file(bt_locator=self, **kwargs)
 
     def get_snapshot_dep(self, snapshot_dep_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str snapshot_dep_locator: (required)
         :param str fields:
         :return: SnapshotDependency
@@ -1282,7 +1285,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_snapshot_deps(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: SnapshotDependencies
         """
@@ -1290,7 +1293,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_step(self, step_id, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str step_id: (required)
         :param str fields:
         :return: Step
@@ -1299,7 +1302,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_step_parameter(self, step_id, parameter_name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str step_id: (required)
         :param str parameter_name: (required)
         :return: str
@@ -1308,7 +1311,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_step_parameters(self, step_id, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str step_id: (required)
         :param str fields:
         :return: Properties
@@ -1317,7 +1320,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_step_setting(self, step_id, field_name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str step_id: (required)
         :param str field_name: (required)
         :return: str
@@ -1326,7 +1329,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_steps(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Steps
         """
@@ -1334,7 +1337,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_template_association(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str body:
         :param str fields:
         :return: BuildType
@@ -1343,7 +1346,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_trigger(self, trigger_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str trigger_locator: (required)
         :param str fields:
         :return: Trigger
@@ -1352,7 +1355,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_trigger_setting(self, trigger_locator, field_name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str trigger_locator: (required)
         :param str field_name: (required)
         :return: str
@@ -1361,7 +1364,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_triggers(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Triggers
         """
@@ -1369,14 +1372,14 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_vcs_labeling_options(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: VcsLabeling
         """
         return self.api.get_vcs_labeling_options(bt_locator=self, **kwargs)
 
     def get_vcs_root_entries(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: VcsRootEntries
         """
@@ -1384,7 +1387,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_vcs_root_entry(self, vcs_root_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_locator: (required)
         :param str fields:
         :return: VcsRootEntry
@@ -1393,7 +1396,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_vcs_root_entry_checkout_rules(self, vcs_root_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_locator: (required)
         :return: str
         """
@@ -1401,7 +1404,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def get_zipped(self, path, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str base_path:
         :param str locator:
@@ -1413,7 +1416,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def replace_agent_requirement(self, agent_requirement_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str agent_requirement_locator: (required)
         :param str fields:
         :param AgentRequirement body:
@@ -1423,7 +1426,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def replace_agent_requirements(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :param AgentRequirements body:
         :return: AgentRequirements
@@ -1432,7 +1435,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def replace_artifact_dep(self, artifact_dep_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str artifact_dep_locator: (required)
         :param str fields:
         :param ArtifactDependency body:
@@ -1442,7 +1445,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def replace_artifact_deps(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :param ArtifactDependencies body:
         :return: ArtifactDependencies
@@ -1451,7 +1454,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def replace_feature(self, feature_id, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str feature_id: (required)
         :param str fields:
         :param Feature body:
@@ -1461,7 +1464,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def replace_feature_parameters(self, feature_id, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str feature_id: (required)
         :param Properties body:
         :param str fields:
@@ -1471,7 +1474,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def replace_features(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :param Features body:
         :return: Features
@@ -1480,7 +1483,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def replace_snapshot_dep(self, snapshot_dep_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str snapshot_dep_locator: (required)
         :param str fields:
         :param SnapshotDependency body:
@@ -1490,7 +1493,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def replace_snapshot_deps(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :param SnapshotDependencies body:
         :return: SnapshotDependencies
@@ -1499,7 +1502,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def replace_step(self, step_id, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str step_id: (required)
         :param str fields:
         :param Step body:
@@ -1509,7 +1512,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def replace_step_parameters(self, step_id, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str step_id: (required)
         :param Properties body:
         :param str fields:
@@ -1519,7 +1522,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def replace_steps(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :param Steps body:
         :return: Steps
@@ -1528,7 +1531,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def replace_trigger(self, trigger_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str trigger_locator: (required)
         :param str fields:
         :param Trigger body:
@@ -1538,7 +1541,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def replace_triggers(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :param Triggers body:
         :return: Triggers
@@ -1547,7 +1550,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def replace_vcs_root_entries(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param VcsRootEntries body:
         :param str fields:
         :return: VcsRootEntries
@@ -1556,7 +1559,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def serve_branches(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str locator:
         :param str fields:
         :return: Branches
@@ -1565,7 +1568,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def serve_build_field(self, build_locator, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str field: (required)
         :return: str
@@ -1574,7 +1577,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def serve_build_type_builds_tags(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :return: Tags
         """
@@ -1582,7 +1585,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def serve_build_type_field(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :return: str
         """
@@ -1590,7 +1593,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def serve_build_type_template(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: BuildType
         """
@@ -1598,7 +1601,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def serve_build_type_xml(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: BuildType
         """
@@ -1606,7 +1609,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def serve_build_with_project(self, build_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str fields:
         :return: Build
@@ -1615,7 +1618,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def serve_builds(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str status:
         :param str triggered_by_user:
         :param bool include_personal:
@@ -1635,7 +1638,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def set_build_type_field(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :param str body:
         :return: str
@@ -1644,7 +1647,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def set_parameter(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param ModelProperty body:
         :param str fields:
         :return: ModelProperty
@@ -1653,7 +1656,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def set_parameter_0(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param ModelProperty body:
         :param str fields:
@@ -1663,7 +1666,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def set_parameter_1(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param ModelProperty body:
         :param str fields:
         :return: ModelProperty
@@ -1672,7 +1675,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def set_parameter_2(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param ModelProperty body:
         :param str fields:
@@ -1682,7 +1685,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def set_parameter_type(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param Type body:
         :return: Type
@@ -1691,7 +1694,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def set_parameter_type_raw_value(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str body:
         :return: str
@@ -1700,7 +1703,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def set_parameter_value_long(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str body:
         :return: str
@@ -1709,7 +1712,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def set_parameter_value_long_0(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str body:
         :return: str
@@ -1718,7 +1721,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def set_parameters(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param Properties body:
         :param str fields:
         :return: Properties
@@ -1727,7 +1730,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def set_parameters_0(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param Properties body:
         :param str fields:
         :return: Properties
@@ -1736,7 +1739,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def set_vcs_labeling_options(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param VcsLabeling body:
         :return: VcsLabeling
         """
@@ -1744,7 +1747,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def update_vcs_root_entry(self, vcs_root_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_locator: (required)
         :param VcsRootEntry body:
         :param str fields:
@@ -1754,7 +1757,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
 
     def update_vcs_root_entry_checkout_rules(self, vcs_root_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_locator: (required)
         :param str body:
         :return: str
@@ -1775,7 +1778,7 @@ class Group(Group, ReadMixin, DeleteMixin):
 
     def add_role(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param Role body:
         :return: Role
         """
@@ -1783,7 +1786,7 @@ class Group(Group, ReadMixin, DeleteMixin):
 
     def add_role_put(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param Roles body:
         :return: Roles
         """
@@ -1791,7 +1794,7 @@ class Group(Group, ReadMixin, DeleteMixin):
 
     def add_role_simple(self, role_id, scope, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str role_id: (required)
         :param str scope: (required)
         :return: Role
@@ -1800,14 +1803,14 @@ class Group(Group, ReadMixin, DeleteMixin):
 
     def delete_group(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: None
         """
         return self.api.delete_group(group_locator=self, **kwargs)
 
     def delete_role(self, role_id, scope, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str role_id: (required)
         :param str scope: (required)
         :return: None
@@ -1816,7 +1819,7 @@ class Group(Group, ReadMixin, DeleteMixin):
 
     def get(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Group
         """
@@ -1824,7 +1827,7 @@ class Group(Group, ReadMixin, DeleteMixin):
 
     def get_group(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Group
         """
@@ -1832,14 +1835,14 @@ class Group(Group, ReadMixin, DeleteMixin):
 
     def get_permissions(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: str
         """
         return self.api.get_permissions(group_locator=self, **kwargs)
 
     def get_properties(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Properties
         """
@@ -1847,7 +1850,7 @@ class Group(Group, ReadMixin, DeleteMixin):
 
     def get_user_properties(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :return: str
         """
@@ -1855,7 +1858,7 @@ class Group(Group, ReadMixin, DeleteMixin):
 
     def list_role(self, role_id, scope, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str role_id: (required)
         :param str scope: (required)
         :return: Role
@@ -1864,14 +1867,14 @@ class Group(Group, ReadMixin, DeleteMixin):
 
     def list_roles(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: Roles
         """
         return self.api.list_roles(group_locator=self, **kwargs)
 
     def put_user_property(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str body:
         :return: str
@@ -1880,7 +1883,7 @@ class Group(Group, ReadMixin, DeleteMixin):
 
     def remove_user_property(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :return: None
         """
@@ -1888,7 +1891,7 @@ class Group(Group, ReadMixin, DeleteMixin):
 
     def serve_group(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Group
         """
@@ -1896,7 +1899,7 @@ class Group(Group, ReadMixin, DeleteMixin):
 
     def serve_user_properties(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :return: str
         """
@@ -1916,7 +1919,7 @@ class User(User, ReadMixin, DeleteMixin):
 
     def add_group(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param Group body:
         :param str fields:
         :return: Group
@@ -1925,7 +1928,7 @@ class User(User, ReadMixin, DeleteMixin):
 
     def add_role(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param Role body:
         :return: Role
         """
@@ -1933,7 +1936,7 @@ class User(User, ReadMixin, DeleteMixin):
 
     def add_role_simple(self, role_id, scope, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str role_id: (required)
         :param str scope: (required)
         :return: Role
@@ -1942,7 +1945,7 @@ class User(User, ReadMixin, DeleteMixin):
 
     def add_role_simple_post(self, role_id, scope, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str role_id: (required)
         :param str scope: (required)
         :return: None
@@ -1951,14 +1954,14 @@ class User(User, ReadMixin, DeleteMixin):
 
     def delete_remember_me(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: None
         """
         return self.api.delete_remember_me(user_locator=self, **kwargs)
 
     def delete_role(self, role_id, scope, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str role_id: (required)
         :param str scope: (required)
         :return: None
@@ -1967,14 +1970,14 @@ class User(User, ReadMixin, DeleteMixin):
 
     def delete_user(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: None
         """
         return self.api.delete_user(user_locator=self, **kwargs)
 
     def delete_user_field(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :return: None
         """
@@ -1982,7 +1985,7 @@ class User(User, ReadMixin, DeleteMixin):
 
     def get(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: User
         """
@@ -1990,7 +1993,7 @@ class User(User, ReadMixin, DeleteMixin):
 
     def get_groups(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Groups
         """
@@ -1998,14 +2001,14 @@ class User(User, ReadMixin, DeleteMixin):
 
     def get_permissions(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: str
         """
         return self.api.get_permissions(user_locator=self, **kwargs)
 
     def get_user(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: User
         """
@@ -2013,7 +2016,7 @@ class User(User, ReadMixin, DeleteMixin):
 
     def get_user_field(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :return: str
         """
@@ -2021,7 +2024,7 @@ class User(User, ReadMixin, DeleteMixin):
 
     def get_user_properties(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Properties
         """
@@ -2029,7 +2032,7 @@ class User(User, ReadMixin, DeleteMixin):
 
     def get_user_property(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :return: str
         """
@@ -2037,7 +2040,7 @@ class User(User, ReadMixin, DeleteMixin):
 
     def list_role(self, role_id, scope, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str role_id: (required)
         :param str scope: (required)
         :return: Role
@@ -2046,14 +2049,14 @@ class User(User, ReadMixin, DeleteMixin):
 
     def list_roles(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: Roles
         """
         return self.api.list_roles(user_locator=self, **kwargs)
 
     def put_user_property(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str body:
         :return: str
@@ -2062,7 +2065,7 @@ class User(User, ReadMixin, DeleteMixin):
 
     def remove_user_property(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :return: None
         """
@@ -2070,7 +2073,7 @@ class User(User, ReadMixin, DeleteMixin):
 
     def replace_groups(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param Groups body:
         :param str fields:
         :return: Groups
@@ -2079,7 +2082,7 @@ class User(User, ReadMixin, DeleteMixin):
 
     def replace_roles(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param Roles body:
         :return: Roles
         """
@@ -2087,7 +2090,7 @@ class User(User, ReadMixin, DeleteMixin):
 
     def serve_user(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: User
         """
@@ -2095,7 +2098,7 @@ class User(User, ReadMixin, DeleteMixin):
 
     def serve_user_field(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :return: str
         """
@@ -2103,7 +2106,7 @@ class User(User, ReadMixin, DeleteMixin):
 
     def serve_user_properties(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Properties
         """
@@ -2111,7 +2114,7 @@ class User(User, ReadMixin, DeleteMixin):
 
     def serve_user_property(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :return: str
         """
@@ -2119,7 +2122,7 @@ class User(User, ReadMixin, DeleteMixin):
 
     def set_user_field(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :param str body:
         :return: str
@@ -2128,7 +2131,7 @@ class User(User, ReadMixin, DeleteMixin):
 
     def update_user(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param User body:
         :param str fields:
         :return: User
@@ -2149,7 +2152,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def add(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param ProjectFeature body:
         :param str fields:
         :return: object
@@ -2158,7 +2161,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def create_build_type(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param NewBuildTypeDescription body:
         :param str fields:
         :return: BuildType
@@ -2167,7 +2170,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def create_build_type_template(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param NewBuildTypeDescription body:
         :param str fields:
         :return: BuildType
@@ -2176,7 +2179,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def delete(self, feature_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str feature_locator: (required)
         :return: None
         """
@@ -2184,14 +2187,14 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def delete_all_parameters(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: None
         """
         return self.api.delete_all_parameters(project_locator=self, **kwargs)
 
     def delete_all_parameters_0(self, feature_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str feature_locator: (required)
         :param str fields:
         :return: None
@@ -2200,7 +2203,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def delete_parameter(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :return: None
         """
@@ -2208,7 +2211,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def delete_parameter_0(self, name, feature_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str feature_locator: (required)
         :param str fields:
@@ -2218,14 +2221,14 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def delete_project(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: None
         """
         return self.api.delete_project(project_locator=self, **kwargs)
 
     def delete_project_agent_pools(self, agent_pool_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str agent_pool_locator: (required)
         :return: None
         """
@@ -2233,7 +2236,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def get(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Project
         """
@@ -2241,7 +2244,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def get_build_field_with_project(self, bt_locator, build_locator, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str build_locator: (required)
         :param str field: (required)
@@ -2251,7 +2254,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def get_build_type(self, bt_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str fields:
         :return: BuildType
@@ -2260,7 +2263,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def get_build_type_field_with_project(self, bt_locator, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str field: (required)
         :return: str
@@ -2269,7 +2272,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def get_build_type_templates(self, bt_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str fields:
         :return: BuildType
@@ -2278,7 +2281,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def get_build_types_in_project(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: BuildTypes
         """
@@ -2286,7 +2289,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def get_build_types_order(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :return: BuildTypes
         """
@@ -2294,7 +2297,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def get_build_with_project(self, bt_locator, build_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str build_locator: (required)
         :param str fields:
@@ -2304,7 +2307,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def get_builds(self, bt_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str status:
         :param str triggered_by_user:
@@ -2325,7 +2328,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def get_example_new_project_description(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str id:
         :return: NewProjectDescription
         """
@@ -2333,7 +2336,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def get_example_new_project_description_compatibility_version1(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str id:
         :return: NewProjectDescription
         """
@@ -2341,7 +2344,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def get_parameter(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str fields:
         :return: ModelProperty
@@ -2350,7 +2353,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def get_parameter_0(self, name, feature_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str feature_locator: (required)
         :param str fields:
@@ -2361,7 +2364,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def get_parameter_type(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :return: Type
         """
@@ -2369,7 +2372,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def get_parameter_type_raw_value(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :return: str
         """
@@ -2377,7 +2380,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def get_parameter_value_long(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :return: str
         """
@@ -2385,7 +2388,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def get_parameter_value_long_0(self, name, feature_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str feature_locator: (required)
         :param str fields:
@@ -2395,7 +2398,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def get_parameters(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str locator:
         :param str fields:
         :return: Properties
@@ -2404,7 +2407,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def get_parameters_0(self, feature_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str feature_locator: (required)
         :param str locator:
         :param str fields:
@@ -2415,7 +2418,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def get_parent_project(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Project
         """
@@ -2423,7 +2426,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def get_project(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Project
         """
@@ -2431,7 +2434,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def get_project_agent_pools(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: AgentPools
         """
@@ -2439,7 +2442,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def get_project_field(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :return: str
         """
@@ -2447,7 +2450,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def get_projects_order(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :return: Projects
         """
@@ -2455,14 +2458,14 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def get_settings_file(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: str
         """
         return self.api.get_settings_file(project_locator=self, **kwargs)
 
     def get_single(self, feature_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str feature_locator: (required)
         :param str fields:
         :return: object
@@ -2471,7 +2474,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def get_templates_in_project(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: BuildTypes
         """
@@ -2479,7 +2482,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def reload_settings_file(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Project
         """
@@ -2487,7 +2490,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def replace(self, feature_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str feature_locator: (required)
         :param ProjectFeature body:
         :param str fields:
@@ -2497,7 +2500,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def replace_all(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param ProjectFeatures body:
         :param str fields:
         :return: object
@@ -2506,7 +2509,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def serve_build_field_with_project(self, bt_locator, build_locator, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str build_locator: (required)
         :param str field: (required)
@@ -2516,7 +2519,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def serve_build_type(self, bt_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str fields:
         :return: BuildType
@@ -2525,7 +2528,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def serve_build_type_field_with_project(self, bt_locator, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str field: (required)
         :return: str
@@ -2534,7 +2537,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def serve_build_type_templates(self, bt_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str fields:
         :return: BuildType
@@ -2543,7 +2546,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def serve_build_types_in_project(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: BuildTypes
         """
@@ -2551,7 +2554,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def serve_build_with_project(self, bt_locator, build_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str build_locator: (required)
         :param str fields:
@@ -2561,7 +2564,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def serve_builds(self, bt_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str status:
         :param str triggered_by_user:
@@ -2582,7 +2585,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def serve_project(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Project
         """
@@ -2590,7 +2593,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def serve_project_field(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :return: str
         """
@@ -2598,7 +2601,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def serve_templates_in_project(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: BuildTypes
         """
@@ -2606,7 +2609,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def set_build_types_order(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :param BuildTypes body:
         :return: BuildTypes
@@ -2615,7 +2618,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def set_parameter(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param ModelProperty body:
         :param str fields:
         :return: ModelProperty
@@ -2624,7 +2627,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def set_parameter_0(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param ModelProperty body:
         :param str fields:
@@ -2634,7 +2637,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def set_parameter_1(self, feature_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str feature_locator: (required)
         :param ModelProperty body:
         :param str fields:
@@ -2645,7 +2648,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def set_parameter_2(self, name, feature_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str feature_locator: (required)
         :param ModelProperty body:
@@ -2657,7 +2660,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def set_parameter_type(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param Type body:
         :return: Type
@@ -2666,7 +2669,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def set_parameter_type_raw_value(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str body:
         :return: str
@@ -2675,7 +2678,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def set_parameter_value_long(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str body:
         :return: str
@@ -2684,7 +2687,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def set_parameter_value_long_0(self, name, feature_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str feature_locator: (required)
         :param str body:
@@ -2695,7 +2698,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def set_parameters(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param Properties body:
         :param str fields:
         :return: Properties
@@ -2704,7 +2707,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def set_parameters_0(self, feature_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str feature_locator: (required)
         :param Properties body:
         :param str fields:
@@ -2715,7 +2718,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def set_parent_project(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param Project body:
         :return: Project
         """
@@ -2723,7 +2726,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def set_project_agent_pools(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param AgentPools body:
         :param str fields:
         :return: AgentPools
@@ -2732,7 +2735,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def set_project_agent_pools_0(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param AgentPool body:
         :return: AgentPool
         """
@@ -2740,7 +2743,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def set_project_filed(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :param str body:
         :return: str
@@ -2749,7 +2752,7 @@ class Project(Project, ReadMixin, DeleteMixin):
 
     def set_projects_order(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :param Projects body:
         :return: Projects
@@ -2770,7 +2773,7 @@ class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
 
     def change_properties(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param Properties body:
         :param str fields:
         :return: Properties
@@ -2779,14 +2782,14 @@ class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
 
     def delete_all_properties(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: None
         """
         return self.api.delete_all_properties(vcs_root_locator=self, **kwargs)
 
     def delete_parameter(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :return: None
         """
@@ -2794,14 +2797,14 @@ class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
 
     def delete_root(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: None
         """
         return self.api.delete_root(vcs_root_locator=self, **kwargs)
 
     def get(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: VcsRoot
         """
@@ -2809,7 +2812,7 @@ class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
 
     def get_field(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :return: str
         """
@@ -2817,7 +2820,7 @@ class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
 
     def get_instance_field(self, vcs_root_instance_locator, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_instance_locator: (required)
         :param str field: (required)
         :return: str
@@ -2826,7 +2829,7 @@ class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
 
     def get_properties(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Properties
         """
@@ -2834,7 +2837,7 @@ class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
 
     def get_property(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :return: str
         """
@@ -2842,7 +2845,7 @@ class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
 
     def get_root(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: VcsRoot
         """
@@ -2850,7 +2853,7 @@ class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
 
     def get_root_instance(self, vcs_root_instance_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_instance_locator: (required)
         :param str fields:
         :return: VcsRootInstance
@@ -2859,7 +2862,7 @@ class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
 
     def get_root_instance_properties(self, vcs_root_instance_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_instance_locator: (required)
         :param str fields:
         :return: Properties
@@ -2868,7 +2871,7 @@ class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
 
     def get_root_instances(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: VcsRootInstances
         """
@@ -2876,14 +2879,14 @@ class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
 
     def get_settings_file(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: str
         """
         return self.api.get_settings_file(vcs_root_locator=self, **kwargs)
 
     def put_parameter(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str body:
         :return: str
@@ -2892,7 +2895,7 @@ class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
 
     def serve_field(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :return: str
         """
@@ -2900,7 +2903,7 @@ class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
 
     def serve_instance_field(self, vcs_root_instance_locator, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_instance_locator: (required)
         :param str field: (required)
         :return: str
@@ -2909,7 +2912,7 @@ class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
 
     def serve_properties(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Properties
         """
@@ -2917,7 +2920,7 @@ class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
 
     def serve_property(self, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :return: str
         """
@@ -2925,7 +2928,7 @@ class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
 
     def serve_root(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: VcsRoot
         """
@@ -2933,7 +2936,7 @@ class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
 
     def serve_root_instance(self, vcs_root_instance_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_instance_locator: (required)
         :param str fields:
         :return: VcsRootInstance
@@ -2942,7 +2945,7 @@ class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
 
     def serve_root_instance_properties(self, vcs_root_instance_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_instance_locator: (required)
         :param str fields:
         :return: Properties
@@ -2951,7 +2954,7 @@ class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
 
     def serve_root_instances(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: VcsRootInstances
         """
@@ -2959,7 +2962,7 @@ class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
 
     def set_field(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :param str body:
         :return: str
@@ -2968,7 +2971,7 @@ class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
 
     def set_instance_field(self, vcs_root_instance_locator, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_instance_locator: (required)
         :param str field: (required)
         :param str body:
@@ -2987,7 +2990,7 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
 
     def delete_instance_field(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :return: None
         """
@@ -2995,14 +2998,14 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
 
     def delete_repository_state(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: None
         """
         return self.api.delete_repository_state(vcs_root_instance_locator=self, **kwargs)
 
     def get(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: VcsRootInstance
         """
@@ -3010,7 +3013,7 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
 
     def get_children(self, path, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str base_path:
         :param str locator:
@@ -3021,7 +3024,7 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
 
     def get_children_alias(self, path, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str base_path:
         :param str locator:
@@ -3032,7 +3035,7 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
 
     def get_content(self, path, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :return: None
         """
@@ -3040,7 +3043,7 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
 
     def get_content_alias(self, path, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :return: None
         """
@@ -3048,7 +3051,7 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
 
     def get_instance(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: VcsRootInstance
         """
@@ -3056,7 +3059,7 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
 
     def get_instance_field(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :return: str
         """
@@ -3064,7 +3067,7 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
 
     def get_metadata(self, path, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str fields:
         :return: file
@@ -3073,7 +3076,7 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
 
     def get_repository_state(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Entries
         """
@@ -3081,14 +3084,14 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
 
     def get_repository_state_creation_date(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: str
         """
         return self.api.get_repository_state_creation_date(vcs_root_instance_locator=self, **kwargs)
 
     def get_root(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str base_path:
         :param str locator:
         :param str fields:
@@ -3098,7 +3101,7 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
 
     def get_root_instance_properties(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Properties
         """
@@ -3106,7 +3109,7 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
 
     def get_zipped(self, path, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str base_path:
         :param str locator:
@@ -3117,7 +3120,7 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
 
     def serve_instance(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: VcsRootInstance
         """
@@ -3125,7 +3128,7 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
 
     def serve_instance_field(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :return: str
         """
@@ -3133,7 +3136,7 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
 
     def serve_root_instance_properties(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Properties
         """
@@ -3141,7 +3144,7 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
 
     def set_instance_field(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :param str body:
         :return: str
@@ -3150,7 +3153,7 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
 
     def set_repository_state(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param Entries body:
         :param str fields:
         :return: Entries

@@ -47,7 +47,7 @@ class UserApi(object):
         >>> thread = api.add_group(user_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str user_locator: (required)
         :param Group body:
         :param str fields:
@@ -71,7 +71,7 @@ class UserApi(object):
         >>> thread = api.add_role(user_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str user_locator: (required)
         :param Role body:
         :return: Role
@@ -94,7 +94,7 @@ class UserApi(object):
         >>> thread = api.add_role_simple(user_locator, role_id, scope, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str user_locator: (required)
         :param str role_id: (required)
         :param str scope: (required)
@@ -118,7 +118,7 @@ class UserApi(object):
         >>> thread = api.add_role_simple_post(user_locator, role_id, scope, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str user_locator: (required)
         :param str role_id: (required)
         :param str scope: (required)
@@ -142,7 +142,7 @@ class UserApi(object):
         >>> thread = api.create_user(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param User body:
         :param str fields:
         :return: User
@@ -165,7 +165,7 @@ class UserApi(object):
         >>> thread = api.delete_remember_me(user_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str user_locator: (required)
         :return: None
                  If the method is called asynchronously,
@@ -187,7 +187,7 @@ class UserApi(object):
         >>> thread = api.delete_role(user_locator, role_id, scope, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str user_locator: (required)
         :param str role_id: (required)
         :param str scope: (required)
@@ -211,7 +211,7 @@ class UserApi(object):
         >>> thread = api.delete_user(user_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str user_locator: (required)
         :return: None
                  If the method is called asynchronously,
@@ -233,7 +233,7 @@ class UserApi(object):
         >>> thread = api.delete_user_field(user_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str user_locator: (required)
         :param str field: (required)
         :return: None
@@ -256,7 +256,7 @@ class UserApi(object):
         >>> thread = api.get_groups(user_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str user_locator: (required)
         :param str fields:
         :return: Groups
@@ -279,7 +279,7 @@ class UserApi(object):
         >>> thread = api.get_permissions(user_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str user_locator: (required)
         :return: str
                  If the method is called asynchronously,
@@ -301,7 +301,7 @@ class UserApi(object):
         >>> thread = api.list_role(user_locator, role_id, scope, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str user_locator: (required)
         :param str role_id: (required)
         :param str scope: (required)
@@ -325,7 +325,7 @@ class UserApi(object):
         >>> thread = api.list_roles(user_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str user_locator: (required)
         :return: Roles
                  If the method is called asynchronously,
@@ -347,7 +347,7 @@ class UserApi(object):
         >>> thread = api.put_user_property(user_locator, name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str user_locator: (required)
         :param str name: (required)
         :param str body:
@@ -371,7 +371,7 @@ class UserApi(object):
         >>> thread = api.remove_user_property(user_locator, name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str user_locator: (required)
         :param str name: (required)
         :return: None
@@ -394,7 +394,7 @@ class UserApi(object):
         >>> thread = api.replace_groups(user_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str user_locator: (required)
         :param Groups body:
         :param str fields:
@@ -418,7 +418,7 @@ class UserApi(object):
         >>> thread = api.replace_roles(user_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str user_locator: (required)
         :param Roles body:
         :return: Roles
@@ -441,7 +441,7 @@ class UserApi(object):
         >>> thread = api.serve_user(user_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str user_locator: (required)
         :param str fields:
         :return: User
@@ -464,7 +464,7 @@ class UserApi(object):
         >>> thread = api.serve_user_field(user_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str user_locator: (required)
         :param str field: (required)
         :return: str
@@ -487,7 +487,7 @@ class UserApi(object):
         >>> thread = api.serve_user_properties(user_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str user_locator: (required)
         :param str fields:
         :return: Properties
@@ -510,7 +510,7 @@ class UserApi(object):
         >>> thread = api.serve_user_property(user_locator, name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str user_locator: (required)
         :param str name: (required)
         :return: str
@@ -533,7 +533,7 @@ class UserApi(object):
         >>> thread = api.serve_users(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str locator:
         :param str fields:
         :return: Users
@@ -556,7 +556,7 @@ class UserApi(object):
         >>> thread = api.set_user_field(user_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str user_locator: (required)
         :param str field: (required)
         :param str body:
@@ -580,7 +580,7 @@ class UserApi(object):
         >>> thread = api.update_user(user_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str user_locator: (required)
         :param User body:
         :param str fields:

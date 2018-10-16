@@ -42,7 +42,7 @@ class InvestigationApi(object):
         >>> thread = api.get_investigations(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str locator:
         :param str fields:
         :return: Investigations
@@ -65,7 +65,7 @@ class InvestigationApi(object):
         >>> thread = api.serve_instance(investigation_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str investigation_locator: (required)
         :param str fields:
         :return: Investigation

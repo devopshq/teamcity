@@ -45,7 +45,7 @@ class VcsRootApi(object):
         >>> thread = api.add_root(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param VcsRoot body:
         :param str fields:
         :return: VcsRoot
@@ -68,7 +68,7 @@ class VcsRootApi(object):
         >>> thread = api.change_properties(vcs_root_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_locator: (required)
         :param Properties body:
         :param str fields:
@@ -92,7 +92,7 @@ class VcsRootApi(object):
         >>> thread = api.delete_all_properties(vcs_root_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_locator: (required)
         :return: None
                  If the method is called asynchronously,
@@ -114,7 +114,7 @@ class VcsRootApi(object):
         >>> thread = api.delete_parameter(vcs_root_locator, name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_locator: (required)
         :param str name: (required)
         :return: None
@@ -137,7 +137,7 @@ class VcsRootApi(object):
         >>> thread = api.delete_root(vcs_root_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_locator: (required)
         :return: None
                  If the method is called asynchronously,
@@ -159,7 +159,7 @@ class VcsRootApi(object):
         >>> thread = api.get_settings_file(vcs_root_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_locator: (required)
         :return: str
                  If the method is called asynchronously,
@@ -181,7 +181,7 @@ class VcsRootApi(object):
         >>> thread = api.put_parameter(vcs_root_locator, name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_locator: (required)
         :param str name: (required)
         :param str body:
@@ -205,7 +205,7 @@ class VcsRootApi(object):
         >>> thread = api.serve_field(vcs_root_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_locator: (required)
         :param str field: (required)
         :return: str
@@ -228,7 +228,7 @@ class VcsRootApi(object):
         >>> thread = api.serve_instance_field(vcs_root_locator, vcs_root_instance_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_locator: (required)
         :param str vcs_root_instance_locator: (required)
         :param str field: (required)
@@ -252,7 +252,7 @@ class VcsRootApi(object):
         >>> thread = api.serve_properties(vcs_root_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_locator: (required)
         :param str fields:
         :return: Properties
@@ -275,7 +275,7 @@ class VcsRootApi(object):
         >>> thread = api.serve_property(vcs_root_locator, name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_locator: (required)
         :param str name: (required)
         :return: str
@@ -298,7 +298,7 @@ class VcsRootApi(object):
         >>> thread = api.serve_root(vcs_root_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_locator: (required)
         :param str fields:
         :return: VcsRoot
@@ -321,7 +321,7 @@ class VcsRootApi(object):
         >>> thread = api.serve_root_instance(vcs_root_locator, vcs_root_instance_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_locator: (required)
         :param str vcs_root_instance_locator: (required)
         :param str fields:
@@ -345,7 +345,7 @@ class VcsRootApi(object):
         >>> thread = api.serve_root_instance_properties(vcs_root_locator, vcs_root_instance_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_locator: (required)
         :param str vcs_root_instance_locator: (required)
         :param str fields:
@@ -369,7 +369,7 @@ class VcsRootApi(object):
         >>> thread = api.serve_root_instances(vcs_root_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_locator: (required)
         :param str fields:
         :return: VcsRootInstances
@@ -392,7 +392,7 @@ class VcsRootApi(object):
         >>> thread = api.serve_roots(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str locator:
         :param str fields:
         :return: VcsRoots
@@ -415,7 +415,7 @@ class VcsRootApi(object):
         >>> thread = api.set_field(vcs_root_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_locator: (required)
         :param str field: (required)
         :param str body:
@@ -439,7 +439,7 @@ class VcsRootApi(object):
         >>> thread = api.set_instance_field(vcs_root_locator, vcs_root_instance_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_locator: (required)
         :param str vcs_root_instance_locator: (required)
         :param str field: (required)

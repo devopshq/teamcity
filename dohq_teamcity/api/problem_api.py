@@ -42,7 +42,7 @@ class ProblemApi(object):
         >>> thread = api.get_problems(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str locator:
         :param str fields:
         :return: Problems
@@ -65,7 +65,7 @@ class ProblemApi(object):
         >>> thread = api.serve_instance(problem_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str problem_locator: (required)
         :param str fields:
         :return: Problem

@@ -70,7 +70,7 @@ class BuildTypeApi(object):
         >>> thread = api.add_agent_requirement(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str fields:
         :param AgentRequirement body:
@@ -94,7 +94,7 @@ class BuildTypeApi(object):
         >>> thread = api.add_artifact_dep(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str fields:
         :param ArtifactDependency body:
@@ -118,7 +118,7 @@ class BuildTypeApi(object):
         >>> thread = api.add_build_type(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param BuildType body:
         :param str fields:
         :return: BuildType
@@ -141,7 +141,7 @@ class BuildTypeApi(object):
         >>> thread = api.add_feature(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str fields:
         :param Feature body:
@@ -165,7 +165,7 @@ class BuildTypeApi(object):
         >>> thread = api.add_feature_parameter(bt_locator, feature_id, parameter_name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str feature_id: (required)
         :param str parameter_name: (required)
@@ -190,7 +190,7 @@ class BuildTypeApi(object):
         >>> thread = api.add_snapshot_dep(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str fields:
         :param SnapshotDependency body:
@@ -214,7 +214,7 @@ class BuildTypeApi(object):
         >>> thread = api.add_step(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str fields:
         :param Step body:
@@ -238,7 +238,7 @@ class BuildTypeApi(object):
         >>> thread = api.add_step_parameter(bt_locator, step_id, parameter_name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str step_id: (required)
         :param str parameter_name: (required)
@@ -263,7 +263,7 @@ class BuildTypeApi(object):
         >>> thread = api.add_trigger(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str fields:
         :param Trigger body:
@@ -287,7 +287,7 @@ class BuildTypeApi(object):
         >>> thread = api.add_vcs_root_entry(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param VcsRootEntry body:
         :param str fields:
@@ -311,7 +311,7 @@ class BuildTypeApi(object):
         >>> thread = api.change_artifact_dep_setting(bt_locator, artifact_dep_locator, field_name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str artifact_dep_locator: (required)
         :param str field_name: (required)
@@ -336,7 +336,7 @@ class BuildTypeApi(object):
         >>> thread = api.change_feature_setting(bt_locator, feature_id, name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str feature_id: (required)
         :param str name: (required)
@@ -361,7 +361,7 @@ class BuildTypeApi(object):
         >>> thread = api.change_requirement_setting(bt_locator, agent_requirement_locator, field_name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str agent_requirement_locator: (required)
         :param str field_name: (required)
@@ -386,7 +386,7 @@ class BuildTypeApi(object):
         >>> thread = api.change_step_setting(bt_locator, step_id, field_name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str step_id: (required)
         :param str field_name: (required)
@@ -411,7 +411,7 @@ class BuildTypeApi(object):
         >>> thread = api.change_trigger_setting(bt_locator, trigger_locator, field_name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str trigger_locator: (required)
         :param str field_name: (required)
@@ -436,7 +436,7 @@ class BuildTypeApi(object):
         >>> thread = api.delete_agent_requirement(bt_locator, agent_requirement_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str agent_requirement_locator: (required)
         :return: None
@@ -459,7 +459,7 @@ class BuildTypeApi(object):
         >>> thread = api.delete_all_parameters(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :return: None
                  If the method is called asynchronously,
@@ -481,7 +481,7 @@ class BuildTypeApi(object):
         >>> thread = api.delete_all_parameters_0(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :return: None
                  If the method is called asynchronously,
@@ -503,7 +503,7 @@ class BuildTypeApi(object):
         >>> thread = api.delete_artifact_dep(bt_locator, artifact_dep_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str artifact_dep_locator: (required)
         :return: None
@@ -526,7 +526,7 @@ class BuildTypeApi(object):
         >>> thread = api.delete_build_type(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :return: None
                  If the method is called asynchronously,
@@ -548,7 +548,7 @@ class BuildTypeApi(object):
         >>> thread = api.delete_feature(bt_locator, feature_id, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str feature_id: (required)
         :return: None
@@ -571,7 +571,7 @@ class BuildTypeApi(object):
         >>> thread = api.delete_parameter(name, bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str bt_locator: (required)
         :return: None
@@ -594,7 +594,7 @@ class BuildTypeApi(object):
         >>> thread = api.delete_parameter_0(name, bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str bt_locator: (required)
         :return: None
@@ -617,7 +617,7 @@ class BuildTypeApi(object):
         >>> thread = api.delete_snapshot_dep(bt_locator, snapshot_dep_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str snapshot_dep_locator: (required)
         :return: None
@@ -640,7 +640,7 @@ class BuildTypeApi(object):
         >>> thread = api.delete_step(bt_locator, step_id, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str step_id: (required)
         :return: None
@@ -663,7 +663,7 @@ class BuildTypeApi(object):
         >>> thread = api.delete_template_association(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :return: None
                  If the method is called asynchronously,
@@ -685,7 +685,7 @@ class BuildTypeApi(object):
         >>> thread = api.delete_trigger(bt_locator, trigger_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str trigger_locator: (required)
         :return: None
@@ -708,7 +708,7 @@ class BuildTypeApi(object):
         >>> thread = api.delete_vcs_root_entry(bt_locator, vcs_root_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str vcs_root_locator: (required)
         :return: None
@@ -731,7 +731,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_agent_requirement(bt_locator, agent_requirement_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str agent_requirement_locator: (required)
         :param str fields:
@@ -755,7 +755,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_agent_requirements(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str fields:
         :return: AgentRequirements
@@ -778,7 +778,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_aliases(bt_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str field: (required)
         :return: Items
@@ -801,7 +801,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_artifact_dep(bt_locator, artifact_dep_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str artifact_dep_locator: (required)
         :param str fields:
@@ -825,7 +825,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_artifact_dep_setting(bt_locator, artifact_dep_locator, field_name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str artifact_dep_locator: (required)
         :param str field_name: (required)
@@ -849,7 +849,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_artifact_deps(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str fields:
         :return: ArtifactDependencies
@@ -872,7 +872,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_build_types(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str locator:
         :param str fields:
         :return: BuildTypes
@@ -895,7 +895,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_children(path, bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str bt_locator: (required)
         :param str base_path:
@@ -922,7 +922,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_children_alias(path, bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str bt_locator: (required)
         :param str base_path:
@@ -949,7 +949,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_content(path, bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str bt_locator: (required)
         :param bool resolve_parameters:
@@ -973,7 +973,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_content_alias(path, bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str bt_locator: (required)
         :param bool resolve_parameters:
@@ -997,7 +997,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_current_vcs_instances(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str fields:
         :return: VcsRootInstances
@@ -1020,7 +1020,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_example_new_project_description(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :return: NewBuildTypeDescription
                  If the method is called asynchronously,
@@ -1042,7 +1042,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_example_new_project_description_compatibility_version1(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :return: NewBuildTypeDescription
                  If the method is called asynchronously,
@@ -1064,7 +1064,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_feature(bt_locator, feature_id, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str feature_id: (required)
         :param str fields:
@@ -1088,7 +1088,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_feature_parameter(bt_locator, feature_id, parameter_name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str feature_id: (required)
         :param str parameter_name: (required)
@@ -1112,7 +1112,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_feature_parameters(bt_locator, feature_id, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str feature_id: (required)
         :param str fields:
@@ -1136,7 +1136,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_feature_setting(bt_locator, feature_id, name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str feature_id: (required)
         :param str name: (required)
@@ -1160,7 +1160,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_features(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str fields:
         :return: Features
@@ -1183,7 +1183,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_investigations(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str fields:
         :return: Investigations
@@ -1206,7 +1206,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_metadata(path, bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str bt_locator: (required)
         :param str fields:
@@ -1231,7 +1231,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_parameter(name, bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str bt_locator: (required)
         :param str fields:
@@ -1255,7 +1255,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_parameter_0(name, bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str bt_locator: (required)
         :param str fields:
@@ -1279,7 +1279,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_parameter_type(name, bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str bt_locator: (required)
         :return: Type
@@ -1302,7 +1302,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_parameter_type_raw_value(name, bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str bt_locator: (required)
         :return: str
@@ -1325,7 +1325,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_parameter_value_long(name, bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str bt_locator: (required)
         :return: str
@@ -1348,7 +1348,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_parameter_value_long_0(name, bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str bt_locator: (required)
         :return: str
@@ -1371,7 +1371,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_parameters(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str locator:
         :param str fields:
@@ -1395,7 +1395,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_parameters_0(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str locator:
         :param str fields:
@@ -1419,7 +1419,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_requirement_setting(bt_locator, agent_requirement_locator, field_name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str agent_requirement_locator: (required)
         :param str field_name: (required)
@@ -1443,7 +1443,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_root(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str base_path:
         :param str locator:
@@ -1469,7 +1469,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_settings_file(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :return: str
                  If the method is called asynchronously,
@@ -1491,7 +1491,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_snapshot_dep(bt_locator, snapshot_dep_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str snapshot_dep_locator: (required)
         :param str fields:
@@ -1515,7 +1515,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_snapshot_deps(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str fields:
         :return: SnapshotDependencies
@@ -1538,7 +1538,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_step(bt_locator, step_id, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str step_id: (required)
         :param str fields:
@@ -1562,7 +1562,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_step_parameter(bt_locator, step_id, parameter_name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str step_id: (required)
         :param str parameter_name: (required)
@@ -1586,7 +1586,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_step_parameters(bt_locator, step_id, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str step_id: (required)
         :param str fields:
@@ -1610,7 +1610,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_step_setting(bt_locator, step_id, field_name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str step_id: (required)
         :param str field_name: (required)
@@ -1634,7 +1634,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_steps(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str fields:
         :return: Steps
@@ -1657,7 +1657,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_template_association(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str body:
         :param str fields:
@@ -1681,7 +1681,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_trigger(bt_locator, trigger_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str trigger_locator: (required)
         :param str fields:
@@ -1705,7 +1705,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_trigger_setting(bt_locator, trigger_locator, field_name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str trigger_locator: (required)
         :param str field_name: (required)
@@ -1729,7 +1729,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_triggers(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str fields:
         :return: Triggers
@@ -1752,7 +1752,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_vcs_labeling_options(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :return: VcsLabeling
                  If the method is called asynchronously,
@@ -1774,7 +1774,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_vcs_root_entries(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str fields:
         :return: VcsRootEntries
@@ -1797,7 +1797,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_vcs_root_entry(bt_locator, vcs_root_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str vcs_root_locator: (required)
         :param str fields:
@@ -1821,7 +1821,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_vcs_root_entry_checkout_rules(bt_locator, vcs_root_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str vcs_root_locator: (required)
         :return: str
@@ -1844,7 +1844,7 @@ class BuildTypeApi(object):
         >>> thread = api.get_zipped(path, bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str bt_locator: (required)
         :param str base_path:
@@ -1871,7 +1871,7 @@ class BuildTypeApi(object):
         >>> thread = api.replace_agent_requirement(bt_locator, agent_requirement_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str agent_requirement_locator: (required)
         :param str fields:
@@ -1896,7 +1896,7 @@ class BuildTypeApi(object):
         >>> thread = api.replace_agent_requirements(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str fields:
         :param AgentRequirements body:
@@ -1920,7 +1920,7 @@ class BuildTypeApi(object):
         >>> thread = api.replace_artifact_dep(bt_locator, artifact_dep_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str artifact_dep_locator: (required)
         :param str fields:
@@ -1945,7 +1945,7 @@ class BuildTypeApi(object):
         >>> thread = api.replace_artifact_deps(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str fields:
         :param ArtifactDependencies body:
@@ -1969,7 +1969,7 @@ class BuildTypeApi(object):
         >>> thread = api.replace_feature(bt_locator, feature_id, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str feature_id: (required)
         :param str fields:
@@ -1994,7 +1994,7 @@ class BuildTypeApi(object):
         >>> thread = api.replace_feature_parameters(bt_locator, feature_id, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str feature_id: (required)
         :param Properties body:
@@ -2019,7 +2019,7 @@ class BuildTypeApi(object):
         >>> thread = api.replace_features(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str fields:
         :param Features body:
@@ -2043,7 +2043,7 @@ class BuildTypeApi(object):
         >>> thread = api.replace_snapshot_dep(bt_locator, snapshot_dep_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str snapshot_dep_locator: (required)
         :param str fields:
@@ -2068,7 +2068,7 @@ class BuildTypeApi(object):
         >>> thread = api.replace_snapshot_deps(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str fields:
         :param SnapshotDependencies body:
@@ -2092,7 +2092,7 @@ class BuildTypeApi(object):
         >>> thread = api.replace_step(bt_locator, step_id, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str step_id: (required)
         :param str fields:
@@ -2117,7 +2117,7 @@ class BuildTypeApi(object):
         >>> thread = api.replace_step_parameters(bt_locator, step_id, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str step_id: (required)
         :param Properties body:
@@ -2142,7 +2142,7 @@ class BuildTypeApi(object):
         >>> thread = api.replace_steps(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str fields:
         :param Steps body:
@@ -2166,7 +2166,7 @@ class BuildTypeApi(object):
         >>> thread = api.replace_trigger(bt_locator, trigger_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str trigger_locator: (required)
         :param str fields:
@@ -2191,7 +2191,7 @@ class BuildTypeApi(object):
         >>> thread = api.replace_triggers(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str fields:
         :param Triggers body:
@@ -2215,7 +2215,7 @@ class BuildTypeApi(object):
         >>> thread = api.replace_vcs_root_entries(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param VcsRootEntries body:
         :param str fields:
@@ -2239,7 +2239,7 @@ class BuildTypeApi(object):
         >>> thread = api.serve_branches(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str locator:
         :param str fields:
@@ -2263,7 +2263,7 @@ class BuildTypeApi(object):
         >>> thread = api.serve_build_field(bt_locator, build_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str build_locator: (required)
         :param str field: (required)
@@ -2287,7 +2287,7 @@ class BuildTypeApi(object):
         >>> thread = api.serve_build_type_builds_tags(bt_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str field: (required)
         :return: Tags
@@ -2310,7 +2310,7 @@ class BuildTypeApi(object):
         >>> thread = api.serve_build_type_field(bt_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str field: (required)
         :return: str
@@ -2333,7 +2333,7 @@ class BuildTypeApi(object):
         >>> thread = api.serve_build_type_template(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str fields:
         :return: BuildType
@@ -2356,7 +2356,7 @@ class BuildTypeApi(object):
         >>> thread = api.serve_build_type_xml(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str fields:
         :return: BuildType
@@ -2379,7 +2379,7 @@ class BuildTypeApi(object):
         >>> thread = api.serve_build_with_project(bt_locator, build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str build_locator: (required)
         :param str fields:
@@ -2403,7 +2403,7 @@ class BuildTypeApi(object):
         >>> thread = api.serve_builds(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str status:
         :param str triggered_by_user:
@@ -2438,7 +2438,7 @@ class BuildTypeApi(object):
         >>> thread = api.set_build_type_field(bt_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str field: (required)
         :param str body:
@@ -2462,7 +2462,7 @@ class BuildTypeApi(object):
         >>> thread = api.set_parameter(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param ModelProperty body:
         :param str fields:
@@ -2486,7 +2486,7 @@ class BuildTypeApi(object):
         >>> thread = api.set_parameter_0(name, bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str bt_locator: (required)
         :param ModelProperty body:
@@ -2511,7 +2511,7 @@ class BuildTypeApi(object):
         >>> thread = api.set_parameter_1(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param ModelProperty body:
         :param str fields:
@@ -2535,7 +2535,7 @@ class BuildTypeApi(object):
         >>> thread = api.set_parameter_2(name, bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str bt_locator: (required)
         :param ModelProperty body:
@@ -2560,7 +2560,7 @@ class BuildTypeApi(object):
         >>> thread = api.set_parameter_type(name, bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str bt_locator: (required)
         :param Type body:
@@ -2584,7 +2584,7 @@ class BuildTypeApi(object):
         >>> thread = api.set_parameter_type_raw_value(name, bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str bt_locator: (required)
         :param str body:
@@ -2608,7 +2608,7 @@ class BuildTypeApi(object):
         >>> thread = api.set_parameter_value_long(name, bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str bt_locator: (required)
         :param str body:
@@ -2632,7 +2632,7 @@ class BuildTypeApi(object):
         >>> thread = api.set_parameter_value_long_0(name, bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str bt_locator: (required)
         :param str body:
@@ -2656,7 +2656,7 @@ class BuildTypeApi(object):
         >>> thread = api.set_parameters(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param Properties body:
         :param str fields:
@@ -2680,7 +2680,7 @@ class BuildTypeApi(object):
         >>> thread = api.set_parameters_0(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param Properties body:
         :param str fields:
@@ -2704,7 +2704,7 @@ class BuildTypeApi(object):
         >>> thread = api.set_vcs_labeling_options(bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param VcsLabeling body:
         :return: VcsLabeling
@@ -2727,7 +2727,7 @@ class BuildTypeApi(object):
         >>> thread = api.update_vcs_root_entry(bt_locator, vcs_root_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str vcs_root_locator: (required)
         :param VcsRootEntry body:
@@ -2752,7 +2752,7 @@ class BuildTypeApi(object):
         >>> thread = api.update_vcs_root_entry_checkout_rules(bt_locator, vcs_root_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str vcs_root_locator: (required)
         :param str body:

@@ -4,7 +4,7 @@ from dohq_teamcity.api import *  # noqa
 class AgentApi(AgentApi):
     def get(self, agent_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str agent_locator: (required)
         :param str fields:
         :return: Agent
@@ -13,7 +13,7 @@ class AgentApi(AgentApi):
 
     def get_agent(self, agent_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str agent_locator: (required)
         :param str fields:
         :return: Agent
@@ -22,7 +22,7 @@ class AgentApi(AgentApi):
 
     def get_agent_field(self, agent_locator, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str agent_locator: (required)
         :param str field: (required)
         :return: str
@@ -31,7 +31,7 @@ class AgentApi(AgentApi):
 
     def get_agents(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param bool include_disconnected:
         :param bool include_unauthorized:
         :param str locator:
@@ -44,7 +44,7 @@ class AgentApi(AgentApi):
 class AgentPoolApi(AgentPoolApi):
     def get(self, agent_pool_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str agent_pool_locator: (required)
         :param str fields:
         :return: AgentPool
@@ -55,7 +55,7 @@ class AgentPoolApi(AgentPoolApi):
 class BuildApi(BuildApi):
     def get(self, build_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str fields:
         :return: Build
@@ -64,7 +64,7 @@ class BuildApi(BuildApi):
 
     def get_aggregated_build_status(self, build_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :return: str
         """
@@ -72,7 +72,7 @@ class BuildApi(BuildApi):
 
     def get_aggregated_build_status_icon(self, build_locator, suffix, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str suffix: (required)
         :return: None
@@ -81,7 +81,7 @@ class BuildApi(BuildApi):
 
     def get_all_builds(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str build_type:
         :param str status:
         :param str triggered_by_user:
@@ -102,7 +102,7 @@ class BuildApi(BuildApi):
 
     def get_build(self, build_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str fields:
         :return: Build
@@ -111,7 +111,7 @@ class BuildApi(BuildApi):
 
     def get_build_actual_parameters(self, build_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str fields:
         :return: Properties
@@ -120,7 +120,7 @@ class BuildApi(BuildApi):
 
     def get_build_field_by_build_only(self, build_locator, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str field: (required)
         :return: str
@@ -129,7 +129,7 @@ class BuildApi(BuildApi):
 
     def get_build_related_issues(self, build_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str fields:
         :return: IssuesUsages
@@ -138,7 +138,7 @@ class BuildApi(BuildApi):
 
     def get_build_related_issues_old(self, build_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str fields:
         :return: IssuesUsages
@@ -147,7 +147,7 @@ class BuildApi(BuildApi):
 
     def get_build_statistic_value(self, build_locator, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str name: (required)
         :return: str
@@ -156,7 +156,7 @@ class BuildApi(BuildApi):
 
     def get_build_statistic_values(self, build_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str fields:
         :return: Properties
@@ -165,7 +165,7 @@ class BuildApi(BuildApi):
 
     def get_build_status_icon(self, build_locator, suffix, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str suffix: (required)
         :return: None
@@ -174,7 +174,7 @@ class BuildApi(BuildApi):
 
     def get_source_file(self, build_locator, file_name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str file_name: (required)
         :return: None
@@ -183,7 +183,7 @@ class BuildApi(BuildApi):
 
     def get_tags(self, build_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str locator:
         :param str fields:
@@ -195,7 +195,7 @@ class BuildApi(BuildApi):
 class BuildQueueApi(BuildQueueApi):
     def get_build_field_by_build_only(self, build_locator, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str field: (required)
         :return: str
@@ -204,7 +204,7 @@ class BuildQueueApi(BuildQueueApi):
 
     def get_compatible_agents(self, queued_build_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str queued_build_locator: (required)
         :param str fields:
         :return: Agents
@@ -213,7 +213,7 @@ class BuildQueueApi(BuildQueueApi):
 
     def get_tags(self, build_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str locator:
         :param str fields:
@@ -225,7 +225,7 @@ class BuildQueueApi(BuildQueueApi):
 class BuildTypeApi(BuildTypeApi):
     def get(self, bt_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str fields:
         :return: BuildType
@@ -234,7 +234,7 @@ class BuildTypeApi(BuildTypeApi):
 
     def get_branches(self, bt_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str locator:
         :param str fields:
@@ -244,7 +244,7 @@ class BuildTypeApi(BuildTypeApi):
 
     def get_build_field(self, bt_locator, build_locator, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str build_locator: (required)
         :param str field: (required)
@@ -254,7 +254,7 @@ class BuildTypeApi(BuildTypeApi):
 
     def get_build_type_builds_tags(self, bt_locator, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str field: (required)
         :return: Tags
@@ -263,7 +263,7 @@ class BuildTypeApi(BuildTypeApi):
 
     def get_build_type_field(self, bt_locator, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str field: (required)
         :return: str
@@ -272,7 +272,7 @@ class BuildTypeApi(BuildTypeApi):
 
     def get_build_type_template(self, bt_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str fields:
         :return: BuildType
@@ -281,7 +281,7 @@ class BuildTypeApi(BuildTypeApi):
 
     def get_build_type_xml(self, bt_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str fields:
         :return: BuildType
@@ -290,7 +290,7 @@ class BuildTypeApi(BuildTypeApi):
 
     def get_build_with_project(self, bt_locator, build_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str build_locator: (required)
         :param str fields:
@@ -300,7 +300,7 @@ class BuildTypeApi(BuildTypeApi):
 
     def get_builds(self, bt_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str bt_locator: (required)
         :param str status:
         :param str triggered_by_user:
@@ -323,7 +323,7 @@ class BuildTypeApi(BuildTypeApi):
 class ChangeApi(ChangeApi):
     def get(self, change_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str change_locator: (required)
         :param str fields:
         :return: Change
@@ -332,7 +332,7 @@ class ChangeApi(ChangeApi):
 
     def get_change(self, change_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str change_locator: (required)
         :param str fields:
         :return: Change
@@ -341,7 +341,7 @@ class ChangeApi(ChangeApi):
 
     def get_changes(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str project:
         :param str build_type:
         :param str build:
@@ -359,14 +359,14 @@ class ChangeApi(ChangeApi):
 class DefaultApi(DefaultApi):
     def get_api_version(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: str
         """
         return self.serve_api_version(**kwargs)
 
     def get_build_field_short(self, project_locator, bt_locator, build_locator, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str bt_locator: (required)
         :param str build_locator: (required)
@@ -377,7 +377,7 @@ class DefaultApi(DefaultApi):
 
     def get_plugin_info(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Plugin
         """
@@ -385,14 +385,14 @@ class DefaultApi(DefaultApi):
 
     def get_root(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: str
         """
         return self.serve_root(**kwargs)
 
     def get_version(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :return: str
         """
         return self.serve_version(**kwargs)
@@ -401,7 +401,7 @@ class DefaultApi(DefaultApi):
 class GroupApi(GroupApi):
     def get(self, group_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str group_locator: (required)
         :param str fields:
         :return: Group
@@ -410,7 +410,7 @@ class GroupApi(GroupApi):
 
     def get_group(self, group_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str group_locator: (required)
         :param str fields:
         :return: Group
@@ -419,7 +419,7 @@ class GroupApi(GroupApi):
 
     def get_groups(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Groups
         """
@@ -427,7 +427,7 @@ class GroupApi(GroupApi):
 
     def get_user_properties(self, group_locator, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str group_locator: (required)
         :param str name: (required)
         :return: str
@@ -438,7 +438,7 @@ class GroupApi(GroupApi):
 class InvestigationApi(InvestigationApi):
     def get(self, investigation_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str investigation_locator: (required)
         :param str fields:
         :return: Investigation
@@ -447,7 +447,7 @@ class InvestigationApi(InvestigationApi):
 
     def get_instance(self, investigation_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str investigation_locator: (required)
         :param str fields:
         :return: Investigation
@@ -458,7 +458,7 @@ class InvestigationApi(InvestigationApi):
 class ProblemApi(ProblemApi):
     def get(self, problem_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str problem_locator: (required)
         :param str fields:
         :return: Problem
@@ -467,7 +467,7 @@ class ProblemApi(ProblemApi):
 
     def get_instance(self, problem_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str problem_locator: (required)
         :param str fields:
         :return: Problem
@@ -478,7 +478,7 @@ class ProblemApi(ProblemApi):
 class ProblemOccurrenceApi(ProblemOccurrenceApi):
     def get(self, problem_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str problem_locator: (required)
         :param str fields:
         :return: ProblemOccurrence
@@ -487,7 +487,7 @@ class ProblemOccurrenceApi(ProblemOccurrenceApi):
 
     def get_instance(self, problem_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str problem_locator: (required)
         :param str fields:
         :return: ProblemOccurrence
@@ -498,7 +498,7 @@ class ProblemOccurrenceApi(ProblemOccurrenceApi):
 class ProjectApi(ProjectApi):
     def get(self, project_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str fields:
         :return: Project
@@ -507,7 +507,7 @@ class ProjectApi(ProjectApi):
 
     def get_build_field_with_project(self, project_locator, bt_locator, build_locator, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str bt_locator: (required)
         :param str build_locator: (required)
@@ -518,7 +518,7 @@ class ProjectApi(ProjectApi):
 
     def get_build_type(self, project_locator, bt_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str bt_locator: (required)
         :param str fields:
@@ -528,7 +528,7 @@ class ProjectApi(ProjectApi):
 
     def get_build_type_field_with_project(self, project_locator, bt_locator, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str bt_locator: (required)
         :param str field: (required)
@@ -538,7 +538,7 @@ class ProjectApi(ProjectApi):
 
     def get_build_type_templates(self, project_locator, bt_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str bt_locator: (required)
         :param str fields:
@@ -548,7 +548,7 @@ class ProjectApi(ProjectApi):
 
     def get_build_types_in_project(self, project_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str fields:
         :return: BuildTypes
@@ -557,7 +557,7 @@ class ProjectApi(ProjectApi):
 
     def get_build_with_project(self, project_locator, bt_locator, build_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str bt_locator: (required)
         :param str build_locator: (required)
@@ -568,7 +568,7 @@ class ProjectApi(ProjectApi):
 
     def get_builds(self, project_locator, bt_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str bt_locator: (required)
         :param str status:
@@ -590,7 +590,7 @@ class ProjectApi(ProjectApi):
 
     def get_project(self, project_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str fields:
         :return: Project
@@ -599,7 +599,7 @@ class ProjectApi(ProjectApi):
 
     def get_project_field(self, project_locator, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str field: (required)
         :return: str
@@ -608,7 +608,7 @@ class ProjectApi(ProjectApi):
 
     def get_projects(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str locator:
         :param str fields:
         :return: Projects
@@ -617,7 +617,7 @@ class ProjectApi(ProjectApi):
 
     def get_templates_in_project(self, project_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str fields:
         :return: BuildTypes
@@ -628,7 +628,7 @@ class ProjectApi(ProjectApi):
 class ServerApi(ServerApi):
     def get_plugins(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Plugins
         """
@@ -636,7 +636,7 @@ class ServerApi(ServerApi):
 
     def get_server_info(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Server
         """
@@ -644,7 +644,7 @@ class ServerApi(ServerApi):
 
     def get_server_version(self, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str field: (required)
         :return: str
         """
@@ -654,7 +654,7 @@ class ServerApi(ServerApi):
 class TestApi(TestApi):
     def get(self, test_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str test_locator: (required)
         :param str fields:
         :return: Test
@@ -663,7 +663,7 @@ class TestApi(TestApi):
 
     def get_instance(self, test_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str test_locator: (required)
         :param str fields:
         :return: Test
@@ -674,7 +674,7 @@ class TestApi(TestApi):
 class TestOccurrenceApi(TestOccurrenceApi):
     def get(self, test_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str test_locator: (required)
         :param str fields:
         :return: TestOccurrence
@@ -683,7 +683,7 @@ class TestOccurrenceApi(TestOccurrenceApi):
 
     def get_instance(self, test_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str test_locator: (required)
         :param str fields:
         :return: TestOccurrence
@@ -694,7 +694,7 @@ class TestOccurrenceApi(TestOccurrenceApi):
 class UserApi(UserApi):
     def get(self, user_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str user_locator: (required)
         :param str fields:
         :return: User
@@ -703,7 +703,7 @@ class UserApi(UserApi):
 
     def get_user(self, user_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str user_locator: (required)
         :param str fields:
         :return: User
@@ -712,7 +712,7 @@ class UserApi(UserApi):
 
     def get_user_field(self, user_locator, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str user_locator: (required)
         :param str field: (required)
         :return: str
@@ -721,7 +721,7 @@ class UserApi(UserApi):
 
     def get_user_properties(self, user_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str user_locator: (required)
         :param str fields:
         :return: Properties
@@ -730,7 +730,7 @@ class UserApi(UserApi):
 
     def get_user_property(self, user_locator, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str user_locator: (required)
         :param str name: (required)
         :return: str
@@ -739,7 +739,7 @@ class UserApi(UserApi):
 
     def get_users(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str locator:
         :param str fields:
         :return: Users
@@ -750,7 +750,7 @@ class UserApi(UserApi):
 class VcsRootApi(VcsRootApi):
     def get(self, vcs_root_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_locator: (required)
         :param str fields:
         :return: VcsRoot
@@ -759,7 +759,7 @@ class VcsRootApi(VcsRootApi):
 
     def get_field(self, vcs_root_locator, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_locator: (required)
         :param str field: (required)
         :return: str
@@ -768,7 +768,7 @@ class VcsRootApi(VcsRootApi):
 
     def get_instance_field(self, vcs_root_locator, vcs_root_instance_locator, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_locator: (required)
         :param str vcs_root_instance_locator: (required)
         :param str field: (required)
@@ -778,7 +778,7 @@ class VcsRootApi(VcsRootApi):
 
     def get_properties(self, vcs_root_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_locator: (required)
         :param str fields:
         :return: Properties
@@ -787,7 +787,7 @@ class VcsRootApi(VcsRootApi):
 
     def get_property(self, vcs_root_locator, name, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_locator: (required)
         :param str name: (required)
         :return: str
@@ -796,7 +796,7 @@ class VcsRootApi(VcsRootApi):
 
     def get_root(self, vcs_root_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_locator: (required)
         :param str fields:
         :return: VcsRoot
@@ -805,7 +805,7 @@ class VcsRootApi(VcsRootApi):
 
     def get_root_instance(self, vcs_root_locator, vcs_root_instance_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_locator: (required)
         :param str vcs_root_instance_locator: (required)
         :param str fields:
@@ -815,7 +815,7 @@ class VcsRootApi(VcsRootApi):
 
     def get_root_instance_properties(self, vcs_root_locator, vcs_root_instance_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_locator: (required)
         :param str vcs_root_instance_locator: (required)
         :param str fields:
@@ -825,7 +825,7 @@ class VcsRootApi(VcsRootApi):
 
     def get_root_instances(self, vcs_root_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_locator: (required)
         :param str fields:
         :return: VcsRootInstances
@@ -834,7 +834,7 @@ class VcsRootApi(VcsRootApi):
 
     def get_roots(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str locator:
         :param str fields:
         :return: VcsRoots
@@ -845,7 +845,7 @@ class VcsRootApi(VcsRootApi):
 class VcsRootInstanceApi(VcsRootInstanceApi):
     def get(self, vcs_root_instance_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_instance_locator: (required)
         :param str fields:
         :return: VcsRootInstance
@@ -854,7 +854,7 @@ class VcsRootInstanceApi(VcsRootInstanceApi):
 
     def get_instance(self, vcs_root_instance_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_instance_locator: (required)
         :param str fields:
         :return: VcsRootInstance
@@ -863,7 +863,7 @@ class VcsRootInstanceApi(VcsRootInstanceApi):
 
     def get_instance_field(self, vcs_root_instance_locator, field, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_instance_locator: (required)
         :param str field: (required)
         :return: str
@@ -872,7 +872,7 @@ class VcsRootInstanceApi(VcsRootInstanceApi):
 
     def get_instances(self, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str locator:
         :param str fields:
         :return: VcsRootInstances
@@ -881,7 +881,7 @@ class VcsRootInstanceApi(VcsRootInstanceApi):
 
     def get_root_instance_properties(self, vcs_root_instance_locator, **kwargs):
         """
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_instance_locator: (required)
         :param str fields:
         :return: Properties

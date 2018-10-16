@@ -55,7 +55,7 @@ class ProjectApi(object):
         >>> thread = api.add(project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param ProjectFeature body:
         :param str fields:
@@ -79,7 +79,7 @@ class ProjectApi(object):
         >>> thread = api.create_build_type(project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param NewBuildTypeDescription body:
         :param str fields:
@@ -103,7 +103,7 @@ class ProjectApi(object):
         >>> thread = api.create_build_type_template(project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param NewBuildTypeDescription body:
         :param str fields:
@@ -127,7 +127,7 @@ class ProjectApi(object):
         >>> thread = api.create_project(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param NewProjectDescription body:
         :return: Project
                  If the method is called asynchronously,
@@ -149,7 +149,7 @@ class ProjectApi(object):
         >>> thread = api.delete(feature_locator, project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str feature_locator: (required)
         :param str project_locator: (required)
         :return: None
@@ -172,7 +172,7 @@ class ProjectApi(object):
         >>> thread = api.delete_all_parameters(project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :return: None
                  If the method is called asynchronously,
@@ -194,7 +194,7 @@ class ProjectApi(object):
         >>> thread = api.delete_all_parameters_0(feature_locator, project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str feature_locator: (required)
         :param str project_locator: (required)
         :param str fields:
@@ -218,7 +218,7 @@ class ProjectApi(object):
         >>> thread = api.delete_parameter(name, project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str project_locator: (required)
         :return: None
@@ -241,7 +241,7 @@ class ProjectApi(object):
         >>> thread = api.delete_parameter_0(name, feature_locator, project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str feature_locator: (required)
         :param str project_locator: (required)
@@ -266,7 +266,7 @@ class ProjectApi(object):
         >>> thread = api.delete_project(project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :return: None
                  If the method is called asynchronously,
@@ -288,7 +288,7 @@ class ProjectApi(object):
         >>> thread = api.delete_project_agent_pools(project_locator, agent_pool_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str agent_pool_locator: (required)
         :return: None
@@ -311,7 +311,7 @@ class ProjectApi(object):
         >>> thread = api.get(project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str locator:
         :param str fields:
@@ -335,7 +335,7 @@ class ProjectApi(object):
         >>> thread = api.get_build_types_order(project_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str field: (required)
         :return: BuildTypes
@@ -358,7 +358,7 @@ class ProjectApi(object):
         >>> thread = api.get_example_new_project_description(project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str id:
         :return: NewProjectDescription
@@ -381,7 +381,7 @@ class ProjectApi(object):
         >>> thread = api.get_example_new_project_description_compatibility_version1(project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str id:
         :return: NewProjectDescription
@@ -404,7 +404,7 @@ class ProjectApi(object):
         >>> thread = api.get_parameter(name, project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str project_locator: (required)
         :param str fields:
@@ -428,7 +428,7 @@ class ProjectApi(object):
         >>> thread = api.get_parameter_0(name, feature_locator, project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str feature_locator: (required)
         :param str project_locator: (required)
@@ -454,7 +454,7 @@ class ProjectApi(object):
         >>> thread = api.get_parameter_type(name, project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str project_locator: (required)
         :return: Type
@@ -477,7 +477,7 @@ class ProjectApi(object):
         >>> thread = api.get_parameter_type_raw_value(name, project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str project_locator: (required)
         :return: str
@@ -500,7 +500,7 @@ class ProjectApi(object):
         >>> thread = api.get_parameter_value_long(name, project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str project_locator: (required)
         :return: str
@@ -523,7 +523,7 @@ class ProjectApi(object):
         >>> thread = api.get_parameter_value_long_0(name, feature_locator, project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str feature_locator: (required)
         :param str project_locator: (required)
@@ -548,7 +548,7 @@ class ProjectApi(object):
         >>> thread = api.get_parameters(project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str locator:
         :param str fields:
@@ -572,7 +572,7 @@ class ProjectApi(object):
         >>> thread = api.get_parameters_0(feature_locator, project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str feature_locator: (required)
         :param str project_locator: (required)
         :param str locator:
@@ -598,7 +598,7 @@ class ProjectApi(object):
         >>> thread = api.get_parent_project(project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str fields:
         :return: Project
@@ -621,7 +621,7 @@ class ProjectApi(object):
         >>> thread = api.get_project_agent_pools(project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str fields:
         :return: AgentPools
@@ -644,7 +644,7 @@ class ProjectApi(object):
         >>> thread = api.get_projects_order(project_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str field: (required)
         :return: Projects
@@ -667,7 +667,7 @@ class ProjectApi(object):
         >>> thread = api.get_settings_file(project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :return: str
                  If the method is called asynchronously,
@@ -689,7 +689,7 @@ class ProjectApi(object):
         >>> thread = api.get_single(feature_locator, project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str feature_locator: (required)
         :param str project_locator: (required)
         :param str fields:
@@ -713,7 +713,7 @@ class ProjectApi(object):
         >>> thread = api.reload_settings_file(project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str fields:
         :return: Project
@@ -736,7 +736,7 @@ class ProjectApi(object):
         >>> thread = api.replace(feature_locator, project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str feature_locator: (required)
         :param str project_locator: (required)
         :param ProjectFeature body:
@@ -761,7 +761,7 @@ class ProjectApi(object):
         >>> thread = api.replace_all(project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param ProjectFeatures body:
         :param str fields:
@@ -785,7 +785,7 @@ class ProjectApi(object):
         >>> thread = api.serve_build_field_with_project(project_locator, bt_locator, build_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str bt_locator: (required)
         :param str build_locator: (required)
@@ -810,7 +810,7 @@ class ProjectApi(object):
         >>> thread = api.serve_build_type(project_locator, bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str bt_locator: (required)
         :param str fields:
@@ -834,7 +834,7 @@ class ProjectApi(object):
         >>> thread = api.serve_build_type_field_with_project(project_locator, bt_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str bt_locator: (required)
         :param str field: (required)
@@ -858,7 +858,7 @@ class ProjectApi(object):
         >>> thread = api.serve_build_type_templates(project_locator, bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str bt_locator: (required)
         :param str fields:
@@ -882,7 +882,7 @@ class ProjectApi(object):
         >>> thread = api.serve_build_types_in_project(project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str fields:
         :return: BuildTypes
@@ -905,7 +905,7 @@ class ProjectApi(object):
         >>> thread = api.serve_build_with_project(project_locator, bt_locator, build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str bt_locator: (required)
         :param str build_locator: (required)
@@ -930,7 +930,7 @@ class ProjectApi(object):
         >>> thread = api.serve_builds(project_locator, bt_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str bt_locator: (required)
         :param str status:
@@ -966,7 +966,7 @@ class ProjectApi(object):
         >>> thread = api.serve_project(project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str fields:
         :return: Project
@@ -989,7 +989,7 @@ class ProjectApi(object):
         >>> thread = api.serve_project_field(project_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str field: (required)
         :return: str
@@ -1012,7 +1012,7 @@ class ProjectApi(object):
         >>> thread = api.serve_projects(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str locator:
         :param str fields:
         :return: Projects
@@ -1035,7 +1035,7 @@ class ProjectApi(object):
         >>> thread = api.serve_templates_in_project(project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str fields:
         :return: BuildTypes
@@ -1058,7 +1058,7 @@ class ProjectApi(object):
         >>> thread = api.set_build_types_order(project_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str field: (required)
         :param BuildTypes body:
@@ -1082,7 +1082,7 @@ class ProjectApi(object):
         >>> thread = api.set_parameter(project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param ModelProperty body:
         :param str fields:
@@ -1106,7 +1106,7 @@ class ProjectApi(object):
         >>> thread = api.set_parameter_0(name, project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str project_locator: (required)
         :param ModelProperty body:
@@ -1131,7 +1131,7 @@ class ProjectApi(object):
         >>> thread = api.set_parameter_1(feature_locator, project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str feature_locator: (required)
         :param str project_locator: (required)
         :param ModelProperty body:
@@ -1157,7 +1157,7 @@ class ProjectApi(object):
         >>> thread = api.set_parameter_2(name, feature_locator, project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str feature_locator: (required)
         :param str project_locator: (required)
@@ -1184,7 +1184,7 @@ class ProjectApi(object):
         >>> thread = api.set_parameter_type(name, project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str project_locator: (required)
         :param Type body:
@@ -1208,7 +1208,7 @@ class ProjectApi(object):
         >>> thread = api.set_parameter_type_raw_value(name, project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str project_locator: (required)
         :param str body:
@@ -1232,7 +1232,7 @@ class ProjectApi(object):
         >>> thread = api.set_parameter_value_long(name, project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str project_locator: (required)
         :param str body:
@@ -1256,7 +1256,7 @@ class ProjectApi(object):
         >>> thread = api.set_parameter_value_long_0(name, feature_locator, project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str name: (required)
         :param str feature_locator: (required)
         :param str project_locator: (required)
@@ -1282,7 +1282,7 @@ class ProjectApi(object):
         >>> thread = api.set_parameters(project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param Properties body:
         :param str fields:
@@ -1306,7 +1306,7 @@ class ProjectApi(object):
         >>> thread = api.set_parameters_0(feature_locator, project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str feature_locator: (required)
         :param str project_locator: (required)
         :param Properties body:
@@ -1332,7 +1332,7 @@ class ProjectApi(object):
         >>> thread = api.set_parent_project(project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param Project body:
         :return: Project
@@ -1355,7 +1355,7 @@ class ProjectApi(object):
         >>> thread = api.set_project_agent_pools(project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param AgentPools body:
         :param str fields:
@@ -1379,7 +1379,7 @@ class ProjectApi(object):
         >>> thread = api.set_project_agent_pools_0(project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param AgentPool body:
         :return: AgentPool
@@ -1402,7 +1402,7 @@ class ProjectApi(object):
         >>> thread = api.set_project_filed(project_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str field: (required)
         :param str body:
@@ -1426,7 +1426,7 @@ class ProjectApi(object):
         >>> thread = api.set_projects_order(project_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str field: (required)
         :param Projects body:

@@ -51,7 +51,7 @@ class BuildApi(object):
         >>> thread = api.add_tags(build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param Tags body:
         :param str fields:
@@ -75,7 +75,7 @@ class BuildApi(object):
         >>> thread = api.cancel_build(build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param BuildCancelRequest body:
         :param str fields:
@@ -99,7 +99,7 @@ class BuildApi(object):
         >>> thread = api.cancel_build_0(build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :return: BuildCancelRequest
                  If the method is called asynchronously,
@@ -121,7 +121,7 @@ class BuildApi(object):
         >>> thread = api.delete_build(build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :return: None
                  If the method is called asynchronously,
@@ -143,7 +143,7 @@ class BuildApi(object):
         >>> thread = api.delete_builds(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str locator:
         :return: None
                  If the method is called asynchronously,
@@ -165,7 +165,7 @@ class BuildApi(object):
         >>> thread = api.delete_comment(build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :return: None
                  If the method is called asynchronously,
@@ -187,7 +187,7 @@ class BuildApi(object):
         >>> thread = api.get_artifacts_directory(build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :return: str
                  If the method is called asynchronously,
@@ -209,7 +209,7 @@ class BuildApi(object):
         >>> thread = api.get_canceled_info(build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str fields:
         :return: Comment
@@ -232,7 +232,7 @@ class BuildApi(object):
         >>> thread = api.get_children(path, build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str build_locator: (required)
         :param str base_path:
@@ -260,7 +260,7 @@ class BuildApi(object):
         >>> thread = api.get_children_alias(path, build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str build_locator: (required)
         :param str base_path:
@@ -288,7 +288,7 @@ class BuildApi(object):
         >>> thread = api.get_content(path, build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str build_locator: (required)
         :param bool resolve_parameters:
@@ -313,7 +313,7 @@ class BuildApi(object):
         >>> thread = api.get_content_alias(path, build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str build_locator: (required)
         :param bool resolve_parameters:
@@ -338,7 +338,7 @@ class BuildApi(object):
         >>> thread = api.get_metadata(path, build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str build_locator: (required)
         :param str fields:
@@ -364,7 +364,7 @@ class BuildApi(object):
         >>> thread = api.get_parameter(build_locator, property_name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str property_name: (required)
         :return: str
@@ -387,7 +387,7 @@ class BuildApi(object):
         >>> thread = api.get_pinned(build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :return: str
                  If the method is called asynchronously,
@@ -409,7 +409,7 @@ class BuildApi(object):
         >>> thread = api.get_problems(build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str fields:
         :return: ProblemOccurrences
@@ -432,7 +432,7 @@ class BuildApi(object):
         >>> thread = api.get_root(build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str base_path:
         :param str locator:
@@ -459,7 +459,7 @@ class BuildApi(object):
         >>> thread = api.get_tests(build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str fields:
         :return: TestOccurrences
@@ -482,7 +482,7 @@ class BuildApi(object):
         >>> thread = api.get_zipped(path, build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str build_locator: (required)
         :param str base_path:
@@ -510,7 +510,7 @@ class BuildApi(object):
         >>> thread = api.pin_build(build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str body:
         :return: None
@@ -533,7 +533,7 @@ class BuildApi(object):
         >>> thread = api.replace_comment(build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str body:
         :return: None
@@ -556,7 +556,7 @@ class BuildApi(object):
         >>> thread = api.replace_tags(build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str locator:
         :param Tags body:
@@ -581,7 +581,7 @@ class BuildApi(object):
         >>> thread = api.serve_aggregated_build_status(build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :return: str
                  If the method is called asynchronously,
@@ -603,7 +603,7 @@ class BuildApi(object):
         >>> thread = api.serve_aggregated_build_status_icon(build_locator, suffix, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str suffix: (required)
         :return: None
@@ -626,7 +626,7 @@ class BuildApi(object):
         >>> thread = api.serve_all_builds(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_type:
         :param str status:
         :param str triggered_by_user:
@@ -661,7 +661,7 @@ class BuildApi(object):
         >>> thread = api.serve_build(build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str fields:
         :return: Build
@@ -684,7 +684,7 @@ class BuildApi(object):
         >>> thread = api.serve_build_actual_parameters(build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str fields:
         :return: Properties
@@ -707,7 +707,7 @@ class BuildApi(object):
         >>> thread = api.serve_build_field_by_build_only(build_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str field: (required)
         :return: str
@@ -730,7 +730,7 @@ class BuildApi(object):
         >>> thread = api.serve_build_related_issues(build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str fields:
         :return: IssuesUsages
@@ -753,7 +753,7 @@ class BuildApi(object):
         >>> thread = api.serve_build_related_issues_old(build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str fields:
         :return: IssuesUsages
@@ -776,7 +776,7 @@ class BuildApi(object):
         >>> thread = api.serve_build_statistic_value(build_locator, name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str name: (required)
         :return: str
@@ -799,7 +799,7 @@ class BuildApi(object):
         >>> thread = api.serve_build_statistic_values(build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str fields:
         :return: Properties
@@ -822,7 +822,7 @@ class BuildApi(object):
         >>> thread = api.serve_build_status_icon(build_locator, suffix, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str suffix: (required)
         :return: None
@@ -845,7 +845,7 @@ class BuildApi(object):
         >>> thread = api.serve_source_file(build_locator, file_name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str file_name: (required)
         :return: None
@@ -868,7 +868,7 @@ class BuildApi(object):
         >>> thread = api.serve_tags(build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str locator:
         :param str fields:
@@ -892,7 +892,7 @@ class BuildApi(object):
         >>> thread = api.unpin_build(build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str body:
         :return: None

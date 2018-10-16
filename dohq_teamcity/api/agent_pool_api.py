@@ -46,7 +46,7 @@ class AgentPoolApi(object):
         >>> thread = api.add_agent(agent_pool_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str agent_pool_locator: (required)
         :param Agent body:
         :param str fields:
@@ -70,7 +70,7 @@ class AgentPoolApi(object):
         >>> thread = api.add_project(agent_pool_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str agent_pool_locator: (required)
         :param Project body:
         :return: Project
@@ -93,7 +93,7 @@ class AgentPoolApi(object):
         >>> thread = api.create_pool(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param AgentPool body:
         :return: AgentPool
                  If the method is called asynchronously,
@@ -115,7 +115,7 @@ class AgentPoolApi(object):
         >>> thread = api.delete_pool(agent_pool_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str agent_pool_locator: (required)
         :return: None
                  If the method is called asynchronously,
@@ -137,7 +137,7 @@ class AgentPoolApi(object):
         >>> thread = api.delete_pool_project(agent_pool_locator, project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str agent_pool_locator: (required)
         :param str project_locator: (required)
         :return: None
@@ -160,7 +160,7 @@ class AgentPoolApi(object):
         >>> thread = api.delete_projects(agent_pool_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str agent_pool_locator: (required)
         :return: None
                  If the method is called asynchronously,
@@ -182,7 +182,7 @@ class AgentPoolApi(object):
         >>> thread = api.get_field(agent_pool_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str agent_pool_locator: (required)
         :param str field: (required)
         :return: str
@@ -205,7 +205,7 @@ class AgentPoolApi(object):
         >>> thread = api.get_pool(agent_pool_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str agent_pool_locator: (required)
         :param str fields:
         :return: AgentPool
@@ -228,7 +228,7 @@ class AgentPoolApi(object):
         >>> thread = api.get_pool_agents(agent_pool_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str agent_pool_locator: (required)
         :param str locator:
         :param str fields:
@@ -252,7 +252,7 @@ class AgentPoolApi(object):
         >>> thread = api.get_pool_project(agent_pool_locator, project_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str agent_pool_locator: (required)
         :param str project_locator: (required)
         :param str fields:
@@ -276,7 +276,7 @@ class AgentPoolApi(object):
         >>> thread = api.get_pool_projects(agent_pool_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str agent_pool_locator: (required)
         :param str fields:
         :return: Projects
@@ -299,7 +299,7 @@ class AgentPoolApi(object):
         >>> thread = api.get_pools(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str locator:
         :param str fields:
         :return: AgentPools
@@ -322,7 +322,7 @@ class AgentPoolApi(object):
         >>> thread = api.replace_projects(agent_pool_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str agent_pool_locator: (required)
         :param Projects body:
         :return: Projects
@@ -345,7 +345,7 @@ class AgentPoolApi(object):
         >>> thread = api.set_field(agent_pool_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str agent_pool_locator: (required)
         :param str field: (required)
         :param str body:

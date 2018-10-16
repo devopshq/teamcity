@@ -47,7 +47,7 @@ class AgentApi(object):
         >>> thread = api.delete_agent(agent_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str agent_locator: (required)
         :return: None
                  If the method is called asynchronously,
@@ -69,7 +69,7 @@ class AgentApi(object):
         >>> thread = api.get_agent_pool(agent_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str agent_locator: (required)
         :param str fields:
         :return: AgentPool
@@ -92,7 +92,7 @@ class AgentApi(object):
         >>> thread = api.get_authorized_info(agent_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str agent_locator: (required)
         :param str fields:
         :return: AuthorizedInfo
@@ -115,7 +115,7 @@ class AgentApi(object):
         >>> thread = api.get_compatible_build_types(agent_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str agent_locator: (required)
         :param str fields:
         :return: BuildTypes
@@ -138,7 +138,7 @@ class AgentApi(object):
         >>> thread = api.get_enabled_info(agent_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str agent_locator: (required)
         :param str fields:
         :return: EnabledInfo
@@ -161,7 +161,7 @@ class AgentApi(object):
         >>> thread = api.get_incompatible_build_types(agent_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str agent_locator: (required)
         :param str fields:
         :return: Compatibilities
@@ -184,7 +184,7 @@ class AgentApi(object):
         >>> thread = api.serve_agent(agent_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str agent_locator: (required)
         :param str fields:
         :return: Agent
@@ -207,7 +207,7 @@ class AgentApi(object):
         >>> thread = api.serve_agent_field(agent_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str agent_locator: (required)
         :param str field: (required)
         :return: str
@@ -230,7 +230,7 @@ class AgentApi(object):
         >>> thread = api.serve_agents(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param bool include_disconnected:
         :param bool include_unauthorized:
         :param str locator:
@@ -255,7 +255,7 @@ class AgentApi(object):
         >>> thread = api.set_agent_field(agent_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str agent_locator: (required)
         :param str field: (required)
         :param str body:
@@ -279,7 +279,7 @@ class AgentApi(object):
         >>> thread = api.set_agent_pool(agent_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str agent_locator: (required)
         :param AgentPool body:
         :param str fields:
@@ -303,7 +303,7 @@ class AgentApi(object):
         >>> thread = api.set_authorized_info(agent_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str agent_locator: (required)
         :param AuthorizedInfo body:
         :param str fields:
@@ -327,7 +327,7 @@ class AgentApi(object):
         >>> thread = api.set_enabled_info(agent_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str agent_locator: (required)
         :param EnabledInfo body:
         :param str fields:

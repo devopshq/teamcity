@@ -41,7 +41,7 @@ class FederationApi(object):
         >>> thread = api.add_server(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param Servers body:
         :return: Servers
                  If the method is called asynchronously,
@@ -63,7 +63,7 @@ class FederationApi(object):
         >>> thread = api.servers(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Servers
                  If the method is called asynchronously,

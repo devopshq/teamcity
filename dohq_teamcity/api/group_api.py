@@ -45,7 +45,7 @@ class GroupApi(object):
         >>> thread = api.add_group(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param Group body:
         :param str fields:
         :return: Group
@@ -68,7 +68,7 @@ class GroupApi(object):
         >>> thread = api.add_role(group_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str group_locator: (required)
         :param Role body:
         :return: Role
@@ -91,7 +91,7 @@ class GroupApi(object):
         >>> thread = api.add_role_put(group_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str group_locator: (required)
         :param Roles body:
         :return: Roles
@@ -114,7 +114,7 @@ class GroupApi(object):
         >>> thread = api.add_role_simple(group_locator, role_id, scope, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str group_locator: (required)
         :param str role_id: (required)
         :param str scope: (required)
@@ -138,7 +138,7 @@ class GroupApi(object):
         >>> thread = api.delete_group(group_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str group_locator: (required)
         :return: None
                  If the method is called asynchronously,
@@ -160,7 +160,7 @@ class GroupApi(object):
         >>> thread = api.delete_role(group_locator, role_id, scope, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str group_locator: (required)
         :param str role_id: (required)
         :param str scope: (required)
@@ -184,7 +184,7 @@ class GroupApi(object):
         >>> thread = api.get_permissions(group_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str group_locator: (required)
         :return: str
                  If the method is called asynchronously,
@@ -206,7 +206,7 @@ class GroupApi(object):
         >>> thread = api.get_properties(group_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str group_locator: (required)
         :param str fields:
         :return: Properties
@@ -229,7 +229,7 @@ class GroupApi(object):
         >>> thread = api.list_role(group_locator, role_id, scope, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str group_locator: (required)
         :param str role_id: (required)
         :param str scope: (required)
@@ -253,7 +253,7 @@ class GroupApi(object):
         >>> thread = api.list_roles(group_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str group_locator: (required)
         :return: Roles
                  If the method is called asynchronously,
@@ -275,7 +275,7 @@ class GroupApi(object):
         >>> thread = api.put_user_property(group_locator, name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str group_locator: (required)
         :param str name: (required)
         :param str body:
@@ -299,7 +299,7 @@ class GroupApi(object):
         >>> thread = api.remove_user_property(group_locator, name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str group_locator: (required)
         :param str name: (required)
         :return: None
@@ -322,7 +322,7 @@ class GroupApi(object):
         >>> thread = api.serve_group(group_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str group_locator: (required)
         :param str fields:
         :return: Group
@@ -345,7 +345,7 @@ class GroupApi(object):
         >>> thread = api.serve_groups(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Groups
                  If the method is called asynchronously,
@@ -367,7 +367,7 @@ class GroupApi(object):
         >>> thread = api.serve_user_properties(group_locator, name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str group_locator: (required)
         :param str name: (required)
         :return: str

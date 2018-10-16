@@ -46,7 +46,7 @@ class VcsRootInstanceApi(object):
         >>> thread = api.delete_instance_field(vcs_root_instance_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_instance_locator: (required)
         :param str field: (required)
         :return: None
@@ -69,7 +69,7 @@ class VcsRootInstanceApi(object):
         >>> thread = api.delete_repository_state(vcs_root_instance_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_instance_locator: (required)
         :return: None
                  If the method is called asynchronously,
@@ -91,7 +91,7 @@ class VcsRootInstanceApi(object):
         >>> thread = api.get_children(path, vcs_root_instance_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str vcs_root_instance_locator: (required)
         :param str base_path:
@@ -117,7 +117,7 @@ class VcsRootInstanceApi(object):
         >>> thread = api.get_children_alias(path, vcs_root_instance_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str vcs_root_instance_locator: (required)
         :param str base_path:
@@ -143,7 +143,7 @@ class VcsRootInstanceApi(object):
         >>> thread = api.get_content(path, vcs_root_instance_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str vcs_root_instance_locator: (required)
         :return: None
@@ -166,7 +166,7 @@ class VcsRootInstanceApi(object):
         >>> thread = api.get_content_alias(path, vcs_root_instance_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str vcs_root_instance_locator: (required)
         :return: None
@@ -189,7 +189,7 @@ class VcsRootInstanceApi(object):
         >>> thread = api.get_metadata(path, vcs_root_instance_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str vcs_root_instance_locator: (required)
         :param str fields:
@@ -213,7 +213,7 @@ class VcsRootInstanceApi(object):
         >>> thread = api.get_repository_state(vcs_root_instance_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_instance_locator: (required)
         :param str fields:
         :return: Entries
@@ -236,7 +236,7 @@ class VcsRootInstanceApi(object):
         >>> thread = api.get_repository_state_creation_date(vcs_root_instance_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_instance_locator: (required)
         :return: str
                  If the method is called asynchronously,
@@ -258,7 +258,7 @@ class VcsRootInstanceApi(object):
         >>> thread = api.get_root(vcs_root_instance_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_instance_locator: (required)
         :param str base_path:
         :param str locator:
@@ -283,7 +283,7 @@ class VcsRootInstanceApi(object):
         >>> thread = api.get_zipped(path, vcs_root_instance_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str path: (required)
         :param str vcs_root_instance_locator: (required)
         :param str base_path:
@@ -309,7 +309,7 @@ class VcsRootInstanceApi(object):
         >>> thread = api.schedule_checking_for_changes(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str locator:
         :param str requestor:
         :param str fields:
@@ -333,7 +333,7 @@ class VcsRootInstanceApi(object):
         >>> thread = api.schedule_checking_for_changes_0(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str locator:
         :param bool ok_on_nothing_found:
         :return: None
@@ -356,7 +356,7 @@ class VcsRootInstanceApi(object):
         >>> thread = api.serve_instance(vcs_root_instance_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_instance_locator: (required)
         :param str fields:
         :return: VcsRootInstance
@@ -379,7 +379,7 @@ class VcsRootInstanceApi(object):
         >>> thread = api.serve_instance_field(vcs_root_instance_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_instance_locator: (required)
         :param str field: (required)
         :return: str
@@ -402,7 +402,7 @@ class VcsRootInstanceApi(object):
         >>> thread = api.serve_instances(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str locator:
         :param str fields:
         :return: VcsRootInstances
@@ -425,7 +425,7 @@ class VcsRootInstanceApi(object):
         >>> thread = api.serve_root_instance_properties(vcs_root_instance_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_instance_locator: (required)
         :param str fields:
         :return: Properties
@@ -448,7 +448,7 @@ class VcsRootInstanceApi(object):
         >>> thread = api.set_instance_field(vcs_root_instance_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_instance_locator: (required)
         :param str field: (required)
         :param str body:
@@ -472,7 +472,7 @@ class VcsRootInstanceApi(object):
         >>> thread = api.set_repository_state(vcs_root_instance_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str vcs_root_instance_locator: (required)
         :param Entries body:
         :param str fields:

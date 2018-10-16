@@ -45,7 +45,7 @@ class BuildQueueApi(object):
         >>> thread = api.add_tags(build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param Tags body:
         :return: None
@@ -68,7 +68,7 @@ class BuildQueueApi(object):
         >>> thread = api.cancel_build(build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :return: BuildCancelRequest
                  If the method is called asynchronously,
@@ -90,7 +90,7 @@ class BuildQueueApi(object):
         >>> thread = api.cancel_build_0(queued_build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str queued_build_locator: (required)
         :param BuildCancelRequest body:
         :return: Build
@@ -113,7 +113,7 @@ class BuildQueueApi(object):
         >>> thread = api.delete_build(queued_build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str queued_build_locator: (required)
         :return: None
                  If the method is called asynchronously,
@@ -135,7 +135,7 @@ class BuildQueueApi(object):
         >>> thread = api.delete_builds_experimental(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str locator:
         :param str fields:
         :return: None
@@ -158,7 +158,7 @@ class BuildQueueApi(object):
         >>> thread = api.get_build(queued_build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str queued_build_locator: (required)
         :param str fields:
         :return: Build
@@ -181,7 +181,7 @@ class BuildQueueApi(object):
         >>> thread = api.get_builds(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str locator:
         :param str fields:
         :return: Builds
@@ -204,7 +204,7 @@ class BuildQueueApi(object):
         >>> thread = api.queue_new_build(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param Build body:
         :param bool move_to_top:
         :return: Build
@@ -227,7 +227,7 @@ class BuildQueueApi(object):
         >>> thread = api.replace_builds(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param Builds body:
         :param str fields:
         :return: Builds
@@ -250,7 +250,7 @@ class BuildQueueApi(object):
         >>> thread = api.replace_tags(build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str locator:
         :param Tags body:
@@ -275,7 +275,7 @@ class BuildQueueApi(object):
         >>> thread = api.serve_build_field_by_build_only(build_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str field: (required)
         :return: str
@@ -298,7 +298,7 @@ class BuildQueueApi(object):
         >>> thread = api.serve_compatible_agents(queued_build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str queued_build_locator: (required)
         :param str fields:
         :return: Agents
@@ -321,7 +321,7 @@ class BuildQueueApi(object):
         >>> thread = api.serve_tags(build_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str build_locator: (required)
         :param str locator:
         :param str fields:
@@ -345,7 +345,7 @@ class BuildQueueApi(object):
         >>> thread = api.set_build_queue_order(fields, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str fields: (required)
         :param Builds body:
         :return: Builds

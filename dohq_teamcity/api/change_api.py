@@ -48,7 +48,7 @@ class ChangeApi(object):
         >>> thread = api.get_change_attributes(change_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str change_locator: (required)
         :param str fields:
         :return: Entries
@@ -71,7 +71,7 @@ class ChangeApi(object):
         >>> thread = api.get_change_duplicates(change_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str change_locator: (required)
         :param str fields:
         :return: Changes
@@ -94,7 +94,7 @@ class ChangeApi(object):
         >>> thread = api.get_change_field(change_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str change_locator: (required)
         :param str field: (required)
         :return: str
@@ -117,7 +117,7 @@ class ChangeApi(object):
         >>> thread = api.get_change_first_builds(change_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str change_locator: (required)
         :param str fields:
         :return: Builds
@@ -140,7 +140,7 @@ class ChangeApi(object):
         >>> thread = api.get_change_issue(change_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str change_locator: (required)
         :return: Issues
                  If the method is called asynchronously,
@@ -162,7 +162,7 @@ class ChangeApi(object):
         >>> thread = api.get_change_parent_revisions(change_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str change_locator: (required)
         :return: Items
                  If the method is called asynchronously,
@@ -184,7 +184,7 @@ class ChangeApi(object):
         >>> thread = api.get_change_vcs_root(change_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str change_locator: (required)
         :param str fields:
         :return: VcsRootInstance
@@ -207,7 +207,7 @@ class ChangeApi(object):
         >>> thread = api.get_change_vcs_root_instance(change_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str change_locator: (required)
         :param str fields:
         :return: VcsRootInstance
@@ -230,7 +230,7 @@ class ChangeApi(object):
         >>> thread = api.get_parent_changes(change_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str change_locator: (required)
         :param str fields:
         :return: Changes
@@ -253,7 +253,7 @@ class ChangeApi(object):
         >>> thread = api.get_related_build_types(change_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str change_locator: (required)
         :param str fields:
         :return: BuildTypes
@@ -276,7 +276,7 @@ class ChangeApi(object):
         >>> thread = api.serve_change(change_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str change_locator: (required)
         :param str fields:
         :return: Change
@@ -299,7 +299,7 @@ class ChangeApi(object):
         >>> thread = api.serve_changes(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project:
         :param str build_type:
         :param str build:

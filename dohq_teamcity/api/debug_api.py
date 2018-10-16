@@ -44,7 +44,7 @@ class DebugApi(object):
         >>> thread = api.delete_current_remember_me(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -65,7 +65,7 @@ class DebugApi(object):
         >>> thread = api.empty_task(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str time:
         :param int load:
         :return: str
@@ -88,7 +88,7 @@ class DebugApi(object):
         >>> thread = api.execute_db_query(query, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str query: (required)
         :param str field_delimiter:
         :param str data_retrieve_query:
@@ -113,7 +113,7 @@ class DebugApi(object):
         >>> thread = api.get_current_session(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Session
                  If the method is called asynchronously,
@@ -135,7 +135,7 @@ class DebugApi(object):
         >>> thread = api.get_current_session_max_inactive_interval(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -156,7 +156,7 @@ class DebugApi(object):
         >>> thread = api.get_current_user_permissions(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -177,7 +177,7 @@ class DebugApi(object):
         >>> thread = api.get_date(date_locator, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str date_locator: (required)
         :param str format:
         :param str timezone:
@@ -201,7 +201,7 @@ class DebugApi(object):
         >>> thread = api.get_environment_variables(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Properties
                  If the method is called asynchronously,
@@ -223,7 +223,7 @@ class DebugApi(object):
         >>> thread = api.get_hashed(method, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str method: (required)
         :param str value:
         :return: str
@@ -246,7 +246,7 @@ class DebugApi(object):
         >>> thread = api.get_request_details(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -267,7 +267,7 @@ class DebugApi(object):
         >>> thread = api.get_scrambled(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str value:
         :return: str
                  If the method is called asynchronously,
@@ -289,7 +289,7 @@ class DebugApi(object):
         >>> thread = api.get_sessions(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param int manager:
         :param str fields:
         :return: Sessions
@@ -312,7 +312,7 @@ class DebugApi(object):
         >>> thread = api.get_system_properties(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Properties
                  If the method is called asynchronously,
@@ -334,7 +334,7 @@ class DebugApi(object):
         >>> thread = api.get_thread_dump(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str locked_monitors:
         :param str locked_synchronizers:
         :param str detect_locks:
@@ -358,7 +358,7 @@ class DebugApi(object):
         >>> thread = api.get_unscrambled(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str value:
         :return: str
                  If the method is called asynchronously,
@@ -380,7 +380,7 @@ class DebugApi(object):
         >>> thread = api.invalidate_current_session(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -401,7 +401,7 @@ class DebugApi(object):
         >>> thread = api.list_db_tables(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -422,7 +422,7 @@ class DebugApi(object):
         >>> thread = api.new_remember_me(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -443,7 +443,7 @@ class DebugApi(object):
         >>> thread = api.save_memory_dump(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param bool archived:
         :return: str
                  If the method is called asynchronously,
@@ -465,7 +465,7 @@ class DebugApi(object):
         >>> thread = api.schedule_checking_for_changes(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str locator:
         :param str requestor:
         :param str fields:
@@ -489,7 +489,7 @@ class DebugApi(object):
         >>> thread = api.set_current_session_max_inactive_interval(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str body:
         :return: str
                  If the method is called asynchronously,

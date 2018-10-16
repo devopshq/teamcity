@@ -41,7 +41,7 @@ class DefaultApi(object):
         >>> thread = api.serve_api_version(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -62,7 +62,7 @@ class DefaultApi(object):
         >>> thread = api.serve_build_field_short(project_locator, bt_locator, build_locator, field, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str project_locator: (required)
         :param str bt_locator: (required)
         :param str build_locator: (required)
@@ -87,7 +87,7 @@ class DefaultApi(object):
         >>> thread = api.serve_plugin_info(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :param str fields:
         :return: Plugin
                  If the method is called asynchronously,
@@ -109,7 +109,7 @@ class DefaultApi(object):
         >>> thread = api.serve_root(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -130,7 +130,7 @@ class DefaultApi(object):
         >>> thread = api.serve_version(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
