@@ -2,13 +2,20 @@
 Entries
 ############
 
+Entries
+========
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**count** | **int** |  | [optional] 
-**entry** | [**list[Entry]**](Entry.md) |  | [optional] 
+Reference
+---------
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+  + :class:`dohq_teamcity.custom.models.Entries` (and bases class)
+  + `Original swagger documantation by class <https://github.com/devopshq/teamcity/blob/develop/docs-sphinx/swagger/models/Entries.md>`_
+  + Some examples you can find in `tests directory <https://github.com/devopshq/teamcity/blob/develop/test>`_
+
+Examples
+--------
+Some action::
+
+    Entries = tc.get()
 
 

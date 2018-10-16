@@ -2,13 +2,20 @@
 BuildCancelRequest
 ############
 
+BuildCancelRequest
+========
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**comment** | **str** |  | [optional] 
-**readd_into_queue** | **bool** |  | [optional] [default to False]
+Reference
+---------
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+  + :class:`dohq_teamcity.custom.models.BuildCancelRequest` (and bases class)
+  + `Original swagger documantation by class <https://github.com/devopshq/teamcity/blob/develop/docs-sphinx/swagger/models/BuildCancelRequest.md>`_
+  + Some examples you can find in `tests directory <https://github.com/devopshq/teamcity/blob/develop/test>`_
+
+Examples
+--------
+Some action::
+
+    BuildCancelRequest = tc.get()
 
 

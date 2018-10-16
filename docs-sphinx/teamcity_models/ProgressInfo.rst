@@ -2,17 +2,20 @@
 ProgressInfo
 ############
 
+ProgressInfo
+========
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**current_stage_text** | **str** |  | [optional] 
-**elapsed_seconds** | **int** |  | [optional] 
-**estimated_total_seconds** | **int** |  | [optional] 
-**outdated** | **bool** |  | [optional] [default to False]
-**percentage_complete** | **int** |  | [optional] 
-**probably_hanging** | **bool** |  | [optional] [default to False]
+Reference
+---------
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+  + :class:`dohq_teamcity.custom.models.ProgressInfo` (and bases class)
+  + `Original swagger documantation by class <https://github.com/devopshq/teamcity/blob/develop/docs-sphinx/swagger/models/ProgressInfo.md>`_
+  + Some examples you can find in `tests directory <https://github.com/devopshq/teamcity/blob/develop/test>`_
+
+Examples
+--------
+Some action::
+
+    ProgressInfo = tc.get()
 
 

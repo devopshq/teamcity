@@ -2,18 +2,20 @@
 AgentPool
 ############
 
+AgentPool
+========
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**agents** | [**Agents**](Agents.md) |  | [optional] 
-**href** | **str** |  | [optional] 
-**id** | **int** |  | [optional] 
-**locator** | **str** |  | [optional] 
-**max_agents** | **int** |  | [optional] 
-**name** | **str** |  | [optional] 
-**projects** | [**Projects**](Projects.md) |  | [optional] 
+Reference
+---------
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+  + :class:`dohq_teamcity.custom.models.AgentPool` (and bases class)
+  + `Original swagger documantation by class <https://github.com/devopshq/teamcity/blob/develop/docs-sphinx/swagger/models/AgentPool.md>`_
+  + Some examples you can find in `tests directory <https://github.com/devopshq/teamcity/blob/develop/test>`_
+
+Examples
+--------
+Some action::
+
+    AgentPool = tc.get()
 
 

@@ -2,27 +2,20 @@
 Change
 ############
 
+Change
+========
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**comment** | **str** |  | [optional] 
-**_date** | **str** |  | [optional] 
-**files** | [**FileChanges**](FileChanges.md) |  | [optional] 
-**href** | **str** |  | [optional] 
-**id** | **int** |  | [optional] 
-**internal_version** | **str** |  | [optional] 
-**locator** | **str** |  | [optional] 
-**parent_changes** | [**Changes**](Changes.md) |  | [optional] 
-**parent_revisions** | [**Items**](Items.md) |  | [optional] 
-**personal** | **bool** |  | [optional] [default to False]
-**registration_date** | **str** |  | [optional] 
-**user** | [**User**](User.md) |  | [optional] 
-**username** | **str** |  | [optional] 
-**vcs_root_instance** | [**VcsRootInstance**](VcsRootInstance.md) |  | [optional] 
-**version** | **str** |  | [optional] 
-**web_url** | **str** |  | [optional] 
+Reference
+---------
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+  + :class:`dohq_teamcity.custom.models.Change` (and bases class)
+  + `Original swagger documantation by class <https://github.com/devopshq/teamcity/blob/develop/docs-sphinx/swagger/models/Change.md>`_
+  + Some examples you can find in `tests directory <https://github.com/devopshq/teamcity/blob/develop/test>`_
+
+Examples
+--------
+Some action::
+
+    Change = tc.get()
 
 

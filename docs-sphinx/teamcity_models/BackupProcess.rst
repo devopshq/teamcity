@@ -2,18 +2,20 @@
 BackupProcess
 ############
 
+BackupProcess
+========
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**brief_info** | [**BackupProcessInfo**](BackupProcessInfo.md) |  | [optional] 
-**exceptions** | [**list[Exception]**](Exception.md) |  | [optional] 
-**finished** | **bool** |  | [optional] [default to False]
-**process_id** | **int** |  | [optional] 
-**process_kind** | **str** |  | [optional] 
-**progress_info** | [**ProgressInfo**](ProgressInfo.md) |  | [optional] 
-**progress_status** | **str** |  | [optional] 
+Reference
+---------
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+  + :class:`dohq_teamcity.custom.models.BackupProcess` (and bases class)
+  + `Original swagger documantation by class <https://github.com/devopshq/teamcity/blob/develop/docs-sphinx/swagger/models/BackupProcess.md>`_
+  + Some examples you can find in `tests directory <https://github.com/devopshq/teamcity/blob/develop/test>`_
+
+Examples
+--------
+Some action::
+
+    BackupProcess = tc.get()
 
 

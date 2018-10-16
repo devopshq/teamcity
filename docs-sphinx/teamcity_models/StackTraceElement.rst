@@ -2,16 +2,20 @@
 StackTraceElement
 ############
 
+StackTraceElement
+========
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**class_name** | **str** |  | [optional] 
-**file_name** | **str** |  | [optional] 
-**line_number** | **int** |  | [optional] 
-**method_name** | **str** |  | [optional] 
-**native_method** | **bool** |  | [optional] [default to False]
+Reference
+---------
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+  + :class:`dohq_teamcity.custom.models.StackTraceElement` (and bases class)
+  + `Original swagger documantation by class <https://github.com/devopshq/teamcity/blob/develop/docs-sphinx/swagger/models/StackTraceElement.md>`_
+  + Some examples you can find in `tests directory <https://github.com/devopshq/teamcity/blob/develop/test>`_
+
+Examples
+--------
+Some action::
+
+    StackTraceElement = tc.get()
 
 

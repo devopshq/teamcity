@@ -2,17 +2,20 @@
 Mutes
 ############
 
+Mutes
+========
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**count** | **int** |  | [optional] 
-**default** | **bool** |  | [optional] [default to False]
-**href** | **str** |  | [optional] 
-**mute** | [**list[Mute]**](Mute.md) |  | [optional] 
-**next_href** | **str** |  | [optional] 
-**prev_href** | **str** |  | [optional] 
+Reference
+---------
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+  + :class:`dohq_teamcity.custom.models.Mutes` (and bases class)
+  + `Original swagger documantation by class <https://github.com/devopshq/teamcity/blob/develop/docs-sphinx/swagger/models/Mutes.md>`_
+  + Some examples you can find in `tests directory <https://github.com/devopshq/teamcity/blob/develop/test>`_
+
+Examples
+--------
+Some action::
+
+    Mutes = tc.get()
 
 

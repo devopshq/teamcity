@@ -2,22 +2,20 @@
 ProblemOccurrences
 ############
 
+ProblemOccurrences
+========
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**count** | **int** |  | [optional] 
-**default** | **bool** |  | [optional] [default to False]
-**failed** | **int** |  | [optional] 
-**href** | **str** |  | [optional] 
-**ignored** | **int** |  | [optional] 
-**muted** | **int** |  | [optional] 
-**new_failed** | **int** |  | [optional] 
-**next_href** | **str** |  | [optional] 
-**passed** | **int** |  | [optional] 
-**prev_href** | **str** |  | [optional] 
-**problem_occurrence** | [**list[ProblemOccurrence]**](ProblemOccurrence.md) |  | [optional] 
+Reference
+---------
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+  + :class:`dohq_teamcity.custom.models.ProblemOccurrences` (and bases class)
+  + `Original swagger documantation by class <https://github.com/devopshq/teamcity/blob/develop/docs-sphinx/swagger/models/ProblemOccurrences.md>`_
+  + Some examples you can find in `tests directory <https://github.com/devopshq/teamcity/blob/develop/test>`_
+
+Examples
+--------
+Some action::
+
+    ProblemOccurrences = tc.get()
 
 

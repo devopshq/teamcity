@@ -3,7 +3,7 @@ API examples
 ############
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
 
    api-models
    api-apis

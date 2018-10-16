@@ -2,21 +2,20 @@
 LicensingData
 ############
 
+LicensingData
+========
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**agents_left** | **int** |  | [optional] 
-**build_types_left** | **int** |  | [optional] 
-**license_keys** | [**LicenseKeys**](LicenseKeys.md) |  | [optional] 
-**license_use_exceeded** | **bool** |  | [optional] [default to False]
-**max_agents** | **int** |  | [optional] 
-**max_build_types** | **int** |  | [optional] 
-**server_effective_release_date** | **str** |  | [optional] 
-**server_license_type** | **str** |  | [optional] 
-**unlimited_agents** | **bool** |  | [optional] [default to False]
-**unlimited_build_types** | **bool** |  | [optional] [default to False]
+Reference
+---------
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+  + :class:`dohq_teamcity.custom.models.LicensingData` (and bases class)
+  + `Original swagger documantation by class <https://github.com/devopshq/teamcity/blob/develop/docs-sphinx/swagger/models/LicensingData.md>`_
+  + Some examples you can find in `tests directory <https://github.com/devopshq/teamcity/blob/develop/test>`_
+
+Examples
+--------
+Some action::
+
+    LicensingData = tc.get()
 
 

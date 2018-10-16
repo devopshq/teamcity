@@ -2,15 +2,20 @@
 VcsLabeling
 ############
 
+VcsLabeling
+========
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**branch_filter** | **str** |  | [optional] 
-**label_name** | **str** |  | [optional] 
-**type** | **str** |  | [optional] 
-**vcs_roots** | [**VcsRoots**](VcsRoots.md) |  | [optional] 
+Reference
+---------
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+  + :class:`dohq_teamcity.custom.models.VcsLabeling` (and bases class)
+  + `Original swagger documantation by class <https://github.com/devopshq/teamcity/blob/develop/docs-sphinx/swagger/models/VcsLabeling.md>`_
+  + Some examples you can find in `tests directory <https://github.com/devopshq/teamcity/blob/develop/test>`_
+
+Examples
+--------
+Some action::
+
+    VcsLabeling = tc.get()
 
 

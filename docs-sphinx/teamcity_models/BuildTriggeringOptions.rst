@@ -2,15 +2,20 @@
 BuildTriggeringOptions
 ############
 
+BuildTriggeringOptions
+========
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**clean_sources** | **bool** |  | [optional] [default to False]
-**queue_at_top** | **bool** |  | [optional] [default to False]
-**rebuild_all_dependencies** | **bool** |  | [optional] [default to False]
-**rebuild_dependencies** | [**BuildTypes**](BuildTypes.md) |  | [optional] 
+Reference
+---------
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+  + :class:`dohq_teamcity.custom.models.BuildTriggeringOptions` (and bases class)
+  + `Original swagger documantation by class <https://github.com/devopshq/teamcity/blob/develop/docs-sphinx/swagger/models/BuildTriggeringOptions.md>`_
+  + Some examples you can find in `tests directory <https://github.com/devopshq/teamcity/blob/develop/test>`_
+
+Examples
+--------
+Some action::
+
+    BuildTriggeringOptions = tc.get()
 
 

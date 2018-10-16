@@ -2,14 +2,20 @@
 RepositoryState
 ############
 
+RepositoryState
+========
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**branch** | [**list[BranchVersion]**](BranchVersion.md) |  | [optional] 
-**count** | **int** |  | [optional] 
-**timestamp** | **str** |  | [optional] 
+Reference
+---------
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+  + :class:`dohq_teamcity.custom.models.RepositoryState` (and bases class)
+  + `Original swagger documantation by class <https://github.com/devopshq/teamcity/blob/develop/docs-sphinx/swagger/models/RepositoryState.md>`_
+  + Some examples you can find in `tests directory <https://github.com/devopshq/teamcity/blob/develop/test>`_
+
+Examples
+--------
+Some action::
+
+    RepositoryState = tc.get()
 
 

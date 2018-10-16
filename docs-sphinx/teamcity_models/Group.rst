@@ -2,20 +2,20 @@
 Group
 ############
 
+Group
+========
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**child_groups** | [**Groups**](Groups.md) |  | [optional] 
-**description** | **str** |  | [optional] 
-**href** | **str** |  | [optional] 
-**key** | **str** |  | [optional] 
-**name** | **str** |  | [optional] 
-**parent_groups** | [**Groups**](Groups.md) |  | [optional] 
-**properties** | [**Properties**](Properties.md) |  | [optional] 
-**roles** | [**Roles**](Roles.md) |  | [optional] 
-**users** | [**Users**](Users.md) |  | [optional] 
+Reference
+---------
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+  + :class:`dohq_teamcity.custom.models.Group` (and bases class)
+  + `Original swagger documantation by class <https://github.com/devopshq/teamcity/blob/develop/docs-sphinx/swagger/models/Group.md>`_
+  + Some examples you can find in `tests directory <https://github.com/devopshq/teamcity/blob/develop/test>`_
+
+Examples
+--------
+Some action::
+
+    Group = tc.get()
 
 

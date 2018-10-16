@@ -2,16 +2,20 @@
 Revision
 ############
 
+Revision
+========
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**checkout_rules** | **str** |  | [optional] 
-**internal_version** | **str** |  | [optional] 
-**vcs_root_instance** | [**VcsRootInstance**](VcsRootInstance.md) |  | [optional] 
-**vcs_branch_name** | **str** |  | [optional] 
-**version** | **str** |  | [optional] 
+Reference
+---------
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+  + :class:`dohq_teamcity.custom.models.Revision` (and bases class)
+  + `Original swagger documantation by class <https://github.com/devopshq/teamcity/blob/develop/docs-sphinx/swagger/models/Revision.md>`_
+  + Some examples you can find in `tests directory <https://github.com/devopshq/teamcity/blob/develop/test>`_
+
+Examples
+--------
+Some action::
+
+    Revision = tc.get()
 
 

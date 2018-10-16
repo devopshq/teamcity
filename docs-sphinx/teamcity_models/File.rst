@@ -2,19 +2,20 @@
 File
 ############
 
+File
+========
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**children** | [**Files**](Files.md) |  | [optional] 
-**content** | [**Href**](Href.md) |  | [optional] 
-**full_name** | **str** |  | [optional] 
-**href** | **str** |  | [optional] 
-**modification_time** | **str** |  | [optional] 
-**name** | **str** |  | [optional] 
-**parent** | [**file**](file.md) |  | [optional] 
-**size** | **int** |  | [optional] 
+Reference
+---------
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+  + :class:`dohq_teamcity.custom.models.File` (and bases class)
+  + `Original swagger documantation by class <https://github.com/devopshq/teamcity/blob/develop/docs-sphinx/swagger/models/File.md>`_
+  + Some examples you can find in `tests directory <https://github.com/devopshq/teamcity/blob/develop/test>`_
+
+Examples
+--------
+Some action::
+
+    File = tc.get()
 
 

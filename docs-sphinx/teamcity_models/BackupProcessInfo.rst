@@ -2,17 +2,20 @@
 BackupProcessInfo
 ############
 
+BackupProcessInfo
+========
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**file_name** | **str** |  | [optional] 
-**file_size** | **int** |  | [optional] 
-**finish_timestamp** | **datetime** |  | [optional] 
-**id** | **int** |  | [optional] 
-**start_timestamp** | **datetime** |  | [optional] 
-**status** | **str** |  | [optional] 
+Reference
+---------
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+  + :class:`dohq_teamcity.custom.models.BackupProcessInfo` (and bases class)
+  + `Original swagger documantation by class <https://github.com/devopshq/teamcity/blob/develop/docs-sphinx/swagger/models/BackupProcessInfo.md>`_
+  + Some examples you can find in `tests directory <https://github.com/devopshq/teamcity/blob/develop/test>`_
+
+Examples
+--------
+Some action::
+
+    BackupProcessInfo = tc.get()
 
 

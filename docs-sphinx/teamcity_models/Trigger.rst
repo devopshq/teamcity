@@ -2,18 +2,20 @@
 Trigger
 ############
 
+Trigger
+========
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**disabled** | **bool** |  | [optional] [default to False]
-**href** | **str** |  | [optional] 
-**id** | **str** |  | [optional] 
-**inherited** | **bool** |  | [optional] [default to False]
-**name** | **str** |  | [optional] 
-**properties** | [**Properties**](Properties.md) |  | [optional] 
-**type** | **str** |  | [optional] 
+Reference
+---------
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+  + :class:`dohq_teamcity.custom.models.Trigger` (and bases class)
+  + `Original swagger documantation by class <https://github.com/devopshq/teamcity/blob/develop/docs-sphinx/swagger/models/Trigger.md>`_
+  + Some examples you can find in `tests directory <https://github.com/devopshq/teamcity/blob/develop/test>`_
+
+Examples
+--------
+Some action::
+
+    Trigger = tc.get()
 
 
