@@ -1,7 +1,68 @@
-# {{packageName}}.{{classname}}{{#description}}
-{{description}}{{/description}}
+{{packageName}}.{{classname}}
+######################################
 
-[[API examples]](http://devopshq.github.io/teamcity/teamcity_apis/{{classname}}.html)
+`API examples <../../teamcity_apis/{{classname}}.html>`_
+
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
+
+   * - Method
+     - HTTP request{{#operations}}{{#operation}}
+   * - `{{operationId}}`__
+     - **{{httpMethod}}** ``{{path}}``{{/operation}}{{/operations}}
+
+{{#operations}}
+{{#operation}}
+{{{operationId}}}
+-----------------
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    {{^hasAuthMethods}}
+    {{#allParams}}    {{paramName}} = {{{example}}} # {{{dataType}}} | {{{description}}}{{^required}} (optional){{/required}}{{#defaultValue}} (default to {{{.}}}){{/defaultValue}}
+    {{/allParams}}
+    {{/hasAuthMethods}}
+
+    try:
+    {{#summary}}    # {{{.}}}
+    {{/summary}}    {{#returnType}}api_response = {{/returnType}}tc.{{classFilename}}.{{{operationId}}}({{#allParams}}{{#required}}{{paramName}}{{/required}}{{^required}}{{paramName}}={{paramName}}{{/required}}{{#hasMore}}, {{/hasMore}}{{/allParams}}){{#returnType}}
+       pprint(api_response){{/returnType}}
+    except ApiException as e:
+        print("Exception when calling {{classname}}->{{operationId}}: %s\n" % e)
+
+
+{{^allParams}}This endpoint does not need any parameter.{{/allParams}}{{#allParams}}{{#-last}}
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+{{/-last}}{{/allParams}}
+{{#allParams}}
+   * - **{{paramName}}**
+     - {{#isFile}}**{{dataType}}**{{/isFile}}{{^isFile}}{{#isPrimitiveType}}**{{dataType}}**{{/isPrimitiveType}}{{^isPrimitiveType}}[**{{dataType}}**]({{baseType}}.md){{/isPrimitiveType}}{{/isFile}}
+     - {{^required}}[optional] {{/required}}{{#defaultValue}}[default to ``{{defaultValue}}``]{{/defaultValue}}
+{{/allParams}}
+
+Return type:
+    {{#returnType}}{{#returnTypeIsPrimitive}}**{{{returnType}}}**{{/returnTypeIsPrimitive}}{{^returnTypeIsPrimitive}}[**{{{returnType}}}**](../models/{{returnBaseType}}.md){{/returnTypeIsPrimitive}}{{/returnType}}{{^returnType}}void (empty response body){{/returnType}}
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+{{/operation}}
+{{/operations}}
+
+OLD
+-------
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

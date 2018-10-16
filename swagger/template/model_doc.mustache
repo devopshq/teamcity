@@ -1,13 +1,25 @@
-{{#models}}{{#model}}# {{classname}}
+{{#models}}{{#model}}{{classname}}
+#########
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-{{#vars}}**{{name}}** | {{#isPrimitiveType}}**{{datatype}}**{{/isPrimitiveType}}{{^isPrimitiveType}}[**{{datatype}}**]({{complexType}}.md){{/isPrimitiveType}} | {{description}} | {{^required}}[optional] {{/required}}{{#readOnly}}[readonly] {{/readOnly}}{{#defaultValue}}[default to {{{.}}}]{{/defaultValue}}
+`API examples <../../teamcity_models/{{classname}}.html>`_
+
+Properties
+----------
+.. list-table::
+   :widths: 15 15 70
+   :header-rows: 1
+
+   * - Name
+     - Type
+     - Notes
+{{#vars}}
+   * - **{{name}}**
+     - {{#isPrimitiveType}}**{{datatype}}**{{/isPrimitiveType}}{{^isPrimitiveType}} `{{datatype}} <./{{complexType}}.html>`_{{/isPrimitiveType}}
+     - {{^required}}`optional` {{/required}}{{#readOnly}}**readonly** {{/readOnly}}{{#defaultValue}}[default to ``{{{.}}}``]{{/defaultValue}}
 {{/vars}}
 
-[[API examples]](http://devopshq.github.io/teamcity/teamcity_models/{{classname}}.html)
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+TODO: fix this link
+[[Back to Model list]]swagger.html) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 {{/model}}{{/models}}

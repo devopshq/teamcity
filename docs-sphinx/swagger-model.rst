@@ -1,10 +1,10 @@
 ############
-Manager examples
+Model docs
 ############
 
 .. toctree::
    :maxdepth: 3
-   :caption: APIs
+   :caption: Models
    :glob:
 
-   teamcity_apis/*
+   swagger/models/*

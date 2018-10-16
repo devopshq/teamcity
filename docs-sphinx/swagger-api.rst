@@ -1,5 +1,5 @@
 ############
-Manager examples
+Manager docs
 ############
 
 .. toctree::
@@ -7,4 +7,4 @@ Manager examples
    :caption: APIs
    :glob:
 
-   teamcity_apis/*
+   swagger/api/*

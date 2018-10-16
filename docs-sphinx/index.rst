@@ -17,6 +17,7 @@ Contents:
     api-usage
     faq
     api-examples
+    swagger
     api/dohq_teamcity
     development
 
