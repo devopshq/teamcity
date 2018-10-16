@@ -1,6 +1,6 @@
 # dohq_teamcity.VcsRootApi
 
-All URIs are relative to *https://teamcity.example.com*
+[[API examples]](http://devopshq.github.io/teamcity/teamcity_apis/VcsRootApi.html)
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,19 +31,17 @@ Method | HTTP request | Description
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.VcsRootApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 body = dohq_teamcity.VcsRoot() # VcsRoot |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.add_root(body=body, fields=fields)
+    api_response = tc.vcs_root_api.add_root(body=body, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VcsRootApi->add_root: %s\n" % e)
@@ -69,7 +67,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **change_properties**
 > Properties change_properties(vcs_root_locator, body=body, fields=fields)
@@ -78,20 +78,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.VcsRootApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 body = dohq_teamcity.Properties() # Properties |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.change_properties(vcs_root_locator, body=body, fields=fields)
+    api_response = tc.vcs_root_api.change_properties(vcs_root_locator, body=body, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VcsRootApi->change_properties: %s\n" % e)
@@ -118,7 +116,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete_all_properties**
 > delete_all_properties(vcs_root_locator)
@@ -127,18 +127,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.VcsRootApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 
 try:
-    api_instance.delete_all_properties(vcs_root_locator)
+    tc.vcs_root_api.delete_all_properties(vcs_root_locator)
 except ApiException as e:
     print("Exception when calling VcsRootApi->delete_all_properties: %s\n" % e)
 ```
@@ -162,7 +160,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete_parameter**
 > delete_parameter(vcs_root_locator, name)
@@ -171,19 +171,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.VcsRootApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 name = 'name_example' # str | 
 
 try:
-    api_instance.delete_parameter(vcs_root_locator, name)
+    tc.vcs_root_api.delete_parameter(vcs_root_locator, name)
 except ApiException as e:
     print("Exception when calling VcsRootApi->delete_parameter: %s\n" % e)
 ```
@@ -208,7 +206,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete_root**
 > delete_root(vcs_root_locator)
@@ -217,18 +217,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.VcsRootApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 
 try:
-    api_instance.delete_root(vcs_root_locator)
+    tc.vcs_root_api.delete_root(vcs_root_locator)
 except ApiException as e:
     print("Exception when calling VcsRootApi->delete_root: %s\n" % e)
 ```
@@ -252,7 +250,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_settings_file**
 > str get_settings_file(vcs_root_locator)
@@ -261,18 +261,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.VcsRootApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 
 try:
-    api_response = api_instance.get_settings_file(vcs_root_locator)
+    api_response = tc.vcs_root_api.get_settings_file(vcs_root_locator)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VcsRootApi->get_settings_file: %s\n" % e)
@@ -297,7 +295,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **put_parameter**
 > str put_parameter(vcs_root_locator, name, body=body)
@@ -306,20 +306,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.VcsRootApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 name = 'name_example' # str | 
 body = 'body_example' # str |  (optional)
 
 try:
-    api_response = api_instance.put_parameter(vcs_root_locator, name, body=body)
+    api_response = tc.vcs_root_api.put_parameter(vcs_root_locator, name, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VcsRootApi->put_parameter: %s\n" % e)
@@ -346,7 +344,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_field**
 > str serve_field(vcs_root_locator, field)
@@ -355,19 +355,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.VcsRootApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 field = 'field_example' # str | 
 
 try:
-    api_response = api_instance.serve_field(vcs_root_locator, field)
+    api_response = tc.vcs_root_api.serve_field(vcs_root_locator, field)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VcsRootApi->serve_field: %s\n" % e)
@@ -393,7 +391,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_instance_field**
 > str serve_instance_field(vcs_root_locator, vcs_root_instance_locator, field)
@@ -402,20 +402,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.VcsRootApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
 field = 'field_example' # str | 
 
 try:
-    api_response = api_instance.serve_instance_field(vcs_root_locator, vcs_root_instance_locator, field)
+    api_response = tc.vcs_root_api.serve_instance_field(vcs_root_locator, vcs_root_instance_locator, field)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VcsRootApi->serve_instance_field: %s\n" % e)
@@ -442,7 +440,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_properties**
 > Properties serve_properties(vcs_root_locator, fields=fields)
@@ -451,19 +451,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.VcsRootApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.serve_properties(vcs_root_locator, fields=fields)
+    api_response = tc.vcs_root_api.serve_properties(vcs_root_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VcsRootApi->serve_properties: %s\n" % e)
@@ -489,7 +487,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_property**
 > str serve_property(vcs_root_locator, name)
@@ -498,19 +498,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.VcsRootApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 name = 'name_example' # str | 
 
 try:
-    api_response = api_instance.serve_property(vcs_root_locator, name)
+    api_response = tc.vcs_root_api.serve_property(vcs_root_locator, name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VcsRootApi->serve_property: %s\n" % e)
@@ -536,7 +534,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_root**
 > VcsRoot serve_root(vcs_root_locator, fields=fields)
@@ -545,19 +545,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.VcsRootApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.serve_root(vcs_root_locator, fields=fields)
+    api_response = tc.vcs_root_api.serve_root(vcs_root_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VcsRootApi->serve_root: %s\n" % e)
@@ -583,7 +581,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_root_instance**
 > VcsRootInstance serve_root_instance(vcs_root_locator, vcs_root_instance_locator, fields=fields)
@@ -592,20 +592,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.VcsRootApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.serve_root_instance(vcs_root_locator, vcs_root_instance_locator, fields=fields)
+    api_response = tc.vcs_root_api.serve_root_instance(vcs_root_locator, vcs_root_instance_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VcsRootApi->serve_root_instance: %s\n" % e)
@@ -632,7 +630,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_root_instance_properties**
 > Properties serve_root_instance_properties(vcs_root_locator, vcs_root_instance_locator, fields=fields)
@@ -641,20 +641,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.VcsRootApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.serve_root_instance_properties(vcs_root_locator, vcs_root_instance_locator, fields=fields)
+    api_response = tc.vcs_root_api.serve_root_instance_properties(vcs_root_locator, vcs_root_instance_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VcsRootApi->serve_root_instance_properties: %s\n" % e)
@@ -681,7 +679,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_root_instances**
 > VcsRootInstances serve_root_instances(vcs_root_locator, fields=fields)
@@ -690,19 +690,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.VcsRootApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.serve_root_instances(vcs_root_locator, fields=fields)
+    api_response = tc.vcs_root_api.serve_root_instances(vcs_root_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VcsRootApi->serve_root_instances: %s\n" % e)
@@ -728,7 +726,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_roots**
 > VcsRoots serve_roots(locator=locator, fields=fields)
@@ -737,19 +737,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.VcsRootApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 locator = 'locator_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.serve_roots(locator=locator, fields=fields)
+    api_response = tc.vcs_root_api.serve_roots(locator=locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VcsRootApi->serve_roots: %s\n" % e)
@@ -775,7 +773,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_field**
 > str set_field(vcs_root_locator, field, body=body)
@@ -784,20 +784,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.VcsRootApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 field = 'field_example' # str | 
 body = 'body_example' # str |  (optional)
 
 try:
-    api_response = api_instance.set_field(vcs_root_locator, field, body=body)
+    api_response = tc.vcs_root_api.set_field(vcs_root_locator, field, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VcsRootApi->set_field: %s\n" % e)
@@ -824,7 +822,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_instance_field**
 > str set_instance_field(vcs_root_locator, vcs_root_instance_locator, field, body=body)
@@ -833,21 +833,19 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.VcsRootApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
 field = 'field_example' # str | 
 body = 'body_example' # str |  (optional)
 
 try:
-    api_response = api_instance.set_instance_field(vcs_root_locator, vcs_root_instance_locator, field, body=body)
+    api_response = tc.vcs_root_api.set_instance_field(vcs_root_locator, vcs_root_instance_locator, field, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VcsRootApi->set_instance_field: %s\n" % e)
@@ -875,5 +873,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 

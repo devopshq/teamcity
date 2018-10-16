@@ -61,6 +61,8 @@ Name | Type | Description | Notes
 **wait_reason** | **str** |  | [optional] 
 **web_url** | **str** |  | [optional] 
 
+[[API examples]](http://devopshq.github.io/teamcity/teamcity_models/Build.html)
+
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

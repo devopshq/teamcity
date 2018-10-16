@@ -1,6 +1,6 @@
 # dohq_teamcity.BuildTypeApi
 
-All URIs are relative to *https://teamcity.example.com*
+[[API examples]](http://devopshq.github.io/teamcity/teamcity_apis/BuildTypeApi.html)
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -126,20 +126,18 @@ Method | HTTP request | Description
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 body = dohq_teamcity.AgentRequirement() # AgentRequirement |  (optional)
 
 try:
-    api_response = api_instance.add_agent_requirement(bt_locator, fields=fields, body=body)
+    api_response = tc.build_type_api.add_agent_requirement(bt_locator, fields=fields, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->add_agent_requirement: %s\n" % e)
@@ -166,7 +164,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **add_artifact_dep**
 > ArtifactDependency add_artifact_dep(bt_locator, fields=fields, body=body)
@@ -175,20 +175,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 body = dohq_teamcity.ArtifactDependency() # ArtifactDependency |  (optional)
 
 try:
-    api_response = api_instance.add_artifact_dep(bt_locator, fields=fields, body=body)
+    api_response = tc.build_type_api.add_artifact_dep(bt_locator, fields=fields, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->add_artifact_dep: %s\n" % e)
@@ -215,7 +213,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **add_build_type**
 > BuildType add_build_type(body=body, fields=fields)
@@ -224,19 +224,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 body = dohq_teamcity.BuildType() # BuildType |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.add_build_type(body=body, fields=fields)
+    api_response = tc.build_type_api.add_build_type(body=body, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->add_build_type: %s\n" % e)
@@ -262,7 +260,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **add_feature**
 > Feature add_feature(bt_locator, fields=fields, body=body)
@@ -271,20 +271,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 body = dohq_teamcity.Feature() # Feature |  (optional)
 
 try:
-    api_response = api_instance.add_feature(bt_locator, fields=fields, body=body)
+    api_response = tc.build_type_api.add_feature(bt_locator, fields=fields, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->add_feature: %s\n" % e)
@@ -311,7 +309,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **add_feature_parameter**
 > str add_feature_parameter(bt_locator, feature_id, parameter_name, body=body)
@@ -320,21 +320,19 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 feature_id = 'feature_id_example' # str | 
 parameter_name = 'parameter_name_example' # str | 
 body = 'body_example' # str |  (optional)
 
 try:
-    api_response = api_instance.add_feature_parameter(bt_locator, feature_id, parameter_name, body=body)
+    api_response = tc.build_type_api.add_feature_parameter(bt_locator, feature_id, parameter_name, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->add_feature_parameter: %s\n" % e)
@@ -362,7 +360,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **add_snapshot_dep**
 > SnapshotDependency add_snapshot_dep(bt_locator, fields=fields, body=body)
@@ -371,20 +371,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 body = dohq_teamcity.SnapshotDependency() # SnapshotDependency |  (optional)
 
 try:
-    api_response = api_instance.add_snapshot_dep(bt_locator, fields=fields, body=body)
+    api_response = tc.build_type_api.add_snapshot_dep(bt_locator, fields=fields, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->add_snapshot_dep: %s\n" % e)
@@ -411,7 +409,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **add_step**
 > Step add_step(bt_locator, fields=fields, body=body)
@@ -420,20 +420,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 body = dohq_teamcity.Step() # Step |  (optional)
 
 try:
-    api_response = api_instance.add_step(bt_locator, fields=fields, body=body)
+    api_response = tc.build_type_api.add_step(bt_locator, fields=fields, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->add_step: %s\n" % e)
@@ -460,7 +458,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **add_step_parameter**
 > str add_step_parameter(bt_locator, step_id, parameter_name, body=body)
@@ -469,21 +469,19 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 step_id = 'step_id_example' # str | 
 parameter_name = 'parameter_name_example' # str | 
 body = 'body_example' # str |  (optional)
 
 try:
-    api_response = api_instance.add_step_parameter(bt_locator, step_id, parameter_name, body=body)
+    api_response = tc.build_type_api.add_step_parameter(bt_locator, step_id, parameter_name, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->add_step_parameter: %s\n" % e)
@@ -511,7 +509,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **add_trigger**
 > Trigger add_trigger(bt_locator, fields=fields, body=body)
@@ -520,20 +520,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 body = dohq_teamcity.Trigger() # Trigger |  (optional)
 
 try:
-    api_response = api_instance.add_trigger(bt_locator, fields=fields, body=body)
+    api_response = tc.build_type_api.add_trigger(bt_locator, fields=fields, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->add_trigger: %s\n" % e)
@@ -560,7 +558,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **add_vcs_root_entry**
 > VcsRootEntry add_vcs_root_entry(bt_locator, body=body, fields=fields)
@@ -569,20 +569,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 body = dohq_teamcity.VcsRootEntry() # VcsRootEntry |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.add_vcs_root_entry(bt_locator, body=body, fields=fields)
+    api_response = tc.build_type_api.add_vcs_root_entry(bt_locator, body=body, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->add_vcs_root_entry: %s\n" % e)
@@ -609,7 +607,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **change_artifact_dep_setting**
 > str change_artifact_dep_setting(bt_locator, artifact_dep_locator, field_name, body=body)
@@ -618,21 +618,19 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 artifact_dep_locator = 'artifact_dep_locator_example' # str | 
 field_name = 'field_name_example' # str | 
 body = 'body_example' # str |  (optional)
 
 try:
-    api_response = api_instance.change_artifact_dep_setting(bt_locator, artifact_dep_locator, field_name, body=body)
+    api_response = tc.build_type_api.change_artifact_dep_setting(bt_locator, artifact_dep_locator, field_name, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->change_artifact_dep_setting: %s\n" % e)
@@ -660,7 +658,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **change_feature_setting**
 > str change_feature_setting(bt_locator, feature_id, name, body=body)
@@ -669,21 +669,19 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 feature_id = 'feature_id_example' # str | 
 name = 'name_example' # str | 
 body = 'body_example' # str |  (optional)
 
 try:
-    api_response = api_instance.change_feature_setting(bt_locator, feature_id, name, body=body)
+    api_response = tc.build_type_api.change_feature_setting(bt_locator, feature_id, name, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->change_feature_setting: %s\n" % e)
@@ -711,7 +709,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **change_requirement_setting**
 > str change_requirement_setting(bt_locator, agent_requirement_locator, field_name, body=body)
@@ -720,21 +720,19 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 agent_requirement_locator = 'agent_requirement_locator_example' # str | 
 field_name = 'field_name_example' # str | 
 body = 'body_example' # str |  (optional)
 
 try:
-    api_response = api_instance.change_requirement_setting(bt_locator, agent_requirement_locator, field_name, body=body)
+    api_response = tc.build_type_api.change_requirement_setting(bt_locator, agent_requirement_locator, field_name, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->change_requirement_setting: %s\n" % e)
@@ -762,7 +760,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **change_step_setting**
 > str change_step_setting(bt_locator, step_id, field_name, body=body)
@@ -771,21 +771,19 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 step_id = 'step_id_example' # str | 
 field_name = 'field_name_example' # str | 
 body = 'body_example' # str |  (optional)
 
 try:
-    api_response = api_instance.change_step_setting(bt_locator, step_id, field_name, body=body)
+    api_response = tc.build_type_api.change_step_setting(bt_locator, step_id, field_name, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->change_step_setting: %s\n" % e)
@@ -813,7 +811,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **change_trigger_setting**
 > str change_trigger_setting(bt_locator, trigger_locator, field_name, body=body)
@@ -822,21 +822,19 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 trigger_locator = 'trigger_locator_example' # str | 
 field_name = 'field_name_example' # str | 
 body = 'body_example' # str |  (optional)
 
 try:
-    api_response = api_instance.change_trigger_setting(bt_locator, trigger_locator, field_name, body=body)
+    api_response = tc.build_type_api.change_trigger_setting(bt_locator, trigger_locator, field_name, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->change_trigger_setting: %s\n" % e)
@@ -864,7 +862,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete_agent_requirement**
 > delete_agent_requirement(bt_locator, agent_requirement_locator)
@@ -873,19 +873,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 agent_requirement_locator = 'agent_requirement_locator_example' # str | 
 
 try:
-    api_instance.delete_agent_requirement(bt_locator, agent_requirement_locator)
+    tc.build_type_api.delete_agent_requirement(bt_locator, agent_requirement_locator)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->delete_agent_requirement: %s\n" % e)
 ```
@@ -910,7 +908,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete_all_parameters**
 > delete_all_parameters(bt_locator)
@@ -919,18 +919,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 
 try:
-    api_instance.delete_all_parameters(bt_locator)
+    tc.build_type_api.delete_all_parameters(bt_locator)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->delete_all_parameters: %s\n" % e)
 ```
@@ -954,7 +952,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete_all_parameters_0**
 > delete_all_parameters_0(bt_locator)
@@ -963,18 +963,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 
 try:
-    api_instance.delete_all_parameters_0(bt_locator)
+    tc.build_type_api.delete_all_parameters_0(bt_locator)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->delete_all_parameters_0: %s\n" % e)
 ```
@@ -998,7 +996,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete_artifact_dep**
 > delete_artifact_dep(bt_locator, artifact_dep_locator)
@@ -1007,19 +1007,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 artifact_dep_locator = 'artifact_dep_locator_example' # str | 
 
 try:
-    api_instance.delete_artifact_dep(bt_locator, artifact_dep_locator)
+    tc.build_type_api.delete_artifact_dep(bt_locator, artifact_dep_locator)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->delete_artifact_dep: %s\n" % e)
 ```
@@ -1044,7 +1042,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete_build_type**
 > delete_build_type(bt_locator)
@@ -1053,18 +1053,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 
 try:
-    api_instance.delete_build_type(bt_locator)
+    tc.build_type_api.delete_build_type(bt_locator)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->delete_build_type: %s\n" % e)
 ```
@@ -1088,7 +1086,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete_feature**
 > delete_feature(bt_locator, feature_id)
@@ -1097,19 +1097,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 feature_id = 'feature_id_example' # str | 
 
 try:
-    api_instance.delete_feature(bt_locator, feature_id)
+    tc.build_type_api.delete_feature(bt_locator, feature_id)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->delete_feature: %s\n" % e)
 ```
@@ -1134,7 +1132,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete_parameter**
 > delete_parameter(name, bt_locator)
@@ -1143,19 +1143,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 name = 'name_example' # str | 
 bt_locator = 'bt_locator_example' # str | 
 
 try:
-    api_instance.delete_parameter(name, bt_locator)
+    tc.build_type_api.delete_parameter(name, bt_locator)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->delete_parameter: %s\n" % e)
 ```
@@ -1180,7 +1178,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete_parameter_0**
 > delete_parameter_0(name, bt_locator)
@@ -1189,19 +1189,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 name = 'name_example' # str | 
 bt_locator = 'bt_locator_example' # str | 
 
 try:
-    api_instance.delete_parameter_0(name, bt_locator)
+    tc.build_type_api.delete_parameter_0(name, bt_locator)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->delete_parameter_0: %s\n" % e)
 ```
@@ -1226,7 +1224,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete_snapshot_dep**
 > delete_snapshot_dep(bt_locator, snapshot_dep_locator)
@@ -1235,19 +1235,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 snapshot_dep_locator = 'snapshot_dep_locator_example' # str | 
 
 try:
-    api_instance.delete_snapshot_dep(bt_locator, snapshot_dep_locator)
+    tc.build_type_api.delete_snapshot_dep(bt_locator, snapshot_dep_locator)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->delete_snapshot_dep: %s\n" % e)
 ```
@@ -1272,7 +1270,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete_step**
 > delete_step(bt_locator, step_id)
@@ -1281,19 +1281,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 step_id = 'step_id_example' # str | 
 
 try:
-    api_instance.delete_step(bt_locator, step_id)
+    tc.build_type_api.delete_step(bt_locator, step_id)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->delete_step: %s\n" % e)
 ```
@@ -1318,7 +1316,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete_template_association**
 > delete_template_association(bt_locator)
@@ -1327,18 +1327,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 
 try:
-    api_instance.delete_template_association(bt_locator)
+    tc.build_type_api.delete_template_association(bt_locator)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->delete_template_association: %s\n" % e)
 ```
@@ -1362,7 +1360,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete_trigger**
 > delete_trigger(bt_locator, trigger_locator)
@@ -1371,19 +1371,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 trigger_locator = 'trigger_locator_example' # str | 
 
 try:
-    api_instance.delete_trigger(bt_locator, trigger_locator)
+    tc.build_type_api.delete_trigger(bt_locator, trigger_locator)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->delete_trigger: %s\n" % e)
 ```
@@ -1408,7 +1406,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete_vcs_root_entry**
 > delete_vcs_root_entry(bt_locator, vcs_root_locator)
@@ -1417,19 +1417,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 
 try:
-    api_instance.delete_vcs_root_entry(bt_locator, vcs_root_locator)
+    tc.build_type_api.delete_vcs_root_entry(bt_locator, vcs_root_locator)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->delete_vcs_root_entry: %s\n" % e)
 ```
@@ -1454,7 +1452,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_agent_requirement**
 > AgentRequirement get_agent_requirement(bt_locator, agent_requirement_locator, fields=fields)
@@ -1463,20 +1463,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 agent_requirement_locator = 'agent_requirement_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_agent_requirement(bt_locator, agent_requirement_locator, fields=fields)
+    api_response = tc.build_type_api.get_agent_requirement(bt_locator, agent_requirement_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_agent_requirement: %s\n" % e)
@@ -1503,7 +1501,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_agent_requirements**
 > AgentRequirements get_agent_requirements(bt_locator, fields=fields)
@@ -1512,19 +1512,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_agent_requirements(bt_locator, fields=fields)
+    api_response = tc.build_type_api.get_agent_requirements(bt_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_agent_requirements: %s\n" % e)
@@ -1550,7 +1548,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_aliases**
 > Items get_aliases(bt_locator, field)
@@ -1559,19 +1559,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 field = 'field_example' # str | 
 
 try:
-    api_response = api_instance.get_aliases(bt_locator, field)
+    api_response = tc.build_type_api.get_aliases(bt_locator, field)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_aliases: %s\n" % e)
@@ -1597,7 +1595,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_artifact_dep**
 > ArtifactDependency get_artifact_dep(bt_locator, artifact_dep_locator, fields=fields)
@@ -1606,20 +1606,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 artifact_dep_locator = 'artifact_dep_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_artifact_dep(bt_locator, artifact_dep_locator, fields=fields)
+    api_response = tc.build_type_api.get_artifact_dep(bt_locator, artifact_dep_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_artifact_dep: %s\n" % e)
@@ -1646,7 +1644,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_artifact_dep_setting**
 > str get_artifact_dep_setting(bt_locator, artifact_dep_locator, field_name)
@@ -1655,20 +1655,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 artifact_dep_locator = 'artifact_dep_locator_example' # str | 
 field_name = 'field_name_example' # str | 
 
 try:
-    api_response = api_instance.get_artifact_dep_setting(bt_locator, artifact_dep_locator, field_name)
+    api_response = tc.build_type_api.get_artifact_dep_setting(bt_locator, artifact_dep_locator, field_name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_artifact_dep_setting: %s\n" % e)
@@ -1695,7 +1693,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_artifact_deps**
 > ArtifactDependencies get_artifact_deps(bt_locator, fields=fields)
@@ -1704,19 +1704,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_artifact_deps(bt_locator, fields=fields)
+    api_response = tc.build_type_api.get_artifact_deps(bt_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_artifact_deps: %s\n" % e)
@@ -1742,7 +1740,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_build_types**
 > BuildTypes get_build_types(locator=locator, fields=fields)
@@ -1751,19 +1751,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 locator = 'locator_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_build_types(locator=locator, fields=fields)
+    api_response = tc.build_type_api.get_build_types(locator=locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_build_types: %s\n" % e)
@@ -1789,7 +1787,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_children**
 > Files get_children(path, bt_locator, base_path=base_path, locator=locator, fields=fields, resolve_parameters=resolve_parameters)
@@ -1798,14 +1798,12 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 path = 'path_example' # str | 
 bt_locator = 'bt_locator_example' # str | 
 base_path = 'base_path_example' # str |  (optional)
@@ -1814,7 +1812,7 @@ fields = 'fields_example' # str |  (optional)
 resolve_parameters = true # bool |  (optional)
 
 try:
-    api_response = api_instance.get_children(path, bt_locator, base_path=base_path, locator=locator, fields=fields, resolve_parameters=resolve_parameters)
+    api_response = tc.build_type_api.get_children(path, bt_locator, base_path=base_path, locator=locator, fields=fields, resolve_parameters=resolve_parameters)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_children: %s\n" % e)
@@ -1844,7 +1842,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_children_alias**
 > Files get_children_alias(path, bt_locator, base_path=base_path, locator=locator, fields=fields, resolve_parameters=resolve_parameters)
@@ -1853,14 +1853,12 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 path = 'path_example' # str | 
 bt_locator = 'bt_locator_example' # str | 
 base_path = 'base_path_example' # str |  (optional)
@@ -1869,7 +1867,7 @@ fields = 'fields_example' # str |  (optional)
 resolve_parameters = true # bool |  (optional)
 
 try:
-    api_response = api_instance.get_children_alias(path, bt_locator, base_path=base_path, locator=locator, fields=fields, resolve_parameters=resolve_parameters)
+    api_response = tc.build_type_api.get_children_alias(path, bt_locator, base_path=base_path, locator=locator, fields=fields, resolve_parameters=resolve_parameters)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_children_alias: %s\n" % e)
@@ -1899,7 +1897,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_content**
 > get_content(path, bt_locator, resolve_parameters=resolve_parameters)
@@ -1908,20 +1908,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 path = 'path_example' # str | 
 bt_locator = 'bt_locator_example' # str | 
 resolve_parameters = true # bool |  (optional)
 
 try:
-    api_instance.get_content(path, bt_locator, resolve_parameters=resolve_parameters)
+    tc.build_type_api.get_content(path, bt_locator, resolve_parameters=resolve_parameters)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_content: %s\n" % e)
 ```
@@ -1947,7 +1945,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_content_alias**
 > get_content_alias(path, bt_locator, resolve_parameters=resolve_parameters)
@@ -1956,20 +1956,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 path = 'path_example' # str | 
 bt_locator = 'bt_locator_example' # str | 
 resolve_parameters = true # bool |  (optional)
 
 try:
-    api_instance.get_content_alias(path, bt_locator, resolve_parameters=resolve_parameters)
+    tc.build_type_api.get_content_alias(path, bt_locator, resolve_parameters=resolve_parameters)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_content_alias: %s\n" % e)
 ```
@@ -1995,7 +1993,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_current_vcs_instances**
 > VcsRootInstances get_current_vcs_instances(bt_locator, fields=fields)
@@ -2004,19 +2004,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_current_vcs_instances(bt_locator, fields=fields)
+    api_response = tc.build_type_api.get_current_vcs_instances(bt_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_current_vcs_instances: %s\n" % e)
@@ -2042,7 +2040,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_example_new_project_description**
 > NewBuildTypeDescription get_example_new_project_description(bt_locator)
@@ -2051,18 +2051,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 
 try:
-    api_response = api_instance.get_example_new_project_description(bt_locator)
+    api_response = tc.build_type_api.get_example_new_project_description(bt_locator)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_example_new_project_description: %s\n" % e)
@@ -2087,7 +2085,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_example_new_project_description_compatibility_version1**
 > NewBuildTypeDescription get_example_new_project_description_compatibility_version1(bt_locator)
@@ -2096,18 +2096,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 
 try:
-    api_response = api_instance.get_example_new_project_description_compatibility_version1(bt_locator)
+    api_response = tc.build_type_api.get_example_new_project_description_compatibility_version1(bt_locator)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_example_new_project_description_compatibility_version1: %s\n" % e)
@@ -2132,7 +2130,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_feature**
 > Feature get_feature(bt_locator, feature_id, fields=fields)
@@ -2141,20 +2141,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 feature_id = 'feature_id_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_feature(bt_locator, feature_id, fields=fields)
+    api_response = tc.build_type_api.get_feature(bt_locator, feature_id, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_feature: %s\n" % e)
@@ -2181,7 +2179,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_feature_parameter**
 > str get_feature_parameter(bt_locator, feature_id, parameter_name)
@@ -2190,20 +2190,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 feature_id = 'feature_id_example' # str | 
 parameter_name = 'parameter_name_example' # str | 
 
 try:
-    api_response = api_instance.get_feature_parameter(bt_locator, feature_id, parameter_name)
+    api_response = tc.build_type_api.get_feature_parameter(bt_locator, feature_id, parameter_name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_feature_parameter: %s\n" % e)
@@ -2230,7 +2228,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_feature_parameters**
 > Properties get_feature_parameters(bt_locator, feature_id, fields=fields)
@@ -2239,20 +2239,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 feature_id = 'feature_id_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_feature_parameters(bt_locator, feature_id, fields=fields)
+    api_response = tc.build_type_api.get_feature_parameters(bt_locator, feature_id, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_feature_parameters: %s\n" % e)
@@ -2279,7 +2277,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_feature_setting**
 > str get_feature_setting(bt_locator, feature_id, name)
@@ -2288,20 +2288,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 feature_id = 'feature_id_example' # str | 
 name = 'name_example' # str | 
 
 try:
-    api_response = api_instance.get_feature_setting(bt_locator, feature_id, name)
+    api_response = tc.build_type_api.get_feature_setting(bt_locator, feature_id, name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_feature_setting: %s\n" % e)
@@ -2328,7 +2326,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_features**
 > Features get_features(bt_locator, fields=fields)
@@ -2337,19 +2337,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_features(bt_locator, fields=fields)
+    api_response = tc.build_type_api.get_features(bt_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_features: %s\n" % e)
@@ -2375,7 +2373,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_investigations**
 > Investigations get_investigations(bt_locator, fields=fields)
@@ -2384,19 +2384,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_investigations(bt_locator, fields=fields)
+    api_response = tc.build_type_api.get_investigations(bt_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_investigations: %s\n" % e)
@@ -2422,7 +2420,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_metadata**
 > file get_metadata(path, bt_locator, fields=fields, resolve_parameters=resolve_parameters)
@@ -2431,21 +2431,19 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 path = 'path_example' # str | 
 bt_locator = 'bt_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 resolve_parameters = true # bool |  (optional)
 
 try:
-    api_response = api_instance.get_metadata(path, bt_locator, fields=fields, resolve_parameters=resolve_parameters)
+    api_response = tc.build_type_api.get_metadata(path, bt_locator, fields=fields, resolve_parameters=resolve_parameters)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_metadata: %s\n" % e)
@@ -2473,7 +2471,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_parameter**
 > ModelProperty get_parameter(name, bt_locator, fields=fields)
@@ -2482,20 +2482,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 name = 'name_example' # str | 
 bt_locator = 'bt_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_parameter(name, bt_locator, fields=fields)
+    api_response = tc.build_type_api.get_parameter(name, bt_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_parameter: %s\n" % e)
@@ -2522,7 +2520,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_parameter_0**
 > ModelProperty get_parameter_0(name, bt_locator, fields=fields)
@@ -2531,20 +2531,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 name = 'name_example' # str | 
 bt_locator = 'bt_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_parameter_0(name, bt_locator, fields=fields)
+    api_response = tc.build_type_api.get_parameter_0(name, bt_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_parameter_0: %s\n" % e)
@@ -2571,7 +2569,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_parameter_type**
 > Type get_parameter_type(name, bt_locator)
@@ -2580,19 +2580,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 name = 'name_example' # str | 
 bt_locator = 'bt_locator_example' # str | 
 
 try:
-    api_response = api_instance.get_parameter_type(name, bt_locator)
+    api_response = tc.build_type_api.get_parameter_type(name, bt_locator)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_parameter_type: %s\n" % e)
@@ -2618,7 +2616,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_parameter_type_raw_value**
 > str get_parameter_type_raw_value(name, bt_locator)
@@ -2627,19 +2627,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 name = 'name_example' # str | 
 bt_locator = 'bt_locator_example' # str | 
 
 try:
-    api_response = api_instance.get_parameter_type_raw_value(name, bt_locator)
+    api_response = tc.build_type_api.get_parameter_type_raw_value(name, bt_locator)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_parameter_type_raw_value: %s\n" % e)
@@ -2665,7 +2663,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_parameter_value_long**
 > str get_parameter_value_long(name, bt_locator)
@@ -2674,19 +2674,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 name = 'name_example' # str | 
 bt_locator = 'bt_locator_example' # str | 
 
 try:
-    api_response = api_instance.get_parameter_value_long(name, bt_locator)
+    api_response = tc.build_type_api.get_parameter_value_long(name, bt_locator)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_parameter_value_long: %s\n" % e)
@@ -2712,7 +2710,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_parameter_value_long_0**
 > str get_parameter_value_long_0(name, bt_locator)
@@ -2721,19 +2721,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 name = 'name_example' # str | 
 bt_locator = 'bt_locator_example' # str | 
 
 try:
-    api_response = api_instance.get_parameter_value_long_0(name, bt_locator)
+    api_response = tc.build_type_api.get_parameter_value_long_0(name, bt_locator)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_parameter_value_long_0: %s\n" % e)
@@ -2759,7 +2757,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_parameters**
 > Properties get_parameters(bt_locator, locator=locator, fields=fields)
@@ -2768,20 +2768,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 locator = 'locator_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_parameters(bt_locator, locator=locator, fields=fields)
+    api_response = tc.build_type_api.get_parameters(bt_locator, locator=locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_parameters: %s\n" % e)
@@ -2808,7 +2806,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_parameters_0**
 > Properties get_parameters_0(bt_locator, locator=locator, fields=fields)
@@ -2817,20 +2817,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 locator = 'locator_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_parameters_0(bt_locator, locator=locator, fields=fields)
+    api_response = tc.build_type_api.get_parameters_0(bt_locator, locator=locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_parameters_0: %s\n" % e)
@@ -2857,7 +2855,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_requirement_setting**
 > str get_requirement_setting(bt_locator, agent_requirement_locator, field_name)
@@ -2866,20 +2866,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 agent_requirement_locator = 'agent_requirement_locator_example' # str | 
 field_name = 'field_name_example' # str | 
 
 try:
-    api_response = api_instance.get_requirement_setting(bt_locator, agent_requirement_locator, field_name)
+    api_response = tc.build_type_api.get_requirement_setting(bt_locator, agent_requirement_locator, field_name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_requirement_setting: %s\n" % e)
@@ -2906,7 +2904,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_root**
 > Files get_root(bt_locator, base_path=base_path, locator=locator, fields=fields, resolve_parameters=resolve_parameters)
@@ -2915,14 +2915,12 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 base_path = 'base_path_example' # str |  (optional)
 locator = 'locator_example' # str |  (optional)
@@ -2930,7 +2928,7 @@ fields = 'fields_example' # str |  (optional)
 resolve_parameters = true # bool |  (optional)
 
 try:
-    api_response = api_instance.get_root(bt_locator, base_path=base_path, locator=locator, fields=fields, resolve_parameters=resolve_parameters)
+    api_response = tc.build_type_api.get_root(bt_locator, base_path=base_path, locator=locator, fields=fields, resolve_parameters=resolve_parameters)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_root: %s\n" % e)
@@ -2959,7 +2957,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_settings_file**
 > str get_settings_file(bt_locator)
@@ -2968,18 +2968,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 
 try:
-    api_response = api_instance.get_settings_file(bt_locator)
+    api_response = tc.build_type_api.get_settings_file(bt_locator)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_settings_file: %s\n" % e)
@@ -3004,7 +3002,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_snapshot_dep**
 > SnapshotDependency get_snapshot_dep(bt_locator, snapshot_dep_locator, fields=fields)
@@ -3013,20 +3013,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 snapshot_dep_locator = 'snapshot_dep_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_snapshot_dep(bt_locator, snapshot_dep_locator, fields=fields)
+    api_response = tc.build_type_api.get_snapshot_dep(bt_locator, snapshot_dep_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_snapshot_dep: %s\n" % e)
@@ -3053,7 +3051,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_snapshot_deps**
 > SnapshotDependencies get_snapshot_deps(bt_locator, fields=fields)
@@ -3062,19 +3062,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_snapshot_deps(bt_locator, fields=fields)
+    api_response = tc.build_type_api.get_snapshot_deps(bt_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_snapshot_deps: %s\n" % e)
@@ -3100,7 +3098,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_step**
 > Step get_step(bt_locator, step_id, fields=fields)
@@ -3109,20 +3109,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 step_id = 'step_id_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_step(bt_locator, step_id, fields=fields)
+    api_response = tc.build_type_api.get_step(bt_locator, step_id, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_step: %s\n" % e)
@@ -3149,7 +3147,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_step_parameter**
 > str get_step_parameter(bt_locator, step_id, parameter_name)
@@ -3158,20 +3158,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 step_id = 'step_id_example' # str | 
 parameter_name = 'parameter_name_example' # str | 
 
 try:
-    api_response = api_instance.get_step_parameter(bt_locator, step_id, parameter_name)
+    api_response = tc.build_type_api.get_step_parameter(bt_locator, step_id, parameter_name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_step_parameter: %s\n" % e)
@@ -3198,7 +3196,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_step_parameters**
 > Properties get_step_parameters(bt_locator, step_id, fields=fields)
@@ -3207,20 +3207,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 step_id = 'step_id_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_step_parameters(bt_locator, step_id, fields=fields)
+    api_response = tc.build_type_api.get_step_parameters(bt_locator, step_id, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_step_parameters: %s\n" % e)
@@ -3247,7 +3245,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_step_setting**
 > str get_step_setting(bt_locator, step_id, field_name)
@@ -3256,20 +3256,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 step_id = 'step_id_example' # str | 
 field_name = 'field_name_example' # str | 
 
 try:
-    api_response = api_instance.get_step_setting(bt_locator, step_id, field_name)
+    api_response = tc.build_type_api.get_step_setting(bt_locator, step_id, field_name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_step_setting: %s\n" % e)
@@ -3296,7 +3294,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_steps**
 > Steps get_steps(bt_locator, fields=fields)
@@ -3305,19 +3305,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_steps(bt_locator, fields=fields)
+    api_response = tc.build_type_api.get_steps(bt_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_steps: %s\n" % e)
@@ -3343,7 +3341,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_template_association**
 > BuildType get_template_association(bt_locator, body=body, fields=fields)
@@ -3352,20 +3352,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 body = 'body_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_template_association(bt_locator, body=body, fields=fields)
+    api_response = tc.build_type_api.get_template_association(bt_locator, body=body, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_template_association: %s\n" % e)
@@ -3392,7 +3390,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_trigger**
 > Trigger get_trigger(bt_locator, trigger_locator, fields=fields)
@@ -3401,20 +3401,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 trigger_locator = 'trigger_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_trigger(bt_locator, trigger_locator, fields=fields)
+    api_response = tc.build_type_api.get_trigger(bt_locator, trigger_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_trigger: %s\n" % e)
@@ -3441,7 +3439,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_trigger_setting**
 > str get_trigger_setting(bt_locator, trigger_locator, field_name)
@@ -3450,20 +3450,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 trigger_locator = 'trigger_locator_example' # str | 
 field_name = 'field_name_example' # str | 
 
 try:
-    api_response = api_instance.get_trigger_setting(bt_locator, trigger_locator, field_name)
+    api_response = tc.build_type_api.get_trigger_setting(bt_locator, trigger_locator, field_name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_trigger_setting: %s\n" % e)
@@ -3490,7 +3488,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_triggers**
 > Triggers get_triggers(bt_locator, fields=fields)
@@ -3499,19 +3499,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_triggers(bt_locator, fields=fields)
+    api_response = tc.build_type_api.get_triggers(bt_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_triggers: %s\n" % e)
@@ -3537,7 +3535,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_vcs_labeling_options**
 > VcsLabeling get_vcs_labeling_options(bt_locator)
@@ -3546,18 +3546,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 
 try:
-    api_response = api_instance.get_vcs_labeling_options(bt_locator)
+    api_response = tc.build_type_api.get_vcs_labeling_options(bt_locator)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_vcs_labeling_options: %s\n" % e)
@@ -3582,7 +3580,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_vcs_root_entries**
 > VcsRootEntries get_vcs_root_entries(bt_locator, fields=fields)
@@ -3591,19 +3591,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_vcs_root_entries(bt_locator, fields=fields)
+    api_response = tc.build_type_api.get_vcs_root_entries(bt_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_vcs_root_entries: %s\n" % e)
@@ -3629,7 +3627,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_vcs_root_entry**
 > VcsRootEntry get_vcs_root_entry(bt_locator, vcs_root_locator, fields=fields)
@@ -3638,20 +3638,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_vcs_root_entry(bt_locator, vcs_root_locator, fields=fields)
+    api_response = tc.build_type_api.get_vcs_root_entry(bt_locator, vcs_root_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_vcs_root_entry: %s\n" % e)
@@ -3678,7 +3676,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_vcs_root_entry_checkout_rules**
 > str get_vcs_root_entry_checkout_rules(bt_locator, vcs_root_locator)
@@ -3687,19 +3687,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 
 try:
-    api_response = api_instance.get_vcs_root_entry_checkout_rules(bt_locator, vcs_root_locator)
+    api_response = tc.build_type_api.get_vcs_root_entry_checkout_rules(bt_locator, vcs_root_locator)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_vcs_root_entry_checkout_rules: %s\n" % e)
@@ -3725,7 +3723,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_zipped**
 > get_zipped(path, bt_locator, base_path=base_path, locator=locator, name=name, resolve_parameters=resolve_parameters)
@@ -3734,14 +3734,12 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 path = 'path_example' # str | 
 bt_locator = 'bt_locator_example' # str | 
 base_path = 'base_path_example' # str |  (optional)
@@ -3750,7 +3748,7 @@ name = 'name_example' # str |  (optional)
 resolve_parameters = true # bool |  (optional)
 
 try:
-    api_instance.get_zipped(path, bt_locator, base_path=base_path, locator=locator, name=name, resolve_parameters=resolve_parameters)
+    tc.build_type_api.get_zipped(path, bt_locator, base_path=base_path, locator=locator, name=name, resolve_parameters=resolve_parameters)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->get_zipped: %s\n" % e)
 ```
@@ -3779,7 +3777,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **replace_agent_requirement**
 > AgentRequirement replace_agent_requirement(bt_locator, agent_requirement_locator, fields=fields, body=body)
@@ -3788,21 +3788,19 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 agent_requirement_locator = 'agent_requirement_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 body = dohq_teamcity.AgentRequirement() # AgentRequirement |  (optional)
 
 try:
-    api_response = api_instance.replace_agent_requirement(bt_locator, agent_requirement_locator, fields=fields, body=body)
+    api_response = tc.build_type_api.replace_agent_requirement(bt_locator, agent_requirement_locator, fields=fields, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->replace_agent_requirement: %s\n" % e)
@@ -3830,7 +3828,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **replace_agent_requirements**
 > AgentRequirements replace_agent_requirements(bt_locator, fields=fields, body=body)
@@ -3839,20 +3839,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 body = dohq_teamcity.AgentRequirements() # AgentRequirements |  (optional)
 
 try:
-    api_response = api_instance.replace_agent_requirements(bt_locator, fields=fields, body=body)
+    api_response = tc.build_type_api.replace_agent_requirements(bt_locator, fields=fields, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->replace_agent_requirements: %s\n" % e)
@@ -3879,7 +3877,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **replace_artifact_dep**
 > ArtifactDependency replace_artifact_dep(bt_locator, artifact_dep_locator, fields=fields, body=body)
@@ -3888,21 +3888,19 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 artifact_dep_locator = 'artifact_dep_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 body = dohq_teamcity.ArtifactDependency() # ArtifactDependency |  (optional)
 
 try:
-    api_response = api_instance.replace_artifact_dep(bt_locator, artifact_dep_locator, fields=fields, body=body)
+    api_response = tc.build_type_api.replace_artifact_dep(bt_locator, artifact_dep_locator, fields=fields, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->replace_artifact_dep: %s\n" % e)
@@ -3930,7 +3928,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **replace_artifact_deps**
 > ArtifactDependencies replace_artifact_deps(bt_locator, fields=fields, body=body)
@@ -3939,20 +3939,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 body = dohq_teamcity.ArtifactDependencies() # ArtifactDependencies |  (optional)
 
 try:
-    api_response = api_instance.replace_artifact_deps(bt_locator, fields=fields, body=body)
+    api_response = tc.build_type_api.replace_artifact_deps(bt_locator, fields=fields, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->replace_artifact_deps: %s\n" % e)
@@ -3979,7 +3977,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **replace_feature**
 > Feature replace_feature(bt_locator, feature_id, fields=fields, body=body)
@@ -3988,21 +3988,19 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 feature_id = 'feature_id_example' # str | 
 fields = 'fields_example' # str |  (optional)
 body = dohq_teamcity.Feature() # Feature |  (optional)
 
 try:
-    api_response = api_instance.replace_feature(bt_locator, feature_id, fields=fields, body=body)
+    api_response = tc.build_type_api.replace_feature(bt_locator, feature_id, fields=fields, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->replace_feature: %s\n" % e)
@@ -4030,7 +4028,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **replace_feature_parameters**
 > Properties replace_feature_parameters(bt_locator, feature_id, body=body, fields=fields)
@@ -4039,21 +4039,19 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 feature_id = 'feature_id_example' # str | 
 body = dohq_teamcity.Properties() # Properties |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.replace_feature_parameters(bt_locator, feature_id, body=body, fields=fields)
+    api_response = tc.build_type_api.replace_feature_parameters(bt_locator, feature_id, body=body, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->replace_feature_parameters: %s\n" % e)
@@ -4081,7 +4079,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **replace_features**
 > Features replace_features(bt_locator, fields=fields, body=body)
@@ -4090,20 +4090,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 body = dohq_teamcity.Features() # Features |  (optional)
 
 try:
-    api_response = api_instance.replace_features(bt_locator, fields=fields, body=body)
+    api_response = tc.build_type_api.replace_features(bt_locator, fields=fields, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->replace_features: %s\n" % e)
@@ -4130,7 +4128,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **replace_snapshot_dep**
 > SnapshotDependency replace_snapshot_dep(bt_locator, snapshot_dep_locator, fields=fields, body=body)
@@ -4139,21 +4139,19 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 snapshot_dep_locator = 'snapshot_dep_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 body = dohq_teamcity.SnapshotDependency() # SnapshotDependency |  (optional)
 
 try:
-    api_response = api_instance.replace_snapshot_dep(bt_locator, snapshot_dep_locator, fields=fields, body=body)
+    api_response = tc.build_type_api.replace_snapshot_dep(bt_locator, snapshot_dep_locator, fields=fields, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->replace_snapshot_dep: %s\n" % e)
@@ -4181,7 +4179,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **replace_snapshot_deps**
 > SnapshotDependencies replace_snapshot_deps(bt_locator, fields=fields, body=body)
@@ -4190,20 +4190,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 body = dohq_teamcity.SnapshotDependencies() # SnapshotDependencies |  (optional)
 
 try:
-    api_response = api_instance.replace_snapshot_deps(bt_locator, fields=fields, body=body)
+    api_response = tc.build_type_api.replace_snapshot_deps(bt_locator, fields=fields, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->replace_snapshot_deps: %s\n" % e)
@@ -4230,7 +4228,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **replace_step**
 > Step replace_step(bt_locator, step_id, fields=fields, body=body)
@@ -4239,21 +4239,19 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 step_id = 'step_id_example' # str | 
 fields = 'fields_example' # str |  (optional)
 body = dohq_teamcity.Step() # Step |  (optional)
 
 try:
-    api_response = api_instance.replace_step(bt_locator, step_id, fields=fields, body=body)
+    api_response = tc.build_type_api.replace_step(bt_locator, step_id, fields=fields, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->replace_step: %s\n" % e)
@@ -4281,7 +4279,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **replace_step_parameters**
 > Properties replace_step_parameters(bt_locator, step_id, body=body, fields=fields)
@@ -4290,21 +4290,19 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 step_id = 'step_id_example' # str | 
 body = dohq_teamcity.Properties() # Properties |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.replace_step_parameters(bt_locator, step_id, body=body, fields=fields)
+    api_response = tc.build_type_api.replace_step_parameters(bt_locator, step_id, body=body, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->replace_step_parameters: %s\n" % e)
@@ -4332,7 +4330,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **replace_steps**
 > Steps replace_steps(bt_locator, fields=fields, body=body)
@@ -4341,20 +4341,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 body = dohq_teamcity.Steps() # Steps |  (optional)
 
 try:
-    api_response = api_instance.replace_steps(bt_locator, fields=fields, body=body)
+    api_response = tc.build_type_api.replace_steps(bt_locator, fields=fields, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->replace_steps: %s\n" % e)
@@ -4381,7 +4379,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **replace_trigger**
 > Trigger replace_trigger(bt_locator, trigger_locator, fields=fields, body=body)
@@ -4390,21 +4390,19 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 trigger_locator = 'trigger_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 body = dohq_teamcity.Trigger() # Trigger |  (optional)
 
 try:
-    api_response = api_instance.replace_trigger(bt_locator, trigger_locator, fields=fields, body=body)
+    api_response = tc.build_type_api.replace_trigger(bt_locator, trigger_locator, fields=fields, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->replace_trigger: %s\n" % e)
@@ -4432,7 +4430,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **replace_triggers**
 > Triggers replace_triggers(bt_locator, fields=fields, body=body)
@@ -4441,20 +4441,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 body = dohq_teamcity.Triggers() # Triggers |  (optional)
 
 try:
-    api_response = api_instance.replace_triggers(bt_locator, fields=fields, body=body)
+    api_response = tc.build_type_api.replace_triggers(bt_locator, fields=fields, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->replace_triggers: %s\n" % e)
@@ -4481,7 +4479,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **replace_vcs_root_entries**
 > VcsRootEntries replace_vcs_root_entries(bt_locator, body=body, fields=fields)
@@ -4490,20 +4490,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 body = dohq_teamcity.VcsRootEntries() # VcsRootEntries |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.replace_vcs_root_entries(bt_locator, body=body, fields=fields)
+    api_response = tc.build_type_api.replace_vcs_root_entries(bt_locator, body=body, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->replace_vcs_root_entries: %s\n" % e)
@@ -4530,7 +4528,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_branches**
 > Branches serve_branches(bt_locator, locator=locator, fields=fields)
@@ -4539,20 +4539,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 locator = 'locator_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.serve_branches(bt_locator, locator=locator, fields=fields)
+    api_response = tc.build_type_api.serve_branches(bt_locator, locator=locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->serve_branches: %s\n" % e)
@@ -4579,7 +4577,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_build_field**
 > str serve_build_field(bt_locator, build_locator, field)
@@ -4588,20 +4588,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 build_locator = 'build_locator_example' # str | 
 field = 'field_example' # str | 
 
 try:
-    api_response = api_instance.serve_build_field(bt_locator, build_locator, field)
+    api_response = tc.build_type_api.serve_build_field(bt_locator, build_locator, field)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->serve_build_field: %s\n" % e)
@@ -4628,7 +4626,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_build_type_builds_tags**
 > Tags serve_build_type_builds_tags(bt_locator, field)
@@ -4637,19 +4637,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 field = 'field_example' # str | 
 
 try:
-    api_response = api_instance.serve_build_type_builds_tags(bt_locator, field)
+    api_response = tc.build_type_api.serve_build_type_builds_tags(bt_locator, field)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->serve_build_type_builds_tags: %s\n" % e)
@@ -4675,7 +4673,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_build_type_field**
 > str serve_build_type_field(bt_locator, field)
@@ -4684,19 +4684,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 field = 'field_example' # str | 
 
 try:
-    api_response = api_instance.serve_build_type_field(bt_locator, field)
+    api_response = tc.build_type_api.serve_build_type_field(bt_locator, field)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->serve_build_type_field: %s\n" % e)
@@ -4722,7 +4720,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_build_type_template**
 > BuildType serve_build_type_template(bt_locator, fields=fields)
@@ -4731,19 +4731,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.serve_build_type_template(bt_locator, fields=fields)
+    api_response = tc.build_type_api.serve_build_type_template(bt_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->serve_build_type_template: %s\n" % e)
@@ -4769,7 +4767,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_build_type_xml**
 > BuildType serve_build_type_xml(bt_locator, fields=fields)
@@ -4778,19 +4778,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.serve_build_type_xml(bt_locator, fields=fields)
+    api_response = tc.build_type_api.serve_build_type_xml(bt_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->serve_build_type_xml: %s\n" % e)
@@ -4816,7 +4814,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_build_with_project**
 > Build serve_build_with_project(bt_locator, build_locator, fields=fields)
@@ -4825,20 +4825,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 build_locator = 'build_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.serve_build_with_project(bt_locator, build_locator, fields=fields)
+    api_response = tc.build_type_api.serve_build_with_project(bt_locator, build_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->serve_build_with_project: %s\n" % e)
@@ -4865,7 +4863,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_builds**
 > Builds serve_builds(bt_locator, status=status, triggered_by_user=triggered_by_user, include_personal=include_personal, include_canceled=include_canceled, only_pinned=only_pinned, tag=tag, agent_name=agent_name, since_build=since_build, since_date=since_date, start=start, count=count, locator=locator, fields=fields)
@@ -4874,14 +4874,12 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 status = 'status_example' # str |  (optional)
 triggered_by_user = 'triggered_by_user_example' # str |  (optional)
@@ -4898,7 +4896,7 @@ locator = 'locator_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.serve_builds(bt_locator, status=status, triggered_by_user=triggered_by_user, include_personal=include_personal, include_canceled=include_canceled, only_pinned=only_pinned, tag=tag, agent_name=agent_name, since_build=since_build, since_date=since_date, start=start, count=count, locator=locator, fields=fields)
+    api_response = tc.build_type_api.serve_builds(bt_locator, status=status, triggered_by_user=triggered_by_user, include_personal=include_personal, include_canceled=include_canceled, only_pinned=only_pinned, tag=tag, agent_name=agent_name, since_build=since_build, since_date=since_date, start=start, count=count, locator=locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->serve_builds: %s\n" % e)
@@ -4936,7 +4934,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_build_type_field**
 > str set_build_type_field(bt_locator, field, body=body)
@@ -4945,20 +4945,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 field = 'field_example' # str | 
 body = 'body_example' # str |  (optional)
 
 try:
-    api_response = api_instance.set_build_type_field(bt_locator, field, body=body)
+    api_response = tc.build_type_api.set_build_type_field(bt_locator, field, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->set_build_type_field: %s\n" % e)
@@ -4985,7 +4983,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_parameter**
 > ModelProperty set_parameter(bt_locator, body=body, fields=fields)
@@ -4994,20 +4994,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 body = dohq_teamcity.ModelProperty() # ModelProperty |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.set_parameter(bt_locator, body=body, fields=fields)
+    api_response = tc.build_type_api.set_parameter(bt_locator, body=body, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->set_parameter: %s\n" % e)
@@ -5034,7 +5032,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_parameter_0**
 > ModelProperty set_parameter_0(name, bt_locator, body=body, fields=fields)
@@ -5043,21 +5043,19 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 name = 'name_example' # str | 
 bt_locator = 'bt_locator_example' # str | 
 body = dohq_teamcity.ModelProperty() # ModelProperty |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.set_parameter_0(name, bt_locator, body=body, fields=fields)
+    api_response = tc.build_type_api.set_parameter_0(name, bt_locator, body=body, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->set_parameter_0: %s\n" % e)
@@ -5085,7 +5083,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_parameter_1**
 > ModelProperty set_parameter_1(bt_locator, body=body, fields=fields)
@@ -5094,20 +5094,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 body = dohq_teamcity.ModelProperty() # ModelProperty |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.set_parameter_1(bt_locator, body=body, fields=fields)
+    api_response = tc.build_type_api.set_parameter_1(bt_locator, body=body, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->set_parameter_1: %s\n" % e)
@@ -5134,7 +5132,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_parameter_2**
 > ModelProperty set_parameter_2(name, bt_locator, body=body, fields=fields)
@@ -5143,21 +5143,19 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 name = 'name_example' # str | 
 bt_locator = 'bt_locator_example' # str | 
 body = dohq_teamcity.ModelProperty() # ModelProperty |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.set_parameter_2(name, bt_locator, body=body, fields=fields)
+    api_response = tc.build_type_api.set_parameter_2(name, bt_locator, body=body, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->set_parameter_2: %s\n" % e)
@@ -5185,7 +5183,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_parameter_type**
 > Type set_parameter_type(name, bt_locator, body=body)
@@ -5194,20 +5194,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 name = 'name_example' # str | 
 bt_locator = 'bt_locator_example' # str | 
 body = dohq_teamcity.Type() # Type |  (optional)
 
 try:
-    api_response = api_instance.set_parameter_type(name, bt_locator, body=body)
+    api_response = tc.build_type_api.set_parameter_type(name, bt_locator, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->set_parameter_type: %s\n" % e)
@@ -5234,7 +5232,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_parameter_type_raw_value**
 > str set_parameter_type_raw_value(name, bt_locator, body=body)
@@ -5243,20 +5243,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 name = 'name_example' # str | 
 bt_locator = 'bt_locator_example' # str | 
 body = 'body_example' # str |  (optional)
 
 try:
-    api_response = api_instance.set_parameter_type_raw_value(name, bt_locator, body=body)
+    api_response = tc.build_type_api.set_parameter_type_raw_value(name, bt_locator, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->set_parameter_type_raw_value: %s\n" % e)
@@ -5283,7 +5281,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_parameter_value_long**
 > str set_parameter_value_long(name, bt_locator, body=body)
@@ -5292,20 +5292,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 name = 'name_example' # str | 
 bt_locator = 'bt_locator_example' # str | 
 body = 'body_example' # str |  (optional)
 
 try:
-    api_response = api_instance.set_parameter_value_long(name, bt_locator, body=body)
+    api_response = tc.build_type_api.set_parameter_value_long(name, bt_locator, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->set_parameter_value_long: %s\n" % e)
@@ -5332,7 +5330,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_parameter_value_long_0**
 > str set_parameter_value_long_0(name, bt_locator, body=body)
@@ -5341,20 +5341,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 name = 'name_example' # str | 
 bt_locator = 'bt_locator_example' # str | 
 body = 'body_example' # str |  (optional)
 
 try:
-    api_response = api_instance.set_parameter_value_long_0(name, bt_locator, body=body)
+    api_response = tc.build_type_api.set_parameter_value_long_0(name, bt_locator, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->set_parameter_value_long_0: %s\n" % e)
@@ -5381,7 +5379,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_parameters**
 > Properties set_parameters(bt_locator, body=body, fields=fields)
@@ -5390,20 +5390,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 body = dohq_teamcity.Properties() # Properties |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.set_parameters(bt_locator, body=body, fields=fields)
+    api_response = tc.build_type_api.set_parameters(bt_locator, body=body, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->set_parameters: %s\n" % e)
@@ -5430,7 +5428,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_parameters_0**
 > Properties set_parameters_0(bt_locator, body=body, fields=fields)
@@ -5439,20 +5439,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 body = dohq_teamcity.Properties() # Properties |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.set_parameters_0(bt_locator, body=body, fields=fields)
+    api_response = tc.build_type_api.set_parameters_0(bt_locator, body=body, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->set_parameters_0: %s\n" % e)
@@ -5479,7 +5477,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_vcs_labeling_options**
 > VcsLabeling set_vcs_labeling_options(bt_locator, body=body)
@@ -5488,19 +5488,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 body = dohq_teamcity.VcsLabeling() # VcsLabeling |  (optional)
 
 try:
-    api_response = api_instance.set_vcs_labeling_options(bt_locator, body=body)
+    api_response = tc.build_type_api.set_vcs_labeling_options(bt_locator, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->set_vcs_labeling_options: %s\n" % e)
@@ -5526,7 +5524,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **update_vcs_root_entry**
 > VcsRootEntry update_vcs_root_entry(bt_locator, vcs_root_locator, body=body, fields=fields)
@@ -5535,21 +5535,19 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 body = dohq_teamcity.VcsRootEntry() # VcsRootEntry |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.update_vcs_root_entry(bt_locator, vcs_root_locator, body=body, fields=fields)
+    api_response = tc.build_type_api.update_vcs_root_entry(bt_locator, vcs_root_locator, body=body, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->update_vcs_root_entry: %s\n" % e)
@@ -5577,7 +5575,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **update_vcs_root_entry_checkout_rules**
 > str update_vcs_root_entry_checkout_rules(bt_locator, vcs_root_locator, body=body)
@@ -5586,20 +5586,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildTypeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 bt_locator = 'bt_locator_example' # str | 
 vcs_root_locator = 'vcs_root_locator_example' # str | 
 body = 'body_example' # str |  (optional)
 
 try:
-    api_response = api_instance.update_vcs_root_entry_checkout_rules(bt_locator, vcs_root_locator, body=body)
+    api_response = tc.build_type_api.update_vcs_root_entry_checkout_rules(bt_locator, vcs_root_locator, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildTypeApi->update_vcs_root_entry_checkout_rules: %s\n" % e)
@@ -5626,5 +5624,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 

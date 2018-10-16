@@ -1,6 +1,6 @@
 # dohq_teamcity.GroupApi
 
-All URIs are relative to *https://teamcity.example.com*
+[[API examples]](http://devopshq.github.io/teamcity/teamcity_apis/GroupApi.html)
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -28,19 +28,17 @@ Method | HTTP request | Description
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.GroupApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 body = dohq_teamcity.Group() # Group |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.add_group(body=body, fields=fields)
+    api_response = tc.group_api.add_group(body=body, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GroupApi->add_group: %s\n" % e)
@@ -66,7 +64,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **add_role**
 > Role add_role(group_locator, body=body)
@@ -75,19 +75,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.GroupApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 group_locator = 'group_locator_example' # str | 
 body = dohq_teamcity.Role() # Role |  (optional)
 
 try:
-    api_response = api_instance.add_role(group_locator, body=body)
+    api_response = tc.group_api.add_role(group_locator, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GroupApi->add_role: %s\n" % e)
@@ -113,7 +111,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **add_role_put**
 > Roles add_role_put(group_locator, body=body)
@@ -122,19 +122,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.GroupApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 group_locator = 'group_locator_example' # str | 
 body = dohq_teamcity.Roles() # Roles |  (optional)
 
 try:
-    api_response = api_instance.add_role_put(group_locator, body=body)
+    api_response = tc.group_api.add_role_put(group_locator, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GroupApi->add_role_put: %s\n" % e)
@@ -160,7 +158,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **add_role_simple**
 > Role add_role_simple(group_locator, role_id, scope)
@@ -169,20 +169,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.GroupApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 group_locator = 'group_locator_example' # str | 
 role_id = 'role_id_example' # str | 
 scope = 'scope_example' # str | 
 
 try:
-    api_response = api_instance.add_role_simple(group_locator, role_id, scope)
+    api_response = tc.group_api.add_role_simple(group_locator, role_id, scope)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GroupApi->add_role_simple: %s\n" % e)
@@ -209,7 +207,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete_group**
 > delete_group(group_locator)
@@ -218,18 +218,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.GroupApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 group_locator = 'group_locator_example' # str | 
 
 try:
-    api_instance.delete_group(group_locator)
+    tc.group_api.delete_group(group_locator)
 except ApiException as e:
     print("Exception when calling GroupApi->delete_group: %s\n" % e)
 ```
@@ -253,7 +251,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete_role**
 > delete_role(group_locator, role_id, scope)
@@ -262,20 +262,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.GroupApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 group_locator = 'group_locator_example' # str | 
 role_id = 'role_id_example' # str | 
 scope = 'scope_example' # str | 
 
 try:
-    api_instance.delete_role(group_locator, role_id, scope)
+    tc.group_api.delete_role(group_locator, role_id, scope)
 except ApiException as e:
     print("Exception when calling GroupApi->delete_role: %s\n" % e)
 ```
@@ -301,7 +299,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_permissions**
 > str get_permissions(group_locator)
@@ -310,18 +310,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.GroupApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 group_locator = 'group_locator_example' # str | 
 
 try:
-    api_response = api_instance.get_permissions(group_locator)
+    api_response = tc.group_api.get_permissions(group_locator)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GroupApi->get_permissions: %s\n" % e)
@@ -346,7 +344,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_properties**
 > Properties get_properties(group_locator, fields=fields)
@@ -355,19 +355,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.GroupApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 group_locator = 'group_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_properties(group_locator, fields=fields)
+    api_response = tc.group_api.get_properties(group_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GroupApi->get_properties: %s\n" % e)
@@ -393,7 +391,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **list_role**
 > Role list_role(group_locator, role_id, scope)
@@ -402,20 +402,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.GroupApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 group_locator = 'group_locator_example' # str | 
 role_id = 'role_id_example' # str | 
 scope = 'scope_example' # str | 
 
 try:
-    api_response = api_instance.list_role(group_locator, role_id, scope)
+    api_response = tc.group_api.list_role(group_locator, role_id, scope)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GroupApi->list_role: %s\n" % e)
@@ -442,7 +440,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **list_roles**
 > Roles list_roles(group_locator)
@@ -451,18 +451,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.GroupApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 group_locator = 'group_locator_example' # str | 
 
 try:
-    api_response = api_instance.list_roles(group_locator)
+    api_response = tc.group_api.list_roles(group_locator)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GroupApi->list_roles: %s\n" % e)
@@ -487,7 +485,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **put_user_property**
 > str put_user_property(group_locator, name, body=body)
@@ -496,20 +496,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.GroupApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 group_locator = 'group_locator_example' # str | 
 name = 'name_example' # str | 
 body = 'body_example' # str |  (optional)
 
 try:
-    api_response = api_instance.put_user_property(group_locator, name, body=body)
+    api_response = tc.group_api.put_user_property(group_locator, name, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GroupApi->put_user_property: %s\n" % e)
@@ -536,7 +534,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **remove_user_property**
 > remove_user_property(group_locator, name)
@@ -545,19 +545,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.GroupApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 group_locator = 'group_locator_example' # str | 
 name = 'name_example' # str | 
 
 try:
-    api_instance.remove_user_property(group_locator, name)
+    tc.group_api.remove_user_property(group_locator, name)
 except ApiException as e:
     print("Exception when calling GroupApi->remove_user_property: %s\n" % e)
 ```
@@ -582,7 +580,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_group**
 > Group serve_group(group_locator, fields=fields)
@@ -591,19 +591,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.GroupApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 group_locator = 'group_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.serve_group(group_locator, fields=fields)
+    api_response = tc.group_api.serve_group(group_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GroupApi->serve_group: %s\n" % e)
@@ -629,7 +627,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_groups**
 > Groups serve_groups(fields=fields)
@@ -638,18 +638,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.GroupApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.serve_groups(fields=fields)
+    api_response = tc.group_api.serve_groups(fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GroupApi->serve_groups: %s\n" % e)
@@ -674,7 +672,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_user_properties**
 > str serve_user_properties(group_locator, name)
@@ -683,19 +683,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.GroupApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 group_locator = 'group_locator_example' # str | 
 name = 'name_example' # str | 
 
 try:
-    api_response = api_instance.serve_user_properties(group_locator, name)
+    api_response = tc.group_api.serve_user_properties(group_locator, name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GroupApi->serve_user_properties: %s\n" % e)
@@ -721,5 +719,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 

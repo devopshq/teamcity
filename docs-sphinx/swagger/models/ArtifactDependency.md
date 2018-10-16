@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **source_build_type** | [**BuildType**](BuildType.md) |  | [optional] 
 **type** | **str** |  | [optional] 
 
+[[API examples]](http://devopshq.github.io/teamcity/teamcity_models/ArtifactDependency.html)
+
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

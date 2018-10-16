@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 **vcs_name** | **str** |  | [optional] 
 **vcs_root_instances** | [**VcsRootInstances**](VcsRootInstances.md) |  | [optional] 
 
+[[API examples]](http://devopshq.github.io/teamcity/teamcity_models/VcsRoot.html)
+
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

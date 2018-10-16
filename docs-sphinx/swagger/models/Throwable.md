@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **stack_trace** | [**list[StackTraceElement]**](StackTraceElement.md) |  | [optional] 
 **suppressed** | [**list[Throwable]**](Throwable.md) |  | [optional] 
 
+[[API examples]](http://devopshq.github.io/teamcity/teamcity_models/Throwable.html)
+
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

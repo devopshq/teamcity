@@ -22,6 +22,8 @@ Name | Type | Description | Notes
 **status** | **str** |  | [optional] 
 **test** | [**Test**](Test.md) |  | [optional] 
 
+[[API examples]](http://devopshq.github.io/teamcity/teamcity_models/TestOccurrence.html)
+
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **percentage_complete** | **int** |  | [optional] 
 **probably_hanging** | **bool** |  | [optional] [default to False]
 
+[[API examples]](http://devopshq.github.io/teamcity/teamcity_models/ProgressInfo.html)
+
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

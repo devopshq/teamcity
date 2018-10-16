@@ -1,6 +1,6 @@
 # dohq_teamcity.DebugApi
 
-All URIs are relative to *https://teamcity.example.com*
+[[API examples]](http://devopshq.github.io/teamcity/teamcity_apis/DebugApi.html)
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -34,17 +34,15 @@ Method | HTTP request | Description
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.DebugApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 
 try:
-    api_instance.delete_current_remember_me()
+    tc.debug_api.delete_current_remember_me()
 except ApiException as e:
     print("Exception when calling DebugApi->delete_current_remember_me: %s\n" % e)
 ```
@@ -65,7 +63,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **empty_task**
 > str empty_task(time=time, load=load)
@@ -74,19 +74,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.DebugApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 time = 'time_example' # str |  (optional)
 load = 56 # int |  (optional)
 
 try:
-    api_response = api_instance.empty_task(time=time, load=load)
+    api_response = tc.debug_api.empty_task(time=time, load=load)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DebugApi->empty_task: %s\n" % e)
@@ -112,7 +110,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **execute_db_query**
 > str execute_db_query(query, field_delimiter=field_delimiter, data_retrieve_query=data_retrieve_query, count=count)
@@ -121,21 +121,19 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.DebugApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 query = 'query_example' # str | 
 field_delimiter = ', ' # str |  (optional) (default to , )
 data_retrieve_query = 'data_retrieve_query_example' # str |  (optional)
 count = 1000 # int |  (optional) (default to 1000)
 
 try:
-    api_response = api_instance.execute_db_query(query, field_delimiter=field_delimiter, data_retrieve_query=data_retrieve_query, count=count)
+    api_response = tc.debug_api.execute_db_query(query, field_delimiter=field_delimiter, data_retrieve_query=data_retrieve_query, count=count)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DebugApi->execute_db_query: %s\n" % e)
@@ -163,7 +161,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_current_session**
 > Session get_current_session(fields=fields)
@@ -172,18 +172,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.DebugApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_current_session(fields=fields)
+    api_response = tc.debug_api.get_current_session(fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DebugApi->get_current_session: %s\n" % e)
@@ -208,7 +206,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_current_session_max_inactive_interval**
 > str get_current_session_max_inactive_interval()
@@ -217,17 +217,15 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.DebugApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 
 try:
-    api_response = api_instance.get_current_session_max_inactive_interval()
+    api_response = tc.debug_api.get_current_session_max_inactive_interval()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DebugApi->get_current_session_max_inactive_interval: %s\n" % e)
@@ -249,7 +247,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_current_user_permissions**
 > str get_current_user_permissions()
@@ -258,17 +258,15 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.DebugApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 
 try:
-    api_response = api_instance.get_current_user_permissions()
+    api_response = tc.debug_api.get_current_user_permissions()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DebugApi->get_current_user_permissions: %s\n" % e)
@@ -290,7 +288,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_date**
 > str get_date(date_locator, format=format, timezone=timezone)
@@ -299,20 +299,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.DebugApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 date_locator = 'date_locator_example' # str | 
 format = 'format_example' # str |  (optional)
 timezone = 'timezone_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_date(date_locator, format=format, timezone=timezone)
+    api_response = tc.debug_api.get_date(date_locator, format=format, timezone=timezone)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DebugApi->get_date: %s\n" % e)
@@ -339,7 +337,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_environment_variables**
 > Properties get_environment_variables(fields=fields)
@@ -348,18 +348,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.DebugApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_environment_variables(fields=fields)
+    api_response = tc.debug_api.get_environment_variables(fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DebugApi->get_environment_variables: %s\n" % e)
@@ -384,7 +382,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_hashed**
 > str get_hashed(method, value=value)
@@ -393,19 +393,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.DebugApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 method = 'method_example' # str | 
 value = 'value_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_hashed(method, value=value)
+    api_response = tc.debug_api.get_hashed(method, value=value)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DebugApi->get_hashed: %s\n" % e)
@@ -431,7 +429,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_request_details**
 > str get_request_details()
@@ -440,17 +440,15 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.DebugApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 
 try:
-    api_response = api_instance.get_request_details()
+    api_response = tc.debug_api.get_request_details()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DebugApi->get_request_details: %s\n" % e)
@@ -472,7 +470,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_scrambled**
 > str get_scrambled(value=value)
@@ -481,18 +481,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.DebugApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 value = 'value_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_scrambled(value=value)
+    api_response = tc.debug_api.get_scrambled(value=value)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DebugApi->get_scrambled: %s\n" % e)
@@ -517,7 +515,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_sessions**
 > Sessions get_sessions(manager=manager, fields=fields)
@@ -526,19 +526,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.DebugApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 manager = 789 # int |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_sessions(manager=manager, fields=fields)
+    api_response = tc.debug_api.get_sessions(manager=manager, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DebugApi->get_sessions: %s\n" % e)
@@ -564,7 +562,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_system_properties**
 > Properties get_system_properties(fields=fields)
@@ -573,18 +573,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.DebugApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_system_properties(fields=fields)
+    api_response = tc.debug_api.get_system_properties(fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DebugApi->get_system_properties: %s\n" % e)
@@ -609,7 +607,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_thread_dump**
 > str get_thread_dump(locked_monitors=locked_monitors, locked_synchronizers=locked_synchronizers, detect_locks=detect_locks)
@@ -618,20 +618,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.DebugApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 locked_monitors = 'locked_monitors_example' # str |  (optional)
 locked_synchronizers = 'locked_synchronizers_example' # str |  (optional)
 detect_locks = 'detect_locks_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_thread_dump(locked_monitors=locked_monitors, locked_synchronizers=locked_synchronizers, detect_locks=detect_locks)
+    api_response = tc.debug_api.get_thread_dump(locked_monitors=locked_monitors, locked_synchronizers=locked_synchronizers, detect_locks=detect_locks)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DebugApi->get_thread_dump: %s\n" % e)
@@ -658,7 +656,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_unscrambled**
 > str get_unscrambled(value=value)
@@ -667,18 +667,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.DebugApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 value = 'value_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_unscrambled(value=value)
+    api_response = tc.debug_api.get_unscrambled(value=value)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DebugApi->get_unscrambled: %s\n" % e)
@@ -703,7 +701,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **invalidate_current_session**
 > invalidate_current_session()
@@ -712,17 +712,15 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.DebugApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 
 try:
-    api_instance.invalidate_current_session()
+    tc.debug_api.invalidate_current_session()
 except ApiException as e:
     print("Exception when calling DebugApi->invalidate_current_session: %s\n" % e)
 ```
@@ -743,7 +741,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **list_db_tables**
 > str list_db_tables()
@@ -752,17 +752,15 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.DebugApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 
 try:
-    api_response = api_instance.list_db_tables()
+    api_response = tc.debug_api.list_db_tables()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DebugApi->list_db_tables: %s\n" % e)
@@ -784,7 +782,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **new_remember_me**
 > str new_remember_me()
@@ -793,17 +793,15 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.DebugApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 
 try:
-    api_response = api_instance.new_remember_me()
+    api_response = tc.debug_api.new_remember_me()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DebugApi->new_remember_me: %s\n" % e)
@@ -825,7 +823,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **save_memory_dump**
 > str save_memory_dump(archived=archived)
@@ -834,18 +834,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.DebugApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 archived = true # bool |  (optional)
 
 try:
-    api_response = api_instance.save_memory_dump(archived=archived)
+    api_response = tc.debug_api.save_memory_dump(archived=archived)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DebugApi->save_memory_dump: %s\n" % e)
@@ -870,7 +868,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **schedule_checking_for_changes**
 > VcsRootInstances schedule_checking_for_changes(locator=locator, requestor=requestor, fields=fields)
@@ -879,20 +879,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.DebugApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 locator = 'locator_example' # str |  (optional)
 requestor = 'requestor_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.schedule_checking_for_changes(locator=locator, requestor=requestor, fields=fields)
+    api_response = tc.debug_api.schedule_checking_for_changes(locator=locator, requestor=requestor, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DebugApi->schedule_checking_for_changes: %s\n" % e)
@@ -919,7 +917,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_current_session_max_inactive_interval**
 > str set_current_session_max_inactive_interval(body=body)
@@ -928,18 +928,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.DebugApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 body = 'body_example' # str |  (optional)
 
 try:
-    api_response = api_instance.set_current_session_max_inactive_interval(body=body)
+    api_response = tc.debug_api.set_current_session_max_inactive_interval(body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DebugApi->set_current_session_max_inactive_interval: %s\n" % e)
@@ -964,5 +962,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 

@@ -1,6 +1,6 @@
 # dohq_teamcity.TestApi
 
-All URIs are relative to *https://teamcity.example.com*
+[[API examples]](http://devopshq.github.io/teamcity/teamcity_apis/TestApi.html)
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,19 +15,17 @@ Method | HTTP request | Description
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.TestApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 locator = 'locator_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_tests(locator=locator, fields=fields)
+    api_response = tc.test_api.get_tests(locator=locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TestApi->get_tests: %s\n" % e)
@@ -53,7 +51,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_instance**
 > Test serve_instance(test_locator, fields=fields)
@@ -62,19 +62,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.TestApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 test_locator = 'test_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.serve_instance(test_locator, fields=fields)
+    api_response = tc.test_api.serve_instance(test_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TestApi->serve_instance: %s\n" % e)
@@ -100,5 +98,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 

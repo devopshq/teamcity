@@ -1,6 +1,6 @@
 # dohq_teamcity.BuildQueueApi
 
-All URIs are relative to *https://teamcity.example.com*
+[[API examples]](http://devopshq.github.io/teamcity/teamcity_apis/BuildQueueApi.html)
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -27,19 +27,17 @@ Method | HTTP request | Description
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildQueueApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 build_locator = 'build_locator_example' # str | 
 body = dohq_teamcity.Tags() # Tags |  (optional)
 
 try:
-    api_instance.add_tags(build_locator, body=body)
+    tc.build_queue_api.add_tags(build_locator, body=body)
 except ApiException as e:
     print("Exception when calling BuildQueueApi->add_tags: %s\n" % e)
 ```
@@ -64,7 +62,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **cancel_build**
 > BuildCancelRequest cancel_build(build_locator)
@@ -73,18 +73,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildQueueApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 build_locator = 'build_locator_example' # str | 
 
 try:
-    api_response = api_instance.cancel_build(build_locator)
+    api_response = tc.build_queue_api.cancel_build(build_locator)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildQueueApi->cancel_build: %s\n" % e)
@@ -109,7 +107,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **cancel_build_0**
 > Build cancel_build_0(queued_build_locator, body=body)
@@ -118,19 +118,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildQueueApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 queued_build_locator = 'queued_build_locator_example' # str | 
 body = dohq_teamcity.BuildCancelRequest() # BuildCancelRequest |  (optional)
 
 try:
-    api_response = api_instance.cancel_build_0(queued_build_locator, body=body)
+    api_response = tc.build_queue_api.cancel_build_0(queued_build_locator, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildQueueApi->cancel_build_0: %s\n" % e)
@@ -156,7 +154,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete_build**
 > delete_build(queued_build_locator)
@@ -165,18 +165,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildQueueApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 queued_build_locator = 'queued_build_locator_example' # str | 
 
 try:
-    api_instance.delete_build(queued_build_locator)
+    tc.build_queue_api.delete_build(queued_build_locator)
 except ApiException as e:
     print("Exception when calling BuildQueueApi->delete_build: %s\n" % e)
 ```
@@ -200,7 +198,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete_builds_experimental**
 > delete_builds_experimental(locator=locator, fields=fields)
@@ -209,19 +209,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildQueueApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 locator = 'locator_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_instance.delete_builds_experimental(locator=locator, fields=fields)
+    tc.build_queue_api.delete_builds_experimental(locator=locator, fields=fields)
 except ApiException as e:
     print("Exception when calling BuildQueueApi->delete_builds_experimental: %s\n" % e)
 ```
@@ -246,7 +244,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_build**
 > Build get_build(queued_build_locator, fields=fields)
@@ -255,19 +255,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildQueueApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 queued_build_locator = 'queued_build_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_build(queued_build_locator, fields=fields)
+    api_response = tc.build_queue_api.get_build(queued_build_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildQueueApi->get_build: %s\n" % e)
@@ -293,7 +291,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_builds**
 > Builds get_builds(locator=locator, fields=fields)
@@ -302,19 +302,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildQueueApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 locator = 'locator_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_builds(locator=locator, fields=fields)
+    api_response = tc.build_queue_api.get_builds(locator=locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildQueueApi->get_builds: %s\n" % e)
@@ -340,7 +338,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **queue_new_build**
 > Build queue_new_build(body=body, move_to_top=move_to_top)
@@ -349,19 +349,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildQueueApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 body = dohq_teamcity.Build() # Build |  (optional)
 move_to_top = true # bool |  (optional)
 
 try:
-    api_response = api_instance.queue_new_build(body=body, move_to_top=move_to_top)
+    api_response = tc.build_queue_api.queue_new_build(body=body, move_to_top=move_to_top)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildQueueApi->queue_new_build: %s\n" % e)
@@ -387,7 +385,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **replace_builds**
 > Builds replace_builds(body=body, fields=fields)
@@ -396,19 +396,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildQueueApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 body = dohq_teamcity.Builds() # Builds |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.replace_builds(body=body, fields=fields)
+    api_response = tc.build_queue_api.replace_builds(body=body, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildQueueApi->replace_builds: %s\n" % e)
@@ -434,7 +432,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **replace_tags**
 > Tags replace_tags(build_locator, locator=locator, body=body, fields=fields)
@@ -443,21 +443,19 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildQueueApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 build_locator = 'build_locator_example' # str | 
 locator = 'locator_example' # str |  (optional)
 body = dohq_teamcity.Tags() # Tags |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.replace_tags(build_locator, locator=locator, body=body, fields=fields)
+    api_response = tc.build_queue_api.replace_tags(build_locator, locator=locator, body=body, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildQueueApi->replace_tags: %s\n" % e)
@@ -485,7 +483,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_build_field_by_build_only**
 > str serve_build_field_by_build_only(build_locator, field)
@@ -494,19 +494,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildQueueApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 build_locator = 'build_locator_example' # str | 
 field = 'field_example' # str | 
 
 try:
-    api_response = api_instance.serve_build_field_by_build_only(build_locator, field)
+    api_response = tc.build_queue_api.serve_build_field_by_build_only(build_locator, field)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildQueueApi->serve_build_field_by_build_only: %s\n" % e)
@@ -532,7 +530,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_compatible_agents**
 > Agents serve_compatible_agents(queued_build_locator, fields=fields)
@@ -541,19 +541,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildQueueApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 queued_build_locator = 'queued_build_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.serve_compatible_agents(queued_build_locator, fields=fields)
+    api_response = tc.build_queue_api.serve_compatible_agents(queued_build_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildQueueApi->serve_compatible_agents: %s\n" % e)
@@ -579,7 +577,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_tags**
 > Tags serve_tags(build_locator, locator=locator, fields=fields)
@@ -588,20 +588,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildQueueApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 build_locator = 'build_locator_example' # str | 
 locator = 'locator_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.serve_tags(build_locator, locator=locator, fields=fields)
+    api_response = tc.build_queue_api.serve_tags(build_locator, locator=locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildQueueApi->serve_tags: %s\n" % e)
@@ -628,7 +626,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_build_queue_order**
 > Builds set_build_queue_order(fields, body=body)
@@ -637,19 +637,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.BuildQueueApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 fields = 'fields_example' # str | 
 body = dohq_teamcity.Builds() # Builds |  (optional)
 
 try:
-    api_response = api_instance.set_build_queue_order(fields, body=body)
+    api_response = tc.build_queue_api.set_build_queue_order(fields, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildQueueApi->set_build_queue_order: %s\n" % e)
@@ -675,5 +673,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 

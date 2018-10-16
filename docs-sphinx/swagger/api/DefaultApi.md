@@ -1,6 +1,6 @@
 # dohq_teamcity.DefaultApi
 
-All URIs are relative to *https://teamcity.example.com*
+[[API examples]](http://devopshq.github.io/teamcity/teamcity_apis/DefaultApi.html)
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,17 +18,15 @@ Method | HTTP request | Description
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.DefaultApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 
 try:
-    api_response = api_instance.serve_api_version()
+    api_response = tc.default_api.serve_api_version()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->serve_api_version: %s\n" % e)
@@ -50,7 +48,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_build_field_short**
 > str serve_build_field_short(project_locator, bt_locator, build_locator, field)
@@ -59,21 +59,19 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.DefaultApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 bt_locator = 'bt_locator_example' # str | 
 build_locator = 'build_locator_example' # str | 
 field = 'field_example' # str | 
 
 try:
-    api_response = api_instance.serve_build_field_short(project_locator, bt_locator, build_locator, field)
+    api_response = tc.default_api.serve_build_field_short(project_locator, bt_locator, build_locator, field)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->serve_build_field_short: %s\n" % e)
@@ -101,7 +99,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_plugin_info**
 > Plugin serve_plugin_info(fields=fields)
@@ -110,18 +110,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.DefaultApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.serve_plugin_info(fields=fields)
+    api_response = tc.default_api.serve_plugin_info(fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->serve_plugin_info: %s\n" % e)
@@ -146,7 +144,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_root**
 > str serve_root()
@@ -155,17 +155,15 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.DefaultApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 
 try:
-    api_response = api_instance.serve_root()
+    api_response = tc.default_api.serve_root()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->serve_root: %s\n" % e)
@@ -187,7 +185,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_version**
 > str serve_version()
@@ -196,17 +196,15 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.DefaultApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 
 try:
-    api_response = api_instance.serve_version()
+    api_response = tc.default_api.serve_version()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->serve_version: %s\n" % e)
@@ -228,5 +226,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 

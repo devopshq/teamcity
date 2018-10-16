@@ -1,6 +1,6 @@
 # dohq_teamcity.ChangeApi
 
-All URIs are relative to *https://teamcity.example.com*
+[[API examples]](http://devopshq.github.io/teamcity/teamcity_apis/ChangeApi.html)
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -25,19 +25,17 @@ Method | HTTP request | Description
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ChangeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 change_locator = 'change_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_change_attributes(change_locator, fields=fields)
+    api_response = tc.change_api.get_change_attributes(change_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ChangeApi->get_change_attributes: %s\n" % e)
@@ -63,7 +61,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_change_duplicates**
 > Changes get_change_duplicates(change_locator, fields=fields)
@@ -72,19 +72,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ChangeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 change_locator = 'change_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_change_duplicates(change_locator, fields=fields)
+    api_response = tc.change_api.get_change_duplicates(change_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ChangeApi->get_change_duplicates: %s\n" % e)
@@ -110,7 +108,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_change_field**
 > str get_change_field(change_locator, field)
@@ -119,19 +119,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ChangeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 change_locator = 'change_locator_example' # str | 
 field = 'field_example' # str | 
 
 try:
-    api_response = api_instance.get_change_field(change_locator, field)
+    api_response = tc.change_api.get_change_field(change_locator, field)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ChangeApi->get_change_field: %s\n" % e)
@@ -157,7 +155,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_change_first_builds**
 > Builds get_change_first_builds(change_locator, fields=fields)
@@ -166,19 +166,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ChangeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 change_locator = 'change_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_change_first_builds(change_locator, fields=fields)
+    api_response = tc.change_api.get_change_first_builds(change_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ChangeApi->get_change_first_builds: %s\n" % e)
@@ -204,7 +202,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_change_issue**
 > Issues get_change_issue(change_locator)
@@ -213,18 +213,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ChangeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 change_locator = 'change_locator_example' # str | 
 
 try:
-    api_response = api_instance.get_change_issue(change_locator)
+    api_response = tc.change_api.get_change_issue(change_locator)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ChangeApi->get_change_issue: %s\n" % e)
@@ -249,7 +247,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_change_parent_revisions**
 > Items get_change_parent_revisions(change_locator)
@@ -258,18 +258,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ChangeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 change_locator = 'change_locator_example' # str | 
 
 try:
-    api_response = api_instance.get_change_parent_revisions(change_locator)
+    api_response = tc.change_api.get_change_parent_revisions(change_locator)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ChangeApi->get_change_parent_revisions: %s\n" % e)
@@ -294,7 +292,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_change_vcs_root**
 > VcsRootInstance get_change_vcs_root(change_locator, fields=fields)
@@ -303,19 +303,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ChangeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 change_locator = 'change_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_change_vcs_root(change_locator, fields=fields)
+    api_response = tc.change_api.get_change_vcs_root(change_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ChangeApi->get_change_vcs_root: %s\n" % e)
@@ -341,7 +339,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_change_vcs_root_instance**
 > VcsRootInstance get_change_vcs_root_instance(change_locator, fields=fields)
@@ -350,19 +350,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ChangeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 change_locator = 'change_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_change_vcs_root_instance(change_locator, fields=fields)
+    api_response = tc.change_api.get_change_vcs_root_instance(change_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ChangeApi->get_change_vcs_root_instance: %s\n" % e)
@@ -388,7 +386,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_parent_changes**
 > Changes get_parent_changes(change_locator, fields=fields)
@@ -397,19 +397,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ChangeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 change_locator = 'change_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_parent_changes(change_locator, fields=fields)
+    api_response = tc.change_api.get_parent_changes(change_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ChangeApi->get_parent_changes: %s\n" % e)
@@ -435,7 +433,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_related_build_types**
 > BuildTypes get_related_build_types(change_locator, fields=fields)
@@ -444,19 +444,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ChangeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 change_locator = 'change_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_related_build_types(change_locator, fields=fields)
+    api_response = tc.change_api.get_related_build_types(change_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ChangeApi->get_related_build_types: %s\n" % e)
@@ -482,7 +480,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_change**
 > Change serve_change(change_locator, fields=fields)
@@ -491,19 +491,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ChangeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 change_locator = 'change_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.serve_change(change_locator, fields=fields)
+    api_response = tc.change_api.serve_change(change_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ChangeApi->serve_change: %s\n" % e)
@@ -529,7 +527,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_changes**
 > Changes serve_changes(project=project, build_type=build_type, build=build, vcs_root=vcs_root, since_change=since_change, start=start, count=count, locator=locator, fields=fields)
@@ -538,14 +538,12 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ChangeApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project = 'project_example' # str |  (optional)
 build_type = 'build_type_example' # str |  (optional)
 build = 'build_example' # str |  (optional)
@@ -557,7 +555,7 @@ locator = 'locator_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.serve_changes(project=project, build_type=build_type, build=build, vcs_root=vcs_root, since_change=since_change, start=start, count=count, locator=locator, fields=fields)
+    api_response = tc.change_api.serve_changes(project=project, build_type=build_type, build=build, vcs_root=vcs_root, since_change=since_change, start=start, count=count, locator=locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ChangeApi->serve_changes: %s\n" % e)
@@ -590,5 +588,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 

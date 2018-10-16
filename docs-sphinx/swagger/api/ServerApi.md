@@ -1,6 +1,6 @@
 # dohq_teamcity.ServerApi
 
-All URIs are relative to *https://teamcity.example.com*
+[[API examples]](http://devopshq.github.io/teamcity/teamcity_apis/ServerApi.html)
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,19 +30,17 @@ Method | HTTP request | Description
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ServerApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 body = 'body_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.add_license_keys(body=body, fields=fields)
+    api_response = tc.server_api.add_license_keys(body=body, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ServerApi->add_license_keys: %s\n" % e)
@@ -68,7 +66,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete_license_key**
 > delete_license_key(license_key)
@@ -77,18 +77,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ServerApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 license_key = 'license_key_example' # str | 
 
 try:
-    api_instance.delete_license_key(license_key)
+    tc.server_api.delete_license_key(license_key)
 except ApiException as e:
     print("Exception when calling ServerApi->delete_license_key: %s\n" % e)
 ```
@@ -112,7 +110,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_backup_status**
 > str get_backup_status(body=body)
@@ -121,18 +121,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ServerApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 body = dohq_teamcity.BackupProcessManager() # BackupProcessManager |  (optional)
 
 try:
-    api_response = api_instance.get_backup_status(body=body)
+    api_response = tc.server_api.get_backup_status(body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ServerApi->get_backup_status: %s\n" % e)
@@ -157,7 +155,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_children**
 > Files get_children(path, area_id, base_path=base_path, locator=locator, fields=fields)
@@ -166,14 +166,12 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ServerApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 path = 'path_example' # str | 
 area_id = 'area_id_example' # str | 
 base_path = 'base_path_example' # str |  (optional)
@@ -181,7 +179,7 @@ locator = 'locator_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_children(path, area_id, base_path=base_path, locator=locator, fields=fields)
+    api_response = tc.server_api.get_children(path, area_id, base_path=base_path, locator=locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ServerApi->get_children: %s\n" % e)
@@ -210,7 +208,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_children_alias**
 > Files get_children_alias(path, area_id, base_path=base_path, locator=locator, fields=fields)
@@ -219,14 +219,12 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ServerApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 path = 'path_example' # str | 
 area_id = 'area_id_example' # str | 
 base_path = 'base_path_example' # str |  (optional)
@@ -234,7 +232,7 @@ locator = 'locator_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_children_alias(path, area_id, base_path=base_path, locator=locator, fields=fields)
+    api_response = tc.server_api.get_children_alias(path, area_id, base_path=base_path, locator=locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ServerApi->get_children_alias: %s\n" % e)
@@ -263,7 +261,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_content**
 > get_content(path, area_id)
@@ -272,19 +272,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ServerApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 path = 'path_example' # str | 
 area_id = 'area_id_example' # str | 
 
 try:
-    api_instance.get_content(path, area_id)
+    tc.server_api.get_content(path, area_id)
 except ApiException as e:
     print("Exception when calling ServerApi->get_content: %s\n" % e)
 ```
@@ -309,7 +307,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_content_alias**
 > get_content_alias(path, area_id)
@@ -318,19 +318,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ServerApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 path = 'path_example' # str | 
 area_id = 'area_id_example' # str | 
 
 try:
-    api_instance.get_content_alias(path, area_id)
+    tc.server_api.get_content_alias(path, area_id)
 except ApiException as e:
     print("Exception when calling ServerApi->get_content_alias: %s\n" % e)
 ```
@@ -355,7 +353,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_license_key**
 > LicenseKey get_license_key(license_key, fields=fields)
@@ -364,19 +364,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ServerApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 license_key = 'license_key_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_license_key(license_key, fields=fields)
+    api_response = tc.server_api.get_license_key(license_key, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ServerApi->get_license_key: %s\n" % e)
@@ -402,7 +400,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_license_keys**
 > LicenseKeys get_license_keys(fields=fields)
@@ -411,18 +411,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ServerApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_license_keys(fields=fields)
+    api_response = tc.server_api.get_license_keys(fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ServerApi->get_license_keys: %s\n" % e)
@@ -447,7 +445,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_licensing_data**
 > LicensingData get_licensing_data(fields=fields)
@@ -456,18 +456,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ServerApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_licensing_data(fields=fields)
+    api_response = tc.server_api.get_licensing_data(fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ServerApi->get_licensing_data: %s\n" % e)
@@ -492,7 +490,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_metadata**
 > file get_metadata(path, area_id, fields=fields)
@@ -501,20 +501,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ServerApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 path = 'path_example' # str | 
 area_id = 'area_id_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_metadata(path, area_id, fields=fields)
+    api_response = tc.server_api.get_metadata(path, area_id, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ServerApi->get_metadata: %s\n" % e)
@@ -541,7 +539,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_root**
 > Files get_root(area_id, base_path=base_path, locator=locator, fields=fields)
@@ -550,21 +550,19 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ServerApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 area_id = 'area_id_example' # str | 
 base_path = 'base_path_example' # str |  (optional)
 locator = 'locator_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_root(area_id, base_path=base_path, locator=locator, fields=fields)
+    api_response = tc.server_api.get_root(area_id, base_path=base_path, locator=locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ServerApi->get_root: %s\n" % e)
@@ -592,7 +590,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_zipped**
 > get_zipped(path, area_id, base_path=base_path, locator=locator, name=name)
@@ -601,14 +601,12 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ServerApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 path = 'path_example' # str | 
 area_id = 'area_id_example' # str | 
 base_path = 'base_path_example' # str |  (optional)
@@ -616,7 +614,7 @@ locator = 'locator_example' # str |  (optional)
 name = 'name_example' # str |  (optional)
 
 try:
-    api_instance.get_zipped(path, area_id, base_path=base_path, locator=locator, name=name)
+    tc.server_api.get_zipped(path, area_id, base_path=base_path, locator=locator, name=name)
 except ApiException as e:
     print("Exception when calling ServerApi->get_zipped: %s\n" % e)
 ```
@@ -644,7 +642,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_plugins**
 > Plugins serve_plugins(fields=fields)
@@ -653,18 +653,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ServerApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.serve_plugins(fields=fields)
+    api_response = tc.server_api.serve_plugins(fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ServerApi->serve_plugins: %s\n" % e)
@@ -689,7 +687,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_server_info**
 > Server serve_server_info(fields=fields)
@@ -698,18 +698,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ServerApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.serve_server_info(fields=fields)
+    api_response = tc.server_api.serve_server_info(fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ServerApi->serve_server_info: %s\n" % e)
@@ -734,7 +732,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_server_version**
 > str serve_server_version(field)
@@ -743,18 +743,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ServerApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 field = 'field_example' # str | 
 
 try:
-    api_response = api_instance.serve_server_version(field)
+    api_response = tc.server_api.serve_server_version(field)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ServerApi->serve_server_version: %s\n" % e)
@@ -779,7 +777,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **start_backup**
 > str start_backup(file_name=file_name, add_timestamp=add_timestamp, include_configs=include_configs, include_database=include_database, include_build_logs=include_build_logs, include_personal_changes=include_personal_changes, include_running_builds=include_running_builds, include_supplimentary_data=include_supplimentary_data, body=body)
@@ -788,14 +788,12 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ServerApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 file_name = 'file_name_example' # str |  (optional)
 add_timestamp = true # bool |  (optional)
 include_configs = true # bool |  (optional)
@@ -807,7 +805,7 @@ include_supplimentary_data = true # bool |  (optional)
 body = dohq_teamcity.BackupProcessManager() # BackupProcessManager |  (optional)
 
 try:
-    api_response = api_instance.start_backup(file_name=file_name, add_timestamp=add_timestamp, include_configs=include_configs, include_database=include_database, include_build_logs=include_build_logs, include_personal_changes=include_personal_changes, include_running_builds=include_running_builds, include_supplimentary_data=include_supplimentary_data, body=body)
+    api_response = tc.server_api.start_backup(file_name=file_name, add_timestamp=add_timestamp, include_configs=include_configs, include_database=include_database, include_build_logs=include_build_logs, include_personal_changes=include_personal_changes, include_running_builds=include_running_builds, include_supplimentary_data=include_supplimentary_data, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ServerApi->start_backup: %s\n" % e)
@@ -840,5 +838,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 

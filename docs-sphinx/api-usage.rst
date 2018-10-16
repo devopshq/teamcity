@@ -25,12 +25,19 @@ The ``dohq_teamcity.TeamCity`` class provides managers (APIs) to access the Team
 Each manager provides a set of methods to act on the resources. The available
 methods depend on the resource type.
 
+Manager (API) have two alias:
+
+  + More readable: ``tc.agents``, ``tc.builds``, ``tc.server``
+  + with api: ``tc.agent_api``, ``tc.build_api``, ``tc.server_api``
+
 Examples:
 
 .. code-block:: python
 
    # list all the projects
    projects = tc.projects.get_projects()
+   # OR
+   # projects = tc.project_api.get_projects()
    for project in projects:
        print(project)
 

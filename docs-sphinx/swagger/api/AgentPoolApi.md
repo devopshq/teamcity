@@ -1,6 +1,6 @@
 # dohq_teamcity.AgentPoolApi
 
-All URIs are relative to *https://teamcity.example.com*
+[[API examples]](http://devopshq.github.io/teamcity/teamcity_apis/AgentPoolApi.html)
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -27,20 +27,18 @@ Method | HTTP request | Description
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.AgentPoolApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 agent_pool_locator = 'agent_pool_locator_example' # str | 
 body = dohq_teamcity.Agent() # Agent |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.add_agent(agent_pool_locator, body=body, fields=fields)
+    api_response = tc.agent_pool_api.add_agent(agent_pool_locator, body=body, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AgentPoolApi->add_agent: %s\n" % e)
@@ -67,7 +65,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **add_project**
 > Project add_project(agent_pool_locator, body=body)
@@ -76,19 +76,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.AgentPoolApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 agent_pool_locator = 'agent_pool_locator_example' # str | 
 body = dohq_teamcity.Project() # Project |  (optional)
 
 try:
-    api_response = api_instance.add_project(agent_pool_locator, body=body)
+    api_response = tc.agent_pool_api.add_project(agent_pool_locator, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AgentPoolApi->add_project: %s\n" % e)
@@ -114,7 +112,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **create_pool**
 > AgentPool create_pool(body=body)
@@ -123,18 +123,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.AgentPoolApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 body = dohq_teamcity.AgentPool() # AgentPool |  (optional)
 
 try:
-    api_response = api_instance.create_pool(body=body)
+    api_response = tc.agent_pool_api.create_pool(body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AgentPoolApi->create_pool: %s\n" % e)
@@ -159,7 +157,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete_pool**
 > delete_pool(agent_pool_locator)
@@ -168,18 +168,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.AgentPoolApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 agent_pool_locator = 'agent_pool_locator_example' # str | 
 
 try:
-    api_instance.delete_pool(agent_pool_locator)
+    tc.agent_pool_api.delete_pool(agent_pool_locator)
 except ApiException as e:
     print("Exception when calling AgentPoolApi->delete_pool: %s\n" % e)
 ```
@@ -203,7 +201,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete_pool_project**
 > delete_pool_project(agent_pool_locator, project_locator)
@@ -212,19 +212,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.AgentPoolApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 agent_pool_locator = 'agent_pool_locator_example' # str | 
 project_locator = 'project_locator_example' # str | 
 
 try:
-    api_instance.delete_pool_project(agent_pool_locator, project_locator)
+    tc.agent_pool_api.delete_pool_project(agent_pool_locator, project_locator)
 except ApiException as e:
     print("Exception when calling AgentPoolApi->delete_pool_project: %s\n" % e)
 ```
@@ -249,7 +247,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete_projects**
 > delete_projects(agent_pool_locator)
@@ -258,18 +258,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.AgentPoolApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 agent_pool_locator = 'agent_pool_locator_example' # str | 
 
 try:
-    api_instance.delete_projects(agent_pool_locator)
+    tc.agent_pool_api.delete_projects(agent_pool_locator)
 except ApiException as e:
     print("Exception when calling AgentPoolApi->delete_projects: %s\n" % e)
 ```
@@ -293,7 +291,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_field**
 > str get_field(agent_pool_locator, field)
@@ -302,19 +302,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.AgentPoolApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 agent_pool_locator = 'agent_pool_locator_example' # str | 
 field = 'field_example' # str | 
 
 try:
-    api_response = api_instance.get_field(agent_pool_locator, field)
+    api_response = tc.agent_pool_api.get_field(agent_pool_locator, field)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AgentPoolApi->get_field: %s\n" % e)
@@ -340,7 +338,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_pool**
 > AgentPool get_pool(agent_pool_locator, fields=fields)
@@ -349,19 +349,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.AgentPoolApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 agent_pool_locator = 'agent_pool_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_pool(agent_pool_locator, fields=fields)
+    api_response = tc.agent_pool_api.get_pool(agent_pool_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AgentPoolApi->get_pool: %s\n" % e)
@@ -387,7 +385,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_pool_agents**
 > Agents get_pool_agents(agent_pool_locator, locator=locator, fields=fields)
@@ -396,20 +396,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.AgentPoolApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 agent_pool_locator = 'agent_pool_locator_example' # str | 
 locator = 'locator_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_pool_agents(agent_pool_locator, locator=locator, fields=fields)
+    api_response = tc.agent_pool_api.get_pool_agents(agent_pool_locator, locator=locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AgentPoolApi->get_pool_agents: %s\n" % e)
@@ -436,7 +434,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_pool_project**
 > Project get_pool_project(agent_pool_locator, project_locator, fields=fields)
@@ -445,20 +445,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.AgentPoolApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 agent_pool_locator = 'agent_pool_locator_example' # str | 
 project_locator = 'project_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_pool_project(agent_pool_locator, project_locator, fields=fields)
+    api_response = tc.agent_pool_api.get_pool_project(agent_pool_locator, project_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AgentPoolApi->get_pool_project: %s\n" % e)
@@ -485,7 +483,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_pool_projects**
 > Projects get_pool_projects(agent_pool_locator, fields=fields)
@@ -494,19 +494,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.AgentPoolApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 agent_pool_locator = 'agent_pool_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_pool_projects(agent_pool_locator, fields=fields)
+    api_response = tc.agent_pool_api.get_pool_projects(agent_pool_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AgentPoolApi->get_pool_projects: %s\n" % e)
@@ -532,7 +530,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_pools**
 > AgentPools get_pools(locator=locator, fields=fields)
@@ -541,19 +541,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.AgentPoolApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 locator = 'locator_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_pools(locator=locator, fields=fields)
+    api_response = tc.agent_pool_api.get_pools(locator=locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AgentPoolApi->get_pools: %s\n" % e)
@@ -579,7 +577,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **replace_projects**
 > Projects replace_projects(agent_pool_locator, body=body)
@@ -588,19 +588,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.AgentPoolApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 agent_pool_locator = 'agent_pool_locator_example' # str | 
 body = dohq_teamcity.Projects() # Projects |  (optional)
 
 try:
-    api_response = api_instance.replace_projects(agent_pool_locator, body=body)
+    api_response = tc.agent_pool_api.replace_projects(agent_pool_locator, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AgentPoolApi->replace_projects: %s\n" % e)
@@ -626,7 +624,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_field**
 > str set_field(agent_pool_locator, field, body=body)
@@ -635,20 +635,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.AgentPoolApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 agent_pool_locator = 'agent_pool_locator_example' # str | 
 field = 'field_example' # str | 
 body = 'body_example' # str |  (optional)
 
 try:
-    api_response = api_instance.set_field(agent_pool_locator, field, body=body)
+    api_response = tc.agent_pool_api.set_field(agent_pool_locator, field, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AgentPoolApi->set_field: %s\n" % e)
@@ -675,5 +673,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 

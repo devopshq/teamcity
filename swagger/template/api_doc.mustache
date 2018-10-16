@@ -1,7 +1,7 @@
 # {{packageName}}.{{classname}}{{#description}}
 {{description}}{{/description}}
 
-All URIs are relative to *{{basePath}}*
+[[API examples]](http://devopshq.github.io/teamcity/teamcity_apis/{{classname}}.html)
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,41 +19,20 @@ Method | HTTP request | Description
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import {{{packageName}}}
-from {{{packageName}}}.rest import ApiException
 from pprint import pprint
-{{#hasAuthMethods}}{{#authMethods}}{{#isBasic}}
-# Configure HTTP basic authorization: {{{name}}}
-configuration = {{{packageName}}}.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'{{/isBasic}}{{#isApiKey}}
-# Configure API key authorization: {{{name}}}
-configuration = {{{packageName}}}.Configuration()
-configuration.api_key['{{{keyParamName}}}'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['{{{keyParamName}}}'] = 'Bearer'{{/isApiKey}}{{#isOAuth}}
-# Configure OAuth2 access token for authorization: {{{name}}}
-configuration = {{{packageName}}}.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'{{/isOAuth}}{{/authMethods}}
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = {{{packageName}}}.{{{classname}}}({{{packageName}}}.ApiClient(configuration))
-{{#allParams}}{{paramName}} = {{{example}}} # {{{dataType}}} | {{{description}}}{{^required}} (optional){{/required}}{{#defaultValue}} (default to {{{.}}}){{/defaultValue}}
-{{/allParams}}
-{{/hasAuthMethods}}
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 {{^hasAuthMethods}}
-
-# create an instance of the API class
-api_instance = {{{packageName}}}.{{{classname}}}()
 {{#allParams}}{{paramName}} = {{{example}}} # {{{dataType}}} | {{{description}}}{{^required}} (optional){{/required}}{{#defaultValue}} (default to {{{.}}}){{/defaultValue}}
 {{/allParams}}
 {{/hasAuthMethods}}
 
 try:
 {{#summary}}    # {{{.}}}
-{{/summary}}    {{#returnType}}api_response = {{/returnType}}api_instance.{{{operationId}}}({{#allParams}}{{#required}}{{paramName}}{{/required}}{{^required}}{{paramName}}={{paramName}}{{/required}}{{#hasMore}}, {{/hasMore}}{{/allParams}}){{#returnType}}
+{{/summary}}    {{#returnType}}api_response = {{/returnType}}tc.{{classFilename}}.{{{operationId}}}({{#allParams}}{{#required}}{{paramName}}{{/required}}{{^required}}{{paramName}}={{paramName}}{{/required}}{{#hasMore}}, {{/hasMore}}{{/allParams}}){{#returnType}}
     pprint(api_response){{/returnType}}
 except ApiException as e:
     print("Exception when calling {{classname}}->{{operationId}}: %s\n" % e)
@@ -79,7 +58,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: {{#consumes}}{{{mediaType}}}{{#hasMore}}, {{/hasMore}}{{/consumes}}{{^consumes}}Not defined{{/consumes}}
  - **Accept**: {{#produces}}{{{mediaType}}}{{#hasMore}}, {{/hasMore}}{{/produces}}{{^produces}}Not defined{{/produces}}
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 {{/operation}}
 {{/operations}}

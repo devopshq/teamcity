@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **source_build_type_locator** | **str** |  | [optional] 
 **vcs_roots_ids_map** | [**Properties**](Properties.md) |  | [optional] 
 
+[[API examples]](http://devopshq.github.io/teamcity/teamcity_models/NewBuildTypeDescription.html)
+
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

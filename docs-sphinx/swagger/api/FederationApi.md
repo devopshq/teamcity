@@ -1,6 +1,6 @@
 # dohq_teamcity.FederationApi
 
-All URIs are relative to *https://teamcity.example.com*
+[[API examples]](http://devopshq.github.io/teamcity/teamcity_apis/FederationApi.html)
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,18 +15,16 @@ Method | HTTP request | Description
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.FederationApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 body = dohq_teamcity.Servers() # Servers |  (optional)
 
 try:
-    api_response = api_instance.add_server(body=body)
+    api_response = tc.federation_api.add_server(body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FederationApi->add_server: %s\n" % e)
@@ -51,7 +49,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **servers**
 > Servers servers(fields=fields)
@@ -60,18 +60,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.FederationApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.servers(fields=fields)
+    api_response = tc.federation_api.servers(fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FederationApi->servers: %s\n" % e)
@@ -96,5 +94,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 

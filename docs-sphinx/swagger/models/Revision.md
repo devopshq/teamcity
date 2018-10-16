@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **vcs_branch_name** | **str** |  | [optional] 
 **version** | **str** |  | [optional] 
 
+[[API examples]](http://devopshq.github.io/teamcity/teamcity_models/Revision.html)
+
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

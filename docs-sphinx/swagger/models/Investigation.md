@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **state** | **str** |  | [optional] 
 **target** | [**ProblemTarget**](ProblemTarget.md) |  | [optional] 
 
+[[API examples]](http://devopshq.github.io/teamcity/teamcity_models/Investigation.html)
+
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

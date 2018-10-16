@@ -1,6 +1,6 @@
 # dohq_teamcity.ProjectApi
 
-All URIs are relative to *https://teamcity.example.com*
+[[API examples]](http://devopshq.github.io/teamcity/teamcity_apis/ProjectApi.html)
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -71,20 +71,18 @@ Method | HTTP request | Description
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 body = dohq_teamcity.ProjectFeature() # ProjectFeature |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.add(project_locator, body=body, fields=fields)
+    api_response = tc.project_api.add(project_locator, body=body, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->add: %s\n" % e)
@@ -111,7 +109,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **create_build_type**
 > BuildType create_build_type(project_locator, body=body, fields=fields)
@@ -120,20 +120,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 body = dohq_teamcity.NewBuildTypeDescription() # NewBuildTypeDescription |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.create_build_type(project_locator, body=body, fields=fields)
+    api_response = tc.project_api.create_build_type(project_locator, body=body, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->create_build_type: %s\n" % e)
@@ -160,7 +158,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **create_build_type_template**
 > BuildType create_build_type_template(project_locator, body=body, fields=fields)
@@ -169,20 +169,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 body = dohq_teamcity.NewBuildTypeDescription() # NewBuildTypeDescription |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.create_build_type_template(project_locator, body=body, fields=fields)
+    api_response = tc.project_api.create_build_type_template(project_locator, body=body, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->create_build_type_template: %s\n" % e)
@@ -209,7 +207,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **create_project**
 > Project create_project(body=body)
@@ -218,18 +218,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 body = dohq_teamcity.NewProjectDescription() # NewProjectDescription |  (optional)
 
 try:
-    api_response = api_instance.create_project(body=body)
+    api_response = tc.project_api.create_project(body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->create_project: %s\n" % e)
@@ -254,7 +252,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete**
 > delete(feature_locator, project_locator)
@@ -263,19 +263,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 feature_locator = 'feature_locator_example' # str | 
 project_locator = 'project_locator_example' # str | 
 
 try:
-    api_instance.delete(feature_locator, project_locator)
+    tc.project_api.delete(feature_locator, project_locator)
 except ApiException as e:
     print("Exception when calling ProjectApi->delete: %s\n" % e)
 ```
@@ -300,7 +298,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete_all_parameters**
 > delete_all_parameters(project_locator)
@@ -309,18 +309,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 
 try:
-    api_instance.delete_all_parameters(project_locator)
+    tc.project_api.delete_all_parameters(project_locator)
 except ApiException as e:
     print("Exception when calling ProjectApi->delete_all_parameters: %s\n" % e)
 ```
@@ -344,7 +342,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete_all_parameters_0**
 > delete_all_parameters_0(feature_locator, project_locator, fields=fields)
@@ -353,20 +353,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 feature_locator = 'feature_locator_example' # str | 
 project_locator = 'project_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_instance.delete_all_parameters_0(feature_locator, project_locator, fields=fields)
+    tc.project_api.delete_all_parameters_0(feature_locator, project_locator, fields=fields)
 except ApiException as e:
     print("Exception when calling ProjectApi->delete_all_parameters_0: %s\n" % e)
 ```
@@ -392,7 +390,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete_parameter**
 > delete_parameter(name, project_locator)
@@ -401,19 +401,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 name = 'name_example' # str | 
 project_locator = 'project_locator_example' # str | 
 
 try:
-    api_instance.delete_parameter(name, project_locator)
+    tc.project_api.delete_parameter(name, project_locator)
 except ApiException as e:
     print("Exception when calling ProjectApi->delete_parameter: %s\n" % e)
 ```
@@ -438,7 +436,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete_parameter_0**
 > delete_parameter_0(name, feature_locator, project_locator, fields=fields)
@@ -447,21 +447,19 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 name = 'name_example' # str | 
 feature_locator = 'feature_locator_example' # str | 
 project_locator = 'project_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_instance.delete_parameter_0(name, feature_locator, project_locator, fields=fields)
+    tc.project_api.delete_parameter_0(name, feature_locator, project_locator, fields=fields)
 except ApiException as e:
     print("Exception when calling ProjectApi->delete_parameter_0: %s\n" % e)
 ```
@@ -488,7 +486,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete_project**
 > delete_project(project_locator)
@@ -497,18 +497,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 
 try:
-    api_instance.delete_project(project_locator)
+    tc.project_api.delete_project(project_locator)
 except ApiException as e:
     print("Exception when calling ProjectApi->delete_project: %s\n" % e)
 ```
@@ -532,7 +530,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **delete_project_agent_pools**
 > delete_project_agent_pools(project_locator, agent_pool_locator)
@@ -541,19 +541,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 agent_pool_locator = 'agent_pool_locator_example' # str | 
 
 try:
-    api_instance.delete_project_agent_pools(project_locator, agent_pool_locator)
+    tc.project_api.delete_project_agent_pools(project_locator, agent_pool_locator)
 except ApiException as e:
     print("Exception when calling ProjectApi->delete_project_agent_pools: %s\n" % e)
 ```
@@ -578,7 +576,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get**
 > object get(project_locator, locator=locator, fields=fields)
@@ -587,20 +587,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 locator = 'locator_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get(project_locator, locator=locator, fields=fields)
+    api_response = tc.project_api.get(project_locator, locator=locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->get: %s\n" % e)
@@ -627,7 +625,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_build_types_order**
 > BuildTypes get_build_types_order(project_locator, field)
@@ -636,19 +636,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 field = 'field_example' # str | 
 
 try:
-    api_response = api_instance.get_build_types_order(project_locator, field)
+    api_response = tc.project_api.get_build_types_order(project_locator, field)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->get_build_types_order: %s\n" % e)
@@ -674,7 +672,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_example_new_project_description**
 > NewProjectDescription get_example_new_project_description(project_locator, id=id)
@@ -683,19 +683,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 id = 'id_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_example_new_project_description(project_locator, id=id)
+    api_response = tc.project_api.get_example_new_project_description(project_locator, id=id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->get_example_new_project_description: %s\n" % e)
@@ -721,7 +719,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_example_new_project_description_compatibility_version1**
 > NewProjectDescription get_example_new_project_description_compatibility_version1(project_locator, id=id)
@@ -730,19 +730,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 id = 'id_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_example_new_project_description_compatibility_version1(project_locator, id=id)
+    api_response = tc.project_api.get_example_new_project_description_compatibility_version1(project_locator, id=id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->get_example_new_project_description_compatibility_version1: %s\n" % e)
@@ -768,7 +766,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_parameter**
 > ModelProperty get_parameter(name, project_locator, fields=fields)
@@ -777,20 +777,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 name = 'name_example' # str | 
 project_locator = 'project_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_parameter(name, project_locator, fields=fields)
+    api_response = tc.project_api.get_parameter(name, project_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->get_parameter: %s\n" % e)
@@ -817,7 +815,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_parameter_0**
 > ModelProperty get_parameter_0(name, feature_locator, project_locator, fields=fields, fields2=fields2)
@@ -826,14 +826,12 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 name = 'name_example' # str | 
 feature_locator = 'feature_locator_example' # str | 
 project_locator = 'project_locator_example' # str | 
@@ -841,7 +839,7 @@ fields = 'fields_example' # str |  (optional)
 fields2 = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_parameter_0(name, feature_locator, project_locator, fields=fields, fields2=fields2)
+    api_response = tc.project_api.get_parameter_0(name, feature_locator, project_locator, fields=fields, fields2=fields2)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->get_parameter_0: %s\n" % e)
@@ -870,7 +868,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_parameter_type**
 > Type get_parameter_type(name, project_locator)
@@ -879,19 +879,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 name = 'name_example' # str | 
 project_locator = 'project_locator_example' # str | 
 
 try:
-    api_response = api_instance.get_parameter_type(name, project_locator)
+    api_response = tc.project_api.get_parameter_type(name, project_locator)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->get_parameter_type: %s\n" % e)
@@ -917,7 +915,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_parameter_type_raw_value**
 > str get_parameter_type_raw_value(name, project_locator)
@@ -926,19 +926,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 name = 'name_example' # str | 
 project_locator = 'project_locator_example' # str | 
 
 try:
-    api_response = api_instance.get_parameter_type_raw_value(name, project_locator)
+    api_response = tc.project_api.get_parameter_type_raw_value(name, project_locator)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->get_parameter_type_raw_value: %s\n" % e)
@@ -964,7 +962,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_parameter_value_long**
 > str get_parameter_value_long(name, project_locator)
@@ -973,19 +973,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 name = 'name_example' # str | 
 project_locator = 'project_locator_example' # str | 
 
 try:
-    api_response = api_instance.get_parameter_value_long(name, project_locator)
+    api_response = tc.project_api.get_parameter_value_long(name, project_locator)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->get_parameter_value_long: %s\n" % e)
@@ -1011,7 +1009,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_parameter_value_long_0**
 > str get_parameter_value_long_0(name, feature_locator, project_locator, fields=fields)
@@ -1020,21 +1020,19 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 name = 'name_example' # str | 
 feature_locator = 'feature_locator_example' # str | 
 project_locator = 'project_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_parameter_value_long_0(name, feature_locator, project_locator, fields=fields)
+    api_response = tc.project_api.get_parameter_value_long_0(name, feature_locator, project_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->get_parameter_value_long_0: %s\n" % e)
@@ -1062,7 +1060,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_parameters**
 > Properties get_parameters(project_locator, locator=locator, fields=fields)
@@ -1071,20 +1071,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 locator = 'locator_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_parameters(project_locator, locator=locator, fields=fields)
+    api_response = tc.project_api.get_parameters(project_locator, locator=locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->get_parameters: %s\n" % e)
@@ -1111,7 +1109,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_parameters_0**
 > Properties get_parameters_0(feature_locator, project_locator, locator=locator, fields=fields, fields2=fields2)
@@ -1120,14 +1120,12 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 feature_locator = 'feature_locator_example' # str | 
 project_locator = 'project_locator_example' # str | 
 locator = 'locator_example' # str |  (optional)
@@ -1135,7 +1133,7 @@ fields = 'fields_example' # str |  (optional)
 fields2 = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_parameters_0(feature_locator, project_locator, locator=locator, fields=fields, fields2=fields2)
+    api_response = tc.project_api.get_parameters_0(feature_locator, project_locator, locator=locator, fields=fields, fields2=fields2)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->get_parameters_0: %s\n" % e)
@@ -1164,7 +1162,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_parent_project**
 > Project get_parent_project(project_locator, fields=fields)
@@ -1173,19 +1173,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_parent_project(project_locator, fields=fields)
+    api_response = tc.project_api.get_parent_project(project_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->get_parent_project: %s\n" % e)
@@ -1211,7 +1209,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_project_agent_pools**
 > AgentPools get_project_agent_pools(project_locator, fields=fields)
@@ -1220,19 +1220,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_project_agent_pools(project_locator, fields=fields)
+    api_response = tc.project_api.get_project_agent_pools(project_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->get_project_agent_pools: %s\n" % e)
@@ -1258,7 +1256,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_projects_order**
 > Projects get_projects_order(project_locator, field)
@@ -1267,19 +1267,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 field = 'field_example' # str | 
 
 try:
-    api_response = api_instance.get_projects_order(project_locator, field)
+    api_response = tc.project_api.get_projects_order(project_locator, field)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->get_projects_order: %s\n" % e)
@@ -1305,7 +1303,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_settings_file**
 > str get_settings_file(project_locator)
@@ -1314,18 +1314,16 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 
 try:
-    api_response = api_instance.get_settings_file(project_locator)
+    api_response = tc.project_api.get_settings_file(project_locator)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->get_settings_file: %s\n" % e)
@@ -1350,7 +1348,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **get_single**
 > object get_single(feature_locator, project_locator, fields=fields)
@@ -1359,20 +1359,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 feature_locator = 'feature_locator_example' # str | 
 project_locator = 'project_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_single(feature_locator, project_locator, fields=fields)
+    api_response = tc.project_api.get_single(feature_locator, project_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->get_single: %s\n" % e)
@@ -1399,7 +1397,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **reload_settings_file**
 > Project reload_settings_file(project_locator, fields=fields)
@@ -1408,19 +1408,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.reload_settings_file(project_locator, fields=fields)
+    api_response = tc.project_api.reload_settings_file(project_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->reload_settings_file: %s\n" % e)
@@ -1446,7 +1444,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **replace**
 > object replace(feature_locator, project_locator, body=body, fields=fields)
@@ -1455,21 +1455,19 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 feature_locator = 'feature_locator_example' # str | 
 project_locator = 'project_locator_example' # str | 
 body = dohq_teamcity.ProjectFeature() # ProjectFeature |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.replace(feature_locator, project_locator, body=body, fields=fields)
+    api_response = tc.project_api.replace(feature_locator, project_locator, body=body, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->replace: %s\n" % e)
@@ -1497,7 +1495,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **replace_all**
 > object replace_all(project_locator, body=body, fields=fields)
@@ -1506,20 +1506,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 body = dohq_teamcity.ProjectFeatures() # ProjectFeatures |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.replace_all(project_locator, body=body, fields=fields)
+    api_response = tc.project_api.replace_all(project_locator, body=body, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->replace_all: %s\n" % e)
@@ -1546,7 +1544,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_build_field_with_project**
 > str serve_build_field_with_project(project_locator, bt_locator, build_locator, field)
@@ -1555,21 +1555,19 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 bt_locator = 'bt_locator_example' # str | 
 build_locator = 'build_locator_example' # str | 
 field = 'field_example' # str | 
 
 try:
-    api_response = api_instance.serve_build_field_with_project(project_locator, bt_locator, build_locator, field)
+    api_response = tc.project_api.serve_build_field_with_project(project_locator, bt_locator, build_locator, field)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->serve_build_field_with_project: %s\n" % e)
@@ -1597,7 +1595,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_build_type**
 > BuildType serve_build_type(project_locator, bt_locator, fields=fields)
@@ -1606,20 +1606,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 bt_locator = 'bt_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.serve_build_type(project_locator, bt_locator, fields=fields)
+    api_response = tc.project_api.serve_build_type(project_locator, bt_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->serve_build_type: %s\n" % e)
@@ -1646,7 +1644,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_build_type_field_with_project**
 > str serve_build_type_field_with_project(project_locator, bt_locator, field)
@@ -1655,20 +1655,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 bt_locator = 'bt_locator_example' # str | 
 field = 'field_example' # str | 
 
 try:
-    api_response = api_instance.serve_build_type_field_with_project(project_locator, bt_locator, field)
+    api_response = tc.project_api.serve_build_type_field_with_project(project_locator, bt_locator, field)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->serve_build_type_field_with_project: %s\n" % e)
@@ -1695,7 +1693,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_build_type_templates**
 > BuildType serve_build_type_templates(project_locator, bt_locator, fields=fields)
@@ -1704,20 +1704,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 bt_locator = 'bt_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.serve_build_type_templates(project_locator, bt_locator, fields=fields)
+    api_response = tc.project_api.serve_build_type_templates(project_locator, bt_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->serve_build_type_templates: %s\n" % e)
@@ -1744,7 +1742,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_build_types_in_project**
 > BuildTypes serve_build_types_in_project(project_locator, fields=fields)
@@ -1753,19 +1753,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.serve_build_types_in_project(project_locator, fields=fields)
+    api_response = tc.project_api.serve_build_types_in_project(project_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->serve_build_types_in_project: %s\n" % e)
@@ -1791,7 +1789,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_build_with_project**
 > Build serve_build_with_project(project_locator, bt_locator, build_locator, fields=fields)
@@ -1800,21 +1800,19 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 bt_locator = 'bt_locator_example' # str | 
 build_locator = 'build_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.serve_build_with_project(project_locator, bt_locator, build_locator, fields=fields)
+    api_response = tc.project_api.serve_build_with_project(project_locator, bt_locator, build_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->serve_build_with_project: %s\n" % e)
@@ -1842,7 +1840,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_builds**
 > Builds serve_builds(project_locator, bt_locator, status=status, triggered_by_user=triggered_by_user, include_personal=include_personal, include_canceled=include_canceled, only_pinned=only_pinned, tag=tag, agent_name=agent_name, since_build=since_build, since_date=since_date, start=start, count=count, locator=locator, fields=fields)
@@ -1851,14 +1851,12 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 bt_locator = 'bt_locator_example' # str | 
 status = 'status_example' # str |  (optional)
@@ -1876,7 +1874,7 @@ locator = 'locator_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.serve_builds(project_locator, bt_locator, status=status, triggered_by_user=triggered_by_user, include_personal=include_personal, include_canceled=include_canceled, only_pinned=only_pinned, tag=tag, agent_name=agent_name, since_build=since_build, since_date=since_date, start=start, count=count, locator=locator, fields=fields)
+    api_response = tc.project_api.serve_builds(project_locator, bt_locator, status=status, triggered_by_user=triggered_by_user, include_personal=include_personal, include_canceled=include_canceled, only_pinned=only_pinned, tag=tag, agent_name=agent_name, since_build=since_build, since_date=since_date, start=start, count=count, locator=locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->serve_builds: %s\n" % e)
@@ -1915,7 +1913,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_project**
 > Project serve_project(project_locator, fields=fields)
@@ -1924,19 +1924,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.serve_project(project_locator, fields=fields)
+    api_response = tc.project_api.serve_project(project_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->serve_project: %s\n" % e)
@@ -1962,7 +1960,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_project_field**
 > str serve_project_field(project_locator, field)
@@ -1971,19 +1971,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 field = 'field_example' # str | 
 
 try:
-    api_response = api_instance.serve_project_field(project_locator, field)
+    api_response = tc.project_api.serve_project_field(project_locator, field)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->serve_project_field: %s\n" % e)
@@ -2009,7 +2007,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_projects**
 > Projects serve_projects(locator=locator, fields=fields)
@@ -2018,19 +2018,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 locator = 'locator_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.serve_projects(locator=locator, fields=fields)
+    api_response = tc.project_api.serve_projects(locator=locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->serve_projects: %s\n" % e)
@@ -2056,7 +2054,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **serve_templates_in_project**
 > BuildTypes serve_templates_in_project(project_locator, fields=fields)
@@ -2065,19 +2065,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.serve_templates_in_project(project_locator, fields=fields)
+    api_response = tc.project_api.serve_templates_in_project(project_locator, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->serve_templates_in_project: %s\n" % e)
@@ -2103,7 +2101,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_build_types_order**
 > BuildTypes set_build_types_order(project_locator, field, body=body)
@@ -2112,20 +2112,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 field = 'field_example' # str | 
 body = dohq_teamcity.BuildTypes() # BuildTypes |  (optional)
 
 try:
-    api_response = api_instance.set_build_types_order(project_locator, field, body=body)
+    api_response = tc.project_api.set_build_types_order(project_locator, field, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->set_build_types_order: %s\n" % e)
@@ -2152,7 +2150,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_parameter**
 > ModelProperty set_parameter(project_locator, body=body, fields=fields)
@@ -2161,20 +2161,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 body = dohq_teamcity.ModelProperty() # ModelProperty |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.set_parameter(project_locator, body=body, fields=fields)
+    api_response = tc.project_api.set_parameter(project_locator, body=body, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->set_parameter: %s\n" % e)
@@ -2201,7 +2199,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_parameter_0**
 > ModelProperty set_parameter_0(name, project_locator, body=body, fields=fields)
@@ -2210,21 +2210,19 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 name = 'name_example' # str | 
 project_locator = 'project_locator_example' # str | 
 body = dohq_teamcity.ModelProperty() # ModelProperty |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.set_parameter_0(name, project_locator, body=body, fields=fields)
+    api_response = tc.project_api.set_parameter_0(name, project_locator, body=body, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->set_parameter_0: %s\n" % e)
@@ -2252,7 +2250,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_parameter_1**
 > ModelProperty set_parameter_1(feature_locator, project_locator, body=body, fields=fields, fields2=fields2)
@@ -2261,14 +2261,12 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 feature_locator = 'feature_locator_example' # str | 
 project_locator = 'project_locator_example' # str | 
 body = dohq_teamcity.ModelProperty() # ModelProperty |  (optional)
@@ -2276,7 +2274,7 @@ fields = 'fields_example' # str |  (optional)
 fields2 = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.set_parameter_1(feature_locator, project_locator, body=body, fields=fields, fields2=fields2)
+    api_response = tc.project_api.set_parameter_1(feature_locator, project_locator, body=body, fields=fields, fields2=fields2)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->set_parameter_1: %s\n" % e)
@@ -2305,7 +2303,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_parameter_2**
 > ModelProperty set_parameter_2(name, feature_locator, project_locator, body=body, fields=fields, fields2=fields2)
@@ -2314,14 +2314,12 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 name = 'name_example' # str | 
 feature_locator = 'feature_locator_example' # str | 
 project_locator = 'project_locator_example' # str | 
@@ -2330,7 +2328,7 @@ fields = 'fields_example' # str |  (optional)
 fields2 = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.set_parameter_2(name, feature_locator, project_locator, body=body, fields=fields, fields2=fields2)
+    api_response = tc.project_api.set_parameter_2(name, feature_locator, project_locator, body=body, fields=fields, fields2=fields2)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->set_parameter_2: %s\n" % e)
@@ -2360,7 +2358,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_parameter_type**
 > Type set_parameter_type(name, project_locator, body=body)
@@ -2369,20 +2369,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 name = 'name_example' # str | 
 project_locator = 'project_locator_example' # str | 
 body = dohq_teamcity.Type() # Type |  (optional)
 
 try:
-    api_response = api_instance.set_parameter_type(name, project_locator, body=body)
+    api_response = tc.project_api.set_parameter_type(name, project_locator, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->set_parameter_type: %s\n" % e)
@@ -2409,7 +2407,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_parameter_type_raw_value**
 > str set_parameter_type_raw_value(name, project_locator, body=body)
@@ -2418,20 +2418,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 name = 'name_example' # str | 
 project_locator = 'project_locator_example' # str | 
 body = 'body_example' # str |  (optional)
 
 try:
-    api_response = api_instance.set_parameter_type_raw_value(name, project_locator, body=body)
+    api_response = tc.project_api.set_parameter_type_raw_value(name, project_locator, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->set_parameter_type_raw_value: %s\n" % e)
@@ -2458,7 +2456,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_parameter_value_long**
 > str set_parameter_value_long(name, project_locator, body=body)
@@ -2467,20 +2467,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 name = 'name_example' # str | 
 project_locator = 'project_locator_example' # str | 
 body = 'body_example' # str |  (optional)
 
 try:
-    api_response = api_instance.set_parameter_value_long(name, project_locator, body=body)
+    api_response = tc.project_api.set_parameter_value_long(name, project_locator, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->set_parameter_value_long: %s\n" % e)
@@ -2507,7 +2505,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_parameter_value_long_0**
 > str set_parameter_value_long_0(name, feature_locator, project_locator, body=body, fields=fields)
@@ -2516,14 +2516,12 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 name = 'name_example' # str | 
 feature_locator = 'feature_locator_example' # str | 
 project_locator = 'project_locator_example' # str | 
@@ -2531,7 +2529,7 @@ body = 'body_example' # str |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.set_parameter_value_long_0(name, feature_locator, project_locator, body=body, fields=fields)
+    api_response = tc.project_api.set_parameter_value_long_0(name, feature_locator, project_locator, body=body, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->set_parameter_value_long_0: %s\n" % e)
@@ -2560,7 +2558,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_parameters**
 > Properties set_parameters(project_locator, body=body, fields=fields)
@@ -2569,20 +2569,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 body = dohq_teamcity.Properties() # Properties |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.set_parameters(project_locator, body=body, fields=fields)
+    api_response = tc.project_api.set_parameters(project_locator, body=body, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->set_parameters: %s\n" % e)
@@ -2609,7 +2607,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_parameters_0**
 > Properties set_parameters_0(feature_locator, project_locator, body=body, fields=fields, fields2=fields2)
@@ -2618,14 +2618,12 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 feature_locator = 'feature_locator_example' # str | 
 project_locator = 'project_locator_example' # str | 
 body = dohq_teamcity.Properties() # Properties |  (optional)
@@ -2633,7 +2631,7 @@ fields = 'fields_example' # str |  (optional)
 fields2 = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.set_parameters_0(feature_locator, project_locator, body=body, fields=fields, fields2=fields2)
+    api_response = tc.project_api.set_parameters_0(feature_locator, project_locator, body=body, fields=fields, fields2=fields2)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->set_parameters_0: %s\n" % e)
@@ -2662,7 +2660,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_parent_project**
 > Project set_parent_project(project_locator, body=body)
@@ -2671,19 +2671,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 body = dohq_teamcity.Project() # Project |  (optional)
 
 try:
-    api_response = api_instance.set_parent_project(project_locator, body=body)
+    api_response = tc.project_api.set_parent_project(project_locator, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->set_parent_project: %s\n" % e)
@@ -2709,7 +2707,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_project_agent_pools**
 > AgentPools set_project_agent_pools(project_locator, body=body, fields=fields)
@@ -2718,20 +2718,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 body = dohq_teamcity.AgentPools() # AgentPools |  (optional)
 fields = 'fields_example' # str |  (optional)
 
 try:
-    api_response = api_instance.set_project_agent_pools(project_locator, body=body, fields=fields)
+    api_response = tc.project_api.set_project_agent_pools(project_locator, body=body, fields=fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->set_project_agent_pools: %s\n" % e)
@@ -2758,7 +2756,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_project_agent_pools_0**
 > AgentPool set_project_agent_pools_0(project_locator, body=body)
@@ -2767,19 +2767,17 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 body = dohq_teamcity.AgentPool() # AgentPool |  (optional)
 
 try:
-    api_response = api_instance.set_project_agent_pools_0(project_locator, body=body)
+    api_response = tc.project_api.set_project_agent_pools_0(project_locator, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->set_project_agent_pools_0: %s\n" % e)
@@ -2805,7 +2803,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_project_filed**
 > str set_project_filed(project_locator, field, body=body)
@@ -2814,20 +2814,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 field = 'field_example' # str | 
 body = 'body_example' # str |  (optional)
 
 try:
-    api_response = api_instance.set_project_filed(project_locator, field, body=body)
+    api_response = tc.project_api.set_project_filed(project_locator, field, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->set_project_filed: %s\n" % e)
@@ -2854,7 +2852,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
 # **set_projects_order**
 > Projects set_projects_order(project_locator, field, body=body)
@@ -2863,20 +2863,18 @@ No authorization required
 
 ### Example
 ```python
-from __future__ import print_function
-import time
-import dohq_teamcity
-from dohq_teamcity.rest import ApiException
 from pprint import pprint
+import dohq_teamcity
 
-# create an instance of the API class
-api_instance = dohq_teamcity.ProjectApi()
+# username/password authentication
+tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
 project_locator = 'project_locator_example' # str | 
 field = 'field_example' # str | 
 body = dohq_teamcity.Projects() # Projects |  (optional)
 
 try:
-    api_response = api_instance.set_projects_order(project_locator, field, body=body)
+    api_response = tc.project_api.set_projects_order(project_locator, field, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->set_projects_order: %s\n" % e)
@@ -2903,5 +2901,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 
