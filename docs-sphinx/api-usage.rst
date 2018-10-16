@@ -11,7 +11,7 @@ To connect to a TeamCity server, create a ``dohq_teamcity.TeamCity`` object:
 
 .. code-block:: python
 
-   import dohq_teamcity
+   from dohq_teamcity import TeamCity
 
    # username/password authentication
    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
