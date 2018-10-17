@@ -3,14 +3,7 @@
 from setuptools import setup  # noqa: H301
 
 NAME = "dohq-teamcity"
-VERSION = "1.0.0"
-# To install the library, run the following
-#
-# python setup.py install
-#
-# prerequisite: setuptools
-# http://pypi.python.org/pypi/setuptools
-
+VERSION = "0.1.0"
 REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil"]
 
 setup(
