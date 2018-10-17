@@ -1,4 +1,5 @@
-docs-sphinx/_build
+build
+docs/_build
 test.py
 # Byte-compiled / optimized / DLL files
 __pycache__/
