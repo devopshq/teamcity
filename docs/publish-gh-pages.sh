@@ -17,7 +17,7 @@ git clone git@github.com:devopshq/teamcity.git
 cd teamcity
 git branch -D gh-pages || echo "branch don't exist"
 git checkout --orphan gh-pages
-rm -rf !(.git|.gitignore)
+rm -rf !(.git|.gitignore) | echo "something wrong, but contiunue"
 
 cp -r $CURR_DIR/_build/html/* .
 

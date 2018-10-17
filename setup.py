@@ -28,5 +28,10 @@ setup(
         'dohq_teamcity.models',
     ],
     include_package_data=True,
+    package_data={
+        '': [
+            'dohq_teamcity/models/test.py',
+        ]
+    },
     long_description="""dohq_teamcity is a Python package providing access to the JetBrains TeamCity server API."""
 )
