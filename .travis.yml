@@ -1,14 +1,29 @@
-# ref: https://docs.travis-ci.com/user/languages/python
 language: python
 python:
   - "2.7"
-  - "3.2"
-  - "3.3"
   - "3.4"
   - "3.5"
-  #- "3.5-dev" # 3.5 development branch
-  #- "nightly" # points to the latest development branch e.g. 3.6-dev
-# command to install dependencies
-install: "pip install -r requirements.txt"
-# command to run tests
-script: nosetests
+  - "3.7"
+
+install:
+  - pip install -r requirements.txt
+  - pip install -r test-requirements.txt
+
+script:
+  - set -e
+  - pytest
+#  - flake8 # TODO: https://github.com/devopshq/teamcity/issues/3
+
+#deploy:
+#  provider: pypi
+#  user: devopshq
+#  password:
+#    secure: g5reDD6SgjPZrvjh0nhoKEUAHiltXiAlZDoqaQ4APAZT/cvcO7zJiaB3eRBnTw/8VPYo6iQubOb5puMrAvLK/egplY0AMCmLUIYMdykp4aqkezsuSCHQPS0SoNUB/sQGW0RKia7OdAXYIClZm90eFXxyrzZQBFkMvyz6DByOKBUai5KKWnr9kaDiP5g1urvpIeeNJMtsI+ML73QR2tzruuSjQbkx0siY9GybRgBpdiemJxsrUbjhN0rsEdYafcsTQBC9OHDSrDAl6UCOwin8EKYppS6exxF0Ut2je/NIuHt9JMjjDkdXLuERyMXF/G6WXv+xKWuaWlEpAOBh6+xa2YzqZWjfyk+mab7t/Pi3FHa+avb60CBW/zd9Q7onjz1WlAwKu7aDBsEDkqvjCkGujbPucMwBw1fKHjdTz2ITFnAth8q5LvdwGTzldLNDixdssTwwEAllN40fYpbFCBx7GF4564/NyaG1JBUKqa1QP0mUoN3KdWL71yf8xtux4CxLPgo1UC3aEYlXmyWnDST8BSMy91+BWWUEVhauyRUid6kDYOZJ8hn5yK//lfJqNFI7/mUnfMCqeqBtWLp19g8V2Ewx3KE0DARjJQ+8dLcZ3/6xYwVV+EkP7kCTIOPKMvaVn1TFswX1N08FekfdjF1g0wr5+ig8z3ubma1u8vz4iu0=
+#  distributions: sdist bdist_wheel
+#  skip_cleanup: false
+#  on:
+#    branch: master
+#    python: '3.4'
+#env:
+#  global:
+#  - secure: wiFL18iRrNU1t7ZBu571vWMvEdih8fX5wM1e0h0wyaa0OK2Rz2Ihsqnzv490vLvaXanRXrBMV8/QwskNwsJ0kOtaL43Xt4yaBqMkOVNprNAIFNofJrvlrAxzZ9m8TGzmSoHz3JkE0YHZSJRKYWzJW5+iI1r+rC2BRUGQG7tRmzef1tiOCoq76Ie2LD4+Pp5BkO2EdeC7O9+WRdOjizRwbBJ+1wc0mWc1Yb/5r76THNxAVDfdhW6k7AZGqaXIwSvVgmlfj3hjYKJGPP9bJOfaRpFMxBBA4cYXFLdEAaaC+8sc9E1TTvG+R3O5gGfz/RUJ5pIqBUVDMz4xAjysJHYY5W1RueEEaG9aDjtM5/oNVZGjbmQqhusi92nlEJoXmukv/YZUFARiw1cAFQFCSWMUUzoR1XfUpJewsKBCuJ8Akwf8GiK4c153tyYHAa371LDcBiEcylcLTF2M/0Vb+oIU1wX+x6rv1B7uEPZshmq5tVXYbUpezBYAFFIrZwgPxj1SITONgMdHFVCLfp+b1TIpE64A4FWrhWNJOXv5yzl8/xlyaN9hFBv1NebCBZFUEkzXvgIz/PxiEbI6jygKBdxaW9Iw9NUdByfFVAcczExRODsHP8TCWSzQTkdwDwKl2QUI0WsmeBraBovprWeye2lgfh8w6UVA5IK9Pj4kkXjOr8A=
