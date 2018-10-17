@@ -7,7 +7,7 @@ Getting started with the API
 ``dohq_teamcity.TeamCity`` class
 ================================
 
-To connect to a TeamCity server, create a ``dohq_teamcity.TeamCity`` object:
+To connect to a TeamCity server, create a :class:`dohq_teamcity.TeamCity` object (``dohq`` means `DevOpsHQ <https://devopshq.github.io>`_):
 
 .. code-block:: python
 

@@ -5,7 +5,7 @@
 
 Welcome to dohq-teamcity's documentation!
 =========================================
-`dohq-teamcity` is a Python package providing access to the JetBrains TeamCity server API.
+`dohq-teamcity <https://github.com/devopshq/teamcity>`_ is a Python package providing access to the JetBrains TeamCity server API.
 
 
 Contents:

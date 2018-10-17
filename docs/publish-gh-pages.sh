@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 set -e
+shopt -s extglob dotglob
+
 
 CURR_DIR="$(pwd)"
 TMP_DIR=$(mktemp -d)
@@ -13,7 +15,7 @@ cd $TMP_DIR
 echo "Use temp directory: $TMP_DIR"
 git clone git@github.com:devopshq/teamcity.git
 cd teamcity
-git branch -D gh-pages
+git branch -D gh-pages || echo "branch don't exist"
 git checkout --orphan gh-pages
 rm -rf !(.git|.gitignore)
 

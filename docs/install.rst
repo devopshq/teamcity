@@ -2,7 +2,7 @@
 Installation
 ############
 
-``dohq-teamcity`` is compatible with Python 2.7 and 3.4+ (`dohq` means `**DevOpsHQ**https://devopshq.github.io`__).
+``dohq-teamcity`` is compatible with Python 2.7 and 3.4+ (``dohq`` means `DevOpsHQ <https://devopshq.github.io>`_).
 
 Use :command:`pip` to install the latest stable version of ``dohq-teamcity``:
 
@@ -17,7 +17,7 @@ The current development version is available on `github
 .. code-block:: console
 
    $ git clone https://github.com/devopshq/teamcity
-   $ cd dohq-teamcity
+   $ cd teamcity
    $ sudo python setup.py install
 
 Try connect to your TeamCity instance
