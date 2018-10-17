@@ -1,7 +1,7 @@
 FileChanges
 #########
 
-`API examples <../../teamcity_models/FileChanges.html>`_
+  + Examples for model: :doc:`/teamcity_models/FileChanges
 
 Properties
 ----------
@@ -18,9 +18,5 @@ Properties
    * - **file**
      -  `list[FileChange] <./FileChange.html>`_
      - `optional` 
-
-
-TODO: fix this link
-[[Back to Model list]]swagger.html) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

@@ -1,7 +1,7 @@
 VcsLabeling
 #########
 
-`API examples <../../teamcity_models/VcsLabeling.html>`_
+  + Examples for model: :doc:`/teamcity_models/VcsLabeling
 
 Properties
 ----------
@@ -24,9 +24,5 @@ Properties
    * - **vcs_roots**
      -  `VcsRoots <./VcsRoots.html>`_
      - `optional` 
-
-
-TODO: fix this link
-[[Back to Model list]]swagger.html) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

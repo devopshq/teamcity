@@ -1,7 +1,7 @@
 {{#models}}{{#model}}{{classname}}
 #########
 
-`API examples <../../teamcity_models/{{classname}}.html>`_
+  + Examples for model: :doc:`/teamcity_models/{{classname}}
 
 Properties
 ----------
@@ -17,9 +17,5 @@ Properties
      - {{#isPrimitiveType}}**{{datatype}}**{{/isPrimitiveType}}{{^isPrimitiveType}} `{{datatype}} <./{{complexType}}.html>`_{{/isPrimitiveType}}
      - {{^required}}`optional` {{/required}}{{#readOnly}}**readonly** {{/readOnly}}{{#defaultValue}}[default to ``{{{.}}}``]{{/defaultValue}}
 {{/vars}}
-
-
-TODO: fix this link
-[[Back to Model list]]swagger.html) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 {{/model}}{{/models}}

@@ -1,7 +1,11 @@
 dohq_teamcity.AgentPoolApi
 ######################################
 
-`API examples <../../teamcity_apis/AgentPoolApi.html>`_
+.. note::
+
+   + All ``serve_*`` method have aliases with get: ``serve_something`` == ``get_something``
+   + Some API have ``get`` method - default method to get object by locator (e.g ``agent_api.get('id:123')`` return ``Agent`` model by id
+   + See more examples on page :doc:`/teamcity_apis/AgentPoolApi` and model examples
 
 .. list-table::
    :widths: 20 80
@@ -9,37 +13,40 @@ dohq_teamcity.AgentPoolApi
 
    * - Method
      - HTTP request
-   * - `add_agent`__
+   * - :ref:`add_agent`
      - **POST** ``/app/rest/agentPools/{agentPoolLocator}/agents``
-   * - `add_project`__
+   * - :ref:`add_project`
      - **POST** ``/app/rest/agentPools/{agentPoolLocator}/projects``
-   * - `create_pool`__
+   * - :ref:`create_pool`
      - **POST** ``/app/rest/agentPools``
-   * - `delete_pool`__
+   * - :ref:`delete_pool`
      - **DELETE** ``/app/rest/agentPools/{agentPoolLocator}``
-   * - `delete_pool_project`__
+   * - :ref:`delete_pool_project`
      - **DELETE** ``/app/rest/agentPools/{agentPoolLocator}/projects/{projectLocator}``
-   * - `delete_projects`__
+   * - :ref:`delete_projects`
      - **DELETE** ``/app/rest/agentPools/{agentPoolLocator}/projects``
-   * - `get_field`__
+   * - :ref:`get_field`
      - **GET** ``/app/rest/agentPools/{agentPoolLocator}/{field}``
-   * - `get_pool`__
+   * - :ref:`get_pool`
      - **GET** ``/app/rest/agentPools/{agentPoolLocator}``
-   * - `get_pool_agents`__
+   * - :ref:`get_pool_agents`
      - **GET** ``/app/rest/agentPools/{agentPoolLocator}/agents``
-   * - `get_pool_project`__
+   * - :ref:`get_pool_project`
      - **GET** ``/app/rest/agentPools/{agentPoolLocator}/projects/{projectLocator}``
-   * - `get_pool_projects`__
+   * - :ref:`get_pool_projects`
      - **GET** ``/app/rest/agentPools/{agentPoolLocator}/projects``
-   * - `get_pools`__
+   * - :ref:`get_pools`
      - **GET** ``/app/rest/agentPools``
-   * - `replace_projects`__
+   * - :ref:`replace_projects`
      - **PUT** ``/app/rest/agentPools/{agentPoolLocator}/projects``
-   * - `set_field`__
+   * - :ref:`set_field`
      - **PUT** ``/app/rest/agentPools/{agentPoolLocator}/{field}``
+
+.. _add_agent:
 
 add_agent
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -79,13 +86,15 @@ add_agent
      - [optional] 
 
 Return type:
-    `Agent <../models/Agent.html>`_)
+    `Agent <../models/Agent.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _add_project:
 
 add_project
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -121,13 +130,15 @@ add_project
      - [optional] 
 
 Return type:
-    `Project <../models/Project.html>`_)
+    `Project <../models/Project.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _create_pool:
 
 create_pool
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -159,13 +170,15 @@ create_pool
      - [optional] 
 
 Return type:
-    `AgentPool <../models/AgentPool.html>`_)
+    `AgentPool <../models/AgentPool.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _delete_pool:
 
 delete_pool
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -198,11 +211,13 @@ delete_pool
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _delete_pool_project:
 
 delete_pool_project
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -239,11 +254,13 @@ delete_pool_project
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _delete_projects:
 
 delete_projects
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -276,11 +293,13 @@ delete_projects
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_field:
 
 get_field
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -318,11 +337,13 @@ get_field
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_pool:
 
 get_pool
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -358,13 +379,15 @@ get_pool
      - [optional] 
 
 Return type:
-    `AgentPool <../models/AgentPool.html>`_)
+    `AgentPool <../models/AgentPool.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_pool_agents:
 
 get_pool_agents
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -404,13 +427,15 @@ get_pool_agents
      - [optional] 
 
 Return type:
-    `Agents <../models/Agents.html>`_)
+    `Agents <../models/Agents.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_pool_project:
 
 get_pool_project
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -450,13 +475,15 @@ get_pool_project
      - [optional] 
 
 Return type:
-    `Project <../models/Project.html>`_)
+    `Project <../models/Project.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_pool_projects:
 
 get_pool_projects
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -492,13 +519,15 @@ get_pool_projects
      - [optional] 
 
 Return type:
-    `Projects <../models/Projects.html>`_)
+    `Projects <../models/Projects.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_pools:
 
 get_pools
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -534,13 +563,15 @@ get_pools
      - [optional] 
 
 Return type:
-    `AgentPools <../models/AgentPools.html>`_)
+    `AgentPools <../models/AgentPools.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _replace_projects:
 
 replace_projects
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -576,13 +607,15 @@ replace_projects
      - [optional] 
 
 Return type:
-    `Projects <../models/Projects.html>`_)
+    `Projects <../models/Projects.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _set_field:
 
 set_field
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -624,6 +657,5 @@ set_field
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+`Back to top <#>`_
 

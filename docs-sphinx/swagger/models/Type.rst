@@ -1,7 +1,7 @@
 Type
 #########
 
-`API examples <../../teamcity_models/Type.html>`_
+  + Examples for model: :doc:`/teamcity_models/Type
 
 Properties
 ----------
@@ -15,9 +15,5 @@ Properties
    * - **raw_value**
      - **str**
      - `optional` 
-
-
-TODO: fix this link
-[[Back to Model list]]swagger.html) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # RST docs - for single running only
+mv docs html
 rm -rf ./docs-sphinx/teamcity_apis || echo "not exist"
 rm -rf ./docs-sphinx/teamcity_models  || echo "not exist"
 
@@ -29,3 +30,4 @@ do
 done
 popd
 rmdir docs
+mv html docs

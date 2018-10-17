@@ -1,7 +1,11 @@
 dohq_teamcity.AgentApi
 ######################################
 
-`API examples <../../teamcity_apis/AgentApi.html>`_
+.. note::
+
+   + All ``serve_*`` method have aliases with get: ``serve_something`` == ``get_something``
+   + Some API have ``get`` method - default method to get object by locator (e.g ``agent_api.get('id:123')`` return ``Agent`` model by id
+   + See more examples on page :doc:`/teamcity_apis/AgentApi` and model examples
 
 .. list-table::
    :widths: 20 80
@@ -9,35 +13,38 @@ dohq_teamcity.AgentApi
 
    * - Method
      - HTTP request
-   * - `delete_agent`__
+   * - :ref:`delete_agent`
      - **DELETE** ``/app/rest/agents/{agentLocator}``
-   * - `get_agent_pool`__
+   * - :ref:`get_agent_pool`
      - **GET** ``/app/rest/agents/{agentLocator}/pool``
-   * - `get_authorized_info`__
+   * - :ref:`get_authorized_info`
      - **GET** ``/app/rest/agents/{agentLocator}/authorizedInfo``
-   * - `get_compatible_build_types`__
+   * - :ref:`get_compatible_build_types`
      - **GET** ``/app/rest/agents/{agentLocator}/compatibleBuildTypes``
-   * - `get_enabled_info`__
+   * - :ref:`get_enabled_info`
      - **GET** ``/app/rest/agents/{agentLocator}/enabledInfo``
-   * - `get_incompatible_build_types`__
+   * - :ref:`get_incompatible_build_types`
      - **GET** ``/app/rest/agents/{agentLocator}/incompatibleBuildTypes``
-   * - `serve_agent`__
+   * - :ref:`serve_agent`
      - **GET** ``/app/rest/agents/{agentLocator}``
-   * - `serve_agent_field`__
+   * - :ref:`serve_agent_field`
      - **GET** ``/app/rest/agents/{agentLocator}/{field}``
-   * - `serve_agents`__
+   * - :ref:`serve_agents`
      - **GET** ``/app/rest/agents``
-   * - `set_agent_field`__
+   * - :ref:`set_agent_field`
      - **PUT** ``/app/rest/agents/{agentLocator}/{field}``
-   * - `set_agent_pool`__
+   * - :ref:`set_agent_pool`
      - **PUT** ``/app/rest/agents/{agentLocator}/pool``
-   * - `set_authorized_info`__
+   * - :ref:`set_authorized_info`
      - **PUT** ``/app/rest/agents/{agentLocator}/authorizedInfo``
-   * - `set_enabled_info`__
+   * - :ref:`set_enabled_info`
      - **PUT** ``/app/rest/agents/{agentLocator}/enabledInfo``
+
+.. _delete_agent:
 
 delete_agent
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -70,11 +77,13 @@ delete_agent
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_agent_pool:
 
 get_agent_pool
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -110,13 +119,15 @@ get_agent_pool
      - [optional] 
 
 Return type:
-    `AgentPool <../models/AgentPool.html>`_)
+    `AgentPool <../models/AgentPool.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_authorized_info:
 
 get_authorized_info
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -152,13 +163,15 @@ get_authorized_info
      - [optional] 
 
 Return type:
-    `AuthorizedInfo <../models/AuthorizedInfo.html>`_)
+    `AuthorizedInfo <../models/AuthorizedInfo.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_compatible_build_types:
 
 get_compatible_build_types
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -194,13 +207,15 @@ get_compatible_build_types
      - [optional] 
 
 Return type:
-    `BuildTypes <../models/BuildTypes.html>`_)
+    `BuildTypes <../models/BuildTypes.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_enabled_info:
 
 get_enabled_info
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -236,13 +251,15 @@ get_enabled_info
      - [optional] 
 
 Return type:
-    `EnabledInfo <../models/EnabledInfo.html>`_)
+    `EnabledInfo <../models/EnabledInfo.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_incompatible_build_types:
 
 get_incompatible_build_types
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -278,13 +295,15 @@ get_incompatible_build_types
      - [optional] 
 
 Return type:
-    `Compatibilities <../models/Compatibilities.html>`_)
+    `Compatibilities <../models/Compatibilities.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_agent:
 
 serve_agent
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -320,13 +339,15 @@ serve_agent
      - [optional] 
 
 Return type:
-    `Agent <../models/Agent.html>`_)
+    `Agent <../models/Agent.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_agent_field:
 
 serve_agent_field
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -364,11 +385,13 @@ serve_agent_field
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_agents:
 
 serve_agents
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -412,13 +435,15 @@ serve_agents
      - [optional] 
 
 Return type:
-    `Agents <../models/Agents.html>`_)
+    `Agents <../models/Agents.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _set_agent_field:
 
 set_agent_field
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -460,11 +485,13 @@ set_agent_field
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _set_agent_pool:
 
 set_agent_pool
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -504,13 +531,15 @@ set_agent_pool
      - [optional] 
 
 Return type:
-    `AgentPool <../models/AgentPool.html>`_)
+    `AgentPool <../models/AgentPool.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _set_authorized_info:
 
 set_authorized_info
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -550,13 +579,15 @@ set_authorized_info
      - [optional] 
 
 Return type:
-    `AuthorizedInfo <../models/AuthorizedInfo.html>`_)
+    `AuthorizedInfo <../models/AuthorizedInfo.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _set_enabled_info:
 
 set_enabled_info
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -596,8 +627,7 @@ set_enabled_info
      - [optional] 
 
 Return type:
-    `EnabledInfo <../models/EnabledInfo.html>`_)
+    `EnabledInfo <../models/EnabledInfo.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+`Back to top <#>`_
 

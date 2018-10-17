@@ -1,7 +1,11 @@
 dohq_teamcity.TestOccurrenceApi
 ######################################
 
-`API examples <../../teamcity_apis/TestOccurrenceApi.html>`_
+.. note::
+
+   + All ``serve_*`` method have aliases with get: ``serve_something`` == ``get_something``
+   + Some API have ``get`` method - default method to get object by locator (e.g ``agent_api.get('id:123')`` return ``Agent`` model by id
+   + See more examples on page :doc:`/teamcity_apis/TestOccurrenceApi` and model examples
 
 .. list-table::
    :widths: 20 80
@@ -9,13 +13,16 @@ dohq_teamcity.TestOccurrenceApi
 
    * - Method
      - HTTP request
-   * - `get_test_occurrences`__
+   * - :ref:`get_test_occurrences`
      - **GET** ``/app/rest/testOccurrences``
-   * - `serve_instance`__
+   * - :ref:`serve_instance`
      - **GET** ``/app/rest/testOccurrences/{testLocator}``
+
+.. _get_test_occurrences:
 
 get_test_occurrences
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -51,13 +58,15 @@ get_test_occurrences
      - [optional] 
 
 Return type:
-    `TestOccurrences <../models/TestOccurrences.html>`_)
+    `TestOccurrences <../models/TestOccurrences.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_instance:
 
 serve_instance
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -93,8 +102,7 @@ serve_instance
      - [optional] 
 
 Return type:
-    `TestOccurrence <../models/TestOccurrence.html>`_)
+    `TestOccurrence <../models/TestOccurrence.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+`Back to top <#>`_
 

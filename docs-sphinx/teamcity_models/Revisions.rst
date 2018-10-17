@@ -6,7 +6,8 @@ Reference
 ========
 
   + :class:`dohq_teamcity.custom.models.Revisions` (and bases class)
-  + `Original swagger documantation by class <https://github.com/devopshq/teamcity/blob/develop/docs-sphinx/swagger/models/Revisions.md>`_
+  + Related main API examples (if exist): :doc:`/teamcity_apis/RevisionsApi`
+  + Original swagger documentation by class :doc:`/swagger/models/Revisions`
   + Some examples you can find in `tests directory <https://github.com/devopshq/teamcity/blob/develop/test>`_
 
 Examples

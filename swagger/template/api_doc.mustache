@@ -1,7 +1,11 @@
 {{packageName}}.{{classname}}
 ######################################
 
-`API examples <../../teamcity_apis/{{classname}}.html>`_
+.. note::
+
+   + All ``serve_*`` method have aliases with get: ``serve_something`` == ``get_something``
+   + Some API have ``get`` method - default method to get object by locator (e.g ``agent_api.get('id:123')`` return ``Agent`` model by id
+   + See more examples on page :doc:`/teamcity_apis/{{classname}}` and model examples
 
 .. list-table::
    :widths: 20 80
@@ -9,13 +13,16 @@
 
    * - Method
      - HTTP request{{#operations}}{{#operation}}
-   * - `{{operationId}}`__
+   * - :ref:`{{operationId}}`
      - **{{httpMethod}}** ``{{path}}``{{/operation}}{{/operations}}
 
 {{#operations}}
 {{#operation}}
+.. _{{{operationId}}}:
+
 {{{operationId}}}
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -55,8 +62,7 @@
 Return type:
     {{#returnType}}{{#returnTypeIsPrimitive}}**{{{returnType}}}**{{/returnTypeIsPrimitive}}{{^returnTypeIsPrimitive}}`{{{returnType}}} <../models/{{returnBaseType}}.html>`_{{/returnTypeIsPrimitive}}{{/returnType}}{{^returnType}}void (empty response body){{/returnType}}
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+`Back to top <#>`_
 
 {{/operation}}
 {{/operations}}

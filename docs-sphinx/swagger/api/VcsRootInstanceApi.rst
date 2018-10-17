@@ -1,7 +1,11 @@
 dohq_teamcity.VcsRootInstanceApi
 ######################################
 
-`API examples <../../teamcity_apis/VcsRootInstanceApi.html>`_
+.. note::
+
+   + All ``serve_*`` method have aliases with get: ``serve_something`` == ``get_something``
+   + Some API have ``get`` method - default method to get object by locator (e.g ``agent_api.get('id:123')`` return ``Agent`` model by id
+   + See more examples on page :doc:`/teamcity_apis/VcsRootInstanceApi` and model examples
 
 .. list-table::
    :widths: 20 80
@@ -9,47 +13,50 @@ dohq_teamcity.VcsRootInstanceApi
 
    * - Method
      - HTTP request
-   * - `delete_instance_field`__
+   * - :ref:`delete_instance_field`
      - **DELETE** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/{field}``
-   * - `delete_repository_state`__
+   * - :ref:`delete_repository_state`
      - **DELETE** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/repositoryState``
-   * - `get_children`__
+   * - :ref:`get_children`
      - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/files/latest/children{path}``
-   * - `get_children_alias`__
+   * - :ref:`get_children_alias`
      - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/files/latest/{path}``
-   * - `get_content`__
+   * - :ref:`get_content`
      - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/files/latest/content{path}``
-   * - `get_content_alias`__
+   * - :ref:`get_content_alias`
      - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/files/latest/files{path}``
-   * - `get_metadata`__
+   * - :ref:`get_metadata`
      - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/files/latest/metadata{path}``
-   * - `get_repository_state`__
+   * - :ref:`get_repository_state`
      - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/repositoryState``
-   * - `get_repository_state_creation_date`__
+   * - :ref:`get_repository_state_creation_date`
      - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/repositoryState/creationDate``
-   * - `get_root`__
+   * - :ref:`get_root`
      - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/files/latest``
-   * - `get_zipped`__
+   * - :ref:`get_zipped`
      - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/files/latest/archived{path}``
-   * - `schedule_checking_for_changes`__
+   * - :ref:`schedule_checking_for_changes`
      - **POST** ``/app/rest/vcs-root-instances/checkingForChangesQueue``
-   * - `schedule_checking_for_changes_0`__
+   * - :ref:`schedule_checking_for_changes_0`
      - **POST** ``/app/rest/vcs-root-instances/commitHookNotification``
-   * - `serve_instance`__
+   * - :ref:`serve_instance`
      - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}``
-   * - `serve_instance_field`__
+   * - :ref:`serve_instance_field`
      - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/{field}``
-   * - `serve_instances`__
+   * - :ref:`serve_instances`
      - **GET** ``/app/rest/vcs-root-instances``
-   * - `serve_root_instance_properties`__
+   * - :ref:`serve_root_instance_properties`
      - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/properties``
-   * - `set_instance_field`__
+   * - :ref:`set_instance_field`
      - **PUT** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/{field}``
-   * - `set_repository_state`__
+   * - :ref:`set_repository_state`
      - **PUT** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/repositoryState``
+
+.. _delete_instance_field:
 
 delete_instance_field
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -86,11 +93,13 @@ delete_instance_field
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _delete_repository_state:
 
 delete_repository_state
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -123,11 +132,13 @@ delete_repository_state
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_children:
 
 get_children
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -175,13 +186,15 @@ get_children
      - [optional] 
 
 Return type:
-    `Files <../models/Files.html>`_)
+    `Files <../models/Files.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_children_alias:
 
 get_children_alias
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -229,13 +242,15 @@ get_children_alias
      - [optional] 
 
 Return type:
-    `Files <../models/Files.html>`_)
+    `Files <../models/Files.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_content:
 
 get_content
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -272,11 +287,13 @@ get_content
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_content_alias:
 
 get_content_alias
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -313,11 +330,13 @@ get_content_alias
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_metadata:
 
 get_metadata
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -357,13 +376,15 @@ get_metadata
      - [optional] 
 
 Return type:
-    `file <../models/file.html>`_)
+    `file <../models/file.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_repository_state:
 
 get_repository_state
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -399,13 +420,15 @@ get_repository_state
      - [optional] 
 
 Return type:
-    `Entries <../models/Entries.html>`_)
+    `Entries <../models/Entries.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_repository_state_creation_date:
 
 get_repository_state_creation_date
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -439,11 +462,13 @@ get_repository_state_creation_date
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_root:
 
 get_root
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -487,13 +512,15 @@ get_root
      - [optional] 
 
 Return type:
-    `Files <../models/Files.html>`_)
+    `Files <../models/Files.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_zipped:
 
 get_zipped
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -542,11 +569,13 @@ get_zipped
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _schedule_checking_for_changes:
 
 schedule_checking_for_changes
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -586,13 +615,15 @@ schedule_checking_for_changes
      - [optional] 
 
 Return type:
-    `VcsRootInstances <../models/VcsRootInstances.html>`_)
+    `VcsRootInstances <../models/VcsRootInstances.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _schedule_checking_for_changes_0:
 
 schedule_checking_for_changes_0
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -629,11 +660,13 @@ schedule_checking_for_changes_0
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_instance:
 
 serve_instance
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -669,13 +702,15 @@ serve_instance
      - [optional] 
 
 Return type:
-    `VcsRootInstance <../models/VcsRootInstance.html>`_)
+    `VcsRootInstance <../models/VcsRootInstance.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_instance_field:
 
 serve_instance_field
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -713,11 +748,13 @@ serve_instance_field
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_instances:
 
 serve_instances
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -753,13 +790,15 @@ serve_instances
      - [optional] 
 
 Return type:
-    `VcsRootInstances <../models/VcsRootInstances.html>`_)
+    `VcsRootInstances <../models/VcsRootInstances.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_root_instance_properties:
 
 serve_root_instance_properties
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -795,13 +834,15 @@ serve_root_instance_properties
      - [optional] 
 
 Return type:
-    `Properties <../models/Properties.html>`_)
+    `Properties <../models/Properties.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _set_instance_field:
 
 set_instance_field
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -843,11 +884,13 @@ set_instance_field
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _set_repository_state:
 
 set_repository_state
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -887,8 +930,7 @@ set_repository_state
      - [optional] 
 
 Return type:
-    `Entries <../models/Entries.html>`_)
+    `Entries <../models/Entries.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+`Back to top <#>`_
 

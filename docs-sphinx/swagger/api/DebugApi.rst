@@ -1,7 +1,11 @@
 dohq_teamcity.DebugApi
 ######################################
 
-`API examples <../../teamcity_apis/DebugApi.html>`_
+.. note::
+
+   + All ``serve_*`` method have aliases with get: ``serve_something`` == ``get_something``
+   + Some API have ``get`` method - default method to get object by locator (e.g ``agent_api.get('id:123')`` return ``Agent`` model by id
+   + See more examples on page :doc:`/teamcity_apis/DebugApi` and model examples
 
 .. list-table::
    :widths: 20 80
@@ -9,51 +13,54 @@ dohq_teamcity.DebugApi
 
    * - Method
      - HTTP request
-   * - `delete_current_remember_me`__
+   * - :ref:`delete_current_remember_me`
      - **DELETE** ``/app/rest/debug/currentRequest/rememberMe``
-   * - `empty_task`__
+   * - :ref:`empty_task`
      - **POST** ``/app/rest/debug/emptyTask``
-   * - `execute_db_query`__
+   * - :ref:`execute_db_query`
      - **GET** ``/app/rest/debug/database/query/{query}``
-   * - `get_current_session`__
+   * - :ref:`get_current_session`
      - **GET** ``/app/rest/debug/currentRequest/session``
-   * - `get_current_session_max_inactive_interval`__
+   * - :ref:`get_current_session_max_inactive_interval`
      - **GET** ``/app/rest/debug/currentRequest/session/maxInactiveSeconds``
-   * - `get_current_user_permissions`__
+   * - :ref:`get_current_user_permissions`
      - **GET** ``/app/rest/debug/currentUserPermissions``
-   * - `get_date`__
+   * - :ref:`get_date`
      - **GET** ``/app/rest/debug/date/{dateLocator}``
-   * - `get_environment_variables`__
+   * - :ref:`get_environment_variables`
      - **GET** ``/app/rest/debug/jvm/environmentVariables``
-   * - `get_hashed`__
+   * - :ref:`get_hashed`
      - **GET** ``/app/rest/debug/values/transform/{method}``
-   * - `get_request_details`__
+   * - :ref:`get_request_details`
      - **GET** ``/app/rest/debug/currentRequest/details``
-   * - `get_scrambled`__
+   * - :ref:`get_scrambled`
      - **GET** ``/app/rest/debug/values/password/scrambled``
-   * - `get_sessions`__
+   * - :ref:`get_sessions`
      - **GET** ``/app/rest/debug/sessions``
-   * - `get_system_properties`__
+   * - :ref:`get_system_properties`
      - **GET** ``/app/rest/debug/jvm/systemProperties``
-   * - `get_thread_dump`__
+   * - :ref:`get_thread_dump`
      - **GET** ``/app/rest/debug/threadDump``
-   * - `get_unscrambled`__
+   * - :ref:`get_unscrambled`
      - **GET** ``/app/rest/debug/values/password/unscrambled``
-   * - `invalidate_current_session`__
+   * - :ref:`invalidate_current_session`
      - **DELETE** ``/app/rest/debug/currentRequest/session``
-   * - `list_db_tables`__
+   * - :ref:`list_db_tables`
      - **GET** ``/app/rest/debug/database/tables``
-   * - `new_remember_me`__
+   * - :ref:`new_remember_me`
      - **POST** ``/app/rest/debug/currentRequest/rememberMe``
-   * - `save_memory_dump`__
+   * - :ref:`save_memory_dump`
      - **POST** ``/app/rest/debug/memory/dumps``
-   * - `schedule_checking_for_changes`__
+   * - :ref:`schedule_checking_for_changes`
      - **POST** ``/app/rest/debug/vcsCheckingForChangesQueue``
-   * - `set_current_session_max_inactive_interval`__
+   * - :ref:`set_current_session_max_inactive_interval`
      - **PUT** ``/app/rest/debug/currentRequest/session/maxInactiveSeconds``
+
+.. _delete_current_remember_me:
 
 delete_current_remember_me
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -74,11 +81,13 @@ This endpoint does not need any parameter.
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _empty_task:
 
 empty_task
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -116,11 +125,13 @@ empty_task
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _execute_db_query:
 
 execute_db_query
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -166,11 +177,13 @@ execute_db_query
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_current_session:
 
 get_current_session
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -202,13 +215,15 @@ get_current_session
      - [optional] 
 
 Return type:
-    `Session <../models/Session.html>`_)
+    `Session <../models/Session.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_current_session_max_inactive_interval:
 
 get_current_session_max_inactive_interval
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -230,11 +245,13 @@ This endpoint does not need any parameter.
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_current_user_permissions:
 
 get_current_user_permissions
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -256,11 +273,13 @@ This endpoint does not need any parameter.
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_date:
 
 get_date
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -302,11 +321,13 @@ get_date
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_environment_variables:
 
 get_environment_variables
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -338,13 +359,15 @@ get_environment_variables
      - [optional] 
 
 Return type:
-    `Properties <../models/Properties.html>`_)
+    `Properties <../models/Properties.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_hashed:
 
 get_hashed
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -382,11 +405,13 @@ get_hashed
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_request_details:
 
 get_request_details
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -408,11 +433,13 @@ This endpoint does not need any parameter.
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_scrambled:
 
 get_scrambled
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -446,11 +473,13 @@ get_scrambled
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_sessions:
 
 get_sessions
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -486,13 +515,15 @@ get_sessions
      - [optional] 
 
 Return type:
-    `Sessions <../models/Sessions.html>`_)
+    `Sessions <../models/Sessions.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_system_properties:
 
 get_system_properties
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -524,13 +555,15 @@ get_system_properties
      - [optional] 
 
 Return type:
-    `Properties <../models/Properties.html>`_)
+    `Properties <../models/Properties.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_thread_dump:
 
 get_thread_dump
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -572,11 +605,13 @@ get_thread_dump
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_unscrambled:
 
 get_unscrambled
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -610,11 +645,13 @@ get_unscrambled
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _invalidate_current_session:
 
 invalidate_current_session
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -635,11 +672,13 @@ This endpoint does not need any parameter.
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _list_db_tables:
 
 list_db_tables
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -661,11 +700,13 @@ This endpoint does not need any parameter.
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _new_remember_me:
 
 new_remember_me
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -687,11 +728,13 @@ This endpoint does not need any parameter.
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _save_memory_dump:
 
 save_memory_dump
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -725,11 +768,13 @@ save_memory_dump
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _schedule_checking_for_changes:
 
 schedule_checking_for_changes
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -769,13 +814,15 @@ schedule_checking_for_changes
      - [optional] 
 
 Return type:
-    `VcsRootInstances <../models/VcsRootInstances.html>`_)
+    `VcsRootInstances <../models/VcsRootInstances.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _set_current_session_max_inactive_interval:
 
 set_current_session_max_inactive_interval
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -809,6 +856,5 @@ set_current_session_max_inactive_interval
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+`Back to top <#>`_
 

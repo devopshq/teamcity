@@ -1,7 +1,7 @@
 Resolution
 #########
 
-`API examples <../../teamcity_models/Resolution.html>`_
+  + Examples for model: :doc:`/teamcity_models/Resolution
 
 Properties
 ----------
@@ -18,9 +18,5 @@ Properties
    * - **type**
      - **str**
      - `optional` 
-
-
-TODO: fix this link
-[[Back to Model list]]swagger.html) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

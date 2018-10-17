@@ -6,7 +6,8 @@ Reference
 ========
 
   + :class:`dohq_teamcity.custom.models.Steps` (and bases class)
-  + `Original swagger documantation by class <https://github.com/devopshq/teamcity/blob/develop/docs-sphinx/swagger/models/Steps.md>`_
+  + Related main API examples (if exist): :doc:`/teamcity_apis/StepsApi`
+  + Original swagger documentation by class :doc:`/swagger/models/Steps`
   + Some examples you can find in `tests directory <https://github.com/devopshq/teamcity/blob/develop/test>`_
 
 Examples

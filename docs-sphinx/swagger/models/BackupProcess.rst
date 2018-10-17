@@ -1,7 +1,7 @@
 BackupProcess
 #########
 
-`API examples <../../teamcity_models/BackupProcess.html>`_
+  + Examples for model: :doc:`/teamcity_models/BackupProcess
 
 Properties
 ----------
@@ -33,9 +33,5 @@ Properties
    * - **progress_status**
      - **str**
      - `optional` 
-
-
-TODO: fix this link
-[[Back to Model list]]swagger.html) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

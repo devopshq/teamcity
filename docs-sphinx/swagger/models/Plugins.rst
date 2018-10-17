@@ -1,7 +1,7 @@
 Plugins
 #########
 
-`API examples <../../teamcity_models/Plugins.html>`_
+  + Examples for model: :doc:`/teamcity_models/Plugins
 
 Properties
 ----------
@@ -18,9 +18,5 @@ Properties
    * - **plugin**
      -  `list[Plugin] <./Plugin.html>`_
      - `optional` 
-
-
-TODO: fix this link
-[[Back to Model list]]swagger.html) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

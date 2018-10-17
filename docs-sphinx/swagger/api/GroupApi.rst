@@ -1,7 +1,11 @@
 dohq_teamcity.GroupApi
 ######################################
 
-`API examples <../../teamcity_apis/GroupApi.html>`_
+.. note::
+
+   + All ``serve_*`` method have aliases with get: ``serve_something`` == ``get_something``
+   + Some API have ``get`` method - default method to get object by locator (e.g ``agent_api.get('id:123')`` return ``Agent`` model by id
+   + See more examples on page :doc:`/teamcity_apis/GroupApi` and model examples
 
 .. list-table::
    :widths: 20 80
@@ -9,39 +13,42 @@ dohq_teamcity.GroupApi
 
    * - Method
      - HTTP request
-   * - `add_group`__
+   * - :ref:`add_group`
      - **POST** ``/app/rest/userGroups``
-   * - `add_role`__
+   * - :ref:`add_role`
      - **POST** ``/app/rest/userGroups/{groupLocator}/roles``
-   * - `add_role_put`__
+   * - :ref:`add_role_put`
      - **PUT** ``/app/rest/userGroups/{groupLocator}/roles``
-   * - `add_role_simple`__
+   * - :ref:`add_role_simple`
      - **POST** ``/app/rest/userGroups/{groupLocator}/roles/{roleId}/{scope}``
-   * - `delete_group`__
+   * - :ref:`delete_group`
      - **DELETE** ``/app/rest/userGroups/{groupLocator}``
-   * - `delete_role`__
+   * - :ref:`delete_role`
      - **DELETE** ``/app/rest/userGroups/{groupLocator}/roles/{roleId}/{scope}``
-   * - `get_permissions`__
+   * - :ref:`get_permissions`
      - **GET** ``/app/rest/userGroups/{groupLocator}/debug/permissions``
-   * - `get_properties`__
+   * - :ref:`get_properties`
      - **GET** ``/app/rest/userGroups/{groupLocator}/properties``
-   * - `list_role`__
+   * - :ref:`list_role`
      - **GET** ``/app/rest/userGroups/{groupLocator}/roles/{roleId}/{scope}``
-   * - `list_roles`__
+   * - :ref:`list_roles`
      - **GET** ``/app/rest/userGroups/{groupLocator}/roles``
-   * - `put_user_property`__
+   * - :ref:`put_user_property`
      - **PUT** ``/app/rest/userGroups/{groupLocator}/properties/{name}``
-   * - `remove_user_property`__
+   * - :ref:`remove_user_property`
      - **DELETE** ``/app/rest/userGroups/{groupLocator}/properties/{name}``
-   * - `serve_group`__
+   * - :ref:`serve_group`
      - **GET** ``/app/rest/userGroups/{groupLocator}``
-   * - `serve_groups`__
+   * - :ref:`serve_groups`
      - **GET** ``/app/rest/userGroups``
-   * - `serve_user_properties`__
+   * - :ref:`serve_user_properties`
      - **GET** ``/app/rest/userGroups/{groupLocator}/properties/{name}``
+
+.. _add_group:
 
 add_group
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -77,13 +84,15 @@ add_group
      - [optional] 
 
 Return type:
-    `Group <../models/Group.html>`_)
+    `Group <../models/Group.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _add_role:
 
 add_role
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -119,13 +128,15 @@ add_role
      - [optional] 
 
 Return type:
-    `Role <../models/Role.html>`_)
+    `Role <../models/Role.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _add_role_put:
 
 add_role_put
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -161,13 +172,15 @@ add_role_put
      - [optional] 
 
 Return type:
-    `Roles <../models/Roles.html>`_)
+    `Roles <../models/Roles.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _add_role_simple:
 
 add_role_simple
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -207,13 +220,15 @@ add_role_simple
      - 
 
 Return type:
-    `Role <../models/Role.html>`_)
+    `Role <../models/Role.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _delete_group:
 
 delete_group
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -246,11 +261,13 @@ delete_group
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _delete_role:
 
 delete_role
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -291,11 +308,13 @@ delete_role
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_permissions:
 
 get_permissions
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -329,11 +348,13 @@ get_permissions
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_properties:
 
 get_properties
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -369,13 +390,15 @@ get_properties
      - [optional] 
 
 Return type:
-    `Properties <../models/Properties.html>`_)
+    `Properties <../models/Properties.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _list_role:
 
 list_role
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -415,13 +438,15 @@ list_role
      - 
 
 Return type:
-    `Role <../models/Role.html>`_)
+    `Role <../models/Role.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _list_roles:
 
 list_roles
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -453,13 +478,15 @@ list_roles
      - 
 
 Return type:
-    `Roles <../models/Roles.html>`_)
+    `Roles <../models/Roles.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _put_user_property:
 
 put_user_property
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -501,11 +528,13 @@ put_user_property
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _remove_user_property:
 
 remove_user_property
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -542,11 +571,13 @@ remove_user_property
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_group:
 
 serve_group
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -582,13 +613,15 @@ serve_group
      - [optional] 
 
 Return type:
-    `Group <../models/Group.html>`_)
+    `Group <../models/Group.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_groups:
 
 serve_groups
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -620,13 +653,15 @@ serve_groups
      - [optional] 
 
 Return type:
-    `Groups <../models/Groups.html>`_)
+    `Groups <../models/Groups.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_user_properties:
 
 serve_user_properties
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -664,6 +699,5 @@ serve_user_properties
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+`Back to top <#>`_
 

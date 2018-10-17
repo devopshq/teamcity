@@ -1,7 +1,11 @@
 dohq_teamcity.ProjectApi
 ######################################
 
-`API examples <../../teamcity_apis/ProjectApi.html>`_
+.. note::
+
+   + All ``serve_*`` method have aliases with get: ``serve_something`` == ``get_something``
+   + Some API have ``get`` method - default method to get object by locator (e.g ``agent_api.get('id:123')`` return ``Agent`` model by id
+   + See more examples on page :doc:`/teamcity_apis/ProjectApi` and model examples
 
 .. list-table::
    :widths: 20 80
@@ -9,125 +13,128 @@ dohq_teamcity.ProjectApi
 
    * - Method
      - HTTP request
-   * - `add`__
+   * - :ref:`add`
      - **POST** ``/app/rest/projects/{projectLocator}/projectFeatures``
-   * - `create_build_type`__
+   * - :ref:`create_build_type`
      - **POST** ``/app/rest/projects/{projectLocator}/buildTypes``
-   * - `create_build_type_template`__
+   * - :ref:`create_build_type_template`
      - **POST** ``/app/rest/projects/{projectLocator}/templates``
-   * - `create_project`__
+   * - :ref:`create_project`
      - **POST** ``/app/rest/projects``
-   * - `delete`__
+   * - :ref:`delete`
      - **DELETE** ``/app/rest/projects/{projectLocator}/projectFeatures/{featureLocator}``
-   * - `delete_all_parameters`__
+   * - :ref:`delete_all_parameters`
      - **DELETE** ``/app/rest/projects/{projectLocator}/parameters``
-   * - `delete_all_parameters_0`__
+   * - :ref:`delete_all_parameters_0`
      - **DELETE** ``/app/rest/projects/{projectLocator}/projectFeatures/{featureLocator}/properties``
-   * - `delete_parameter`__
+   * - :ref:`delete_parameter`
      - **DELETE** ``/app/rest/projects/{projectLocator}/parameters/{name}``
-   * - `delete_parameter_0`__
+   * - :ref:`delete_parameter_0`
      - **DELETE** ``/app/rest/projects/{projectLocator}/projectFeatures/{featureLocator}/properties/{name}``
-   * - `delete_project`__
+   * - :ref:`delete_project`
      - **DELETE** ``/app/rest/projects/{projectLocator}``
-   * - `delete_project_agent_pools`__
+   * - :ref:`delete_project_agent_pools`
      - **DELETE** ``/app/rest/projects/{projectLocator}/agentPools/{agentPoolLocator}``
-   * - `get`__
+   * - :ref:`get`
      - **GET** ``/app/rest/projects/{projectLocator}/projectFeatures``
-   * - `get_build_types_order`__
+   * - :ref:`get_build_types_order`
      - **GET** ``/app/rest/projects/{projectLocator}/order/buildTypes``
-   * - `get_example_new_project_description`__
+   * - :ref:`get_example_new_project_description`
      - **GET** ``/app/rest/projects/{projectLocator}/example/newProjectDescription``
-   * - `get_example_new_project_description_compatibility_version1`__
+   * - :ref:`get_example_new_project_description_compatibility_version1`
      - **GET** ``/app/rest/projects/{projectLocator}/newProjectDescription``
-   * - `get_parameter`__
+   * - :ref:`get_parameter`
      - **GET** ``/app/rest/projects/{projectLocator}/parameters/{name}``
-   * - `get_parameter_0`__
+   * - :ref:`get_parameter_0`
      - **GET** ``/app/rest/projects/{projectLocator}/projectFeatures/{featureLocator}/properties/{name}``
-   * - `get_parameter_type`__
+   * - :ref:`get_parameter_type`
      - **GET** ``/app/rest/projects/{projectLocator}/parameters/{name}/type``
-   * - `get_parameter_type_raw_value`__
+   * - :ref:`get_parameter_type_raw_value`
      - **GET** ``/app/rest/projects/{projectLocator}/parameters/{name}/type/rawValue``
-   * - `get_parameter_value_long`__
+   * - :ref:`get_parameter_value_long`
      - **GET** ``/app/rest/projects/{projectLocator}/parameters/{name}/value``
-   * - `get_parameter_value_long_0`__
+   * - :ref:`get_parameter_value_long_0`
      - **GET** ``/app/rest/projects/{projectLocator}/projectFeatures/{featureLocator}/properties/{name}/value``
-   * - `get_parameters`__
+   * - :ref:`get_parameters`
      - **GET** ``/app/rest/projects/{projectLocator}/parameters``
-   * - `get_parameters_0`__
+   * - :ref:`get_parameters_0`
      - **GET** ``/app/rest/projects/{projectLocator}/projectFeatures/{featureLocator}/properties``
-   * - `get_parent_project`__
+   * - :ref:`get_parent_project`
      - **GET** ``/app/rest/projects/{projectLocator}/parentProject``
-   * - `get_project_agent_pools`__
+   * - :ref:`get_project_agent_pools`
      - **GET** ``/app/rest/projects/{projectLocator}/agentPools``
-   * - `get_projects_order`__
+   * - :ref:`get_projects_order`
      - **GET** ``/app/rest/projects/{projectLocator}/order/projects``
-   * - `get_settings_file`__
+   * - :ref:`get_settings_file`
      - **GET** ``/app/rest/projects/{projectLocator}/settingsFile``
-   * - `get_single`__
+   * - :ref:`get_single`
      - **GET** ``/app/rest/projects/{projectLocator}/projectFeatures/{featureLocator}``
-   * - `reload_settings_file`__
+   * - :ref:`reload_settings_file`
      - **GET** ``/app/rest/projects/{projectLocator}/latest``
-   * - `replace`__
+   * - :ref:`replace`
      - **PUT** ``/app/rest/projects/{projectLocator}/projectFeatures/{featureLocator}``
-   * - `replace_all`__
+   * - :ref:`replace_all`
      - **PUT** ``/app/rest/projects/{projectLocator}/projectFeatures``
-   * - `serve_build_field_with_project`__
+   * - :ref:`serve_build_field_with_project`
      - **GET** ``/app/rest/projects/{projectLocator}/buildTypes/{btLocator}/builds/{buildLocator}/{field}``
-   * - `serve_build_type`__
+   * - :ref:`serve_build_type`
      - **GET** ``/app/rest/projects/{projectLocator}/buildTypes/{btLocator}``
-   * - `serve_build_type_field_with_project`__
+   * - :ref:`serve_build_type_field_with_project`
      - **GET** ``/app/rest/projects/{projectLocator}/buildTypes/{btLocator}/{field}``
-   * - `serve_build_type_templates`__
+   * - :ref:`serve_build_type_templates`
      - **GET** ``/app/rest/projects/{projectLocator}/templates/{btLocator}``
-   * - `serve_build_types_in_project`__
+   * - :ref:`serve_build_types_in_project`
      - **GET** ``/app/rest/projects/{projectLocator}/buildTypes``
-   * - `serve_build_with_project`__
+   * - :ref:`serve_build_with_project`
      - **GET** ``/app/rest/projects/{projectLocator}/buildTypes/{btLocator}/builds/{buildLocator}``
-   * - `serve_builds`__
+   * - :ref:`serve_builds`
      - **GET** ``/app/rest/projects/{projectLocator}/buildTypes/{btLocator}/builds``
-   * - `serve_project`__
+   * - :ref:`serve_project`
      - **GET** ``/app/rest/projects/{projectLocator}``
-   * - `serve_project_field`__
+   * - :ref:`serve_project_field`
      - **GET** ``/app/rest/projects/{projectLocator}/{field}``
-   * - `serve_projects`__
+   * - :ref:`serve_projects`
      - **GET** ``/app/rest/projects``
-   * - `serve_templates_in_project`__
+   * - :ref:`serve_templates_in_project`
      - **GET** ``/app/rest/projects/{projectLocator}/templates``
-   * - `set_build_types_order`__
+   * - :ref:`set_build_types_order`
      - **PUT** ``/app/rest/projects/{projectLocator}/order/buildTypes``
-   * - `set_parameter`__
+   * - :ref:`set_parameter`
      - **POST** ``/app/rest/projects/{projectLocator}/parameters``
-   * - `set_parameter_0`__
+   * - :ref:`set_parameter_0`
      - **PUT** ``/app/rest/projects/{projectLocator}/parameters/{name}``
-   * - `set_parameter_1`__
+   * - :ref:`set_parameter_1`
      - **POST** ``/app/rest/projects/{projectLocator}/projectFeatures/{featureLocator}/properties``
-   * - `set_parameter_2`__
+   * - :ref:`set_parameter_2`
      - **PUT** ``/app/rest/projects/{projectLocator}/projectFeatures/{featureLocator}/properties/{name}``
-   * - `set_parameter_type`__
+   * - :ref:`set_parameter_type`
      - **PUT** ``/app/rest/projects/{projectLocator}/parameters/{name}/type``
-   * - `set_parameter_type_raw_value`__
+   * - :ref:`set_parameter_type_raw_value`
      - **PUT** ``/app/rest/projects/{projectLocator}/parameters/{name}/type/rawValue``
-   * - `set_parameter_value_long`__
+   * - :ref:`set_parameter_value_long`
      - **PUT** ``/app/rest/projects/{projectLocator}/parameters/{name}/value``
-   * - `set_parameter_value_long_0`__
+   * - :ref:`set_parameter_value_long_0`
      - **PUT** ``/app/rest/projects/{projectLocator}/projectFeatures/{featureLocator}/properties/{name}/value``
-   * - `set_parameters`__
+   * - :ref:`set_parameters`
      - **PUT** ``/app/rest/projects/{projectLocator}/parameters``
-   * - `set_parameters_0`__
+   * - :ref:`set_parameters_0`
      - **PUT** ``/app/rest/projects/{projectLocator}/projectFeatures/{featureLocator}/properties``
-   * - `set_parent_project`__
+   * - :ref:`set_parent_project`
      - **PUT** ``/app/rest/projects/{projectLocator}/parentProject``
-   * - `set_project_agent_pools`__
+   * - :ref:`set_project_agent_pools`
      - **PUT** ``/app/rest/projects/{projectLocator}/agentPools``
-   * - `set_project_agent_pools_0`__
+   * - :ref:`set_project_agent_pools_0`
      - **POST** ``/app/rest/projects/{projectLocator}/agentPools``
-   * - `set_project_filed`__
+   * - :ref:`set_project_filed`
      - **PUT** ``/app/rest/projects/{projectLocator}/{field}``
-   * - `set_projects_order`__
+   * - :ref:`set_projects_order`
      - **PUT** ``/app/rest/projects/{projectLocator}/order/projects``
+
+.. _add:
 
 add
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -169,11 +176,13 @@ add
 Return type:
     **object**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _create_build_type:
 
 create_build_type
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -213,13 +222,15 @@ create_build_type
      - [optional] 
 
 Return type:
-    `BuildType <../models/BuildType.html>`_)
+    `BuildType <../models/BuildType.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _create_build_type_template:
 
 create_build_type_template
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -259,13 +270,15 @@ create_build_type_template
      - [optional] 
 
 Return type:
-    `BuildType <../models/BuildType.html>`_)
+    `BuildType <../models/BuildType.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _create_project:
 
 create_project
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -297,13 +310,15 @@ create_project
      - [optional] 
 
 Return type:
-    `Project <../models/Project.html>`_)
+    `Project <../models/Project.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _delete:
 
 delete
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -340,11 +355,13 @@ delete
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _delete_all_parameters:
 
 delete_all_parameters
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -377,11 +394,13 @@ delete_all_parameters
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _delete_all_parameters_0:
 
 delete_all_parameters_0
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -422,11 +441,13 @@ delete_all_parameters_0
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _delete_parameter:
 
 delete_parameter
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -463,11 +484,13 @@ delete_parameter
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _delete_parameter_0:
 
 delete_parameter_0
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -512,11 +535,13 @@ delete_parameter_0
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _delete_project:
 
 delete_project
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -549,11 +574,13 @@ delete_project
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _delete_project_agent_pools:
 
 delete_project_agent_pools
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -590,11 +617,13 @@ delete_project_agent_pools
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get:
 
 get
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -636,11 +665,13 @@ get
 Return type:
     **object**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_build_types_order:
 
 get_build_types_order
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -676,13 +707,15 @@ get_build_types_order
      - 
 
 Return type:
-    `BuildTypes <../models/BuildTypes.html>`_)
+    `BuildTypes <../models/BuildTypes.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_example_new_project_description:
 
 get_example_new_project_description
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -718,13 +751,15 @@ get_example_new_project_description
      - [optional] 
 
 Return type:
-    `NewProjectDescription <../models/NewProjectDescription.html>`_)
+    `NewProjectDescription <../models/NewProjectDescription.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_example_new_project_description_compatibility_version1:
 
 get_example_new_project_description_compatibility_version1
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -760,13 +795,15 @@ get_example_new_project_description_compatibility_version1
      - [optional] 
 
 Return type:
-    `NewProjectDescription <../models/NewProjectDescription.html>`_)
+    `NewProjectDescription <../models/NewProjectDescription.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_parameter:
 
 get_parameter
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -806,13 +843,15 @@ get_parameter
      - [optional] 
 
 Return type:
-    `ModelProperty <../models/ModelProperty.html>`_)
+    `ModelProperty <../models/ModelProperty.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_parameter_0:
 
 get_parameter_0
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -860,13 +899,15 @@ get_parameter_0
      - [optional] 
 
 Return type:
-    `ModelProperty <../models/ModelProperty.html>`_)
+    `ModelProperty <../models/ModelProperty.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_parameter_type:
 
 get_parameter_type
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -902,13 +943,15 @@ get_parameter_type
      - 
 
 Return type:
-    `Type <../models/Type.html>`_)
+    `Type <../models/Type.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_parameter_type_raw_value:
 
 get_parameter_type_raw_value
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -946,11 +989,13 @@ get_parameter_type_raw_value
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_parameter_value_long:
 
 get_parameter_value_long
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -988,11 +1033,13 @@ get_parameter_value_long
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_parameter_value_long_0:
 
 get_parameter_value_long_0
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1038,11 +1085,13 @@ get_parameter_value_long_0
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_parameters:
 
 get_parameters
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1082,13 +1131,15 @@ get_parameters
      - [optional] 
 
 Return type:
-    `Properties <../models/Properties.html>`_)
+    `Properties <../models/Properties.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_parameters_0:
 
 get_parameters_0
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1136,13 +1187,15 @@ get_parameters_0
      - [optional] 
 
 Return type:
-    `Properties <../models/Properties.html>`_)
+    `Properties <../models/Properties.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_parent_project:
 
 get_parent_project
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1178,13 +1231,15 @@ get_parent_project
      - [optional] 
 
 Return type:
-    `Project <../models/Project.html>`_)
+    `Project <../models/Project.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_project_agent_pools:
 
 get_project_agent_pools
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1220,13 +1275,15 @@ get_project_agent_pools
      - [optional] 
 
 Return type:
-    `AgentPools <../models/AgentPools.html>`_)
+    `AgentPools <../models/AgentPools.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_projects_order:
 
 get_projects_order
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1262,13 +1319,15 @@ get_projects_order
      - 
 
 Return type:
-    `Projects <../models/Projects.html>`_)
+    `Projects <../models/Projects.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_settings_file:
 
 get_settings_file
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1302,11 +1361,13 @@ get_settings_file
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_single:
 
 get_single
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1348,11 +1409,13 @@ get_single
 Return type:
     **object**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _reload_settings_file:
 
 reload_settings_file
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1388,13 +1451,15 @@ reload_settings_file
      - [optional] 
 
 Return type:
-    `Project <../models/Project.html>`_)
+    `Project <../models/Project.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _replace:
 
 replace
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1440,11 +1505,13 @@ replace
 Return type:
     **object**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _replace_all:
 
 replace_all
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1486,11 +1553,13 @@ replace_all
 Return type:
     **object**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_build_field_with_project:
 
 serve_build_field_with_project
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1536,11 +1605,13 @@ serve_build_field_with_project
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_build_type:
 
 serve_build_type
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1580,13 +1651,15 @@ serve_build_type
      - [optional] 
 
 Return type:
-    `BuildType <../models/BuildType.html>`_)
+    `BuildType <../models/BuildType.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_build_type_field_with_project:
 
 serve_build_type_field_with_project
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1628,11 +1701,13 @@ serve_build_type_field_with_project
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_build_type_templates:
 
 serve_build_type_templates
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1672,13 +1747,15 @@ serve_build_type_templates
      - [optional] 
 
 Return type:
-    `BuildType <../models/BuildType.html>`_)
+    `BuildType <../models/BuildType.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_build_types_in_project:
 
 serve_build_types_in_project
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1714,13 +1791,15 @@ serve_build_types_in_project
      - [optional] 
 
 Return type:
-    `BuildTypes <../models/BuildTypes.html>`_)
+    `BuildTypes <../models/BuildTypes.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_build_with_project:
 
 serve_build_with_project
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1764,13 +1843,15 @@ serve_build_with_project
      - [optional] 
 
 Return type:
-    `Build <../models/Build.html>`_)
+    `Build <../models/Build.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_builds:
 
 serve_builds
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1858,13 +1939,15 @@ serve_builds
      - [optional] 
 
 Return type:
-    `Builds <../models/Builds.html>`_)
+    `Builds <../models/Builds.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_project:
 
 serve_project
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1900,13 +1983,15 @@ serve_project
      - [optional] 
 
 Return type:
-    `Project <../models/Project.html>`_)
+    `Project <../models/Project.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_project_field:
 
 serve_project_field
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1944,11 +2029,13 @@ serve_project_field
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_projects:
 
 serve_projects
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1984,13 +2071,15 @@ serve_projects
      - [optional] 
 
 Return type:
-    `Projects <../models/Projects.html>`_)
+    `Projects <../models/Projects.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_templates_in_project:
 
 serve_templates_in_project
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -2026,13 +2115,15 @@ serve_templates_in_project
      - [optional] 
 
 Return type:
-    `BuildTypes <../models/BuildTypes.html>`_)
+    `BuildTypes <../models/BuildTypes.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _set_build_types_order:
 
 set_build_types_order
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -2072,13 +2163,15 @@ set_build_types_order
      - [optional] 
 
 Return type:
-    `BuildTypes <../models/BuildTypes.html>`_)
+    `BuildTypes <../models/BuildTypes.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _set_parameter:
 
 set_parameter
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -2118,13 +2211,15 @@ set_parameter
      - [optional] 
 
 Return type:
-    `ModelProperty <../models/ModelProperty.html>`_)
+    `ModelProperty <../models/ModelProperty.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _set_parameter_0:
 
 set_parameter_0
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -2168,13 +2263,15 @@ set_parameter_0
      - [optional] 
 
 Return type:
-    `ModelProperty <../models/ModelProperty.html>`_)
+    `ModelProperty <../models/ModelProperty.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _set_parameter_1:
 
 set_parameter_1
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -2222,13 +2319,15 @@ set_parameter_1
      - [optional] 
 
 Return type:
-    `ModelProperty <../models/ModelProperty.html>`_)
+    `ModelProperty <../models/ModelProperty.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _set_parameter_2:
 
 set_parameter_2
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -2280,13 +2379,15 @@ set_parameter_2
      - [optional] 
 
 Return type:
-    `ModelProperty <../models/ModelProperty.html>`_)
+    `ModelProperty <../models/ModelProperty.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _set_parameter_type:
 
 set_parameter_type
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -2326,13 +2427,15 @@ set_parameter_type
      - [optional] 
 
 Return type:
-    `Type <../models/Type.html>`_)
+    `Type <../models/Type.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _set_parameter_type_raw_value:
 
 set_parameter_type_raw_value
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -2374,11 +2477,13 @@ set_parameter_type_raw_value
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _set_parameter_value_long:
 
 set_parameter_value_long
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -2420,11 +2525,13 @@ set_parameter_value_long
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _set_parameter_value_long_0:
 
 set_parameter_value_long_0
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -2474,11 +2581,13 @@ set_parameter_value_long_0
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _set_parameters:
 
 set_parameters
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -2518,13 +2627,15 @@ set_parameters
      - [optional] 
 
 Return type:
-    `Properties <../models/Properties.html>`_)
+    `Properties <../models/Properties.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _set_parameters_0:
 
 set_parameters_0
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -2572,13 +2683,15 @@ set_parameters_0
      - [optional] 
 
 Return type:
-    `Properties <../models/Properties.html>`_)
+    `Properties <../models/Properties.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _set_parent_project:
 
 set_parent_project
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -2614,13 +2727,15 @@ set_parent_project
      - [optional] 
 
 Return type:
-    `Project <../models/Project.html>`_)
+    `Project <../models/Project.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _set_project_agent_pools:
 
 set_project_agent_pools
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -2660,13 +2775,15 @@ set_project_agent_pools
      - [optional] 
 
 Return type:
-    `AgentPools <../models/AgentPools.html>`_)
+    `AgentPools <../models/AgentPools.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _set_project_agent_pools_0:
 
 set_project_agent_pools_0
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -2702,13 +2819,15 @@ set_project_agent_pools_0
      - [optional] 
 
 Return type:
-    `AgentPool <../models/AgentPool.html>`_)
+    `AgentPool <../models/AgentPool.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _set_project_filed:
 
 set_project_filed
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -2750,11 +2869,13 @@ set_project_filed
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _set_projects_order:
 
 set_projects_order
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -2794,8 +2915,7 @@ set_projects_order
      - [optional] 
 
 Return type:
-    `Projects <../models/Projects.html>`_)
+    `Projects <../models/Projects.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+`Back to top <#>`_
 

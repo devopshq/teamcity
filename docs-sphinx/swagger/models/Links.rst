@@ -1,7 +1,7 @@
 Links
 #########
 
-`API examples <../../teamcity_models/Links.html>`_
+  + Examples for model: :doc:`/teamcity_models/Links
 
 Properties
 ----------
@@ -18,9 +18,5 @@ Properties
    * - **link**
      -  `list[Link] <./Link.html>`_
      - `optional` 
-
-
-TODO: fix this link
-[[Back to Model list]]swagger.html) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

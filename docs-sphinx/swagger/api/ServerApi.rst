@@ -1,7 +1,11 @@
 dohq_teamcity.ServerApi
 ######################################
 
-`API examples <../../teamcity_apis/ServerApi.html>`_
+.. note::
+
+   + All ``serve_*`` method have aliases with get: ``serve_something`` == ``get_something``
+   + Some API have ``get`` method - default method to get object by locator (e.g ``agent_api.get('id:123')`` return ``Agent`` model by id
+   + See more examples on page :doc:`/teamcity_apis/ServerApi` and model examples
 
 .. list-table::
    :widths: 20 80
@@ -9,43 +13,46 @@ dohq_teamcity.ServerApi
 
    * - Method
      - HTTP request
-   * - `add_license_keys`__
+   * - :ref:`add_license_keys`
      - **POST** ``/app/rest/server/licensingData/licenseKeys``
-   * - `delete_license_key`__
+   * - :ref:`delete_license_key`
      - **DELETE** ``/app/rest/server/licensingData/licenseKeys/{licenseKey}``
-   * - `get_backup_status`__
+   * - :ref:`get_backup_status`
      - **GET** ``/app/rest/server/backup``
-   * - `get_children`__
+   * - :ref:`get_children`
      - **GET** ``/app/rest/server/files/{areaId}/children{path}``
-   * - `get_children_alias`__
+   * - :ref:`get_children_alias`
      - **GET** ``/app/rest/server/files/{areaId}/{path}``
-   * - `get_content`__
+   * - :ref:`get_content`
      - **GET** ``/app/rest/server/files/{areaId}/content{path}``
-   * - `get_content_alias`__
+   * - :ref:`get_content_alias`
      - **GET** ``/app/rest/server/files/{areaId}/files{path}``
-   * - `get_license_key`__
+   * - :ref:`get_license_key`
      - **GET** ``/app/rest/server/licensingData/licenseKeys/{licenseKey}``
-   * - `get_license_keys`__
+   * - :ref:`get_license_keys`
      - **GET** ``/app/rest/server/licensingData/licenseKeys``
-   * - `get_licensing_data`__
+   * - :ref:`get_licensing_data`
      - **GET** ``/app/rest/server/licensingData``
-   * - `get_metadata`__
+   * - :ref:`get_metadata`
      - **GET** ``/app/rest/server/files/{areaId}/metadata{path}``
-   * - `get_root`__
+   * - :ref:`get_root`
      - **GET** ``/app/rest/server/files/{areaId}``
-   * - `get_zipped`__
+   * - :ref:`get_zipped`
      - **GET** ``/app/rest/server/files/{areaId}/archived{path}``
-   * - `serve_plugins`__
+   * - :ref:`serve_plugins`
      - **GET** ``/app/rest/server/plugins``
-   * - `serve_server_info`__
+   * - :ref:`serve_server_info`
      - **GET** ``/app/rest/server``
-   * - `serve_server_version`__
+   * - :ref:`serve_server_version`
      - **GET** ``/app/rest/server/{field}``
-   * - `start_backup`__
+   * - :ref:`start_backup`
      - **POST** ``/app/rest/server/backup``
+
+.. _add_license_keys:
 
 add_license_keys
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -81,13 +88,15 @@ add_license_keys
      - [optional] 
 
 Return type:
-    `LicenseKeys <../models/LicenseKeys.html>`_)
+    `LicenseKeys <../models/LicenseKeys.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _delete_license_key:
 
 delete_license_key
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -120,11 +129,13 @@ delete_license_key
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_backup_status:
 
 get_backup_status
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -158,11 +169,13 @@ get_backup_status
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_children:
 
 get_children
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -210,13 +223,15 @@ get_children
      - [optional] 
 
 Return type:
-    `Files <../models/Files.html>`_)
+    `Files <../models/Files.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_children_alias:
 
 get_children_alias
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -264,13 +279,15 @@ get_children_alias
      - [optional] 
 
 Return type:
-    `Files <../models/Files.html>`_)
+    `Files <../models/Files.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_content:
 
 get_content
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -307,11 +324,13 @@ get_content
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_content_alias:
 
 get_content_alias
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -348,11 +367,13 @@ get_content_alias
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_license_key:
 
 get_license_key
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -388,13 +409,15 @@ get_license_key
      - [optional] 
 
 Return type:
-    `LicenseKey <../models/LicenseKey.html>`_)
+    `LicenseKey <../models/LicenseKey.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_license_keys:
 
 get_license_keys
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -426,13 +449,15 @@ get_license_keys
      - [optional] 
 
 Return type:
-    `LicenseKeys <../models/LicenseKeys.html>`_)
+    `LicenseKeys <../models/LicenseKeys.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_licensing_data:
 
 get_licensing_data
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -464,13 +489,15 @@ get_licensing_data
      - [optional] 
 
 Return type:
-    `LicensingData <../models/LicensingData.html>`_)
+    `LicensingData <../models/LicensingData.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_metadata:
 
 get_metadata
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -510,13 +537,15 @@ get_metadata
      - [optional] 
 
 Return type:
-    `file <../models/file.html>`_)
+    `file <../models/file.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_root:
 
 get_root
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -560,13 +589,15 @@ get_root
      - [optional] 
 
 Return type:
-    `Files <../models/Files.html>`_)
+    `Files <../models/Files.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_zipped:
 
 get_zipped
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -615,11 +646,13 @@ get_zipped
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_plugins:
 
 serve_plugins
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -651,13 +684,15 @@ serve_plugins
      - [optional] 
 
 Return type:
-    `Plugins <../models/Plugins.html>`_)
+    `Plugins <../models/Plugins.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_server_info:
 
 serve_server_info
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -689,13 +724,15 @@ serve_server_info
      - [optional] 
 
 Return type:
-    `Server <../models/Server.html>`_)
+    `Server <../models/Server.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_server_version:
 
 serve_server_version
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -729,11 +766,13 @@ serve_server_version
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _start_backup:
 
 start_backup
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -799,6 +838,5 @@ start_backup
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+`Back to top <#>`_
 

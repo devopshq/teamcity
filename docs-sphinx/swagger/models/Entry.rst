@@ -1,7 +1,7 @@
 Entry
 #########
 
-`API examples <../../teamcity_models/Entry.html>`_
+  + Examples for model: :doc:`/teamcity_models/Entry
 
 Properties
 ----------
@@ -18,9 +18,5 @@ Properties
    * - **value**
      - **str**
      - `optional` 
-
-
-TODO: fix this link
-[[Back to Model list]]swagger.html) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

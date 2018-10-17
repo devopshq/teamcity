@@ -1,7 +1,11 @@
 dohq_teamcity.DefaultApi
 ######################################
 
-`API examples <../../teamcity_apis/DefaultApi.html>`_
+.. note::
+
+   + All ``serve_*`` method have aliases with get: ``serve_something`` == ``get_something``
+   + Some API have ``get`` method - default method to get object by locator (e.g ``agent_api.get('id:123')`` return ``Agent`` model by id
+   + See more examples on page :doc:`/teamcity_apis/DefaultApi` and model examples
 
 .. list-table::
    :widths: 20 80
@@ -9,19 +13,22 @@ dohq_teamcity.DefaultApi
 
    * - Method
      - HTTP request
-   * - `serve_api_version`__
+   * - :ref:`serve_api_version`
      - **GET** ``/app/rest/apiVersion``
-   * - `serve_build_field_short`__
+   * - :ref:`serve_build_field_short`
      - **GET** ``/app/rest/{projectLocator}/{btLocator}/{buildLocator}/{field}``
-   * - `serve_plugin_info`__
+   * - :ref:`serve_plugin_info`
      - **GET** ``/app/rest/info``
-   * - `serve_root`__
+   * - :ref:`serve_root`
      - **GET** ``/app/rest``
-   * - `serve_version`__
+   * - :ref:`serve_version`
      - **GET** ``/app/rest/version``
+
+.. _serve_api_version:
 
 serve_api_version
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -43,11 +50,13 @@ This endpoint does not need any parameter.
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_build_field_short:
 
 serve_build_field_short
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -93,11 +102,13 @@ serve_build_field_short
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_plugin_info:
 
 serve_plugin_info
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -129,13 +140,15 @@ serve_plugin_info
      - [optional] 
 
 Return type:
-    `Plugin <../models/Plugin.html>`_)
+    `Plugin <../models/Plugin.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_root:
 
 serve_root
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -157,11 +170,13 @@ This endpoint does not need any parameter.
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_version:
 
 serve_version
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -183,6 +198,5 @@ This endpoint does not need any parameter.
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+`Back to top <#>`_
 

@@ -1,7 +1,11 @@
 dohq_teamcity.BuildQueueApi
 ######################################
 
-`API examples <../../teamcity_apis/BuildQueueApi.html>`_
+.. note::
+
+   + All ``serve_*`` method have aliases with get: ``serve_something`` == ``get_something``
+   + Some API have ``get`` method - default method to get object by locator (e.g ``agent_api.get('id:123')`` return ``Agent`` model by id
+   + See more examples on page :doc:`/teamcity_apis/BuildQueueApi` and model examples
 
 .. list-table::
    :widths: 20 80
@@ -9,37 +13,40 @@ dohq_teamcity.BuildQueueApi
 
    * - Method
      - HTTP request
-   * - `add_tags`__
+   * - :ref:`add_tags`
      - **POST** ``/app/rest/buildQueue/{buildLocator}/tags``
-   * - `cancel_build`__
+   * - :ref:`cancel_build`
      - **GET** ``/app/rest/buildQueue/{buildLocator}/example/buildCancelRequest``
-   * - `cancel_build_0`__
+   * - :ref:`cancel_build_0`
      - **POST** ``/app/rest/buildQueue/{queuedBuildLocator}``
-   * - `delete_build`__
+   * - :ref:`delete_build`
      - **DELETE** ``/app/rest/buildQueue/{queuedBuildLocator}``
-   * - `delete_builds_experimental`__
+   * - :ref:`delete_builds_experimental`
      - **DELETE** ``/app/rest/buildQueue``
-   * - `get_build`__
+   * - :ref:`get_build`
      - **GET** ``/app/rest/buildQueue/{queuedBuildLocator}``
-   * - `get_builds`__
+   * - :ref:`get_builds`
      - **GET** ``/app/rest/buildQueue``
-   * - `queue_new_build`__
+   * - :ref:`queue_new_build`
      - **POST** ``/app/rest/buildQueue``
-   * - `replace_builds`__
+   * - :ref:`replace_builds`
      - **PUT** ``/app/rest/buildQueue``
-   * - `replace_tags`__
+   * - :ref:`replace_tags`
      - **PUT** ``/app/rest/buildQueue/{buildLocator}/tags``
-   * - `serve_build_field_by_build_only`__
+   * - :ref:`serve_build_field_by_build_only`
      - **GET** ``/app/rest/buildQueue/{buildLocator}/{field}``
-   * - `serve_compatible_agents`__
+   * - :ref:`serve_compatible_agents`
      - **GET** ``/app/rest/buildQueue/{queuedBuildLocator}/compatibleAgents``
-   * - `serve_tags`__
+   * - :ref:`serve_tags`
      - **GET** ``/app/rest/buildQueue/{buildLocator}/tags``
-   * - `set_build_queue_order`__
+   * - :ref:`set_build_queue_order`
      - **PUT** ``/app/rest/buildQueue/order``
+
+.. _add_tags:
 
 add_tags
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -76,11 +83,13 @@ add_tags
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _cancel_build:
 
 cancel_build
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -112,13 +121,15 @@ cancel_build
      - 
 
 Return type:
-    `BuildCancelRequest <../models/BuildCancelRequest.html>`_)
+    `BuildCancelRequest <../models/BuildCancelRequest.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _cancel_build_0:
 
 cancel_build_0
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -154,13 +165,15 @@ cancel_build_0
      - [optional] 
 
 Return type:
-    `Build <../models/Build.html>`_)
+    `Build <../models/Build.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _delete_build:
 
 delete_build
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -193,11 +206,13 @@ delete_build
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _delete_builds_experimental:
 
 delete_builds_experimental
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -234,11 +249,13 @@ delete_builds_experimental
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_build:
 
 get_build
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -274,13 +291,15 @@ get_build
      - [optional] 
 
 Return type:
-    `Build <../models/Build.html>`_)
+    `Build <../models/Build.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_builds:
 
 get_builds
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -316,13 +335,15 @@ get_builds
      - [optional] 
 
 Return type:
-    `Builds <../models/Builds.html>`_)
+    `Builds <../models/Builds.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _queue_new_build:
 
 queue_new_build
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -358,13 +379,15 @@ queue_new_build
      - [optional] 
 
 Return type:
-    `Build <../models/Build.html>`_)
+    `Build <../models/Build.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _replace_builds:
 
 replace_builds
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -400,13 +423,15 @@ replace_builds
      - [optional] 
 
 Return type:
-    `Builds <../models/Builds.html>`_)
+    `Builds <../models/Builds.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _replace_tags:
 
 replace_tags
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -450,13 +475,15 @@ replace_tags
      - [optional] 
 
 Return type:
-    `Tags <../models/Tags.html>`_)
+    `Tags <../models/Tags.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_build_field_by_build_only:
 
 serve_build_field_by_build_only
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -494,11 +521,13 @@ serve_build_field_by_build_only
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_compatible_agents:
 
 serve_compatible_agents
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -534,13 +563,15 @@ serve_compatible_agents
      - [optional] 
 
 Return type:
-    `Agents <../models/Agents.html>`_)
+    `Agents <../models/Agents.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_tags:
 
 serve_tags
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -580,13 +611,15 @@ serve_tags
      - [optional] 
 
 Return type:
-    `Tags <../models/Tags.html>`_)
+    `Tags <../models/Tags.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _set_build_queue_order:
 
 set_build_queue_order
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -622,8 +655,7 @@ set_build_queue_order
      - [optional] 
 
 Return type:
-    `Builds <../models/Builds.html>`_)
+    `Builds <../models/Builds.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+`Back to top <#>`_
 

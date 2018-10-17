@@ -1,7 +1,7 @@
 Role
 #########
 
-`API examples <../../teamcity_models/Role.html>`_
+  + Examples for model: :doc:`/teamcity_models/Role
 
 Properties
 ----------
@@ -21,9 +21,5 @@ Properties
    * - **scope**
      - **str**
      - `optional` 
-
-
-TODO: fix this link
-[[Back to Model list]]swagger.html) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

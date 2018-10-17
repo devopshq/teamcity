@@ -1,7 +1,7 @@
 Triggers
 #########
 
-`API examples <../../teamcity_models/Triggers.html>`_
+  + Examples for model: :doc:`/teamcity_models/Triggers
 
 Properties
 ----------
@@ -18,9 +18,5 @@ Properties
    * - **trigger**
      -  `list[Trigger] <./Trigger.html>`_
      - `optional` 
-
-
-TODO: fix this link
-[[Back to Model list]]swagger.html) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

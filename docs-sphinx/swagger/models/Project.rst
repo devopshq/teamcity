@@ -1,7 +1,7 @@
 Project
 #########
 
-`API examples <../../teamcity_models/Project.html>`_
+  + Examples for model: :doc:`/teamcity_models/Project
 
 Properties
 ----------
@@ -75,9 +75,5 @@ Properties
    * - **web_url**
      - **str**
      - `optional` 
-
-
-TODO: fix this link
-[[Back to Model list]]swagger.html) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

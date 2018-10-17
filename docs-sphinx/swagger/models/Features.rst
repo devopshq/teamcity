@@ -1,7 +1,7 @@
 Features
 #########
 
-`API examples <../../teamcity_models/Features.html>`_
+  + Examples for model: :doc:`/teamcity_models/Features
 
 Properties
 ----------
@@ -18,9 +18,5 @@ Properties
    * - **feature**
      -  `list[Feature] <./Feature.html>`_
      - `optional` 
-
-
-TODO: fix this link
-[[Back to Model list]]swagger.html) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

@@ -1,7 +1,11 @@
 dohq_teamcity.ChangeApi
 ######################################
 
-`API examples <../../teamcity_apis/ChangeApi.html>`_
+.. note::
+
+   + All ``serve_*`` method have aliases with get: ``serve_something`` == ``get_something``
+   + Some API have ``get`` method - default method to get object by locator (e.g ``agent_api.get('id:123')`` return ``Agent`` model by id
+   + See more examples on page :doc:`/teamcity_apis/ChangeApi` and model examples
 
 .. list-table::
    :widths: 20 80
@@ -9,33 +13,36 @@ dohq_teamcity.ChangeApi
 
    * - Method
      - HTTP request
-   * - `get_change_attributes`__
+   * - :ref:`get_change_attributes`
      - **GET** ``/app/rest/changes/{changeLocator}/attributes``
-   * - `get_change_duplicates`__
+   * - :ref:`get_change_duplicates`
      - **GET** ``/app/rest/changes/{changeLocator}/duplicates``
-   * - `get_change_field`__
+   * - :ref:`get_change_field`
      - **GET** ``/app/rest/changes/{changeLocator}/{field}``
-   * - `get_change_first_builds`__
+   * - :ref:`get_change_first_builds`
      - **GET** ``/app/rest/changes/{changeLocator}/firstBuilds``
-   * - `get_change_issue`__
+   * - :ref:`get_change_issue`
      - **GET** ``/app/rest/changes/{changeLocator}/issues``
-   * - `get_change_parent_revisions`__
+   * - :ref:`get_change_parent_revisions`
      - **GET** ``/app/rest/changes/{changeLocator}/parentRevisions``
-   * - `get_change_vcs_root`__
+   * - :ref:`get_change_vcs_root`
      - **GET** ``/app/rest/changes/{changeLocator}/vcsRoot``
-   * - `get_change_vcs_root_instance`__
+   * - :ref:`get_change_vcs_root_instance`
      - **GET** ``/app/rest/changes/{changeLocator}/vcsRootInstance``
-   * - `get_parent_changes`__
+   * - :ref:`get_parent_changes`
      - **GET** ``/app/rest/changes/{changeLocator}/parentChanges``
-   * - `get_related_build_types`__
+   * - :ref:`get_related_build_types`
      - **GET** ``/app/rest/changes/{changeLocator}/buildTypes``
-   * - `serve_change`__
+   * - :ref:`serve_change`
      - **GET** ``/app/rest/changes/{changeLocator}``
-   * - `serve_changes`__
+   * - :ref:`serve_changes`
      - **GET** ``/app/rest/changes``
+
+.. _get_change_attributes:
 
 get_change_attributes
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -71,13 +78,15 @@ get_change_attributes
      - [optional] 
 
 Return type:
-    `Entries <../models/Entries.html>`_)
+    `Entries <../models/Entries.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_change_duplicates:
 
 get_change_duplicates
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -113,13 +122,15 @@ get_change_duplicates
      - [optional] 
 
 Return type:
-    `Changes <../models/Changes.html>`_)
+    `Changes <../models/Changes.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_change_field:
 
 get_change_field
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -157,11 +168,13 @@ get_change_field
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_change_first_builds:
 
 get_change_first_builds
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -197,13 +210,15 @@ get_change_first_builds
      - [optional] 
 
 Return type:
-    `Builds <../models/Builds.html>`_)
+    `Builds <../models/Builds.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_change_issue:
 
 get_change_issue
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -235,13 +250,15 @@ get_change_issue
      - 
 
 Return type:
-    `Issues <../models/Issues.html>`_)
+    `Issues <../models/Issues.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_change_parent_revisions:
 
 get_change_parent_revisions
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -273,13 +290,15 @@ get_change_parent_revisions
      - 
 
 Return type:
-    `Items <../models/Items.html>`_)
+    `Items <../models/Items.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_change_vcs_root:
 
 get_change_vcs_root
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -315,13 +334,15 @@ get_change_vcs_root
      - [optional] 
 
 Return type:
-    `VcsRootInstance <../models/VcsRootInstance.html>`_)
+    `VcsRootInstance <../models/VcsRootInstance.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_change_vcs_root_instance:
 
 get_change_vcs_root_instance
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -357,13 +378,15 @@ get_change_vcs_root_instance
      - [optional] 
 
 Return type:
-    `VcsRootInstance <../models/VcsRootInstance.html>`_)
+    `VcsRootInstance <../models/VcsRootInstance.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_parent_changes:
 
 get_parent_changes
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -399,13 +422,15 @@ get_parent_changes
      - [optional] 
 
 Return type:
-    `Changes <../models/Changes.html>`_)
+    `Changes <../models/Changes.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_related_build_types:
 
 get_related_build_types
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -441,13 +466,15 @@ get_related_build_types
      - [optional] 
 
 Return type:
-    `BuildTypes <../models/BuildTypes.html>`_)
+    `BuildTypes <../models/BuildTypes.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_change:
 
 serve_change
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -483,13 +510,15 @@ serve_change
      - [optional] 
 
 Return type:
-    `Change <../models/Change.html>`_)
+    `Change <../models/Change.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_changes:
 
 serve_changes
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -553,8 +582,7 @@ serve_changes
      - [optional] 
 
 Return type:
-    `Changes <../models/Changes.html>`_)
+    `Changes <../models/Changes.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+`Back to top <#>`_
 

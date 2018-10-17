@@ -1,7 +1,7 @@
 SnapshotDependencies
 #########
 
-`API examples <../../teamcity_models/SnapshotDependencies.html>`_
+  + Examples for model: :doc:`/teamcity_models/SnapshotDependencies
 
 Properties
 ----------
@@ -18,9 +18,5 @@ Properties
    * - **snapshot_dependency**
      -  `list[SnapshotDependency] <./SnapshotDependency.html>`_
      - `optional` 
-
-
-TODO: fix this link
-[[Back to Model list]]swagger.html) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

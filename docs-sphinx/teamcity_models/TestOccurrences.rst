@@ -6,7 +6,8 @@ Reference
 ========
 
   + :class:`dohq_teamcity.custom.models.TestOccurrences` (and bases class)
-  + `Original swagger documantation by class <https://github.com/devopshq/teamcity/blob/develop/docs-sphinx/swagger/models/TestOccurrences.md>`_
+  + Related main API examples (if exist): :doc:`/teamcity_apis/TestOccurrencesApi`
+  + Original swagger documentation by class :doc:`/swagger/models/TestOccurrences`
   + Some examples you can find in `tests directory <https://github.com/devopshq/teamcity/blob/develop/test>`_
 
 Examples

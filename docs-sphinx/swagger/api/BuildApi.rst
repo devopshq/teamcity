@@ -1,7 +1,11 @@
 dohq_teamcity.BuildApi
 ######################################
 
-`API examples <../../teamcity_apis/BuildApi.html>`_
+.. note::
+
+   + All ``serve_*`` method have aliases with get: ``serve_something`` == ``get_something``
+   + Some API have ``get`` method - default method to get object by locator (e.g ``agent_api.get('id:123')`` return ``Agent`` model by id
+   + See more examples on page :doc:`/teamcity_apis/BuildApi` and model examples
 
 .. list-table::
    :widths: 20 80
@@ -9,81 +13,84 @@ dohq_teamcity.BuildApi
 
    * - Method
      - HTTP request
-   * - `add_tags`__
+   * - :ref:`add_tags`
      - **POST** ``/app/rest/builds/{buildLocator}/tags``
-   * - `cancel_build`__
+   * - :ref:`cancel_build`
      - **POST** ``/app/rest/builds/{buildLocator}``
-   * - `cancel_build_0`__
+   * - :ref:`cancel_build_0`
      - **GET** ``/app/rest/builds/{buildLocator}/example/buildCancelRequest``
-   * - `delete_build`__
+   * - :ref:`delete_build`
      - **DELETE** ``/app/rest/builds/{buildLocator}``
-   * - `delete_builds`__
+   * - :ref:`delete_builds`
      - **DELETE** ``/app/rest/builds``
-   * - `delete_comment`__
+   * - :ref:`delete_comment`
      - **DELETE** ``/app/rest/builds/{buildLocator}/comment``
-   * - `get_artifacts_directory`__
+   * - :ref:`get_artifacts_directory`
      - **GET** ``/app/rest/builds/{buildLocator}/artifactsDirectory``
-   * - `get_canceled_info`__
+   * - :ref:`get_canceled_info`
      - **GET** ``/app/rest/builds/{buildLocator}/canceledInfo``
-   * - `get_children`__
+   * - :ref:`get_children`
      - **GET** ``/app/rest/builds/{buildLocator}/artifacts/children{path}``
-   * - `get_children_alias`__
+   * - :ref:`get_children_alias`
      - **GET** ``/app/rest/builds/{buildLocator}/artifacts/{path}``
-   * - `get_content`__
+   * - :ref:`get_content`
      - **GET** ``/app/rest/builds/{buildLocator}/artifacts/content{path}``
-   * - `get_content_alias`__
+   * - :ref:`get_content_alias`
      - **GET** ``/app/rest/builds/{buildLocator}/artifacts/files{path}``
-   * - `get_metadata`__
+   * - :ref:`get_metadata`
      - **GET** ``/app/rest/builds/{buildLocator}/artifacts/metadata{path}``
-   * - `get_parameter`__
+   * - :ref:`get_parameter`
      - **GET** ``/app/rest/builds/{buildLocator}/resulting-properties/{propertyName}``
-   * - `get_pinned`__
+   * - :ref:`get_pinned`
      - **GET** ``/app/rest/builds/{buildLocator}/pin``
-   * - `get_problems`__
+   * - :ref:`get_problems`
      - **GET** ``/app/rest/builds/{buildLocator}/problemOccurrences``
-   * - `get_root`__
+   * - :ref:`get_root`
      - **GET** ``/app/rest/builds/{buildLocator}/artifacts``
-   * - `get_tests`__
+   * - :ref:`get_tests`
      - **GET** ``/app/rest/builds/{buildLocator}/testOccurrences``
-   * - `get_zipped`__
+   * - :ref:`get_zipped`
      - **GET** ``/app/rest/builds/{buildLocator}/artifacts/archived{path}``
-   * - `pin_build`__
+   * - :ref:`pin_build`
      - **PUT** ``/app/rest/builds/{buildLocator}/pin``
-   * - `replace_comment`__
+   * - :ref:`replace_comment`
      - **PUT** ``/app/rest/builds/{buildLocator}/comment``
-   * - `replace_tags`__
+   * - :ref:`replace_tags`
      - **PUT** ``/app/rest/builds/{buildLocator}/tags``
-   * - `serve_aggregated_build_status`__
+   * - :ref:`serve_aggregated_build_status`
      - **GET** ``/app/rest/builds/aggregated/{buildLocator}/status``
-   * - `serve_aggregated_build_status_icon`__
+   * - :ref:`serve_aggregated_build_status_icon`
      - **GET** ``/app/rest/builds/aggregated/{buildLocator}/statusIcon{suffix}``
-   * - `serve_all_builds`__
+   * - :ref:`serve_all_builds`
      - **GET** ``/app/rest/builds``
-   * - `serve_build`__
+   * - :ref:`serve_build`
      - **GET** ``/app/rest/builds/{buildLocator}``
-   * - `serve_build_actual_parameters`__
+   * - :ref:`serve_build_actual_parameters`
      - **GET** ``/app/rest/builds/{buildLocator}/resulting-properties``
-   * - `serve_build_field_by_build_only`__
+   * - :ref:`serve_build_field_by_build_only`
      - **GET** ``/app/rest/builds/{buildLocator}/{field}``
-   * - `serve_build_related_issues`__
+   * - :ref:`serve_build_related_issues`
      - **GET** ``/app/rest/builds/{buildLocator}/relatedIssues``
-   * - `serve_build_related_issues_old`__
+   * - :ref:`serve_build_related_issues_old`
      - **GET** ``/app/rest/builds/{buildLocator}/related-issues``
-   * - `serve_build_statistic_value`__
+   * - :ref:`serve_build_statistic_value`
      - **GET** ``/app/rest/builds/{buildLocator}/statistics/{name}``
-   * - `serve_build_statistic_values`__
+   * - :ref:`serve_build_statistic_values`
      - **GET** ``/app/rest/builds/{buildLocator}/statistics``
-   * - `serve_build_status_icon`__
+   * - :ref:`serve_build_status_icon`
      - **GET** ``/app/rest/builds/{buildLocator}/statusIcon{suffix}``
-   * - `serve_source_file`__
+   * - :ref:`serve_source_file`
      - **GET** ``/app/rest/builds/{buildLocator}/sources/files/{fileName}``
-   * - `serve_tags`__
+   * - :ref:`serve_tags`
      - **GET** ``/app/rest/builds/{buildLocator}/tags``
-   * - `unpin_build`__
+   * - :ref:`unpin_build`
      - **DELETE** ``/app/rest/builds/{buildLocator}/pin``
+
+.. _add_tags:
 
 add_tags
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -123,13 +130,15 @@ add_tags
      - [optional] 
 
 Return type:
-    `Tags <../models/Tags.html>`_)
+    `Tags <../models/Tags.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _cancel_build:
 
 cancel_build
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -169,13 +178,15 @@ cancel_build
      - [optional] 
 
 Return type:
-    `Build <../models/Build.html>`_)
+    `Build <../models/Build.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _cancel_build_0:
 
 cancel_build_0
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -207,13 +218,15 @@ cancel_build_0
      - 
 
 Return type:
-    `BuildCancelRequest <../models/BuildCancelRequest.html>`_)
+    `BuildCancelRequest <../models/BuildCancelRequest.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _delete_build:
 
 delete_build
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -246,11 +259,13 @@ delete_build
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _delete_builds:
 
 delete_builds
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -283,11 +298,13 @@ delete_builds
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _delete_comment:
 
 delete_comment
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -320,11 +337,13 @@ delete_comment
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_artifacts_directory:
 
 get_artifacts_directory
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -358,11 +377,13 @@ get_artifacts_directory
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_canceled_info:
 
 get_canceled_info
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -398,13 +419,15 @@ get_canceled_info
      - [optional] 
 
 Return type:
-    `Comment <../models/Comment.html>`_)
+    `Comment <../models/Comment.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_children:
 
 get_children
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -460,13 +483,15 @@ get_children
      - [optional] 
 
 Return type:
-    `Files <../models/Files.html>`_)
+    `Files <../models/Files.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_children_alias:
 
 get_children_alias
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -522,13 +547,15 @@ get_children_alias
      - [optional] 
 
 Return type:
-    `Files <../models/Files.html>`_)
+    `Files <../models/Files.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_content:
 
 get_content
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -573,11 +600,13 @@ get_content
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_content_alias:
 
 get_content_alias
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -622,11 +651,13 @@ get_content_alias
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_metadata:
 
 get_metadata
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -674,13 +705,15 @@ get_metadata
      - [optional] 
 
 Return type:
-    `file <../models/file.html>`_)
+    `file <../models/file.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_parameter:
 
 get_parameter
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -718,11 +751,13 @@ get_parameter
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_pinned:
 
 get_pinned
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -756,11 +791,13 @@ get_pinned
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_problems:
 
 get_problems
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -796,13 +833,15 @@ get_problems
      - [optional] 
 
 Return type:
-    `ProblemOccurrences <../models/ProblemOccurrences.html>`_)
+    `ProblemOccurrences <../models/ProblemOccurrences.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_root:
 
 get_root
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -854,13 +893,15 @@ get_root
      - [optional] 
 
 Return type:
-    `Files <../models/Files.html>`_)
+    `Files <../models/Files.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_tests:
 
 get_tests
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -896,13 +937,15 @@ get_tests
      - [optional] 
 
 Return type:
-    `TestOccurrences <../models/TestOccurrences.html>`_)
+    `TestOccurrences <../models/TestOccurrences.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_zipped:
 
 get_zipped
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -959,11 +1002,13 @@ get_zipped
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _pin_build:
 
 pin_build
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1000,11 +1045,13 @@ pin_build
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _replace_comment:
 
 replace_comment
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1041,11 +1088,13 @@ replace_comment
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _replace_tags:
 
 replace_tags
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1089,13 +1138,15 @@ replace_tags
      - [optional] 
 
 Return type:
-    `Tags <../models/Tags.html>`_)
+    `Tags <../models/Tags.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_aggregated_build_status:
 
 serve_aggregated_build_status
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1129,11 +1180,13 @@ serve_aggregated_build_status
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_aggregated_build_status_icon:
 
 serve_aggregated_build_status_icon
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1170,11 +1223,13 @@ serve_aggregated_build_status_icon
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_all_builds:
 
 serve_all_builds
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1258,13 +1313,15 @@ serve_all_builds
      - [optional] 
 
 Return type:
-    `Builds <../models/Builds.html>`_)
+    `Builds <../models/Builds.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_build:
 
 serve_build
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1300,13 +1357,15 @@ serve_build
      - [optional] 
 
 Return type:
-    `Build <../models/Build.html>`_)
+    `Build <../models/Build.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_build_actual_parameters:
 
 serve_build_actual_parameters
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1342,13 +1401,15 @@ serve_build_actual_parameters
      - [optional] 
 
 Return type:
-    `Properties <../models/Properties.html>`_)
+    `Properties <../models/Properties.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_build_field_by_build_only:
 
 serve_build_field_by_build_only
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1386,11 +1447,13 @@ serve_build_field_by_build_only
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_build_related_issues:
 
 serve_build_related_issues
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1426,13 +1489,15 @@ serve_build_related_issues
      - [optional] 
 
 Return type:
-    `IssuesUsages <../models/IssuesUsages.html>`_)
+    `IssuesUsages <../models/IssuesUsages.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_build_related_issues_old:
 
 serve_build_related_issues_old
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1468,13 +1533,15 @@ serve_build_related_issues_old
      - [optional] 
 
 Return type:
-    `IssuesUsages <../models/IssuesUsages.html>`_)
+    `IssuesUsages <../models/IssuesUsages.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_build_statistic_value:
 
 serve_build_statistic_value
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1512,11 +1579,13 @@ serve_build_statistic_value
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_build_statistic_values:
 
 serve_build_statistic_values
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1552,13 +1621,15 @@ serve_build_statistic_values
      - [optional] 
 
 Return type:
-    `Properties <../models/Properties.html>`_)
+    `Properties <../models/Properties.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_build_status_icon:
 
 serve_build_status_icon
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1595,11 +1666,13 @@ serve_build_status_icon
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_source_file:
 
 serve_source_file
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1636,11 +1709,13 @@ serve_source_file
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_tags:
 
 serve_tags
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1680,13 +1755,15 @@ serve_tags
      - [optional] 
 
 Return type:
-    `Tags <../models/Tags.html>`_)
+    `Tags <../models/Tags.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _unpin_build:
 
 unpin_build
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -1723,6 +1800,5 @@ unpin_build
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+`Back to top <#>`_
 

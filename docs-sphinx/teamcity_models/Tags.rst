@@ -6,7 +6,8 @@ Reference
 ========
 
   + :class:`dohq_teamcity.custom.models.Tags` (and bases class)
-  + `Original swagger documantation by class <https://github.com/devopshq/teamcity/blob/develop/docs-sphinx/swagger/models/Tags.md>`_
+  + Related main API examples (if exist): :doc:`/teamcity_apis/TagsApi`
+  + Original swagger documentation by class :doc:`/swagger/models/Tags`
   + Some examples you can find in `tests directory <https://github.com/devopshq/teamcity/blob/develop/test>`_
 
 Examples

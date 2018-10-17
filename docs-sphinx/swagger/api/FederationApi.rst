@@ -1,7 +1,11 @@
 dohq_teamcity.FederationApi
 ######################################
 
-`API examples <../../teamcity_apis/FederationApi.html>`_
+.. note::
+
+   + All ``serve_*`` method have aliases with get: ``serve_something`` == ``get_something``
+   + Some API have ``get`` method - default method to get object by locator (e.g ``agent_api.get('id:123')`` return ``Agent`` model by id
+   + See more examples on page :doc:`/teamcity_apis/FederationApi` and model examples
 
 .. list-table::
    :widths: 20 80
@@ -9,13 +13,16 @@ dohq_teamcity.FederationApi
 
    * - Method
      - HTTP request
-   * - `add_server`__
+   * - :ref:`add_server`
      - **PUT** ``/app/rest/federation/servers``
-   * - `servers`__
+   * - :ref:`servers`
      - **GET** ``/app/rest/federation/servers``
+
+.. _add_server:
 
 add_server
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -47,13 +54,15 @@ add_server
      - [optional] 
 
 Return type:
-    `Servers <../models/Servers.html>`_)
+    `Servers <../models/Servers.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _servers:
 
 servers
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -85,8 +94,7 @@ servers
      - [optional] 
 
 Return type:
-    `Servers <../models/Servers.html>`_)
+    `Servers <../models/Servers.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+`Back to top <#>`_
 

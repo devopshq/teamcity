@@ -1,7 +1,7 @@
 Datas
 #########
 
-`API examples <../../teamcity_models/Datas.html>`_
+  + Examples for model: :doc:`/teamcity_models/Datas
 
 Properties
 ----------
@@ -18,9 +18,5 @@ Properties
    * - **data**
      -  `list[MetaData] <./MetaData.html>`_
      - `optional` 
-
-
-TODO: fix this link
-[[Back to Model list]]swagger.html) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

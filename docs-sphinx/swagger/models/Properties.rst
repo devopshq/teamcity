@@ -1,7 +1,7 @@
 Properties
 #########
 
-`API examples <../../teamcity_models/Properties.html>`_
+  + Examples for model: :doc:`/teamcity_models/Properties
 
 Properties
 ----------
@@ -21,9 +21,5 @@ Properties
    * - **_property**
      -  `list[ModelProperty] <./ModelProperty.html>`_
      - `optional` 
-
-
-TODO: fix this link
-[[Back to Model list]]swagger.html) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

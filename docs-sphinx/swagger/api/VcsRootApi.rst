@@ -1,7 +1,11 @@
 dohq_teamcity.VcsRootApi
 ######################################
 
-`API examples <../../teamcity_apis/VcsRootApi.html>`_
+.. note::
+
+   + All ``serve_*`` method have aliases with get: ``serve_something`` == ``get_something``
+   + Some API have ``get`` method - default method to get object by locator (e.g ``agent_api.get('id:123')`` return ``Agent`` model by id
+   + See more examples on page :doc:`/teamcity_apis/VcsRootApi` and model examples
 
 .. list-table::
    :widths: 20 80
@@ -9,45 +13,48 @@ dohq_teamcity.VcsRootApi
 
    * - Method
      - HTTP request
-   * - `add_root`__
+   * - :ref:`add_root`
      - **POST** ``/app/rest/vcs-roots``
-   * - `change_properties`__
+   * - :ref:`change_properties`
      - **PUT** ``/app/rest/vcs-roots/{vcsRootLocator}/properties``
-   * - `delete_all_properties`__
+   * - :ref:`delete_all_properties`
      - **DELETE** ``/app/rest/vcs-roots/{vcsRootLocator}/properties``
-   * - `delete_parameter`__
+   * - :ref:`delete_parameter`
      - **DELETE** ``/app/rest/vcs-roots/{vcsRootLocator}/properties/{name}``
-   * - `delete_root`__
+   * - :ref:`delete_root`
      - **DELETE** ``/app/rest/vcs-roots/{vcsRootLocator}``
-   * - `get_settings_file`__
+   * - :ref:`get_settings_file`
      - **GET** ``/app/rest/vcs-roots/{vcsRootLocator}/settingsFile``
-   * - `put_parameter`__
+   * - :ref:`put_parameter`
      - **PUT** ``/app/rest/vcs-roots/{vcsRootLocator}/properties/{name}``
-   * - `serve_field`__
+   * - :ref:`serve_field`
      - **GET** ``/app/rest/vcs-roots/{vcsRootLocator}/{field}``
-   * - `serve_instance_field`__
+   * - :ref:`serve_instance_field`
      - **GET** ``/app/rest/vcs-roots/{vcsRootLocator}/instances/{vcsRootInstanceLocator}/{field}``
-   * - `serve_properties`__
+   * - :ref:`serve_properties`
      - **GET** ``/app/rest/vcs-roots/{vcsRootLocator}/properties``
-   * - `serve_property`__
+   * - :ref:`serve_property`
      - **GET** ``/app/rest/vcs-roots/{vcsRootLocator}/properties/{name}``
-   * - `serve_root`__
+   * - :ref:`serve_root`
      - **GET** ``/app/rest/vcs-roots/{vcsRootLocator}``
-   * - `serve_root_instance`__
+   * - :ref:`serve_root_instance`
      - **GET** ``/app/rest/vcs-roots/{vcsRootLocator}/instances/{vcsRootInstanceLocator}``
-   * - `serve_root_instance_properties`__
+   * - :ref:`serve_root_instance_properties`
      - **GET** ``/app/rest/vcs-roots/{vcsRootLocator}/instances/{vcsRootInstanceLocator}/properties``
-   * - `serve_root_instances`__
+   * - :ref:`serve_root_instances`
      - **GET** ``/app/rest/vcs-roots/{vcsRootLocator}/instances``
-   * - `serve_roots`__
+   * - :ref:`serve_roots`
      - **GET** ``/app/rest/vcs-roots``
-   * - `set_field`__
+   * - :ref:`set_field`
      - **PUT** ``/app/rest/vcs-roots/{vcsRootLocator}/{field}``
-   * - `set_instance_field`__
+   * - :ref:`set_instance_field`
      - **PUT** ``/app/rest/vcs-roots/{vcsRootLocator}/instances/{vcsRootInstanceLocator}/{field}``
+
+.. _add_root:
 
 add_root
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -83,13 +90,15 @@ add_root
      - [optional] 
 
 Return type:
-    `VcsRoot <../models/VcsRoot.html>`_)
+    `VcsRoot <../models/VcsRoot.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _change_properties:
 
 change_properties
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -129,13 +138,15 @@ change_properties
      - [optional] 
 
 Return type:
-    `Properties <../models/Properties.html>`_)
+    `Properties <../models/Properties.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _delete_all_properties:
 
 delete_all_properties
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -168,11 +179,13 @@ delete_all_properties
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _delete_parameter:
 
 delete_parameter
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -209,11 +222,13 @@ delete_parameter
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _delete_root:
 
 delete_root
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -246,11 +261,13 @@ delete_root
 Return type:
     void (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _get_settings_file:
 
 get_settings_file
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -284,11 +301,13 @@ get_settings_file
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _put_parameter:
 
 put_parameter
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -330,11 +349,13 @@ put_parameter
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_field:
 
 serve_field
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -372,11 +393,13 @@ serve_field
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_instance_field:
 
 serve_instance_field
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -418,11 +441,13 @@ serve_instance_field
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_properties:
 
 serve_properties
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -458,13 +483,15 @@ serve_properties
      - [optional] 
 
 Return type:
-    `Properties <../models/Properties.html>`_)
+    `Properties <../models/Properties.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_property:
 
 serve_property
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -502,11 +529,13 @@ serve_property
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_root:
 
 serve_root
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -542,13 +571,15 @@ serve_root
      - [optional] 
 
 Return type:
-    `VcsRoot <../models/VcsRoot.html>`_)
+    `VcsRoot <../models/VcsRoot.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_root_instance:
 
 serve_root_instance
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -588,13 +619,15 @@ serve_root_instance
      - [optional] 
 
 Return type:
-    `VcsRootInstance <../models/VcsRootInstance.html>`_)
+    `VcsRootInstance <../models/VcsRootInstance.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_root_instance_properties:
 
 serve_root_instance_properties
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -634,13 +667,15 @@ serve_root_instance_properties
      - [optional] 
 
 Return type:
-    `Properties <../models/Properties.html>`_)
+    `Properties <../models/Properties.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_root_instances:
 
 serve_root_instances
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -676,13 +711,15 @@ serve_root_instances
      - [optional] 
 
 Return type:
-    `VcsRootInstances <../models/VcsRootInstances.html>`_)
+    `VcsRootInstances <../models/VcsRootInstances.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _serve_roots:
 
 serve_roots
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -718,13 +755,15 @@ serve_roots
      - [optional] 
 
 Return type:
-    `VcsRoots <../models/VcsRoots.html>`_)
+    `VcsRoots <../models/VcsRoots.html>`_
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _set_field:
 
 set_field
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -766,11 +805,13 @@ set_field
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+`Back to top <#>`_
 
+.. _set_instance_field:
 
 set_instance_field
 -----------------
+
 .. code-block:: python
 
     from pprint import pprint
@@ -816,6 +857,5 @@ set_instance_field
 Return type:
     **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+`Back to top <#>`_
 

@@ -1,7 +1,7 @@
 LicensingData
 #########
 
-`API examples <../../teamcity_models/LicensingData.html>`_
+  + Examples for model: :doc:`/teamcity_models/LicensingData
 
 Properties
 ----------
@@ -42,9 +42,5 @@ Properties
    * - **unlimited_build_types**
      - **bool**
      - `optional` [default to ``False``]
-
-
-TODO: fix this link
-[[Back to Model list]]swagger.html) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

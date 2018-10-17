@@ -1,7 +1,7 @@
 Agent
 #########
 
-`API examples <../../teamcity_models/Agent.html>`_
+  + Examples for model: :doc:`/teamcity_models/Agent
 
 Properties
 ----------
@@ -63,9 +63,5 @@ Properties
    * - **uptodate**
      - **bool**
      - `optional` [default to ``False``]
-
-
-TODO: fix this link
-[[Back to Model list]]swagger.html) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

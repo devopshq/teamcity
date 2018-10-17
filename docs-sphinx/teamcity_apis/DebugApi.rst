@@ -6,8 +6,10 @@ Reference
 ========
 
   + :class:`dohq_teamcity.custom.api.DebugApi` (and bases class)
-  + `Original swagger documantation by class <https://github.com/devopshq/teamcity/blob/develop/docs-sphinx/swagger/api/DebugApi.md>`_
+  + Related main Model examples (if exist): :doc:`/teamcity_models/Debug`
+  + Original swagger documentation by class :doc:`/swagger/api/DebugApi`
   + Some examples you can find in `tests directory <https://github.com/devopshq/teamcity/blob/develop/test>`_
+
 
 Examples
 ========

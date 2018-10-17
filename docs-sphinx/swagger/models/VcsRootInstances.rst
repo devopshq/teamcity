@@ -1,7 +1,7 @@
 VcsRootInstances
 #########
 
-`API examples <../../teamcity_models/VcsRootInstances.html>`_
+  + Examples for model: :doc:`/teamcity_models/VcsRootInstances
 
 Properties
 ----------
@@ -27,9 +27,5 @@ Properties
    * - **vcs_root_instance**
      -  `list[VcsRootInstance] <./VcsRootInstance.html>`_
      - `optional` 
-
-
-TODO: fix this link
-[[Back to Model list]]swagger.html) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

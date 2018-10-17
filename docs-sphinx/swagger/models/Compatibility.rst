@@ -1,7 +1,7 @@
 Compatibility
 #########
 
-`API examples <../../teamcity_models/Compatibility.html>`_
+  + Examples for model: :doc:`/teamcity_models/Compatibility
 
 Properties
 ----------
@@ -24,9 +24,5 @@ Properties
    * - **unmet_requirements**
      -  `Requirements <./Requirements.html>`_
      - `optional` 
-
-
-TODO: fix this link
-[[Back to Model list]]swagger.html) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

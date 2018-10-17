@@ -1,7 +1,7 @@
 StackTraceElement
 #########
 
-`API examples <../../teamcity_models/StackTraceElement.html>`_
+  + Examples for model: :doc:`/teamcity_models/StackTraceElement
 
 Properties
 ----------
@@ -27,9 +27,5 @@ Properties
    * - **native_method**
      - **bool**
      - `optional` [default to ``False``]
-
-
-TODO: fix this link
-[[Back to Model list]]swagger.html) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

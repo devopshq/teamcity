@@ -1,7 +1,7 @@
 Href
 #########
 
-`API examples <../../teamcity_models/Href.html>`_
+  + Examples for model: :doc:`/teamcity_models/Href
 
 Properties
 ----------
@@ -15,9 +15,5 @@ Properties
    * - **href**
      - **str**
      - `optional` 
-
-
-TODO: fix this link
-[[Back to Model list]]swagger.html) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 
