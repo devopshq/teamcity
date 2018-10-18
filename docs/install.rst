@@ -8,7 +8,7 @@ Use :command:`pip` to install the latest stable version of ``dohq-teamcity``:
 
 .. code-block:: console
 
-   $ sudo pip install --upgrade dohq-teamcity
+   pip install --upgrade dohq-teamcity
 
 The current development version is available on `github
 <https://github.com/devopshq/teamcity>`__. Use :command:`git` and
@@ -16,9 +16,9 @@ The current development version is available on `github
 
 .. code-block:: console
 
-   $ git clone https://github.com/devopshq/teamcity
-   $ cd teamcity
-   $ sudo python setup.py install
+   git clone https://github.com/devopshq/teamcity
+   cd teamcity
+   python setup.py install
 
 Try connect to your TeamCity instance
 

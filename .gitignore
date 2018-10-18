@@ -1,6 +1,7 @@
 build
 docs/_build
-test.py
+.pytest_cache
+./test.py
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
