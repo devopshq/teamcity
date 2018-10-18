@@ -1,9 +1,7 @@
 language: python
 python:
-  - "2.7"
   - "3.4"
-  - "3.5"
-  - "3.7"
+  - "3.6"
 
 install:
   - pip install -r requirements.txt
@@ -14,16 +12,13 @@ script:
   - pytest
 #  - flake8 # TODO: https://github.com/devopshq/teamcity/issues/3
 
-#deploy:
-#  provider: pypi
-#  user: devopshq
-#  password:
-#    secure: g5reDD6SgjPZrvjh0nhoKEUAHiltXiAlZDoqaQ4APAZT/cvcO7zJiaB3eRBnTw/8VPYo6iQubOb5puMrAvLK/egplY0AMCmLUIYMdykp4aqkezsuSCHQPS0SoNUB/sQGW0RKia7OdAXYIClZm90eFXxyrzZQBFkMvyz6DByOKBUai5KKWnr9kaDiP5g1urvpIeeNJMtsI+ML73QR2tzruuSjQbkx0siY9GybRgBpdiemJxsrUbjhN0rsEdYafcsTQBC9OHDSrDAl6UCOwin8EKYppS6exxF0Ut2je/NIuHt9JMjjDkdXLuERyMXF/G6WXv+xKWuaWlEpAOBh6+xa2YzqZWjfyk+mab7t/Pi3FHa+avb60CBW/zd9Q7onjz1WlAwKu7aDBsEDkqvjCkGujbPucMwBw1fKHjdTz2ITFnAth8q5LvdwGTzldLNDixdssTwwEAllN40fYpbFCBx7GF4564/NyaG1JBUKqa1QP0mUoN3KdWL71yf8xtux4CxLPgo1UC3aEYlXmyWnDST8BSMy91+BWWUEVhauyRUid6kDYOZJ8hn5yK//lfJqNFI7/mUnfMCqeqBtWLp19g8V2Ewx3KE0DARjJQ+8dLcZ3/6xYwVV+EkP7kCTIOPKMvaVn1TFswX1N08FekfdjF1g0wr5+ig8z3ubma1u8vz4iu0=
-#  distributions: sdist bdist_wheel
-#  skip_cleanup: false
-#  on:
-#    branch: master
-#    python: '3.4'
-#env:
-#  global:
-#  - secure: wiFL18iRrNU1t7ZBu571vWMvEdih8fX5wM1e0h0wyaa0OK2Rz2Ihsqnzv490vLvaXanRXrBMV8/QwskNwsJ0kOtaL43Xt4yaBqMkOVNprNAIFNofJrvlrAxzZ9m8TGzmSoHz3JkE0YHZSJRKYWzJW5+iI1r+rC2BRUGQG7tRmzef1tiOCoq76Ie2LD4+Pp5BkO2EdeC7O9+WRdOjizRwbBJ+1wc0mWc1Yb/5r76THNxAVDfdhW6k7AZGqaXIwSvVgmlfj3hjYKJGPP9bJOfaRpFMxBBA4cYXFLdEAaaC+8sc9E1TTvG+R3O5gGfz/RUJ5pIqBUVDMz4xAjysJHYY5W1RueEEaG9aDjtM5/oNVZGjbmQqhusi92nlEJoXmukv/YZUFARiw1cAFQFCSWMUUzoR1XfUpJewsKBCuJ8Akwf8GiK4c153tyYHAa371LDcBiEcylcLTF2M/0Vb+oIU1wX+x6rv1B7uEPZshmq5tVXYbUpezBYAFFIrZwgPxj1SITONgMdHFVCLfp+b1TIpE64A4FWrhWNJOXv5yzl8/xlyaN9hFBv1NebCBZFUEkzXvgIz/PxiEbI6jygKBdxaW9Iw9NUdByfFVAcczExRODsHP8TCWSzQTkdwDwKl2QUI0WsmeBraBovprWeye2lgfh8w6UVA5IK9Pj4kkXjOr8A=
+deploy:
+  provider: pypi
+  user: devopshq
+  password:
+    secure: YpVKSjUXtBcERUZUEo+S6nrzeAmWW4A66hQi+mZzX9plz0vBitK0052GnciKtcBpyZ16sx/u7ADwreEHgkZp+p0pos1l9Yombqagbr+twX6FfWrHc+65PWjS9ZiZadOswP7+LCwd248wYyInyMB4m7CYxElkcs5PDvgfFI5J66chDf2vu252PGDYHS6t8P3nWErxlWXIwRjQKq0jlh7w1Sz/anw0IgRd3FBIugPlXRjGzXGoxHK5yH5Sbg6Q3fLPYdGdTOu33C32lATuhaG6SqOqaOjFrvIVSclRX3dxDzbiVpm8pDfa7BIn3KdL2wKZn6b8qrAGSUTMyla3vUN+6f4ro8TpHtc2157WS7XrMo+nhqrePgzmn3/2AcuDDl+rpNIPXKrzV8cLEdS52gytTLdkBCMqv+BIEJqh7oa+lDVhzM+ShtSly1DTHzKsN+/VStGEK7vMkQDtXw4wlVV5t6UdEUmd0A1mZ4HHWthO3ORPc/1EszXBKJIr1gHhLl/WhNMu6C+dIPlTq5zQA50xf/V5vIRuqiw5f9y+d1Xmzop0ZYgwXDVnoAoKpLwFhxfeBiYD1BQ6M6BUIsQiUWDQ038i+NPyFBpp4epOwF8rA0DLg1dx011ZOAFZqvx0fp/FRsfoJ0VjEAZpdZqt3NjudGwzZ+ZSVAuQzWnzOxpy2as=
+  distributions: sdist bdist_wheel
+  skip_cleanup: false
+  on:
+    branch: master
+    python: '3.4'
