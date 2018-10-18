@@ -11,9 +11,9 @@ How to build documentation?
 
 We use sphinx to build docs::
 
-    cd docs
+    cd docs-sphinx
     make html
-    # open ./docs/_build/html/index.html on your browser
+    # open ./docs-sphinx/_build/html/index.html on your browser
 
 How to publish documentation?
 =============================
