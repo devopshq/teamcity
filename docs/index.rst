@@ -17,7 +17,7 @@ Contents:
     install
     api-usage
     faq
-    api-examples
+    examples
     swagger
     api/dohq_teamcity
     development
