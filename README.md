@@ -2,7 +2,7 @@
 [![docs](https://img.shields.io/readthedocs/pip.svg)](https://devopshq.github.io/teamcity/)
 [![build](https://travis-ci.org/devopshq/teamcity.svg?branch=master)](https://travis-ci.org/devopshq/teamcity)
 [![pypi](https://img.shields.io/pypi/v/dohq-teamcity.svg)](https://pypi.python.org/pypi/dohq-teamcity)
-[![license](https://img.shields.io/pypi/l/teamcity.svg)](https://github.com/devopshq/teamcity/blob/master/LICENSE)
+[![license](https://img.shields.io/pypi/l/dohq-teamcity.svg)](https://github.com/devopshq/teamcity/blob/master/LICENSE)
 
 `dohq-teamcity` is a Python package providing access to the JetBrains TeamCity server API.
 
