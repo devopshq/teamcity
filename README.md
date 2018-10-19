@@ -1,5 +1,5 @@
 # dohq-teamcity
-[![docs](https://img.shields.io/readthedocs/pip.svg)](https://devopshq.github.io/teamcity/)
+[![docs](https://img.shields.io/badge/docs-published-brightgreen.svg)](https://devopshq.github.io/teamcity/)
 [![build](https://travis-ci.org/devopshq/teamcity.svg?branch=master)](https://travis-ci.org/devopshq/teamcity)
 [![pypi](https://img.shields.io/pypi/v/dohq-teamcity.svg)](https://pypi.python.org/pypi/dohq-teamcity)
 [![license](https://img.shields.io/pypi/l/dohq-teamcity.svg)](https://github.com/devopshq/teamcity/blob/master/LICENSE)
