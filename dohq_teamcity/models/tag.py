@@ -109,4 +109,3 @@ class Tag(TeamCityObject):
         """
 
         self._private = private
-

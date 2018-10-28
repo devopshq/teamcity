@@ -189,4 +189,3 @@ class Test(TeamCityObject):
         """
 
         self._test_occurrences = test_occurrences
-

@@ -10,7 +10,10 @@ from copy import copy
 
 def init_logging():
     logger_format_string = '%(thread)5s %(module)-20s %(levelname)-8s %(message)s'
-    logging.basicConfig(level=logging.DEBUG, format=logger_format_string, stream=sys.stdout)
+    logging.basicConfig(
+        level=logging.DEBUG,
+        format=logger_format_string,
+        stream=sys.stdout)
 
 
 def convert(name):
@@ -69,7 +72,7 @@ def new_api_function(method, new_name=None):
 {doc}
         \"\"\"
         return self.{name}({args_no_self}**kwargs)
-        
+
 """
 
     args = inspect.getargspec(method)[0]
@@ -91,7 +94,7 @@ def new_model_function(method, locator, new_name=None):
 {doc}
         \"\"\"
         return self.api.{name}({args_no}{locator_str}, **kwargs)
-        
+
 """
 
     args = inspect.getargspec(method)[0]
@@ -124,11 +127,14 @@ class Program:
         import dohq_teamcity.api
 
         # APIs load
-        apis = [(name, cls) for name, cls in inspect.getmembers(dohq_teamcity.api, inspect.isclass)]
+        apis = [
+            (name, cls) for name, cls in inspect.getmembers(
+                dohq_teamcity.api, inspect.isclass)]
 
         for cls_name, cls in apis:
             append = [""]
-            methods = inspect.getmembers(cls, lambda x: inspect.isfunction(x) and not x.__name__.startswith('_'))
+            methods = inspect.getmembers(
+                cls, lambda x: inspect.isfunction(x) and not x.__name__.startswith('_'))
 
             #
             # get => serve_N, get_N, ...
@@ -138,12 +144,14 @@ class Program:
             lastname = convert(cls.base_name).split('_')[-1]
             get_method = [
                 'serve_{}'.format(lowername),  # Agent => serve_agent
-                'serve_{}'.format(lastname),  # VcsRoot => serve_root, AgentPool => serve_pool
+                'serve_{}'.format(lastname),
+                # VcsRoot => serve_root, AgentPool => serve_pool
                 'get_{}'.format(lastname),  # AgentPool => get_pool
                 'serve_instance',  # TestApi, VcsRootInstanceApi
                 'serve_build_type_xml'  # BuildType
             ]
-            get_serve_ = [(name, method) for name, method in methods if name in get_method]
+            get_serve_ = [(name, method)
+                          for name, method in methods if name in get_method]
 
             if len(get_serve_) == 1:
                 # logging.debug("Found serve\get method '{}' in api '{}'".format(get_serve_, cls_name))
@@ -160,7 +168,8 @@ class Program:
             #
             # get_N => serve_N
             #
-            serve_methods = inspect.getmembers(cls, lambda x: inspect.isfunction(x) and x.__name__.startswith('serve_'))
+            serve_methods = inspect.getmembers(
+                cls, lambda x: inspect.isfunction(x) and x.__name__.startswith('serve_'))
             for name, method in serve_methods:
                 new_name = name.replace('serve_', 'get_')
                 txt = new_api_function(method, new_name)
@@ -185,12 +194,17 @@ class Program:
         :return:
         """
         import dohq_teamcity.custom.api
-        apis = {name: cls for name, cls in inspect.getmembers(dohq_teamcity.custom.api, inspect.isclass)}
+        apis = {
+            name: cls for name,
+            cls in inspect.getmembers(
+                dohq_teamcity.custom.api,
+                inspect.isclass)}
         api = apis[api]
         methods = inspect.getmembers(api, lambda x: inspect.isfunction(x)
-                                                    and locator in inspect.getargspec(x)[0]
-                                                    and not x.__name__.startswith('__'))
-        append = [new_model_function(method, locator) for name, method in methods]
+                                     and locator in inspect.getargspec(x)[0]
+                                     and not x.__name__.startswith('__'))
+        append = [new_model_function(method, locator)
+                  for name, method in methods]
         if append != [""]:
             print(''.join(append))
         else:
@@ -211,9 +225,13 @@ class Program:
         return self.{property_}
 
 """
-        models = {name: cls for name, cls in
-                  inspect.getmembers(dohq_teamcity.custom.models,
-                                     lambda x: inspect.isclass(x) and issubclass(x, TeamCityObject))}
+        models = {
+            name: cls for name,
+            cls in inspect.getmembers(
+                dohq_teamcity.custom.models,
+                lambda x: inspect.isclass(x) and issubclass(
+                    x,
+                    TeamCityObject))}
         for model_name, model in models.items():
             if model_name.endswith('s'):
 
@@ -228,11 +246,13 @@ class Program:
                     # Agents => Agent
                     single_classname = model_name[:-1]
 
-                single_attribute = [x for x, y in model.swagger_types.items() if
-                                    y == 'list[{}]'.format(single_classname) or y == 'list[Model{}]'.format(
-                                        single_classname)]
+                single_attribute = [x for x, y in model.swagger_types.items() if y == 'list[{}]'.format(
+                    single_classname) or y == 'list[Model{}]'.format(single_classname)]
                 if single_attribute:
-                    print(txt_format.format(model=model_name, property_=single_attribute[0]))
+                    print(
+                        txt_format.format(
+                            model=model_name,
+                            property_=single_attribute[0]))
 
 
 if __name__ == "__main__":

@@ -478,4 +478,3 @@ class Agent(TeamCityObject):
         """
 
         self._uptodate = uptodate
-

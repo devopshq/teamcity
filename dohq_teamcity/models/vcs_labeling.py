@@ -135,4 +135,3 @@ class VcsLabeling(TeamCityObject):
         """
 
         self._vcs_roots = vcs_roots
-

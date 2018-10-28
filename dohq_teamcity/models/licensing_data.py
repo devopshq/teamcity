@@ -291,4 +291,3 @@ class LicensingData(TeamCityObject):
         """
 
         self._unlimited_build_types = unlimited_build_types
-

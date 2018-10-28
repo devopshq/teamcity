@@ -83,4 +83,3 @@ class Steps(TeamCityObject):
         """
 
         self._step = step
-

@@ -77,7 +77,8 @@ class BuildApi(BuildApi):
         :param str suffix: (required)
         :return: None
         """
-        return self.serve_aggregated_build_status_icon(build_locator, suffix, **kwargs)
+        return self.serve_aggregated_build_status_icon(
+            build_locator, suffix, **kwargs)
 
     def get_all_builds(self, **kwargs):
         """
@@ -125,7 +126,8 @@ class BuildApi(BuildApi):
         :param str field: (required)
         :return: str
         """
-        return self.serve_build_field_by_build_only(build_locator, field, **kwargs)
+        return self.serve_build_field_by_build_only(
+            build_locator, field, **kwargs)
 
     def get_build_related_issues(self, build_locator, **kwargs):
         """
@@ -200,7 +202,8 @@ class BuildQueueApi(BuildQueueApi):
         :param str field: (required)
         :return: str
         """
-        return self.serve_build_field_by_build_only(build_locator, field, **kwargs)
+        return self.serve_build_field_by_build_only(
+            build_locator, field, **kwargs)
 
     def get_compatible_agents(self, queued_build_locator, **kwargs):
         """
@@ -250,7 +253,8 @@ class BuildTypeApi(BuildTypeApi):
         :param str field: (required)
         :return: str
         """
-        return self.serve_build_field(bt_locator, build_locator, field, **kwargs)
+        return self.serve_build_field(
+            bt_locator, build_locator, field, **kwargs)
 
     def get_build_type_builds_tags(self, bt_locator, field, **kwargs):
         """
@@ -296,7 +300,8 @@ class BuildTypeApi(BuildTypeApi):
         :param str fields:
         :return: Build
         """
-        return self.serve_build_with_project(bt_locator, build_locator, **kwargs)
+        return self.serve_build_with_project(
+            bt_locator, build_locator, **kwargs)
 
     def get_builds(self, bt_locator, **kwargs):
         """
@@ -364,7 +369,13 @@ class DefaultApi(DefaultApi):
         """
         return self.serve_api_version(**kwargs)
 
-    def get_build_field_short(self, project_locator, bt_locator, build_locator, field, **kwargs):
+    def get_build_field_short(
+            self,
+            project_locator,
+            bt_locator,
+            build_locator,
+            field,
+            **kwargs):
         """
         :param async_req: bool
         :param str project_locator: (required)
@@ -373,7 +384,8 @@ class DefaultApi(DefaultApi):
         :param str field: (required)
         :return: str
         """
-        return self.serve_build_field_short(project_locator, bt_locator, build_locator, field, **kwargs)
+        return self.serve_build_field_short(
+            project_locator, bt_locator, build_locator, field, **kwargs)
 
     def get_plugin_info(self, **kwargs):
         """
@@ -505,7 +517,13 @@ class ProjectApi(ProjectApi):
         """
         return self.serve_project(project_locator, **kwargs)
 
-    def get_build_field_with_project(self, project_locator, bt_locator, build_locator, field, **kwargs):
+    def get_build_field_with_project(
+            self,
+            project_locator,
+            bt_locator,
+            build_locator,
+            field,
+            **kwargs):
         """
         :param async_req: bool
         :param str project_locator: (required)
@@ -514,7 +532,8 @@ class ProjectApi(ProjectApi):
         :param str field: (required)
         :return: str
         """
-        return self.serve_build_field_with_project(project_locator, bt_locator, build_locator, field, **kwargs)
+        return self.serve_build_field_with_project(
+            project_locator, bt_locator, build_locator, field, **kwargs)
 
     def get_build_type(self, project_locator, bt_locator, **kwargs):
         """
@@ -526,7 +545,8 @@ class ProjectApi(ProjectApi):
         """
         return self.serve_build_type(project_locator, bt_locator, **kwargs)
 
-    def get_build_type_field_with_project(self, project_locator, bt_locator, field, **kwargs):
+    def get_build_type_field_with_project(
+            self, project_locator, bt_locator, field, **kwargs):
         """
         :param async_req: bool
         :param str project_locator: (required)
@@ -534,7 +554,8 @@ class ProjectApi(ProjectApi):
         :param str field: (required)
         :return: str
         """
-        return self.serve_build_type_field_with_project(project_locator, bt_locator, field, **kwargs)
+        return self.serve_build_type_field_with_project(
+            project_locator, bt_locator, field, **kwargs)
 
     def get_build_type_templates(self, project_locator, bt_locator, **kwargs):
         """
@@ -544,7 +565,8 @@ class ProjectApi(ProjectApi):
         :param str fields:
         :return: BuildType
         """
-        return self.serve_build_type_templates(project_locator, bt_locator, **kwargs)
+        return self.serve_build_type_templates(
+            project_locator, bt_locator, **kwargs)
 
     def get_build_types_in_project(self, project_locator, **kwargs):
         """
@@ -555,7 +577,12 @@ class ProjectApi(ProjectApi):
         """
         return self.serve_build_types_in_project(project_locator, **kwargs)
 
-    def get_build_with_project(self, project_locator, bt_locator, build_locator, **kwargs):
+    def get_build_with_project(
+            self,
+            project_locator,
+            bt_locator,
+            build_locator,
+            **kwargs):
         """
         :param async_req: bool
         :param str project_locator: (required)
@@ -564,7 +591,8 @@ class ProjectApi(ProjectApi):
         :param str fields:
         :return: Build
         """
-        return self.serve_build_with_project(project_locator, bt_locator, build_locator, **kwargs)
+        return self.serve_build_with_project(
+            project_locator, bt_locator, build_locator, **kwargs)
 
     def get_builds(self, project_locator, bt_locator, **kwargs):
         """
@@ -766,7 +794,12 @@ class VcsRootApi(VcsRootApi):
         """
         return self.serve_field(vcs_root_locator, field, **kwargs)
 
-    def get_instance_field(self, vcs_root_locator, vcs_root_instance_locator, field, **kwargs):
+    def get_instance_field(
+            self,
+            vcs_root_locator,
+            vcs_root_instance_locator,
+            field,
+            **kwargs):
         """
         :param async_req: bool
         :param str vcs_root_locator: (required)
@@ -774,7 +807,8 @@ class VcsRootApi(VcsRootApi):
         :param str field: (required)
         :return: str
         """
-        return self.serve_instance_field(vcs_root_locator, vcs_root_instance_locator, field, **kwargs)
+        return self.serve_instance_field(
+            vcs_root_locator, vcs_root_instance_locator, field, **kwargs)
 
     def get_properties(self, vcs_root_locator, **kwargs):
         """
@@ -803,7 +837,11 @@ class VcsRootApi(VcsRootApi):
         """
         return self.serve_root(vcs_root_locator, **kwargs)
 
-    def get_root_instance(self, vcs_root_locator, vcs_root_instance_locator, **kwargs):
+    def get_root_instance(
+            self,
+            vcs_root_locator,
+            vcs_root_instance_locator,
+            **kwargs):
         """
         :param async_req: bool
         :param str vcs_root_locator: (required)
@@ -811,9 +849,14 @@ class VcsRootApi(VcsRootApi):
         :param str fields:
         :return: VcsRootInstance
         """
-        return self.serve_root_instance(vcs_root_locator, vcs_root_instance_locator, **kwargs)
+        return self.serve_root_instance(
+            vcs_root_locator, vcs_root_instance_locator, **kwargs)
 
-    def get_root_instance_properties(self, vcs_root_locator, vcs_root_instance_locator, **kwargs):
+    def get_root_instance_properties(
+            self,
+            vcs_root_locator,
+            vcs_root_instance_locator,
+            **kwargs):
         """
         :param async_req: bool
         :param str vcs_root_locator: (required)
@@ -821,7 +864,8 @@ class VcsRootApi(VcsRootApi):
         :param str fields:
         :return: Properties
         """
-        return self.serve_root_instance_properties(vcs_root_locator, vcs_root_instance_locator, **kwargs)
+        return self.serve_root_instance_properties(
+            vcs_root_locator, vcs_root_instance_locator, **kwargs)
 
     def get_root_instances(self, vcs_root_locator, **kwargs):
         """
@@ -868,7 +912,8 @@ class VcsRootInstanceApi(VcsRootInstanceApi):
         :param str field: (required)
         :return: str
         """
-        return self.serve_instance_field(vcs_root_instance_locator, field, **kwargs)
+        return self.serve_instance_field(
+            vcs_root_instance_locator, field, **kwargs)
 
     def get_instances(self, **kwargs):
         """
@@ -886,4 +931,5 @@ class VcsRootInstanceApi(VcsRootInstanceApi):
         :param str fields:
         :return: Properties
         """
-        return self.serve_root_instance_properties(vcs_root_instance_locator, **kwargs)
+        return self.serve_root_instance_properties(
+            vcs_root_instance_locator, **kwargs)

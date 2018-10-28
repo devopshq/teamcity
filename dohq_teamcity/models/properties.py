@@ -109,4 +109,3 @@ class Properties(TeamCityObject):
         """
 
         self.__property = _property
-

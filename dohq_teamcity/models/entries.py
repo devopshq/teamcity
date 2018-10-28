@@ -83,4 +83,3 @@ class Entries(TeamCityObject):
         """
 
         self._entry = entry
-

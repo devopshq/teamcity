@@ -240,4 +240,3 @@ class NewBuildTypeDescription(TeamCityObject):
         """
 
         self._vcs_roots_ids_map = vcs_roots_ids_map
-

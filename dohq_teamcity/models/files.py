@@ -109,4 +109,3 @@ class Files(TeamCityObject):
         """
 
         self._href = href
-

@@ -161,4 +161,3 @@ class Tests(TeamCityObject):
         """
 
         self._test = test
-

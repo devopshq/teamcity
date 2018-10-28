@@ -62,7 +62,6 @@ class UserApi(object):
             (data) = self.__add_group_with_http_info(user_locator, **kwargs)  # noqa: E501
             return data
 
-
     def add_role(self, user_locator, **kwargs):  # noqa: E501
         """add_role  # noqa: E501
 
@@ -84,7 +83,6 @@ class UserApi(object):
         else:
             (data) = self.__add_role_with_http_info(user_locator, **kwargs)  # noqa: E501
             return data
-
 
     def add_role_simple(self, user_locator, role_id, scope, **kwargs):  # noqa: E501
         """add_role_simple  # noqa: E501
@@ -109,7 +107,6 @@ class UserApi(object):
             (data) = self.__add_role_simple_with_http_info(user_locator, role_id, scope, **kwargs)  # noqa: E501
             return data
 
-
     def add_role_simple_post(self, user_locator, role_id, scope, **kwargs):  # noqa: E501
         """add_role_simple_post  # noqa: E501
 
@@ -133,7 +130,6 @@ class UserApi(object):
             (data) = self.__add_role_simple_post_with_http_info(user_locator, role_id, scope, **kwargs)  # noqa: E501
             return data
 
-
     def create_user(self, **kwargs):  # noqa: E501
         """create_user  # noqa: E501
 
@@ -156,7 +152,6 @@ class UserApi(object):
             (data) = self.__create_user_with_http_info(**kwargs)  # noqa: E501
             return data
 
-
     def delete_remember_me(self, user_locator, **kwargs):  # noqa: E501
         """delete_remember_me  # noqa: E501
 
@@ -177,7 +172,6 @@ class UserApi(object):
         else:
             (data) = self.__delete_remember_me_with_http_info(user_locator, **kwargs)  # noqa: E501
             return data
-
 
     def delete_role(self, user_locator, role_id, scope, **kwargs):  # noqa: E501
         """delete_role  # noqa: E501
@@ -202,7 +196,6 @@ class UserApi(object):
             (data) = self.__delete_role_with_http_info(user_locator, role_id, scope, **kwargs)  # noqa: E501
             return data
 
-
     def delete_user(self, user_locator, **kwargs):  # noqa: E501
         """delete_user  # noqa: E501
 
@@ -223,7 +216,6 @@ class UserApi(object):
         else:
             (data) = self.__delete_user_with_http_info(user_locator, **kwargs)  # noqa: E501
             return data
-
 
     def delete_user_field(self, user_locator, field, **kwargs):  # noqa: E501
         """delete_user_field  # noqa: E501
@@ -247,7 +239,6 @@ class UserApi(object):
             (data) = self.__delete_user_field_with_http_info(user_locator, field, **kwargs)  # noqa: E501
             return data
 
-
     def get_groups(self, user_locator, **kwargs):  # noqa: E501
         """get_groups  # noqa: E501
 
@@ -270,7 +261,6 @@ class UserApi(object):
             (data) = self.__get_groups_with_http_info(user_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_permissions(self, user_locator, **kwargs):  # noqa: E501
         """get_permissions  # noqa: E501
 
@@ -291,7 +281,6 @@ class UserApi(object):
         else:
             (data) = self.__get_permissions_with_http_info(user_locator, **kwargs)  # noqa: E501
             return data
-
 
     def list_role(self, user_locator, role_id, scope, **kwargs):  # noqa: E501
         """list_role  # noqa: E501
@@ -316,7 +305,6 @@ class UserApi(object):
             (data) = self.__list_role_with_http_info(user_locator, role_id, scope, **kwargs)  # noqa: E501
             return data
 
-
     def list_roles(self, user_locator, **kwargs):  # noqa: E501
         """list_roles  # noqa: E501
 
@@ -337,7 +325,6 @@ class UserApi(object):
         else:
             (data) = self.__list_roles_with_http_info(user_locator, **kwargs)  # noqa: E501
             return data
-
 
     def put_user_property(self, user_locator, name, **kwargs):  # noqa: E501
         """put_user_property  # noqa: E501
@@ -362,7 +349,6 @@ class UserApi(object):
             (data) = self.__put_user_property_with_http_info(user_locator, name, **kwargs)  # noqa: E501
             return data
 
-
     def remove_user_property(self, user_locator, name, **kwargs):  # noqa: E501
         """remove_user_property  # noqa: E501
 
@@ -384,7 +370,6 @@ class UserApi(object):
         else:
             (data) = self.__remove_user_property_with_http_info(user_locator, name, **kwargs)  # noqa: E501
             return data
-
 
     def replace_groups(self, user_locator, **kwargs):  # noqa: E501
         """replace_groups  # noqa: E501
@@ -409,7 +394,6 @@ class UserApi(object):
             (data) = self.__replace_groups_with_http_info(user_locator, **kwargs)  # noqa: E501
             return data
 
-
     def replace_roles(self, user_locator, **kwargs):  # noqa: E501
         """replace_roles  # noqa: E501
 
@@ -431,7 +415,6 @@ class UserApi(object):
         else:
             (data) = self.__replace_roles_with_http_info(user_locator, **kwargs)  # noqa: E501
             return data
-
 
     def serve_user(self, user_locator, **kwargs):  # noqa: E501
         """serve_user  # noqa: E501
@@ -455,7 +438,6 @@ class UserApi(object):
             (data) = self.__serve_user_with_http_info(user_locator, **kwargs)  # noqa: E501
             return data
 
-
     def serve_user_field(self, user_locator, field, **kwargs):  # noqa: E501
         """serve_user_field  # noqa: E501
 
@@ -477,7 +459,6 @@ class UserApi(object):
         else:
             (data) = self.__serve_user_field_with_http_info(user_locator, field, **kwargs)  # noqa: E501
             return data
-
 
     def serve_user_properties(self, user_locator, **kwargs):  # noqa: E501
         """serve_user_properties  # noqa: E501
@@ -501,7 +482,6 @@ class UserApi(object):
             (data) = self.__serve_user_properties_with_http_info(user_locator, **kwargs)  # noqa: E501
             return data
 
-
     def serve_user_property(self, user_locator, name, **kwargs):  # noqa: E501
         """serve_user_property  # noqa: E501
 
@@ -523,7 +503,6 @@ class UserApi(object):
         else:
             (data) = self.__serve_user_property_with_http_info(user_locator, name, **kwargs)  # noqa: E501
             return data
-
 
     def serve_users(self, **kwargs):  # noqa: E501
         """serve_users  # noqa: E501
@@ -547,7 +526,6 @@ class UserApi(object):
             (data) = self.__serve_users_with_http_info(**kwargs)  # noqa: E501
             return data
 
-
     def set_user_field(self, user_locator, field, **kwargs):  # noqa: E501
         """set_user_field  # noqa: E501
 
@@ -570,7 +548,6 @@ class UserApi(object):
         else:
             (data) = self.__set_user_field_with_http_info(user_locator, field, **kwargs)  # noqa: E501
             return data
-
 
     def update_user(self, user_locator, **kwargs):  # noqa: E501
         """update_user  # noqa: E501
@@ -671,6 +648,7 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __add_role_with_http_info(self, user_locator, **kwargs):  # noqa: E501
         """add_role  # noqa: E501
 
@@ -744,6 +722,7 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __add_role_simple_with_http_info(self, user_locator, role_id, scope, **kwargs):  # noqa: E501
         """add_role_simple  # noqa: E501
 
@@ -834,6 +813,7 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __add_role_simple_post_with_http_info(self, user_locator, role_id, scope, **kwargs):  # noqa: E501
         """add_role_simple_post  # noqa: E501
 
@@ -924,6 +904,7 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __create_user_with_http_info(self, **kwargs):  # noqa: E501
         """create_user  # noqa: E501
 
@@ -990,6 +971,7 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __delete_remember_me_with_http_info(self, user_locator, **kwargs):  # noqa: E501
         """delete_remember_me  # noqa: E501
 
@@ -1060,6 +1042,7 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __delete_role_with_http_info(self, user_locator, role_id, scope, **kwargs):  # noqa: E501
         """delete_role  # noqa: E501
 
@@ -1150,6 +1133,7 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __delete_user_with_http_info(self, user_locator, **kwargs):  # noqa: E501
         """delete_user  # noqa: E501
 
@@ -1220,6 +1204,7 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __delete_user_field_with_http_info(self, user_locator, field, **kwargs):  # noqa: E501
         """delete_user_field  # noqa: E501
 
@@ -1300,6 +1285,7 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_groups_with_http_info(self, user_locator, **kwargs):  # noqa: E501
         """get_groups  # noqa: E501
 
@@ -1373,6 +1359,7 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_permissions_with_http_info(self, user_locator, **kwargs):  # noqa: E501
         """get_permissions  # noqa: E501
 
@@ -1443,6 +1430,7 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __list_role_with_http_info(self, user_locator, role_id, scope, **kwargs):  # noqa: E501
         """list_role  # noqa: E501
 
@@ -1533,6 +1521,7 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __list_roles_with_http_info(self, user_locator, **kwargs):  # noqa: E501
         """list_roles  # noqa: E501
 
@@ -1603,6 +1592,7 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __put_user_property_with_http_info(self, user_locator, name, **kwargs):  # noqa: E501
         """put_user_property  # noqa: E501
 
@@ -1686,6 +1676,7 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __remove_user_property_with_http_info(self, user_locator, name, **kwargs):  # noqa: E501
         """remove_user_property  # noqa: E501
 
@@ -1766,6 +1757,7 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __replace_groups_with_http_info(self, user_locator, **kwargs):  # noqa: E501
         """replace_groups  # noqa: E501
 
@@ -1842,6 +1834,7 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __replace_roles_with_http_info(self, user_locator, **kwargs):  # noqa: E501
         """replace_roles  # noqa: E501
 
@@ -1915,6 +1908,7 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_user_with_http_info(self, user_locator, **kwargs):  # noqa: E501
         """serve_user  # noqa: E501
 
@@ -1988,6 +1982,7 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_user_field_with_http_info(self, user_locator, field, **kwargs):  # noqa: E501
         """serve_user_field  # noqa: E501
 
@@ -2068,6 +2063,7 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_user_properties_with_http_info(self, user_locator, **kwargs):  # noqa: E501
         """serve_user_properties  # noqa: E501
 
@@ -2141,6 +2137,7 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_user_property_with_http_info(self, user_locator, name, **kwargs):  # noqa: E501
         """serve_user_property  # noqa: E501
 
@@ -2221,6 +2218,7 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_users_with_http_info(self, **kwargs):  # noqa: E501
         """serve_users  # noqa: E501
 
@@ -2287,6 +2285,7 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __set_user_field_with_http_info(self, user_locator, field, **kwargs):  # noqa: E501
         """set_user_field  # noqa: E501
 
@@ -2370,6 +2369,7 @@ class UserApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __update_user_with_http_info(self, user_locator, **kwargs):  # noqa: E501
         """update_user  # noqa: E501
 

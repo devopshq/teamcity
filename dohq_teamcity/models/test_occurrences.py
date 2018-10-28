@@ -317,4 +317,3 @@ class TestOccurrences(TeamCityObject):
         """
 
         self._test_occurrence = test_occurrence
-

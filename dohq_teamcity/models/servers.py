@@ -83,4 +83,3 @@ class Servers(TeamCityObject):
         """
 
         self._server = server
-

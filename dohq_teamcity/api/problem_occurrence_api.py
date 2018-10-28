@@ -56,7 +56,6 @@ class ProblemOccurrenceApi(object):
             (data) = self.__get_problems_with_http_info(**kwargs)  # noqa: E501
             return data
 
-
     def serve_instance(self, problem_locator, **kwargs):  # noqa: E501
         """serve_instance  # noqa: E501
 
@@ -145,6 +144,7 @@ class ProblemOccurrenceApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_instance_with_http_info(self, problem_locator, **kwargs):  # noqa: E501
         """serve_instance  # noqa: E501
 

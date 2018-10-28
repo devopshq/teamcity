@@ -60,7 +60,6 @@ class VcsRootInstanceApi(object):
             (data) = self.__delete_instance_field_with_http_info(vcs_root_instance_locator, field, **kwargs)  # noqa: E501
             return data
 
-
     def delete_repository_state(self, vcs_root_instance_locator, **kwargs):  # noqa: E501
         """delete_repository_state  # noqa: E501
 
@@ -81,7 +80,6 @@ class VcsRootInstanceApi(object):
         else:
             (data) = self.__delete_repository_state_with_http_info(vcs_root_instance_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_children(self, path, vcs_root_instance_locator, **kwargs):  # noqa: E501
         """get_children  # noqa: E501
@@ -108,7 +106,6 @@ class VcsRootInstanceApi(object):
             (data) = self.__get_children_with_http_info(path, vcs_root_instance_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_children_alias(self, path, vcs_root_instance_locator, **kwargs):  # noqa: E501
         """get_children_alias  # noqa: E501
 
@@ -134,7 +131,6 @@ class VcsRootInstanceApi(object):
             (data) = self.__get_children_alias_with_http_info(path, vcs_root_instance_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_content(self, path, vcs_root_instance_locator, **kwargs):  # noqa: E501
         """get_content  # noqa: E501
 
@@ -157,7 +153,6 @@ class VcsRootInstanceApi(object):
             (data) = self.__get_content_with_http_info(path, vcs_root_instance_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_content_alias(self, path, vcs_root_instance_locator, **kwargs):  # noqa: E501
         """get_content_alias  # noqa: E501
 
@@ -179,7 +174,6 @@ class VcsRootInstanceApi(object):
         else:
             (data) = self.__get_content_alias_with_http_info(path, vcs_root_instance_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_metadata(self, path, vcs_root_instance_locator, **kwargs):  # noqa: E501
         """get_metadata  # noqa: E501
@@ -204,7 +198,6 @@ class VcsRootInstanceApi(object):
             (data) = self.__get_metadata_with_http_info(path, vcs_root_instance_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_repository_state(self, vcs_root_instance_locator, **kwargs):  # noqa: E501
         """get_repository_state  # noqa: E501
 
@@ -227,7 +220,6 @@ class VcsRootInstanceApi(object):
             (data) = self.__get_repository_state_with_http_info(vcs_root_instance_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_repository_state_creation_date(self, vcs_root_instance_locator, **kwargs):  # noqa: E501
         """get_repository_state_creation_date  # noqa: E501
 
@@ -248,7 +240,6 @@ class VcsRootInstanceApi(object):
         else:
             (data) = self.__get_repository_state_creation_date_with_http_info(vcs_root_instance_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_root(self, vcs_root_instance_locator, **kwargs):  # noqa: E501
         """get_root  # noqa: E501
@@ -273,7 +264,6 @@ class VcsRootInstanceApi(object):
         else:
             (data) = self.__get_root_with_http_info(vcs_root_instance_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_zipped(self, path, vcs_root_instance_locator, **kwargs):  # noqa: E501
         """get_zipped  # noqa: E501
@@ -300,7 +290,6 @@ class VcsRootInstanceApi(object):
             (data) = self.__get_zipped_with_http_info(path, vcs_root_instance_locator, **kwargs)  # noqa: E501
             return data
 
-
     def schedule_checking_for_changes(self, **kwargs):  # noqa: E501
         """schedule_checking_for_changes  # noqa: E501
 
@@ -324,7 +313,6 @@ class VcsRootInstanceApi(object):
             (data) = self.__schedule_checking_for_changes_with_http_info(**kwargs)  # noqa: E501
             return data
 
-
     def schedule_checking_for_changes_0(self, **kwargs):  # noqa: E501
         """schedule_checking_for_changes_0  # noqa: E501
 
@@ -346,7 +334,6 @@ class VcsRootInstanceApi(object):
         else:
             (data) = self.__schedule_checking_for_changes_0_with_http_info(**kwargs)  # noqa: E501
             return data
-
 
     def serve_instance(self, vcs_root_instance_locator, **kwargs):  # noqa: E501
         """serve_instance  # noqa: E501
@@ -370,7 +357,6 @@ class VcsRootInstanceApi(object):
             (data) = self.__serve_instance_with_http_info(vcs_root_instance_locator, **kwargs)  # noqa: E501
             return data
 
-
     def serve_instance_field(self, vcs_root_instance_locator, field, **kwargs):  # noqa: E501
         """serve_instance_field  # noqa: E501
 
@@ -392,7 +378,6 @@ class VcsRootInstanceApi(object):
         else:
             (data) = self.__serve_instance_field_with_http_info(vcs_root_instance_locator, field, **kwargs)  # noqa: E501
             return data
-
 
     def serve_instances(self, **kwargs):  # noqa: E501
         """serve_instances  # noqa: E501
@@ -416,7 +401,6 @@ class VcsRootInstanceApi(object):
             (data) = self.__serve_instances_with_http_info(**kwargs)  # noqa: E501
             return data
 
-
     def serve_root_instance_properties(self, vcs_root_instance_locator, **kwargs):  # noqa: E501
         """serve_root_instance_properties  # noqa: E501
 
@@ -438,7 +422,6 @@ class VcsRootInstanceApi(object):
         else:
             (data) = self.__serve_root_instance_properties_with_http_info(vcs_root_instance_locator, **kwargs)  # noqa: E501
             return data
-
 
     def set_instance_field(self, vcs_root_instance_locator, field, **kwargs):  # noqa: E501
         """set_instance_field  # noqa: E501
@@ -462,7 +445,6 @@ class VcsRootInstanceApi(object):
         else:
             (data) = self.__set_instance_field_with_http_info(vcs_root_instance_locator, field, **kwargs)  # noqa: E501
             return data
-
 
     def set_repository_state(self, vcs_root_instance_locator, **kwargs):  # noqa: E501
         """set_repository_state  # noqa: E501
@@ -567,6 +549,7 @@ class VcsRootInstanceApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __delete_repository_state_with_http_info(self, vcs_root_instance_locator, **kwargs):  # noqa: E501
         """delete_repository_state  # noqa: E501
 
@@ -637,6 +620,7 @@ class VcsRootInstanceApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_children_with_http_info(self, path, vcs_root_instance_locator, **kwargs):  # noqa: E501
         """get_children  # noqa: E501
 
@@ -680,8 +664,8 @@ class VcsRootInstanceApi(object):
                 params['vcs_root_instance_locator'] is None):
             raise ValueError("Missing the required parameter `vcs_root_instance_locator` when calling `get_children`")  # noqa: E501
 
-        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_children`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'path' in params and not re.search(r'(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError(r"Invalid value for parameter `path` when calling `get_children`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -728,6 +712,7 @@ class VcsRootInstanceApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_children_alias_with_http_info(self, path, vcs_root_instance_locator, **kwargs):  # noqa: E501
         """get_children_alias  # noqa: E501
 
@@ -819,6 +804,7 @@ class VcsRootInstanceApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_content_with_http_info(self, path, vcs_root_instance_locator, **kwargs):  # noqa: E501
         """get_content  # noqa: E501
 
@@ -859,8 +845,8 @@ class VcsRootInstanceApi(object):
                 params['vcs_root_instance_locator'] is None):
             raise ValueError("Missing the required parameter `vcs_root_instance_locator` when calling `get_content`")  # noqa: E501
 
-        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_content`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'path' in params and not re.search(r'(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError(r"Invalid value for parameter `path` when calling `get_content`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -901,6 +887,7 @@ class VcsRootInstanceApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_content_alias_with_http_info(self, path, vcs_root_instance_locator, **kwargs):  # noqa: E501
         """get_content_alias  # noqa: E501
 
@@ -941,8 +928,8 @@ class VcsRootInstanceApi(object):
                 params['vcs_root_instance_locator'] is None):
             raise ValueError("Missing the required parameter `vcs_root_instance_locator` when calling `get_content_alias`")  # noqa: E501
 
-        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_content_alias`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'path' in params and not re.search(r'(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError(r"Invalid value for parameter `path` when calling `get_content_alias`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -983,6 +970,7 @@ class VcsRootInstanceApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_metadata_with_http_info(self, path, vcs_root_instance_locator, **kwargs):  # noqa: E501
         """get_metadata  # noqa: E501
 
@@ -1024,8 +1012,8 @@ class VcsRootInstanceApi(object):
                 params['vcs_root_instance_locator'] is None):
             raise ValueError("Missing the required parameter `vcs_root_instance_locator` when calling `get_metadata`")  # noqa: E501
 
-        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_metadata`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'path' in params and not re.search(r'(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError(r"Invalid value for parameter `path` when calling `get_metadata`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1068,6 +1056,7 @@ class VcsRootInstanceApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_repository_state_with_http_info(self, vcs_root_instance_locator, **kwargs):  # noqa: E501
         """get_repository_state  # noqa: E501
 
@@ -1141,6 +1130,7 @@ class VcsRootInstanceApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_repository_state_creation_date_with_http_info(self, vcs_root_instance_locator, **kwargs):  # noqa: E501
         """get_repository_state_creation_date  # noqa: E501
 
@@ -1211,6 +1201,7 @@ class VcsRootInstanceApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_root_with_http_info(self, vcs_root_instance_locator, **kwargs):  # noqa: E501
         """get_root  # noqa: E501
 
@@ -1290,6 +1281,7 @@ class VcsRootInstanceApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_zipped_with_http_info(self, path, vcs_root_instance_locator, **kwargs):  # noqa: E501
         """get_zipped  # noqa: E501
 
@@ -1333,8 +1325,8 @@ class VcsRootInstanceApi(object):
                 params['vcs_root_instance_locator'] is None):
             raise ValueError("Missing the required parameter `vcs_root_instance_locator` when calling `get_zipped`")  # noqa: E501
 
-        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_zipped`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'path' in params and not re.search(r'(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError(r"Invalid value for parameter `path` when calling `get_zipped`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1381,6 +1373,7 @@ class VcsRootInstanceApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __schedule_checking_for_changes_with_http_info(self, **kwargs):  # noqa: E501
         """schedule_checking_for_changes  # noqa: E501
 
@@ -1450,6 +1443,7 @@ class VcsRootInstanceApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __schedule_checking_for_changes_0_with_http_info(self, **kwargs):  # noqa: E501
         """schedule_checking_for_changes_0  # noqa: E501
 
@@ -1516,6 +1510,7 @@ class VcsRootInstanceApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_instance_with_http_info(self, vcs_root_instance_locator, **kwargs):  # noqa: E501
         """serve_instance  # noqa: E501
 
@@ -1589,6 +1584,7 @@ class VcsRootInstanceApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_instance_field_with_http_info(self, vcs_root_instance_locator, field, **kwargs):  # noqa: E501
         """serve_instance_field  # noqa: E501
 
@@ -1669,6 +1665,7 @@ class VcsRootInstanceApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_instances_with_http_info(self, **kwargs):  # noqa: E501
         """serve_instances  # noqa: E501
 
@@ -1735,6 +1732,7 @@ class VcsRootInstanceApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_root_instance_properties_with_http_info(self, vcs_root_instance_locator, **kwargs):  # noqa: E501
         """serve_root_instance_properties  # noqa: E501
 
@@ -1808,6 +1806,7 @@ class VcsRootInstanceApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __set_instance_field_with_http_info(self, vcs_root_instance_locator, field, **kwargs):  # noqa: E501
         """set_instance_field  # noqa: E501
 
@@ -1891,6 +1890,7 @@ class VcsRootInstanceApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __set_repository_state_with_http_info(self, vcs_root_instance_locator, **kwargs):  # noqa: E501
         """set_repository_state  # noqa: E501
 

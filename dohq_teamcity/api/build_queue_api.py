@@ -59,7 +59,6 @@ class BuildQueueApi(object):
             (data) = self.__add_tags_with_http_info(build_locator, **kwargs)  # noqa: E501
             return data
 
-
     def cancel_build(self, build_locator, **kwargs):  # noqa: E501
         """cancel_build  # noqa: E501
 
@@ -80,7 +79,6 @@ class BuildQueueApi(object):
         else:
             (data) = self.__cancel_build_with_http_info(build_locator, **kwargs)  # noqa: E501
             return data
-
 
     def cancel_build_0(self, queued_build_locator, **kwargs):  # noqa: E501
         """cancel_build_0  # noqa: E501
@@ -104,7 +102,6 @@ class BuildQueueApi(object):
             (data) = self.__cancel_build_0_with_http_info(queued_build_locator, **kwargs)  # noqa: E501
             return data
 
-
     def delete_build(self, queued_build_locator, **kwargs):  # noqa: E501
         """delete_build  # noqa: E501
 
@@ -125,7 +122,6 @@ class BuildQueueApi(object):
         else:
             (data) = self.__delete_build_with_http_info(queued_build_locator, **kwargs)  # noqa: E501
             return data
-
 
     def delete_builds_experimental(self, **kwargs):  # noqa: E501
         """delete_builds_experimental  # noqa: E501
@@ -149,7 +145,6 @@ class BuildQueueApi(object):
             (data) = self.__delete_builds_experimental_with_http_info(**kwargs)  # noqa: E501
             return data
 
-
     def get_build(self, queued_build_locator, **kwargs):  # noqa: E501
         """get_build  # noqa: E501
 
@@ -171,7 +166,6 @@ class BuildQueueApi(object):
         else:
             (data) = self.__get_build_with_http_info(queued_build_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_builds(self, **kwargs):  # noqa: E501
         """get_builds  # noqa: E501
@@ -195,7 +189,6 @@ class BuildQueueApi(object):
             (data) = self.__get_builds_with_http_info(**kwargs)  # noqa: E501
             return data
 
-
     def queue_new_build(self, **kwargs):  # noqa: E501
         """queue_new_build  # noqa: E501
 
@@ -218,7 +211,6 @@ class BuildQueueApi(object):
             (data) = self.__queue_new_build_with_http_info(**kwargs)  # noqa: E501
             return data
 
-
     def replace_builds(self, **kwargs):  # noqa: E501
         """replace_builds  # noqa: E501
 
@@ -240,7 +232,6 @@ class BuildQueueApi(object):
         else:
             (data) = self.__replace_builds_with_http_info(**kwargs)  # noqa: E501
             return data
-
 
     def replace_tags(self, build_locator, **kwargs):  # noqa: E501
         """replace_tags  # noqa: E501
@@ -266,7 +257,6 @@ class BuildQueueApi(object):
             (data) = self.__replace_tags_with_http_info(build_locator, **kwargs)  # noqa: E501
             return data
 
-
     def serve_build_field_by_build_only(self, build_locator, field, **kwargs):  # noqa: E501
         """serve_build_field_by_build_only  # noqa: E501
 
@@ -288,7 +278,6 @@ class BuildQueueApi(object):
         else:
             (data) = self.__serve_build_field_by_build_only_with_http_info(build_locator, field, **kwargs)  # noqa: E501
             return data
-
 
     def serve_compatible_agents(self, queued_build_locator, **kwargs):  # noqa: E501
         """serve_compatible_agents  # noqa: E501
@@ -312,7 +301,6 @@ class BuildQueueApi(object):
             (data) = self.__serve_compatible_agents_with_http_info(queued_build_locator, **kwargs)  # noqa: E501
             return data
 
-
     def serve_tags(self, build_locator, **kwargs):  # noqa: E501
         """serve_tags  # noqa: E501
 
@@ -335,7 +323,6 @@ class BuildQueueApi(object):
         else:
             (data) = self.__serve_tags_with_http_info(build_locator, **kwargs)  # noqa: E501
             return data
-
 
     def set_build_queue_order(self, fields, **kwargs):  # noqa: E501
         """set_build_queue_order  # noqa: E501
@@ -432,6 +419,7 @@ class BuildQueueApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __cancel_build_with_http_info(self, build_locator, **kwargs):  # noqa: E501
         """cancel_build  # noqa: E501
 
@@ -502,6 +490,7 @@ class BuildQueueApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __cancel_build_0_with_http_info(self, queued_build_locator, **kwargs):  # noqa: E501
         """cancel_build_0  # noqa: E501
 
@@ -575,6 +564,7 @@ class BuildQueueApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __delete_build_with_http_info(self, queued_build_locator, **kwargs):  # noqa: E501
         """delete_build  # noqa: E501
 
@@ -645,6 +635,7 @@ class BuildQueueApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __delete_builds_experimental_with_http_info(self, **kwargs):  # noqa: E501
         """delete_builds_experimental  # noqa: E501
 
@@ -711,6 +702,7 @@ class BuildQueueApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_build_with_http_info(self, queued_build_locator, **kwargs):  # noqa: E501
         """get_build  # noqa: E501
 
@@ -784,6 +776,7 @@ class BuildQueueApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_builds_with_http_info(self, **kwargs):  # noqa: E501
         """get_builds  # noqa: E501
 
@@ -850,6 +843,7 @@ class BuildQueueApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __queue_new_build_with_http_info(self, **kwargs):  # noqa: E501
         """queue_new_build  # noqa: E501
 
@@ -916,6 +910,7 @@ class BuildQueueApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __replace_builds_with_http_info(self, **kwargs):  # noqa: E501
         """replace_builds  # noqa: E501
 
@@ -982,6 +977,7 @@ class BuildQueueApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __replace_tags_with_http_info(self, build_locator, **kwargs):  # noqa: E501
         """replace_tags  # noqa: E501
 
@@ -1061,6 +1057,7 @@ class BuildQueueApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_build_field_by_build_only_with_http_info(self, build_locator, field, **kwargs):  # noqa: E501
         """serve_build_field_by_build_only  # noqa: E501
 
@@ -1141,6 +1138,7 @@ class BuildQueueApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_compatible_agents_with_http_info(self, queued_build_locator, **kwargs):  # noqa: E501
         """serve_compatible_agents  # noqa: E501
 
@@ -1214,6 +1212,7 @@ class BuildQueueApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_tags_with_http_info(self, build_locator, **kwargs):  # noqa: E501
         """serve_tags  # noqa: E501
 
@@ -1290,6 +1289,7 @@ class BuildQueueApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __set_build_queue_order_with_http_info(self, fields, **kwargs):  # noqa: E501
         """set_build_queue_order  # noqa: E501
 

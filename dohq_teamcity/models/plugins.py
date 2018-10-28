@@ -83,4 +83,3 @@ class Plugins(TeamCityObject):
         """
 
         self._plugin = plugin
-

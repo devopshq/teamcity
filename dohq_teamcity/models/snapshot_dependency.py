@@ -240,4 +240,3 @@ class SnapshotDependency(TeamCityObject):
         """
 
         self._type = type
-

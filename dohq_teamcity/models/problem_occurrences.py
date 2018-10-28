@@ -317,4 +317,3 @@ class ProblemOccurrences(TeamCityObject):
         """
 
         self._problem_occurrence = problem_occurrence
-

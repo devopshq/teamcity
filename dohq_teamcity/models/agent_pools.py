@@ -161,4 +161,3 @@ class AgentPools(TeamCityObject):
         """
 
         self._prev_href = prev_href
-

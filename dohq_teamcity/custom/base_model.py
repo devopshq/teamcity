@@ -6,7 +6,7 @@ import six
 # import for typing only
 try:
     from dohq_teamcity.custom.client import TeamCity
-except:
+except BaseException:
     pass
 
 
@@ -36,7 +36,8 @@ class TeamCityObject(object):
     @property
     def locator_id(self):
         if self.id is None:
-            raise TeamCityRuntimeException("object does not have attribute id: ''".format(self))
+            raise TeamCityRuntimeException(
+                "object does not have attribute id: ''".format(self))
         return "id:{}".format(self.id)
 
     def to_dict(self):
@@ -90,7 +91,9 @@ class ReadMixin(object):
     def read(self, *args, **kwargs):
         func = self._read()
         if func is None:
-            raise TeamCityCodeException("read function is not defined in class '{}'".format(self.__class__.__name__))
+            raise TeamCityCodeException(
+                "read function is not defined in class '{}'".format(
+                    self.__class__.__name__))
         obj = func(self, *args, **kwargs)
         self.__dict__ = obj.__dict__
         return self
@@ -103,7 +106,9 @@ class DeleteMixin(object):
     def delete(self, *args, **kwargs):
         func = self._delete()
         if func is None:
-            raise TeamCityCodeException("delete function is not defined in class '{}'".format(self.__class__.__name__))
+            raise TeamCityCodeException(
+                "delete function is not defined in class '{}'".format(
+                    self.__class__.__name__))
         self = func(self, *args, **kwargs)
         return self
 

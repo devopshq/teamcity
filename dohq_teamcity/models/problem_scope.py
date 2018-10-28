@@ -111,4 +111,3 @@ class ProblemScope(TeamCityObject):
         """
 
         self._project = project
-

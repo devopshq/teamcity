@@ -135,4 +135,3 @@ class Session(TeamCityObject):
         """
 
         self._user = user
-

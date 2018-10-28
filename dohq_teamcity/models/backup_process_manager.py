@@ -57,4 +57,3 @@ class BackupProcessManager(TeamCityObject):
         """
 
         self._current_backup_process = current_backup_process
-

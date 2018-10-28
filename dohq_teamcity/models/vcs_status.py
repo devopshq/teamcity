@@ -83,4 +83,3 @@ class VcsStatus(TeamCityObject):
         """
 
         self._previous = previous
-

@@ -83,4 +83,3 @@ class Features(TeamCityObject):
         """
 
         self._feature = feature
-

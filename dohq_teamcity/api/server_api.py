@@ -62,7 +62,6 @@ class ServerApi(object):
             (data) = self.__add_license_keys_with_http_info(**kwargs)  # noqa: E501
             return data
 
-
     def delete_license_key(self, license_key, **kwargs):  # noqa: E501
         """delete_license_key  # noqa: E501
 
@@ -84,7 +83,6 @@ class ServerApi(object):
             (data) = self.__delete_license_key_with_http_info(license_key, **kwargs)  # noqa: E501
             return data
 
-
     def get_backup_status(self, **kwargs):  # noqa: E501
         """get_backup_status  # noqa: E501
 
@@ -105,7 +103,6 @@ class ServerApi(object):
         else:
             (data) = self.__get_backup_status_with_http_info(**kwargs)  # noqa: E501
             return data
-
 
     def get_children(self, path, area_id, **kwargs):  # noqa: E501
         """get_children  # noqa: E501
@@ -132,7 +129,6 @@ class ServerApi(object):
             (data) = self.__get_children_with_http_info(path, area_id, **kwargs)  # noqa: E501
             return data
 
-
     def get_children_alias(self, path, area_id, **kwargs):  # noqa: E501
         """get_children_alias  # noqa: E501
 
@@ -158,7 +154,6 @@ class ServerApi(object):
             (data) = self.__get_children_alias_with_http_info(path, area_id, **kwargs)  # noqa: E501
             return data
 
-
     def get_content(self, path, area_id, **kwargs):  # noqa: E501
         """get_content  # noqa: E501
 
@@ -180,7 +175,6 @@ class ServerApi(object):
         else:
             (data) = self.__get_content_with_http_info(path, area_id, **kwargs)  # noqa: E501
             return data
-
 
     def get_content_alias(self, path, area_id, **kwargs):  # noqa: E501
         """get_content_alias  # noqa: E501
@@ -204,7 +198,6 @@ class ServerApi(object):
             (data) = self.__get_content_alias_with_http_info(path, area_id, **kwargs)  # noqa: E501
             return data
 
-
     def get_license_key(self, license_key, **kwargs):  # noqa: E501
         """get_license_key  # noqa: E501
 
@@ -227,7 +220,6 @@ class ServerApi(object):
             (data) = self.__get_license_key_with_http_info(license_key, **kwargs)  # noqa: E501
             return data
 
-
     def get_license_keys(self, **kwargs):  # noqa: E501
         """get_license_keys  # noqa: E501
 
@@ -249,7 +241,6 @@ class ServerApi(object):
             (data) = self.__get_license_keys_with_http_info(**kwargs)  # noqa: E501
             return data
 
-
     def get_licensing_data(self, **kwargs):  # noqa: E501
         """get_licensing_data  # noqa: E501
 
@@ -270,7 +261,6 @@ class ServerApi(object):
         else:
             (data) = self.__get_licensing_data_with_http_info(**kwargs)  # noqa: E501
             return data
-
 
     def get_metadata(self, path, area_id, **kwargs):  # noqa: E501
         """get_metadata  # noqa: E501
@@ -295,7 +285,6 @@ class ServerApi(object):
             (data) = self.__get_metadata_with_http_info(path, area_id, **kwargs)  # noqa: E501
             return data
 
-
     def get_root(self, area_id, **kwargs):  # noqa: E501
         """get_root  # noqa: E501
 
@@ -319,7 +308,6 @@ class ServerApi(object):
         else:
             (data) = self.__get_root_with_http_info(area_id, **kwargs)  # noqa: E501
             return data
-
 
     def get_zipped(self, path, area_id, **kwargs):  # noqa: E501
         """get_zipped  # noqa: E501
@@ -346,7 +334,6 @@ class ServerApi(object):
             (data) = self.__get_zipped_with_http_info(path, area_id, **kwargs)  # noqa: E501
             return data
 
-
     def serve_plugins(self, **kwargs):  # noqa: E501
         """serve_plugins  # noqa: E501
 
@@ -367,7 +354,6 @@ class ServerApi(object):
         else:
             (data) = self.__serve_plugins_with_http_info(**kwargs)  # noqa: E501
             return data
-
 
     def serve_server_info(self, **kwargs):  # noqa: E501
         """serve_server_info  # noqa: E501
@@ -390,7 +376,6 @@ class ServerApi(object):
             (data) = self.__serve_server_info_with_http_info(**kwargs)  # noqa: E501
             return data
 
-
     def serve_server_version(self, field, **kwargs):  # noqa: E501
         """serve_server_version  # noqa: E501
 
@@ -411,7 +396,6 @@ class ServerApi(object):
         else:
             (data) = self.__serve_server_version_with_http_info(field, **kwargs)  # noqa: E501
             return data
-
 
     def start_backup(self, **kwargs):  # noqa: E501
         """start_backup  # noqa: E501
@@ -508,6 +492,7 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __delete_license_key_with_http_info(self, license_key, **kwargs):  # noqa: E501
         """delete_license_key  # noqa: E501
 
@@ -578,6 +563,7 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_backup_status_with_http_info(self, **kwargs):  # noqa: E501
         """get_backup_status  # noqa: E501
 
@@ -641,6 +627,7 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_children_with_http_info(self, path, area_id, **kwargs):  # noqa: E501
         """get_children  # noqa: E501
 
@@ -684,8 +671,8 @@ class ServerApi(object):
                 params['area_id'] is None):
             raise ValueError("Missing the required parameter `area_id` when calling `get_children`")  # noqa: E501
 
-        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_children`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'path' in params and not re.search(r'(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError(r"Invalid value for parameter `path` when calling `get_children`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -732,6 +719,7 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_children_alias_with_http_info(self, path, area_id, **kwargs):  # noqa: E501
         """get_children_alias  # noqa: E501
 
@@ -823,6 +811,7 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_content_with_http_info(self, path, area_id, **kwargs):  # noqa: E501
         """get_content  # noqa: E501
 
@@ -863,8 +852,8 @@ class ServerApi(object):
                 params['area_id'] is None):
             raise ValueError("Missing the required parameter `area_id` when calling `get_content`")  # noqa: E501
 
-        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_content`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'path' in params and not re.search(r'(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError(r"Invalid value for parameter `path` when calling `get_content`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -905,6 +894,7 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_content_alias_with_http_info(self, path, area_id, **kwargs):  # noqa: E501
         """get_content_alias  # noqa: E501
 
@@ -945,8 +935,8 @@ class ServerApi(object):
                 params['area_id'] is None):
             raise ValueError("Missing the required parameter `area_id` when calling `get_content_alias`")  # noqa: E501
 
-        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_content_alias`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'path' in params and not re.search(r'(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError(r"Invalid value for parameter `path` when calling `get_content_alias`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -987,6 +977,7 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_license_key_with_http_info(self, license_key, **kwargs):  # noqa: E501
         """get_license_key  # noqa: E501
 
@@ -1060,6 +1051,7 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_license_keys_with_http_info(self, **kwargs):  # noqa: E501
         """get_license_keys  # noqa: E501
 
@@ -1123,6 +1115,7 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_licensing_data_with_http_info(self, **kwargs):  # noqa: E501
         """get_licensing_data  # noqa: E501
 
@@ -1186,6 +1179,7 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_metadata_with_http_info(self, path, area_id, **kwargs):  # noqa: E501
         """get_metadata  # noqa: E501
 
@@ -1227,8 +1221,8 @@ class ServerApi(object):
                 params['area_id'] is None):
             raise ValueError("Missing the required parameter `area_id` when calling `get_metadata`")  # noqa: E501
 
-        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_metadata`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'path' in params and not re.search(r'(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError(r"Invalid value for parameter `path` when calling `get_metadata`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1271,6 +1265,7 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_root_with_http_info(self, area_id, **kwargs):  # noqa: E501
         """get_root  # noqa: E501
 
@@ -1350,6 +1345,7 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_zipped_with_http_info(self, path, area_id, **kwargs):  # noqa: E501
         """get_zipped  # noqa: E501
 
@@ -1393,8 +1389,8 @@ class ServerApi(object):
                 params['area_id'] is None):
             raise ValueError("Missing the required parameter `area_id` when calling `get_zipped`")  # noqa: E501
 
-        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_zipped`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'path' in params and not re.search(r'(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError(r"Invalid value for parameter `path` when calling `get_zipped`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1441,6 +1437,7 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_plugins_with_http_info(self, **kwargs):  # noqa: E501
         """serve_plugins  # noqa: E501
 
@@ -1504,6 +1501,7 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_server_info_with_http_info(self, **kwargs):  # noqa: E501
         """serve_server_info  # noqa: E501
 
@@ -1567,6 +1565,7 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_server_version_with_http_info(self, field, **kwargs):  # noqa: E501
         """serve_server_version  # noqa: E501
 
@@ -1637,6 +1636,7 @@ class ServerApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __start_backup_with_http_info(self, **kwargs):  # noqa: E501
         """start_backup  # noqa: E501
 

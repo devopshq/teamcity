@@ -451,4 +451,3 @@ class VcsRootInstance(TeamCityObject):
         """
 
         self._vcs_root_internal_id = vcs_root_internal_id
-

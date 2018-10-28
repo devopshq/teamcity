@@ -33,7 +33,7 @@ setup(
     include_package_data=True,
     long_description="""
     dohq_teamcity is a Python package providing access to the JetBrains TeamCity server API.
-    
+
     You can see detailed user manual here: https://devopshq.github.io/teamcity
     """
 )

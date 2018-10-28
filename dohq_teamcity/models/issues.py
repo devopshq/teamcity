@@ -57,4 +57,3 @@ class Issues(TeamCityObject):
         """
 
         self._issues = issues
-

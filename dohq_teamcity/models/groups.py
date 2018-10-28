@@ -83,4 +83,3 @@ class Groups(TeamCityObject):
         """
 
         self._group = group
-

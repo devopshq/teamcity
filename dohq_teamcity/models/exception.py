@@ -162,4 +162,3 @@ class Exception(TeamCityObject):
         """
 
         self._suppressed = suppressed
-

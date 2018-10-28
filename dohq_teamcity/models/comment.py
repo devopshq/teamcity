@@ -109,4 +109,3 @@ class Comment(TeamCityObject):
         """
 
         self._user = user
-
