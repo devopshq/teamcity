@@ -1,5 +1,17 @@
 #!/usr/bin/env bash
 set -e
+if [ ! -f ./swagger-codegen-cli.jar ]; then
+    echo "File swagger not found! Try download..."
+    FILE="https://github.com/devopshq/teamcity/releases/download/0.0.0/swagger-codegen-cli.jar"
+    wget $FILE -O swagger-codegen-cli.jar || \
+    (
+        echo "Something wrong, please download $FILE manually and place in current directory"; rm ./swagger-codegen-cli.jar; \
+        exit 11
+    )
+
+fi
+echo "Start generate"
+
 java -Xmx1024m -Xms256m -jar ./swagger-codegen-cli.jar generate \
     -l python \
     -c ./swagger/swagger-config.json \
