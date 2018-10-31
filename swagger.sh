@@ -32,3 +32,7 @@ do
   mv "$file" "${file%.md}.rst"
 done
 popd
+
+# Auto PEP8
+pip install autopep8
+autopep8 --in-place --aggressive --max-line-length 120 --recursive dohq_teamcity

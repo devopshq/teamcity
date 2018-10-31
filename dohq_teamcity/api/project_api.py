@@ -2501,8 +2501,8 @@ class ProjectApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_example_new_project_description_compatibility_version1" %
-                    key)
+                    " to method get_example_new_project_description_compatibility_version1" % key
+                )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'project_locator' is set
