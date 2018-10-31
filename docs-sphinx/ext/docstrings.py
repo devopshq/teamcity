@@ -32,8 +32,14 @@ def setup(app):
 
 def _process_docstring(app, what, name, obj, options, lines):
     result_lines = lines
-    docstring = TeamCityDocstring(result_lines, app.config, app, what, name, obj,
-                                options)
+    docstring = TeamCityDocstring(
+        result_lines,
+        app.config,
+        app,
+        what,
+        name,
+        obj,
+        options)
     result_lines = docstring.lines()
     lines[:] = result_lines[:]
 
@@ -51,7 +57,7 @@ class TeamCityDocstring(GoogleDocstring):
     def __init__(self, docstring, config=None, app=None, what='', name='',
                  obj=None, options=None):
         super(TeamCityDocstring, self).__init__(docstring, config, app, what,
-                                              name, obj, options)
+                                                name, obj, options)
 
         if name.startswith('teamcity.v4.objects') and name.endswith('Manager'):
             self._parsed_lines.extend(self._build_doc('manager_tmpl.j2',

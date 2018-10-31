@@ -68,7 +68,9 @@ class TeamCity(ApiClient):
 
     def to_str(self):
         """Returns the string representation of the model"""
-        return "{}('{}')".format(self.__class__.__name__, self.configuration.host)
+        return "{}('{}')".format(
+            self.__class__.__name__,
+            self.configuration.host)
 
     def __repr__(self):
         """For `print` and `pprint`"""

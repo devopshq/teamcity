@@ -135,4 +135,3 @@ class BuildTriggeringOptions(TeamCityObject):
         """
 
         self._rebuild_dependencies = rebuild_dependencies
-

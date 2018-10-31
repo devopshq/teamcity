@@ -451,4 +451,3 @@ class Change(TeamCityObject):
         """
 
         self._web_url = web_url
-

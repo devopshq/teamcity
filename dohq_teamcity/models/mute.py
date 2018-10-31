@@ -164,4 +164,3 @@ class Mute(TeamCityObject):
         """
 
         self._target = target
-

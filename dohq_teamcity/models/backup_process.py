@@ -227,4 +227,3 @@ class BackupProcess(TeamCityObject):
             )
 
         self._progress_status = progress_status
-

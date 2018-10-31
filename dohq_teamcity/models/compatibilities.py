@@ -83,4 +83,3 @@ class Compatibilities(TeamCityObject):
         """
 
         self._count = count
-

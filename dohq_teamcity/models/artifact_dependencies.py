@@ -109,4 +109,3 @@ class ArtifactDependencies(TeamCityObject):
         """
 
         self._replace = replace
-

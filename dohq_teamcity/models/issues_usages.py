@@ -109,4 +109,3 @@ class IssuesUsages(TeamCityObject):
         """
 
         self._issue_usage = issue_usage
-

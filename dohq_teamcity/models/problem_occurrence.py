@@ -345,4 +345,3 @@ class ProblemOccurrence(TeamCityObject):
         """
 
         self._type = type
-

@@ -66,7 +66,6 @@ class BuildApi(object):
             (data) = self.__add_tags_with_http_info(build_locator, **kwargs)  # noqa: E501
             return data
 
-
     def cancel_build(self, build_locator, **kwargs):  # noqa: E501
         """cancel_build  # noqa: E501
 
@@ -90,7 +89,6 @@ class BuildApi(object):
             (data) = self.__cancel_build_with_http_info(build_locator, **kwargs)  # noqa: E501
             return data
 
-
     def cancel_build_0(self, build_locator, **kwargs):  # noqa: E501
         """cancel_build_0  # noqa: E501
 
@@ -111,7 +109,6 @@ class BuildApi(object):
         else:
             (data) = self.__cancel_build_0_with_http_info(build_locator, **kwargs)  # noqa: E501
             return data
-
 
     def delete_build(self, build_locator, **kwargs):  # noqa: E501
         """delete_build  # noqa: E501
@@ -134,7 +131,6 @@ class BuildApi(object):
             (data) = self.__delete_build_with_http_info(build_locator, **kwargs)  # noqa: E501
             return data
 
-
     def delete_builds(self, **kwargs):  # noqa: E501
         """delete_builds  # noqa: E501
 
@@ -155,7 +151,6 @@ class BuildApi(object):
         else:
             (data) = self.__delete_builds_with_http_info(**kwargs)  # noqa: E501
             return data
-
 
     def delete_comment(self, build_locator, **kwargs):  # noqa: E501
         """delete_comment  # noqa: E501
@@ -178,7 +173,6 @@ class BuildApi(object):
             (data) = self.__delete_comment_with_http_info(build_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_artifacts_directory(self, build_locator, **kwargs):  # noqa: E501
         """get_artifacts_directory  # noqa: E501
 
@@ -199,7 +193,6 @@ class BuildApi(object):
         else:
             (data) = self.__get_artifacts_directory_with_http_info(build_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_canceled_info(self, build_locator, **kwargs):  # noqa: E501
         """get_canceled_info  # noqa: E501
@@ -222,7 +215,6 @@ class BuildApi(object):
         else:
             (data) = self.__get_canceled_info_with_http_info(build_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_children(self, path, build_locator, **kwargs):  # noqa: E501
         """get_children  # noqa: E501
@@ -251,7 +243,6 @@ class BuildApi(object):
             (data) = self.__get_children_with_http_info(path, build_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_children_alias(self, path, build_locator, **kwargs):  # noqa: E501
         """get_children_alias  # noqa: E501
 
@@ -279,7 +270,6 @@ class BuildApi(object):
             (data) = self.__get_children_alias_with_http_info(path, build_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_content(self, path, build_locator, **kwargs):  # noqa: E501
         """get_content  # noqa: E501
 
@@ -304,7 +294,6 @@ class BuildApi(object):
             (data) = self.__get_content_with_http_info(path, build_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_content_alias(self, path, build_locator, **kwargs):  # noqa: E501
         """get_content_alias  # noqa: E501
 
@@ -328,7 +317,6 @@ class BuildApi(object):
         else:
             (data) = self.__get_content_alias_with_http_info(path, build_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_metadata(self, path, build_locator, **kwargs):  # noqa: E501
         """get_metadata  # noqa: E501
@@ -355,7 +343,6 @@ class BuildApi(object):
             (data) = self.__get_metadata_with_http_info(path, build_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_parameter(self, build_locator, property_name, **kwargs):  # noqa: E501
         """get_parameter  # noqa: E501
 
@@ -378,7 +365,6 @@ class BuildApi(object):
             (data) = self.__get_parameter_with_http_info(build_locator, property_name, **kwargs)  # noqa: E501
             return data
 
-
     def get_pinned(self, build_locator, **kwargs):  # noqa: E501
         """get_pinned  # noqa: E501
 
@@ -399,7 +385,6 @@ class BuildApi(object):
         else:
             (data) = self.__get_pinned_with_http_info(build_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_problems(self, build_locator, **kwargs):  # noqa: E501
         """get_problems  # noqa: E501
@@ -422,7 +407,6 @@ class BuildApi(object):
         else:
             (data) = self.__get_problems_with_http_info(build_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_root(self, build_locator, **kwargs):  # noqa: E501
         """get_root  # noqa: E501
@@ -450,7 +434,6 @@ class BuildApi(object):
             (data) = self.__get_root_with_http_info(build_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_tests(self, build_locator, **kwargs):  # noqa: E501
         """get_tests  # noqa: E501
 
@@ -472,7 +455,6 @@ class BuildApi(object):
         else:
             (data) = self.__get_tests_with_http_info(build_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_zipped(self, path, build_locator, **kwargs):  # noqa: E501
         """get_zipped  # noqa: E501
@@ -501,7 +483,6 @@ class BuildApi(object):
             (data) = self.__get_zipped_with_http_info(path, build_locator, **kwargs)  # noqa: E501
             return data
 
-
     def pin_build(self, build_locator, **kwargs):  # noqa: E501
         """pin_build  # noqa: E501
 
@@ -524,7 +505,6 @@ class BuildApi(object):
             (data) = self.__pin_build_with_http_info(build_locator, **kwargs)  # noqa: E501
             return data
 
-
     def replace_comment(self, build_locator, **kwargs):  # noqa: E501
         """replace_comment  # noqa: E501
 
@@ -546,7 +526,6 @@ class BuildApi(object):
         else:
             (data) = self.__replace_comment_with_http_info(build_locator, **kwargs)  # noqa: E501
             return data
-
 
     def replace_tags(self, build_locator, **kwargs):  # noqa: E501
         """replace_tags  # noqa: E501
@@ -572,7 +551,6 @@ class BuildApi(object):
             (data) = self.__replace_tags_with_http_info(build_locator, **kwargs)  # noqa: E501
             return data
 
-
     def serve_aggregated_build_status(self, build_locator, **kwargs):  # noqa: E501
         """serve_aggregated_build_status  # noqa: E501
 
@@ -593,7 +571,6 @@ class BuildApi(object):
         else:
             (data) = self.__serve_aggregated_build_status_with_http_info(build_locator, **kwargs)  # noqa: E501
             return data
-
 
     def serve_aggregated_build_status_icon(self, build_locator, suffix, **kwargs):  # noqa: E501
         """serve_aggregated_build_status_icon  # noqa: E501
@@ -616,7 +593,6 @@ class BuildApi(object):
         else:
             (data) = self.__serve_aggregated_build_status_icon_with_http_info(build_locator, suffix, **kwargs)  # noqa: E501
             return data
-
 
     def serve_all_builds(self, **kwargs):  # noqa: E501
         """serve_all_builds  # noqa: E501
@@ -652,7 +628,6 @@ class BuildApi(object):
             (data) = self.__serve_all_builds_with_http_info(**kwargs)  # noqa: E501
             return data
 
-
     def serve_build(self, build_locator, **kwargs):  # noqa: E501
         """serve_build  # noqa: E501
 
@@ -674,7 +649,6 @@ class BuildApi(object):
         else:
             (data) = self.__serve_build_with_http_info(build_locator, **kwargs)  # noqa: E501
             return data
-
 
     def serve_build_actual_parameters(self, build_locator, **kwargs):  # noqa: E501
         """serve_build_actual_parameters  # noqa: E501
@@ -698,7 +672,6 @@ class BuildApi(object):
             (data) = self.__serve_build_actual_parameters_with_http_info(build_locator, **kwargs)  # noqa: E501
             return data
 
-
     def serve_build_field_by_build_only(self, build_locator, field, **kwargs):  # noqa: E501
         """serve_build_field_by_build_only  # noqa: E501
 
@@ -720,7 +693,6 @@ class BuildApi(object):
         else:
             (data) = self.__serve_build_field_by_build_only_with_http_info(build_locator, field, **kwargs)  # noqa: E501
             return data
-
 
     def serve_build_related_issues(self, build_locator, **kwargs):  # noqa: E501
         """serve_build_related_issues  # noqa: E501
@@ -744,7 +716,6 @@ class BuildApi(object):
             (data) = self.__serve_build_related_issues_with_http_info(build_locator, **kwargs)  # noqa: E501
             return data
 
-
     def serve_build_related_issues_old(self, build_locator, **kwargs):  # noqa: E501
         """serve_build_related_issues_old  # noqa: E501
 
@@ -766,7 +737,6 @@ class BuildApi(object):
         else:
             (data) = self.__serve_build_related_issues_old_with_http_info(build_locator, **kwargs)  # noqa: E501
             return data
-
 
     def serve_build_statistic_value(self, build_locator, name, **kwargs):  # noqa: E501
         """serve_build_statistic_value  # noqa: E501
@@ -790,7 +760,6 @@ class BuildApi(object):
             (data) = self.__serve_build_statistic_value_with_http_info(build_locator, name, **kwargs)  # noqa: E501
             return data
 
-
     def serve_build_statistic_values(self, build_locator, **kwargs):  # noqa: E501
         """serve_build_statistic_values  # noqa: E501
 
@@ -812,7 +781,6 @@ class BuildApi(object):
         else:
             (data) = self.__serve_build_statistic_values_with_http_info(build_locator, **kwargs)  # noqa: E501
             return data
-
 
     def serve_build_status_icon(self, build_locator, suffix, **kwargs):  # noqa: E501
         """serve_build_status_icon  # noqa: E501
@@ -836,7 +804,6 @@ class BuildApi(object):
             (data) = self.__serve_build_status_icon_with_http_info(build_locator, suffix, **kwargs)  # noqa: E501
             return data
 
-
     def serve_source_file(self, build_locator, file_name, **kwargs):  # noqa: E501
         """serve_source_file  # noqa: E501
 
@@ -858,7 +825,6 @@ class BuildApi(object):
         else:
             (data) = self.__serve_source_file_with_http_info(build_locator, file_name, **kwargs)  # noqa: E501
             return data
-
 
     def serve_tags(self, build_locator, **kwargs):  # noqa: E501
         """serve_tags  # noqa: E501
@@ -882,7 +848,6 @@ class BuildApi(object):
         else:
             (data) = self.__serve_tags_with_http_info(build_locator, **kwargs)  # noqa: E501
             return data
-
 
     def unpin_build(self, build_locator, **kwargs):  # noqa: E501
         """unpin_build  # noqa: E501
@@ -982,6 +947,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __cancel_build_with_http_info(self, build_locator, **kwargs):  # noqa: E501
         """cancel_build  # noqa: E501
 
@@ -1058,6 +1024,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __cancel_build_0_with_http_info(self, build_locator, **kwargs):  # noqa: E501
         """cancel_build_0  # noqa: E501
 
@@ -1128,6 +1095,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __delete_build_with_http_info(self, build_locator, **kwargs):  # noqa: E501
         """delete_build  # noqa: E501
 
@@ -1198,6 +1166,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __delete_builds_with_http_info(self, **kwargs):  # noqa: E501
         """delete_builds  # noqa: E501
 
@@ -1261,6 +1230,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __delete_comment_with_http_info(self, build_locator, **kwargs):  # noqa: E501
         """delete_comment  # noqa: E501
 
@@ -1331,6 +1301,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_artifacts_directory_with_http_info(self, build_locator, **kwargs):  # noqa: E501
         """get_artifacts_directory  # noqa: E501
 
@@ -1401,6 +1372,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_canceled_info_with_http_info(self, build_locator, **kwargs):  # noqa: E501
         """get_canceled_info  # noqa: E501
 
@@ -1474,6 +1446,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_children_with_http_info(self, path, build_locator, **kwargs):  # noqa: E501
         """get_children  # noqa: E501
 
@@ -1519,8 +1492,8 @@ class BuildApi(object):
                 params['build_locator'] is None):
             raise ValueError("Missing the required parameter `build_locator` when calling `get_children`")  # noqa: E501
 
-        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_children`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'path' in params and not re.search(r'(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError(r"Invalid value for parameter `path` when calling `get_children`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1571,6 +1544,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_children_alias_with_http_info(self, path, build_locator, **kwargs):  # noqa: E501
         """get_children_alias  # noqa: E501
 
@@ -1668,6 +1642,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_content_with_http_info(self, path, build_locator, **kwargs):  # noqa: E501
         """get_content  # noqa: E501
 
@@ -1710,8 +1685,8 @@ class BuildApi(object):
                 params['build_locator'] is None):
             raise ValueError("Missing the required parameter `build_locator` when calling `get_content`")  # noqa: E501
 
-        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_content`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'path' in params and not re.search(r'(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError(r"Invalid value for parameter `path` when calling `get_content`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1756,6 +1731,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_content_alias_with_http_info(self, path, build_locator, **kwargs):  # noqa: E501
         """get_content_alias  # noqa: E501
 
@@ -1798,8 +1774,8 @@ class BuildApi(object):
                 params['build_locator'] is None):
             raise ValueError("Missing the required parameter `build_locator` when calling `get_content_alias`")  # noqa: E501
 
-        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_content_alias`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'path' in params and not re.search(r'(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError(r"Invalid value for parameter `path` when calling `get_content_alias`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1844,6 +1820,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_metadata_with_http_info(self, path, build_locator, **kwargs):  # noqa: E501
         """get_metadata  # noqa: E501
 
@@ -1887,8 +1864,8 @@ class BuildApi(object):
                 params['build_locator'] is None):
             raise ValueError("Missing the required parameter `build_locator` when calling `get_metadata`")  # noqa: E501
 
-        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_metadata`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'path' in params and not re.search(r'(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError(r"Invalid value for parameter `path` when calling `get_metadata`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1935,6 +1912,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_parameter_with_http_info(self, build_locator, property_name, **kwargs):  # noqa: E501
         """get_parameter  # noqa: E501
 
@@ -2015,6 +1993,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_pinned_with_http_info(self, build_locator, **kwargs):  # noqa: E501
         """get_pinned  # noqa: E501
 
@@ -2085,6 +2064,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_problems_with_http_info(self, build_locator, **kwargs):  # noqa: E501
         """get_problems  # noqa: E501
 
@@ -2158,6 +2138,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_root_with_http_info(self, build_locator, **kwargs):  # noqa: E501
         """get_root  # noqa: E501
 
@@ -2243,6 +2224,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_tests_with_http_info(self, build_locator, **kwargs):  # noqa: E501
         """get_tests  # noqa: E501
 
@@ -2316,6 +2298,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_zipped_with_http_info(self, path, build_locator, **kwargs):  # noqa: E501
         """get_zipped  # noqa: E501
 
@@ -2361,8 +2344,8 @@ class BuildApi(object):
                 params['build_locator'] is None):
             raise ValueError("Missing the required parameter `build_locator` when calling `get_zipped`")  # noqa: E501
 
-        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_zipped`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'path' in params and not re.search(r'(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError(r"Invalid value for parameter `path` when calling `get_zipped`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -2413,6 +2396,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __pin_build_with_http_info(self, build_locator, **kwargs):  # noqa: E501
         """pin_build  # noqa: E501
 
@@ -2486,6 +2470,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __replace_comment_with_http_info(self, build_locator, **kwargs):  # noqa: E501
         """replace_comment  # noqa: E501
 
@@ -2559,6 +2544,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __replace_tags_with_http_info(self, build_locator, **kwargs):  # noqa: E501
         """replace_tags  # noqa: E501
 
@@ -2638,6 +2624,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_aggregated_build_status_with_http_info(self, build_locator, **kwargs):  # noqa: E501
         """serve_aggregated_build_status  # noqa: E501
 
@@ -2708,6 +2695,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_aggregated_build_status_icon_with_http_info(self, build_locator, suffix, **kwargs):  # noqa: E501
         """serve_aggregated_build_status_icon  # noqa: E501
 
@@ -2790,6 +2778,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_all_builds_with_http_info(self, **kwargs):  # noqa: E501
         """serve_all_builds  # noqa: E501
 
@@ -2893,6 +2882,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_build_with_http_info(self, build_locator, **kwargs):  # noqa: E501
         """serve_build  # noqa: E501
 
@@ -2966,6 +2956,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_build_actual_parameters_with_http_info(self, build_locator, **kwargs):  # noqa: E501
         """serve_build_actual_parameters  # noqa: E501
 
@@ -3039,6 +3030,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_build_field_by_build_only_with_http_info(self, build_locator, field, **kwargs):  # noqa: E501
         """serve_build_field_by_build_only  # noqa: E501
 
@@ -3119,6 +3111,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_build_related_issues_with_http_info(self, build_locator, **kwargs):  # noqa: E501
         """serve_build_related_issues  # noqa: E501
 
@@ -3192,6 +3185,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_build_related_issues_old_with_http_info(self, build_locator, **kwargs):  # noqa: E501
         """serve_build_related_issues_old  # noqa: E501
 
@@ -3265,6 +3259,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_build_statistic_value_with_http_info(self, build_locator, name, **kwargs):  # noqa: E501
         """serve_build_statistic_value  # noqa: E501
 
@@ -3345,6 +3340,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_build_statistic_values_with_http_info(self, build_locator, **kwargs):  # noqa: E501
         """serve_build_statistic_values  # noqa: E501
 
@@ -3418,6 +3414,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_build_status_icon_with_http_info(self, build_locator, suffix, **kwargs):  # noqa: E501
         """serve_build_status_icon  # noqa: E501
 
@@ -3500,6 +3497,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_source_file_with_http_info(self, build_locator, file_name, **kwargs):  # noqa: E501
         """serve_source_file  # noqa: E501
 
@@ -3582,6 +3580,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_tags_with_http_info(self, build_locator, **kwargs):  # noqa: E501
         """serve_tags  # noqa: E501
 
@@ -3658,6 +3657,7 @@ class BuildApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __unpin_build_with_http_info(self, build_locator, **kwargs):  # noqa: E501
         """unpin_build  # noqa: E501
 

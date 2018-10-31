@@ -772,4 +772,3 @@ class BuildType(TeamCityObject):
         """
 
         self._web_url = web_url
-

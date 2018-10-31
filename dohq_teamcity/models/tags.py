@@ -83,4 +83,3 @@ class Tags(TeamCityObject):
         """
 
         self._tag = tag
-

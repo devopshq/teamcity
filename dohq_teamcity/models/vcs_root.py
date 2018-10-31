@@ -372,4 +372,3 @@ class VcsRoot(TeamCityObject):
         """
 
         self._vcs_root_instances = vcs_root_instances
-

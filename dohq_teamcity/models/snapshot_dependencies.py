@@ -83,4 +83,3 @@ class SnapshotDependencies(TeamCityObject):
         """
 
         self._snapshot_dependency = snapshot_dependency
-

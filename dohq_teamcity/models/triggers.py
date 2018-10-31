@@ -83,4 +83,3 @@ class Triggers(TeamCityObject):
         """
 
         self._trigger = trigger
-

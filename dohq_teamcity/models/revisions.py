@@ -83,4 +83,3 @@ class Revisions(TeamCityObject):
         """
 
         self._revision = revision
-

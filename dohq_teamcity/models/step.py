@@ -213,4 +213,3 @@ class Step(TeamCityObject):
         """
 
         self._type = type
-

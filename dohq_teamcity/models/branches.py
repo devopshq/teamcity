@@ -83,4 +83,3 @@ class Branches(TeamCityObject):
         """
 
         self._count = count
-

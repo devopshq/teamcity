@@ -213,4 +213,3 @@ class Sessions(TeamCityObject):
         """
 
         self._session_max_alive_time = session_max_alive_time
-

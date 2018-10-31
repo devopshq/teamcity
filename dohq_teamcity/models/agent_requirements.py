@@ -83,4 +83,3 @@ class AgentRequirements(TeamCityObject):
         """
 
         self._count = count
-

@@ -135,4 +135,3 @@ class VcsRootEntry(TeamCityObject):
         """
 
         self._vcs_root = vcs_root
-

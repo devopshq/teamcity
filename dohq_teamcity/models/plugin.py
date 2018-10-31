@@ -161,4 +161,3 @@ class Plugin(TeamCityObject):
         """
 
         self._version = version
-

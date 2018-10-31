@@ -215,4 +215,3 @@ class Problem(TeamCityObject):
         """
 
         self._type = type
-

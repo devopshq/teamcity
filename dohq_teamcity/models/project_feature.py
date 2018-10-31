@@ -213,4 +213,3 @@ class ProjectFeature(TeamCityObject):
         """
 
         self._type = type
-
