@@ -91,6 +91,6 @@ Run this script to publish new html on https://devopshq.github.io/teamcity/ ::
 Create release
 =============================
 If you want release this library, reproduce this steps:
- + Create pull request `develop=>master <https://github.com/devopshq/teamcity/compare/develop...master>`__
+ + Create pull request `develop <= master <https://github.com/devopshq/teamcity/compare/master...develop>`__
  + Request review and pull it
  + Bump ``VERSION`` in `setup.py <https://github.com/devopshq/teamcity/blob/develop/setup.py#L6>`__ on ``develop``-branch after success pull.
