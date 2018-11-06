@@ -95,8 +95,12 @@ class ReadMixin(object):
                 "read function is not defined in class '{}'".format(
                     self.__class__.__name__))
         obj = func(self, *args, **kwargs)
-        self.__dict__ = obj.__dict__
-        return self
+
+        if kwargs['async_req']:
+            return obj
+        else:
+            self.__dict__ = obj.__dict__
+            return self
 
 
 class DeleteMixin(object):
@@ -109,8 +113,13 @@ class DeleteMixin(object):
             raise TeamCityCodeException(
                 "delete function is not defined in class '{}'".format(
                     self.__class__.__name__))
-        self = func(self, *args, **kwargs)
-        return self
+        obj = func(self, *args, **kwargs)
+
+        if kwargs['async_req']:
+            return obj
+        else:
+            self.__dict__ = obj.__dict__
+            return self
 
 
 class ContainerMixin(UserList):
