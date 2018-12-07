@@ -96,7 +96,7 @@ class ReadMixin(object):
                     self.__class__.__name__))
         obj = func(self, *args, **kwargs)
 
-        if kwargs['async_req']:
+        if kwargs.get('async_req', False):
             return obj
         else:
             self.__dict__ = obj.__dict__
@@ -115,7 +115,7 @@ class DeleteMixin(object):
                     self.__class__.__name__))
         obj = func(self, *args, **kwargs)
 
-        if kwargs['async_req']:
+        if kwargs.get('async_req', False):
             return obj
         else:
             self.__dict__ = obj.__dict__
