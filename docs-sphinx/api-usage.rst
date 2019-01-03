@@ -252,3 +252,13 @@ You can use logging for debug query
 
     logging.getLogger("urllib3").setLevel(logging.DEBUG)
     logging.getLogger("dohq_teamcity").setLevel(logging.DEBUG)
+
+
+How connect to TeamCity by proxy
+--------------------------------
+There is possibility to use proxy to establish connection with your TeamCity server.
+You can do it easily by passing additional parameter with proxy url to init method.
+
+.. code-block:: python
+
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'), proxy='http://localhost:8080/')
