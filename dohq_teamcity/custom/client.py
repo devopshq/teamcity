@@ -4,11 +4,13 @@ from dohq_teamcity.custom.api import *
 
 
 class TeamCity(ApiClient):
-    def __init__(self, url, auth):
+    def __init__(self, url, auth, proxy=None):
         configuration = Configuration()
         configuration.host = url
         if isinstance(auth, tuple):
             configuration.username, configuration.password = auth
+        if proxy is not None:
+            configuration.proxy = proxy
         super(TeamCity, self).__init__(configuration=configuration)
         self.default_headers.update({'Content-type': 'application/json',
                                      'Accept': 'application/json',
