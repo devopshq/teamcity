@@ -161,4 +161,3 @@ class Problems(TeamCityObject):
         """
 
         self._problem = problem
-

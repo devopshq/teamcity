@@ -61,7 +61,6 @@ class AgentPoolApi(object):
             (data) = self.__add_agent_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
             return data
 
-
     def add_project(self, agent_pool_locator, **kwargs):  # noqa: E501
         """add_project  # noqa: E501
 
@@ -84,7 +83,6 @@ class AgentPoolApi(object):
             (data) = self.__add_project_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
             return data
 
-
     def create_pool(self, **kwargs):  # noqa: E501
         """create_pool  # noqa: E501
 
@@ -106,7 +104,6 @@ class AgentPoolApi(object):
             (data) = self.__create_pool_with_http_info(**kwargs)  # noqa: E501
             return data
 
-
     def delete_pool(self, agent_pool_locator, **kwargs):  # noqa: E501
         """delete_pool  # noqa: E501
 
@@ -127,7 +124,6 @@ class AgentPoolApi(object):
         else:
             (data) = self.__delete_pool_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
             return data
-
 
     def delete_pool_project(self, agent_pool_locator, project_locator, **kwargs):  # noqa: E501
         """delete_pool_project  # noqa: E501
@@ -151,7 +147,6 @@ class AgentPoolApi(object):
             (data) = self.__delete_pool_project_with_http_info(agent_pool_locator, project_locator, **kwargs)  # noqa: E501
             return data
 
-
     def delete_projects(self, agent_pool_locator, **kwargs):  # noqa: E501
         """delete_projects  # noqa: E501
 
@@ -172,7 +167,6 @@ class AgentPoolApi(object):
         else:
             (data) = self.__delete_projects_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_field(self, agent_pool_locator, field, **kwargs):  # noqa: E501
         """get_field  # noqa: E501
@@ -196,7 +190,6 @@ class AgentPoolApi(object):
             (data) = self.__get_field_with_http_info(agent_pool_locator, field, **kwargs)  # noqa: E501
             return data
 
-
     def get_pool(self, agent_pool_locator, **kwargs):  # noqa: E501
         """get_pool  # noqa: E501
 
@@ -218,7 +211,6 @@ class AgentPoolApi(object):
         else:
             (data) = self.__get_pool_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_pool_agents(self, agent_pool_locator, **kwargs):  # noqa: E501
         """get_pool_agents  # noqa: E501
@@ -243,7 +235,6 @@ class AgentPoolApi(object):
             (data) = self.__get_pool_agents_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_pool_project(self, agent_pool_locator, project_locator, **kwargs):  # noqa: E501
         """get_pool_project  # noqa: E501
 
@@ -267,7 +258,6 @@ class AgentPoolApi(object):
             (data) = self.__get_pool_project_with_http_info(agent_pool_locator, project_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_pool_projects(self, agent_pool_locator, **kwargs):  # noqa: E501
         """get_pool_projects  # noqa: E501
 
@@ -289,7 +279,6 @@ class AgentPoolApi(object):
         else:
             (data) = self.__get_pool_projects_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_pools(self, **kwargs):  # noqa: E501
         """get_pools  # noqa: E501
@@ -313,7 +302,6 @@ class AgentPoolApi(object):
             (data) = self.__get_pools_with_http_info(**kwargs)  # noqa: E501
             return data
 
-
     def replace_projects(self, agent_pool_locator, **kwargs):  # noqa: E501
         """replace_projects  # noqa: E501
 
@@ -335,7 +323,6 @@ class AgentPoolApi(object):
         else:
             (data) = self.__replace_projects_with_http_info(agent_pool_locator, **kwargs)  # noqa: E501
             return data
-
 
     def set_field(self, agent_pool_locator, field, **kwargs):  # noqa: E501
         """set_field  # noqa: E501
@@ -436,6 +423,7 @@ class AgentPoolApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __add_project_with_http_info(self, agent_pool_locator, **kwargs):  # noqa: E501
         """add_project  # noqa: E501
 
@@ -509,6 +497,7 @@ class AgentPoolApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __create_pool_with_http_info(self, **kwargs):  # noqa: E501
         """create_pool  # noqa: E501
 
@@ -572,6 +561,7 @@ class AgentPoolApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __delete_pool_with_http_info(self, agent_pool_locator, **kwargs):  # noqa: E501
         """delete_pool  # noqa: E501
 
@@ -642,6 +632,7 @@ class AgentPoolApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __delete_pool_project_with_http_info(self, agent_pool_locator, project_locator, **kwargs):  # noqa: E501
         """delete_pool_project  # noqa: E501
 
@@ -722,6 +713,7 @@ class AgentPoolApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __delete_projects_with_http_info(self, agent_pool_locator, **kwargs):  # noqa: E501
         """delete_projects  # noqa: E501
 
@@ -792,6 +784,7 @@ class AgentPoolApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_field_with_http_info(self, agent_pool_locator, field, **kwargs):  # noqa: E501
         """get_field  # noqa: E501
 
@@ -872,6 +865,7 @@ class AgentPoolApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_pool_with_http_info(self, agent_pool_locator, **kwargs):  # noqa: E501
         """get_pool  # noqa: E501
 
@@ -945,6 +939,7 @@ class AgentPoolApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_pool_agents_with_http_info(self, agent_pool_locator, **kwargs):  # noqa: E501
         """get_pool_agents  # noqa: E501
 
@@ -1021,6 +1016,7 @@ class AgentPoolApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_pool_project_with_http_info(self, agent_pool_locator, project_locator, **kwargs):  # noqa: E501
         """get_pool_project  # noqa: E501
 
@@ -1104,6 +1100,7 @@ class AgentPoolApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_pool_projects_with_http_info(self, agent_pool_locator, **kwargs):  # noqa: E501
         """get_pool_projects  # noqa: E501
 
@@ -1177,6 +1174,7 @@ class AgentPoolApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_pools_with_http_info(self, **kwargs):  # noqa: E501
         """get_pools  # noqa: E501
 
@@ -1243,6 +1241,7 @@ class AgentPoolApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __replace_projects_with_http_info(self, agent_pool_locator, **kwargs):  # noqa: E501
         """replace_projects  # noqa: E501
 
@@ -1316,6 +1315,7 @@ class AgentPoolApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __set_field_with_http_info(self, agent_pool_locator, field, **kwargs):  # noqa: E501
         """set_field  # noqa: E501
 

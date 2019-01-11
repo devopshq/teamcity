@@ -83,4 +83,3 @@ class Datas(TeamCityObject):
         """
 
         self._data = data
-

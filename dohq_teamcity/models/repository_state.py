@@ -109,4 +109,3 @@ class RepositoryState(TeamCityObject):
         """
 
         self._timestamp = timestamp
-

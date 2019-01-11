@@ -503,4 +503,3 @@ class TestOccurrence(TeamCityObject):
         """
 
         self._test = test
-

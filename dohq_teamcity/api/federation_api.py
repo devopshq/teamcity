@@ -54,7 +54,6 @@ class FederationApi(object):
             (data) = self.__add_server_with_http_info(**kwargs)  # noqa: E501
             return data
 
-
     def servers(self, **kwargs):  # noqa: E501
         """servers  # noqa: E501
 
@@ -139,6 +138,7 @@ class FederationApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __servers_with_http_info(self, **kwargs):  # noqa: E501
         """servers  # noqa: E501
 

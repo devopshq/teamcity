@@ -137,4 +137,3 @@ class Compatibility(TeamCityObject):
         """
 
         self._unmet_requirements = unmet_requirements
-

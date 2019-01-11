@@ -84,4 +84,3 @@ class IssueUsage(TeamCityObject):
         """
 
         self._issue = issue
-

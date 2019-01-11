@@ -83,4 +83,3 @@ class FileChanges(TeamCityObject):
         """
 
         self._file = file
-

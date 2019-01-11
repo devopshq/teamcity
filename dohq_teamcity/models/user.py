@@ -371,4 +371,3 @@ class User(TeamCityObject):
         """
 
         self._username = username
-

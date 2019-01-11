@@ -268,4 +268,3 @@ class Group(TeamCityObject):
         """
 
         self._users = users
-

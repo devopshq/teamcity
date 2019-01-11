@@ -85,7 +85,6 @@ class BuildTypeApi(object):
             (data) = self.__add_agent_requirement_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def add_artifact_dep(self, bt_locator, **kwargs):  # noqa: E501
         """add_artifact_dep  # noqa: E501
 
@@ -109,7 +108,6 @@ class BuildTypeApi(object):
             (data) = self.__add_artifact_dep_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def add_build_type(self, **kwargs):  # noqa: E501
         """add_build_type  # noqa: E501
 
@@ -131,7 +129,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__add_build_type_with_http_info(**kwargs)  # noqa: E501
             return data
-
 
     def add_feature(self, bt_locator, **kwargs):  # noqa: E501
         """add_feature  # noqa: E501
@@ -155,7 +152,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__add_feature_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def add_feature_parameter(self, bt_locator, feature_id, parameter_name, **kwargs):  # noqa: E501
         """add_feature_parameter  # noqa: E501
@@ -181,7 +177,6 @@ class BuildTypeApi(object):
             (data) = self.__add_feature_parameter_with_http_info(bt_locator, feature_id, parameter_name, **kwargs)  # noqa: E501
             return data
 
-
     def add_snapshot_dep(self, bt_locator, **kwargs):  # noqa: E501
         """add_snapshot_dep  # noqa: E501
 
@@ -205,7 +200,6 @@ class BuildTypeApi(object):
             (data) = self.__add_snapshot_dep_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def add_step(self, bt_locator, **kwargs):  # noqa: E501
         """add_step  # noqa: E501
 
@@ -228,7 +222,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__add_step_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def add_step_parameter(self, bt_locator, step_id, parameter_name, **kwargs):  # noqa: E501
         """add_step_parameter  # noqa: E501
@@ -254,7 +247,6 @@ class BuildTypeApi(object):
             (data) = self.__add_step_parameter_with_http_info(bt_locator, step_id, parameter_name, **kwargs)  # noqa: E501
             return data
 
-
     def add_trigger(self, bt_locator, **kwargs):  # noqa: E501
         """add_trigger  # noqa: E501
 
@@ -278,7 +270,6 @@ class BuildTypeApi(object):
             (data) = self.__add_trigger_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def add_vcs_root_entry(self, bt_locator, **kwargs):  # noqa: E501
         """add_vcs_root_entry  # noqa: E501
 
@@ -301,7 +292,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__add_vcs_root_entry_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def change_artifact_dep_setting(self, bt_locator, artifact_dep_locator, field_name, **kwargs):  # noqa: E501
         """change_artifact_dep_setting  # noqa: E501
@@ -327,7 +317,6 @@ class BuildTypeApi(object):
             (data) = self.__change_artifact_dep_setting_with_http_info(bt_locator, artifact_dep_locator, field_name, **kwargs)  # noqa: E501
             return data
 
-
     def change_feature_setting(self, bt_locator, feature_id, name, **kwargs):  # noqa: E501
         """change_feature_setting  # noqa: E501
 
@@ -351,7 +340,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__change_feature_setting_with_http_info(bt_locator, feature_id, name, **kwargs)  # noqa: E501
             return data
-
 
     def change_requirement_setting(self, bt_locator, agent_requirement_locator, field_name, **kwargs):  # noqa: E501
         """change_requirement_setting  # noqa: E501
@@ -377,7 +365,6 @@ class BuildTypeApi(object):
             (data) = self.__change_requirement_setting_with_http_info(bt_locator, agent_requirement_locator, field_name, **kwargs)  # noqa: E501
             return data
 
-
     def change_step_setting(self, bt_locator, step_id, field_name, **kwargs):  # noqa: E501
         """change_step_setting  # noqa: E501
 
@@ -401,7 +388,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__change_step_setting_with_http_info(bt_locator, step_id, field_name, **kwargs)  # noqa: E501
             return data
-
 
     def change_trigger_setting(self, bt_locator, trigger_locator, field_name, **kwargs):  # noqa: E501
         """change_trigger_setting  # noqa: E501
@@ -427,7 +413,6 @@ class BuildTypeApi(object):
             (data) = self.__change_trigger_setting_with_http_info(bt_locator, trigger_locator, field_name, **kwargs)  # noqa: E501
             return data
 
-
     def delete_agent_requirement(self, bt_locator, agent_requirement_locator, **kwargs):  # noqa: E501
         """delete_agent_requirement  # noqa: E501
 
@@ -450,7 +435,6 @@ class BuildTypeApi(object):
             (data) = self.__delete_agent_requirement_with_http_info(bt_locator, agent_requirement_locator, **kwargs)  # noqa: E501
             return data
 
-
     def delete_all_parameters(self, bt_locator, **kwargs):  # noqa: E501
         """delete_all_parameters  # noqa: E501
 
@@ -472,7 +456,6 @@ class BuildTypeApi(object):
             (data) = self.__delete_all_parameters_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def delete_all_parameters_0(self, bt_locator, **kwargs):  # noqa: E501
         """delete_all_parameters_0  # noqa: E501
 
@@ -493,7 +476,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__delete_all_parameters_0_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def delete_artifact_dep(self, bt_locator, artifact_dep_locator, **kwargs):  # noqa: E501
         """delete_artifact_dep  # noqa: E501
@@ -517,7 +499,6 @@ class BuildTypeApi(object):
             (data) = self.__delete_artifact_dep_with_http_info(bt_locator, artifact_dep_locator, **kwargs)  # noqa: E501
             return data
 
-
     def delete_build_type(self, bt_locator, **kwargs):  # noqa: E501
         """delete_build_type  # noqa: E501
 
@@ -538,7 +519,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__delete_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def delete_feature(self, bt_locator, feature_id, **kwargs):  # noqa: E501
         """delete_feature  # noqa: E501
@@ -562,7 +542,6 @@ class BuildTypeApi(object):
             (data) = self.__delete_feature_with_http_info(bt_locator, feature_id, **kwargs)  # noqa: E501
             return data
 
-
     def delete_parameter(self, name, bt_locator, **kwargs):  # noqa: E501
         """delete_parameter  # noqa: E501
 
@@ -584,7 +563,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__delete_parameter_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def delete_parameter_0(self, name, bt_locator, **kwargs):  # noqa: E501
         """delete_parameter_0  # noqa: E501
@@ -608,7 +586,6 @@ class BuildTypeApi(object):
             (data) = self.__delete_parameter_0_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def delete_snapshot_dep(self, bt_locator, snapshot_dep_locator, **kwargs):  # noqa: E501
         """delete_snapshot_dep  # noqa: E501
 
@@ -630,7 +607,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__delete_snapshot_dep_with_http_info(bt_locator, snapshot_dep_locator, **kwargs)  # noqa: E501
             return data
-
 
     def delete_step(self, bt_locator, step_id, **kwargs):  # noqa: E501
         """delete_step  # noqa: E501
@@ -654,7 +630,6 @@ class BuildTypeApi(object):
             (data) = self.__delete_step_with_http_info(bt_locator, step_id, **kwargs)  # noqa: E501
             return data
 
-
     def delete_template_association(self, bt_locator, **kwargs):  # noqa: E501
         """delete_template_association  # noqa: E501
 
@@ -675,7 +650,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__delete_template_association_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def delete_trigger(self, bt_locator, trigger_locator, **kwargs):  # noqa: E501
         """delete_trigger  # noqa: E501
@@ -699,7 +673,6 @@ class BuildTypeApi(object):
             (data) = self.__delete_trigger_with_http_info(bt_locator, trigger_locator, **kwargs)  # noqa: E501
             return data
 
-
     def delete_vcs_root_entry(self, bt_locator, vcs_root_locator, **kwargs):  # noqa: E501
         """delete_vcs_root_entry  # noqa: E501
 
@@ -721,7 +694,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__delete_vcs_root_entry_with_http_info(bt_locator, vcs_root_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_agent_requirement(self, bt_locator, agent_requirement_locator, **kwargs):  # noqa: E501
         """get_agent_requirement  # noqa: E501
@@ -746,7 +718,6 @@ class BuildTypeApi(object):
             (data) = self.__get_agent_requirement_with_http_info(bt_locator, agent_requirement_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_agent_requirements(self, bt_locator, **kwargs):  # noqa: E501
         """get_agent_requirements  # noqa: E501
 
@@ -769,7 +740,6 @@ class BuildTypeApi(object):
             (data) = self.__get_agent_requirements_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_aliases(self, bt_locator, field, **kwargs):  # noqa: E501
         """get_aliases  # noqa: E501
 
@@ -791,7 +761,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__get_aliases_with_http_info(bt_locator, field, **kwargs)  # noqa: E501
             return data
-
 
     def get_artifact_dep(self, bt_locator, artifact_dep_locator, **kwargs):  # noqa: E501
         """get_artifact_dep  # noqa: E501
@@ -816,7 +785,6 @@ class BuildTypeApi(object):
             (data) = self.__get_artifact_dep_with_http_info(bt_locator, artifact_dep_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_artifact_dep_setting(self, bt_locator, artifact_dep_locator, field_name, **kwargs):  # noqa: E501
         """get_artifact_dep_setting  # noqa: E501
 
@@ -840,7 +808,6 @@ class BuildTypeApi(object):
             (data) = self.__get_artifact_dep_setting_with_http_info(bt_locator, artifact_dep_locator, field_name, **kwargs)  # noqa: E501
             return data
 
-
     def get_artifact_deps(self, bt_locator, **kwargs):  # noqa: E501
         """get_artifact_deps  # noqa: E501
 
@@ -863,7 +830,6 @@ class BuildTypeApi(object):
             (data) = self.__get_artifact_deps_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_build_types(self, **kwargs):  # noqa: E501
         """get_build_types  # noqa: E501
 
@@ -885,7 +851,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__get_build_types_with_http_info(**kwargs)  # noqa: E501
             return data
-
 
     def get_children(self, path, bt_locator, **kwargs):  # noqa: E501
         """get_children  # noqa: E501
@@ -913,7 +878,6 @@ class BuildTypeApi(object):
             (data) = self.__get_children_with_http_info(path, bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_children_alias(self, path, bt_locator, **kwargs):  # noqa: E501
         """get_children_alias  # noqa: E501
 
@@ -940,7 +904,6 @@ class BuildTypeApi(object):
             (data) = self.__get_children_alias_with_http_info(path, bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_content(self, path, bt_locator, **kwargs):  # noqa: E501
         """get_content  # noqa: E501
 
@@ -963,7 +926,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__get_content_with_http_info(path, bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_content_alias(self, path, bt_locator, **kwargs):  # noqa: E501
         """get_content_alias  # noqa: E501
@@ -988,7 +950,6 @@ class BuildTypeApi(object):
             (data) = self.__get_content_alias_with_http_info(path, bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_current_vcs_instances(self, bt_locator, **kwargs):  # noqa: E501
         """get_current_vcs_instances  # noqa: E501
 
@@ -1011,7 +972,6 @@ class BuildTypeApi(object):
             (data) = self.__get_current_vcs_instances_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_example_new_project_description(self, bt_locator, **kwargs):  # noqa: E501
         """get_example_new_project_description  # noqa: E501
 
@@ -1033,7 +993,6 @@ class BuildTypeApi(object):
             (data) = self.__get_example_new_project_description_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_example_new_project_description_compatibility_version1(self, bt_locator, **kwargs):  # noqa: E501
         """get_example_new_project_description_compatibility_version1  # noqa: E501
 
@@ -1054,7 +1013,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__get_example_new_project_description_compatibility_version1_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_feature(self, bt_locator, feature_id, **kwargs):  # noqa: E501
         """get_feature  # noqa: E501
@@ -1079,7 +1037,6 @@ class BuildTypeApi(object):
             (data) = self.__get_feature_with_http_info(bt_locator, feature_id, **kwargs)  # noqa: E501
             return data
 
-
     def get_feature_parameter(self, bt_locator, feature_id, parameter_name, **kwargs):  # noqa: E501
         """get_feature_parameter  # noqa: E501
 
@@ -1102,7 +1059,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__get_feature_parameter_with_http_info(bt_locator, feature_id, parameter_name, **kwargs)  # noqa: E501
             return data
-
 
     def get_feature_parameters(self, bt_locator, feature_id, **kwargs):  # noqa: E501
         """get_feature_parameters  # noqa: E501
@@ -1127,7 +1083,6 @@ class BuildTypeApi(object):
             (data) = self.__get_feature_parameters_with_http_info(bt_locator, feature_id, **kwargs)  # noqa: E501
             return data
 
-
     def get_feature_setting(self, bt_locator, feature_id, name, **kwargs):  # noqa: E501
         """get_feature_setting  # noqa: E501
 
@@ -1151,7 +1106,6 @@ class BuildTypeApi(object):
             (data) = self.__get_feature_setting_with_http_info(bt_locator, feature_id, name, **kwargs)  # noqa: E501
             return data
 
-
     def get_features(self, bt_locator, **kwargs):  # noqa: E501
         """get_features  # noqa: E501
 
@@ -1174,7 +1128,6 @@ class BuildTypeApi(object):
             (data) = self.__get_features_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_investigations(self, bt_locator, **kwargs):  # noqa: E501
         """get_investigations  # noqa: E501
 
@@ -1196,7 +1149,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__get_investigations_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_metadata(self, path, bt_locator, **kwargs):  # noqa: E501
         """get_metadata  # noqa: E501
@@ -1222,7 +1174,6 @@ class BuildTypeApi(object):
             (data) = self.__get_metadata_with_http_info(path, bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_parameter(self, name, bt_locator, **kwargs):  # noqa: E501
         """get_parameter  # noqa: E501
 
@@ -1245,7 +1196,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__get_parameter_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_parameter_0(self, name, bt_locator, **kwargs):  # noqa: E501
         """get_parameter_0  # noqa: E501
@@ -1270,7 +1220,6 @@ class BuildTypeApi(object):
             (data) = self.__get_parameter_0_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_parameter_type(self, name, bt_locator, **kwargs):  # noqa: E501
         """get_parameter_type  # noqa: E501
 
@@ -1292,7 +1241,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__get_parameter_type_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_parameter_type_raw_value(self, name, bt_locator, **kwargs):  # noqa: E501
         """get_parameter_type_raw_value  # noqa: E501
@@ -1316,7 +1264,6 @@ class BuildTypeApi(object):
             (data) = self.__get_parameter_type_raw_value_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_parameter_value_long(self, name, bt_locator, **kwargs):  # noqa: E501
         """get_parameter_value_long  # noqa: E501
 
@@ -1339,7 +1286,6 @@ class BuildTypeApi(object):
             (data) = self.__get_parameter_value_long_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_parameter_value_long_0(self, name, bt_locator, **kwargs):  # noqa: E501
         """get_parameter_value_long_0  # noqa: E501
 
@@ -1361,7 +1307,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__get_parameter_value_long_0_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_parameters(self, bt_locator, **kwargs):  # noqa: E501
         """get_parameters  # noqa: E501
@@ -1386,7 +1331,6 @@ class BuildTypeApi(object):
             (data) = self.__get_parameters_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_parameters_0(self, bt_locator, **kwargs):  # noqa: E501
         """get_parameters_0  # noqa: E501
 
@@ -1410,7 +1354,6 @@ class BuildTypeApi(object):
             (data) = self.__get_parameters_0_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_requirement_setting(self, bt_locator, agent_requirement_locator, field_name, **kwargs):  # noqa: E501
         """get_requirement_setting  # noqa: E501
 
@@ -1433,7 +1376,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__get_requirement_setting_with_http_info(bt_locator, agent_requirement_locator, field_name, **kwargs)  # noqa: E501
             return data
-
 
     def get_root(self, bt_locator, **kwargs):  # noqa: E501
         """get_root  # noqa: E501
@@ -1460,7 +1402,6 @@ class BuildTypeApi(object):
             (data) = self.__get_root_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_settings_file(self, bt_locator, **kwargs):  # noqa: E501
         """get_settings_file  # noqa: E501
 
@@ -1481,7 +1422,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__get_settings_file_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_snapshot_dep(self, bt_locator, snapshot_dep_locator, **kwargs):  # noqa: E501
         """get_snapshot_dep  # noqa: E501
@@ -1506,7 +1446,6 @@ class BuildTypeApi(object):
             (data) = self.__get_snapshot_dep_with_http_info(bt_locator, snapshot_dep_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_snapshot_deps(self, bt_locator, **kwargs):  # noqa: E501
         """get_snapshot_deps  # noqa: E501
 
@@ -1528,7 +1467,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__get_snapshot_deps_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_step(self, bt_locator, step_id, **kwargs):  # noqa: E501
         """get_step  # noqa: E501
@@ -1553,7 +1491,6 @@ class BuildTypeApi(object):
             (data) = self.__get_step_with_http_info(bt_locator, step_id, **kwargs)  # noqa: E501
             return data
 
-
     def get_step_parameter(self, bt_locator, step_id, parameter_name, **kwargs):  # noqa: E501
         """get_step_parameter  # noqa: E501
 
@@ -1576,7 +1513,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__get_step_parameter_with_http_info(bt_locator, step_id, parameter_name, **kwargs)  # noqa: E501
             return data
-
 
     def get_step_parameters(self, bt_locator, step_id, **kwargs):  # noqa: E501
         """get_step_parameters  # noqa: E501
@@ -1601,7 +1537,6 @@ class BuildTypeApi(object):
             (data) = self.__get_step_parameters_with_http_info(bt_locator, step_id, **kwargs)  # noqa: E501
             return data
 
-
     def get_step_setting(self, bt_locator, step_id, field_name, **kwargs):  # noqa: E501
         """get_step_setting  # noqa: E501
 
@@ -1625,7 +1560,6 @@ class BuildTypeApi(object):
             (data) = self.__get_step_setting_with_http_info(bt_locator, step_id, field_name, **kwargs)  # noqa: E501
             return data
 
-
     def get_steps(self, bt_locator, **kwargs):  # noqa: E501
         """get_steps  # noqa: E501
 
@@ -1647,7 +1581,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__get_steps_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_template_association(self, bt_locator, **kwargs):  # noqa: E501
         """get_template_association  # noqa: E501
@@ -1672,7 +1605,6 @@ class BuildTypeApi(object):
             (data) = self.__get_template_association_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_trigger(self, bt_locator, trigger_locator, **kwargs):  # noqa: E501
         """get_trigger  # noqa: E501
 
@@ -1695,7 +1627,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__get_trigger_with_http_info(bt_locator, trigger_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_trigger_setting(self, bt_locator, trigger_locator, field_name, **kwargs):  # noqa: E501
         """get_trigger_setting  # noqa: E501
@@ -1720,7 +1651,6 @@ class BuildTypeApi(object):
             (data) = self.__get_trigger_setting_with_http_info(bt_locator, trigger_locator, field_name, **kwargs)  # noqa: E501
             return data
 
-
     def get_triggers(self, bt_locator, **kwargs):  # noqa: E501
         """get_triggers  # noqa: E501
 
@@ -1743,7 +1673,6 @@ class BuildTypeApi(object):
             (data) = self.__get_triggers_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_vcs_labeling_options(self, bt_locator, **kwargs):  # noqa: E501
         """get_vcs_labeling_options  # noqa: E501
 
@@ -1764,7 +1693,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__get_vcs_labeling_options_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_vcs_root_entries(self, bt_locator, **kwargs):  # noqa: E501
         """get_vcs_root_entries  # noqa: E501
@@ -1787,7 +1715,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__get_vcs_root_entries_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_vcs_root_entry(self, bt_locator, vcs_root_locator, **kwargs):  # noqa: E501
         """get_vcs_root_entry  # noqa: E501
@@ -1812,7 +1739,6 @@ class BuildTypeApi(object):
             (data) = self.__get_vcs_root_entry_with_http_info(bt_locator, vcs_root_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_vcs_root_entry_checkout_rules(self, bt_locator, vcs_root_locator, **kwargs):  # noqa: E501
         """get_vcs_root_entry_checkout_rules  # noqa: E501
 
@@ -1834,7 +1760,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__get_vcs_root_entry_checkout_rules_with_http_info(bt_locator, vcs_root_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_zipped(self, path, bt_locator, **kwargs):  # noqa: E501
         """get_zipped  # noqa: E501
@@ -1862,7 +1787,6 @@ class BuildTypeApi(object):
             (data) = self.__get_zipped_with_http_info(path, bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def replace_agent_requirement(self, bt_locator, agent_requirement_locator, **kwargs):  # noqa: E501
         """replace_agent_requirement  # noqa: E501
 
@@ -1887,7 +1811,6 @@ class BuildTypeApi(object):
             (data) = self.__replace_agent_requirement_with_http_info(bt_locator, agent_requirement_locator, **kwargs)  # noqa: E501
             return data
 
-
     def replace_agent_requirements(self, bt_locator, **kwargs):  # noqa: E501
         """replace_agent_requirements  # noqa: E501
 
@@ -1910,7 +1833,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__replace_agent_requirements_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def replace_artifact_dep(self, bt_locator, artifact_dep_locator, **kwargs):  # noqa: E501
         """replace_artifact_dep  # noqa: E501
@@ -1936,7 +1858,6 @@ class BuildTypeApi(object):
             (data) = self.__replace_artifact_dep_with_http_info(bt_locator, artifact_dep_locator, **kwargs)  # noqa: E501
             return data
 
-
     def replace_artifact_deps(self, bt_locator, **kwargs):  # noqa: E501
         """replace_artifact_deps  # noqa: E501
 
@@ -1959,7 +1880,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__replace_artifact_deps_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def replace_feature(self, bt_locator, feature_id, **kwargs):  # noqa: E501
         """replace_feature  # noqa: E501
@@ -1985,7 +1905,6 @@ class BuildTypeApi(object):
             (data) = self.__replace_feature_with_http_info(bt_locator, feature_id, **kwargs)  # noqa: E501
             return data
 
-
     def replace_feature_parameters(self, bt_locator, feature_id, **kwargs):  # noqa: E501
         """replace_feature_parameters  # noqa: E501
 
@@ -2010,7 +1929,6 @@ class BuildTypeApi(object):
             (data) = self.__replace_feature_parameters_with_http_info(bt_locator, feature_id, **kwargs)  # noqa: E501
             return data
 
-
     def replace_features(self, bt_locator, **kwargs):  # noqa: E501
         """replace_features  # noqa: E501
 
@@ -2033,7 +1951,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__replace_features_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def replace_snapshot_dep(self, bt_locator, snapshot_dep_locator, **kwargs):  # noqa: E501
         """replace_snapshot_dep  # noqa: E501
@@ -2059,7 +1976,6 @@ class BuildTypeApi(object):
             (data) = self.__replace_snapshot_dep_with_http_info(bt_locator, snapshot_dep_locator, **kwargs)  # noqa: E501
             return data
 
-
     def replace_snapshot_deps(self, bt_locator, **kwargs):  # noqa: E501
         """replace_snapshot_deps  # noqa: E501
 
@@ -2082,7 +1998,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__replace_snapshot_deps_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def replace_step(self, bt_locator, step_id, **kwargs):  # noqa: E501
         """replace_step  # noqa: E501
@@ -2108,7 +2023,6 @@ class BuildTypeApi(object):
             (data) = self.__replace_step_with_http_info(bt_locator, step_id, **kwargs)  # noqa: E501
             return data
 
-
     def replace_step_parameters(self, bt_locator, step_id, **kwargs):  # noqa: E501
         """replace_step_parameters  # noqa: E501
 
@@ -2133,7 +2047,6 @@ class BuildTypeApi(object):
             (data) = self.__replace_step_parameters_with_http_info(bt_locator, step_id, **kwargs)  # noqa: E501
             return data
 
-
     def replace_steps(self, bt_locator, **kwargs):  # noqa: E501
         """replace_steps  # noqa: E501
 
@@ -2156,7 +2069,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__replace_steps_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def replace_trigger(self, bt_locator, trigger_locator, **kwargs):  # noqa: E501
         """replace_trigger  # noqa: E501
@@ -2182,7 +2094,6 @@ class BuildTypeApi(object):
             (data) = self.__replace_trigger_with_http_info(bt_locator, trigger_locator, **kwargs)  # noqa: E501
             return data
 
-
     def replace_triggers(self, bt_locator, **kwargs):  # noqa: E501
         """replace_triggers  # noqa: E501
 
@@ -2205,7 +2116,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__replace_triggers_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def replace_vcs_root_entries(self, bt_locator, **kwargs):  # noqa: E501
         """replace_vcs_root_entries  # noqa: E501
@@ -2230,7 +2140,6 @@ class BuildTypeApi(object):
             (data) = self.__replace_vcs_root_entries_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def serve_branches(self, bt_locator, **kwargs):  # noqa: E501
         """serve_branches  # noqa: E501
 
@@ -2253,7 +2162,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__serve_branches_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def serve_build_field(self, bt_locator, build_locator, field, **kwargs):  # noqa: E501
         """serve_build_field  # noqa: E501
@@ -2278,7 +2186,6 @@ class BuildTypeApi(object):
             (data) = self.__serve_build_field_with_http_info(bt_locator, build_locator, field, **kwargs)  # noqa: E501
             return data
 
-
     def serve_build_type_builds_tags(self, bt_locator, field, **kwargs):  # noqa: E501
         """serve_build_type_builds_tags  # noqa: E501
 
@@ -2300,7 +2207,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__serve_build_type_builds_tags_with_http_info(bt_locator, field, **kwargs)  # noqa: E501
             return data
-
 
     def serve_build_type_field(self, bt_locator, field, **kwargs):  # noqa: E501
         """serve_build_type_field  # noqa: E501
@@ -2324,7 +2230,6 @@ class BuildTypeApi(object):
             (data) = self.__serve_build_type_field_with_http_info(bt_locator, field, **kwargs)  # noqa: E501
             return data
 
-
     def serve_build_type_template(self, bt_locator, **kwargs):  # noqa: E501
         """serve_build_type_template  # noqa: E501
 
@@ -2346,7 +2251,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__serve_build_type_template_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def serve_build_type_xml(self, bt_locator, **kwargs):  # noqa: E501
         """serve_build_type_xml  # noqa: E501
@@ -2370,7 +2274,6 @@ class BuildTypeApi(object):
             (data) = self.__serve_build_type_xml_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def serve_build_with_project(self, bt_locator, build_locator, **kwargs):  # noqa: E501
         """serve_build_with_project  # noqa: E501
 
@@ -2393,7 +2296,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__serve_build_with_project_with_http_info(bt_locator, build_locator, **kwargs)  # noqa: E501
             return data
-
 
     def serve_builds(self, bt_locator, **kwargs):  # noqa: E501
         """serve_builds  # noqa: E501
@@ -2429,7 +2331,6 @@ class BuildTypeApi(object):
             (data) = self.__serve_builds_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def set_build_type_field(self, bt_locator, field, **kwargs):  # noqa: E501
         """set_build_type_field  # noqa: E501
 
@@ -2453,7 +2354,6 @@ class BuildTypeApi(object):
             (data) = self.__set_build_type_field_with_http_info(bt_locator, field, **kwargs)  # noqa: E501
             return data
 
-
     def set_parameter(self, bt_locator, **kwargs):  # noqa: E501
         """set_parameter  # noqa: E501
 
@@ -2476,7 +2376,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__set_parameter_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def set_parameter_0(self, name, bt_locator, **kwargs):  # noqa: E501
         """set_parameter_0  # noqa: E501
@@ -2502,7 +2401,6 @@ class BuildTypeApi(object):
             (data) = self.__set_parameter_0_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def set_parameter_1(self, bt_locator, **kwargs):  # noqa: E501
         """set_parameter_1  # noqa: E501
 
@@ -2525,7 +2423,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__set_parameter_1_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def set_parameter_2(self, name, bt_locator, **kwargs):  # noqa: E501
         """set_parameter_2  # noqa: E501
@@ -2551,7 +2448,6 @@ class BuildTypeApi(object):
             (data) = self.__set_parameter_2_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def set_parameter_type(self, name, bt_locator, **kwargs):  # noqa: E501
         """set_parameter_type  # noqa: E501
 
@@ -2574,7 +2470,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__set_parameter_type_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def set_parameter_type_raw_value(self, name, bt_locator, **kwargs):  # noqa: E501
         """set_parameter_type_raw_value  # noqa: E501
@@ -2599,7 +2494,6 @@ class BuildTypeApi(object):
             (data) = self.__set_parameter_type_raw_value_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def set_parameter_value_long(self, name, bt_locator, **kwargs):  # noqa: E501
         """set_parameter_value_long  # noqa: E501
 
@@ -2622,7 +2516,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__set_parameter_value_long_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def set_parameter_value_long_0(self, name, bt_locator, **kwargs):  # noqa: E501
         """set_parameter_value_long_0  # noqa: E501
@@ -2647,7 +2540,6 @@ class BuildTypeApi(object):
             (data) = self.__set_parameter_value_long_0_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def set_parameters(self, bt_locator, **kwargs):  # noqa: E501
         """set_parameters  # noqa: E501
 
@@ -2670,7 +2562,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__set_parameters_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def set_parameters_0(self, bt_locator, **kwargs):  # noqa: E501
         """set_parameters_0  # noqa: E501
@@ -2695,7 +2586,6 @@ class BuildTypeApi(object):
             (data) = self.__set_parameters_0_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-
     def set_vcs_labeling_options(self, bt_locator, **kwargs):  # noqa: E501
         """set_vcs_labeling_options  # noqa: E501
 
@@ -2717,7 +2607,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__set_vcs_labeling_options_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
-
 
     def update_vcs_root_entry(self, bt_locator, vcs_root_locator, **kwargs):  # noqa: E501
         """update_vcs_root_entry  # noqa: E501
@@ -2742,7 +2631,6 @@ class BuildTypeApi(object):
         else:
             (data) = self.__update_vcs_root_entry_with_http_info(bt_locator, vcs_root_locator, **kwargs)  # noqa: E501
             return data
-
 
     def update_vcs_root_entry_checkout_rules(self, bt_locator, vcs_root_locator, **kwargs):  # noqa: E501
         """update_vcs_root_entry_checkout_rules  # noqa: E501
@@ -2843,6 +2731,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __add_artifact_dep_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """add_artifact_dep  # noqa: E501
 
@@ -2919,6 +2808,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __add_build_type_with_http_info(self, **kwargs):  # noqa: E501
         """add_build_type  # noqa: E501
 
@@ -2985,6 +2875,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __add_feature_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """add_feature  # noqa: E501
 
@@ -3061,6 +2952,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __add_feature_parameter_with_http_info(self, bt_locator, feature_id, parameter_name, **kwargs):  # noqa: E501
         """add_feature_parameter  # noqa: E501
 
@@ -3154,6 +3046,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __add_snapshot_dep_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """add_snapshot_dep  # noqa: E501
 
@@ -3230,6 +3123,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __add_step_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """add_step  # noqa: E501
 
@@ -3306,6 +3200,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __add_step_parameter_with_http_info(self, bt_locator, step_id, parameter_name, **kwargs):  # noqa: E501
         """add_step_parameter  # noqa: E501
 
@@ -3399,6 +3294,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __add_trigger_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """add_trigger  # noqa: E501
 
@@ -3475,6 +3371,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __add_vcs_root_entry_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """add_vcs_root_entry  # noqa: E501
 
@@ -3551,6 +3448,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __change_artifact_dep_setting_with_http_info(self, bt_locator, artifact_dep_locator, field_name, **kwargs):  # noqa: E501
         """change_artifact_dep_setting  # noqa: E501
 
@@ -3644,6 +3542,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __change_feature_setting_with_http_info(self, bt_locator, feature_id, name, **kwargs):  # noqa: E501
         """change_feature_setting  # noqa: E501
 
@@ -3737,6 +3636,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __change_requirement_setting_with_http_info(self, bt_locator, agent_requirement_locator, field_name, **kwargs):  # noqa: E501
         """change_requirement_setting  # noqa: E501
 
@@ -3830,6 +3730,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __change_step_setting_with_http_info(self, bt_locator, step_id, field_name, **kwargs):  # noqa: E501
         """change_step_setting  # noqa: E501
 
@@ -3923,6 +3824,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __change_trigger_setting_with_http_info(self, bt_locator, trigger_locator, field_name, **kwargs):  # noqa: E501
         """change_trigger_setting  # noqa: E501
 
@@ -4016,6 +3918,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __delete_agent_requirement_with_http_info(self, bt_locator, agent_requirement_locator, **kwargs):  # noqa: E501
         """delete_agent_requirement  # noqa: E501
 
@@ -4096,6 +3999,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __delete_all_parameters_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """delete_all_parameters  # noqa: E501
 
@@ -4166,6 +4070,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __delete_all_parameters_0_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """delete_all_parameters_0  # noqa: E501
 
@@ -4236,6 +4141,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __delete_artifact_dep_with_http_info(self, bt_locator, artifact_dep_locator, **kwargs):  # noqa: E501
         """delete_artifact_dep  # noqa: E501
 
@@ -4316,6 +4222,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __delete_build_type_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """delete_build_type  # noqa: E501
 
@@ -4386,6 +4293,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __delete_feature_with_http_info(self, bt_locator, feature_id, **kwargs):  # noqa: E501
         """delete_feature  # noqa: E501
 
@@ -4466,6 +4374,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __delete_parameter_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
         """delete_parameter  # noqa: E501
 
@@ -4546,6 +4455,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __delete_parameter_0_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
         """delete_parameter_0  # noqa: E501
 
@@ -4626,6 +4536,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __delete_snapshot_dep_with_http_info(self, bt_locator, snapshot_dep_locator, **kwargs):  # noqa: E501
         """delete_snapshot_dep  # noqa: E501
 
@@ -4706,6 +4617,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __delete_step_with_http_info(self, bt_locator, step_id, **kwargs):  # noqa: E501
         """delete_step  # noqa: E501
 
@@ -4786,6 +4698,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __delete_template_association_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """delete_template_association  # noqa: E501
 
@@ -4856,6 +4769,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __delete_trigger_with_http_info(self, bt_locator, trigger_locator, **kwargs):  # noqa: E501
         """delete_trigger  # noqa: E501
 
@@ -4936,6 +4850,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __delete_vcs_root_entry_with_http_info(self, bt_locator, vcs_root_locator, **kwargs):  # noqa: E501
         """delete_vcs_root_entry  # noqa: E501
 
@@ -5016,6 +4931,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_agent_requirement_with_http_info(self, bt_locator, agent_requirement_locator, **kwargs):  # noqa: E501
         """get_agent_requirement  # noqa: E501
 
@@ -5099,6 +5015,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_agent_requirements_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """get_agent_requirements  # noqa: E501
 
@@ -5172,6 +5089,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_aliases_with_http_info(self, bt_locator, field, **kwargs):  # noqa: E501
         """get_aliases  # noqa: E501
 
@@ -5252,6 +5170,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_artifact_dep_with_http_info(self, bt_locator, artifact_dep_locator, **kwargs):  # noqa: E501
         """get_artifact_dep  # noqa: E501
 
@@ -5335,6 +5254,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_artifact_dep_setting_with_http_info(self, bt_locator, artifact_dep_locator, field_name, **kwargs):  # noqa: E501
         """get_artifact_dep_setting  # noqa: E501
 
@@ -5425,6 +5345,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_artifact_deps_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """get_artifact_deps  # noqa: E501
 
@@ -5498,6 +5419,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_build_types_with_http_info(self, **kwargs):  # noqa: E501
         """get_build_types  # noqa: E501
 
@@ -5564,6 +5486,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_children_with_http_info(self, path, bt_locator, **kwargs):  # noqa: E501
         """get_children  # noqa: E501
 
@@ -5608,8 +5531,8 @@ class BuildTypeApi(object):
                 params['bt_locator'] is None):
             raise ValueError("Missing the required parameter `bt_locator` when calling `get_children`")  # noqa: E501
 
-        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_children`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'path' in params and not re.search(r'(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError(r"Invalid value for parameter `path` when calling `get_children`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -5658,6 +5581,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_children_alias_with_http_info(self, path, bt_locator, **kwargs):  # noqa: E501
         """get_children_alias  # noqa: E501
 
@@ -5752,6 +5676,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_content_with_http_info(self, path, bt_locator, **kwargs):  # noqa: E501
         """get_content  # noqa: E501
 
@@ -5793,8 +5718,8 @@ class BuildTypeApi(object):
                 params['bt_locator'] is None):
             raise ValueError("Missing the required parameter `bt_locator` when calling `get_content`")  # noqa: E501
 
-        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_content`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'path' in params and not re.search(r'(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError(r"Invalid value for parameter `path` when calling `get_content`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -5837,6 +5762,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_content_alias_with_http_info(self, path, bt_locator, **kwargs):  # noqa: E501
         """get_content_alias  # noqa: E501
 
@@ -5878,8 +5804,8 @@ class BuildTypeApi(object):
                 params['bt_locator'] is None):
             raise ValueError("Missing the required parameter `bt_locator` when calling `get_content_alias`")  # noqa: E501
 
-        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_content_alias`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'path' in params and not re.search(r'(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError(r"Invalid value for parameter `path` when calling `get_content_alias`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -5922,6 +5848,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_current_vcs_instances_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """get_current_vcs_instances  # noqa: E501
 
@@ -5995,6 +5922,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_example_new_project_description_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """get_example_new_project_description  # noqa: E501
 
@@ -6065,6 +5993,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_example_new_project_description_compatibility_version1_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """get_example_new_project_description_compatibility_version1  # noqa: E501
 
@@ -6135,6 +6064,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_feature_with_http_info(self, bt_locator, feature_id, **kwargs):  # noqa: E501
         """get_feature  # noqa: E501
 
@@ -6218,6 +6148,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_feature_parameter_with_http_info(self, bt_locator, feature_id, parameter_name, **kwargs):  # noqa: E501
         """get_feature_parameter  # noqa: E501
 
@@ -6308,6 +6239,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_feature_parameters_with_http_info(self, bt_locator, feature_id, **kwargs):  # noqa: E501
         """get_feature_parameters  # noqa: E501
 
@@ -6391,6 +6323,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_feature_setting_with_http_info(self, bt_locator, feature_id, name, **kwargs):  # noqa: E501
         """get_feature_setting  # noqa: E501
 
@@ -6481,6 +6414,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_features_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """get_features  # noqa: E501
 
@@ -6554,6 +6488,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_investigations_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """get_investigations  # noqa: E501
 
@@ -6627,6 +6562,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_metadata_with_http_info(self, path, bt_locator, **kwargs):  # noqa: E501
         """get_metadata  # noqa: E501
 
@@ -6669,8 +6605,8 @@ class BuildTypeApi(object):
                 params['bt_locator'] is None):
             raise ValueError("Missing the required parameter `bt_locator` when calling `get_metadata`")  # noqa: E501
 
-        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_metadata`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'path' in params and not re.search(r'(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError(r"Invalid value for parameter `path` when calling `get_metadata`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -6715,6 +6651,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_parameter_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
         """get_parameter  # noqa: E501
 
@@ -6798,6 +6735,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_parameter_0_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
         """get_parameter_0  # noqa: E501
 
@@ -6881,6 +6819,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_parameter_type_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
         """get_parameter_type  # noqa: E501
 
@@ -6961,6 +6900,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_parameter_type_raw_value_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
         """get_parameter_type_raw_value  # noqa: E501
 
@@ -7041,6 +6981,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_parameter_value_long_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
         """get_parameter_value_long  # noqa: E501
 
@@ -7121,6 +7062,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_parameter_value_long_0_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
         """get_parameter_value_long_0  # noqa: E501
 
@@ -7201,6 +7143,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_parameters_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """get_parameters  # noqa: E501
 
@@ -7277,6 +7220,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_parameters_0_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """get_parameters_0  # noqa: E501
 
@@ -7353,6 +7297,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_requirement_setting_with_http_info(self, bt_locator, agent_requirement_locator, field_name, **kwargs):  # noqa: E501
         """get_requirement_setting  # noqa: E501
 
@@ -7443,6 +7388,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_root_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """get_root  # noqa: E501
 
@@ -7525,6 +7471,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_settings_file_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """get_settings_file  # noqa: E501
 
@@ -7595,6 +7542,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_snapshot_dep_with_http_info(self, bt_locator, snapshot_dep_locator, **kwargs):  # noqa: E501
         """get_snapshot_dep  # noqa: E501
 
@@ -7678,6 +7626,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_snapshot_deps_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """get_snapshot_deps  # noqa: E501
 
@@ -7751,6 +7700,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_step_with_http_info(self, bt_locator, step_id, **kwargs):  # noqa: E501
         """get_step  # noqa: E501
 
@@ -7834,6 +7784,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_step_parameter_with_http_info(self, bt_locator, step_id, parameter_name, **kwargs):  # noqa: E501
         """get_step_parameter  # noqa: E501
 
@@ -7924,6 +7875,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_step_parameters_with_http_info(self, bt_locator, step_id, **kwargs):  # noqa: E501
         """get_step_parameters  # noqa: E501
 
@@ -8007,6 +7959,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_step_setting_with_http_info(self, bt_locator, step_id, field_name, **kwargs):  # noqa: E501
         """get_step_setting  # noqa: E501
 
@@ -8097,6 +8050,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_steps_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """get_steps  # noqa: E501
 
@@ -8170,6 +8124,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_template_association_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """get_template_association  # noqa: E501
 
@@ -8246,6 +8201,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_trigger_with_http_info(self, bt_locator, trigger_locator, **kwargs):  # noqa: E501
         """get_trigger  # noqa: E501
 
@@ -8329,6 +8285,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_trigger_setting_with_http_info(self, bt_locator, trigger_locator, field_name, **kwargs):  # noqa: E501
         """get_trigger_setting  # noqa: E501
 
@@ -8419,6 +8376,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_triggers_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """get_triggers  # noqa: E501
 
@@ -8492,6 +8450,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_vcs_labeling_options_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """get_vcs_labeling_options  # noqa: E501
 
@@ -8562,6 +8521,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_vcs_root_entries_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """get_vcs_root_entries  # noqa: E501
 
@@ -8635,6 +8595,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_vcs_root_entry_with_http_info(self, bt_locator, vcs_root_locator, **kwargs):  # noqa: E501
         """get_vcs_root_entry  # noqa: E501
 
@@ -8718,6 +8679,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_vcs_root_entry_checkout_rules_with_http_info(self, bt_locator, vcs_root_locator, **kwargs):  # noqa: E501
         """get_vcs_root_entry_checkout_rules  # noqa: E501
 
@@ -8798,6 +8760,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_zipped_with_http_info(self, path, bt_locator, **kwargs):  # noqa: E501
         """get_zipped  # noqa: E501
 
@@ -8842,8 +8805,8 @@ class BuildTypeApi(object):
                 params['bt_locator'] is None):
             raise ValueError("Missing the required parameter `bt_locator` when calling `get_zipped`")  # noqa: E501
 
-        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_zipped`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'path' in params and not re.search(r'(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError(r"Invalid value for parameter `path` when calling `get_zipped`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -8892,6 +8855,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __replace_agent_requirement_with_http_info(self, bt_locator, agent_requirement_locator, **kwargs):  # noqa: E501
         """replace_agent_requirement  # noqa: E501
 
@@ -8978,6 +8942,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __replace_agent_requirements_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """replace_agent_requirements  # noqa: E501
 
@@ -9054,6 +9019,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __replace_artifact_dep_with_http_info(self, bt_locator, artifact_dep_locator, **kwargs):  # noqa: E501
         """replace_artifact_dep  # noqa: E501
 
@@ -9140,6 +9106,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __replace_artifact_deps_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """replace_artifact_deps  # noqa: E501
 
@@ -9216,6 +9183,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __replace_feature_with_http_info(self, bt_locator, feature_id, **kwargs):  # noqa: E501
         """replace_feature  # noqa: E501
 
@@ -9302,6 +9270,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __replace_feature_parameters_with_http_info(self, bt_locator, feature_id, **kwargs):  # noqa: E501
         """replace_feature_parameters  # noqa: E501
 
@@ -9388,6 +9357,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __replace_features_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """replace_features  # noqa: E501
 
@@ -9464,6 +9434,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __replace_snapshot_dep_with_http_info(self, bt_locator, snapshot_dep_locator, **kwargs):  # noqa: E501
         """replace_snapshot_dep  # noqa: E501
 
@@ -9550,6 +9521,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __replace_snapshot_deps_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """replace_snapshot_deps  # noqa: E501
 
@@ -9626,6 +9598,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __replace_step_with_http_info(self, bt_locator, step_id, **kwargs):  # noqa: E501
         """replace_step  # noqa: E501
 
@@ -9712,6 +9685,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __replace_step_parameters_with_http_info(self, bt_locator, step_id, **kwargs):  # noqa: E501
         """replace_step_parameters  # noqa: E501
 
@@ -9798,6 +9772,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __replace_steps_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """replace_steps  # noqa: E501
 
@@ -9874,6 +9849,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __replace_trigger_with_http_info(self, bt_locator, trigger_locator, **kwargs):  # noqa: E501
         """replace_trigger  # noqa: E501
 
@@ -9960,6 +9936,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __replace_triggers_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """replace_triggers  # noqa: E501
 
@@ -10036,6 +10013,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __replace_vcs_root_entries_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """replace_vcs_root_entries  # noqa: E501
 
@@ -10112,6 +10090,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_branches_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """serve_branches  # noqa: E501
 
@@ -10188,6 +10167,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_build_field_with_http_info(self, bt_locator, build_locator, field, **kwargs):  # noqa: E501
         """serve_build_field  # noqa: E501
 
@@ -10278,6 +10258,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_build_type_builds_tags_with_http_info(self, bt_locator, field, **kwargs):  # noqa: E501
         """serve_build_type_builds_tags  # noqa: E501
 
@@ -10358,6 +10339,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_build_type_field_with_http_info(self, bt_locator, field, **kwargs):  # noqa: E501
         """serve_build_type_field  # noqa: E501
 
@@ -10438,6 +10420,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_build_type_template_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """serve_build_type_template  # noqa: E501
 
@@ -10511,6 +10494,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_build_type_xml_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """serve_build_type_xml  # noqa: E501
 
@@ -10584,6 +10568,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_build_with_project_with_http_info(self, bt_locator, build_locator, **kwargs):  # noqa: E501
         """serve_build_with_project  # noqa: E501
 
@@ -10667,6 +10652,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_builds_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """serve_builds  # noqa: E501
 
@@ -10777,6 +10763,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __set_build_type_field_with_http_info(self, bt_locator, field, **kwargs):  # noqa: E501
         """set_build_type_field  # noqa: E501
 
@@ -10860,6 +10847,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __set_parameter_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """set_parameter  # noqa: E501
 
@@ -10936,6 +10924,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __set_parameter_0_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
         """set_parameter_0  # noqa: E501
 
@@ -11022,6 +11011,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __set_parameter_1_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """set_parameter_1  # noqa: E501
 
@@ -11098,6 +11088,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __set_parameter_2_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
         """set_parameter_2  # noqa: E501
 
@@ -11184,6 +11175,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __set_parameter_type_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
         """set_parameter_type  # noqa: E501
 
@@ -11267,6 +11259,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __set_parameter_type_raw_value_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
         """set_parameter_type_raw_value  # noqa: E501
 
@@ -11350,6 +11343,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __set_parameter_value_long_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
         """set_parameter_value_long  # noqa: E501
 
@@ -11433,6 +11427,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __set_parameter_value_long_0_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
         """set_parameter_value_long_0  # noqa: E501
 
@@ -11516,6 +11511,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __set_parameters_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """set_parameters  # noqa: E501
 
@@ -11592,6 +11588,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __set_parameters_0_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """set_parameters_0  # noqa: E501
 
@@ -11668,6 +11665,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __set_vcs_labeling_options_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
         """set_vcs_labeling_options  # noqa: E501
 
@@ -11741,6 +11739,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __update_vcs_root_entry_with_http_info(self, bt_locator, vcs_root_locator, **kwargs):  # noqa: E501
         """update_vcs_root_entry  # noqa: E501
 
@@ -11827,6 +11826,7 @@ class BuildTypeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __update_vcs_root_entry_checkout_rules_with_http_info(self, bt_locator, vcs_root_locator, **kwargs):  # noqa: E501
         """update_vcs_root_entry_checkout_rules  # noqa: E501
 

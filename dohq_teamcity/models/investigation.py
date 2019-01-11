@@ -269,4 +269,3 @@ class Investigation(TeamCityObject):
         """
 
         self._target = target
-

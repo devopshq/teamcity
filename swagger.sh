@@ -1,6 +1,17 @@
 #!/usr/bin/env bash
 set -e
-mv docs html || echo not exist
+if [ ! -f ./swagger-codegen-cli.jar ]; then
+    echo "File swagger not found! Try download..."
+    FILE="https://github.com/devopshq/teamcity/releases/download/0.0.0/swagger-codegen-cli.jar"
+    wget $FILE -O swagger-codegen-cli.jar || \
+    (
+        echo "Something wrong, please download $FILE manually and place in current directory"; rm ./swagger-codegen-cli.jar; \
+        exit 11
+    )
+
+fi
+echo "Start generate"
+
 java -Xmx1024m -Xms256m -jar ./swagger-codegen-cli.jar generate \
     -l python \
     -c ./swagger/swagger-config.json \
@@ -13,24 +24,27 @@ java -Xmx1024m -Xms256m -jar ./swagger-codegen-cli.jar generate \
 #
 echo "" >> './dohq_teamcity/models/file.py'
 echo "file = File" >> './dohq_teamcity/models/file.py'
-mkdir ./docs/swagger || echo "Swagger folder exist"
-mkdir ./docs/swagger/api || echo "API folder exitst"
-mkdir ./docs/swagger/models || echo "API folder exitst"
-mv -vf docs/*Api.md ./docs/swagger/api
-mv -vf docs/*.md ./docs/swagger/models/
+mkdir ./docs-sphinx/swagger || echo "Swagger folder exist"
+mkdir ./docs-sphinx/swagger/api || echo "API folder exitst"
+mkdir ./docs-sphinx/swagger/models || echo "API folder exitst"
+mv -vf docs/*Api.md ./docs-sphinx/swagger/api
+mv -vf docs/*.md ./docs-sphinx/swagger/models/
 rmdir docs
 
-pushd ./docs/swagger/api
+pushd ./docs-sphinx/swagger/api
 for file in *.md
 do
   mv "$file" "${file%.md}.rst"
 done
 popd
 
-pushd ./docs/swagger/models/
+pushd ./docs-sphinx/swagger/models/
 for file in *.md
 do
   mv "$file" "${file%.md}.rst"
 done
 popd
-mv html docs
+
+# Auto PEP8
+pip install autopep8
+autopep8 --in-place --aggressive --max-line-length 120 --recursive dohq_teamcity

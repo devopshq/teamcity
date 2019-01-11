@@ -243,14 +243,14 @@ class ApiClient(object):
         if data is None:
             return None
 
-        if type(klass) == str:
+        if isinstance(klass, str):
             if klass.startswith('list['):
-                sub_kls = re.match('list\[(.*)\]', klass).group(1)
+                sub_kls = re.match(r'list\[(.*)\]', klass).group(1)
                 return [self.__deserialize(sub_data, sub_kls)
                         for sub_data in data]
 
             if klass.startswith('dict('):
-                sub_kls = re.match('dict\(([^,]*), (.*)\)', klass).group(2)
+                sub_kls = re.match(r'dict\(([^,]*), (.*)\)', klass).group(2)
                 return {k: self.__deserialize(v, sub_kls)
                         for k, v in six.iteritems(data)}
 
@@ -321,14 +321,22 @@ class ApiClient(object):
                                    _return_http_data_only, collection_formats,
                                    _preload_content, _request_timeout)
         else:
-            thread = self.pool.apply_async(self.__call_api, (resource_path,
-                                           method, path_params, query_params,
-                                           header_params, body,
-                                           post_params, files,
-                                           response_type, auth_settings,
-                                           _return_http_data_only,
-                                           collection_formats,
-                                           _preload_content, _request_timeout))
+            thread = self.pool.apply_async(
+                self.__call_api,
+                (resource_path,
+                 method,
+                 path_params,
+                 query_params,
+                 header_params,
+                 body,
+                 post_params,
+                 files,
+                 response_type,
+                 auth_settings,
+                 _return_http_data_only,
+                 collection_formats,
+                 _preload_content,
+                 _request_timeout))
         return thread
 
     def request(self, method, url, query_params=None, headers=None,
@@ -438,7 +446,7 @@ class ApiClient(object):
             for k, v in six.iteritems(files):
                 if not v:
                     continue
-                file_names = v if type(v) is list else [v]
+                file_names = v if isinstance(v, list) else [v]
                 for n in file_names:
                     with open(n, 'rb') as f:
                         filename = os.path.basename(f.name)
@@ -612,7 +620,7 @@ class ApiClient(object):
                     value = data[klass.attribute_map[attr]]
                     kwargs[attr] = self.__deserialize(value, attr_type)
 
-        instance = klass(**kwargs)
+        instance = klass(teamcity=self, **kwargs)
 
         if (isinstance(instance, dict) and
                 klass.swagger_types is not None and

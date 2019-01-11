@@ -109,4 +109,3 @@ class EnabledInfo(TeamCityObject):
         """
 
         self._status_switch_time = status_switch_time
-

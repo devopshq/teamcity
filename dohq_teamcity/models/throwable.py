@@ -162,4 +162,3 @@ class Throwable(TeamCityObject):
         """
 
         self._suppressed = suppressed
-

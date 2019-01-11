@@ -3,7 +3,7 @@
 from setuptools import setup  # noqa: H301
 
 NAME = "dohq-teamcity"
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil"]
 
 setup(
@@ -33,7 +33,7 @@ setup(
     include_package_data=True,
     long_description="""
     dohq_teamcity is a Python package providing access to the JetBrains TeamCity server API.
-    
+
     You can see detailed user manual here: https://devopshq.github.io/teamcity
     """
 )

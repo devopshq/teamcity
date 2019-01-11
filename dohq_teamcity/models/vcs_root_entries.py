@@ -83,4 +83,3 @@ class VcsRootEntries(TeamCityObject):
         """
 
         self._vcs_root_entry = vcs_root_entry
-

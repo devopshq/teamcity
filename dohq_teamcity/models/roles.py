@@ -57,4 +57,3 @@ class Roles(TeamCityObject):
         """
 
         self._role = role
-

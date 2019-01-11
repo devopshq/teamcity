@@ -83,4 +83,3 @@ class Links(TeamCityObject):
         """
 
         self._link = link
-

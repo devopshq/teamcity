@@ -62,7 +62,6 @@ class ChangeApi(object):
             (data) = self.__get_change_attributes_with_http_info(change_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_change_duplicates(self, change_locator, **kwargs):  # noqa: E501
         """get_change_duplicates  # noqa: E501
 
@@ -84,7 +83,6 @@ class ChangeApi(object):
         else:
             (data) = self.__get_change_duplicates_with_http_info(change_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_change_field(self, change_locator, field, **kwargs):  # noqa: E501
         """get_change_field  # noqa: E501
@@ -108,7 +106,6 @@ class ChangeApi(object):
             (data) = self.__get_change_field_with_http_info(change_locator, field, **kwargs)  # noqa: E501
             return data
 
-
     def get_change_first_builds(self, change_locator, **kwargs):  # noqa: E501
         """get_change_first_builds  # noqa: E501
 
@@ -131,7 +128,6 @@ class ChangeApi(object):
             (data) = self.__get_change_first_builds_with_http_info(change_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_change_issue(self, change_locator, **kwargs):  # noqa: E501
         """get_change_issue  # noqa: E501
 
@@ -153,7 +149,6 @@ class ChangeApi(object):
             (data) = self.__get_change_issue_with_http_info(change_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_change_parent_revisions(self, change_locator, **kwargs):  # noqa: E501
         """get_change_parent_revisions  # noqa: E501
 
@@ -174,7 +169,6 @@ class ChangeApi(object):
         else:
             (data) = self.__get_change_parent_revisions_with_http_info(change_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_change_vcs_root(self, change_locator, **kwargs):  # noqa: E501
         """get_change_vcs_root  # noqa: E501
@@ -198,7 +192,6 @@ class ChangeApi(object):
             (data) = self.__get_change_vcs_root_with_http_info(change_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_change_vcs_root_instance(self, change_locator, **kwargs):  # noqa: E501
         """get_change_vcs_root_instance  # noqa: E501
 
@@ -220,7 +213,6 @@ class ChangeApi(object):
         else:
             (data) = self.__get_change_vcs_root_instance_with_http_info(change_locator, **kwargs)  # noqa: E501
             return data
-
 
     def get_parent_changes(self, change_locator, **kwargs):  # noqa: E501
         """get_parent_changes  # noqa: E501
@@ -244,7 +236,6 @@ class ChangeApi(object):
             (data) = self.__get_parent_changes_with_http_info(change_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_related_build_types(self, change_locator, **kwargs):  # noqa: E501
         """get_related_build_types  # noqa: E501
 
@@ -267,7 +258,6 @@ class ChangeApi(object):
             (data) = self.__get_related_build_types_with_http_info(change_locator, **kwargs)  # noqa: E501
             return data
 
-
     def serve_change(self, change_locator, **kwargs):  # noqa: E501
         """serve_change  # noqa: E501
 
@@ -289,7 +279,6 @@ class ChangeApi(object):
         else:
             (data) = self.__serve_change_with_http_info(change_locator, **kwargs)  # noqa: E501
             return data
-
 
     def serve_changes(self, **kwargs):  # noqa: E501
         """serve_changes  # noqa: E501
@@ -393,6 +382,7 @@ class ChangeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_change_duplicates_with_http_info(self, change_locator, **kwargs):  # noqa: E501
         """get_change_duplicates  # noqa: E501
 
@@ -466,6 +456,7 @@ class ChangeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_change_field_with_http_info(self, change_locator, field, **kwargs):  # noqa: E501
         """get_change_field  # noqa: E501
 
@@ -546,6 +537,7 @@ class ChangeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_change_first_builds_with_http_info(self, change_locator, **kwargs):  # noqa: E501
         """get_change_first_builds  # noqa: E501
 
@@ -619,6 +611,7 @@ class ChangeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_change_issue_with_http_info(self, change_locator, **kwargs):  # noqa: E501
         """get_change_issue  # noqa: E501
 
@@ -689,6 +682,7 @@ class ChangeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_change_parent_revisions_with_http_info(self, change_locator, **kwargs):  # noqa: E501
         """get_change_parent_revisions  # noqa: E501
 
@@ -759,6 +753,7 @@ class ChangeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_change_vcs_root_with_http_info(self, change_locator, **kwargs):  # noqa: E501
         """get_change_vcs_root  # noqa: E501
 
@@ -832,6 +827,7 @@ class ChangeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_change_vcs_root_instance_with_http_info(self, change_locator, **kwargs):  # noqa: E501
         """get_change_vcs_root_instance  # noqa: E501
 
@@ -905,6 +901,7 @@ class ChangeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_parent_changes_with_http_info(self, change_locator, **kwargs):  # noqa: E501
         """get_parent_changes  # noqa: E501
 
@@ -978,6 +975,7 @@ class ChangeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_related_build_types_with_http_info(self, change_locator, **kwargs):  # noqa: E501
         """get_related_build_types  # noqa: E501
 
@@ -1051,6 +1049,7 @@ class ChangeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_change_with_http_info(self, change_locator, **kwargs):  # noqa: E501
         """serve_change  # noqa: E501
 
@@ -1124,6 +1123,7 @@ class ChangeApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_changes_with_http_info(self, **kwargs):  # noqa: E501
         """serve_changes  # noqa: E501
 

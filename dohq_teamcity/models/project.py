@@ -584,4 +584,3 @@ class Project(TeamCityObject):
         """
 
         self._web_url = web_url
-

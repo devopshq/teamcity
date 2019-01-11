@@ -213,4 +213,3 @@ class AgentRequirement(TeamCityObject):
         """
 
         self._type = type
-

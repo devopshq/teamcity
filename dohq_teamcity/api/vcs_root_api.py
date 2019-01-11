@@ -59,7 +59,6 @@ class VcsRootApi(object):
             (data) = self.__add_root_with_http_info(**kwargs)  # noqa: E501
             return data
 
-
     def change_properties(self, vcs_root_locator, **kwargs):  # noqa: E501
         """change_properties  # noqa: E501
 
@@ -83,7 +82,6 @@ class VcsRootApi(object):
             (data) = self.__change_properties_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
             return data
 
-
     def delete_all_properties(self, vcs_root_locator, **kwargs):  # noqa: E501
         """delete_all_properties  # noqa: E501
 
@@ -104,7 +102,6 @@ class VcsRootApi(object):
         else:
             (data) = self.__delete_all_properties_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
             return data
-
 
     def delete_parameter(self, vcs_root_locator, name, **kwargs):  # noqa: E501
         """delete_parameter  # noqa: E501
@@ -128,7 +125,6 @@ class VcsRootApi(object):
             (data) = self.__delete_parameter_with_http_info(vcs_root_locator, name, **kwargs)  # noqa: E501
             return data
 
-
     def delete_root(self, vcs_root_locator, **kwargs):  # noqa: E501
         """delete_root  # noqa: E501
 
@@ -150,7 +146,6 @@ class VcsRootApi(object):
             (data) = self.__delete_root_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
             return data
 
-
     def get_settings_file(self, vcs_root_locator, **kwargs):  # noqa: E501
         """get_settings_file  # noqa: E501
 
@@ -171,7 +166,6 @@ class VcsRootApi(object):
         else:
             (data) = self.__get_settings_file_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
             return data
-
 
     def put_parameter(self, vcs_root_locator, name, **kwargs):  # noqa: E501
         """put_parameter  # noqa: E501
@@ -196,7 +190,6 @@ class VcsRootApi(object):
             (data) = self.__put_parameter_with_http_info(vcs_root_locator, name, **kwargs)  # noqa: E501
             return data
 
-
     def serve_field(self, vcs_root_locator, field, **kwargs):  # noqa: E501
         """serve_field  # noqa: E501
 
@@ -218,7 +211,6 @@ class VcsRootApi(object):
         else:
             (data) = self.__serve_field_with_http_info(vcs_root_locator, field, **kwargs)  # noqa: E501
             return data
-
 
     def serve_instance_field(self, vcs_root_locator, vcs_root_instance_locator, field, **kwargs):  # noqa: E501
         """serve_instance_field  # noqa: E501
@@ -243,7 +235,6 @@ class VcsRootApi(object):
             (data) = self.__serve_instance_field_with_http_info(vcs_root_locator, vcs_root_instance_locator, field, **kwargs)  # noqa: E501
             return data
 
-
     def serve_properties(self, vcs_root_locator, **kwargs):  # noqa: E501
         """serve_properties  # noqa: E501
 
@@ -265,7 +256,6 @@ class VcsRootApi(object):
         else:
             (data) = self.__serve_properties_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
             return data
-
 
     def serve_property(self, vcs_root_locator, name, **kwargs):  # noqa: E501
         """serve_property  # noqa: E501
@@ -289,7 +279,6 @@ class VcsRootApi(object):
             (data) = self.__serve_property_with_http_info(vcs_root_locator, name, **kwargs)  # noqa: E501
             return data
 
-
     def serve_root(self, vcs_root_locator, **kwargs):  # noqa: E501
         """serve_root  # noqa: E501
 
@@ -311,7 +300,6 @@ class VcsRootApi(object):
         else:
             (data) = self.__serve_root_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
             return data
-
 
     def serve_root_instance(self, vcs_root_locator, vcs_root_instance_locator, **kwargs):  # noqa: E501
         """serve_root_instance  # noqa: E501
@@ -336,7 +324,6 @@ class VcsRootApi(object):
             (data) = self.__serve_root_instance_with_http_info(vcs_root_locator, vcs_root_instance_locator, **kwargs)  # noqa: E501
             return data
 
-
     def serve_root_instance_properties(self, vcs_root_locator, vcs_root_instance_locator, **kwargs):  # noqa: E501
         """serve_root_instance_properties  # noqa: E501
 
@@ -360,7 +347,6 @@ class VcsRootApi(object):
             (data) = self.__serve_root_instance_properties_with_http_info(vcs_root_locator, vcs_root_instance_locator, **kwargs)  # noqa: E501
             return data
 
-
     def serve_root_instances(self, vcs_root_locator, **kwargs):  # noqa: E501
         """serve_root_instances  # noqa: E501
 
@@ -382,7 +368,6 @@ class VcsRootApi(object):
         else:
             (data) = self.__serve_root_instances_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
             return data
-
 
     def serve_roots(self, **kwargs):  # noqa: E501
         """serve_roots  # noqa: E501
@@ -406,7 +391,6 @@ class VcsRootApi(object):
             (data) = self.__serve_roots_with_http_info(**kwargs)  # noqa: E501
             return data
 
-
     def set_field(self, vcs_root_locator, field, **kwargs):  # noqa: E501
         """set_field  # noqa: E501
 
@@ -429,7 +413,6 @@ class VcsRootApi(object):
         else:
             (data) = self.__set_field_with_http_info(vcs_root_locator, field, **kwargs)  # noqa: E501
             return data
-
 
     def set_instance_field(self, vcs_root_locator, vcs_root_instance_locator, field, **kwargs):  # noqa: E501
         """set_instance_field  # noqa: E501
@@ -521,6 +504,7 @@ class VcsRootApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __change_properties_with_http_info(self, vcs_root_locator, **kwargs):  # noqa: E501
         """change_properties  # noqa: E501
 
@@ -597,6 +581,7 @@ class VcsRootApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __delete_all_properties_with_http_info(self, vcs_root_locator, **kwargs):  # noqa: E501
         """delete_all_properties  # noqa: E501
 
@@ -667,6 +652,7 @@ class VcsRootApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __delete_parameter_with_http_info(self, vcs_root_locator, name, **kwargs):  # noqa: E501
         """delete_parameter  # noqa: E501
 
@@ -747,6 +733,7 @@ class VcsRootApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __delete_root_with_http_info(self, vcs_root_locator, **kwargs):  # noqa: E501
         """delete_root  # noqa: E501
 
@@ -817,6 +804,7 @@ class VcsRootApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __get_settings_file_with_http_info(self, vcs_root_locator, **kwargs):  # noqa: E501
         """get_settings_file  # noqa: E501
 
@@ -887,6 +875,7 @@ class VcsRootApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __put_parameter_with_http_info(self, vcs_root_locator, name, **kwargs):  # noqa: E501
         """put_parameter  # noqa: E501
 
@@ -970,6 +959,7 @@ class VcsRootApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_field_with_http_info(self, vcs_root_locator, field, **kwargs):  # noqa: E501
         """serve_field  # noqa: E501
 
@@ -1050,6 +1040,7 @@ class VcsRootApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_instance_field_with_http_info(self, vcs_root_locator, vcs_root_instance_locator, field, **kwargs):  # noqa: E501
         """serve_instance_field  # noqa: E501
 
@@ -1140,6 +1131,7 @@ class VcsRootApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_properties_with_http_info(self, vcs_root_locator, **kwargs):  # noqa: E501
         """serve_properties  # noqa: E501
 
@@ -1213,6 +1205,7 @@ class VcsRootApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_property_with_http_info(self, vcs_root_locator, name, **kwargs):  # noqa: E501
         """serve_property  # noqa: E501
 
@@ -1293,6 +1286,7 @@ class VcsRootApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_root_with_http_info(self, vcs_root_locator, **kwargs):  # noqa: E501
         """serve_root  # noqa: E501
 
@@ -1366,6 +1360,7 @@ class VcsRootApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_root_instance_with_http_info(self, vcs_root_locator, vcs_root_instance_locator, **kwargs):  # noqa: E501
         """serve_root_instance  # noqa: E501
 
@@ -1449,6 +1444,7 @@ class VcsRootApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_root_instance_properties_with_http_info(self, vcs_root_locator, vcs_root_instance_locator, **kwargs):  # noqa: E501
         """serve_root_instance_properties  # noqa: E501
 
@@ -1532,6 +1528,7 @@ class VcsRootApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_root_instances_with_http_info(self, vcs_root_locator, **kwargs):  # noqa: E501
         """serve_root_instances  # noqa: E501
 
@@ -1605,6 +1602,7 @@ class VcsRootApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __serve_roots_with_http_info(self, **kwargs):  # noqa: E501
         """serve_roots  # noqa: E501
 
@@ -1671,6 +1669,7 @@ class VcsRootApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __set_field_with_http_info(self, vcs_root_locator, field, **kwargs):  # noqa: E501
         """set_field  # noqa: E501
 
@@ -1754,6 +1753,7 @@ class VcsRootApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
     def __set_instance_field_with_http_info(self, vcs_root_locator, vcs_root_instance_locator, field, **kwargs):  # noqa: E501
         """set_instance_field  # noqa: E501
 

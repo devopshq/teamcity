@@ -83,4 +83,3 @@ class Users(TeamCityObject):
         """
 
         self._user = user
-

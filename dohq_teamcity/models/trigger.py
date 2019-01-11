@@ -213,4 +213,3 @@ class Trigger(TeamCityObject):
         """
 
         self._type = type
-

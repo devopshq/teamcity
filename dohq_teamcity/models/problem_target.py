@@ -110,4 +110,3 @@ class ProblemTarget(TeamCityObject):
         """
 
         self._tests = tests
-

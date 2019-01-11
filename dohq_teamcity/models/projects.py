@@ -161,4 +161,3 @@ class Projects(TeamCityObject):
         """
 
         self._project = project
-

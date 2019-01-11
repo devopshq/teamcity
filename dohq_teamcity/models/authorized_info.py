@@ -83,4 +83,3 @@ class AuthorizedInfo(TeamCityObject):
         """
 
         self._status = status
-

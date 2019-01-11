@@ -135,4 +135,3 @@ class ModelProperty(TeamCityObject):
         """
 
         self._value = value
-

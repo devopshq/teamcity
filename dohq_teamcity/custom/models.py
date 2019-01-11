@@ -85,7 +85,8 @@ class Agent(Agent, ReadMixin, DeleteMixin):
         :param str fields:
         :return: Compatibilities
         """
-        return self.api.get_incompatible_build_types(agent_locator=self, **kwargs)
+        return self.api.get_incompatible_build_types(
+            agent_locator=self, **kwargs)
 
     def serve_agent(self, **kwargs):
         """
@@ -181,7 +182,8 @@ class AgentPool(AgentPool, ReadMixin, DeleteMixin):
         :param str project_locator: (required)
         :return: None
         """
-        return self.api.delete_pool_project(project_locator, agent_pool_locator=self, **kwargs)
+        return self.api.delete_pool_project(
+            project_locator, agent_pool_locator=self, **kwargs)
 
     def delete_projects(self, **kwargs):
         """
@@ -230,7 +232,8 @@ class AgentPool(AgentPool, ReadMixin, DeleteMixin):
         :param str fields:
         :return: Project
         """
-        return self.api.get_pool_project(project_locator, agent_pool_locator=self, **kwargs)
+        return self.api.get_pool_project(
+            project_locator, agent_pool_locator=self, **kwargs)
 
     def get_pool_projects(self, **kwargs):
         """
@@ -321,7 +324,8 @@ class Build(Build, ReadMixin, DeleteMixin):
         :param async_req: bool
         :return: str
         """
-        return self.api.get_aggregated_build_status(build_locator=self, **kwargs)
+        return self.api.get_aggregated_build_status(
+            build_locator=self, **kwargs)
 
     def get_aggregated_build_status_icon(self, suffix, **kwargs):
         """
@@ -329,7 +333,8 @@ class Build(Build, ReadMixin, DeleteMixin):
         :param str suffix: (required)
         :return: None
         """
-        return self.api.get_aggregated_build_status_icon(suffix, build_locator=self, **kwargs)
+        return self.api.get_aggregated_build_status_icon(
+            suffix, build_locator=self, **kwargs)
 
     def get_artifacts_directory(self, **kwargs):
         """
@@ -352,7 +357,8 @@ class Build(Build, ReadMixin, DeleteMixin):
         :param str fields:
         :return: Properties
         """
-        return self.api.get_build_actual_parameters(build_locator=self, **kwargs)
+        return self.api.get_build_actual_parameters(
+            build_locator=self, **kwargs)
 
     def get_build_field_by_build_only(self, field, **kwargs):
         """
@@ -360,7 +366,8 @@ class Build(Build, ReadMixin, DeleteMixin):
         :param str field: (required)
         :return: str
         """
-        return self.api.get_build_field_by_build_only(field, build_locator=self, **kwargs)
+        return self.api.get_build_field_by_build_only(
+            field, build_locator=self, **kwargs)
 
     def get_build_related_issues(self, **kwargs):
         """
@@ -376,7 +383,8 @@ class Build(Build, ReadMixin, DeleteMixin):
         :param str fields:
         :return: IssuesUsages
         """
-        return self.api.get_build_related_issues_old(build_locator=self, **kwargs)
+        return self.api.get_build_related_issues_old(
+            build_locator=self, **kwargs)
 
     def get_build_statistic_value(self, name, **kwargs):
         """
@@ -384,7 +392,8 @@ class Build(Build, ReadMixin, DeleteMixin):
         :param str name: (required)
         :return: str
         """
-        return self.api.get_build_statistic_value(name, build_locator=self, **kwargs)
+        return self.api.get_build_statistic_value(
+            name, build_locator=self, **kwargs)
 
     def get_build_statistic_values(self, **kwargs):
         """
@@ -400,7 +409,8 @@ class Build(Build, ReadMixin, DeleteMixin):
         :param str suffix: (required)
         :return: None
         """
-        return self.api.get_build_status_icon(suffix, build_locator=self, **kwargs)
+        return self.api.get_build_status_icon(
+            suffix, build_locator=self, **kwargs)
 
     def get_canceled_info(self, **kwargs):
         """
@@ -473,7 +483,8 @@ class Build(Build, ReadMixin, DeleteMixin):
         :param str property_name: (required)
         :return: str
         """
-        return self.api.get_parameter(property_name, build_locator=self, **kwargs)
+        return self.api.get_parameter(
+            property_name, build_locator=self, **kwargs)
 
     def get_pinned(self, **kwargs):
         """
@@ -571,7 +582,8 @@ class Build(Build, ReadMixin, DeleteMixin):
         :param async_req: bool
         :return: str
         """
-        return self.api.serve_aggregated_build_status(build_locator=self, **kwargs)
+        return self.api.serve_aggregated_build_status(
+            build_locator=self, **kwargs)
 
     def serve_aggregated_build_status_icon(self, suffix, **kwargs):
         """
@@ -579,7 +591,8 @@ class Build(Build, ReadMixin, DeleteMixin):
         :param str suffix: (required)
         :return: None
         """
-        return self.api.serve_aggregated_build_status_icon(suffix, build_locator=self, **kwargs)
+        return self.api.serve_aggregated_build_status_icon(
+            suffix, build_locator=self, **kwargs)
 
     def serve_build(self, **kwargs):
         """
@@ -595,7 +608,8 @@ class Build(Build, ReadMixin, DeleteMixin):
         :param str fields:
         :return: Properties
         """
-        return self.api.serve_build_actual_parameters(build_locator=self, **kwargs)
+        return self.api.serve_build_actual_parameters(
+            build_locator=self, **kwargs)
 
     def serve_build_field_by_build_only(self, field, **kwargs):
         """
@@ -603,7 +617,8 @@ class Build(Build, ReadMixin, DeleteMixin):
         :param str field: (required)
         :return: str
         """
-        return self.api.serve_build_field_by_build_only(field, build_locator=self, **kwargs)
+        return self.api.serve_build_field_by_build_only(
+            field, build_locator=self, **kwargs)
 
     def serve_build_related_issues(self, **kwargs):
         """
@@ -619,7 +634,8 @@ class Build(Build, ReadMixin, DeleteMixin):
         :param str fields:
         :return: IssuesUsages
         """
-        return self.api.serve_build_related_issues_old(build_locator=self, **kwargs)
+        return self.api.serve_build_related_issues_old(
+            build_locator=self, **kwargs)
 
     def serve_build_statistic_value(self, name, **kwargs):
         """
@@ -627,7 +643,8 @@ class Build(Build, ReadMixin, DeleteMixin):
         :param str name: (required)
         :return: str
         """
-        return self.api.serve_build_statistic_value(name, build_locator=self, **kwargs)
+        return self.api.serve_build_statistic_value(
+            name, build_locator=self, **kwargs)
 
     def serve_build_statistic_values(self, **kwargs):
         """
@@ -635,7 +652,8 @@ class Build(Build, ReadMixin, DeleteMixin):
         :param str fields:
         :return: Properties
         """
-        return self.api.serve_build_statistic_values(build_locator=self, **kwargs)
+        return self.api.serve_build_statistic_values(
+            build_locator=self, **kwargs)
 
     def serve_build_status_icon(self, suffix, **kwargs):
         """
@@ -643,7 +661,8 @@ class Build(Build, ReadMixin, DeleteMixin):
         :param str suffix: (required)
         :return: None
         """
-        return self.api.serve_build_status_icon(suffix, build_locator=self, **kwargs)
+        return self.api.serve_build_status_icon(
+            suffix, build_locator=self, **kwargs)
 
     def serve_source_file(self, file_name, **kwargs):
         """
@@ -651,7 +670,8 @@ class Build(Build, ReadMixin, DeleteMixin):
         :param str file_name: (required)
         :return: None
         """
-        return self.api.serve_source_file(file_name, build_locator=self, **kwargs)
+        return self.api.serve_source_file(
+            file_name, build_locator=self, **kwargs)
 
     def serve_tags(self, **kwargs):
         """
@@ -717,7 +737,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str body:
         :return: str
         """
-        return self.api.add_feature_parameter(feature_id, parameter_name, bt_locator=self, **kwargs)
+        return self.api.add_feature_parameter(
+            feature_id, parameter_name, bt_locator=self, **kwargs)
 
     def add_snapshot_dep(self, **kwargs):
         """
@@ -745,7 +766,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str body:
         :return: str
         """
-        return self.api.add_step_parameter(step_id, parameter_name, bt_locator=self, **kwargs)
+        return self.api.add_step_parameter(
+            step_id, parameter_name, bt_locator=self, **kwargs)
 
     def add_trigger(self, **kwargs):
         """
@@ -765,7 +787,11 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         """
         return self.api.add_vcs_root_entry(bt_locator=self, **kwargs)
 
-    def change_artifact_dep_setting(self, artifact_dep_locator, field_name, **kwargs):
+    def change_artifact_dep_setting(
+            self,
+            artifact_dep_locator,
+            field_name,
+            **kwargs):
         """
         :param async_req: bool
         :param str artifact_dep_locator: (required)
@@ -773,7 +799,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str body:
         :return: str
         """
-        return self.api.change_artifact_dep_setting(artifact_dep_locator, field_name, bt_locator=self, **kwargs)
+        return self.api.change_artifact_dep_setting(
+            artifact_dep_locator, field_name, bt_locator=self, **kwargs)
 
     def change_feature_setting(self, feature_id, name, **kwargs):
         """
@@ -783,9 +810,14 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str body:
         :return: str
         """
-        return self.api.change_feature_setting(feature_id, name, bt_locator=self, **kwargs)
+        return self.api.change_feature_setting(
+            feature_id, name, bt_locator=self, **kwargs)
 
-    def change_requirement_setting(self, agent_requirement_locator, field_name, **kwargs):
+    def change_requirement_setting(
+            self,
+            agent_requirement_locator,
+            field_name,
+            **kwargs):
         """
         :param async_req: bool
         :param str agent_requirement_locator: (required)
@@ -793,7 +825,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str body:
         :return: str
         """
-        return self.api.change_requirement_setting(agent_requirement_locator, field_name, bt_locator=self, **kwargs)
+        return self.api.change_requirement_setting(
+            agent_requirement_locator, field_name, bt_locator=self, **kwargs)
 
     def change_step_setting(self, step_id, field_name, **kwargs):
         """
@@ -803,7 +836,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str body:
         :return: str
         """
-        return self.api.change_step_setting(step_id, field_name, bt_locator=self, **kwargs)
+        return self.api.change_step_setting(
+            step_id, field_name, bt_locator=self, **kwargs)
 
     def change_trigger_setting(self, trigger_locator, field_name, **kwargs):
         """
@@ -813,7 +847,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str body:
         :return: str
         """
-        return self.api.change_trigger_setting(trigger_locator, field_name, bt_locator=self, **kwargs)
+        return self.api.change_trigger_setting(
+            trigger_locator, field_name, bt_locator=self, **kwargs)
 
     def delete_agent_requirement(self, agent_requirement_locator, **kwargs):
         """
@@ -821,7 +856,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str agent_requirement_locator: (required)
         :return: None
         """
-        return self.api.delete_agent_requirement(agent_requirement_locator, bt_locator=self, **kwargs)
+        return self.api.delete_agent_requirement(
+            agent_requirement_locator, bt_locator=self, **kwargs)
 
     def delete_all_parameters(self, **kwargs):
         """
@@ -843,7 +879,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str artifact_dep_locator: (required)
         :return: None
         """
-        return self.api.delete_artifact_dep(artifact_dep_locator, bt_locator=self, **kwargs)
+        return self.api.delete_artifact_dep(
+            artifact_dep_locator, bt_locator=self, **kwargs)
 
     def delete_build_type(self, **kwargs):
         """
@@ -882,7 +919,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str snapshot_dep_locator: (required)
         :return: None
         """
-        return self.api.delete_snapshot_dep(snapshot_dep_locator, bt_locator=self, **kwargs)
+        return self.api.delete_snapshot_dep(
+            snapshot_dep_locator, bt_locator=self, **kwargs)
 
     def delete_step(self, step_id, **kwargs):
         """
@@ -905,7 +943,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str trigger_locator: (required)
         :return: None
         """
-        return self.api.delete_trigger(trigger_locator, bt_locator=self, **kwargs)
+        return self.api.delete_trigger(
+            trigger_locator, bt_locator=self, **kwargs)
 
     def delete_vcs_root_entry(self, vcs_root_locator, **kwargs):
         """
@@ -913,7 +952,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str vcs_root_locator: (required)
         :return: None
         """
-        return self.api.delete_vcs_root_entry(vcs_root_locator, bt_locator=self, **kwargs)
+        return self.api.delete_vcs_root_entry(
+            vcs_root_locator, bt_locator=self, **kwargs)
 
     def get(self, **kwargs):
         """
@@ -930,7 +970,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str fields:
         :return: AgentRequirement
         """
-        return self.api.get_agent_requirement(agent_requirement_locator, bt_locator=self, **kwargs)
+        return self.api.get_agent_requirement(
+            agent_requirement_locator, bt_locator=self, **kwargs)
 
     def get_agent_requirements(self, **kwargs):
         """
@@ -955,16 +996,22 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str fields:
         :return: ArtifactDependency
         """
-        return self.api.get_artifact_dep(artifact_dep_locator, bt_locator=self, **kwargs)
+        return self.api.get_artifact_dep(
+            artifact_dep_locator, bt_locator=self, **kwargs)
 
-    def get_artifact_dep_setting(self, artifact_dep_locator, field_name, **kwargs):
+    def get_artifact_dep_setting(
+            self,
+            artifact_dep_locator,
+            field_name,
+            **kwargs):
         """
         :param async_req: bool
         :param str artifact_dep_locator: (required)
         :param str field_name: (required)
         :return: str
         """
-        return self.api.get_artifact_dep_setting(artifact_dep_locator, field_name, bt_locator=self, **kwargs)
+        return self.api.get_artifact_dep_setting(
+            artifact_dep_locator, field_name, bt_locator=self, **kwargs)
 
     def get_artifact_deps(self, **kwargs):
         """
@@ -990,7 +1037,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str field: (required)
         :return: str
         """
-        return self.api.get_build_field(build_locator, field, bt_locator=self, **kwargs)
+        return self.api.get_build_field(
+            build_locator, field, bt_locator=self, **kwargs)
 
     def get_build_type_builds_tags(self, field, **kwargs):
         """
@@ -998,7 +1046,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str field: (required)
         :return: Tags
         """
-        return self.api.get_build_type_builds_tags(field, bt_locator=self, **kwargs)
+        return self.api.get_build_type_builds_tags(
+            field, bt_locator=self, **kwargs)
 
     def get_build_type_field(self, field, **kwargs):
         """
@@ -1031,7 +1080,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str fields:
         :return: Build
         """
-        return self.api.get_build_with_project(build_locator, bt_locator=self, **kwargs)
+        return self.api.get_build_with_project(
+            build_locator, bt_locator=self, **kwargs)
 
     def get_builds(self, **kwargs):
         """
@@ -1108,14 +1158,17 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param async_req: bool
         :return: NewBuildTypeDescription
         """
-        return self.api.get_example_new_project_description(bt_locator=self, **kwargs)
+        return self.api.get_example_new_project_description(
+            bt_locator=self, **kwargs)
 
-    def get_example_new_project_description_compatibility_version1(self, **kwargs):
+    def get_example_new_project_description_compatibility_version1(
+            self, **kwargs):
         """
         :param async_req: bool
         :return: NewBuildTypeDescription
         """
-        return self.api.get_example_new_project_description_compatibility_version1(bt_locator=self, **kwargs)
+        return self.api.get_example_new_project_description_compatibility_version1(
+            bt_locator=self, **kwargs)
 
     def get_feature(self, feature_id, **kwargs):
         """
@@ -1133,7 +1186,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str parameter_name: (required)
         :return: str
         """
-        return self.api.get_feature_parameter(feature_id, parameter_name, bt_locator=self, **kwargs)
+        return self.api.get_feature_parameter(
+            feature_id, parameter_name, bt_locator=self, **kwargs)
 
     def get_feature_parameters(self, feature_id, **kwargs):
         """
@@ -1142,7 +1196,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str fields:
         :return: Properties
         """
-        return self.api.get_feature_parameters(feature_id, bt_locator=self, **kwargs)
+        return self.api.get_feature_parameters(
+            feature_id, bt_locator=self, **kwargs)
 
     def get_feature_setting(self, feature_id, name, **kwargs):
         """
@@ -1151,7 +1206,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str name: (required)
         :return: str
         """
-        return self.api.get_feature_setting(feature_id, name, bt_locator=self, **kwargs)
+        return self.api.get_feature_setting(
+            feature_id, name, bt_locator=self, **kwargs)
 
     def get_features(self, **kwargs):
         """
@@ -1211,7 +1267,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str name: (required)
         :return: str
         """
-        return self.api.get_parameter_type_raw_value(name, bt_locator=self, **kwargs)
+        return self.api.get_parameter_type_raw_value(
+            name, bt_locator=self, **kwargs)
 
     def get_parameter_value_long(self, name, **kwargs):
         """
@@ -1219,7 +1276,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str name: (required)
         :return: str
         """
-        return self.api.get_parameter_value_long(name, bt_locator=self, **kwargs)
+        return self.api.get_parameter_value_long(
+            name, bt_locator=self, **kwargs)
 
     def get_parameter_value_long_0(self, name, **kwargs):
         """
@@ -1227,7 +1285,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str name: (required)
         :return: str
         """
-        return self.api.get_parameter_value_long_0(name, bt_locator=self, **kwargs)
+        return self.api.get_parameter_value_long_0(
+            name, bt_locator=self, **kwargs)
 
     def get_parameters(self, **kwargs):
         """
@@ -1247,14 +1306,19 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         """
         return self.api.get_parameters_0(bt_locator=self, **kwargs)
 
-    def get_requirement_setting(self, agent_requirement_locator, field_name, **kwargs):
+    def get_requirement_setting(
+            self,
+            agent_requirement_locator,
+            field_name,
+            **kwargs):
         """
         :param async_req: bool
         :param str agent_requirement_locator: (required)
         :param str field_name: (required)
         :return: str
         """
-        return self.api.get_requirement_setting(agent_requirement_locator, field_name, bt_locator=self, **kwargs)
+        return self.api.get_requirement_setting(
+            agent_requirement_locator, field_name, bt_locator=self, **kwargs)
 
     def get_root(self, **kwargs):
         """
@@ -1281,7 +1345,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str fields:
         :return: SnapshotDependency
         """
-        return self.api.get_snapshot_dep(snapshot_dep_locator, bt_locator=self, **kwargs)
+        return self.api.get_snapshot_dep(
+            snapshot_dep_locator, bt_locator=self, **kwargs)
 
     def get_snapshot_deps(self, **kwargs):
         """
@@ -1307,7 +1372,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str parameter_name: (required)
         :return: str
         """
-        return self.api.get_step_parameter(step_id, parameter_name, bt_locator=self, **kwargs)
+        return self.api.get_step_parameter(
+            step_id, parameter_name, bt_locator=self, **kwargs)
 
     def get_step_parameters(self, step_id, **kwargs):
         """
@@ -1325,7 +1391,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str field_name: (required)
         :return: str
         """
-        return self.api.get_step_setting(step_id, field_name, bt_locator=self, **kwargs)
+        return self.api.get_step_setting(
+            step_id, field_name, bt_locator=self, **kwargs)
 
     def get_steps(self, **kwargs):
         """
@@ -1360,7 +1427,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str field_name: (required)
         :return: str
         """
-        return self.api.get_trigger_setting(trigger_locator, field_name, bt_locator=self, **kwargs)
+        return self.api.get_trigger_setting(
+            trigger_locator, field_name, bt_locator=self, **kwargs)
 
     def get_triggers(self, **kwargs):
         """
@@ -1392,7 +1460,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str fields:
         :return: VcsRootEntry
         """
-        return self.api.get_vcs_root_entry(vcs_root_locator, bt_locator=self, **kwargs)
+        return self.api.get_vcs_root_entry(
+            vcs_root_locator, bt_locator=self, **kwargs)
 
     def get_vcs_root_entry_checkout_rules(self, vcs_root_locator, **kwargs):
         """
@@ -1400,7 +1469,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str vcs_root_locator: (required)
         :return: str
         """
-        return self.api.get_vcs_root_entry_checkout_rules(vcs_root_locator, bt_locator=self, **kwargs)
+        return self.api.get_vcs_root_entry_checkout_rules(
+            vcs_root_locator, bt_locator=self, **kwargs)
 
     def get_zipped(self, path, **kwargs):
         """
@@ -1422,7 +1492,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param AgentRequirement body:
         :return: AgentRequirement
         """
-        return self.api.replace_agent_requirement(agent_requirement_locator, bt_locator=self, **kwargs)
+        return self.api.replace_agent_requirement(
+            agent_requirement_locator, bt_locator=self, **kwargs)
 
     def replace_agent_requirements(self, **kwargs):
         """
@@ -1441,7 +1512,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param ArtifactDependency body:
         :return: ArtifactDependency
         """
-        return self.api.replace_artifact_dep(artifact_dep_locator, bt_locator=self, **kwargs)
+        return self.api.replace_artifact_dep(
+            artifact_dep_locator, bt_locator=self, **kwargs)
 
     def replace_artifact_deps(self, **kwargs):
         """
@@ -1470,7 +1542,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str fields:
         :return: Properties
         """
-        return self.api.replace_feature_parameters(feature_id, bt_locator=self, **kwargs)
+        return self.api.replace_feature_parameters(
+            feature_id, bt_locator=self, **kwargs)
 
     def replace_features(self, **kwargs):
         """
@@ -1489,7 +1562,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param SnapshotDependency body:
         :return: SnapshotDependency
         """
-        return self.api.replace_snapshot_dep(snapshot_dep_locator, bt_locator=self, **kwargs)
+        return self.api.replace_snapshot_dep(
+            snapshot_dep_locator, bt_locator=self, **kwargs)
 
     def replace_snapshot_deps(self, **kwargs):
         """
@@ -1518,7 +1592,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str fields:
         :return: Properties
         """
-        return self.api.replace_step_parameters(step_id, bt_locator=self, **kwargs)
+        return self.api.replace_step_parameters(
+            step_id, bt_locator=self, **kwargs)
 
     def replace_steps(self, **kwargs):
         """
@@ -1537,7 +1612,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param Trigger body:
         :return: Trigger
         """
-        return self.api.replace_trigger(trigger_locator, bt_locator=self, **kwargs)
+        return self.api.replace_trigger(
+            trigger_locator, bt_locator=self, **kwargs)
 
     def replace_triggers(self, **kwargs):
         """
@@ -1573,7 +1649,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str field: (required)
         :return: str
         """
-        return self.api.serve_build_field(build_locator, field, bt_locator=self, **kwargs)
+        return self.api.serve_build_field(
+            build_locator, field, bt_locator=self, **kwargs)
 
     def serve_build_type_builds_tags(self, field, **kwargs):
         """
@@ -1581,7 +1658,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str field: (required)
         :return: Tags
         """
-        return self.api.serve_build_type_builds_tags(field, bt_locator=self, **kwargs)
+        return self.api.serve_build_type_builds_tags(
+            field, bt_locator=self, **kwargs)
 
     def serve_build_type_field(self, field, **kwargs):
         """
@@ -1614,7 +1692,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str fields:
         :return: Build
         """
-        return self.api.serve_build_with_project(build_locator, bt_locator=self, **kwargs)
+        return self.api.serve_build_with_project(
+            build_locator, bt_locator=self, **kwargs)
 
     def serve_builds(self, **kwargs):
         """
@@ -1699,7 +1778,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str body:
         :return: str
         """
-        return self.api.set_parameter_type_raw_value(name, bt_locator=self, **kwargs)
+        return self.api.set_parameter_type_raw_value(
+            name, bt_locator=self, **kwargs)
 
     def set_parameter_value_long(self, name, **kwargs):
         """
@@ -1708,7 +1788,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str body:
         :return: str
         """
-        return self.api.set_parameter_value_long(name, bt_locator=self, **kwargs)
+        return self.api.set_parameter_value_long(
+            name, bt_locator=self, **kwargs)
 
     def set_parameter_value_long_0(self, name, **kwargs):
         """
@@ -1717,7 +1798,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str body:
         :return: str
         """
-        return self.api.set_parameter_value_long_0(name, bt_locator=self, **kwargs)
+        return self.api.set_parameter_value_long_0(
+            name, bt_locator=self, **kwargs)
 
     def set_parameters(self, **kwargs):
         """
@@ -1753,7 +1835,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str fields:
         :return: VcsRootEntry
         """
-        return self.api.update_vcs_root_entry(vcs_root_locator, bt_locator=self, **kwargs)
+        return self.api.update_vcs_root_entry(
+            vcs_root_locator, bt_locator=self, **kwargs)
 
     def update_vcs_root_entry_checkout_rules(self, vcs_root_locator, **kwargs):
         """
@@ -1762,7 +1845,8 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :param str body:
         :return: str
         """
-        return self.api.update_vcs_root_entry_checkout_rules(vcs_root_locator, bt_locator=self, **kwargs)
+        return self.api.update_vcs_root_entry_checkout_rules(
+            vcs_root_locator, bt_locator=self, **kwargs)
 
 
 class Group(Group, ReadMixin, DeleteMixin):
@@ -1799,7 +1883,8 @@ class Group(Group, ReadMixin, DeleteMixin):
         :param str scope: (required)
         :return: Role
         """
-        return self.api.add_role_simple(role_id, scope, group_locator=self, **kwargs)
+        return self.api.add_role_simple(
+            role_id, scope, group_locator=self, **kwargs)
 
     def delete_group(self, **kwargs):
         """
@@ -1815,7 +1900,8 @@ class Group(Group, ReadMixin, DeleteMixin):
         :param str scope: (required)
         :return: None
         """
-        return self.api.delete_role(role_id, scope, group_locator=self, **kwargs)
+        return self.api.delete_role(
+            role_id, scope, group_locator=self, **kwargs)
 
     def get(self, **kwargs):
         """
@@ -1903,7 +1989,8 @@ class Group(Group, ReadMixin, DeleteMixin):
         :param str name: (required)
         :return: str
         """
-        return self.api.serve_user_properties(name, group_locator=self, **kwargs)
+        return self.api.serve_user_properties(
+            name, group_locator=self, **kwargs)
 
 
 class User(User, ReadMixin, DeleteMixin):
@@ -1941,7 +2028,8 @@ class User(User, ReadMixin, DeleteMixin):
         :param str scope: (required)
         :return: Role
         """
-        return self.api.add_role_simple(role_id, scope, user_locator=self, **kwargs)
+        return self.api.add_role_simple(
+            role_id, scope, user_locator=self, **kwargs)
 
     def add_role_simple_post(self, role_id, scope, **kwargs):
         """
@@ -1950,7 +2038,8 @@ class User(User, ReadMixin, DeleteMixin):
         :param str scope: (required)
         :return: None
         """
-        return self.api.add_role_simple_post(role_id, scope, user_locator=self, **kwargs)
+        return self.api.add_role_simple_post(
+            role_id, scope, user_locator=self, **kwargs)
 
     def delete_remember_me(self, **kwargs):
         """
@@ -2175,7 +2264,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str fields:
         :return: BuildType
         """
-        return self.api.create_build_type_template(project_locator=self, **kwargs)
+        return self.api.create_build_type_template(
+            project_locator=self, **kwargs)
 
     def delete(self, feature_locator, **kwargs):
         """
@@ -2199,7 +2289,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str fields:
         :return: None
         """
-        return self.api.delete_all_parameters_0(feature_locator, project_locator=self, **kwargs)
+        return self.api.delete_all_parameters_0(
+            feature_locator, project_locator=self, **kwargs)
 
     def delete_parameter(self, name, **kwargs):
         """
@@ -2217,7 +2308,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str fields:
         :return: None
         """
-        return self.api.delete_parameter_0(name, feature_locator, project_locator=self, **kwargs)
+        return self.api.delete_parameter_0(
+            name, feature_locator, project_locator=self, **kwargs)
 
     def delete_project(self, **kwargs):
         """
@@ -2232,7 +2324,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str agent_pool_locator: (required)
         :return: None
         """
-        return self.api.delete_project_agent_pools(agent_pool_locator, project_locator=self, **kwargs)
+        return self.api.delete_project_agent_pools(
+            agent_pool_locator, project_locator=self, **kwargs)
 
     def get(self, **kwargs):
         """
@@ -2242,7 +2335,12 @@ class Project(Project, ReadMixin, DeleteMixin):
         """
         return self.api.get(project_locator=self, **kwargs)
 
-    def get_build_field_with_project(self, bt_locator, build_locator, field, **kwargs):
+    def get_build_field_with_project(
+            self,
+            bt_locator,
+            build_locator,
+            field,
+            **kwargs):
         """
         :param async_req: bool
         :param str bt_locator: (required)
@@ -2250,7 +2348,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str field: (required)
         :return: str
         """
-        return self.api.get_build_field_with_project(bt_locator, build_locator, field, project_locator=self, **kwargs)
+        return self.api.get_build_field_with_project(
+            bt_locator, build_locator, field, project_locator=self, **kwargs)
 
     def get_build_type(self, bt_locator, **kwargs):
         """
@@ -2259,7 +2358,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str fields:
         :return: BuildType
         """
-        return self.api.get_build_type(bt_locator, project_locator=self, **kwargs)
+        return self.api.get_build_type(
+            bt_locator, project_locator=self, **kwargs)
 
     def get_build_type_field_with_project(self, bt_locator, field, **kwargs):
         """
@@ -2268,7 +2368,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str field: (required)
         :return: str
         """
-        return self.api.get_build_type_field_with_project(bt_locator, field, project_locator=self, **kwargs)
+        return self.api.get_build_type_field_with_project(
+            bt_locator, field, project_locator=self, **kwargs)
 
     def get_build_type_templates(self, bt_locator, **kwargs):
         """
@@ -2277,7 +2378,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str fields:
         :return: BuildType
         """
-        return self.api.get_build_type_templates(bt_locator, project_locator=self, **kwargs)
+        return self.api.get_build_type_templates(
+            bt_locator, project_locator=self, **kwargs)
 
     def get_build_types_in_project(self, **kwargs):
         """
@@ -2285,7 +2387,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str fields:
         :return: BuildTypes
         """
-        return self.api.get_build_types_in_project(project_locator=self, **kwargs)
+        return self.api.get_build_types_in_project(
+            project_locator=self, **kwargs)
 
     def get_build_types_order(self, field, **kwargs):
         """
@@ -2293,7 +2396,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str field: (required)
         :return: BuildTypes
         """
-        return self.api.get_build_types_order(field, project_locator=self, **kwargs)
+        return self.api.get_build_types_order(
+            field, project_locator=self, **kwargs)
 
     def get_build_with_project(self, bt_locator, build_locator, **kwargs):
         """
@@ -2303,7 +2407,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str fields:
         :return: Build
         """
-        return self.api.get_build_with_project(bt_locator, build_locator, project_locator=self, **kwargs)
+        return self.api.get_build_with_project(
+            bt_locator, build_locator, project_locator=self, **kwargs)
 
     def get_builds(self, bt_locator, **kwargs):
         """
@@ -2332,15 +2437,18 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str id:
         :return: NewProjectDescription
         """
-        return self.api.get_example_new_project_description(project_locator=self, **kwargs)
+        return self.api.get_example_new_project_description(
+            project_locator=self, **kwargs)
 
-    def get_example_new_project_description_compatibility_version1(self, **kwargs):
+    def get_example_new_project_description_compatibility_version1(
+            self, **kwargs):
         """
         :param async_req: bool
         :param str id:
         :return: NewProjectDescription
         """
-        return self.api.get_example_new_project_description_compatibility_version1(project_locator=self, **kwargs)
+        return self.api.get_example_new_project_description_compatibility_version1(
+            project_locator=self, **kwargs)
 
     def get_parameter(self, name, **kwargs):
         """
@@ -2360,7 +2468,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str fields2:
         :return: ModelProperty
         """
-        return self.api.get_parameter_0(name, feature_locator, project_locator=self, **kwargs)
+        return self.api.get_parameter_0(
+            name, feature_locator, project_locator=self, **kwargs)
 
     def get_parameter_type(self, name, **kwargs):
         """
@@ -2376,7 +2485,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str name: (required)
         :return: str
         """
-        return self.api.get_parameter_type_raw_value(name, project_locator=self, **kwargs)
+        return self.api.get_parameter_type_raw_value(
+            name, project_locator=self, **kwargs)
 
     def get_parameter_value_long(self, name, **kwargs):
         """
@@ -2384,7 +2494,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str name: (required)
         :return: str
         """
-        return self.api.get_parameter_value_long(name, project_locator=self, **kwargs)
+        return self.api.get_parameter_value_long(
+            name, project_locator=self, **kwargs)
 
     def get_parameter_value_long_0(self, name, feature_locator, **kwargs):
         """
@@ -2394,7 +2505,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str fields:
         :return: str
         """
-        return self.api.get_parameter_value_long_0(name, feature_locator, project_locator=self, **kwargs)
+        return self.api.get_parameter_value_long_0(
+            name, feature_locator, project_locator=self, **kwargs)
 
     def get_parameters(self, **kwargs):
         """
@@ -2414,7 +2526,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str fields2:
         :return: Properties
         """
-        return self.api.get_parameters_0(feature_locator, project_locator=self, **kwargs)
+        return self.api.get_parameters_0(
+            feature_locator, project_locator=self, **kwargs)
 
     def get_parent_project(self, **kwargs):
         """
@@ -2454,7 +2567,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str field: (required)
         :return: Projects
         """
-        return self.api.get_projects_order(field, project_locator=self, **kwargs)
+        return self.api.get_projects_order(
+            field, project_locator=self, **kwargs)
 
     def get_settings_file(self, **kwargs):
         """
@@ -2470,7 +2584,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str fields:
         :return: object
         """
-        return self.api.get_single(feature_locator, project_locator=self, **kwargs)
+        return self.api.get_single(
+            feature_locator, project_locator=self, **kwargs)
 
     def get_templates_in_project(self, **kwargs):
         """
@@ -2507,7 +2622,12 @@ class Project(Project, ReadMixin, DeleteMixin):
         """
         return self.api.replace_all(project_locator=self, **kwargs)
 
-    def serve_build_field_with_project(self, bt_locator, build_locator, field, **kwargs):
+    def serve_build_field_with_project(
+            self,
+            bt_locator,
+            build_locator,
+            field,
+            **kwargs):
         """
         :param async_req: bool
         :param str bt_locator: (required)
@@ -2515,7 +2635,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str field: (required)
         :return: str
         """
-        return self.api.serve_build_field_with_project(bt_locator, build_locator, field, project_locator=self, **kwargs)
+        return self.api.serve_build_field_with_project(
+            bt_locator, build_locator, field, project_locator=self, **kwargs)
 
     def serve_build_type(self, bt_locator, **kwargs):
         """
@@ -2524,7 +2645,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str fields:
         :return: BuildType
         """
-        return self.api.serve_build_type(bt_locator, project_locator=self, **kwargs)
+        return self.api.serve_build_type(
+            bt_locator, project_locator=self, **kwargs)
 
     def serve_build_type_field_with_project(self, bt_locator, field, **kwargs):
         """
@@ -2533,7 +2655,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str field: (required)
         :return: str
         """
-        return self.api.serve_build_type_field_with_project(bt_locator, field, project_locator=self, **kwargs)
+        return self.api.serve_build_type_field_with_project(
+            bt_locator, field, project_locator=self, **kwargs)
 
     def serve_build_type_templates(self, bt_locator, **kwargs):
         """
@@ -2542,7 +2665,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str fields:
         :return: BuildType
         """
-        return self.api.serve_build_type_templates(bt_locator, project_locator=self, **kwargs)
+        return self.api.serve_build_type_templates(
+            bt_locator, project_locator=self, **kwargs)
 
     def serve_build_types_in_project(self, **kwargs):
         """
@@ -2550,7 +2674,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str fields:
         :return: BuildTypes
         """
-        return self.api.serve_build_types_in_project(project_locator=self, **kwargs)
+        return self.api.serve_build_types_in_project(
+            project_locator=self, **kwargs)
 
     def serve_build_with_project(self, bt_locator, build_locator, **kwargs):
         """
@@ -2560,7 +2685,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str fields:
         :return: Build
         """
-        return self.api.serve_build_with_project(bt_locator, build_locator, project_locator=self, **kwargs)
+        return self.api.serve_build_with_project(
+            bt_locator, build_locator, project_locator=self, **kwargs)
 
     def serve_builds(self, bt_locator, **kwargs):
         """
@@ -2597,7 +2723,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str field: (required)
         :return: str
         """
-        return self.api.serve_project_field(field, project_locator=self, **kwargs)
+        return self.api.serve_project_field(
+            field, project_locator=self, **kwargs)
 
     def serve_templates_in_project(self, **kwargs):
         """
@@ -2605,7 +2732,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str fields:
         :return: BuildTypes
         """
-        return self.api.serve_templates_in_project(project_locator=self, **kwargs)
+        return self.api.serve_templates_in_project(
+            project_locator=self, **kwargs)
 
     def set_build_types_order(self, field, **kwargs):
         """
@@ -2614,7 +2742,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param BuildTypes body:
         :return: BuildTypes
         """
-        return self.api.set_build_types_order(field, project_locator=self, **kwargs)
+        return self.api.set_build_types_order(
+            field, project_locator=self, **kwargs)
 
     def set_parameter(self, **kwargs):
         """
@@ -2644,7 +2773,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str fields2:
         :return: ModelProperty
         """
-        return self.api.set_parameter_1(feature_locator, project_locator=self, **kwargs)
+        return self.api.set_parameter_1(
+            feature_locator, project_locator=self, **kwargs)
 
     def set_parameter_2(self, name, feature_locator, **kwargs):
         """
@@ -2656,7 +2786,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str fields2:
         :return: ModelProperty
         """
-        return self.api.set_parameter_2(name, feature_locator, project_locator=self, **kwargs)
+        return self.api.set_parameter_2(
+            name, feature_locator, project_locator=self, **kwargs)
 
     def set_parameter_type(self, name, **kwargs):
         """
@@ -2674,7 +2805,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str body:
         :return: str
         """
-        return self.api.set_parameter_type_raw_value(name, project_locator=self, **kwargs)
+        return self.api.set_parameter_type_raw_value(
+            name, project_locator=self, **kwargs)
 
     def set_parameter_value_long(self, name, **kwargs):
         """
@@ -2683,7 +2815,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str body:
         :return: str
         """
-        return self.api.set_parameter_value_long(name, project_locator=self, **kwargs)
+        return self.api.set_parameter_value_long(
+            name, project_locator=self, **kwargs)
 
     def set_parameter_value_long_0(self, name, feature_locator, **kwargs):
         """
@@ -2694,7 +2827,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str fields:
         :return: str
         """
-        return self.api.set_parameter_value_long_0(name, feature_locator, project_locator=self, **kwargs)
+        return self.api.set_parameter_value_long_0(
+            name, feature_locator, project_locator=self, **kwargs)
 
     def set_parameters(self, **kwargs):
         """
@@ -2714,7 +2848,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param str fields2:
         :return: Properties
         """
-        return self.api.set_parameters_0(feature_locator, project_locator=self, **kwargs)
+        return self.api.set_parameters_0(
+            feature_locator, project_locator=self, **kwargs)
 
     def set_parent_project(self, **kwargs):
         """
@@ -2739,7 +2874,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param AgentPool body:
         :return: AgentPool
         """
-        return self.api.set_project_agent_pools_0(project_locator=self, **kwargs)
+        return self.api.set_project_agent_pools_0(
+            project_locator=self, **kwargs)
 
     def set_project_filed(self, field, **kwargs):
         """
@@ -2757,7 +2893,8 @@ class Project(Project, ReadMixin, DeleteMixin):
         :param Projects body:
         :return: Projects
         """
-        return self.api.set_projects_order(field, project_locator=self, **kwargs)
+        return self.api.set_projects_order(
+            field, project_locator=self, **kwargs)
 
 
 class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
@@ -2825,7 +2962,11 @@ class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
         :param str field: (required)
         :return: str
         """
-        return self.api.get_instance_field(vcs_root_instance_locator, field, vcs_root_locator=self, **kwargs)
+        return self.api.get_instance_field(
+            vcs_root_instance_locator,
+            field,
+            vcs_root_locator=self,
+            **kwargs)
 
     def get_properties(self, **kwargs):
         """
@@ -2858,7 +2999,8 @@ class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
         :param str fields:
         :return: VcsRootInstance
         """
-        return self.api.get_root_instance(vcs_root_instance_locator, vcs_root_locator=self, **kwargs)
+        return self.api.get_root_instance(
+            vcs_root_instance_locator, vcs_root_locator=self, **kwargs)
 
     def get_root_instance_properties(self, vcs_root_instance_locator, **kwargs):
         """
@@ -2867,7 +3009,8 @@ class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
         :param str fields:
         :return: Properties
         """
-        return self.api.get_root_instance_properties(vcs_root_instance_locator, vcs_root_locator=self, **kwargs)
+        return self.api.get_root_instance_properties(
+            vcs_root_instance_locator, vcs_root_locator=self, **kwargs)
 
     def get_root_instances(self, **kwargs):
         """
@@ -2908,7 +3051,8 @@ class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
         :param str field: (required)
         :return: str
         """
-        return self.api.serve_instance_field(vcs_root_instance_locator, field, vcs_root_locator=self, **kwargs)
+        return self.api.serve_instance_field(
+            vcs_root_instance_locator, field, vcs_root_locator=self, **kwargs)
 
     def serve_properties(self, **kwargs):
         """
@@ -2941,16 +3085,19 @@ class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
         :param str fields:
         :return: VcsRootInstance
         """
-        return self.api.serve_root_instance(vcs_root_instance_locator, vcs_root_locator=self, **kwargs)
+        return self.api.serve_root_instance(
+            vcs_root_instance_locator, vcs_root_locator=self, **kwargs)
 
-    def serve_root_instance_properties(self, vcs_root_instance_locator, **kwargs):
+    def serve_root_instance_properties(
+            self, vcs_root_instance_locator, **kwargs):
         """
         :param async_req: bool
         :param str vcs_root_instance_locator: (required)
         :param str fields:
         :return: Properties
         """
-        return self.api.serve_root_instance_properties(vcs_root_instance_locator, vcs_root_locator=self, **kwargs)
+        return self.api.serve_root_instance_properties(
+            vcs_root_instance_locator, vcs_root_locator=self, **kwargs)
 
     def serve_root_instances(self, **kwargs):
         """
@@ -2977,7 +3124,11 @@ class VcsRoot(VcsRoot, ReadMixin, DeleteMixin):
         :param str body:
         :return: str
         """
-        return self.api.set_instance_field(vcs_root_instance_locator, field, vcs_root_locator=self, **kwargs)
+        return self.api.set_instance_field(
+            vcs_root_instance_locator,
+            field,
+            vcs_root_locator=self,
+            **kwargs)
 
 
 class VcsRootInstance(VcsRootInstance, ReadMixin):
@@ -2994,14 +3145,16 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
         :param str field: (required)
         :return: None
         """
-        return self.api.delete_instance_field(field, vcs_root_instance_locator=self, **kwargs)
+        return self.api.delete_instance_field(
+            field, vcs_root_instance_locator=self, **kwargs)
 
     def delete_repository_state(self, **kwargs):
         """
         :param async_req: bool
         :return: None
         """
-        return self.api.delete_repository_state(vcs_root_instance_locator=self, **kwargs)
+        return self.api.delete_repository_state(
+            vcs_root_instance_locator=self, **kwargs)
 
     def get(self, **kwargs):
         """
@@ -3020,7 +3173,8 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
         :param str fields:
         :return: Files
         """
-        return self.api.get_children(path, vcs_root_instance_locator=self, **kwargs)
+        return self.api.get_children(
+            path, vcs_root_instance_locator=self, **kwargs)
 
     def get_children_alias(self, path, **kwargs):
         """
@@ -3031,7 +3185,8 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
         :param str fields:
         :return: Files
         """
-        return self.api.get_children_alias(path, vcs_root_instance_locator=self, **kwargs)
+        return self.api.get_children_alias(
+            path, vcs_root_instance_locator=self, **kwargs)
 
     def get_content(self, path, **kwargs):
         """
@@ -3039,7 +3194,8 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
         :param str path: (required)
         :return: None
         """
-        return self.api.get_content(path, vcs_root_instance_locator=self, **kwargs)
+        return self.api.get_content(
+            path, vcs_root_instance_locator=self, **kwargs)
 
     def get_content_alias(self, path, **kwargs):
         """
@@ -3047,7 +3203,8 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
         :param str path: (required)
         :return: None
         """
-        return self.api.get_content_alias(path, vcs_root_instance_locator=self, **kwargs)
+        return self.api.get_content_alias(
+            path, vcs_root_instance_locator=self, **kwargs)
 
     def get_instance(self, **kwargs):
         """
@@ -3063,7 +3220,8 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
         :param str field: (required)
         :return: str
         """
-        return self.api.get_instance_field(field, vcs_root_instance_locator=self, **kwargs)
+        return self.api.get_instance_field(
+            field, vcs_root_instance_locator=self, **kwargs)
 
     def get_metadata(self, path, **kwargs):
         """
@@ -3072,7 +3230,8 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
         :param str fields:
         :return: file
         """
-        return self.api.get_metadata(path, vcs_root_instance_locator=self, **kwargs)
+        return self.api.get_metadata(
+            path, vcs_root_instance_locator=self, **kwargs)
 
     def get_repository_state(self, **kwargs):
         """
@@ -3080,14 +3239,16 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
         :param str fields:
         :return: Entries
         """
-        return self.api.get_repository_state(vcs_root_instance_locator=self, **kwargs)
+        return self.api.get_repository_state(
+            vcs_root_instance_locator=self, **kwargs)
 
     def get_repository_state_creation_date(self, **kwargs):
         """
         :param async_req: bool
         :return: str
         """
-        return self.api.get_repository_state_creation_date(vcs_root_instance_locator=self, **kwargs)
+        return self.api.get_repository_state_creation_date(
+            vcs_root_instance_locator=self, **kwargs)
 
     def get_root(self, **kwargs):
         """
@@ -3105,7 +3266,8 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
         :param str fields:
         :return: Properties
         """
-        return self.api.get_root_instance_properties(vcs_root_instance_locator=self, **kwargs)
+        return self.api.get_root_instance_properties(
+            vcs_root_instance_locator=self, **kwargs)
 
     def get_zipped(self, path, **kwargs):
         """
@@ -3116,7 +3278,8 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
         :param str name:
         :return: None
         """
-        return self.api.get_zipped(path, vcs_root_instance_locator=self, **kwargs)
+        return self.api.get_zipped(
+            path, vcs_root_instance_locator=self, **kwargs)
 
     def serve_instance(self, **kwargs):
         """
@@ -3132,7 +3295,8 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
         :param str field: (required)
         :return: str
         """
-        return self.api.serve_instance_field(field, vcs_root_instance_locator=self, **kwargs)
+        return self.api.serve_instance_field(
+            field, vcs_root_instance_locator=self, **kwargs)
 
     def serve_root_instance_properties(self, **kwargs):
         """
@@ -3140,7 +3304,8 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
         :param str fields:
         :return: Properties
         """
-        return self.api.serve_root_instance_properties(vcs_root_instance_locator=self, **kwargs)
+        return self.api.serve_root_instance_properties(
+            vcs_root_instance_locator=self, **kwargs)
 
     def set_instance_field(self, field, **kwargs):
         """
@@ -3149,7 +3314,8 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
         :param str body:
         :return: str
         """
-        return self.api.set_instance_field(field, vcs_root_instance_locator=self, **kwargs)
+        return self.api.set_instance_field(
+            field, vcs_root_instance_locator=self, **kwargs)
 
     def set_repository_state(self, **kwargs):
         """
@@ -3158,7 +3324,8 @@ class VcsRootInstance(VcsRootInstance, ReadMixin):
         :param str fields:
         :return: Entries
         """
-        return self.api.set_repository_state(vcs_root_instance_locator=self, **kwargs)
+        return self.api.set_repository_state(
+            vcs_root_instance_locator=self, **kwargs)
 
 
 class Sessions(Sessions, ContainerMixin):

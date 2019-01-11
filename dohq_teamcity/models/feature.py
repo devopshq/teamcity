@@ -213,4 +213,3 @@ class Feature(TeamCityObject):
         """
 
         self._type = type
-

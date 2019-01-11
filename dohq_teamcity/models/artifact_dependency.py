@@ -240,4 +240,3 @@ class ArtifactDependency(TeamCityObject):
         """
 
         self._type = type
-
