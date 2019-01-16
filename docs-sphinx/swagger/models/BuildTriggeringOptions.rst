@@ -18,10 +18,19 @@ Properties
    * - **clean_sources**
      - **bool**
      - `optional` [default to ``False``]
-   * - **queue_at_top**
+   * - **clean_sources_in_all_dependencies**
      - **bool**
      - `optional` [default to ``False``]
    * - **rebuild_all_dependencies**
+     - **bool**
+     - `optional` [default to ``False``]
+   * - **queue_at_top**
+     - **bool**
+     - `optional` [default to ``False``]
+   * - **freeze_settings**
+     - **bool**
+     - `optional` [default to ``False``]
+   * - **tag_dependencies**
      - **bool**
      - `optional` [default to ``False``]
    * - **rebuild_dependencies**

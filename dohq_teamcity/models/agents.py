@@ -20,63 +20,42 @@ class Agents(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'agent': 'list[Agent]',
         'count': 'int',
-        'href': 'str',
         'next_href': 'str',
-        'prev_href': 'str'
+        'prev_href': 'str',
+        'href': 'str',
+        'agent': 'list[Agent]'
     }
 
     attribute_map = {
-        'agent': 'agent',
         'count': 'count',
-        'href': 'href',
         'next_href': 'nextHref',
-        'prev_href': 'prevHref'
+        'prev_href': 'prevHref',
+        'href': 'href',
+        'agent': 'agent'
     }
 
-    def __init__(self, agent=None, count=None, href=None, next_href=None, prev_href=None, teamcity=None):  # noqa: E501
+    def __init__(self, count=None, next_href=None, prev_href=None, href=None, agent=None, teamcity=None):  # noqa: E501
         """Agents - a model defined in Swagger"""  # noqa: E501
 
-        self._agent = None
         self._count = None
-        self._href = None
         self._next_href = None
         self._prev_href = None
+        self._href = None
+        self._agent = None
         self.discriminator = None
 
-        if agent is not None:
-            self.agent = agent
         if count is not None:
             self.count = count
-        if href is not None:
-            self.href = href
         if next_href is not None:
             self.next_href = next_href
         if prev_href is not None:
             self.prev_href = prev_href
+        if href is not None:
+            self.href = href
+        if agent is not None:
+            self.agent = agent
         super(Agents, self).__init__(teamcity=teamcity)
-
-    @property
-    def agent(self):
-        """Gets the agent of this Agents.  # noqa: E501
-
-
-        :return: The agent of this Agents.  # noqa: E501
-        :rtype: list[Agent]
-        """
-        return self._agent
-
-    @agent.setter
-    def agent(self, agent):
-        """Sets the agent of this Agents.
-
-
-        :param agent: The agent of this Agents.  # noqa: E501
-        :type: list[Agent]
-        """
-
-        self._agent = agent
 
     @property
     def count(self):
@@ -98,27 +77,6 @@ class Agents(TeamCityObject):
         """
 
         self._count = count
-
-    @property
-    def href(self):
-        """Gets the href of this Agents.  # noqa: E501
-
-
-        :return: The href of this Agents.  # noqa: E501
-        :rtype: str
-        """
-        return self._href
-
-    @href.setter
-    def href(self, href):
-        """Sets the href of this Agents.
-
-
-        :param href: The href of this Agents.  # noqa: E501
-        :type: str
-        """
-
-        self._href = href
 
     @property
     def next_href(self):
@@ -161,3 +119,45 @@ class Agents(TeamCityObject):
         """
 
         self._prev_href = prev_href
+
+    @property
+    def href(self):
+        """Gets the href of this Agents.  # noqa: E501
+
+
+        :return: The href of this Agents.  # noqa: E501
+        :rtype: str
+        """
+        return self._href
+
+    @href.setter
+    def href(self, href):
+        """Sets the href of this Agents.
+
+
+        :param href: The href of this Agents.  # noqa: E501
+        :type: str
+        """
+
+        self._href = href
+
+    @property
+    def agent(self):
+        """Gets the agent of this Agents.  # noqa: E501
+
+
+        :return: The agent of this Agents.  # noqa: E501
+        :rtype: list[Agent]
+        """
+        return self._agent
+
+    @agent.setter
+    def agent(self, agent):
+        """Sets the agent of this Agents.
+
+
+        :param agent: The agent of this Agents.  # noqa: E501
+        :type: list[Agent]
+        """
+
+        self._agent = agent

@@ -15,15 +15,15 @@ Properties
    * - Name
      - Type
      - Notes
+   * - **compatible**
+     - **bool**
+     - `optional` [default to ``False``]
    * - **agent**
      -  `Agent <./Agent.html>`_
      - `optional` 
    * - **build_type**
      -  `BuildType <./BuildType.html>`_
      - `optional` 
-   * - **compatible**
-     - **bool**
-     - `optional` [default to ``False``]
    * - **unmet_requirements**
      -  `Requirements <./Requirements.html>`_
      - `optional` 

@@ -15,10 +15,10 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **inherited**
+   * - **value**
      - **bool**
      - `optional` [default to ``False``]
-   * - **value**
+   * - **inherited**
      - **bool**
      - `optional` [default to ``False``]
 

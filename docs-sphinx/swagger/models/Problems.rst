@@ -18,15 +18,15 @@ Properties
    * - **count**
      - **int**
      - `optional` 
-   * - **default**
-     - **bool**
-     - `optional` [default to ``False``]
    * - **next_href**
      - **str**
      - `optional` 
    * - **prev_href**
      - **str**
      - `optional` 
+   * - **default**
+     - **bool**
+     - `optional` [default to ``False``]
    * - **problem**
      -  `list[Problem] <./Problem.html>`_
      - `optional` 

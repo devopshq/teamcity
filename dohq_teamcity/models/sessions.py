@@ -22,41 +22,39 @@ class Sessions(TeamCityObject):
     swagger_types = {
         'count': 'int',
         'max_active': 'int',
-        'session': 'list[Session]',
         'session_counter': 'int',
         'session_create_rate': 'int',
         'session_expire_rate': 'int',
-        'session_max_alive_time': 'int'
+        'session_max_alive_time': 'int',
+        'session': 'list[Session]'
     }
 
     attribute_map = {
         'count': 'count',
         'max_active': 'maxActive',
-        'session': 'session',
         'session_counter': 'sessionCounter',
         'session_create_rate': 'sessionCreateRate',
         'session_expire_rate': 'sessionExpireRate',
-        'session_max_alive_time': 'sessionMaxAliveTime'
+        'session_max_alive_time': 'sessionMaxAliveTime',
+        'session': 'session'
     }
 
-    def __init__(self, count=None, max_active=None, session=None, session_counter=None, session_create_rate=None, session_expire_rate=None, session_max_alive_time=None, teamcity=None):  # noqa: E501
+    def __init__(self, count=None, max_active=None, session_counter=None, session_create_rate=None, session_expire_rate=None, session_max_alive_time=None, session=None, teamcity=None):  # noqa: E501
         """Sessions - a model defined in Swagger"""  # noqa: E501
 
         self._count = None
         self._max_active = None
-        self._session = None
         self._session_counter = None
         self._session_create_rate = None
         self._session_expire_rate = None
         self._session_max_alive_time = None
+        self._session = None
         self.discriminator = None
 
         if count is not None:
             self.count = count
         if max_active is not None:
             self.max_active = max_active
-        if session is not None:
-            self.session = session
         if session_counter is not None:
             self.session_counter = session_counter
         if session_create_rate is not None:
@@ -65,6 +63,8 @@ class Sessions(TeamCityObject):
             self.session_expire_rate = session_expire_rate
         if session_max_alive_time is not None:
             self.session_max_alive_time = session_max_alive_time
+        if session is not None:
+            self.session = session
         super(Sessions, self).__init__(teamcity=teamcity)
 
     @property
@@ -108,27 +108,6 @@ class Sessions(TeamCityObject):
         """
 
         self._max_active = max_active
-
-    @property
-    def session(self):
-        """Gets the session of this Sessions.  # noqa: E501
-
-
-        :return: The session of this Sessions.  # noqa: E501
-        :rtype: list[Session]
-        """
-        return self._session
-
-    @session.setter
-    def session(self, session):
-        """Sets the session of this Sessions.
-
-
-        :param session: The session of this Sessions.  # noqa: E501
-        :type: list[Session]
-        """
-
-        self._session = session
 
     @property
     def session_counter(self):
@@ -213,3 +192,24 @@ class Sessions(TeamCityObject):
         """
 
         self._session_max_alive_time = session_max_alive_time
+
+    @property
+    def session(self):
+        """Gets the session of this Sessions.  # noqa: E501
+
+
+        :return: The session of this Sessions.  # noqa: E501
+        :rtype: list[Session]
+        """
+        return self._session
+
+    @session.setter
+    def session(self, session):
+        """Sets the session of this Sessions.
+
+
+        :param session: The session of this Sessions.  # noqa: E501
+        :type: list[Session]
+        """
+
+        self._session = session

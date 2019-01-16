@@ -15,12 +15,12 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **comment**
-     -  `Comment <./Comment.html>`_
-     - `optional` 
    * - **status**
      - **bool**
      - `optional` [default to ``False``]
+   * - **comment**
+     -  `Comment <./Comment.html>`_
+     - `optional` 
    * - **status_switch_time**
      - **str**
      - `optional` 

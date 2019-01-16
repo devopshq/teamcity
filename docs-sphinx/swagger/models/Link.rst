@@ -15,13 +15,13 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **relative_url**
-     - **str**
-     - `optional` 
    * - **type**
      - **str**
      - `optional` 
    * - **url**
+     - **str**
+     - `optional` 
+   * - **relative_url**
      - **str**
      - `optional` 
 

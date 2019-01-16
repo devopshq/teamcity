@@ -17,63 +17,63 @@ class StackTraceElement(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'class_name': 'str',
+        'method_name': 'str',
         'file_name': 'str',
         'line_number': 'int',
-        'method_name': 'str',
+        'class_name': 'str',
         'native_method': 'bool'
     }
 
     attribute_map = {
-        'class_name': 'className',
+        'method_name': 'methodName',
         'file_name': 'fileName',
         'line_number': 'lineNumber',
-        'method_name': 'methodName',
+        'class_name': 'className',
         'native_method': 'nativeMethod'
     }
 
-    def __init__(self, class_name=None, file_name=None, line_number=None, method_name=None, native_method=False, teamcity=None):  # noqa: E501
+    def __init__(self, method_name=None, file_name=None, line_number=None, class_name=None, native_method=False, teamcity=None):  # noqa: E501
         """StackTraceElement - a model defined in Swagger"""  # noqa: E501
 
-        self._class_name = None
+        self._method_name = None
         self._file_name = None
         self._line_number = None
-        self._method_name = None
+        self._class_name = None
         self._native_method = None
         self.discriminator = None
 
-        if class_name is not None:
-            self.class_name = class_name
+        if method_name is not None:
+            self.method_name = method_name
         if file_name is not None:
             self.file_name = file_name
         if line_number is not None:
             self.line_number = line_number
-        if method_name is not None:
-            self.method_name = method_name
+        if class_name is not None:
+            self.class_name = class_name
         if native_method is not None:
             self.native_method = native_method
         super(StackTraceElement, self).__init__(teamcity=teamcity)
 
     @property
-    def class_name(self):
-        """Gets the class_name of this StackTraceElement.  # noqa: E501
+    def method_name(self):
+        """Gets the method_name of this StackTraceElement.  # noqa: E501
 
 
-        :return: The class_name of this StackTraceElement.  # noqa: E501
+        :return: The method_name of this StackTraceElement.  # noqa: E501
         :rtype: str
         """
-        return self._class_name
+        return self._method_name
 
-    @class_name.setter
-    def class_name(self, class_name):
-        """Sets the class_name of this StackTraceElement.
+    @method_name.setter
+    def method_name(self, method_name):
+        """Sets the method_name of this StackTraceElement.
 
 
-        :param class_name: The class_name of this StackTraceElement.  # noqa: E501
+        :param method_name: The method_name of this StackTraceElement.  # noqa: E501
         :type: str
         """
 
-        self._class_name = class_name
+        self._method_name = method_name
 
     @property
     def file_name(self):
@@ -118,25 +118,25 @@ class StackTraceElement(TeamCityObject):
         self._line_number = line_number
 
     @property
-    def method_name(self):
-        """Gets the method_name of this StackTraceElement.  # noqa: E501
+    def class_name(self):
+        """Gets the class_name of this StackTraceElement.  # noqa: E501
 
 
-        :return: The method_name of this StackTraceElement.  # noqa: E501
+        :return: The class_name of this StackTraceElement.  # noqa: E501
         :rtype: str
         """
-        return self._method_name
+        return self._class_name
 
-    @method_name.setter
-    def method_name(self, method_name):
-        """Sets the method_name of this StackTraceElement.
+    @class_name.setter
+    def class_name(self, class_name):
+        """Sets the class_name of this StackTraceElement.
 
 
-        :param method_name: The method_name of this StackTraceElement.  # noqa: E501
+        :param class_name: The class_name of this StackTraceElement.  # noqa: E501
         :type: str
         """
 
-        self._method_name = method_name
+        self._class_name = class_name
 
     @property
     def native_method(self):

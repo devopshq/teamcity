@@ -15,14 +15,14 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **build_type**
-     -  `BuildType <./BuildType.html>`_
+   * - **project**
+     -  `Project <./Project.html>`_
      - `optional` 
    * - **build_types**
      -  `BuildTypes <./BuildTypes.html>`_
      - `optional` 
-   * - **project**
-     -  `Project <./Project.html>`_
+   * - **build_type**
+     -  `BuildType <./BuildType.html>`_
      - `optional` 
 
 

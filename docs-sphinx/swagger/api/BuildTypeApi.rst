@@ -30,6 +30,8 @@ dohq_teamcity.BuildTypeApi
      - **POST** ``/app/rest/buildTypes/{btLocator}/steps``
    * - :ref:`add_step_parameter`
      - **PUT** ``/app/rest/buildTypes/{btLocator}/steps/{stepId}/parameters/{parameterName}``
+   * - :ref:`add_template`
+     - **POST** ``/app/rest/buildTypes/{btLocator}/templates``
    * - :ref:`add_trigger`
      - **POST** ``/app/rest/buildTypes/{btLocator}/triggers``
    * - :ref:`add_vcs_root_entry`
@@ -64,8 +66,6 @@ dohq_teamcity.BuildTypeApi
      - **DELETE** ``/app/rest/buildTypes/{btLocator}/snapshot-dependencies/{snapshotDepLocator}``
    * - :ref:`delete_step`
      - **DELETE** ``/app/rest/buildTypes/{btLocator}/steps/{stepId}``
-   * - :ref:`delete_template_association`
-     - **DELETE** ``/app/rest/buildTypes/{btLocator}/template``
    * - :ref:`delete_trigger`
      - **DELETE** ``/app/rest/buildTypes/{btLocator}/triggers/{triggerLocator}``
    * - :ref:`delete_vcs_root_entry`
@@ -93,6 +93,8 @@ dohq_teamcity.BuildTypeApi
    * - :ref:`get_content_alias`
      - **GET** ``/app/rest/buildTypes/{btLocator}/vcs/files/latest/files{path}``
    * - :ref:`get_current_vcs_instances`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/vcsRootInstances``
+   * - :ref:`get_current_vcs_instances_obsolete`
      - **GET** ``/app/rest/buildTypes/{btLocator}/vcs-root-instances``
    * - :ref:`get_example_new_project_description`
      - **GET** ``/app/rest/buildTypes/{btLocator}/example/newBuildTypeDescription``
@@ -148,8 +150,10 @@ dohq_teamcity.BuildTypeApi
      - **GET** ``/app/rest/buildTypes/{btLocator}/steps/{stepId}/{fieldName}``
    * - :ref:`get_steps`
      - **GET** ``/app/rest/buildTypes/{btLocator}/steps``
-   * - :ref:`get_template_association`
-     - **PUT** ``/app/rest/buildTypes/{btLocator}/template``
+   * - :ref:`get_template`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/templates/{templateLocator}``
+   * - :ref:`get_templates`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/templates``
    * - :ref:`get_trigger`
      - **GET** ``/app/rest/buildTypes/{btLocator}/triggers/{triggerLocator}``
    * - :ref:`get_trigger_setting`
@@ -166,6 +170,10 @@ dohq_teamcity.BuildTypeApi
      - **GET** ``/app/rest/buildTypes/{btLocator}/vcs-root-entries/{vcsRootLocator}/checkout-rules``
    * - :ref:`get_zipped`
      - **GET** ``/app/rest/buildTypes/{btLocator}/vcs/files/latest/archived{path}``
+   * - :ref:`remove_all_templates`
+     - **DELETE** ``/app/rest/buildTypes/{btLocator}/templates``
+   * - :ref:`remove_template`
+     - **DELETE** ``/app/rest/buildTypes/{btLocator}/templates/{templateLocator}``
    * - :ref:`replace_agent_requirement`
      - **PUT** ``/app/rest/buildTypes/{btLocator}/agent-requirements/{agentRequirementLocator}``
    * - :ref:`replace_agent_requirements`
@@ -204,8 +212,6 @@ dohq_teamcity.BuildTypeApi
      - **GET** ``/app/rest/buildTypes/{btLocator}/buildTags``
    * - :ref:`serve_build_type_field`
      - **GET** ``/app/rest/buildTypes/{btLocator}/{field}``
-   * - :ref:`serve_build_type_template`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/template``
    * - :ref:`serve_build_type_xml`
      - **GET** ``/app/rest/buildTypes/{btLocator}``
    * - :ref:`serve_build_with_project`
@@ -234,6 +240,8 @@ dohq_teamcity.BuildTypeApi
      - **PUT** ``/app/rest/buildTypes/{btLocator}/parameters``
    * - :ref:`set_parameters_0`
      - **PUT** ``/app/rest/buildTypes/{btLocator}/settings``
+   * - :ref:`set_templates`
+     - **PUT** ``/app/rest/buildTypes/{btLocator}/templates``
    * - :ref:`set_vcs_labeling_options`
      - **PUT** ``/app/rest/buildTypes/{btLocator}/vcsLabeling``
    * - :ref:`update_vcs_root_entry`
@@ -626,6 +634,58 @@ add_step_parameter
 
 Return type:
     **str**
+
+`Back to top <#>`_
+
+.. _add_template:
+
+add_template
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        bt_locator = 'bt_locator_example' # str | 
+    body = dohq_teamcity.BuildType() # BuildType |  (optional)
+    optimize_settings = true # bool |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        api_response = tc.build_type_api.add_template(bt_locator, body=body, optimize_settings=optimize_settings, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->add_template: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **body**
+     - `BuildType <../models/BuildType.html>`_
+     - [optional] 
+   * - **optimize_settings**
+     - **bool**
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `BuildType <../models/BuildType.html>`_
 
 `Back to top <#>`_
 
@@ -1403,45 +1463,6 @@ Return type:
 
 `Back to top <#>`_
 
-.. _delete_template_association:
-
-delete_template_association
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-        bt_locator = 'bt_locator_example' # str | 
-
-    try:
-        tc.build_type_api.delete_template_association(bt_locator)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->delete_template_association: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-
-Return type:
-    void (empty response body)
-
-`Back to top <#>`_
-
 .. _delete_trigger:
 
 delete_trigger
@@ -1983,10 +2004,11 @@ get_content
 
         path = 'path_example' # str | 
     bt_locator = 'bt_locator_example' # str | 
+    response_builder = 'response_builder_example' # str |  (optional)
     resolve_parameters = true # bool |  (optional)
 
     try:
-        tc.build_type_api.get_content(path, bt_locator, resolve_parameters=resolve_parameters)
+        tc.build_type_api.get_content(path, bt_locator, response_builder=response_builder, resolve_parameters=resolve_parameters)
     except ApiException as e:
         print("Exception when calling BuildTypeApi->get_content: %s\n" % e)
 
@@ -2006,6 +2028,9 @@ get_content
    * - **bt_locator**
      - **str**
      - 
+   * - **response_builder**
+     - **str**
+     - [optional] 
    * - **resolve_parameters**
      - **bool**
      - [optional] 
@@ -2083,6 +2108,50 @@ get_current_vcs_instances
        pprint(api_response)
     except ApiException as e:
         print("Exception when calling BuildTypeApi->get_current_vcs_instances: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `VcsRootInstances <../models/VcsRootInstances.html>`_
+
+`Back to top <#>`_
+
+.. _get_current_vcs_instances_obsolete:
+
+get_current_vcs_instances_obsolete
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        bt_locator = 'bt_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        api_response = tc.build_type_api.get_current_vcs_instances_obsolete(bt_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_current_vcs_instances_obsolete: %s\n" % e)
 
 
 
@@ -3358,9 +3427,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _get_template_association:
+.. _get_template:
 
-get_template_association
+get_template
 -----------------
 
 .. code-block:: python
@@ -3372,14 +3441,14 @@ get_template_association
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
         bt_locator = 'bt_locator_example' # str | 
-    body = 'body_example' # str |  (optional)
+    template_locator = 'template_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.build_type_api.get_template_association(bt_locator, body=body, fields=fields)
+        api_response = tc.build_type_api.get_template(bt_locator, template_locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_template_association: %s\n" % e)
+        print("Exception when calling BuildTypeApi->get_template: %s\n" % e)
 
 
 
@@ -3394,15 +3463,59 @@ get_template_association
    * - **bt_locator**
      - **str**
      - 
-   * - **body**
+   * - **template_locator**
      - **str**
-     - [optional] 
+     - 
    * - **fields**
      - **str**
      - [optional] 
 
 Return type:
     `BuildType <../models/BuildType.html>`_
+
+`Back to top <#>`_
+
+.. _get_templates:
+
+get_templates
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        bt_locator = 'bt_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        api_response = tc.build_type_api.get_templates(bt_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_templates: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `BuildTypes <../models/BuildTypes.html>`_
 
 `Back to top <#>`_
 
@@ -3773,6 +3886,96 @@ get_zipped
      - **str**
      - [optional] 
    * - **resolve_parameters**
+     - **bool**
+     - [optional] 
+
+Return type:
+    void (empty response body)
+
+`Back to top <#>`_
+
+.. _remove_all_templates:
+
+remove_all_templates
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        bt_locator = 'bt_locator_example' # str | 
+    inline_settings = true # bool |  (optional)
+
+    try:
+        tc.build_type_api.remove_all_templates(bt_locator, inline_settings=inline_settings)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->remove_all_templates: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **inline_settings**
+     - **bool**
+     - [optional] 
+
+Return type:
+    void (empty response body)
+
+`Back to top <#>`_
+
+.. _remove_template:
+
+remove_template
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        bt_locator = 'bt_locator_example' # str | 
+    template_locator = 'template_locator_example' # str | 
+    inline_settings = true # bool |  (optional)
+
+    try:
+        tc.build_type_api.remove_template(bt_locator, template_locator, inline_settings=inline_settings)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->remove_template: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **template_locator**
+     - **str**
+     - 
+   * - **inline_settings**
      - **bool**
      - [optional] 
 
@@ -4717,50 +4920,6 @@ Return type:
 
 `Back to top <#>`_
 
-.. _serve_build_type_template:
-
-serve_build_type_template
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-        bt_locator = 'bt_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.serve_build_type_template(bt_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->serve_build_type_template: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `BuildType <../models/BuildType.html>`_
-
-`Back to top <#>`_
-
 .. _serve_build_type_xml:
 
 serve_build_type_xml
@@ -5478,6 +5637,58 @@ set_parameters_0
 
 Return type:
     `Properties <../models/Properties.html>`_
+
+`Back to top <#>`_
+
+.. _set_templates:
+
+set_templates
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        bt_locator = 'bt_locator_example' # str | 
+    body = dohq_teamcity.BuildTypes() # BuildTypes |  (optional)
+    optimize_settings = true # bool |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        api_response = tc.build_type_api.set_templates(bt_locator, body=body, optimize_settings=optimize_settings, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->set_templates: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **body**
+     - `BuildTypes <../models/BuildTypes.html>`_
+     - [optional] 
+   * - **optimize_settings**
+     - **bool**
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `BuildTypes <../models/BuildTypes.html>`_
 
 `Back to top <#>`_
 

@@ -15,12 +15,21 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **additional_data**
+   * - **id**
      - **str**
      - `optional` 
-   * - **build**
-     -  `Build <./Build.html>`_
+   * - **type**
+     - **str**
      - `optional` 
+   * - **identity**
+     - **str**
+     - `optional` 
+   * - **href**
+     - **str**
+     - `optional` 
+   * - **muted**
+     - **bool**
+     - `optional` [default to ``False``]
    * - **currently_investigated**
      - **bool**
      - `optional` [default to ``False``]
@@ -30,26 +39,17 @@ Properties
    * - **details**
      - **str**
      - `optional` 
-   * - **href**
+   * - **additional_data**
      - **str**
      - `optional` 
-   * - **id**
-     - **str**
-     - `optional` 
-   * - **identity**
-     - **str**
+   * - **problem**
+     -  `Problem <./Problem.html>`_
      - `optional` 
    * - **mute**
      -  `Mute <./Mute.html>`_
      - `optional` 
-   * - **muted**
-     - **bool**
-     - `optional` [default to ``False``]
-   * - **problem**
-     -  `Problem <./Problem.html>`_
-     - `optional` 
-   * - **type**
-     - **str**
+   * - **build**
+     -  `Build <./Build.html>`_
      - `optional` 
 
 

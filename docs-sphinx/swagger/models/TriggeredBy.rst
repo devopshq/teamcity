@@ -15,26 +15,32 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **build_type**
-     -  `BuildType <./BuildType.html>`_
-     - `optional` 
-   * - **_date**
+   * - **type**
      - **str**
      - `optional` 
    * - **details**
      - **str**
      - `optional` 
-   * - **properties**
-     -  `Properties <./Properties.html>`_
+   * - **_date**
+     - **str**
+     - `optional` 
+   * - **display_text**
+     - **str**
      - `optional` 
    * - **raw_value**
      - **str**
      - `optional` 
-   * - **type**
-     - **str**
-     - `optional` 
    * - **user**
      -  `User <./User.html>`_
+     - `optional` 
+   * - **build**
+     -  `Build <./Build.html>`_
+     - `optional` 
+   * - **build_type**
+     -  `BuildType <./BuildType.html>`_
+     - `optional` 
+   * - **properties**
+     -  `Properties <./Properties.html>`_
      - `optional` 
 
 

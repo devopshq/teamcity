@@ -22,73 +22,57 @@ class Problem(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'href': 'str',
         'id': 'str',
+        'type': 'str',
         'identity': 'str',
-        'investigations': 'Investigations',
+        'href': 'str',
         'mutes': 'Mutes',
+        'investigations': 'Investigations',
         'problem_occurrences': 'ProblemOccurrences',
-        'type': 'str'
+        'locator': 'str'
     }
 
     attribute_map = {
-        'href': 'href',
         'id': 'id',
+        'type': 'type',
         'identity': 'identity',
-        'investigations': 'investigations',
+        'href': 'href',
         'mutes': 'mutes',
+        'investigations': 'investigations',
         'problem_occurrences': 'problemOccurrences',
-        'type': 'type'
+        'locator': 'locator'
     }
 
-    def __init__(self, href=None, id=None, identity=None, investigations=None, mutes=None, problem_occurrences=None, type=None, teamcity=None):  # noqa: E501
+    def __init__(self, id=None, type=None, identity=None, href=None, mutes=None, investigations=None, problem_occurrences=None, locator=None, teamcity=None):  # noqa: E501
         """Problem - a model defined in Swagger"""  # noqa: E501
 
-        self._href = None
         self._id = None
-        self._identity = None
-        self._investigations = None
-        self._mutes = None
-        self._problem_occurrences = None
         self._type = None
+        self._identity = None
+        self._href = None
+        self._mutes = None
+        self._investigations = None
+        self._problem_occurrences = None
+        self._locator = None
         self.discriminator = None
 
-        if href is not None:
-            self.href = href
         if id is not None:
             self.id = id
-        if identity is not None:
-            self.identity = identity
-        if investigations is not None:
-            self.investigations = investigations
-        if mutes is not None:
-            self.mutes = mutes
-        if problem_occurrences is not None:
-            self.problem_occurrences = problem_occurrences
         if type is not None:
             self.type = type
+        if identity is not None:
+            self.identity = identity
+        if href is not None:
+            self.href = href
+        if mutes is not None:
+            self.mutes = mutes
+        if investigations is not None:
+            self.investigations = investigations
+        if problem_occurrences is not None:
+            self.problem_occurrences = problem_occurrences
+        if locator is not None:
+            self.locator = locator
         super(Problem, self).__init__(teamcity=teamcity)
-
-    @property
-    def href(self):
-        """Gets the href of this Problem.  # noqa: E501
-
-
-        :return: The href of this Problem.  # noqa: E501
-        :rtype: str
-        """
-        return self._href
-
-    @href.setter
-    def href(self, href):
-        """Sets the href of this Problem.
-
-
-        :param href: The href of this Problem.  # noqa: E501
-        :type: str
-        """
-
-        self._href = href
 
     @property
     def id(self):
@@ -112,6 +96,27 @@ class Problem(TeamCityObject):
         self._id = id
 
     @property
+    def type(self):
+        """Gets the type of this Problem.  # noqa: E501
+
+
+        :return: The type of this Problem.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this Problem.
+
+
+        :param type: The type of this Problem.  # noqa: E501
+        :type: str
+        """
+
+        self._type = type
+
+    @property
     def identity(self):
         """Gets the identity of this Problem.  # noqa: E501
 
@@ -133,25 +138,25 @@ class Problem(TeamCityObject):
         self._identity = identity
 
     @property
-    def investigations(self):
-        """Gets the investigations of this Problem.  # noqa: E501
+    def href(self):
+        """Gets the href of this Problem.  # noqa: E501
 
 
-        :return: The investigations of this Problem.  # noqa: E501
-        :rtype: Investigations
+        :return: The href of this Problem.  # noqa: E501
+        :rtype: str
         """
-        return self._investigations
+        return self._href
 
-    @investigations.setter
-    def investigations(self, investigations):
-        """Sets the investigations of this Problem.
+    @href.setter
+    def href(self, href):
+        """Sets the href of this Problem.
 
 
-        :param investigations: The investigations of this Problem.  # noqa: E501
-        :type: Investigations
+        :param href: The href of this Problem.  # noqa: E501
+        :type: str
         """
 
-        self._investigations = investigations
+        self._href = href
 
     @property
     def mutes(self):
@@ -175,6 +180,27 @@ class Problem(TeamCityObject):
         self._mutes = mutes
 
     @property
+    def investigations(self):
+        """Gets the investigations of this Problem.  # noqa: E501
+
+
+        :return: The investigations of this Problem.  # noqa: E501
+        :rtype: Investigations
+        """
+        return self._investigations
+
+    @investigations.setter
+    def investigations(self, investigations):
+        """Sets the investigations of this Problem.
+
+
+        :param investigations: The investigations of this Problem.  # noqa: E501
+        :type: Investigations
+        """
+
+        self._investigations = investigations
+
+    @property
     def problem_occurrences(self):
         """Gets the problem_occurrences of this Problem.  # noqa: E501
 
@@ -196,22 +222,22 @@ class Problem(TeamCityObject):
         self._problem_occurrences = problem_occurrences
 
     @property
-    def type(self):
-        """Gets the type of this Problem.  # noqa: E501
+    def locator(self):
+        """Gets the locator of this Problem.  # noqa: E501
 
 
-        :return: The type of this Problem.  # noqa: E501
+        :return: The locator of this Problem.  # noqa: E501
         :rtype: str
         """
-        return self._type
+        return self._locator
 
-    @type.setter
-    def type(self, type):
-        """Sets the type of this Problem.
+    @locator.setter
+    def locator(self, locator):
+        """Sets the locator of this Problem.
 
 
-        :param type: The type of this Problem.  # noqa: E501
+        :param locator: The locator of this Problem.  # noqa: E501
         :type: str
         """
 
-        self._type = type
+        self._locator = locator

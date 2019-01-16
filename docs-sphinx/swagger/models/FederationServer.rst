@@ -15,10 +15,10 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **name**
+   * - **url**
      - **str**
      - `optional` 
-   * - **url**
+   * - **name**
      - **str**
      - `optional` 
 

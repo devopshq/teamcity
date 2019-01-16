@@ -15,17 +15,29 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **default**
-     - **bool**
-     - `optional` [default to ``False``]
-   * - **name**
+   * - **version**
      - **str**
      - `optional` 
    * - **unspecified**
      - **bool**
      - `optional` [default to ``False``]
-   * - **version**
+   * - **last_activity**
      - **str**
      - `optional` 
+   * - **builds**
+     -  `Builds <./Builds.html>`_
+     - `optional` 
+   * - **internal_name**
+     - **str**
+     - `optional` 
+   * - **active**
+     - **bool**
+     - `optional` [default to ``False``]
+   * - **name**
+     - **str**
+     - `optional` 
+   * - **default**
+     - **bool**
+     - `optional` [default to ``False``]
 
 

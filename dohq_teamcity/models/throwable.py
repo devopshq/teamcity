@@ -22,38 +22,38 @@ class Throwable(TeamCityObject):
     """
     swagger_types = {
         'cause': 'Throwable',
-        'localized_message': 'str',
-        'message': 'str',
         'stack_trace': 'list[StackTraceElement]',
+        'message': 'str',
+        'localized_message': 'str',
         'suppressed': 'list[Throwable]'
     }
 
     attribute_map = {
         'cause': 'cause',
-        'localized_message': 'localizedMessage',
-        'message': 'message',
         'stack_trace': 'stackTrace',
+        'message': 'message',
+        'localized_message': 'localizedMessage',
         'suppressed': 'suppressed'
     }
 
-    def __init__(self, cause=None, localized_message=None, message=None, stack_trace=None, suppressed=None, teamcity=None):  # noqa: E501
+    def __init__(self, cause=None, stack_trace=None, message=None, localized_message=None, suppressed=None, teamcity=None):  # noqa: E501
         """Throwable - a model defined in Swagger"""  # noqa: E501
 
         self._cause = None
-        self._localized_message = None
-        self._message = None
         self._stack_trace = None
+        self._message = None
+        self._localized_message = None
         self._suppressed = None
         self.discriminator = None
 
         if cause is not None:
             self.cause = cause
-        if localized_message is not None:
-            self.localized_message = localized_message
-        if message is not None:
-            self.message = message
         if stack_trace is not None:
             self.stack_trace = stack_trace
+        if message is not None:
+            self.message = message
+        if localized_message is not None:
+            self.localized_message = localized_message
         if suppressed is not None:
             self.suppressed = suppressed
         super(Throwable, self).__init__(teamcity=teamcity)
@@ -80,25 +80,25 @@ class Throwable(TeamCityObject):
         self._cause = cause
 
     @property
-    def localized_message(self):
-        """Gets the localized_message of this Throwable.  # noqa: E501
+    def stack_trace(self):
+        """Gets the stack_trace of this Throwable.  # noqa: E501
 
 
-        :return: The localized_message of this Throwable.  # noqa: E501
-        :rtype: str
+        :return: The stack_trace of this Throwable.  # noqa: E501
+        :rtype: list[StackTraceElement]
         """
-        return self._localized_message
+        return self._stack_trace
 
-    @localized_message.setter
-    def localized_message(self, localized_message):
-        """Sets the localized_message of this Throwable.
+    @stack_trace.setter
+    def stack_trace(self, stack_trace):
+        """Sets the stack_trace of this Throwable.
 
 
-        :param localized_message: The localized_message of this Throwable.  # noqa: E501
-        :type: str
+        :param stack_trace: The stack_trace of this Throwable.  # noqa: E501
+        :type: list[StackTraceElement]
         """
 
-        self._localized_message = localized_message
+        self._stack_trace = stack_trace
 
     @property
     def message(self):
@@ -122,25 +122,25 @@ class Throwable(TeamCityObject):
         self._message = message
 
     @property
-    def stack_trace(self):
-        """Gets the stack_trace of this Throwable.  # noqa: E501
+    def localized_message(self):
+        """Gets the localized_message of this Throwable.  # noqa: E501
 
 
-        :return: The stack_trace of this Throwable.  # noqa: E501
-        :rtype: list[StackTraceElement]
+        :return: The localized_message of this Throwable.  # noqa: E501
+        :rtype: str
         """
-        return self._stack_trace
+        return self._localized_message
 
-    @stack_trace.setter
-    def stack_trace(self, stack_trace):
-        """Sets the stack_trace of this Throwable.
+    @localized_message.setter
+    def localized_message(self, localized_message):
+        """Sets the localized_message of this Throwable.
 
 
-        :param stack_trace: The stack_trace of this Throwable.  # noqa: E501
-        :type: list[StackTraceElement]
+        :param localized_message: The localized_message of this Throwable.  # noqa: E501
+        :type: str
         """
 
-        self._stack_trace = stack_trace
+        self._localized_message = localized_message
 
     @property
     def suppressed(self):

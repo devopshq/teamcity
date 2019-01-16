@@ -20,53 +20,32 @@ class EnabledInfo(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'comment': 'Comment',
         'status': 'bool',
+        'comment': 'Comment',
         'status_switch_time': 'str'
     }
 
     attribute_map = {
-        'comment': 'comment',
         'status': 'status',
+        'comment': 'comment',
         'status_switch_time': 'statusSwitchTime'
     }
 
-    def __init__(self, comment=None, status=False, status_switch_time=None, teamcity=None):  # noqa: E501
+    def __init__(self, status=False, comment=None, status_switch_time=None, teamcity=None):  # noqa: E501
         """EnabledInfo - a model defined in Swagger"""  # noqa: E501
 
-        self._comment = None
         self._status = None
+        self._comment = None
         self._status_switch_time = None
         self.discriminator = None
 
-        if comment is not None:
-            self.comment = comment
         if status is not None:
             self.status = status
+        if comment is not None:
+            self.comment = comment
         if status_switch_time is not None:
             self.status_switch_time = status_switch_time
         super(EnabledInfo, self).__init__(teamcity=teamcity)
-
-    @property
-    def comment(self):
-        """Gets the comment of this EnabledInfo.  # noqa: E501
-
-
-        :return: The comment of this EnabledInfo.  # noqa: E501
-        :rtype: Comment
-        """
-        return self._comment
-
-    @comment.setter
-    def comment(self, comment):
-        """Sets the comment of this EnabledInfo.
-
-
-        :param comment: The comment of this EnabledInfo.  # noqa: E501
-        :type: Comment
-        """
-
-        self._comment = comment
 
     @property
     def status(self):
@@ -88,6 +67,27 @@ class EnabledInfo(TeamCityObject):
         """
 
         self._status = status
+
+    @property
+    def comment(self):
+        """Gets the comment of this EnabledInfo.  # noqa: E501
+
+
+        :return: The comment of this EnabledInfo.  # noqa: E501
+        :rtype: Comment
+        """
+        return self._comment
+
+    @comment.setter
+    def comment(self, comment):
+        """Sets the comment of this EnabledInfo.
+
+
+        :param comment: The comment of this EnabledInfo.  # noqa: E501
+        :type: Comment
+        """
+
+        self._comment = comment
 
     @property
     def status_switch_time(self):

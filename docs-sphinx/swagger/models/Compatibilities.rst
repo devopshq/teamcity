@@ -15,11 +15,11 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **compatibility**
-     -  `list[Compatibility] <./Compatibility.html>`_
-     - `optional` 
    * - **count**
      - **int**
+     - `optional` 
+   * - **compatibility**
+     -  `list[Compatibility] <./Compatibility.html>`_
      - `optional` 
 
 

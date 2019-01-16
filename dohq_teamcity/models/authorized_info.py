@@ -20,48 +20,27 @@ class AuthorizedInfo(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'comment': 'Comment',
-        'status': 'bool'
+        'status': 'bool',
+        'comment': 'Comment'
     }
 
     attribute_map = {
-        'comment': 'comment',
-        'status': 'status'
+        'status': 'status',
+        'comment': 'comment'
     }
 
-    def __init__(self, comment=None, status=False, teamcity=None):  # noqa: E501
+    def __init__(self, status=False, comment=None, teamcity=None):  # noqa: E501
         """AuthorizedInfo - a model defined in Swagger"""  # noqa: E501
 
-        self._comment = None
         self._status = None
+        self._comment = None
         self.discriminator = None
 
-        if comment is not None:
-            self.comment = comment
         if status is not None:
             self.status = status
+        if comment is not None:
+            self.comment = comment
         super(AuthorizedInfo, self).__init__(teamcity=teamcity)
-
-    @property
-    def comment(self):
-        """Gets the comment of this AuthorizedInfo.  # noqa: E501
-
-
-        :return: The comment of this AuthorizedInfo.  # noqa: E501
-        :rtype: Comment
-        """
-        return self._comment
-
-    @comment.setter
-    def comment(self, comment):
-        """Sets the comment of this AuthorizedInfo.
-
-
-        :param comment: The comment of this AuthorizedInfo.  # noqa: E501
-        :type: Comment
-        """
-
-        self._comment = comment
 
     @property
     def status(self):
@@ -83,3 +62,24 @@ class AuthorizedInfo(TeamCityObject):
         """
 
         self._status = status
+
+    @property
+    def comment(self):
+        """Gets the comment of this AuthorizedInfo.  # noqa: E501
+
+
+        :return: The comment of this AuthorizedInfo.  # noqa: E501
+        :rtype: Comment
+        """
+        return self._comment
+
+    @comment.setter
+    def comment(self, comment):
+        """Sets the comment of this AuthorizedInfo.
+
+
+        :param comment: The comment of this AuthorizedInfo.  # noqa: E501
+        :type: Comment
+        """
+
+        self._comment = comment

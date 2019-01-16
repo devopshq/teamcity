@@ -15,11 +15,11 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **artifact_dependency**
-     -  `list[ArtifactDependency] <./ArtifactDependency.html>`_
-     - `optional` 
    * - **count**
      - **int**
+     - `optional` 
+   * - **artifact_dependency**
+     -  `list[ArtifactDependency] <./ArtifactDependency.html>`_
      - `optional` 
    * - **replace**
      - **str**

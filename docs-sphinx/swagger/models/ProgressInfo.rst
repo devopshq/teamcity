@@ -15,8 +15,8 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **current_stage_text**
-     - **str**
+   * - **percentage_complete**
+     - **int**
      - `optional` 
    * - **elapsed_seconds**
      - **int**
@@ -24,14 +24,23 @@ Properties
    * - **estimated_total_seconds**
      - **int**
      - `optional` 
+   * - **left_seconds**
+     - **int**
+     - `optional` 
+   * - **current_stage_text**
+     - **str**
+     - `optional` 
    * - **outdated**
      - **bool**
      - `optional` [default to ``False``]
-   * - **percentage_complete**
-     - **int**
-     - `optional` 
    * - **probably_hanging**
      - **bool**
      - `optional` [default to ``False``]
+   * - **last_activity_time**
+     - **str**
+     - `optional` 
+   * - **outdated_reason_build**
+     -  `Build <./Build.html>`_
+     - `optional` 
 
 

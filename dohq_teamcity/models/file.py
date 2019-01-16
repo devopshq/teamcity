@@ -22,162 +22,57 @@ class File(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'children': 'Files',
-        'content': 'Href',
-        'full_name': 'str',
-        'href': 'str',
-        'modification_time': 'str',
         'name': 'str',
+        'full_name': 'str',
+        'size': 'int',
+        'modification_time': 'str',
+        'href': 'str',
         'parent': 'file',
-        'size': 'int'
+        'content': 'Href',
+        'children': 'Files'
     }
 
     attribute_map = {
-        'children': 'children',
-        'content': 'content',
-        'full_name': 'fullName',
-        'href': 'href',
-        'modification_time': 'modificationTime',
         'name': 'name',
+        'full_name': 'fullName',
+        'size': 'size',
+        'modification_time': 'modificationTime',
+        'href': 'href',
         'parent': 'parent',
-        'size': 'size'
+        'content': 'content',
+        'children': 'children'
     }
 
-    def __init__(self, children=None, content=None, full_name=None, href=None, modification_time=None, name=None, parent=None, size=None, teamcity=None):  # noqa: E501
+    def __init__(self, name=None, full_name=None, size=None, modification_time=None, href=None, parent=None, content=None, children=None, teamcity=None):  # noqa: E501
         """File - a model defined in Swagger"""  # noqa: E501
 
-        self._children = None
-        self._content = None
-        self._full_name = None
-        self._href = None
-        self._modification_time = None
         self._name = None
-        self._parent = None
+        self._full_name = None
         self._size = None
+        self._modification_time = None
+        self._href = None
+        self._parent = None
+        self._content = None
+        self._children = None
         self.discriminator = None
 
-        if children is not None:
-            self.children = children
-        if content is not None:
-            self.content = content
-        if full_name is not None:
-            self.full_name = full_name
-        if href is not None:
-            self.href = href
-        if modification_time is not None:
-            self.modification_time = modification_time
         if name is not None:
             self.name = name
-        if parent is not None:
-            self.parent = parent
+        if full_name is not None:
+            self.full_name = full_name
         if size is not None:
             self.size = size
+        if modification_time is not None:
+            self.modification_time = modification_time
+        if href is not None:
+            self.href = href
+        if parent is not None:
+            self.parent = parent
+        if content is not None:
+            self.content = content
+        if children is not None:
+            self.children = children
         super(File, self).__init__(teamcity=teamcity)
-
-    @property
-    def children(self):
-        """Gets the children of this File.  # noqa: E501
-
-
-        :return: The children of this File.  # noqa: E501
-        :rtype: Files
-        """
-        return self._children
-
-    @children.setter
-    def children(self, children):
-        """Sets the children of this File.
-
-
-        :param children: The children of this File.  # noqa: E501
-        :type: Files
-        """
-
-        self._children = children
-
-    @property
-    def content(self):
-        """Gets the content of this File.  # noqa: E501
-
-
-        :return: The content of this File.  # noqa: E501
-        :rtype: Href
-        """
-        return self._content
-
-    @content.setter
-    def content(self, content):
-        """Sets the content of this File.
-
-
-        :param content: The content of this File.  # noqa: E501
-        :type: Href
-        """
-
-        self._content = content
-
-    @property
-    def full_name(self):
-        """Gets the full_name of this File.  # noqa: E501
-
-
-        :return: The full_name of this File.  # noqa: E501
-        :rtype: str
-        """
-        return self._full_name
-
-    @full_name.setter
-    def full_name(self, full_name):
-        """Sets the full_name of this File.
-
-
-        :param full_name: The full_name of this File.  # noqa: E501
-        :type: str
-        """
-
-        self._full_name = full_name
-
-    @property
-    def href(self):
-        """Gets the href of this File.  # noqa: E501
-
-
-        :return: The href of this File.  # noqa: E501
-        :rtype: str
-        """
-        return self._href
-
-    @href.setter
-    def href(self, href):
-        """Sets the href of this File.
-
-
-        :param href: The href of this File.  # noqa: E501
-        :type: str
-        """
-
-        self._href = href
-
-    @property
-    def modification_time(self):
-        """Gets the modification_time of this File.  # noqa: E501
-
-
-        :return: The modification_time of this File.  # noqa: E501
-        :rtype: str
-        """
-        return self._modification_time
-
-    @modification_time.setter
-    def modification_time(self, modification_time):
-        """Sets the modification_time of this File.
-
-
-        :param modification_time: The modification_time of this File.  # noqa: E501
-        :type: str
-        """
-
-        self._modification_time = modification_time
 
     @property
     def name(self):
@@ -201,25 +96,25 @@ class File(TeamCityObject):
         self._name = name
 
     @property
-    def parent(self):
-        """Gets the parent of this File.  # noqa: E501
+    def full_name(self):
+        """Gets the full_name of this File.  # noqa: E501
 
 
-        :return: The parent of this File.  # noqa: E501
-        :rtype: file
+        :return: The full_name of this File.  # noqa: E501
+        :rtype: str
         """
-        return self._parent
+        return self._full_name
 
-    @parent.setter
-    def parent(self, parent):
-        """Sets the parent of this File.
+    @full_name.setter
+    def full_name(self, full_name):
+        """Sets the full_name of this File.
 
 
-        :param parent: The parent of this File.  # noqa: E501
-        :type: file
+        :param full_name: The full_name of this File.  # noqa: E501
+        :type: str
         """
 
-        self._parent = parent
+        self._full_name = full_name
 
     @property
     def size(self):
@@ -241,6 +136,111 @@ class File(TeamCityObject):
         """
 
         self._size = size
+
+    @property
+    def modification_time(self):
+        """Gets the modification_time of this File.  # noqa: E501
+
+
+        :return: The modification_time of this File.  # noqa: E501
+        :rtype: str
+        """
+        return self._modification_time
+
+    @modification_time.setter
+    def modification_time(self, modification_time):
+        """Sets the modification_time of this File.
+
+
+        :param modification_time: The modification_time of this File.  # noqa: E501
+        :type: str
+        """
+
+        self._modification_time = modification_time
+
+    @property
+    def href(self):
+        """Gets the href of this File.  # noqa: E501
+
+
+        :return: The href of this File.  # noqa: E501
+        :rtype: str
+        """
+        return self._href
+
+    @href.setter
+    def href(self, href):
+        """Sets the href of this File.
+
+
+        :param href: The href of this File.  # noqa: E501
+        :type: str
+        """
+
+        self._href = href
+
+    @property
+    def parent(self):
+        """Gets the parent of this File.  # noqa: E501
+
+
+        :return: The parent of this File.  # noqa: E501
+        :rtype: file
+        """
+        return self._parent
+
+    @parent.setter
+    def parent(self, parent):
+        """Sets the parent of this File.
+
+
+        :param parent: The parent of this File.  # noqa: E501
+        :type: file
+        """
+
+        self._parent = parent
+
+    @property
+    def content(self):
+        """Gets the content of this File.  # noqa: E501
+
+
+        :return: The content of this File.  # noqa: E501
+        :rtype: Href
+        """
+        return self._content
+
+    @content.setter
+    def content(self, content):
+        """Sets the content of this File.
+
+
+        :param content: The content of this File.  # noqa: E501
+        :type: Href
+        """
+
+        self._content = content
+
+    @property
+    def children(self):
+        """Gets the children of this File.  # noqa: E501
+
+
+        :return: The children of this File.  # noqa: E501
+        :rtype: Files
+        """
+        return self._children
+
+    @children.setter
+    def children(self, children):
+        """Sets the children of this File.
+
+
+        :param children: The children of this File.  # noqa: E501
+        :type: Files
+        """
+
+        self._children = children
 
 
 file = File

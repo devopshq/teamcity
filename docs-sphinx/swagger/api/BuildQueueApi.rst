@@ -42,6 +42,10 @@ dohq_teamcity.BuildQueueApi
      - **GET** ``/app/rest/buildQueue/{buildLocator}/tags``
    * - :ref:`set_build_queue_order`
      - **PUT** ``/app/rest/buildQueue/order``
+   * - :ref:`set_build_queue_position`
+     - **GET** ``/app/rest/buildQueue/order/{queuePosition}``
+   * - :ref:`set_build_queue_position_0`
+     - **PUT** ``/app/rest/buildQueue/order/{queuePosition}``
 
 .. _add_tags:
 
@@ -629,11 +633,11 @@ set_build_queue_order
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        fields = 'fields_example' # str | 
-    body = dohq_teamcity.Builds() # Builds |  (optional)
+        body = dohq_teamcity.Builds() # Builds |  (optional)
+    fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.build_queue_api.set_build_queue_order(fields, body=body)
+        api_response = tc.build_queue_api.set_build_queue_order(body=body, fields=fields)
        pprint(api_response)
     except ApiException as e:
         print("Exception when calling BuildQueueApi->set_build_queue_order: %s\n" % e)
@@ -648,15 +652,107 @@ set_build_queue_order
      - Types
      - Notes
 
-   * - **fields**
-     - **str**
-     - 
    * - **body**
      - `Builds <../models/Builds.html>`_
+     - [optional] 
+   * - **fields**
+     - **str**
      - [optional] 
 
 Return type:
     `Builds <../models/Builds.html>`_
+
+`Back to top <#>`_
+
+.. _set_build_queue_position:
+
+set_build_queue_position
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        queue_position = 'queue_position_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        api_response = tc.build_queue_api.set_build_queue_position(queue_position, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildQueueApi->set_build_queue_position: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **queue_position**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Build <../models/Build.html>`_
+
+`Back to top <#>`_
+
+.. _set_build_queue_position_0:
+
+set_build_queue_position_0
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        queue_position = 'queue_position_example' # str | 
+    body = dohq_teamcity.Build() # Build |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        api_response = tc.build_queue_api.set_build_queue_position_0(queue_position, body=body, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildQueueApi->set_build_queue_position_0: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **queue_position**
+     - **str**
+     - 
+   * - **body**
+     - `Build <../models/Build.html>`_
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Build <../models/Build.html>`_
 
 `Back to top <#>`_
 

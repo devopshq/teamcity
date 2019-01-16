@@ -17,48 +17,27 @@ class Resolution(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'time': 'str',
-        'type': 'str'
+        'type': 'str',
+        'time': 'str'
     }
 
     attribute_map = {
-        'time': 'time',
-        'type': 'type'
+        'type': 'type',
+        'time': 'time'
     }
 
-    def __init__(self, time=None, type=None, teamcity=None):  # noqa: E501
+    def __init__(self, type=None, time=None, teamcity=None):  # noqa: E501
         """Resolution - a model defined in Swagger"""  # noqa: E501
 
-        self._time = None
         self._type = None
+        self._time = None
         self.discriminator = None
 
-        if time is not None:
-            self.time = time
         if type is not None:
             self.type = type
+        if time is not None:
+            self.time = time
         super(Resolution, self).__init__(teamcity=teamcity)
-
-    @property
-    def time(self):
-        """Gets the time of this Resolution.  # noqa: E501
-
-
-        :return: The time of this Resolution.  # noqa: E501
-        :rtype: str
-        """
-        return self._time
-
-    @time.setter
-    def time(self, time):
-        """Sets the time of this Resolution.
-
-
-        :param time: The time of this Resolution.  # noqa: E501
-        :type: str
-        """
-
-        self._time = time
 
     @property
     def type(self):
@@ -80,3 +59,24 @@ class Resolution(TeamCityObject):
         """
 
         self._type = type
+
+    @property
+    def time(self):
+        """Gets the time of this Resolution.  # noqa: E501
+
+
+        :return: The time of this Resolution.  # noqa: E501
+        :rtype: str
+        """
+        return self._time
+
+    @time.setter
+    def time(self, time):
+        """Sets the time of this Resolution.
+
+
+        :param time: The time of this Resolution.  # noqa: E501
+        :type: str
+        """
+
+        self._time = time

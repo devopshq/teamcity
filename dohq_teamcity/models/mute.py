@@ -23,63 +23,47 @@ class Mute(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'assignment': 'Comment',
         'id': 'int',
-        'resolution': 'Resolution',
+        'href': 'str',
+        'assignment': 'Comment',
         'scope': 'ProblemScope',
-        'target': 'ProblemTarget'
+        'target': 'ProblemTarget',
+        'resolution': 'Resolution'
     }
 
     attribute_map = {
-        'assignment': 'assignment',
         'id': 'id',
-        'resolution': 'resolution',
+        'href': 'href',
+        'assignment': 'assignment',
         'scope': 'scope',
-        'target': 'target'
+        'target': 'target',
+        'resolution': 'resolution'
     }
 
-    def __init__(self, assignment=None, id=None, resolution=None, scope=None, target=None, teamcity=None):  # noqa: E501
+    def __init__(self, id=None, href=None, assignment=None, scope=None, target=None, resolution=None, teamcity=None):  # noqa: E501
         """Mute - a model defined in Swagger"""  # noqa: E501
 
-        self._assignment = None
         self._id = None
-        self._resolution = None
+        self._href = None
+        self._assignment = None
         self._scope = None
         self._target = None
+        self._resolution = None
         self.discriminator = None
 
-        if assignment is not None:
-            self.assignment = assignment
         if id is not None:
             self.id = id
-        if resolution is not None:
-            self.resolution = resolution
+        if href is not None:
+            self.href = href
+        if assignment is not None:
+            self.assignment = assignment
         if scope is not None:
             self.scope = scope
         if target is not None:
             self.target = target
+        if resolution is not None:
+            self.resolution = resolution
         super(Mute, self).__init__(teamcity=teamcity)
-
-    @property
-    def assignment(self):
-        """Gets the assignment of this Mute.  # noqa: E501
-
-
-        :return: The assignment of this Mute.  # noqa: E501
-        :rtype: Comment
-        """
-        return self._assignment
-
-    @assignment.setter
-    def assignment(self, assignment):
-        """Sets the assignment of this Mute.
-
-
-        :param assignment: The assignment of this Mute.  # noqa: E501
-        :type: Comment
-        """
-
-        self._assignment = assignment
 
     @property
     def id(self):
@@ -103,25 +87,46 @@ class Mute(TeamCityObject):
         self._id = id
 
     @property
-    def resolution(self):
-        """Gets the resolution of this Mute.  # noqa: E501
+    def href(self):
+        """Gets the href of this Mute.  # noqa: E501
 
 
-        :return: The resolution of this Mute.  # noqa: E501
-        :rtype: Resolution
+        :return: The href of this Mute.  # noqa: E501
+        :rtype: str
         """
-        return self._resolution
+        return self._href
 
-    @resolution.setter
-    def resolution(self, resolution):
-        """Sets the resolution of this Mute.
+    @href.setter
+    def href(self, href):
+        """Sets the href of this Mute.
 
 
-        :param resolution: The resolution of this Mute.  # noqa: E501
-        :type: Resolution
+        :param href: The href of this Mute.  # noqa: E501
+        :type: str
         """
 
-        self._resolution = resolution
+        self._href = href
+
+    @property
+    def assignment(self):
+        """Gets the assignment of this Mute.  # noqa: E501
+
+
+        :return: The assignment of this Mute.  # noqa: E501
+        :rtype: Comment
+        """
+        return self._assignment
+
+    @assignment.setter
+    def assignment(self, assignment):
+        """Sets the assignment of this Mute.
+
+
+        :param assignment: The assignment of this Mute.  # noqa: E501
+        :type: Comment
+        """
+
+        self._assignment = assignment
 
     @property
     def scope(self):
@@ -164,3 +169,24 @@ class Mute(TeamCityObject):
         """
 
         self._target = target
+
+    @property
+    def resolution(self):
+        """Gets the resolution of this Mute.  # noqa: E501
+
+
+        :return: The resolution of this Mute.  # noqa: E501
+        :rtype: Resolution
+        """
+        return self._resolution
+
+    @resolution.setter
+    def resolution(self, resolution):
+        """Sets the resolution of this Mute.
+
+
+        :param resolution: The resolution of this Mute.  # noqa: E501
+        :type: Resolution
+        """
+
+        self._resolution = resolution

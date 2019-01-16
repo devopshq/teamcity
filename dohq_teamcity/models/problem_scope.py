@@ -22,53 +22,53 @@ class ProblemScope(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'build_type': 'BuildType',
+        'project': 'Project',
         'build_types': 'BuildTypes',
-        'project': 'Project'
+        'build_type': 'BuildType'
     }
 
     attribute_map = {
-        'build_type': 'buildType',
+        'project': 'project',
         'build_types': 'buildTypes',
-        'project': 'project'
+        'build_type': 'buildType'
     }
 
-    def __init__(self, build_type=None, build_types=None, project=None, teamcity=None):  # noqa: E501
+    def __init__(self, project=None, build_types=None, build_type=None, teamcity=None):  # noqa: E501
         """ProblemScope - a model defined in Swagger"""  # noqa: E501
 
-        self._build_type = None
-        self._build_types = None
         self._project = None
+        self._build_types = None
+        self._build_type = None
         self.discriminator = None
 
-        if build_type is not None:
-            self.build_type = build_type
-        if build_types is not None:
-            self.build_types = build_types
         if project is not None:
             self.project = project
+        if build_types is not None:
+            self.build_types = build_types
+        if build_type is not None:
+            self.build_type = build_type
         super(ProblemScope, self).__init__(teamcity=teamcity)
 
     @property
-    def build_type(self):
-        """Gets the build_type of this ProblemScope.  # noqa: E501
+    def project(self):
+        """Gets the project of this ProblemScope.  # noqa: E501
 
 
-        :return: The build_type of this ProblemScope.  # noqa: E501
-        :rtype: BuildType
+        :return: The project of this ProblemScope.  # noqa: E501
+        :rtype: Project
         """
-        return self._build_type
+        return self._project
 
-    @build_type.setter
-    def build_type(self, build_type):
-        """Sets the build_type of this ProblemScope.
+    @project.setter
+    def project(self, project):
+        """Sets the project of this ProblemScope.
 
 
-        :param build_type: The build_type of this ProblemScope.  # noqa: E501
-        :type: BuildType
+        :param project: The project of this ProblemScope.  # noqa: E501
+        :type: Project
         """
 
-        self._build_type = build_type
+        self._project = project
 
     @property
     def build_types(self):
@@ -92,22 +92,22 @@ class ProblemScope(TeamCityObject):
         self._build_types = build_types
 
     @property
-    def project(self):
-        """Gets the project of this ProblemScope.  # noqa: E501
+    def build_type(self):
+        """Gets the build_type of this ProblemScope.  # noqa: E501
 
 
-        :return: The project of this ProblemScope.  # noqa: E501
-        :rtype: Project
+        :return: The build_type of this ProblemScope.  # noqa: E501
+        :rtype: BuildType
         """
-        return self._project
+        return self._build_type
 
-    @project.setter
-    def project(self, project):
-        """Sets the project of this ProblemScope.
+    @build_type.setter
+    def build_type(self, build_type):
+        """Sets the build_type of this ProblemScope.
 
 
-        :param project: The project of this ProblemScope.  # noqa: E501
-        :type: Project
+        :param build_type: The build_type of this ProblemScope.  # noqa: E501
+        :type: BuildType
         """
 
-        self._project = project
+        self._build_type = build_type

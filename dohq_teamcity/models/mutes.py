@@ -21,45 +21,45 @@ class Mutes(TeamCityObject):
     """
     swagger_types = {
         'count': 'int',
+        'next_href': 'str',
+        'prev_href': 'str',
         'default': 'bool',
         'href': 'str',
-        'mute': 'list[Mute]',
-        'next_href': 'str',
-        'prev_href': 'str'
+        'mute': 'list[Mute]'
     }
 
     attribute_map = {
         'count': 'count',
+        'next_href': 'nextHref',
+        'prev_href': 'prevHref',
         'default': 'default',
         'href': 'href',
-        'mute': 'mute',
-        'next_href': 'nextHref',
-        'prev_href': 'prevHref'
+        'mute': 'mute'
     }
 
-    def __init__(self, count=None, default=False, href=None, mute=None, next_href=None, prev_href=None, teamcity=None):  # noqa: E501
+    def __init__(self, count=None, next_href=None, prev_href=None, default=False, href=None, mute=None, teamcity=None):  # noqa: E501
         """Mutes - a model defined in Swagger"""  # noqa: E501
 
         self._count = None
+        self._next_href = None
+        self._prev_href = None
         self._default = None
         self._href = None
         self._mute = None
-        self._next_href = None
-        self._prev_href = None
         self.discriminator = None
 
         if count is not None:
             self.count = count
+        if next_href is not None:
+            self.next_href = next_href
+        if prev_href is not None:
+            self.prev_href = prev_href
         if default is not None:
             self.default = default
         if href is not None:
             self.href = href
         if mute is not None:
             self.mute = mute
-        if next_href is not None:
-            self.next_href = next_href
-        if prev_href is not None:
-            self.prev_href = prev_href
         super(Mutes, self).__init__(teamcity=teamcity)
 
     @property
@@ -82,6 +82,48 @@ class Mutes(TeamCityObject):
         """
 
         self._count = count
+
+    @property
+    def next_href(self):
+        """Gets the next_href of this Mutes.  # noqa: E501
+
+
+        :return: The next_href of this Mutes.  # noqa: E501
+        :rtype: str
+        """
+        return self._next_href
+
+    @next_href.setter
+    def next_href(self, next_href):
+        """Sets the next_href of this Mutes.
+
+
+        :param next_href: The next_href of this Mutes.  # noqa: E501
+        :type: str
+        """
+
+        self._next_href = next_href
+
+    @property
+    def prev_href(self):
+        """Gets the prev_href of this Mutes.  # noqa: E501
+
+
+        :return: The prev_href of this Mutes.  # noqa: E501
+        :rtype: str
+        """
+        return self._prev_href
+
+    @prev_href.setter
+    def prev_href(self, prev_href):
+        """Sets the prev_href of this Mutes.
+
+
+        :param prev_href: The prev_href of this Mutes.  # noqa: E501
+        :type: str
+        """
+
+        self._prev_href = prev_href
 
     @property
     def default(self):
@@ -145,45 +187,3 @@ class Mutes(TeamCityObject):
         """
 
         self._mute = mute
-
-    @property
-    def next_href(self):
-        """Gets the next_href of this Mutes.  # noqa: E501
-
-
-        :return: The next_href of this Mutes.  # noqa: E501
-        :rtype: str
-        """
-        return self._next_href
-
-    @next_href.setter
-    def next_href(self, next_href):
-        """Sets the next_href of this Mutes.
-
-
-        :param next_href: The next_href of this Mutes.  # noqa: E501
-        :type: str
-        """
-
-        self._next_href = next_href
-
-    @property
-    def prev_href(self):
-        """Gets the prev_href of this Mutes.  # noqa: E501
-
-
-        :return: The prev_href of this Mutes.  # noqa: E501
-        :rtype: str
-        """
-        return self._prev_href
-
-    @prev_href.setter
-    def prev_href(self, prev_href):
-        """Sets the prev_href of this Mutes.
-
-
-        :param prev_href: The prev_href of this Mutes.  # noqa: E501
-        :type: str
-        """
-
-        self._prev_href = prev_href

@@ -20,48 +20,27 @@ class Compatibilities(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'compatibility': 'list[Compatibility]',
-        'count': 'int'
+        'count': 'int',
+        'compatibility': 'list[Compatibility]'
     }
 
     attribute_map = {
-        'compatibility': 'compatibility',
-        'count': 'count'
+        'count': 'count',
+        'compatibility': 'compatibility'
     }
 
-    def __init__(self, compatibility=None, count=None, teamcity=None):  # noqa: E501
+    def __init__(self, count=None, compatibility=None, teamcity=None):  # noqa: E501
         """Compatibilities - a model defined in Swagger"""  # noqa: E501
 
-        self._compatibility = None
         self._count = None
+        self._compatibility = None
         self.discriminator = None
 
-        if compatibility is not None:
-            self.compatibility = compatibility
         if count is not None:
             self.count = count
+        if compatibility is not None:
+            self.compatibility = compatibility
         super(Compatibilities, self).__init__(teamcity=teamcity)
-
-    @property
-    def compatibility(self):
-        """Gets the compatibility of this Compatibilities.  # noqa: E501
-
-
-        :return: The compatibility of this Compatibilities.  # noqa: E501
-        :rtype: list[Compatibility]
-        """
-        return self._compatibility
-
-    @compatibility.setter
-    def compatibility(self, compatibility):
-        """Sets the compatibility of this Compatibilities.
-
-
-        :param compatibility: The compatibility of this Compatibilities.  # noqa: E501
-        :type: list[Compatibility]
-        """
-
-        self._compatibility = compatibility
 
     @property
     def count(self):
@@ -83,3 +62,24 @@ class Compatibilities(TeamCityObject):
         """
 
         self._count = count
+
+    @property
+    def compatibility(self):
+        """Gets the compatibility of this Compatibilities.  # noqa: E501
+
+
+        :return: The compatibility of this Compatibilities.  # noqa: E501
+        :rtype: list[Compatibility]
+        """
+        return self._compatibility
+
+    @compatibility.setter
+    def compatibility(self, compatibility):
+        """Sets the compatibility of this Compatibilities.
+
+
+        :param compatibility: The compatibility of this Compatibilities.  # noqa: E501
+        :type: list[Compatibility]
+        """
+
+        self._compatibility = compatibility

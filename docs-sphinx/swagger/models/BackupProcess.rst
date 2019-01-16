@@ -18,23 +18,23 @@ Properties
    * - **brief_info**
      -  `BackupProcessInfo <./BackupProcessInfo.html>`_
      - `optional` 
-   * - **exceptions**
-     -  `list[Exception] <./Exception.html>`_
-     - `optional` 
-   * - **finished**
-     - **bool**
-     - `optional` [default to ``False``]
-   * - **process_id**
-     - **int**
+   * - **progress_info**
+     -  `ProgressInfo <./ProgressInfo.html>`_
      - `optional` 
    * - **process_kind**
      - **str**
      - `optional` 
-   * - **progress_info**
-     -  `ProgressInfo <./ProgressInfo.html>`_
+   * - **exceptions**
+     -  `list[Exception] <./Exception.html>`_
      - `optional` 
    * - **progress_status**
      - **str**
      - `optional` 
+   * - **process_id**
+     - **int**
+     - `optional` 
+   * - **finished**
+     - **bool**
+     - `optional` [default to ``False``]
 
 

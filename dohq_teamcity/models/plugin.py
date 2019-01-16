@@ -20,84 +20,42 @@ class Plugin(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'display_name': 'str',
-        'load_path': 'str',
         'name': 'str',
-        'parameters': 'Properties',
-        'version': 'str'
+        'display_name': 'str',
+        'version': 'str',
+        'load_path': 'str',
+        'parameters': 'Properties'
     }
 
     attribute_map = {
-        'display_name': 'displayName',
-        'load_path': 'loadPath',
         'name': 'name',
-        'parameters': 'parameters',
-        'version': 'version'
+        'display_name': 'displayName',
+        'version': 'version',
+        'load_path': 'loadPath',
+        'parameters': 'parameters'
     }
 
-    def __init__(self, display_name=None, load_path=None, name=None, parameters=None, version=None, teamcity=None):  # noqa: E501
+    def __init__(self, name=None, display_name=None, version=None, load_path=None, parameters=None, teamcity=None):  # noqa: E501
         """Plugin - a model defined in Swagger"""  # noqa: E501
 
-        self._display_name = None
-        self._load_path = None
         self._name = None
-        self._parameters = None
+        self._display_name = None
         self._version = None
+        self._load_path = None
+        self._parameters = None
         self.discriminator = None
 
-        if display_name is not None:
-            self.display_name = display_name
-        if load_path is not None:
-            self.load_path = load_path
         if name is not None:
             self.name = name
-        if parameters is not None:
-            self.parameters = parameters
+        if display_name is not None:
+            self.display_name = display_name
         if version is not None:
             self.version = version
+        if load_path is not None:
+            self.load_path = load_path
+        if parameters is not None:
+            self.parameters = parameters
         super(Plugin, self).__init__(teamcity=teamcity)
-
-    @property
-    def display_name(self):
-        """Gets the display_name of this Plugin.  # noqa: E501
-
-
-        :return: The display_name of this Plugin.  # noqa: E501
-        :rtype: str
-        """
-        return self._display_name
-
-    @display_name.setter
-    def display_name(self, display_name):
-        """Sets the display_name of this Plugin.
-
-
-        :param display_name: The display_name of this Plugin.  # noqa: E501
-        :type: str
-        """
-
-        self._display_name = display_name
-
-    @property
-    def load_path(self):
-        """Gets the load_path of this Plugin.  # noqa: E501
-
-
-        :return: The load_path of this Plugin.  # noqa: E501
-        :rtype: str
-        """
-        return self._load_path
-
-    @load_path.setter
-    def load_path(self, load_path):
-        """Sets the load_path of this Plugin.
-
-
-        :param load_path: The load_path of this Plugin.  # noqa: E501
-        :type: str
-        """
-
-        self._load_path = load_path
 
     @property
     def name(self):
@@ -121,25 +79,25 @@ class Plugin(TeamCityObject):
         self._name = name
 
     @property
-    def parameters(self):
-        """Gets the parameters of this Plugin.  # noqa: E501
+    def display_name(self):
+        """Gets the display_name of this Plugin.  # noqa: E501
 
 
-        :return: The parameters of this Plugin.  # noqa: E501
-        :rtype: Properties
+        :return: The display_name of this Plugin.  # noqa: E501
+        :rtype: str
         """
-        return self._parameters
+        return self._display_name
 
-    @parameters.setter
-    def parameters(self, parameters):
-        """Sets the parameters of this Plugin.
+    @display_name.setter
+    def display_name(self, display_name):
+        """Sets the display_name of this Plugin.
 
 
-        :param parameters: The parameters of this Plugin.  # noqa: E501
-        :type: Properties
+        :param display_name: The display_name of this Plugin.  # noqa: E501
+        :type: str
         """
 
-        self._parameters = parameters
+        self._display_name = display_name
 
     @property
     def version(self):
@@ -161,3 +119,45 @@ class Plugin(TeamCityObject):
         """
 
         self._version = version
+
+    @property
+    def load_path(self):
+        """Gets the load_path of this Plugin.  # noqa: E501
+
+
+        :return: The load_path of this Plugin.  # noqa: E501
+        :rtype: str
+        """
+        return self._load_path
+
+    @load_path.setter
+    def load_path(self, load_path):
+        """Sets the load_path of this Plugin.
+
+
+        :param load_path: The load_path of this Plugin.  # noqa: E501
+        :type: str
+        """
+
+        self._load_path = load_path
+
+    @property
+    def parameters(self):
+        """Gets the parameters of this Plugin.  # noqa: E501
+
+
+        :return: The parameters of this Plugin.  # noqa: E501
+        :rtype: Properties
+        """
+        return self._parameters
+
+    @parameters.setter
+    def parameters(self, parameters):
+        """Sets the parameters of this Plugin.
+
+
+        :param parameters: The parameters of this Plugin.  # noqa: E501
+        :type: Properties
+        """
+
+        self._parameters = parameters

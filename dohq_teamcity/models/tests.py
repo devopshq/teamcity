@@ -21,38 +21,38 @@ class Tests(TeamCityObject):
     """
     swagger_types = {
         'count': 'int',
-        'default': 'bool',
         'next_href': 'str',
         'prev_href': 'str',
+        'default': 'bool',
         'test': 'list[Test]'
     }
 
     attribute_map = {
         'count': 'count',
-        'default': 'default',
         'next_href': 'nextHref',
         'prev_href': 'prevHref',
+        'default': 'default',
         'test': 'test'
     }
 
-    def __init__(self, count=None, default=False, next_href=None, prev_href=None, test=None, teamcity=None):  # noqa: E501
+    def __init__(self, count=None, next_href=None, prev_href=None, default=False, test=None, teamcity=None):  # noqa: E501
         """Tests - a model defined in Swagger"""  # noqa: E501
 
         self._count = None
-        self._default = None
         self._next_href = None
         self._prev_href = None
+        self._default = None
         self._test = None
         self.discriminator = None
 
         if count is not None:
             self.count = count
-        if default is not None:
-            self.default = default
         if next_href is not None:
             self.next_href = next_href
         if prev_href is not None:
             self.prev_href = prev_href
+        if default is not None:
+            self.default = default
         if test is not None:
             self.test = test
         super(Tests, self).__init__(teamcity=teamcity)
@@ -77,27 +77,6 @@ class Tests(TeamCityObject):
         """
 
         self._count = count
-
-    @property
-    def default(self):
-        """Gets the default of this Tests.  # noqa: E501
-
-
-        :return: The default of this Tests.  # noqa: E501
-        :rtype: bool
-        """
-        return self._default
-
-    @default.setter
-    def default(self, default):
-        """Sets the default of this Tests.
-
-
-        :param default: The default of this Tests.  # noqa: E501
-        :type: bool
-        """
-
-        self._default = default
 
     @property
     def next_href(self):
@@ -140,6 +119,27 @@ class Tests(TeamCityObject):
         """
 
         self._prev_href = prev_href
+
+    @property
+    def default(self):
+        """Gets the default of this Tests.  # noqa: E501
+
+
+        :return: The default of this Tests.  # noqa: E501
+        :rtype: bool
+        """
+        return self._default
+
+    @default.setter
+    def default(self, default):
+        """Sets the default of this Tests.
+
+
+        :param default: The default of this Tests.  # noqa: E501
+        :type: bool
+        """
+
+        self._default = default
 
     @property
     def test(self):

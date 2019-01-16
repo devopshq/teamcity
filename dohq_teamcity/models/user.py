@@ -22,229 +22,103 @@ class User(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'email': 'str',
-        'groups': 'Groups',
-        'has_password': 'bool',
-        'href': 'str',
-        'id': 'int',
-        'last_login': 'str',
-        'locator': 'str',
+        'username': 'str',
         'name': 'str',
+        'id': 'int',
+        'email': 'str',
+        'last_login': 'str',
         'password': 'str',
-        'properties': 'Properties',
+        'has_password': 'bool',
         'realm': 'str',
+        'href': 'str',
+        'properties': 'Properties',
         'roles': 'Roles',
-        'username': 'str'
+        'groups': 'Groups',
+        'locator': 'str'
     }
 
     attribute_map = {
-        'email': 'email',
-        'groups': 'groups',
-        'has_password': 'hasPassword',
-        'href': 'href',
-        'id': 'id',
-        'last_login': 'lastLogin',
-        'locator': 'locator',
+        'username': 'username',
         'name': 'name',
+        'id': 'id',
+        'email': 'email',
+        'last_login': 'lastLogin',
         'password': 'password',
-        'properties': 'properties',
+        'has_password': 'hasPassword',
         'realm': 'realm',
+        'href': 'href',
+        'properties': 'properties',
         'roles': 'roles',
-        'username': 'username'
+        'groups': 'groups',
+        'locator': 'locator'
     }
 
-    def __init__(self, email=None, groups=None, has_password=False, href=None, id=None, last_login=None, locator=None, name=None, password=None, properties=None, realm=None, roles=None, username=None, teamcity=None):  # noqa: E501
+    def __init__(self, username=None, name=None, id=None, email=None, last_login=None, password=None, has_password=False, realm=None, href=None, properties=None, roles=None, groups=None, locator=None, teamcity=None):  # noqa: E501
         """User - a model defined in Swagger"""  # noqa: E501
 
-        self._email = None
-        self._groups = None
-        self._has_password = None
-        self._href = None
-        self._id = None
-        self._last_login = None
-        self._locator = None
-        self._name = None
-        self._password = None
-        self._properties = None
-        self._realm = None
-        self._roles = None
         self._username = None
+        self._name = None
+        self._id = None
+        self._email = None
+        self._last_login = None
+        self._password = None
+        self._has_password = None
+        self._realm = None
+        self._href = None
+        self._properties = None
+        self._roles = None
+        self._groups = None
+        self._locator = None
         self.discriminator = None
 
-        if email is not None:
-            self.email = email
-        if groups is not None:
-            self.groups = groups
-        if has_password is not None:
-            self.has_password = has_password
-        if href is not None:
-            self.href = href
-        if id is not None:
-            self.id = id
-        if last_login is not None:
-            self.last_login = last_login
-        if locator is not None:
-            self.locator = locator
-        if name is not None:
-            self.name = name
-        if password is not None:
-            self.password = password
-        if properties is not None:
-            self.properties = properties
-        if realm is not None:
-            self.realm = realm
-        if roles is not None:
-            self.roles = roles
         if username is not None:
             self.username = username
+        if name is not None:
+            self.name = name
+        if id is not None:
+            self.id = id
+        if email is not None:
+            self.email = email
+        if last_login is not None:
+            self.last_login = last_login
+        if password is not None:
+            self.password = password
+        if has_password is not None:
+            self.has_password = has_password
+        if realm is not None:
+            self.realm = realm
+        if href is not None:
+            self.href = href
+        if properties is not None:
+            self.properties = properties
+        if roles is not None:
+            self.roles = roles
+        if groups is not None:
+            self.groups = groups
+        if locator is not None:
+            self.locator = locator
         super(User, self).__init__(teamcity=teamcity)
 
     @property
-    def email(self):
-        """Gets the email of this User.  # noqa: E501
+    def username(self):
+        """Gets the username of this User.  # noqa: E501
 
 
-        :return: The email of this User.  # noqa: E501
+        :return: The username of this User.  # noqa: E501
         :rtype: str
         """
-        return self._email
+        return self._username
 
-    @email.setter
-    def email(self, email):
-        """Sets the email of this User.
+    @username.setter
+    def username(self, username):
+        """Sets the username of this User.
 
 
-        :param email: The email of this User.  # noqa: E501
+        :param username: The username of this User.  # noqa: E501
         :type: str
         """
 
-        self._email = email
-
-    @property
-    def groups(self):
-        """Gets the groups of this User.  # noqa: E501
-
-
-        :return: The groups of this User.  # noqa: E501
-        :rtype: Groups
-        """
-        return self._groups
-
-    @groups.setter
-    def groups(self, groups):
-        """Sets the groups of this User.
-
-
-        :param groups: The groups of this User.  # noqa: E501
-        :type: Groups
-        """
-
-        self._groups = groups
-
-    @property
-    def has_password(self):
-        """Gets the has_password of this User.  # noqa: E501
-
-
-        :return: The has_password of this User.  # noqa: E501
-        :rtype: bool
-        """
-        return self._has_password
-
-    @has_password.setter
-    def has_password(self, has_password):
-        """Sets the has_password of this User.
-
-
-        :param has_password: The has_password of this User.  # noqa: E501
-        :type: bool
-        """
-
-        self._has_password = has_password
-
-    @property
-    def href(self):
-        """Gets the href of this User.  # noqa: E501
-
-
-        :return: The href of this User.  # noqa: E501
-        :rtype: str
-        """
-        return self._href
-
-    @href.setter
-    def href(self, href):
-        """Sets the href of this User.
-
-
-        :param href: The href of this User.  # noqa: E501
-        :type: str
-        """
-
-        self._href = href
-
-    @property
-    def id(self):
-        """Gets the id of this User.  # noqa: E501
-
-
-        :return: The id of this User.  # noqa: E501
-        :rtype: int
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this User.
-
-
-        :param id: The id of this User.  # noqa: E501
-        :type: int
-        """
-
-        self._id = id
-
-    @property
-    def last_login(self):
-        """Gets the last_login of this User.  # noqa: E501
-
-
-        :return: The last_login of this User.  # noqa: E501
-        :rtype: str
-        """
-        return self._last_login
-
-    @last_login.setter
-    def last_login(self, last_login):
-        """Sets the last_login of this User.
-
-
-        :param last_login: The last_login of this User.  # noqa: E501
-        :type: str
-        """
-
-        self._last_login = last_login
-
-    @property
-    def locator(self):
-        """Gets the locator of this User.  # noqa: E501
-
-
-        :return: The locator of this User.  # noqa: E501
-        :rtype: str
-        """
-        return self._locator
-
-    @locator.setter
-    def locator(self, locator):
-        """Sets the locator of this User.
-
-
-        :param locator: The locator of this User.  # noqa: E501
-        :type: str
-        """
-
-        self._locator = locator
+        self._username = username
 
     @property
     def name(self):
@@ -268,6 +142,69 @@ class User(TeamCityObject):
         self._name = name
 
     @property
+    def id(self):
+        """Gets the id of this User.  # noqa: E501
+
+
+        :return: The id of this User.  # noqa: E501
+        :rtype: int
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this User.
+
+
+        :param id: The id of this User.  # noqa: E501
+        :type: int
+        """
+
+        self._id = id
+
+    @property
+    def email(self):
+        """Gets the email of this User.  # noqa: E501
+
+
+        :return: The email of this User.  # noqa: E501
+        :rtype: str
+        """
+        return self._email
+
+    @email.setter
+    def email(self, email):
+        """Sets the email of this User.
+
+
+        :param email: The email of this User.  # noqa: E501
+        :type: str
+        """
+
+        self._email = email
+
+    @property
+    def last_login(self):
+        """Gets the last_login of this User.  # noqa: E501
+
+
+        :return: The last_login of this User.  # noqa: E501
+        :rtype: str
+        """
+        return self._last_login
+
+    @last_login.setter
+    def last_login(self, last_login):
+        """Sets the last_login of this User.
+
+
+        :param last_login: The last_login of this User.  # noqa: E501
+        :type: str
+        """
+
+        self._last_login = last_login
+
+    @property
     def password(self):
         """Gets the password of this User.  # noqa: E501
 
@@ -289,25 +226,25 @@ class User(TeamCityObject):
         self._password = password
 
     @property
-    def properties(self):
-        """Gets the properties of this User.  # noqa: E501
+    def has_password(self):
+        """Gets the has_password of this User.  # noqa: E501
 
 
-        :return: The properties of this User.  # noqa: E501
-        :rtype: Properties
+        :return: The has_password of this User.  # noqa: E501
+        :rtype: bool
         """
-        return self._properties
+        return self._has_password
 
-    @properties.setter
-    def properties(self, properties):
-        """Sets the properties of this User.
+    @has_password.setter
+    def has_password(self, has_password):
+        """Sets the has_password of this User.
 
 
-        :param properties: The properties of this User.  # noqa: E501
-        :type: Properties
+        :param has_password: The has_password of this User.  # noqa: E501
+        :type: bool
         """
 
-        self._properties = properties
+        self._has_password = has_password
 
     @property
     def realm(self):
@@ -331,6 +268,48 @@ class User(TeamCityObject):
         self._realm = realm
 
     @property
+    def href(self):
+        """Gets the href of this User.  # noqa: E501
+
+
+        :return: The href of this User.  # noqa: E501
+        :rtype: str
+        """
+        return self._href
+
+    @href.setter
+    def href(self, href):
+        """Sets the href of this User.
+
+
+        :param href: The href of this User.  # noqa: E501
+        :type: str
+        """
+
+        self._href = href
+
+    @property
+    def properties(self):
+        """Gets the properties of this User.  # noqa: E501
+
+
+        :return: The properties of this User.  # noqa: E501
+        :rtype: Properties
+        """
+        return self._properties
+
+    @properties.setter
+    def properties(self, properties):
+        """Sets the properties of this User.
+
+
+        :param properties: The properties of this User.  # noqa: E501
+        :type: Properties
+        """
+
+        self._properties = properties
+
+    @property
     def roles(self):
         """Gets the roles of this User.  # noqa: E501
 
@@ -352,22 +331,43 @@ class User(TeamCityObject):
         self._roles = roles
 
     @property
-    def username(self):
-        """Gets the username of this User.  # noqa: E501
+    def groups(self):
+        """Gets the groups of this User.  # noqa: E501
 
 
-        :return: The username of this User.  # noqa: E501
+        :return: The groups of this User.  # noqa: E501
+        :rtype: Groups
+        """
+        return self._groups
+
+    @groups.setter
+    def groups(self, groups):
+        """Sets the groups of this User.
+
+
+        :param groups: The groups of this User.  # noqa: E501
+        :type: Groups
+        """
+
+        self._groups = groups
+
+    @property
+    def locator(self):
+        """Gets the locator of this User.  # noqa: E501
+
+
+        :return: The locator of this User.  # noqa: E501
         :rtype: str
         """
-        return self._username
+        return self._locator
 
-    @username.setter
-    def username(self, username):
-        """Sets the username of this User.
+    @locator.setter
+    def locator(self, locator):
+        """Sets the locator of this User.
 
 
-        :param username: The username of this User.  # noqa: E501
+        :param locator: The locator of this User.  # noqa: E501
         :type: str
         """
 
-        self._username = username
+        self._locator = locator

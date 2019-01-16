@@ -15,11 +15,11 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **agent_requirement**
-     -  `list[AgentRequirement] <./AgentRequirement.html>`_
-     - `optional` 
    * - **count**
      - **int**
+     - `optional` 
+   * - **agent_requirement**
+     -  `list[AgentRequirement] <./AgentRequirement.html>`_
      - `optional` 
 
 

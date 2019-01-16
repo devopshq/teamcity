@@ -15,7 +15,7 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **class_name**
+   * - **method_name**
      - **str**
      - `optional` 
    * - **file_name**
@@ -24,7 +24,7 @@ Properties
    * - **line_number**
      - **int**
      - `optional` 
-   * - **method_name**
+   * - **class_name**
      - **str**
      - `optional` 
    * - **native_method**

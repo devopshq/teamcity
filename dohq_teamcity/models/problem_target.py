@@ -22,30 +22,30 @@ class ProblemTarget(TeamCityObject):
     """
     swagger_types = {
         'any_problem': 'bool',
-        'problems': 'Problems',
-        'tests': 'Tests'
+        'tests': 'Tests',
+        'problems': 'Problems'
     }
 
     attribute_map = {
         'any_problem': 'anyProblem',
-        'problems': 'problems',
-        'tests': 'tests'
+        'tests': 'tests',
+        'problems': 'problems'
     }
 
-    def __init__(self, any_problem=False, problems=None, tests=None, teamcity=None):  # noqa: E501
+    def __init__(self, any_problem=False, tests=None, problems=None, teamcity=None):  # noqa: E501
         """ProblemTarget - a model defined in Swagger"""  # noqa: E501
 
         self._any_problem = None
-        self._problems = None
         self._tests = None
+        self._problems = None
         self.discriminator = None
 
         if any_problem is not None:
             self.any_problem = any_problem
-        if problems is not None:
-            self.problems = problems
         if tests is not None:
             self.tests = tests
+        if problems is not None:
+            self.problems = problems
         super(ProblemTarget, self).__init__(teamcity=teamcity)
 
     @property
@@ -70,27 +70,6 @@ class ProblemTarget(TeamCityObject):
         self._any_problem = any_problem
 
     @property
-    def problems(self):
-        """Gets the problems of this ProblemTarget.  # noqa: E501
-
-
-        :return: The problems of this ProblemTarget.  # noqa: E501
-        :rtype: Problems
-        """
-        return self._problems
-
-    @problems.setter
-    def problems(self, problems):
-        """Sets the problems of this ProblemTarget.
-
-
-        :param problems: The problems of this ProblemTarget.  # noqa: E501
-        :type: Problems
-        """
-
-        self._problems = problems
-
-    @property
     def tests(self):
         """Gets the tests of this ProblemTarget.  # noqa: E501
 
@@ -110,3 +89,24 @@ class ProblemTarget(TeamCityObject):
         """
 
         self._tests = tests
+
+    @property
+    def problems(self):
+        """Gets the problems of this ProblemTarget.  # noqa: E501
+
+
+        :return: The problems of this ProblemTarget.  # noqa: E501
+        :rtype: Problems
+        """
+        return self._problems
+
+    @problems.setter
+    def problems(self, problems):
+        """Sets the problems of this ProblemTarget.
+
+
+        :param problems: The problems of this ProblemTarget.  # noqa: E501
+        :type: Problems
+        """
+
+        self._problems = problems

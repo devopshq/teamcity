@@ -15,32 +15,32 @@ Properties
    * - Name
      - Type
      - Notes
+   * - **id**
+     - **str**
+     - `optional` 
+   * - **state**
+     - **str**
+     - `optional` 
+   * - **href**
+     - **str**
+     - `optional` 
    * - **assignee**
      -  `User <./User.html>`_
      - `optional` 
    * - **assignment**
      -  `Comment <./Comment.html>`_
      - `optional` 
-   * - **href**
-     - **str**
+   * - **scope**
+     -  `ProblemScope <./ProblemScope.html>`_
      - `optional` 
-   * - **id**
-     - **str**
+   * - **target**
+     -  `ProblemTarget <./ProblemTarget.html>`_
      - `optional` 
    * - **resolution**
      -  `Resolution <./Resolution.html>`_
      - `optional` 
    * - **responsible**
      -  `User <./User.html>`_
-     - `optional` 
-   * - **scope**
-     -  `ProblemScope <./ProblemScope.html>`_
-     - `optional` 
-   * - **state**
-     - **str**
-     - `optional` 
-   * - **target**
-     -  `ProblemTarget <./ProblemTarget.html>`_
      - `optional` 
 
 

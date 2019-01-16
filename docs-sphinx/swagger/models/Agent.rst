@@ -15,14 +15,14 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **authorized**
-     - **bool**
-     - `optional` [default to ``False``]
-   * - **authorized_info**
-     -  `AuthorizedInfo <./AuthorizedInfo.html>`_
+   * - **id**
+     - **int**
      - `optional` 
-   * - **compatible_build_types**
-     -  `BuildTypes <./BuildTypes.html>`_
+   * - **name**
+     - **str**
+     - `optional` 
+   * - **type_id**
+     - **int**
      - `optional` 
    * - **connected**
      - **bool**
@@ -30,41 +30,62 @@ Properties
    * - **enabled**
      - **bool**
      - `optional` [default to ``False``]
-   * - **enabled_info**
-     -  `EnabledInfo <./EnabledInfo.html>`_
-     - `optional` 
-   * - **href**
-     - **str**
-     - `optional` 
-   * - **id**
-     - **int**
-     - `optional` 
-   * - **incompatible_build_types**
-     -  `Compatibilities <./Compatibilities.html>`_
-     - `optional` 
+   * - **authorized**
+     - **bool**
+     - `optional` [default to ``False``]
+   * - **uptodate**
+     - **bool**
+     - `optional` [default to ``False``]
    * - **ip**
      - **str**
-     - `optional` 
-   * - **locator**
-     - **str**
-     - `optional` 
-   * - **name**
-     - **str**
-     - `optional` 
-   * - **pool**
-     -  `AgentPool <./AgentPool.html>`_
-     - `optional` 
-   * - **properties**
-     -  `Properties <./Properties.html>`_
      - `optional` 
    * - **protocol**
      - **str**
      - `optional` 
-   * - **type_id**
-     - **int**
+   * - **version**
+     - **str**
      - `optional` 
-   * - **uptodate**
-     - **bool**
-     - `optional` [default to ``False``]
+   * - **last_activity_time**
+     - **str**
+     - `optional` 
+   * - **disconnection_comment**
+     - **str**
+     - `optional` 
+   * - **href**
+     - **str**
+     - `optional` 
+   * - **web_url**
+     - **str**
+     - `optional` 
+   * - **build**
+     -  `Build <./Build.html>`_
+     - `optional` 
+   * - **links**
+     -  `Links <./Links.html>`_
+     - `optional` 
+   * - **enabled_info**
+     -  `EnabledInfo <./EnabledInfo.html>`_
+     - `optional` 
+   * - **authorized_info**
+     -  `AuthorizedInfo <./AuthorizedInfo.html>`_
+     - `optional` 
+   * - **properties**
+     -  `Properties <./Properties.html>`_
+     - `optional` 
+   * - **environment**
+     -  `Environment <./Environment.html>`_
+     - `optional` 
+   * - **pool**
+     -  `AgentPool <./AgentPool.html>`_
+     - `optional` 
+   * - **compatible_build_types**
+     -  `BuildTypes <./BuildTypes.html>`_
+     - `optional` 
+   * - **incompatible_build_types**
+     -  `Compatibilities <./Compatibilities.html>`_
+     - `optional` 
+   * - **locator**
+     - **str**
+     - `optional` 
 
 

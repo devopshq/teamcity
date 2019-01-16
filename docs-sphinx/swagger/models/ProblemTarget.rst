@@ -18,11 +18,11 @@ Properties
    * - **any_problem**
      - **bool**
      - `optional` [default to ``False``]
-   * - **problems**
-     -  `Problems <./Problems.html>`_
-     - `optional` 
    * - **tests**
      -  `Tests <./Tests.html>`_
+     - `optional` 
+   * - **problems**
+     -  `Problems <./Problems.html>`_
      - `optional` 
 
 

@@ -15,10 +15,10 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **after_revision**
+   * - **before_revision**
      - **str**
      - `optional` 
-   * - **before_revision**
+   * - **after_revision**
      - **str**
      - `optional` 
    * - **change_type**
@@ -27,14 +27,14 @@ Properties
    * - **change_type_comment**
      - **str**
      - `optional` 
-   * - **directory**
-     - **bool**
-     - `optional` [default to ``False``]
    * - **file**
      - **str**
      - `optional` 
    * - **relative_file**
      - **str**
      - `optional` 
+   * - **directory**
+     - **bool**
+     - `optional` [default to ``False``]
 
 

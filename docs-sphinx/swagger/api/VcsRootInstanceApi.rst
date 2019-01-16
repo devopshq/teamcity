@@ -262,9 +262,10 @@ get_content
 
         path = 'path_example' # str | 
     vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
+    response_builder = 'response_builder_example' # str |  (optional)
 
     try:
-        tc.vcs_root_instance_api.get_content(path, vcs_root_instance_locator)
+        tc.vcs_root_instance_api.get_content(path, vcs_root_instance_locator, response_builder=response_builder)
     except ApiException as e:
         print("Exception when calling VcsRootInstanceApi->get_content: %s\n" % e)
 
@@ -284,6 +285,9 @@ get_content
    * - **vcs_root_instance_locator**
      - **str**
      - 
+   * - **response_builder**
+     - **str**
+     - [optional] 
 
 Return type:
     void (empty response body)
