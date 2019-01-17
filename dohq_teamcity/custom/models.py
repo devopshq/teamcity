@@ -1346,7 +1346,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :return: SnapshotDependency
         """
         return self.api.get_snapshot_dep(
-            snapshot_dep_locator, bt_locator=self, **kwargs)
+            snapshot_dep_locator=snapshot_dep_locator, bt_locator=self, **kwargs)
 
     def get_snapshot_deps(self, **kwargs):
         """
