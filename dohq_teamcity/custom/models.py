@@ -1402,14 +1402,21 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         """
         return self.api.get_steps(bt_locator=self, **kwargs)
 
-    def get_template_association(self, **kwargs):
+    def get_templates(self, **kwargs):
         """
         :param async_req: bool
-        :param str body:
+        :param str fields:
+        :return: BuildTypes
+        """
+        return self.api.get_templates(bt_locator=self, **kwargs)
+
+    def add_template(self, **kwargs):
+        """
+        :param async_req: bool
         :param str fields:
         :return: BuildType
         """
-        return self.api.get_template_association(bt_locator=self, **kwargs)
+        return self.api.add_template(bt_locator=self, **kwargs)
 
     def get_trigger(self, trigger_locator, **kwargs):
         """
@@ -1484,6 +1491,23 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         """
         return self.api.get_zipped(path, bt_locator=self, **kwargs)
 
+    def remove_all_templates(self, **kwargs):
+        """
+        :param async_req: bool
+        :param str fields:
+        :return: BuildType
+        """
+        return self.api.remove_all_templates(bt_locator=self, **kwargs)
+
+    def remove_template(self, template_locator, **kwargs):
+        """
+        :param async_req: bool
+        :param template_locator: str
+        :param str fields:
+        :return: BuildType
+        """
+        return self.api.remove_template(bt_locator=self, template_locator=template_locator,
+                                        **kwargs)
     def replace_agent_requirement(self, agent_requirement_locator, **kwargs):
         """
         :param async_req: bool
@@ -1818,6 +1842,16 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         :return: Properties
         """
         return self.api.set_parameters_0(bt_locator=self, **kwargs)
+
+    def set_templates(self, **kwargs):
+        """
+        :param async_req: bool
+        :param BuildTypes body:
+        :param bool optimize_settings:
+        :param str fields:
+        :return: BuildTypes
+        """
+        return self.api.set_templates(bt_locator=self, **kwargs)
 
     def set_vcs_labeling_options(self, **kwargs):
         """
