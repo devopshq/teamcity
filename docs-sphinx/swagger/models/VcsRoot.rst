@@ -15,44 +15,44 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **href**
-     - **str**
-     - `optional` 
    * - **id**
      - **str**
      - `optional` 
    * - **internal_id**
      - **str**
      - `optional` 
-   * - **locator**
+   * - **uuid**
      - **str**
-     - `optional` 
-   * - **modification_check_interval**
-     - **int**
      - `optional` 
    * - **name**
-     - **str**
-     - `optional` 
-   * - **project**
-     -  `Project <./Project.html>`_
-     - `optional` 
-   * - **project_locator**
-     - **str**
-     - `optional` 
-   * - **properties**
-     -  `Properties <./Properties.html>`_
-     - `optional` 
-   * - **repository_id_strings**
-     -  `Items <./Items.html>`_
-     - `optional` 
-   * - **uuid**
      - **str**
      - `optional` 
    * - **vcs_name**
      - **str**
      - `optional` 
+   * - **modification_check_interval**
+     - **int**
+     - `optional` 
+   * - **href**
+     - **str**
+     - `optional` 
+   * - **project**
+     -  `Project <./Project.html>`_
+     - `optional` 
+   * - **properties**
+     -  `Properties <./Properties.html>`_
+     - `optional` 
    * - **vcs_root_instances**
      -  `VcsRootInstances <./VcsRootInstances.html>`_
+     - `optional` 
+   * - **repository_id_strings**
+     -  `Items <./Items.html>`_
+     - `optional` 
+   * - **project_locator**
+     - **str**
+     - `optional` 
+   * - **locator**
+     - **str**
      - `optional` 
 
 

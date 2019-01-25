@@ -15,50 +15,50 @@ Properties
    * - Name
      - Type
      - Notes
+   * - **valid**
+     - **bool**
+     - `optional` [default to ``False``]
    * - **active**
      - **bool**
      - `optional` [default to ``False``]
-   * - **agents**
-     - **int**
-     - `optional` 
-   * - **build_types**
-     - **int**
-     - `optional` 
-   * - **error_details**
-     - **str**
-     - `optional` 
-   * - **expiration_date**
-     - **str**
-     - `optional` 
    * - **expired**
      - **bool**
      - `optional` [default to ``False``]
-   * - **key**
+   * - **obsolete**
+     - **bool**
+     - `optional` [default to ``False``]
+   * - **expiration_date**
      - **str**
      - `optional` 
    * - **maintenance_end_date**
      - **str**
      - `optional` 
-   * - **obsolete**
-     - **bool**
-     - `optional` [default to ``False``]
-   * - **raw_type**
+   * - **type**
      - **str**
      - `optional` 
    * - **servers**
      - **int**
      - `optional` 
-   * - **type**
-     - **str**
+   * - **agents**
+     - **int**
      - `optional` 
    * - **unlimited_agents**
      - **bool**
      - `optional` [default to ``False``]
+   * - **build_types**
+     - **int**
+     - `optional` 
    * - **unlimited_build_types**
      - **bool**
      - `optional` [default to ``False``]
-   * - **valid**
-     - **bool**
-     - `optional` [default to ``False``]
+   * - **error_details**
+     - **str**
+     - `optional` 
+   * - **key**
+     - **str**
+     - `optional` 
+   * - **raw_type**
+     - **str**
+     - `optional` 
 
 

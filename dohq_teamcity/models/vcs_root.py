@@ -23,103 +23,82 @@ class VcsRoot(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'href': 'str',
         'id': 'str',
         'internal_id': 'str',
-        'locator': 'str',
-        'modification_check_interval': 'int',
-        'name': 'str',
-        'project': 'Project',
-        'project_locator': 'str',
-        'properties': 'Properties',
-        'repository_id_strings': 'Items',
         'uuid': 'str',
+        'name': 'str',
         'vcs_name': 'str',
-        'vcs_root_instances': 'VcsRootInstances'
+        'modification_check_interval': 'int',
+        'href': 'str',
+        'project': 'Project',
+        'properties': 'Properties',
+        'vcs_root_instances': 'VcsRootInstances',
+        'repository_id_strings': 'Items',
+        'project_locator': 'str',
+        'locator': 'str'
     }
 
     attribute_map = {
-        'href': 'href',
         'id': 'id',
         'internal_id': 'internalId',
-        'locator': 'locator',
-        'modification_check_interval': 'modificationCheckInterval',
-        'name': 'name',
-        'project': 'project',
-        'project_locator': 'projectLocator',
-        'properties': 'properties',
-        'repository_id_strings': 'repositoryIdStrings',
         'uuid': 'uuid',
+        'name': 'name',
         'vcs_name': 'vcsName',
-        'vcs_root_instances': 'vcsRootInstances'
+        'modification_check_interval': 'modificationCheckInterval',
+        'href': 'href',
+        'project': 'project',
+        'properties': 'properties',
+        'vcs_root_instances': 'vcsRootInstances',
+        'repository_id_strings': 'repositoryIdStrings',
+        'project_locator': 'projectLocator',
+        'locator': 'locator'
     }
 
-    def __init__(self, href=None, id=None, internal_id=None, locator=None, modification_check_interval=None, name=None, project=None, project_locator=None, properties=None, repository_id_strings=None, uuid=None, vcs_name=None, vcs_root_instances=None, teamcity=None):  # noqa: E501
+    def __init__(self, id=None, internal_id=None, uuid=None, name=None, vcs_name=None, modification_check_interval=None, href=None, project=None, properties=None, vcs_root_instances=None, repository_id_strings=None, project_locator=None, locator=None, teamcity=None):  # noqa: E501
         """VcsRoot - a model defined in Swagger"""  # noqa: E501
 
-        self._href = None
         self._id = None
         self._internal_id = None
-        self._locator = None
-        self._modification_check_interval = None
-        self._name = None
-        self._project = None
-        self._project_locator = None
-        self._properties = None
-        self._repository_id_strings = None
         self._uuid = None
+        self._name = None
         self._vcs_name = None
+        self._modification_check_interval = None
+        self._href = None
+        self._project = None
+        self._properties = None
         self._vcs_root_instances = None
+        self._repository_id_strings = None
+        self._project_locator = None
+        self._locator = None
         self.discriminator = None
 
-        if href is not None:
-            self.href = href
         if id is not None:
             self.id = id
         if internal_id is not None:
             self.internal_id = internal_id
-        if locator is not None:
-            self.locator = locator
-        if modification_check_interval is not None:
-            self.modification_check_interval = modification_check_interval
-        if name is not None:
-            self.name = name
-        if project is not None:
-            self.project = project
-        if project_locator is not None:
-            self.project_locator = project_locator
-        if properties is not None:
-            self.properties = properties
-        if repository_id_strings is not None:
-            self.repository_id_strings = repository_id_strings
         if uuid is not None:
             self.uuid = uuid
+        if name is not None:
+            self.name = name
         if vcs_name is not None:
             self.vcs_name = vcs_name
+        if modification_check_interval is not None:
+            self.modification_check_interval = modification_check_interval
+        if href is not None:
+            self.href = href
+        if project is not None:
+            self.project = project
+        if properties is not None:
+            self.properties = properties
         if vcs_root_instances is not None:
             self.vcs_root_instances = vcs_root_instances
+        if repository_id_strings is not None:
+            self.repository_id_strings = repository_id_strings
+        if project_locator is not None:
+            self.project_locator = project_locator
+        if locator is not None:
+            self.locator = locator
         super(VcsRoot, self).__init__(teamcity=teamcity)
-
-    @property
-    def href(self):
-        """Gets the href of this VcsRoot.  # noqa: E501
-
-
-        :return: The href of this VcsRoot.  # noqa: E501
-        :rtype: str
-        """
-        return self._href
-
-    @href.setter
-    def href(self, href):
-        """Sets the href of this VcsRoot.
-
-
-        :param href: The href of this VcsRoot.  # noqa: E501
-        :type: str
-        """
-
-        self._href = href
 
     @property
     def id(self):
@@ -164,46 +143,25 @@ class VcsRoot(TeamCityObject):
         self._internal_id = internal_id
 
     @property
-    def locator(self):
-        """Gets the locator of this VcsRoot.  # noqa: E501
+    def uuid(self):
+        """Gets the uuid of this VcsRoot.  # noqa: E501
 
 
-        :return: The locator of this VcsRoot.  # noqa: E501
+        :return: The uuid of this VcsRoot.  # noqa: E501
         :rtype: str
         """
-        return self._locator
+        return self._uuid
 
-    @locator.setter
-    def locator(self, locator):
-        """Sets the locator of this VcsRoot.
+    @uuid.setter
+    def uuid(self, uuid):
+        """Sets the uuid of this VcsRoot.
 
 
-        :param locator: The locator of this VcsRoot.  # noqa: E501
+        :param uuid: The uuid of this VcsRoot.  # noqa: E501
         :type: str
         """
 
-        self._locator = locator
-
-    @property
-    def modification_check_interval(self):
-        """Gets the modification_check_interval of this VcsRoot.  # noqa: E501
-
-
-        :return: The modification_check_interval of this VcsRoot.  # noqa: E501
-        :rtype: int
-        """
-        return self._modification_check_interval
-
-    @modification_check_interval.setter
-    def modification_check_interval(self, modification_check_interval):
-        """Sets the modification_check_interval of this VcsRoot.
-
-
-        :param modification_check_interval: The modification_check_interval of this VcsRoot.  # noqa: E501
-        :type: int
-        """
-
-        self._modification_check_interval = modification_check_interval
+        self._uuid = uuid
 
     @property
     def name(self):
@@ -227,6 +185,69 @@ class VcsRoot(TeamCityObject):
         self._name = name
 
     @property
+    def vcs_name(self):
+        """Gets the vcs_name of this VcsRoot.  # noqa: E501
+
+
+        :return: The vcs_name of this VcsRoot.  # noqa: E501
+        :rtype: str
+        """
+        return self._vcs_name
+
+    @vcs_name.setter
+    def vcs_name(self, vcs_name):
+        """Sets the vcs_name of this VcsRoot.
+
+
+        :param vcs_name: The vcs_name of this VcsRoot.  # noqa: E501
+        :type: str
+        """
+
+        self._vcs_name = vcs_name
+
+    @property
+    def modification_check_interval(self):
+        """Gets the modification_check_interval of this VcsRoot.  # noqa: E501
+
+
+        :return: The modification_check_interval of this VcsRoot.  # noqa: E501
+        :rtype: int
+        """
+        return self._modification_check_interval
+
+    @modification_check_interval.setter
+    def modification_check_interval(self, modification_check_interval):
+        """Sets the modification_check_interval of this VcsRoot.
+
+
+        :param modification_check_interval: The modification_check_interval of this VcsRoot.  # noqa: E501
+        :type: int
+        """
+
+        self._modification_check_interval = modification_check_interval
+
+    @property
+    def href(self):
+        """Gets the href of this VcsRoot.  # noqa: E501
+
+
+        :return: The href of this VcsRoot.  # noqa: E501
+        :rtype: str
+        """
+        return self._href
+
+    @href.setter
+    def href(self, href):
+        """Sets the href of this VcsRoot.
+
+
+        :param href: The href of this VcsRoot.  # noqa: E501
+        :type: str
+        """
+
+        self._href = href
+
+    @property
     def project(self):
         """Gets the project of this VcsRoot.  # noqa: E501
 
@@ -246,27 +267,6 @@ class VcsRoot(TeamCityObject):
         """
 
         self._project = project
-
-    @property
-    def project_locator(self):
-        """Gets the project_locator of this VcsRoot.  # noqa: E501
-
-
-        :return: The project_locator of this VcsRoot.  # noqa: E501
-        :rtype: str
-        """
-        return self._project_locator
-
-    @project_locator.setter
-    def project_locator(self, project_locator):
-        """Sets the project_locator of this VcsRoot.
-
-
-        :param project_locator: The project_locator of this VcsRoot.  # noqa: E501
-        :type: str
-        """
-
-        self._project_locator = project_locator
 
     @property
     def properties(self):
@@ -290,6 +290,27 @@ class VcsRoot(TeamCityObject):
         self._properties = properties
 
     @property
+    def vcs_root_instances(self):
+        """Gets the vcs_root_instances of this VcsRoot.  # noqa: E501
+
+
+        :return: The vcs_root_instances of this VcsRoot.  # noqa: E501
+        :rtype: VcsRootInstances
+        """
+        return self._vcs_root_instances
+
+    @vcs_root_instances.setter
+    def vcs_root_instances(self, vcs_root_instances):
+        """Sets the vcs_root_instances of this VcsRoot.
+
+
+        :param vcs_root_instances: The vcs_root_instances of this VcsRoot.  # noqa: E501
+        :type: VcsRootInstances
+        """
+
+        self._vcs_root_instances = vcs_root_instances
+
+    @property
     def repository_id_strings(self):
         """Gets the repository_id_strings of this VcsRoot.  # noqa: E501
 
@@ -311,64 +332,43 @@ class VcsRoot(TeamCityObject):
         self._repository_id_strings = repository_id_strings
 
     @property
-    def uuid(self):
-        """Gets the uuid of this VcsRoot.  # noqa: E501
+    def project_locator(self):
+        """Gets the project_locator of this VcsRoot.  # noqa: E501
 
 
-        :return: The uuid of this VcsRoot.  # noqa: E501
+        :return: The project_locator of this VcsRoot.  # noqa: E501
         :rtype: str
         """
-        return self._uuid
+        return self._project_locator
 
-    @uuid.setter
-    def uuid(self, uuid):
-        """Sets the uuid of this VcsRoot.
+    @project_locator.setter
+    def project_locator(self, project_locator):
+        """Sets the project_locator of this VcsRoot.
 
 
-        :param uuid: The uuid of this VcsRoot.  # noqa: E501
+        :param project_locator: The project_locator of this VcsRoot.  # noqa: E501
         :type: str
         """
 
-        self._uuid = uuid
+        self._project_locator = project_locator
 
     @property
-    def vcs_name(self):
-        """Gets the vcs_name of this VcsRoot.  # noqa: E501
+    def locator(self):
+        """Gets the locator of this VcsRoot.  # noqa: E501
 
 
-        :return: The vcs_name of this VcsRoot.  # noqa: E501
+        :return: The locator of this VcsRoot.  # noqa: E501
         :rtype: str
         """
-        return self._vcs_name
+        return self._locator
 
-    @vcs_name.setter
-    def vcs_name(self, vcs_name):
-        """Sets the vcs_name of this VcsRoot.
+    @locator.setter
+    def locator(self, locator):
+        """Sets the locator of this VcsRoot.
 
 
-        :param vcs_name: The vcs_name of this VcsRoot.  # noqa: E501
+        :param locator: The locator of this VcsRoot.  # noqa: E501
         :type: str
         """
 
-        self._vcs_name = vcs_name
-
-    @property
-    def vcs_root_instances(self):
-        """Gets the vcs_root_instances of this VcsRoot.  # noqa: E501
-
-
-        :return: The vcs_root_instances of this VcsRoot.  # noqa: E501
-        :rtype: VcsRootInstances
-        """
-        return self._vcs_root_instances
-
-    @vcs_root_instances.setter
-    def vcs_root_instances(self, vcs_root_instances):
-        """Sets the vcs_root_instances of this VcsRoot.
-
-
-        :param vcs_root_instances: The vcs_root_instances of this VcsRoot.  # noqa: E501
-        :type: VcsRootInstances
-        """
-
-        self._vcs_root_instances = vcs_root_instances
+        self._locator = locator

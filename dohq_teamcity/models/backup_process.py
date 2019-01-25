@@ -23,50 +23,50 @@ class BackupProcess(TeamCityObject):
     """
     swagger_types = {
         'brief_info': 'BackupProcessInfo',
-        'exceptions': 'list[Exception]',
-        'finished': 'bool',
-        'process_id': 'int',
-        'process_kind': 'str',
         'progress_info': 'ProgressInfo',
-        'progress_status': 'str'
+        'process_kind': 'str',
+        'exceptions': 'list[Exception]',
+        'progress_status': 'str',
+        'process_id': 'int',
+        'finished': 'bool'
     }
 
     attribute_map = {
         'brief_info': 'briefInfo',
-        'exceptions': 'exceptions',
-        'finished': 'finished',
-        'process_id': 'processId',
-        'process_kind': 'processKind',
         'progress_info': 'progressInfo',
-        'progress_status': 'progressStatus'
+        'process_kind': 'processKind',
+        'exceptions': 'exceptions',
+        'progress_status': 'progressStatus',
+        'process_id': 'processId',
+        'finished': 'finished'
     }
 
-    def __init__(self, brief_info=None, exceptions=None, finished=False, process_id=None, process_kind=None, progress_info=None, progress_status=None, teamcity=None):  # noqa: E501
+    def __init__(self, brief_info=None, progress_info=None, process_kind=None, exceptions=None, progress_status=None, process_id=None, finished=False, teamcity=None):  # noqa: E501
         """BackupProcess - a model defined in Swagger"""  # noqa: E501
 
         self._brief_info = None
-        self._exceptions = None
-        self._finished = None
-        self._process_id = None
-        self._process_kind = None
         self._progress_info = None
+        self._process_kind = None
+        self._exceptions = None
         self._progress_status = None
+        self._process_id = None
+        self._finished = None
         self.discriminator = None
 
         if brief_info is not None:
             self.brief_info = brief_info
-        if exceptions is not None:
-            self.exceptions = exceptions
-        if finished is not None:
-            self.finished = finished
-        if process_id is not None:
-            self.process_id = process_id
-        if process_kind is not None:
-            self.process_kind = process_kind
         if progress_info is not None:
             self.progress_info = progress_info
+        if process_kind is not None:
+            self.process_kind = process_kind
+        if exceptions is not None:
+            self.exceptions = exceptions
         if progress_status is not None:
             self.progress_status = progress_status
+        if process_id is not None:
+            self.process_id = process_id
+        if finished is not None:
+            self.finished = finished
         super(BackupProcess, self).__init__(teamcity=teamcity)
 
     @property
@@ -91,67 +91,25 @@ class BackupProcess(TeamCityObject):
         self._brief_info = brief_info
 
     @property
-    def exceptions(self):
-        """Gets the exceptions of this BackupProcess.  # noqa: E501
+    def progress_info(self):
+        """Gets the progress_info of this BackupProcess.  # noqa: E501
 
 
-        :return: The exceptions of this BackupProcess.  # noqa: E501
-        :rtype: list[Exception]
+        :return: The progress_info of this BackupProcess.  # noqa: E501
+        :rtype: ProgressInfo
         """
-        return self._exceptions
+        return self._progress_info
 
-    @exceptions.setter
-    def exceptions(self, exceptions):
-        """Sets the exceptions of this BackupProcess.
-
-
-        :param exceptions: The exceptions of this BackupProcess.  # noqa: E501
-        :type: list[Exception]
-        """
-
-        self._exceptions = exceptions
-
-    @property
-    def finished(self):
-        """Gets the finished of this BackupProcess.  # noqa: E501
+    @progress_info.setter
+    def progress_info(self, progress_info):
+        """Sets the progress_info of this BackupProcess.
 
 
-        :return: The finished of this BackupProcess.  # noqa: E501
-        :rtype: bool
-        """
-        return self._finished
-
-    @finished.setter
-    def finished(self, finished):
-        """Sets the finished of this BackupProcess.
-
-
-        :param finished: The finished of this BackupProcess.  # noqa: E501
-        :type: bool
+        :param progress_info: The progress_info of this BackupProcess.  # noqa: E501
+        :type: ProgressInfo
         """
 
-        self._finished = finished
-
-    @property
-    def process_id(self):
-        """Gets the process_id of this BackupProcess.  # noqa: E501
-
-
-        :return: The process_id of this BackupProcess.  # noqa: E501
-        :rtype: int
-        """
-        return self._process_id
-
-    @process_id.setter
-    def process_id(self, process_id):
-        """Sets the process_id of this BackupProcess.
-
-
-        :param process_id: The process_id of this BackupProcess.  # noqa: E501
-        :type: int
-        """
-
-        self._process_id = process_id
+        self._progress_info = progress_info
 
     @property
     def process_kind(self):
@@ -181,25 +139,25 @@ class BackupProcess(TeamCityObject):
         self._process_kind = process_kind
 
     @property
-    def progress_info(self):
-        """Gets the progress_info of this BackupProcess.  # noqa: E501
+    def exceptions(self):
+        """Gets the exceptions of this BackupProcess.  # noqa: E501
 
 
-        :return: The progress_info of this BackupProcess.  # noqa: E501
-        :rtype: ProgressInfo
+        :return: The exceptions of this BackupProcess.  # noqa: E501
+        :rtype: list[Exception]
         """
-        return self._progress_info
+        return self._exceptions
 
-    @progress_info.setter
-    def progress_info(self, progress_info):
-        """Sets the progress_info of this BackupProcess.
+    @exceptions.setter
+    def exceptions(self, exceptions):
+        """Sets the exceptions of this BackupProcess.
 
 
-        :param progress_info: The progress_info of this BackupProcess.  # noqa: E501
-        :type: ProgressInfo
+        :param exceptions: The exceptions of this BackupProcess.  # noqa: E501
+        :type: list[Exception]
         """
 
-        self._progress_info = progress_info
+        self._exceptions = exceptions
 
     @property
     def progress_status(self):
@@ -227,3 +185,45 @@ class BackupProcess(TeamCityObject):
             )
 
         self._progress_status = progress_status
+
+    @property
+    def process_id(self):
+        """Gets the process_id of this BackupProcess.  # noqa: E501
+
+
+        :return: The process_id of this BackupProcess.  # noqa: E501
+        :rtype: int
+        """
+        return self._process_id
+
+    @process_id.setter
+    def process_id(self, process_id):
+        """Sets the process_id of this BackupProcess.
+
+
+        :param process_id: The process_id of this BackupProcess.  # noqa: E501
+        :type: int
+        """
+
+        self._process_id = process_id
+
+    @property
+    def finished(self):
+        """Gets the finished of this BackupProcess.  # noqa: E501
+
+
+        :return: The finished of this BackupProcess.  # noqa: E501
+        :rtype: bool
+        """
+        return self._finished
+
+    @finished.setter
+    def finished(self, finished):
+        """Sets the finished of this BackupProcess.
+
+
+        :param finished: The finished of this BackupProcess.  # noqa: E501
+        :type: bool
+        """
+
+        self._finished = finished

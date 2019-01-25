@@ -15,9 +15,6 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **agent_pool**
-     -  `list[AgentPool] <./AgentPool.html>`_
-     - `optional` 
    * - **count**
      - **int**
      - `optional` 
@@ -29,6 +26,9 @@ Properties
      - `optional` 
    * - **prev_href**
      - **str**
+     - `optional` 
+   * - **agent_pool**
+     -  `list[AgentPool] <./AgentPool.html>`_
      - `optional` 
 
 

@@ -23,125 +23,62 @@ class Group(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'child_groups': 'Groups',
-        'description': 'str',
-        'href': 'str',
         'key': 'str',
         'name': 'str',
+        'href': 'str',
+        'description': 'str',
         'parent_groups': 'Groups',
-        'properties': 'Properties',
+        'child_groups': 'Groups',
+        'users': 'Users',
         'roles': 'Roles',
-        'users': 'Users'
+        'properties': 'Properties'
     }
 
     attribute_map = {
-        'child_groups': 'child-groups',
-        'description': 'description',
-        'href': 'href',
         'key': 'key',
         'name': 'name',
+        'href': 'href',
+        'description': 'description',
         'parent_groups': 'parent-groups',
-        'properties': 'properties',
+        'child_groups': 'child-groups',
+        'users': 'users',
         'roles': 'roles',
-        'users': 'users'
+        'properties': 'properties'
     }
 
-    def __init__(self, child_groups=None, description=None, href=None, key=None, name=None, parent_groups=None, properties=None, roles=None, users=None, teamcity=None):  # noqa: E501
+    def __init__(self, key=None, name=None, href=None, description=None, parent_groups=None, child_groups=None, users=None, roles=None, properties=None, teamcity=None):  # noqa: E501
         """Group - a model defined in Swagger"""  # noqa: E501
 
-        self._child_groups = None
-        self._description = None
-        self._href = None
         self._key = None
         self._name = None
+        self._href = None
+        self._description = None
         self._parent_groups = None
-        self._properties = None
-        self._roles = None
+        self._child_groups = None
         self._users = None
+        self._roles = None
+        self._properties = None
         self.discriminator = None
 
-        if child_groups is not None:
-            self.child_groups = child_groups
-        if description is not None:
-            self.description = description
-        if href is not None:
-            self.href = href
         if key is not None:
             self.key = key
         if name is not None:
             self.name = name
+        if href is not None:
+            self.href = href
+        if description is not None:
+            self.description = description
         if parent_groups is not None:
             self.parent_groups = parent_groups
-        if properties is not None:
-            self.properties = properties
-        if roles is not None:
-            self.roles = roles
+        if child_groups is not None:
+            self.child_groups = child_groups
         if users is not None:
             self.users = users
+        if roles is not None:
+            self.roles = roles
+        if properties is not None:
+            self.properties = properties
         super(Group, self).__init__(teamcity=teamcity)
-
-    @property
-    def child_groups(self):
-        """Gets the child_groups of this Group.  # noqa: E501
-
-
-        :return: The child_groups of this Group.  # noqa: E501
-        :rtype: Groups
-        """
-        return self._child_groups
-
-    @child_groups.setter
-    def child_groups(self, child_groups):
-        """Sets the child_groups of this Group.
-
-
-        :param child_groups: The child_groups of this Group.  # noqa: E501
-        :type: Groups
-        """
-
-        self._child_groups = child_groups
-
-    @property
-    def description(self):
-        """Gets the description of this Group.  # noqa: E501
-
-
-        :return: The description of this Group.  # noqa: E501
-        :rtype: str
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this Group.
-
-
-        :param description: The description of this Group.  # noqa: E501
-        :type: str
-        """
-
-        self._description = description
-
-    @property
-    def href(self):
-        """Gets the href of this Group.  # noqa: E501
-
-
-        :return: The href of this Group.  # noqa: E501
-        :rtype: str
-        """
-        return self._href
-
-    @href.setter
-    def href(self, href):
-        """Sets the href of this Group.
-
-
-        :param href: The href of this Group.  # noqa: E501
-        :type: str
-        """
-
-        self._href = href
 
     @property
     def key(self):
@@ -186,6 +123,48 @@ class Group(TeamCityObject):
         self._name = name
 
     @property
+    def href(self):
+        """Gets the href of this Group.  # noqa: E501
+
+
+        :return: The href of this Group.  # noqa: E501
+        :rtype: str
+        """
+        return self._href
+
+    @href.setter
+    def href(self, href):
+        """Sets the href of this Group.
+
+
+        :param href: The href of this Group.  # noqa: E501
+        :type: str
+        """
+
+        self._href = href
+
+    @property
+    def description(self):
+        """Gets the description of this Group.  # noqa: E501
+
+
+        :return: The description of this Group.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this Group.
+
+
+        :param description: The description of this Group.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
+
+    @property
     def parent_groups(self):
         """Gets the parent_groups of this Group.  # noqa: E501
 
@@ -207,25 +186,46 @@ class Group(TeamCityObject):
         self._parent_groups = parent_groups
 
     @property
-    def properties(self):
-        """Gets the properties of this Group.  # noqa: E501
+    def child_groups(self):
+        """Gets the child_groups of this Group.  # noqa: E501
 
 
-        :return: The properties of this Group.  # noqa: E501
-        :rtype: Properties
+        :return: The child_groups of this Group.  # noqa: E501
+        :rtype: Groups
         """
-        return self._properties
+        return self._child_groups
 
-    @properties.setter
-    def properties(self, properties):
-        """Sets the properties of this Group.
+    @child_groups.setter
+    def child_groups(self, child_groups):
+        """Sets the child_groups of this Group.
 
 
-        :param properties: The properties of this Group.  # noqa: E501
-        :type: Properties
+        :param child_groups: The child_groups of this Group.  # noqa: E501
+        :type: Groups
         """
 
-        self._properties = properties
+        self._child_groups = child_groups
+
+    @property
+    def users(self):
+        """Gets the users of this Group.  # noqa: E501
+
+
+        :return: The users of this Group.  # noqa: E501
+        :rtype: Users
+        """
+        return self._users
+
+    @users.setter
+    def users(self, users):
+        """Sets the users of this Group.
+
+
+        :param users: The users of this Group.  # noqa: E501
+        :type: Users
+        """
+
+        self._users = users
 
     @property
     def roles(self):
@@ -249,22 +249,22 @@ class Group(TeamCityObject):
         self._roles = roles
 
     @property
-    def users(self):
-        """Gets the users of this Group.  # noqa: E501
+    def properties(self):
+        """Gets the properties of this Group.  # noqa: E501
 
 
-        :return: The users of this Group.  # noqa: E501
-        :rtype: Users
+        :return: The properties of this Group.  # noqa: E501
+        :rtype: Properties
         """
-        return self._users
+        return self._properties
 
-    @users.setter
-    def users(self, users):
-        """Sets the users of this Group.
+    @properties.setter
+    def properties(self, properties):
+        """Sets the properties of this Group.
 
 
-        :param users: The users of this Group.  # noqa: E501
-        :type: Users
+        :param properties: The properties of this Group.  # noqa: E501
+        :type: Properties
         """
 
-        self._users = users
+        self._properties = properties

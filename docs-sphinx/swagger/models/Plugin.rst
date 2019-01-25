@@ -15,20 +15,20 @@ Properties
    * - Name
      - Type
      - Notes
+   * - **name**
+     - **str**
+     - `optional` 
    * - **display_name**
+     - **str**
+     - `optional` 
+   * - **version**
      - **str**
      - `optional` 
    * - **load_path**
      - **str**
      - `optional` 
-   * - **name**
-     - **str**
-     - `optional` 
    * - **parameters**
      -  `Properties <./Properties.html>`_
-     - `optional` 
-   * - **version**
-     - **str**
      - `optional` 
 
 

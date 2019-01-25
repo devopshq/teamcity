@@ -20,58 +20,37 @@ class VcsLabeling(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'branch_filter': 'str',
         'label_name': 'str',
         'type': 'str',
+        'branch_filter': 'str',
         'vcs_roots': 'VcsRoots'
     }
 
     attribute_map = {
-        'branch_filter': 'branchFilter',
         'label_name': 'labelName',
         'type': 'type',
+        'branch_filter': 'branchFilter',
         'vcs_roots': 'vcsRoots'
     }
 
-    def __init__(self, branch_filter=None, label_name=None, type=None, vcs_roots=None, teamcity=None):  # noqa: E501
+    def __init__(self, label_name=None, type=None, branch_filter=None, vcs_roots=None, teamcity=None):  # noqa: E501
         """VcsLabeling - a model defined in Swagger"""  # noqa: E501
 
-        self._branch_filter = None
         self._label_name = None
         self._type = None
+        self._branch_filter = None
         self._vcs_roots = None
         self.discriminator = None
 
-        if branch_filter is not None:
-            self.branch_filter = branch_filter
         if label_name is not None:
             self.label_name = label_name
         if type is not None:
             self.type = type
+        if branch_filter is not None:
+            self.branch_filter = branch_filter
         if vcs_roots is not None:
             self.vcs_roots = vcs_roots
         super(VcsLabeling, self).__init__(teamcity=teamcity)
-
-    @property
-    def branch_filter(self):
-        """Gets the branch_filter of this VcsLabeling.  # noqa: E501
-
-
-        :return: The branch_filter of this VcsLabeling.  # noqa: E501
-        :rtype: str
-        """
-        return self._branch_filter
-
-    @branch_filter.setter
-    def branch_filter(self, branch_filter):
-        """Sets the branch_filter of this VcsLabeling.
-
-
-        :param branch_filter: The branch_filter of this VcsLabeling.  # noqa: E501
-        :type: str
-        """
-
-        self._branch_filter = branch_filter
 
     @property
     def label_name(self):
@@ -114,6 +93,27 @@ class VcsLabeling(TeamCityObject):
         """
 
         self._type = type
+
+    @property
+    def branch_filter(self):
+        """Gets the branch_filter of this VcsLabeling.  # noqa: E501
+
+
+        :return: The branch_filter of this VcsLabeling.  # noqa: E501
+        :rtype: str
+        """
+        return self._branch_filter
+
+    @branch_filter.setter
+    def branch_filter(self, branch_filter):
+        """Sets the branch_filter of this VcsLabeling.
+
+
+        :param branch_filter: The branch_filter of this VcsLabeling.  # noqa: E501
+        :type: str
+        """
+
+        self._branch_filter = branch_filter
 
     @property
     def vcs_roots(self):

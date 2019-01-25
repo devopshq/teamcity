@@ -17,73 +17,52 @@ class FileChange(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'after_revision': 'str',
         'before_revision': 'str',
+        'after_revision': 'str',
         'change_type': 'str',
         'change_type_comment': 'str',
-        'directory': 'bool',
         'file': 'str',
-        'relative_file': 'str'
+        'relative_file': 'str',
+        'directory': 'bool'
     }
 
     attribute_map = {
-        'after_revision': 'after-revision',
         'before_revision': 'before-revision',
+        'after_revision': 'after-revision',
         'change_type': 'changeType',
         'change_type_comment': 'changeTypeComment',
-        'directory': 'directory',
         'file': 'file',
-        'relative_file': 'relative-file'
+        'relative_file': 'relative-file',
+        'directory': 'directory'
     }
 
-    def __init__(self, after_revision=None, before_revision=None, change_type=None, change_type_comment=None, directory=False, file=None, relative_file=None, teamcity=None):  # noqa: E501
+    def __init__(self, before_revision=None, after_revision=None, change_type=None, change_type_comment=None, file=None, relative_file=None, directory=False, teamcity=None):  # noqa: E501
         """FileChange - a model defined in Swagger"""  # noqa: E501
 
-        self._after_revision = None
         self._before_revision = None
+        self._after_revision = None
         self._change_type = None
         self._change_type_comment = None
-        self._directory = None
         self._file = None
         self._relative_file = None
+        self._directory = None
         self.discriminator = None
 
-        if after_revision is not None:
-            self.after_revision = after_revision
         if before_revision is not None:
             self.before_revision = before_revision
+        if after_revision is not None:
+            self.after_revision = after_revision
         if change_type is not None:
             self.change_type = change_type
         if change_type_comment is not None:
             self.change_type_comment = change_type_comment
-        if directory is not None:
-            self.directory = directory
         if file is not None:
             self.file = file
         if relative_file is not None:
             self.relative_file = relative_file
+        if directory is not None:
+            self.directory = directory
         super(FileChange, self).__init__(teamcity=teamcity)
-
-    @property
-    def after_revision(self):
-        """Gets the after_revision of this FileChange.  # noqa: E501
-
-
-        :return: The after_revision of this FileChange.  # noqa: E501
-        :rtype: str
-        """
-        return self._after_revision
-
-    @after_revision.setter
-    def after_revision(self, after_revision):
-        """Sets the after_revision of this FileChange.
-
-
-        :param after_revision: The after_revision of this FileChange.  # noqa: E501
-        :type: str
-        """
-
-        self._after_revision = after_revision
 
     @property
     def before_revision(self):
@@ -105,6 +84,27 @@ class FileChange(TeamCityObject):
         """
 
         self._before_revision = before_revision
+
+    @property
+    def after_revision(self):
+        """Gets the after_revision of this FileChange.  # noqa: E501
+
+
+        :return: The after_revision of this FileChange.  # noqa: E501
+        :rtype: str
+        """
+        return self._after_revision
+
+    @after_revision.setter
+    def after_revision(self, after_revision):
+        """Sets the after_revision of this FileChange.
+
+
+        :param after_revision: The after_revision of this FileChange.  # noqa: E501
+        :type: str
+        """
+
+        self._after_revision = after_revision
 
     @property
     def change_type(self):
@@ -149,27 +149,6 @@ class FileChange(TeamCityObject):
         self._change_type_comment = change_type_comment
 
     @property
-    def directory(self):
-        """Gets the directory of this FileChange.  # noqa: E501
-
-
-        :return: The directory of this FileChange.  # noqa: E501
-        :rtype: bool
-        """
-        return self._directory
-
-    @directory.setter
-    def directory(self, directory):
-        """Sets the directory of this FileChange.
-
-
-        :param directory: The directory of this FileChange.  # noqa: E501
-        :type: bool
-        """
-
-        self._directory = directory
-
-    @property
     def file(self):
         """Gets the file of this FileChange.  # noqa: E501
 
@@ -210,3 +189,24 @@ class FileChange(TeamCityObject):
         """
 
         self._relative_file = relative_file
+
+    @property
+    def directory(self):
+        """Gets the directory of this FileChange.  # noqa: E501
+
+
+        :return: The directory of this FileChange.  # noqa: E501
+        :rtype: bool
+        """
+        return self._directory
+
+    @directory.setter
+    def directory(self, directory):
+        """Sets the directory of this FileChange.
+
+
+        :param directory: The directory of this FileChange.  # noqa: E501
+        :type: bool
+        """
+
+        self._directory = directory

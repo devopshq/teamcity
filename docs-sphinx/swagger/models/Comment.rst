@@ -15,10 +15,10 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **text**
+   * - **timestamp**
      - **str**
      - `optional` 
-   * - **timestamp**
+   * - **text**
      - **str**
      - `optional` 
    * - **user**

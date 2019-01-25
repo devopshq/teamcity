@@ -15,26 +15,26 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **agents**
-     -  `Agents <./Agents.html>`_
-     - `optional` 
-   * - **href**
-     - **str**
-     - `optional` 
    * - **id**
-     - **int**
-     - `optional` 
-   * - **locator**
-     - **str**
-     - `optional` 
-   * - **max_agents**
      - **int**
      - `optional` 
    * - **name**
      - **str**
      - `optional` 
+   * - **href**
+     - **str**
+     - `optional` 
+   * - **max_agents**
+     - **int**
+     - `optional` 
    * - **projects**
      -  `Projects <./Projects.html>`_
+     - `optional` 
+   * - **agents**
+     -  `Agents <./Agents.html>`_
+     - `optional` 
+   * - **locator**
+     - **str**
      - `optional` 
 
 

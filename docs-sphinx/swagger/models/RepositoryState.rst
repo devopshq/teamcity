@@ -15,14 +15,14 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **branch**
-     -  `list[BranchVersion] <./BranchVersion.html>`_
+   * - **timestamp**
+     - **str**
      - `optional` 
    * - **count**
      - **int**
      - `optional` 
-   * - **timestamp**
-     - **str**
+   * - **branch**
+     -  `list[BranchVersion] <./BranchVersion.html>`_
      - `optional` 
 
 

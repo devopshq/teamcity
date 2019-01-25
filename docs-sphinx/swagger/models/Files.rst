@@ -18,11 +18,11 @@ Properties
    * - **count**
      - **int**
      - `optional` 
-   * - **file**
-     -  `list[file] <./file.html>`_
-     - `optional` 
    * - **href**
      - **str**
+     - `optional` 
+   * - **file**
+     -  `list[file] <./file.html>`_
      - `optional` 
 
 

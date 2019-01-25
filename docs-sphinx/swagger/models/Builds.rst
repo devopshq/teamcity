@@ -15,9 +15,6 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **build**
-     -  `list[Build] <./Build.html>`_
-     - `optional` 
    * - **count**
      - **int**
      - `optional` 
@@ -29,6 +26,9 @@ Properties
      - `optional` 
    * - **prev_href**
      - **str**
+     - `optional` 
+   * - **build**
+     -  `list[Build] <./Build.html>`_
      - `optional` 
 
 

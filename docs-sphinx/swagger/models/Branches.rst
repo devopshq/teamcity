@@ -15,11 +15,14 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **branch**
-     -  `list[Branch] <./Branch.html>`_
-     - `optional` 
    * - **count**
      - **int**
+     - `optional` 
+   * - **href**
+     - **str**
+     - `optional` 
+   * - **branch**
+     -  `list[Branch] <./Branch.html>`_
      - `optional` 
 
 

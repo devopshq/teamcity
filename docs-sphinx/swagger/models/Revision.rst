@@ -15,19 +15,19 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **checkout_rules**
+   * - **version**
      - **str**
      - `optional` 
    * - **internal_version**
      - **str**
      - `optional` 
-   * - **vcs_root_instance**
-     -  `VcsRootInstance <./VcsRootInstance.html>`_
-     - `optional` 
    * - **vcs_branch_name**
      - **str**
      - `optional` 
-   * - **version**
+   * - **vcs_root_instance**
+     -  `VcsRootInstance <./VcsRootInstance.html>`_
+     - `optional` 
+   * - **checkout_rules**
      - **str**
      - `optional` 
 

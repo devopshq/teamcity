@@ -15,53 +15,32 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **agent_requirements**
-     -  `AgentRequirements <./AgentRequirements.html>`_
-     - `optional` 
-   * - **artifact_dependencies**
-     -  `ArtifactDependencies <./ArtifactDependencies.html>`_
-     - `optional` 
-   * - **builds**
-     -  `Builds <./Builds.html>`_
-     - `optional` 
-   * - **compatible_agents**
-     -  `Agents <./Agents.html>`_
-     - `optional` 
-   * - **description**
-     - **str**
-     - `optional` 
-   * - **features**
-     -  `Features <./Features.html>`_
-     - `optional` 
-   * - **href**
-     - **str**
-     - `optional` 
    * - **id**
      - **str**
      - `optional` 
    * - **internal_id**
      - **str**
      - `optional` 
-   * - **investigations**
-     -  `Investigations <./Investigations.html>`_
-     - `optional` 
-   * - **links**
-     -  `Links <./Links.html>`_
-     - `optional` 
-   * - **locator**
-     - **str**
-     - `optional` 
    * - **name**
      - **str**
      - `optional` 
-   * - **parameters**
-     -  `Properties <./Properties.html>`_
+   * - **template_flag**
+     - **bool**
+     - `optional` [default to ``False``]
+   * - **type**
+     - **str**
      - `optional` 
    * - **paused**
      - **bool**
      - `optional` [default to ``False``]
-   * - **project**
-     -  `Project <./Project.html>`_
+   * - **uuid**
+     - **str**
+     - `optional` 
+   * - **description**
+     - **str**
+     - `optional` 
+   * - **project_name**
+     - **str**
      - `optional` 
    * - **project_id**
      - **str**
@@ -69,34 +48,70 @@ Properties
    * - **project_internal_id**
      - **str**
      - `optional` 
-   * - **project_name**
+   * - **href**
      - **str**
      - `optional` 
-   * - **settings**
-     -  `Properties <./Properties.html>`_
+   * - **web_url**
+     - **str**
      - `optional` 
-   * - **snapshot_dependencies**
-     -  `SnapshotDependencies <./SnapshotDependencies.html>`_
+   * - **inherited**
+     - **bool**
+     - `optional` [default to ``False``]
+   * - **links**
+     -  `Links <./Links.html>`_
      - `optional` 
-   * - **steps**
-     -  `Steps <./Steps.html>`_
+   * - **project**
+     -  `Project <./Project.html>`_
+     - `optional` 
+   * - **templates**
+     -  `BuildTypes <./BuildTypes.html>`_
      - `optional` 
    * - **template**
      -  `BuildType <./BuildType.html>`_
      - `optional` 
-   * - **template_flag**
-     - **bool**
-     - `optional` [default to ``False``]
-   * - **triggers**
-     -  `Triggers <./Triggers.html>`_
-     - `optional` 
-   * - **uuid**
-     - **str**
-     - `optional` 
    * - **vcs_root_entries**
      -  `VcsRootEntries <./VcsRootEntries.html>`_
      - `optional` 
-   * - **web_url**
+   * - **settings**
+     -  `Properties <./Properties.html>`_
+     - `optional` 
+   * - **parameters**
+     -  `Properties <./Properties.html>`_
+     - `optional` 
+   * - **steps**
+     -  `Steps <./Steps.html>`_
+     - `optional` 
+   * - **features**
+     -  `Features <./Features.html>`_
+     - `optional` 
+   * - **triggers**
+     -  `Triggers <./Triggers.html>`_
+     - `optional` 
+   * - **snapshot_dependencies**
+     -  `SnapshotDependencies <./SnapshotDependencies.html>`_
+     - `optional` 
+   * - **artifact_dependencies**
+     -  `ArtifactDependencies <./ArtifactDependencies.html>`_
+     - `optional` 
+   * - **agent_requirements**
+     -  `AgentRequirements <./AgentRequirements.html>`_
+     - `optional` 
+   * - **branches**
+     -  `Branches <./Branches.html>`_
+     - `optional` 
+   * - **builds**
+     -  `Builds <./Builds.html>`_
+     - `optional` 
+   * - **investigations**
+     -  `Investigations <./Investigations.html>`_
+     - `optional` 
+   * - **compatible_agents**
+     -  `Agents <./Agents.html>`_
+     - `optional` 
+   * - **vcs_root_instances**
+     -  `VcsRootInstances <./VcsRootInstances.html>`_
+     - `optional` 
+   * - **locator**
      - **str**
      - `optional` 
 

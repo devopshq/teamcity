@@ -22,6 +22,8 @@ dohq_teamcity.ProjectApi
      - **POST** ``/app/rest/projects/{projectLocator}/templates``
    * - :ref:`create_project`
      - **POST** ``/app/rest/projects``
+   * - :ref:`create_secure_token`
+     - **POST** ``/app/rest/projects/{projectLocator}/secure/tokens``
    * - :ref:`delete`
      - **DELETE** ``/app/rest/projects/{projectLocator}/projectFeatures/{featureLocator}``
    * - :ref:`delete_all_parameters`
@@ -38,8 +40,12 @@ dohq_teamcity.ProjectApi
      - **DELETE** ``/app/rest/projects/{projectLocator}/agentPools/{agentPoolLocator}``
    * - :ref:`get`
      - **GET** ``/app/rest/projects/{projectLocator}/projectFeatures``
+   * - :ref:`get_branches`
+     - **GET** ``/app/rest/projects/{projectLocator}/branches``
    * - :ref:`get_build_types_order`
      - **GET** ``/app/rest/projects/{projectLocator}/order/buildTypes``
+   * - :ref:`get_default_template`
+     - **GET** ``/app/rest/projects/{projectLocator}/defaultTemplate``
    * - :ref:`get_example_new_project_description`
      - **GET** ``/app/rest/projects/{projectLocator}/example/newProjectDescription``
    * - :ref:`get_example_new_project_description_compatibility_version1`
@@ -66,12 +72,16 @@ dohq_teamcity.ProjectApi
      - **GET** ``/app/rest/projects/{projectLocator}/agentPools``
    * - :ref:`get_projects_order`
      - **GET** ``/app/rest/projects/{projectLocator}/order/projects``
+   * - :ref:`get_secure_value`
+     - **GET** ``/app/rest/projects/{projectLocator}/secure/values/{token}``
    * - :ref:`get_settings_file`
      - **GET** ``/app/rest/projects/{projectLocator}/settingsFile``
    * - :ref:`get_single`
      - **GET** ``/app/rest/projects/{projectLocator}/projectFeatures/{featureLocator}``
    * - :ref:`reload_settings_file`
      - **GET** ``/app/rest/projects/{projectLocator}/latest``
+   * - :ref:`remove_default_template`
+     - **DELETE** ``/app/rest/projects/{projectLocator}/defaultTemplate``
    * - :ref:`replace`
      - **PUT** ``/app/rest/projects/{projectLocator}/projectFeatures/{featureLocator}``
    * - :ref:`replace_all`
@@ -100,6 +110,8 @@ dohq_teamcity.ProjectApi
      - **GET** ``/app/rest/projects/{projectLocator}/templates``
    * - :ref:`set_build_types_order`
      - **PUT** ``/app/rest/projects/{projectLocator}/order/buildTypes``
+   * - :ref:`set_default_template`
+     - **PUT** ``/app/rest/projects/{projectLocator}/defaultTemplate``
    * - :ref:`set_parameter`
      - **POST** ``/app/rest/projects/{projectLocator}/parameters``
    * - :ref:`set_parameter_0`
@@ -126,7 +138,7 @@ dohq_teamcity.ProjectApi
      - **PUT** ``/app/rest/projects/{projectLocator}/agentPools``
    * - :ref:`set_project_agent_pools_0`
      - **POST** ``/app/rest/projects/{projectLocator}/agentPools``
-   * - :ref:`set_project_filed`
+   * - :ref:`set_project_field`
      - **PUT** ``/app/rest/projects/{projectLocator}/{field}``
    * - :ref:`set_projects_order`
      - **PUT** ``/app/rest/projects/{projectLocator}/order/projects``
@@ -312,6 +324,50 @@ create_project
 
 Return type:
     `Project <../models/Project.html>`_
+
+`Back to top <#>`_
+
+.. _create_secure_token:
+
+create_secure_token
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        project_locator = 'project_locator_example' # str | 
+    body = 'body_example' # str |  (optional)
+
+    try:
+        api_response = tc.project_api.create_secure_token(project_locator, body=body)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectApi->create_secure_token: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **project_locator**
+     - **str**
+     - 
+   * - **body**
+     - **str**
+     - [optional] 
+
+Return type:
+    **str**
 
 `Back to top <#>`_
 
@@ -668,6 +724,54 @@ Return type:
 
 `Back to top <#>`_
 
+.. _get_branches:
+
+get_branches
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        project_locator = 'project_locator_example' # str | 
+    locator = 'locator_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        api_response = tc.project_api.get_branches(project_locator, locator=locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectApi->get_branches: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **project_locator**
+     - **str**
+     - 
+   * - **locator**
+     - **str**
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Branches <../models/Branches.html>`_
+
+`Back to top <#>`_
+
 .. _get_build_types_order:
 
 get_build_types_order
@@ -709,6 +813,50 @@ get_build_types_order
 
 Return type:
     `BuildTypes <../models/BuildTypes.html>`_
+
+`Back to top <#>`_
+
+.. _get_default_template:
+
+get_default_template
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        project_locator = 'project_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        api_response = tc.project_api.get_default_template(project_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectApi->get_default_template: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **project_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `BuildType <../models/BuildType.html>`_
 
 `Back to top <#>`_
 
@@ -1324,6 +1472,50 @@ Return type:
 
 `Back to top <#>`_
 
+.. _get_secure_value:
+
+get_secure_value
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        project_locator = 'project_locator_example' # str | 
+    token = 'token_example' # str | 
+
+    try:
+        api_response = tc.project_api.get_secure_value(project_locator, token)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectApi->get_secure_value: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **project_locator**
+     - **str**
+     - 
+   * - **token**
+     - **str**
+     - 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
 .. _get_settings_file:
 
 get_settings_file
@@ -1453,6 +1645,49 @@ reload_settings_file
 
 Return type:
     `Project <../models/Project.html>`_
+
+`Back to top <#>`_
+
+.. _remove_default_template:
+
+remove_default_template
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        project_locator = 'project_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        tc.project_api.remove_default_template(project_locator, fields=fields)
+    except ApiException as e:
+        print("Exception when calling ProjectApi->remove_default_template: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **project_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    void (empty response body)
 
 `Back to top <#>`_
 
@@ -2168,6 +2403,54 @@ Return type:
 
 `Back to top <#>`_
 
+.. _set_default_template:
+
+set_default_template
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        project_locator = 'project_locator_example' # str | 
+    body = dohq_teamcity.BuildType() # BuildType |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        api_response = tc.project_api.set_default_template(project_locator, body=body, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectApi->set_default_template: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **project_locator**
+     - **str**
+     - 
+   * - **body**
+     - `BuildType <../models/BuildType.html>`_
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `BuildType <../models/BuildType.html>`_
+
+`Back to top <#>`_
+
 .. _set_parameter:
 
 set_parameter
@@ -2703,9 +2986,10 @@ set_parent_project
 
         project_locator = 'project_locator_example' # str | 
     body = dohq_teamcity.Project() # Project |  (optional)
+    fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.project_api.set_parent_project(project_locator, body=body)
+        api_response = tc.project_api.set_parent_project(project_locator, body=body, fields=fields)
        pprint(api_response)
     except ApiException as e:
         print("Exception when calling ProjectApi->set_parent_project: %s\n" % e)
@@ -2725,6 +3009,9 @@ set_parent_project
      - 
    * - **body**
      - `Project <../models/Project.html>`_
+     - [optional] 
+   * - **fields**
+     - **str**
      - [optional] 
 
 Return type:
@@ -2824,9 +3111,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _set_project_filed:
+.. _set_project_field:
 
-set_project_filed
+set_project_field
 -----------------
 
 .. code-block:: python
@@ -2842,10 +3129,10 @@ set_project_filed
     body = 'body_example' # str |  (optional)
 
     try:
-        api_response = tc.project_api.set_project_filed(project_locator, field, body=body)
+        api_response = tc.project_api.set_project_field(project_locator, field, body=body)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling ProjectApi->set_project_filed: %s\n" % e)
+        print("Exception when calling ProjectApi->set_project_field: %s\n" % e)
 
 
 

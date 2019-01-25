@@ -17,48 +17,27 @@ class Issue(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
-        'url': 'str'
+        'url': 'str',
+        'id': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
-        'url': 'url'
+        'url': 'url',
+        'id': 'id'
     }
 
-    def __init__(self, id=None, url=None, teamcity=None):  # noqa: E501
+    def __init__(self, url=None, id=None, teamcity=None):  # noqa: E501
         """Issue - a model defined in Swagger"""  # noqa: E501
 
-        self._id = None
         self._url = None
+        self._id = None
         self.discriminator = None
 
-        if id is not None:
-            self.id = id
         if url is not None:
             self.url = url
+        if id is not None:
+            self.id = id
         super(Issue, self).__init__(teamcity=teamcity)
-
-    @property
-    def id(self):
-        """Gets the id of this Issue.  # noqa: E501
-
-
-        :return: The id of this Issue.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this Issue.
-
-
-        :param id: The id of this Issue.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
 
     @property
     def url(self):
@@ -80,3 +59,24 @@ class Issue(TeamCityObject):
         """
 
         self._url = url
+
+    @property
+    def id(self):
+        """Gets the id of this Issue.  # noqa: E501
+
+
+        :return: The id of this Issue.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this Issue.
+
+
+        :param id: The id of this Issue.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id

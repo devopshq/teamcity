@@ -21,33 +21,48 @@ class BuildTriggeringOptions(TeamCityObject):
     """
     swagger_types = {
         'clean_sources': 'bool',
-        'queue_at_top': 'bool',
+        'clean_sources_in_all_dependencies': 'bool',
         'rebuild_all_dependencies': 'bool',
+        'queue_at_top': 'bool',
+        'freeze_settings': 'bool',
+        'tag_dependencies': 'bool',
         'rebuild_dependencies': 'BuildTypes'
     }
 
     attribute_map = {
         'clean_sources': 'cleanSources',
-        'queue_at_top': 'queueAtTop',
+        'clean_sources_in_all_dependencies': 'cleanSourcesInAllDependencies',
         'rebuild_all_dependencies': 'rebuildAllDependencies',
+        'queue_at_top': 'queueAtTop',
+        'freeze_settings': 'freezeSettings',
+        'tag_dependencies': 'tagDependencies',
         'rebuild_dependencies': 'rebuildDependencies'
     }
 
-    def __init__(self, clean_sources=False, queue_at_top=False, rebuild_all_dependencies=False, rebuild_dependencies=None, teamcity=None):  # noqa: E501
+    def __init__(self, clean_sources=False, clean_sources_in_all_dependencies=False, rebuild_all_dependencies=False, queue_at_top=False, freeze_settings=False, tag_dependencies=False, rebuild_dependencies=None, teamcity=None):  # noqa: E501
         """BuildTriggeringOptions - a model defined in Swagger"""  # noqa: E501
 
         self._clean_sources = None
-        self._queue_at_top = None
+        self._clean_sources_in_all_dependencies = None
         self._rebuild_all_dependencies = None
+        self._queue_at_top = None
+        self._freeze_settings = None
+        self._tag_dependencies = None
         self._rebuild_dependencies = None
         self.discriminator = None
 
         if clean_sources is not None:
             self.clean_sources = clean_sources
-        if queue_at_top is not None:
-            self.queue_at_top = queue_at_top
+        if clean_sources_in_all_dependencies is not None:
+            self.clean_sources_in_all_dependencies = clean_sources_in_all_dependencies
         if rebuild_all_dependencies is not None:
             self.rebuild_all_dependencies = rebuild_all_dependencies
+        if queue_at_top is not None:
+            self.queue_at_top = queue_at_top
+        if freeze_settings is not None:
+            self.freeze_settings = freeze_settings
+        if tag_dependencies is not None:
+            self.tag_dependencies = tag_dependencies
         if rebuild_dependencies is not None:
             self.rebuild_dependencies = rebuild_dependencies
         super(BuildTriggeringOptions, self).__init__(teamcity=teamcity)
@@ -74,25 +89,25 @@ class BuildTriggeringOptions(TeamCityObject):
         self._clean_sources = clean_sources
 
     @property
-    def queue_at_top(self):
-        """Gets the queue_at_top of this BuildTriggeringOptions.  # noqa: E501
+    def clean_sources_in_all_dependencies(self):
+        """Gets the clean_sources_in_all_dependencies of this BuildTriggeringOptions.  # noqa: E501
 
 
-        :return: The queue_at_top of this BuildTriggeringOptions.  # noqa: E501
+        :return: The clean_sources_in_all_dependencies of this BuildTriggeringOptions.  # noqa: E501
         :rtype: bool
         """
-        return self._queue_at_top
+        return self._clean_sources_in_all_dependencies
 
-    @queue_at_top.setter
-    def queue_at_top(self, queue_at_top):
-        """Sets the queue_at_top of this BuildTriggeringOptions.
+    @clean_sources_in_all_dependencies.setter
+    def clean_sources_in_all_dependencies(self, clean_sources_in_all_dependencies):
+        """Sets the clean_sources_in_all_dependencies of this BuildTriggeringOptions.
 
 
-        :param queue_at_top: The queue_at_top of this BuildTriggeringOptions.  # noqa: E501
+        :param clean_sources_in_all_dependencies: The clean_sources_in_all_dependencies of this BuildTriggeringOptions.  # noqa: E501
         :type: bool
         """
 
-        self._queue_at_top = queue_at_top
+        self._clean_sources_in_all_dependencies = clean_sources_in_all_dependencies
 
     @property
     def rebuild_all_dependencies(self):
@@ -114,6 +129,69 @@ class BuildTriggeringOptions(TeamCityObject):
         """
 
         self._rebuild_all_dependencies = rebuild_all_dependencies
+
+    @property
+    def queue_at_top(self):
+        """Gets the queue_at_top of this BuildTriggeringOptions.  # noqa: E501
+
+
+        :return: The queue_at_top of this BuildTriggeringOptions.  # noqa: E501
+        :rtype: bool
+        """
+        return self._queue_at_top
+
+    @queue_at_top.setter
+    def queue_at_top(self, queue_at_top):
+        """Sets the queue_at_top of this BuildTriggeringOptions.
+
+
+        :param queue_at_top: The queue_at_top of this BuildTriggeringOptions.  # noqa: E501
+        :type: bool
+        """
+
+        self._queue_at_top = queue_at_top
+
+    @property
+    def freeze_settings(self):
+        """Gets the freeze_settings of this BuildTriggeringOptions.  # noqa: E501
+
+
+        :return: The freeze_settings of this BuildTriggeringOptions.  # noqa: E501
+        :rtype: bool
+        """
+        return self._freeze_settings
+
+    @freeze_settings.setter
+    def freeze_settings(self, freeze_settings):
+        """Sets the freeze_settings of this BuildTriggeringOptions.
+
+
+        :param freeze_settings: The freeze_settings of this BuildTriggeringOptions.  # noqa: E501
+        :type: bool
+        """
+
+        self._freeze_settings = freeze_settings
+
+    @property
+    def tag_dependencies(self):
+        """Gets the tag_dependencies of this BuildTriggeringOptions.  # noqa: E501
+
+
+        :return: The tag_dependencies of this BuildTriggeringOptions.  # noqa: E501
+        :rtype: bool
+        """
+        return self._tag_dependencies
+
+    @tag_dependencies.setter
+    def tag_dependencies(self, tag_dependencies):
+        """Sets the tag_dependencies of this BuildTriggeringOptions.
+
+
+        :param tag_dependencies: The tag_dependencies of this BuildTriggeringOptions.  # noqa: E501
+        :type: bool
+        """
+
+        self._tag_dependencies = tag_dependencies
 
     @property
     def rebuild_dependencies(self):

@@ -15,23 +15,26 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **href**
-     - **str**
-     - `optional` 
    * - **id**
      - **str**
-     - `optional` 
-   * - **investigations**
-     -  `Investigations <./Investigations.html>`_
-     - `optional` 
-   * - **mutes**
-     -  `Mutes <./Mutes.html>`_
      - `optional` 
    * - **name**
      - **str**
      - `optional` 
+   * - **mutes**
+     -  `Mutes <./Mutes.html>`_
+     - `optional` 
+   * - **investigations**
+     -  `Investigations <./Investigations.html>`_
+     - `optional` 
    * - **test_occurrences**
      -  `TestOccurrences <./TestOccurrences.html>`_
+     - `optional` 
+   * - **href**
+     - **str**
+     - `optional` 
+   * - **locator**
+     - **str**
      - `optional` 
 
 

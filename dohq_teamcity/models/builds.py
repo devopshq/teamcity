@@ -20,33 +20,31 @@ class Builds(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'build': 'list[Build]',
         'count': 'int',
         'href': 'str',
         'next_href': 'str',
-        'prev_href': 'str'
+        'prev_href': 'str',
+        'build': 'list[Build]'
     }
 
     attribute_map = {
-        'build': 'build',
         'count': 'count',
         'href': 'href',
         'next_href': 'nextHref',
-        'prev_href': 'prevHref'
+        'prev_href': 'prevHref',
+        'build': 'build'
     }
 
-    def __init__(self, build=None, count=None, href=None, next_href=None, prev_href=None, teamcity=None):  # noqa: E501
+    def __init__(self, count=None, href=None, next_href=None, prev_href=None, build=None, teamcity=None):  # noqa: E501
         """Builds - a model defined in Swagger"""  # noqa: E501
 
-        self._build = None
         self._count = None
         self._href = None
         self._next_href = None
         self._prev_href = None
+        self._build = None
         self.discriminator = None
 
-        if build is not None:
-            self.build = build
         if count is not None:
             self.count = count
         if href is not None:
@@ -55,28 +53,9 @@ class Builds(TeamCityObject):
             self.next_href = next_href
         if prev_href is not None:
             self.prev_href = prev_href
+        if build is not None:
+            self.build = build
         super(Builds, self).__init__(teamcity=teamcity)
-
-    @property
-    def build(self):
-        """Gets the build of this Builds.  # noqa: E501
-
-
-        :return: The build of this Builds.  # noqa: E501
-        :rtype: list[Build]
-        """
-        return self._build
-
-    @build.setter
-    def build(self, build):
-        """Sets the build of this Builds.
-
-
-        :param build: The build of this Builds.  # noqa: E501
-        :type: list[Build]
-        """
-
-        self._build = build
 
     @property
     def count(self):
@@ -161,3 +140,24 @@ class Builds(TeamCityObject):
         """
 
         self._prev_href = prev_href
+
+    @property
+    def build(self):
+        """Gets the build of this Builds.  # noqa: E501
+
+
+        :return: The build of this Builds.  # noqa: E501
+        :rtype: list[Build]
+        """
+        return self._build
+
+    @build.setter
+    def build(self, build):
+        """Sets the build of this Builds.
+
+
+        :param build: The build of this Builds.  # noqa: E501
+        :type: list[Build]
+        """
+
+        self._build = build

@@ -15,26 +15,26 @@ Properties
    * - Name
      - Type
      - Notes
+   * - **id**
+     - **str**
+     - `optional` 
+   * - **name**
+     - **str**
+     - `optional` 
+   * - **type**
+     - **str**
+     - `optional` 
    * - **disabled**
+     - **bool**
+     - `optional` [default to ``False``]
+   * - **inherited**
      - **bool**
      - `optional` [default to ``False``]
    * - **href**
      - **str**
      - `optional` 
-   * - **id**
-     - **str**
-     - `optional` 
-   * - **inherited**
-     - **bool**
-     - `optional` [default to ``False``]
-   * - **name**
-     - **str**
-     - `optional` 
    * - **properties**
      -  `Properties <./Properties.html>`_
-     - `optional` 
-   * - **type**
-     - **str**
      - `optional` 
 
 

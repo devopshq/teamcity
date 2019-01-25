@@ -21,83 +21,62 @@ class NewProjectDescription(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'build_types_ids_map': 'Properties',
         'copy_all_associated_settings': 'bool',
-        'id': 'str',
-        'name': 'str',
-        'parent_project': 'Project',
         'projects_ids_map': 'Properties',
-        'source_project': 'Project',
+        'build_types_ids_map': 'Properties',
+        'vcs_roots_ids_map': 'Properties',
+        'name': 'str',
+        'id': 'str',
         'source_project_locator': 'str',
-        'vcs_roots_ids_map': 'Properties'
+        'source_project': 'Project',
+        'parent_project': 'Project'
     }
 
     attribute_map = {
-        'build_types_ids_map': 'buildTypesIdsMap',
         'copy_all_associated_settings': 'copyAllAssociatedSettings',
-        'id': 'id',
-        'name': 'name',
-        'parent_project': 'parentProject',
         'projects_ids_map': 'projectsIdsMap',
-        'source_project': 'sourceProject',
+        'build_types_ids_map': 'buildTypesIdsMap',
+        'vcs_roots_ids_map': 'vcsRootsIdsMap',
+        'name': 'name',
+        'id': 'id',
         'source_project_locator': 'sourceProjectLocator',
-        'vcs_roots_ids_map': 'vcsRootsIdsMap'
+        'source_project': 'sourceProject',
+        'parent_project': 'parentProject'
     }
 
-    def __init__(self, build_types_ids_map=None, copy_all_associated_settings=False, id=None, name=None, parent_project=None, projects_ids_map=None, source_project=None, source_project_locator=None, vcs_roots_ids_map=None, teamcity=None):  # noqa: E501
+    def __init__(self, copy_all_associated_settings=False, projects_ids_map=None, build_types_ids_map=None, vcs_roots_ids_map=None, name=None, id=None, source_project_locator=None, source_project=None, parent_project=None, teamcity=None):  # noqa: E501
         """NewProjectDescription - a model defined in Swagger"""  # noqa: E501
 
-        self._build_types_ids_map = None
         self._copy_all_associated_settings = None
-        self._id = None
-        self._name = None
-        self._parent_project = None
         self._projects_ids_map = None
-        self._source_project = None
-        self._source_project_locator = None
+        self._build_types_ids_map = None
         self._vcs_roots_ids_map = None
+        self._name = None
+        self._id = None
+        self._source_project_locator = None
+        self._source_project = None
+        self._parent_project = None
         self.discriminator = None
 
-        if build_types_ids_map is not None:
-            self.build_types_ids_map = build_types_ids_map
         if copy_all_associated_settings is not None:
             self.copy_all_associated_settings = copy_all_associated_settings
-        if id is not None:
-            self.id = id
-        if name is not None:
-            self.name = name
-        if parent_project is not None:
-            self.parent_project = parent_project
         if projects_ids_map is not None:
             self.projects_ids_map = projects_ids_map
-        if source_project is not None:
-            self.source_project = source_project
-        if source_project_locator is not None:
-            self.source_project_locator = source_project_locator
+        if build_types_ids_map is not None:
+            self.build_types_ids_map = build_types_ids_map
         if vcs_roots_ids_map is not None:
             self.vcs_roots_ids_map = vcs_roots_ids_map
+        if name is not None:
+            self.name = name
+        if id is not None:
+            self.id = id
+        if source_project_locator is not None:
+            self.source_project_locator = source_project_locator
+        if source_project is not None:
+            self.source_project = source_project
+        if parent_project is not None:
+            self.parent_project = parent_project
         super(NewProjectDescription, self).__init__(teamcity=teamcity)
-
-    @property
-    def build_types_ids_map(self):
-        """Gets the build_types_ids_map of this NewProjectDescription.  # noqa: E501
-
-
-        :return: The build_types_ids_map of this NewProjectDescription.  # noqa: E501
-        :rtype: Properties
-        """
-        return self._build_types_ids_map
-
-    @build_types_ids_map.setter
-    def build_types_ids_map(self, build_types_ids_map):
-        """Sets the build_types_ids_map of this NewProjectDescription.
-
-
-        :param build_types_ids_map: The build_types_ids_map of this NewProjectDescription.  # noqa: E501
-        :type: Properties
-        """
-
-        self._build_types_ids_map = build_types_ids_map
 
     @property
     def copy_all_associated_settings(self):
@@ -121,25 +100,67 @@ class NewProjectDescription(TeamCityObject):
         self._copy_all_associated_settings = copy_all_associated_settings
 
     @property
-    def id(self):
-        """Gets the id of this NewProjectDescription.  # noqa: E501
+    def projects_ids_map(self):
+        """Gets the projects_ids_map of this NewProjectDescription.  # noqa: E501
 
 
-        :return: The id of this NewProjectDescription.  # noqa: E501
-        :rtype: str
+        :return: The projects_ids_map of this NewProjectDescription.  # noqa: E501
+        :rtype: Properties
         """
-        return self._id
+        return self._projects_ids_map
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this NewProjectDescription.
+    @projects_ids_map.setter
+    def projects_ids_map(self, projects_ids_map):
+        """Sets the projects_ids_map of this NewProjectDescription.
 
 
-        :param id: The id of this NewProjectDescription.  # noqa: E501
-        :type: str
+        :param projects_ids_map: The projects_ids_map of this NewProjectDescription.  # noqa: E501
+        :type: Properties
         """
 
-        self._id = id
+        self._projects_ids_map = projects_ids_map
+
+    @property
+    def build_types_ids_map(self):
+        """Gets the build_types_ids_map of this NewProjectDescription.  # noqa: E501
+
+
+        :return: The build_types_ids_map of this NewProjectDescription.  # noqa: E501
+        :rtype: Properties
+        """
+        return self._build_types_ids_map
+
+    @build_types_ids_map.setter
+    def build_types_ids_map(self, build_types_ids_map):
+        """Sets the build_types_ids_map of this NewProjectDescription.
+
+
+        :param build_types_ids_map: The build_types_ids_map of this NewProjectDescription.  # noqa: E501
+        :type: Properties
+        """
+
+        self._build_types_ids_map = build_types_ids_map
+
+    @property
+    def vcs_roots_ids_map(self):
+        """Gets the vcs_roots_ids_map of this NewProjectDescription.  # noqa: E501
+
+
+        :return: The vcs_roots_ids_map of this NewProjectDescription.  # noqa: E501
+        :rtype: Properties
+        """
+        return self._vcs_roots_ids_map
+
+    @vcs_roots_ids_map.setter
+    def vcs_roots_ids_map(self, vcs_roots_ids_map):
+        """Sets the vcs_roots_ids_map of this NewProjectDescription.
+
+
+        :param vcs_roots_ids_map: The vcs_roots_ids_map of this NewProjectDescription.  # noqa: E501
+        :type: Properties
+        """
+
+        self._vcs_roots_ids_map = vcs_roots_ids_map
 
     @property
     def name(self):
@@ -163,67 +184,25 @@ class NewProjectDescription(TeamCityObject):
         self._name = name
 
     @property
-    def parent_project(self):
-        """Gets the parent_project of this NewProjectDescription.  # noqa: E501
+    def id(self):
+        """Gets the id of this NewProjectDescription.  # noqa: E501
 
 
-        :return: The parent_project of this NewProjectDescription.  # noqa: E501
-        :rtype: Project
+        :return: The id of this NewProjectDescription.  # noqa: E501
+        :rtype: str
         """
-        return self._parent_project
+        return self._id
 
-    @parent_project.setter
-    def parent_project(self, parent_project):
-        """Sets the parent_project of this NewProjectDescription.
-
-
-        :param parent_project: The parent_project of this NewProjectDescription.  # noqa: E501
-        :type: Project
-        """
-
-        self._parent_project = parent_project
-
-    @property
-    def projects_ids_map(self):
-        """Gets the projects_ids_map of this NewProjectDescription.  # noqa: E501
+    @id.setter
+    def id(self, id):
+        """Sets the id of this NewProjectDescription.
 
 
-        :return: The projects_ids_map of this NewProjectDescription.  # noqa: E501
-        :rtype: Properties
-        """
-        return self._projects_ids_map
-
-    @projects_ids_map.setter
-    def projects_ids_map(self, projects_ids_map):
-        """Sets the projects_ids_map of this NewProjectDescription.
-
-
-        :param projects_ids_map: The projects_ids_map of this NewProjectDescription.  # noqa: E501
-        :type: Properties
+        :param id: The id of this NewProjectDescription.  # noqa: E501
+        :type: str
         """
 
-        self._projects_ids_map = projects_ids_map
-
-    @property
-    def source_project(self):
-        """Gets the source_project of this NewProjectDescription.  # noqa: E501
-
-
-        :return: The source_project of this NewProjectDescription.  # noqa: E501
-        :rtype: Project
-        """
-        return self._source_project
-
-    @source_project.setter
-    def source_project(self, source_project):
-        """Sets the source_project of this NewProjectDescription.
-
-
-        :param source_project: The source_project of this NewProjectDescription.  # noqa: E501
-        :type: Project
-        """
-
-        self._source_project = source_project
+        self._id = id
 
     @property
     def source_project_locator(self):
@@ -247,22 +226,43 @@ class NewProjectDescription(TeamCityObject):
         self._source_project_locator = source_project_locator
 
     @property
-    def vcs_roots_ids_map(self):
-        """Gets the vcs_roots_ids_map of this NewProjectDescription.  # noqa: E501
+    def source_project(self):
+        """Gets the source_project of this NewProjectDescription.  # noqa: E501
 
 
-        :return: The vcs_roots_ids_map of this NewProjectDescription.  # noqa: E501
-        :rtype: Properties
+        :return: The source_project of this NewProjectDescription.  # noqa: E501
+        :rtype: Project
         """
-        return self._vcs_roots_ids_map
+        return self._source_project
 
-    @vcs_roots_ids_map.setter
-    def vcs_roots_ids_map(self, vcs_roots_ids_map):
-        """Sets the vcs_roots_ids_map of this NewProjectDescription.
+    @source_project.setter
+    def source_project(self, source_project):
+        """Sets the source_project of this NewProjectDescription.
 
 
-        :param vcs_roots_ids_map: The vcs_roots_ids_map of this NewProjectDescription.  # noqa: E501
-        :type: Properties
+        :param source_project: The source_project of this NewProjectDescription.  # noqa: E501
+        :type: Project
         """
 
-        self._vcs_roots_ids_map = vcs_roots_ids_map
+        self._source_project = source_project
+
+    @property
+    def parent_project(self):
+        """Gets the parent_project of this NewProjectDescription.  # noqa: E501
+
+
+        :return: The parent_project of this NewProjectDescription.  # noqa: E501
+        :rtype: Project
+        """
+        return self._parent_project
+
+    @parent_project.setter
+    def parent_project(self, parent_project):
+        """Sets the parent_project of this NewProjectDescription.
+
+
+        :param parent_project: The parent_project of this NewProjectDescription.  # noqa: E501
+        :type: Project
+        """
+
+        self._parent_project = parent_project

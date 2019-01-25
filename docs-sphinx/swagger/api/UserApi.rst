@@ -32,16 +32,22 @@ dohq_teamcity.UserApi
      - **DELETE** ``/app/rest/users/{userLocator}``
    * - :ref:`delete_user_field`
      - **DELETE** ``/app/rest/users/{userLocator}/{field}``
+   * - :ref:`get_group`
+     - **GET** ``/app/rest/users/{userLocator}/groups/{groupLocator}``
    * - :ref:`get_groups`
      - **GET** ``/app/rest/users/{userLocator}/groups``
    * - :ref:`get_permissions`
      - **GET** ``/app/rest/users/{userLocator}/debug/permissions``
+   * - :ref:`get_permissions_0`
+     - **GET** ``/app/rest/users/{userLocator}/permissions``
    * - :ref:`list_role`
      - **GET** ``/app/rest/users/{userLocator}/roles/{roleId}/{scope}``
    * - :ref:`list_roles`
      - **GET** ``/app/rest/users/{userLocator}/roles``
    * - :ref:`put_user_property`
      - **PUT** ``/app/rest/users/{userLocator}/properties/{name}``
+   * - :ref:`remove_group`
+     - **DELETE** ``/app/rest/users/{userLocator}/groups/{groupLocator}``
    * - :ref:`remove_user_property`
      - **DELETE** ``/app/rest/users/{userLocator}/properties/{name}``
    * - :ref:`replace_groups`
@@ -462,6 +468,54 @@ Return type:
 
 `Back to top <#>`_
 
+.. _get_group:
+
+get_group
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        user_locator = 'user_locator_example' # str | 
+    group_locator = 'group_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        api_response = tc.user_api.get_group(user_locator, group_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UserApi->get_group: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **user_locator**
+     - **str**
+     - 
+   * - **group_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Group <../models/Group.html>`_
+
+`Back to top <#>`_
+
 .. _get_groups:
 
 get_groups
@@ -543,6 +597,54 @@ get_permissions
 
 Return type:
     **str**
+
+`Back to top <#>`_
+
+.. _get_permissions_0:
+
+get_permissions_0
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        user_locator = 'user_locator_example' # str | 
+    locator = 'locator_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        api_response = tc.user_api.get_permissions_0(user_locator, locator=locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UserApi->get_permissions_0: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **user_locator**
+     - **str**
+     - 
+   * - **locator**
+     - **str**
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `PermissionAssignments <../models/PermissionAssignments.html>`_
 
 `Back to top <#>`_
 
@@ -679,6 +781,53 @@ put_user_property
 
 Return type:
     **str**
+
+`Back to top <#>`_
+
+.. _remove_group:
+
+remove_group
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        user_locator = 'user_locator_example' # str | 
+    group_locator = 'group_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        tc.user_api.remove_group(user_locator, group_locator, fields=fields)
+    except ApiException as e:
+        print("Exception when calling UserApi->remove_group: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **user_locator**
+     - **str**
+     - 
+   * - **group_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    void (empty response body)
 
 `Back to top <#>`_
 

@@ -18,14 +18,14 @@ dohq_teamcity.GroupApi
      - **POST** ``/app/rest/userGroups``
    * - :ref:`add_role`
      - **POST** ``/app/rest/userGroups/{groupLocator}/roles``
-   * - :ref:`add_role_put`
-     - **PUT** ``/app/rest/userGroups/{groupLocator}/roles``
    * - :ref:`add_role_simple`
      - **POST** ``/app/rest/userGroups/{groupLocator}/roles/{roleId}/{scope}``
    * - :ref:`delete_group`
      - **DELETE** ``/app/rest/userGroups/{groupLocator}``
    * - :ref:`delete_role`
      - **DELETE** ``/app/rest/userGroups/{groupLocator}/roles/{roleId}/{scope}``
+   * - :ref:`get_parent_groups`
+     - **GET** ``/app/rest/userGroups/{groupLocator}/parent-groups``
    * - :ref:`get_permissions`
      - **GET** ``/app/rest/userGroups/{groupLocator}/debug/permissions``
    * - :ref:`get_properties`
@@ -44,6 +44,10 @@ dohq_teamcity.GroupApi
      - **GET** ``/app/rest/userGroups``
    * - :ref:`serve_user_properties`
      - **GET** ``/app/rest/userGroups/{groupLocator}/properties/{name}``
+   * - :ref:`set_parent_groups`
+     - **PUT** ``/app/rest/userGroups/{groupLocator}/parent-groups``
+   * - :ref:`set_roles`
+     - **PUT** ``/app/rest/userGroups/{groupLocator}/roles``
 
 .. _add_group:
 
@@ -130,50 +134,6 @@ add_role
 
 Return type:
     `Role <../models/Role.html>`_
-
-`Back to top <#>`_
-
-.. _add_role_put:
-
-add_role_put
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-        group_locator = 'group_locator_example' # str | 
-    body = dohq_teamcity.Roles() # Roles |  (optional)
-
-    try:
-        api_response = tc.group_api.add_role_put(group_locator, body=body)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling GroupApi->add_role_put: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **group_locator**
-     - **str**
-     - 
-   * - **body**
-     - `Roles <../models/Roles.html>`_
-     - [optional] 
-
-Return type:
-    `Roles <../models/Roles.html>`_
 
 `Back to top <#>`_
 
@@ -308,6 +268,50 @@ delete_role
 
 Return type:
     void (empty response body)
+
+`Back to top <#>`_
+
+.. _get_parent_groups:
+
+get_parent_groups
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        group_locator = 'group_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        api_response = tc.group_api.get_parent_groups(group_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling GroupApi->get_parent_groups: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **group_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Groups <../models/Groups.html>`_
 
 `Back to top <#>`_
 
@@ -699,6 +703,98 @@ serve_user_properties
 
 Return type:
     **str**
+
+`Back to top <#>`_
+
+.. _set_parent_groups:
+
+set_parent_groups
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        group_locator = 'group_locator_example' # str | 
+    body = dohq_teamcity.Groups() # Groups |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        api_response = tc.group_api.set_parent_groups(group_locator, body=body, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling GroupApi->set_parent_groups: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **group_locator**
+     - **str**
+     - 
+   * - **body**
+     - `Groups <../models/Groups.html>`_
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Groups <../models/Groups.html>`_
+
+`Back to top <#>`_
+
+.. _set_roles:
+
+set_roles
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        group_locator = 'group_locator_example' # str | 
+    body = dohq_teamcity.Roles() # Roles |  (optional)
+
+    try:
+        api_response = tc.group_api.set_roles(group_locator, body=body)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling GroupApi->set_roles: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **group_locator**
+     - **str**
+     - 
+   * - **body**
+     - `Roles <../models/Roles.html>`_
+     - [optional] 
+
+Return type:
+    `Roles <../models/Roles.html>`_
 
 `Back to top <#>`_
 

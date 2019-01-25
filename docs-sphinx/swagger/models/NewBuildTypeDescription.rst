@@ -15,29 +15,29 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **build_types_ids_map**
-     -  `Properties <./Properties.html>`_
-     - `optional` 
    * - **copy_all_associated_settings**
      - **bool**
      - `optional` [default to ``False``]
-   * - **id**
-     - **str**
+   * - **projects_ids_map**
+     -  `Properties <./Properties.html>`_
+     - `optional` 
+   * - **build_types_ids_map**
+     -  `Properties <./Properties.html>`_
+     - `optional` 
+   * - **vcs_roots_ids_map**
+     -  `Properties <./Properties.html>`_
      - `optional` 
    * - **name**
      - **str**
      - `optional` 
-   * - **projects_ids_map**
-     -  `Properties <./Properties.html>`_
-     - `optional` 
-   * - **source_build_type**
-     -  `BuildType <./BuildType.html>`_
+   * - **id**
+     - **str**
      - `optional` 
    * - **source_build_type_locator**
      - **str**
      - `optional` 
-   * - **vcs_roots_ids_map**
-     -  `Properties <./Properties.html>`_
+   * - **source_build_type**
+     -  `BuildType <./BuildType.html>`_
      - `optional` 
 
 

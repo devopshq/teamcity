@@ -15,29 +15,29 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **children**
-     -  `Files <./Files.html>`_
-     - `optional` 
-   * - **content**
-     -  `Href <./Href.html>`_
+   * - **name**
+     - **str**
      - `optional` 
    * - **full_name**
+     - **str**
+     - `optional` 
+   * - **size**
+     - **int**
+     - `optional` 
+   * - **modification_time**
      - **str**
      - `optional` 
    * - **href**
      - **str**
      - `optional` 
-   * - **modification_time**
-     - **str**
-     - `optional` 
-   * - **name**
-     - **str**
-     - `optional` 
    * - **parent**
      -  `file <./file.html>`_
      - `optional` 
-   * - **size**
-     - **int**
+   * - **content**
+     -  `Href <./Href.html>`_
+     - `optional` 
+   * - **children**
+     -  `Files <./Files.html>`_
      - `optional` 
 
 

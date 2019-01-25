@@ -299,9 +299,10 @@ get_content
 
         path = 'path_example' # str | 
     area_id = 'area_id_example' # str | 
+    response_builder = 'response_builder_example' # str |  (optional)
 
     try:
-        tc.server_api.get_content(path, area_id)
+        tc.server_api.get_content(path, area_id, response_builder=response_builder)
     except ApiException as e:
         print("Exception when calling ServerApi->get_content: %s\n" % e)
 
@@ -321,6 +322,9 @@ get_content
    * - **area_id**
      - **str**
      - 
+   * - **response_builder**
+     - **str**
+     - [optional] 
 
 Return type:
     void (empty response body)

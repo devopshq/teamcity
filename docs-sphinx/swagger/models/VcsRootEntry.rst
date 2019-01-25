@@ -15,9 +15,6 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **checkout_rules**
-     - **str**
-     - `optional` 
    * - **id**
      - **str**
      - `optional` 
@@ -26,6 +23,9 @@ Properties
      - `optional` [default to ``False``]
    * - **vcs_root**
      -  `VcsRoot <./VcsRoot.html>`_
+     - `optional` 
+   * - **checkout_rules**
+     - **str**
      - `optional` 
 
 

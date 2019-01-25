@@ -20,48 +20,27 @@ class AgentRequirements(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'agent_requirement': 'list[AgentRequirement]',
-        'count': 'int'
+        'count': 'int',
+        'agent_requirement': 'list[AgentRequirement]'
     }
 
     attribute_map = {
-        'agent_requirement': 'agent-requirement',
-        'count': 'count'
+        'count': 'count',
+        'agent_requirement': 'agent-requirement'
     }
 
-    def __init__(self, agent_requirement=None, count=None, teamcity=None):  # noqa: E501
+    def __init__(self, count=None, agent_requirement=None, teamcity=None):  # noqa: E501
         """AgentRequirements - a model defined in Swagger"""  # noqa: E501
 
-        self._agent_requirement = None
         self._count = None
+        self._agent_requirement = None
         self.discriminator = None
 
-        if agent_requirement is not None:
-            self.agent_requirement = agent_requirement
         if count is not None:
             self.count = count
+        if agent_requirement is not None:
+            self.agent_requirement = agent_requirement
         super(AgentRequirements, self).__init__(teamcity=teamcity)
-
-    @property
-    def agent_requirement(self):
-        """Gets the agent_requirement of this AgentRequirements.  # noqa: E501
-
-
-        :return: The agent_requirement of this AgentRequirements.  # noqa: E501
-        :rtype: list[AgentRequirement]
-        """
-        return self._agent_requirement
-
-    @agent_requirement.setter
-    def agent_requirement(self, agent_requirement):
-        """Sets the agent_requirement of this AgentRequirements.
-
-
-        :param agent_requirement: The agent_requirement of this AgentRequirements.  # noqa: E501
-        :type: list[AgentRequirement]
-        """
-
-        self._agent_requirement = agent_requirement
 
     @property
     def count(self):
@@ -83,3 +62,24 @@ class AgentRequirements(TeamCityObject):
         """
 
         self._count = count
+
+    @property
+    def agent_requirement(self):
+        """Gets the agent_requirement of this AgentRequirements.  # noqa: E501
+
+
+        :return: The agent_requirement of this AgentRequirements.  # noqa: E501
+        :rtype: list[AgentRequirement]
+        """
+        return self._agent_requirement
+
+    @agent_requirement.setter
+    def agent_requirement(self, agent_requirement):
+        """Sets the agent_requirement of this AgentRequirements.
+
+
+        :param agent_requirement: The agent_requirement of this AgentRequirements.  # noqa: E501
+        :type: list[AgentRequirement]
+        """
+
+        self._agent_requirement = agent_requirement

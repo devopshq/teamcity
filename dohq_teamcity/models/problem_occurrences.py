@@ -21,70 +21,70 @@ class ProblemOccurrences(TeamCityObject):
     """
     swagger_types = {
         'count': 'int',
-        'default': 'bool',
-        'failed': 'int',
         'href': 'str',
-        'ignored': 'int',
-        'muted': 'int',
-        'new_failed': 'int',
         'next_href': 'str',
-        'passed': 'int',
         'prev_href': 'str',
-        'problem_occurrence': 'list[ProblemOccurrence]'
+        'problem_occurrence': 'list[ProblemOccurrence]',
+        'default': 'bool',
+        'passed': 'int',
+        'failed': 'int',
+        'new_failed': 'int',
+        'ignored': 'int',
+        'muted': 'int'
     }
 
     attribute_map = {
         'count': 'count',
-        'default': 'default',
-        'failed': 'failed',
         'href': 'href',
-        'ignored': 'ignored',
-        'muted': 'muted',
-        'new_failed': 'newFailed',
         'next_href': 'nextHref',
-        'passed': 'passed',
         'prev_href': 'prevHref',
-        'problem_occurrence': 'problemOccurrence'
+        'problem_occurrence': 'problemOccurrence',
+        'default': 'default',
+        'passed': 'passed',
+        'failed': 'failed',
+        'new_failed': 'newFailed',
+        'ignored': 'ignored',
+        'muted': 'muted'
     }
 
-    def __init__(self, count=None, default=False, failed=None, href=None, ignored=None, muted=None, new_failed=None, next_href=None, passed=None, prev_href=None, problem_occurrence=None, teamcity=None):  # noqa: E501
+    def __init__(self, count=None, href=None, next_href=None, prev_href=None, problem_occurrence=None, default=False, passed=None, failed=None, new_failed=None, ignored=None, muted=None, teamcity=None):  # noqa: E501
         """ProblemOccurrences - a model defined in Swagger"""  # noqa: E501
 
         self._count = None
-        self._default = None
-        self._failed = None
         self._href = None
-        self._ignored = None
-        self._muted = None
-        self._new_failed = None
         self._next_href = None
-        self._passed = None
         self._prev_href = None
         self._problem_occurrence = None
+        self._default = None
+        self._passed = None
+        self._failed = None
+        self._new_failed = None
+        self._ignored = None
+        self._muted = None
         self.discriminator = None
 
         if count is not None:
             self.count = count
-        if default is not None:
-            self.default = default
-        if failed is not None:
-            self.failed = failed
         if href is not None:
             self.href = href
-        if ignored is not None:
-            self.ignored = ignored
-        if muted is not None:
-            self.muted = muted
-        if new_failed is not None:
-            self.new_failed = new_failed
         if next_href is not None:
             self.next_href = next_href
-        if passed is not None:
-            self.passed = passed
         if prev_href is not None:
             self.prev_href = prev_href
         if problem_occurrence is not None:
             self.problem_occurrence = problem_occurrence
+        if default is not None:
+            self.default = default
+        if passed is not None:
+            self.passed = passed
+        if failed is not None:
+            self.failed = failed
+        if new_failed is not None:
+            self.new_failed = new_failed
+        if ignored is not None:
+            self.ignored = ignored
+        if muted is not None:
+            self.muted = muted
         super(ProblemOccurrences, self).__init__(teamcity=teamcity)
 
     @property
@@ -109,48 +109,6 @@ class ProblemOccurrences(TeamCityObject):
         self._count = count
 
     @property
-    def default(self):
-        """Gets the default of this ProblemOccurrences.  # noqa: E501
-
-
-        :return: The default of this ProblemOccurrences.  # noqa: E501
-        :rtype: bool
-        """
-        return self._default
-
-    @default.setter
-    def default(self, default):
-        """Sets the default of this ProblemOccurrences.
-
-
-        :param default: The default of this ProblemOccurrences.  # noqa: E501
-        :type: bool
-        """
-
-        self._default = default
-
-    @property
-    def failed(self):
-        """Gets the failed of this ProblemOccurrences.  # noqa: E501
-
-
-        :return: The failed of this ProblemOccurrences.  # noqa: E501
-        :rtype: int
-        """
-        return self._failed
-
-    @failed.setter
-    def failed(self, failed):
-        """Sets the failed of this ProblemOccurrences.
-
-
-        :param failed: The failed of this ProblemOccurrences.  # noqa: E501
-        :type: int
-        """
-
-        self._failed = failed
-
-    @property
     def href(self):
         """Gets the href of this ProblemOccurrences.  # noqa: E501
 
@@ -172,69 +130,6 @@ class ProblemOccurrences(TeamCityObject):
         self._href = href
 
     @property
-    def ignored(self):
-        """Gets the ignored of this ProblemOccurrences.  # noqa: E501
-
-
-        :return: The ignored of this ProblemOccurrences.  # noqa: E501
-        :rtype: int
-        """
-        return self._ignored
-
-    @ignored.setter
-    def ignored(self, ignored):
-        """Sets the ignored of this ProblemOccurrences.
-
-
-        :param ignored: The ignored of this ProblemOccurrences.  # noqa: E501
-        :type: int
-        """
-
-        self._ignored = ignored
-
-    @property
-    def muted(self):
-        """Gets the muted of this ProblemOccurrences.  # noqa: E501
-
-
-        :return: The muted of this ProblemOccurrences.  # noqa: E501
-        :rtype: int
-        """
-        return self._muted
-
-    @muted.setter
-    def muted(self, muted):
-        """Sets the muted of this ProblemOccurrences.
-
-
-        :param muted: The muted of this ProblemOccurrences.  # noqa: E501
-        :type: int
-        """
-
-        self._muted = muted
-
-    @property
-    def new_failed(self):
-        """Gets the new_failed of this ProblemOccurrences.  # noqa: E501
-
-
-        :return: The new_failed of this ProblemOccurrences.  # noqa: E501
-        :rtype: int
-        """
-        return self._new_failed
-
-    @new_failed.setter
-    def new_failed(self, new_failed):
-        """Sets the new_failed of this ProblemOccurrences.
-
-
-        :param new_failed: The new_failed of this ProblemOccurrences.  # noqa: E501
-        :type: int
-        """
-
-        self._new_failed = new_failed
-
-    @property
     def next_href(self):
         """Gets the next_href of this ProblemOccurrences.  # noqa: E501
 
@@ -254,27 +149,6 @@ class ProblemOccurrences(TeamCityObject):
         """
 
         self._next_href = next_href
-
-    @property
-    def passed(self):
-        """Gets the passed of this ProblemOccurrences.  # noqa: E501
-
-
-        :return: The passed of this ProblemOccurrences.  # noqa: E501
-        :rtype: int
-        """
-        return self._passed
-
-    @passed.setter
-    def passed(self, passed):
-        """Sets the passed of this ProblemOccurrences.
-
-
-        :param passed: The passed of this ProblemOccurrences.  # noqa: E501
-        :type: int
-        """
-
-        self._passed = passed
 
     @property
     def prev_href(self):
@@ -317,3 +191,129 @@ class ProblemOccurrences(TeamCityObject):
         """
 
         self._problem_occurrence = problem_occurrence
+
+    @property
+    def default(self):
+        """Gets the default of this ProblemOccurrences.  # noqa: E501
+
+
+        :return: The default of this ProblemOccurrences.  # noqa: E501
+        :rtype: bool
+        """
+        return self._default
+
+    @default.setter
+    def default(self, default):
+        """Sets the default of this ProblemOccurrences.
+
+
+        :param default: The default of this ProblemOccurrences.  # noqa: E501
+        :type: bool
+        """
+
+        self._default = default
+
+    @property
+    def passed(self):
+        """Gets the passed of this ProblemOccurrences.  # noqa: E501
+
+
+        :return: The passed of this ProblemOccurrences.  # noqa: E501
+        :rtype: int
+        """
+        return self._passed
+
+    @passed.setter
+    def passed(self, passed):
+        """Sets the passed of this ProblemOccurrences.
+
+
+        :param passed: The passed of this ProblemOccurrences.  # noqa: E501
+        :type: int
+        """
+
+        self._passed = passed
+
+    @property
+    def failed(self):
+        """Gets the failed of this ProblemOccurrences.  # noqa: E501
+
+
+        :return: The failed of this ProblemOccurrences.  # noqa: E501
+        :rtype: int
+        """
+        return self._failed
+
+    @failed.setter
+    def failed(self, failed):
+        """Sets the failed of this ProblemOccurrences.
+
+
+        :param failed: The failed of this ProblemOccurrences.  # noqa: E501
+        :type: int
+        """
+
+        self._failed = failed
+
+    @property
+    def new_failed(self):
+        """Gets the new_failed of this ProblemOccurrences.  # noqa: E501
+
+
+        :return: The new_failed of this ProblemOccurrences.  # noqa: E501
+        :rtype: int
+        """
+        return self._new_failed
+
+    @new_failed.setter
+    def new_failed(self, new_failed):
+        """Sets the new_failed of this ProblemOccurrences.
+
+
+        :param new_failed: The new_failed of this ProblemOccurrences.  # noqa: E501
+        :type: int
+        """
+
+        self._new_failed = new_failed
+
+    @property
+    def ignored(self):
+        """Gets the ignored of this ProblemOccurrences.  # noqa: E501
+
+
+        :return: The ignored of this ProblemOccurrences.  # noqa: E501
+        :rtype: int
+        """
+        return self._ignored
+
+    @ignored.setter
+    def ignored(self, ignored):
+        """Sets the ignored of this ProblemOccurrences.
+
+
+        :param ignored: The ignored of this ProblemOccurrences.  # noqa: E501
+        :type: int
+        """
+
+        self._ignored = ignored
+
+    @property
+    def muted(self):
+        """Gets the muted of this ProblemOccurrences.  # noqa: E501
+
+
+        :return: The muted of this ProblemOccurrences.  # noqa: E501
+        :rtype: int
+        """
+        return self._muted
+
+    @muted.setter
+    def muted(self, muted):
+        """Sets the muted of this ProblemOccurrences.
+
+
+        :param muted: The muted of this ProblemOccurrences.  # noqa: E501
+        :type: int
+        """
+
+        self._muted = muted

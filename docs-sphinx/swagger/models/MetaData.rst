@@ -15,11 +15,11 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **entries**
-     -  `Entries <./Entries.html>`_
-     - `optional` 
    * - **id**
      - **str**
+     - `optional` 
+   * - **entries**
+     -  `Entries <./Entries.html>`_
      - `optional` 
 
 

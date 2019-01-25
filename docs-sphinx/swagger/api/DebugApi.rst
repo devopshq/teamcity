@@ -20,6 +20,14 @@ dohq_teamcity.DebugApi
      - **POST** ``/app/rest/debug/emptyTask``
    * - :ref:`execute_db_query`
      - **GET** ``/app/rest/debug/database/query/{query}``
+   * - :ref:`get_build_chain_optimization_log`
+     - **GET** ``/app/rest/debug/buildChainOptimizationLog/{buildLocator}``
+   * - :ref:`get_cached_build_promotions`
+     - **GET** ``/app/rest/debug/caches/buildPromotions/content``
+   * - :ref:`get_cached_build_promotions_stats`
+     - **GET** ``/app/rest/debug/caches/buildPromotions/stats``
+   * - :ref:`get_cached_builds_stat`
+     - **GET** ``/app/rest/debug/caches/builds/stats``
    * - :ref:`get_current_session`
      - **GET** ``/app/rest/debug/currentRequest/session``
    * - :ref:`get_current_session_max_inactive_interval`
@@ -28,12 +36,18 @@ dohq_teamcity.DebugApi
      - **GET** ``/app/rest/debug/currentUserPermissions``
    * - :ref:`get_date`
      - **GET** ``/app/rest/debug/date/{dateLocator}``
+   * - :ref:`get_diagnostics_perf_stats`
+     - **GET** ``/app/rest/debug/diagnostics/threadPerfStat/stats``
    * - :ref:`get_environment_variables`
      - **GET** ``/app/rest/debug/jvm/environmentVariables``
    * - :ref:`get_hashed`
      - **GET** ``/app/rest/debug/values/transform/{method}``
+   * - :ref:`get_ip_address`
+     - **GET** ``/app/rest/debug/dns/lookup/{host}``
+   * - :ref:`get_raw_investigations`
+     - **GET** ``/app/rest/debug/investigations``
    * - :ref:`get_request_details`
-     - **GET** ``/app/rest/debug/currentRequest/details``
+     - **GET** ``/app/rest/debug/currentRequest/details{extra}``
    * - :ref:`get_scrambled`
      - **GET** ``/app/rest/debug/values/password/scrambled``
    * - :ref:`get_sessions`
@@ -42,14 +56,22 @@ dohq_teamcity.DebugApi
      - **GET** ``/app/rest/debug/jvm/systemProperties``
    * - :ref:`get_thread_dump`
      - **GET** ``/app/rest/debug/threadDump``
+   * - :ref:`get_thread_interrupted`
+     - **GET** ``/app/rest/debug/threads/{threadLocator}/interrupted``
    * - :ref:`get_unscrambled`
      - **GET** ``/app/rest/debug/values/password/unscrambled``
+   * - :ref:`interrupt_thread`
+     - **PUT** ``/app/rest/debug/threads/{threadLocator}/interrupted``
    * - :ref:`invalidate_current_session`
      - **DELETE** ``/app/rest/debug/currentRequest/session``
    * - :ref:`list_db_tables`
      - **GET** ``/app/rest/debug/database/tables``
    * - :ref:`new_remember_me`
      - **POST** ``/app/rest/debug/currentRequest/rememberMe``
+   * - :ref:`post_request_details`
+     - **POST** ``/app/rest/debug/currentRequest/details{extra}``
+   * - :ref:`put_request_details`
+     - **PUT** ``/app/rest/debug/currentRequest/details{extra}``
    * - :ref:`save_memory_dump`
      - **POST** ``/app/rest/debug/memory/dumps``
    * - :ref:`schedule_checking_for_changes`
@@ -99,9 +121,11 @@ empty_task
 
         time = 'time_example' # str |  (optional)
     load = 56 # int |  (optional)
+    memory = 56 # int |  (optional)
+    memory_chunks = 1 # int |  (optional) (default to 1)
 
     try:
-        api_response = tc.debug_api.empty_task(time=time, load=load)
+        api_response = tc.debug_api.empty_task(time=time, load=load, memory=memory, memory_chunks=memory_chunks)
        pprint(api_response)
     except ApiException as e:
         print("Exception when calling DebugApi->empty_task: %s\n" % e)
@@ -122,6 +146,12 @@ empty_task
    * - **load**
      - **int**
      - [optional] 
+   * - **memory**
+     - **int**
+     - [optional] 
+   * - **memory_chunks**
+     - **int**
+     - [optional] [default to ``1``]
 
 Return type:
     **str**
@@ -177,6 +207,170 @@ execute_db_query
 
 Return type:
     **str**
+
+`Back to top <#>`_
+
+.. _get_build_chain_optimization_log:
+
+get_build_chain_optimization_log
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        build_locator = 'build_locator_example' # str | 
+
+    try:
+        api_response = tc.debug_api.get_build_chain_optimization_log(build_locator)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DebugApi->get_build_chain_optimization_log: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **build_locator**
+     - **str**
+     - 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
+.. _get_cached_build_promotions:
+
+get_cached_build_promotions
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        build_type_locator = 'build_type_locator_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        api_response = tc.debug_api.get_cached_build_promotions(build_type_locator=build_type_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DebugApi->get_cached_build_promotions: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **build_type_locator**
+     - **str**
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Builds <../models/Builds.html>`_
+
+`Back to top <#>`_
+
+.. _get_cached_build_promotions_stats:
+
+get_cached_build_promotions_stats
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        fields = 'fields_example' # str |  (optional)
+
+    try:
+        api_response = tc.debug_api.get_cached_build_promotions_stats(fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DebugApi->get_cached_build_promotions_stats: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Properties <../models/Properties.html>`_
+
+`Back to top <#>`_
+
+.. _get_cached_builds_stat:
+
+get_cached_builds_stat
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        fields = 'fields_example' # str |  (optional)
+
+    try:
+        api_response = tc.debug_api.get_cached_builds_stat(fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DebugApi->get_cached_builds_stat: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Properties <../models/Properties.html>`_
 
 `Back to top <#>`_
 
@@ -324,6 +518,46 @@ Return type:
 
 `Back to top <#>`_
 
+.. _get_diagnostics_perf_stats:
+
+get_diagnostics_perf_stats
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        fields = 'fields_example' # str |  (optional)
+
+    try:
+        api_response = tc.debug_api.get_diagnostics_perf_stats(fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DebugApi->get_diagnostics_perf_stats: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Properties <../models/Properties.html>`_
+
+`Back to top <#>`_
+
 .. _get_environment_variables:
 
 get_environment_variables
@@ -408,6 +642,86 @@ Return type:
 
 `Back to top <#>`_
 
+.. _get_ip_address:
+
+get_ip_address
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        host = 'host_example' # str | 
+
+    try:
+        api_response = tc.debug_api.get_ip_address(host)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DebugApi->get_ip_address: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **host**
+     - **str**
+     - 
+
+Return type:
+    `Items <../models/Items.html>`_
+
+`Back to top <#>`_
+
+.. _get_raw_investigations:
+
+get_raw_investigations
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        fields = 'fields_example' # str |  (optional)
+
+    try:
+        api_response = tc.debug_api.get_raw_investigations(fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DebugApi->get_raw_investigations: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Investigations <../models/Investigations.html>`_
+
+`Back to top <#>`_
+
 .. _get_request_details:
 
 get_request_details
@@ -421,15 +735,27 @@ get_request_details
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-    
+        extra = 'extra_example' # str | 
+
     try:
-        api_response = tc.debug_api.get_request_details()
+        api_response = tc.debug_api.get_request_details(extra)
        pprint(api_response)
     except ApiException as e:
         print("Exception when calling DebugApi->get_request_details: %s\n" % e)
 
 
-This endpoint does not need any parameter.
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **extra**
+     - **str**
+     - 
 
 Return type:
     **str**
@@ -608,6 +934,46 @@ Return type:
 
 `Back to top <#>`_
 
+.. _get_thread_interrupted:
+
+get_thread_interrupted
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        thread_locator = 'thread_locator_example' # str | 
+
+    try:
+        api_response = tc.debug_api.get_thread_interrupted(thread_locator)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DebugApi->get_thread_interrupted: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **thread_locator**
+     - **str**
+     - 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
 .. _get_unscrambled:
 
 get_unscrambled
@@ -640,6 +1006,50 @@ get_unscrambled
      - Notes
 
    * - **value**
+     - **str**
+     - [optional] 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
+.. _interrupt_thread:
+
+interrupt_thread
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        thread_locator = 'thread_locator_example' # str | 
+    body = 'body_example' # str |  (optional)
+
+    try:
+        api_response = tc.debug_api.interrupt_thread(thread_locator, body=body)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DebugApi->interrupt_thread: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **thread_locator**
+     - **str**
+     - 
+   * - **body**
      - **str**
      - [optional] 
 
@@ -725,6 +1135,86 @@ new_remember_me
 
 
 This endpoint does not need any parameter.
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
+.. _post_request_details:
+
+post_request_details
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        extra = 'extra_example' # str | 
+
+    try:
+        api_response = tc.debug_api.post_request_details(extra)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DebugApi->post_request_details: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **extra**
+     - **str**
+     - 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
+.. _put_request_details:
+
+put_request_details
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        extra = 'extra_example' # str | 
+
+    try:
+        api_response = tc.debug_api.put_request_details(extra)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DebugApi->put_request_details: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **extra**
+     - **str**
+     - 
 
 Return type:
     **str**

@@ -20,33 +20,31 @@ class AgentPools(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'agent_pool': 'list[AgentPool]',
         'count': 'int',
         'href': 'str',
         'next_href': 'str',
-        'prev_href': 'str'
+        'prev_href': 'str',
+        'agent_pool': 'list[AgentPool]'
     }
 
     attribute_map = {
-        'agent_pool': 'agentPool',
         'count': 'count',
         'href': 'href',
         'next_href': 'nextHref',
-        'prev_href': 'prevHref'
+        'prev_href': 'prevHref',
+        'agent_pool': 'agentPool'
     }
 
-    def __init__(self, agent_pool=None, count=None, href=None, next_href=None, prev_href=None, teamcity=None):  # noqa: E501
+    def __init__(self, count=None, href=None, next_href=None, prev_href=None, agent_pool=None, teamcity=None):  # noqa: E501
         """AgentPools - a model defined in Swagger"""  # noqa: E501
 
-        self._agent_pool = None
         self._count = None
         self._href = None
         self._next_href = None
         self._prev_href = None
+        self._agent_pool = None
         self.discriminator = None
 
-        if agent_pool is not None:
-            self.agent_pool = agent_pool
         if count is not None:
             self.count = count
         if href is not None:
@@ -55,28 +53,9 @@ class AgentPools(TeamCityObject):
             self.next_href = next_href
         if prev_href is not None:
             self.prev_href = prev_href
+        if agent_pool is not None:
+            self.agent_pool = agent_pool
         super(AgentPools, self).__init__(teamcity=teamcity)
-
-    @property
-    def agent_pool(self):
-        """Gets the agent_pool of this AgentPools.  # noqa: E501
-
-
-        :return: The agent_pool of this AgentPools.  # noqa: E501
-        :rtype: list[AgentPool]
-        """
-        return self._agent_pool
-
-    @agent_pool.setter
-    def agent_pool(self, agent_pool):
-        """Sets the agent_pool of this AgentPools.
-
-
-        :param agent_pool: The agent_pool of this AgentPools.  # noqa: E501
-        :type: list[AgentPool]
-        """
-
-        self._agent_pool = agent_pool
 
     @property
     def count(self):
@@ -161,3 +140,24 @@ class AgentPools(TeamCityObject):
         """
 
         self._prev_href = prev_href
+
+    @property
+    def agent_pool(self):
+        """Gets the agent_pool of this AgentPools.  # noqa: E501
+
+
+        :return: The agent_pool of this AgentPools.  # noqa: E501
+        :rtype: list[AgentPool]
+        """
+        return self._agent_pool
+
+    @agent_pool.setter
+    def agent_pool(self, agent_pool):
+        """Sets the agent_pool of this AgentPools.
+
+
+        :param agent_pool: The agent_pool of this AgentPools.  # noqa: E501
+        :type: list[AgentPool]
+        """
+
+        self._agent_pool = agent_pool

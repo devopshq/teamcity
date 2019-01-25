@@ -20,58 +20,37 @@ class Session(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'creation_date': 'str',
         'id': 'str',
+        'creation_date': 'str',
         'last_accessed_date': 'str',
         'user': 'User'
     }
 
     attribute_map = {
-        'creation_date': 'creationDate',
         'id': 'id',
+        'creation_date': 'creationDate',
         'last_accessed_date': 'lastAccessedDate',
         'user': 'user'
     }
 
-    def __init__(self, creation_date=None, id=None, last_accessed_date=None, user=None, teamcity=None):  # noqa: E501
+    def __init__(self, id=None, creation_date=None, last_accessed_date=None, user=None, teamcity=None):  # noqa: E501
         """Session - a model defined in Swagger"""  # noqa: E501
 
-        self._creation_date = None
         self._id = None
+        self._creation_date = None
         self._last_accessed_date = None
         self._user = None
         self.discriminator = None
 
-        if creation_date is not None:
-            self.creation_date = creation_date
         if id is not None:
             self.id = id
+        if creation_date is not None:
+            self.creation_date = creation_date
         if last_accessed_date is not None:
             self.last_accessed_date = last_accessed_date
         if user is not None:
             self.user = user
         super(Session, self).__init__(teamcity=teamcity)
-
-    @property
-    def creation_date(self):
-        """Gets the creation_date of this Session.  # noqa: E501
-
-
-        :return: The creation_date of this Session.  # noqa: E501
-        :rtype: str
-        """
-        return self._creation_date
-
-    @creation_date.setter
-    def creation_date(self, creation_date):
-        """Sets the creation_date of this Session.
-
-
-        :param creation_date: The creation_date of this Session.  # noqa: E501
-        :type: str
-        """
-
-        self._creation_date = creation_date
 
     @property
     def id(self):
@@ -93,6 +72,27 @@ class Session(TeamCityObject):
         """
 
         self._id = id
+
+    @property
+    def creation_date(self):
+        """Gets the creation_date of this Session.  # noqa: E501
+
+
+        :return: The creation_date of this Session.  # noqa: E501
+        :rtype: str
+        """
+        return self._creation_date
+
+    @creation_date.setter
+    def creation_date(self, creation_date):
+        """Sets the creation_date of this Session.
+
+
+        :param creation_date: The creation_date of this Session.  # noqa: E501
+        :type: str
+        """
+
+        self._creation_date = creation_date
 
     @property
     def last_accessed_date(self):

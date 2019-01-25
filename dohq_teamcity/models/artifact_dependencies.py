@@ -20,53 +20,32 @@ class ArtifactDependencies(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'artifact_dependency': 'list[ArtifactDependency]',
         'count': 'int',
+        'artifact_dependency': 'list[ArtifactDependency]',
         'replace': 'str'
     }
 
     attribute_map = {
-        'artifact_dependency': 'artifact-dependency',
         'count': 'count',
+        'artifact_dependency': 'artifact-dependency',
         'replace': 'replace'
     }
 
-    def __init__(self, artifact_dependency=None, count=None, replace=None, teamcity=None):  # noqa: E501
+    def __init__(self, count=None, artifact_dependency=None, replace=None, teamcity=None):  # noqa: E501
         """ArtifactDependencies - a model defined in Swagger"""  # noqa: E501
 
-        self._artifact_dependency = None
         self._count = None
+        self._artifact_dependency = None
         self._replace = None
         self.discriminator = None
 
-        if artifact_dependency is not None:
-            self.artifact_dependency = artifact_dependency
         if count is not None:
             self.count = count
+        if artifact_dependency is not None:
+            self.artifact_dependency = artifact_dependency
         if replace is not None:
             self.replace = replace
         super(ArtifactDependencies, self).__init__(teamcity=teamcity)
-
-    @property
-    def artifact_dependency(self):
-        """Gets the artifact_dependency of this ArtifactDependencies.  # noqa: E501
-
-
-        :return: The artifact_dependency of this ArtifactDependencies.  # noqa: E501
-        :rtype: list[ArtifactDependency]
-        """
-        return self._artifact_dependency
-
-    @artifact_dependency.setter
-    def artifact_dependency(self, artifact_dependency):
-        """Sets the artifact_dependency of this ArtifactDependencies.
-
-
-        :param artifact_dependency: The artifact_dependency of this ArtifactDependencies.  # noqa: E501
-        :type: list[ArtifactDependency]
-        """
-
-        self._artifact_dependency = artifact_dependency
 
     @property
     def count(self):
@@ -88,6 +67,27 @@ class ArtifactDependencies(TeamCityObject):
         """
 
         self._count = count
+
+    @property
+    def artifact_dependency(self):
+        """Gets the artifact_dependency of this ArtifactDependencies.  # noqa: E501
+
+
+        :return: The artifact_dependency of this ArtifactDependencies.  # noqa: E501
+        :rtype: list[ArtifactDependency]
+        """
+        return self._artifact_dependency
+
+    @artifact_dependency.setter
+    def artifact_dependency(self, artifact_dependency):
+        """Sets the artifact_dependency of this ArtifactDependencies.
+
+
+        :param artifact_dependency: The artifact_dependency of this ArtifactDependencies.  # noqa: E501
+        :type: list[ArtifactDependency]
+        """
+
+        self._artifact_dependency = artifact_dependency
 
     @property
     def replace(self):

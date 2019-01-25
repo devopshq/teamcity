@@ -14,10 +14,145 @@ dohq_teamcity.InvestigationApi
 
    * - Method
      - HTTP request
+   * - :ref:`create_instance`
+     - **POST** ``/app/rest/investigations``
+   * - :ref:`create_instances`
+     - **POST** ``/app/rest/investigations/multiple``
+   * - :ref:`delete_instance`
+     - **DELETE** ``/app/rest/investigations/{investigationLocator}``
    * - :ref:`get_investigations`
      - **GET** ``/app/rest/investigations``
+   * - :ref:`replace_instance`
+     - **PUT** ``/app/rest/investigations/{investigationLocator}``
    * - :ref:`serve_instance`
      - **GET** ``/app/rest/investigations/{investigationLocator}``
+
+.. _create_instance:
+
+create_instance
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        body = dohq_teamcity.Investigation() # Investigation |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        api_response = tc.investigation_api.create_instance(body=body, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling InvestigationApi->create_instance: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **body**
+     - `Investigation <../models/Investigation.html>`_
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Investigation <../models/Investigation.html>`_
+
+`Back to top <#>`_
+
+.. _create_instances:
+
+create_instances
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        body = dohq_teamcity.Investigations() # Investigations |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        api_response = tc.investigation_api.create_instances(body=body, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling InvestigationApi->create_instances: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **body**
+     - `Investigations <../models/Investigations.html>`_
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Investigations <../models/Investigations.html>`_
+
+`Back to top <#>`_
+
+.. _delete_instance:
+
+delete_instance
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        investigation_locator = 'investigation_locator_example' # str | 
+
+    try:
+        tc.investigation_api.delete_instance(investigation_locator)
+    except ApiException as e:
+        print("Exception when calling InvestigationApi->delete_instance: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **investigation_locator**
+     - **str**
+     - 
+
+Return type:
+    void (empty response body)
+
+`Back to top <#>`_
 
 .. _get_investigations:
 
@@ -60,6 +195,54 @@ get_investigations
 
 Return type:
     `Investigations <../models/Investigations.html>`_
+
+`Back to top <#>`_
+
+.. _replace_instance:
+
+replace_instance
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+        investigation_locator = 'investigation_locator_example' # str | 
+    body = dohq_teamcity.Investigation() # Investigation |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        api_response = tc.investigation_api.replace_instance(investigation_locator, body=body, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling InvestigationApi->replace_instance: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **investigation_locator**
+     - **str**
+     - 
+   * - **body**
+     - `Investigation <../models/Investigation.html>`_
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Investigation <../models/Investigation.html>`_
 
 `Back to top <#>`_
 

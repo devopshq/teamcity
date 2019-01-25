@@ -20,58 +20,37 @@ class ModelProperty(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'inherited': 'bool',
         'name': 'str',
-        'type': 'Type',
-        'value': 'str'
+        'value': 'str',
+        'inherited': 'bool',
+        'type': 'Type'
     }
 
     attribute_map = {
-        'inherited': 'inherited',
         'name': 'name',
-        'type': 'type',
-        'value': 'value'
+        'value': 'value',
+        'inherited': 'inherited',
+        'type': 'type'
     }
 
-    def __init__(self, inherited=False, name=None, type=None, value=None, teamcity=None):  # noqa: E501
+    def __init__(self, name=None, value=None, inherited=False, type=None, teamcity=None):  # noqa: E501
         """ModelProperty - a model defined in Swagger"""  # noqa: E501
 
-        self._inherited = None
         self._name = None
-        self._type = None
         self._value = None
+        self._inherited = None
+        self._type = None
         self.discriminator = None
 
-        if inherited is not None:
-            self.inherited = inherited
         if name is not None:
             self.name = name
-        if type is not None:
-            self.type = type
         if value is not None:
             self.value = value
+        if inherited is not None:
+            self.inherited = inherited
+        if type is not None:
+            self.type = type
         super(ModelProperty, self).__init__(teamcity=teamcity)
-
-    @property
-    def inherited(self):
-        """Gets the inherited of this ModelProperty.  # noqa: E501
-
-
-        :return: The inherited of this ModelProperty.  # noqa: E501
-        :rtype: bool
-        """
-        return self._inherited
-
-    @inherited.setter
-    def inherited(self, inherited):
-        """Sets the inherited of this ModelProperty.
-
-
-        :param inherited: The inherited of this ModelProperty.  # noqa: E501
-        :type: bool
-        """
-
-        self._inherited = inherited
 
     @property
     def name(self):
@@ -95,27 +74,6 @@ class ModelProperty(TeamCityObject):
         self._name = name
 
     @property
-    def type(self):
-        """Gets the type of this ModelProperty.  # noqa: E501
-
-
-        :return: The type of this ModelProperty.  # noqa: E501
-        :rtype: Type
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type):
-        """Sets the type of this ModelProperty.
-
-
-        :param type: The type of this ModelProperty.  # noqa: E501
-        :type: Type
-        """
-
-        self._type = type
-
-    @property
     def value(self):
         """Gets the value of this ModelProperty.  # noqa: E501
 
@@ -135,3 +93,45 @@ class ModelProperty(TeamCityObject):
         """
 
         self._value = value
+
+    @property
+    def inherited(self):
+        """Gets the inherited of this ModelProperty.  # noqa: E501
+
+
+        :return: The inherited of this ModelProperty.  # noqa: E501
+        :rtype: bool
+        """
+        return self._inherited
+
+    @inherited.setter
+    def inherited(self, inherited):
+        """Sets the inherited of this ModelProperty.
+
+
+        :param inherited: The inherited of this ModelProperty.  # noqa: E501
+        :type: bool
+        """
+
+        self._inherited = inherited
+
+    @property
+    def type(self):
+        """Gets the type of this ModelProperty.  # noqa: E501
+
+
+        :return: The type of this ModelProperty.  # noqa: E501
+        :rtype: Type
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this ModelProperty.
+
+
+        :param type: The type of this ModelProperty.  # noqa: E501
+        :type: Type
+        """
+
+        self._type = type
