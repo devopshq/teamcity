@@ -11,7 +11,7 @@ Reference
 
 Examples
 ========
-Some action::
+.. code-block:: python::
 
     # Get enabled agents in the pool by name
     pool = "My Build Pool"

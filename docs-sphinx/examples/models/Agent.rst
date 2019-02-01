@@ -11,7 +11,7 @@ Reference
 
 Examples
 ========
-Some action::
+.. code-block:: python
 
     # Get pool by agent name
     agent = "linux-ci-01.example.com"

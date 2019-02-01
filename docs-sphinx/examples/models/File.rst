@@ -11,8 +11,8 @@ Reference
 
 Examples
 ========
-Some action::
+.. code-block:: python::
 
-    # soon...
+    # Add examples, if you figure out how to interact with objects, please
 
 
