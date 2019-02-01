@@ -92,7 +92,7 @@ delete_current_remember_me
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-    
+
     try:
         tc.debug_api.delete_current_remember_me()
     except ApiException as e:
@@ -119,7 +119,7 @@ empty_task
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        time = 'time_example' # str |  (optional)
+    time = 'time_example' # str |  (optional)
     load = 56 # int |  (optional)
     memory = 56 # int |  (optional)
     memory_chunks = 1 # int |  (optional) (default to 1)
@@ -171,7 +171,7 @@ execute_db_query
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        query = 'query_example' # str | 
+    query = 'query_example' # str | 
     field_delimiter = ', ' # str |  (optional) (default to , )
     data_retrieve_query = 'data_retrieve_query_example' # str |  (optional)
     count = 1000 # int |  (optional) (default to 1000)
@@ -223,7 +223,7 @@ get_build_chain_optimization_log
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
 
     try:
         api_response = tc.debug_api.get_build_chain_optimization_log(build_locator)
@@ -263,7 +263,7 @@ get_cached_build_promotions
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_type_locator = 'build_type_locator_example' # str |  (optional)
+    build_type_locator = 'build_type_locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -307,7 +307,7 @@ get_cached_build_promotions_stats
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        fields = 'fields_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
 
     try:
         api_response = tc.debug_api.get_cached_build_promotions_stats(fields=fields)
@@ -347,7 +347,7 @@ get_cached_builds_stat
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        fields = 'fields_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
 
     try:
         api_response = tc.debug_api.get_cached_builds_stat(fields=fields)
@@ -387,7 +387,7 @@ get_current_session
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        fields = 'fields_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
 
     try:
         api_response = tc.debug_api.get_current_session(fields=fields)
@@ -427,7 +427,7 @@ get_current_session_max_inactive_interval
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-    
+
     try:
         api_response = tc.debug_api.get_current_session_max_inactive_interval()
        pprint(api_response)
@@ -455,7 +455,7 @@ get_current_user_permissions
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-    
+
     try:
         api_response = tc.debug_api.get_current_user_permissions()
        pprint(api_response)
@@ -483,7 +483,7 @@ get_date
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        date_locator = 'date_locator_example' # str | 
+    date_locator = 'date_locator_example' # str | 
     format = 'format_example' # str |  (optional)
     timezone = 'timezone_example' # str |  (optional)
 
@@ -531,7 +531,7 @@ get_diagnostics_perf_stats
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        fields = 'fields_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
 
     try:
         api_response = tc.debug_api.get_diagnostics_perf_stats(fields=fields)
@@ -571,7 +571,7 @@ get_environment_variables
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        fields = 'fields_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
 
     try:
         api_response = tc.debug_api.get_environment_variables(fields=fields)
@@ -611,7 +611,7 @@ get_hashed
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        method = 'method_example' # str | 
+    method = 'method_example' # str | 
     value = 'value_example' # str |  (optional)
 
     try:
@@ -655,7 +655,7 @@ get_ip_address
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        host = 'host_example' # str | 
+    host = 'host_example' # str | 
 
     try:
         api_response = tc.debug_api.get_ip_address(host)
@@ -695,7 +695,7 @@ get_raw_investigations
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        fields = 'fields_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
 
     try:
         api_response = tc.debug_api.get_raw_investigations(fields=fields)
@@ -735,7 +735,7 @@ get_request_details
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        extra = 'extra_example' # str | 
+    extra = 'extra_example' # str | 
 
     try:
         api_response = tc.debug_api.get_request_details(extra)
@@ -775,7 +775,7 @@ get_scrambled
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        value = 'value_example' # str |  (optional)
+    value = 'value_example' # str |  (optional)
 
     try:
         api_response = tc.debug_api.get_scrambled(value=value)
@@ -815,7 +815,7 @@ get_sessions
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        manager = 789 # int |  (optional)
+    manager = 789 # int |  (optional)
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -859,7 +859,7 @@ get_system_properties
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        fields = 'fields_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
 
     try:
         api_response = tc.debug_api.get_system_properties(fields=fields)
@@ -899,7 +899,7 @@ get_thread_dump
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        locked_monitors = 'locked_monitors_example' # str |  (optional)
+    locked_monitors = 'locked_monitors_example' # str |  (optional)
     locked_synchronizers = 'locked_synchronizers_example' # str |  (optional)
     detect_locks = 'detect_locks_example' # str |  (optional)
 
@@ -947,7 +947,7 @@ get_thread_interrupted
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        thread_locator = 'thread_locator_example' # str | 
+    thread_locator = 'thread_locator_example' # str | 
 
     try:
         api_response = tc.debug_api.get_thread_interrupted(thread_locator)
@@ -987,7 +987,7 @@ get_unscrambled
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        value = 'value_example' # str |  (optional)
+    value = 'value_example' # str |  (optional)
 
     try:
         api_response = tc.debug_api.get_unscrambled(value=value)
@@ -1027,7 +1027,7 @@ interrupt_thread
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        thread_locator = 'thread_locator_example' # str | 
+    thread_locator = 'thread_locator_example' # str | 
     body = 'body_example' # str |  (optional)
 
     try:
@@ -1071,7 +1071,7 @@ invalidate_current_session
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-    
+
     try:
         tc.debug_api.invalidate_current_session()
     except ApiException as e:
@@ -1098,7 +1098,7 @@ list_db_tables
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-    
+
     try:
         api_response = tc.debug_api.list_db_tables()
        pprint(api_response)
@@ -1126,7 +1126,7 @@ new_remember_me
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-    
+
     try:
         api_response = tc.debug_api.new_remember_me()
        pprint(api_response)
@@ -1154,7 +1154,7 @@ post_request_details
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        extra = 'extra_example' # str | 
+    extra = 'extra_example' # str | 
 
     try:
         api_response = tc.debug_api.post_request_details(extra)
@@ -1194,7 +1194,7 @@ put_request_details
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        extra = 'extra_example' # str | 
+    extra = 'extra_example' # str | 
 
     try:
         api_response = tc.debug_api.put_request_details(extra)
@@ -1234,7 +1234,7 @@ save_memory_dump
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        archived = true # bool |  (optional)
+    archived = true # bool |  (optional)
 
     try:
         api_response = tc.debug_api.save_memory_dump(archived=archived)
@@ -1274,7 +1274,7 @@ schedule_checking_for_changes
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        locator = 'locator_example' # str |  (optional)
+    locator = 'locator_example' # str |  (optional)
     requestor = 'requestor_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -1322,7 +1322,7 @@ set_current_session_max_inactive_interval
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        body = 'body_example' # str |  (optional)
+    body = 'body_example' # str |  (optional)
 
     try:
         api_response = tc.debug_api.set_current_session_max_inactive_interval(body=body)

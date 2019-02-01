@@ -56,7 +56,7 @@ add_agent
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_pool_locator = 'agent_pool_locator_example' # str | 
+    agent_pool_locator = 'agent_pool_locator_example' # str | 
     body = dohq_teamcity.Agent() # Agent |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -104,7 +104,7 @@ add_project
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_pool_locator = 'agent_pool_locator_example' # str | 
+    agent_pool_locator = 'agent_pool_locator_example' # str | 
     body = dohq_teamcity.Project() # Project |  (optional)
 
     try:
@@ -148,7 +148,7 @@ create_pool
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        body = dohq_teamcity.AgentPool() # AgentPool |  (optional)
+    body = dohq_teamcity.AgentPool() # AgentPool |  (optional)
 
     try:
         api_response = tc.agent_pool_api.create_pool(body=body)
@@ -188,7 +188,7 @@ delete_pool
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_pool_locator = 'agent_pool_locator_example' # str | 
+    agent_pool_locator = 'agent_pool_locator_example' # str | 
 
     try:
         tc.agent_pool_api.delete_pool(agent_pool_locator)
@@ -227,7 +227,7 @@ delete_pool_project
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_pool_locator = 'agent_pool_locator_example' # str | 
+    agent_pool_locator = 'agent_pool_locator_example' # str | 
     project_locator = 'project_locator_example' # str | 
 
     try:
@@ -270,7 +270,7 @@ delete_projects
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_pool_locator = 'agent_pool_locator_example' # str | 
+    agent_pool_locator = 'agent_pool_locator_example' # str | 
 
     try:
         tc.agent_pool_api.delete_projects(agent_pool_locator)
@@ -309,7 +309,7 @@ get_field
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_pool_locator = 'agent_pool_locator_example' # str | 
+    agent_pool_locator = 'agent_pool_locator_example' # str | 
     field = 'field_example' # str | 
 
     try:
@@ -353,7 +353,7 @@ get_pool
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_pool_locator = 'agent_pool_locator_example' # str | 
+    agent_pool_locator = 'agent_pool_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -397,7 +397,7 @@ get_pool_agents
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_pool_locator = 'agent_pool_locator_example' # str | 
+    agent_pool_locator = 'agent_pool_locator_example' # str | 
     locator = 'locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -445,7 +445,7 @@ get_pool_project
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_pool_locator = 'agent_pool_locator_example' # str | 
+    agent_pool_locator = 'agent_pool_locator_example' # str | 
     project_locator = 'project_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
@@ -493,7 +493,7 @@ get_pool_projects
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_pool_locator = 'agent_pool_locator_example' # str | 
+    agent_pool_locator = 'agent_pool_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -537,7 +537,7 @@ get_pools
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        locator = 'locator_example' # str |  (optional)
+    locator = 'locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -581,7 +581,7 @@ replace_projects
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_pool_locator = 'agent_pool_locator_example' # str | 
+    agent_pool_locator = 'agent_pool_locator_example' # str | 
     body = dohq_teamcity.Projects() # Projects |  (optional)
 
     try:
@@ -625,7 +625,7 @@ set_field
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_pool_locator = 'agent_pool_locator_example' # str | 
+    agent_pool_locator = 'agent_pool_locator_example' # str | 
     field = 'field_example' # str | 
     body = 'body_example' # str |  (optional)
 

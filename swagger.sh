@@ -12,7 +12,7 @@ if [ ! -f ./swagger-codegen-cli.jar ]; then
 fi
 echo "Start generate"
 
-java -Xmx4096m -Xms1024m -jar ./swagger-codegen-cli.jar generate \
+java -Xmx8192m -Xms1024m -jar ./swagger-codegen-cli.jar generate \
     -l python \
     -c ./swagger/swagger-config.json \
     -t ./swagger/template/ \

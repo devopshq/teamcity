@@ -54,7 +54,7 @@ delete_agent
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_locator = 'agent_locator_example' # str | 
+    agent_locator = 'agent_locator_example' # str | 
 
     try:
         tc.agent_api.delete_agent(agent_locator)
@@ -93,7 +93,7 @@ ge_incompatible_build_types
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_locator = 'agent_locator_example' # str | 
+    agent_locator = 'agent_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -137,7 +137,7 @@ get_agent_pool
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_locator = 'agent_locator_example' # str | 
+    agent_locator = 'agent_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -181,7 +181,7 @@ get_authorized_info
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_locator = 'agent_locator_example' # str | 
+    agent_locator = 'agent_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -225,7 +225,7 @@ get_compatible_build_types
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_locator = 'agent_locator_example' # str | 
+    agent_locator = 'agent_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -269,7 +269,7 @@ get_enabled_info
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_locator = 'agent_locator_example' # str | 
+    agent_locator = 'agent_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -313,7 +313,7 @@ serve_agent
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_locator = 'agent_locator_example' # str | 
+    agent_locator = 'agent_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -357,7 +357,7 @@ serve_agent_field
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_locator = 'agent_locator_example' # str | 
+    agent_locator = 'agent_locator_example' # str | 
     field = 'field_example' # str | 
 
     try:
@@ -401,7 +401,7 @@ serve_agents
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        include_disconnected = true # bool |  (optional)
+    include_disconnected = true # bool |  (optional)
     include_unauthorized = true # bool |  (optional)
     locator = 'locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
@@ -453,7 +453,7 @@ set_agent_field
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_locator = 'agent_locator_example' # str | 
+    agent_locator = 'agent_locator_example' # str | 
     field = 'field_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -501,7 +501,7 @@ set_agent_pool
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_locator = 'agent_locator_example' # str | 
+    agent_locator = 'agent_locator_example' # str | 
     body = dohq_teamcity.AgentPool() # AgentPool |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -549,7 +549,7 @@ set_authorized_info
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_locator = 'agent_locator_example' # str | 
+    agent_locator = 'agent_locator_example' # str | 
     body = dohq_teamcity.AuthorizedInfo() # AuthorizedInfo |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -597,7 +597,7 @@ set_enabled_info
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_locator = 'agent_locator_example' # str | 
+    agent_locator = 'agent_locator_example' # str | 
     body = dohq_teamcity.EnabledInfo() # EnabledInfo |  (optional)
     fields = 'fields_example' # str |  (optional)
 

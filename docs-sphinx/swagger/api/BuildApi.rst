@@ -132,7 +132,7 @@ add_tags
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     body = dohq_teamcity.Tags() # Tags |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -180,7 +180,7 @@ cancel_build
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     body = dohq_teamcity.BuildCancelRequest() # BuildCancelRequest |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -228,7 +228,7 @@ cancel_build_0
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
 
     try:
         api_response = tc.build_api.cancel_build_0(build_locator)
@@ -268,7 +268,7 @@ delete_all_parameters
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -311,7 +311,7 @@ delete_build
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
 
     try:
         tc.build_api.delete_build(build_locator)
@@ -350,7 +350,7 @@ delete_builds
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        locator = 'locator_example' # str |  (optional)
+    locator = 'locator_example' # str |  (optional)
 
     try:
         tc.build_api.delete_builds(locator=locator)
@@ -389,7 +389,7 @@ delete_comment
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
 
     try:
         tc.build_api.delete_comment(build_locator)
@@ -428,7 +428,7 @@ delete_parameter
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     build_locator = 'build_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
@@ -475,7 +475,7 @@ get_artifact_dependency_changes
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -519,7 +519,7 @@ get_artifacts_directory
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
 
     try:
         api_response = tc.build_api.get_artifacts_directory(build_locator)
@@ -559,7 +559,7 @@ get_build_number
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
 
     try:
         api_response = tc.build_api.get_build_number(build_locator)
@@ -599,7 +599,7 @@ get_build_status_text
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
 
     try:
         api_response = tc.build_api.get_build_status_text(build_locator)
@@ -639,7 +639,7 @@ get_canceled_info
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -683,7 +683,7 @@ get_children
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        path = 'path_example' # str | 
+    path = 'path_example' # str | 
     build_locator = 'build_locator_example' # str | 
     base_path = 'base_path_example' # str |  (optional)
     locator = 'locator_example' # str |  (optional)
@@ -747,7 +747,7 @@ get_children_alias
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        path = 'path_example' # str | 
+    path = 'path_example' # str | 
     build_locator = 'build_locator_example' # str | 
     base_path = 'base_path_example' # str |  (optional)
     locator = 'locator_example' # str |  (optional)
@@ -811,7 +811,7 @@ get_content
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        path = 'path_example' # str | 
+    path = 'path_example' # str | 
     build_locator = 'build_locator_example' # str | 
     response_builder = 'response_builder_example' # str |  (optional)
     resolve_parameters = true # bool |  (optional)
@@ -866,7 +866,7 @@ get_content_alias
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        path = 'path_example' # str | 
+    path = 'path_example' # str | 
     build_locator = 'build_locator_example' # str | 
     resolve_parameters = true # bool |  (optional)
     log_build_usage = true # bool |  (optional)
@@ -917,7 +917,7 @@ get_metadata
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        path = 'path_example' # str | 
+    path = 'path_example' # str | 
     build_locator = 'build_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
     resolve_parameters = true # bool |  (optional)
@@ -973,7 +973,7 @@ get_parameter
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     build_locator = 'build_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
     fields2 = 'fields_example' # str |  (optional)
@@ -1025,7 +1025,7 @@ get_parameter_0
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     property_name = 'property_name_example' # str | 
 
     try:
@@ -1069,7 +1069,7 @@ get_parameter_value_long
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     build_locator = 'build_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
@@ -1117,7 +1117,7 @@ get_parameters
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     locator = 'locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
     fields2 = 'fields_example' # str |  (optional)
@@ -1169,7 +1169,7 @@ get_pinned
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
 
     try:
         api_response = tc.build_api.get_pinned(build_locator)
@@ -1209,7 +1209,7 @@ get_problems
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -1253,7 +1253,7 @@ get_resolved_parameter
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     value = 'value_example' # str | 
 
     try:
@@ -1297,7 +1297,7 @@ get_root
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     base_path = 'base_path_example' # str |  (optional)
     locator = 'locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
@@ -1357,7 +1357,7 @@ get_tests
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -1401,7 +1401,7 @@ get_zipped
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        path = 'path_example' # str | 
+    path = 'path_example' # str | 
     build_locator = 'build_locator_example' # str | 
     base_path = 'base_path_example' # str |  (optional)
     locator = 'locator_example' # str |  (optional)
@@ -1464,7 +1464,7 @@ pin_build
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     body = 'body_example' # str |  (optional)
 
     try:
@@ -1507,7 +1507,7 @@ replace_comment
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     body = 'body_example' # str |  (optional)
 
     try:
@@ -1550,7 +1550,7 @@ replace_tags
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     locator = 'locator_example' # str |  (optional)
     body = dohq_teamcity.Tags() # Tags |  (optional)
     fields = 'fields_example' # str |  (optional)
@@ -1602,7 +1602,7 @@ reset_build_finish_parameters
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
 
     try:
         tc.build_api.reset_build_finish_parameters(build_locator)
@@ -1641,7 +1641,7 @@ serve_aggregated_build_status
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
 
     try:
         api_response = tc.build_api.serve_aggregated_build_status(build_locator)
@@ -1681,7 +1681,7 @@ serve_aggregated_build_status_icon
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     suffix = 'suffix_example' # str | 
 
     try:
@@ -1724,7 +1724,7 @@ serve_all_builds
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_type = 'build_type_example' # str |  (optional)
+    build_type = 'build_type_example' # str |  (optional)
     status = 'status_example' # str |  (optional)
     triggered_by_user = 'triggered_by_user_example' # str |  (optional)
     include_personal = true # bool |  (optional)
@@ -1816,7 +1816,7 @@ serve_build
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -1860,7 +1860,7 @@ serve_build_actual_parameters
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -1904,7 +1904,7 @@ serve_build_field_by_build_only
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     field = 'field_example' # str | 
 
     try:
@@ -1948,7 +1948,7 @@ serve_build_related_issues
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -1992,7 +1992,7 @@ serve_build_related_issues_old
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -2036,7 +2036,7 @@ serve_build_statistic_value
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     name = 'name_example' # str | 
 
     try:
@@ -2080,7 +2080,7 @@ serve_build_statistic_values
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -2124,7 +2124,7 @@ serve_build_status_icon
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     suffix = 'suffix_example' # str | 
 
     try:
@@ -2167,7 +2167,7 @@ serve_source_file
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     file_name = 'file_name_example' # str | 
 
     try:
@@ -2210,7 +2210,7 @@ serve_tags
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     locator = 'locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -2258,7 +2258,7 @@ set_build_number
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     body = 'body_example' # str |  (optional)
 
     try:
@@ -2302,7 +2302,7 @@ set_build_status_text
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     body = 'body_example' # str |  (optional)
 
     try:
@@ -2346,7 +2346,7 @@ set_parameter
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     body = dohq_teamcity.ModelProperty() # ModelProperty |  (optional)
     fields = 'fields_example' # str |  (optional)
     fields2 = 'fields_example' # str |  (optional)
@@ -2398,7 +2398,7 @@ set_parameter_0
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     build_locator = 'build_locator_example' # str | 
     body = dohq_teamcity.ModelProperty() # ModelProperty |  (optional)
     fields = 'fields_example' # str |  (optional)
@@ -2454,7 +2454,7 @@ set_parameter_value_long
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     build_locator = 'build_locator_example' # str | 
     body = 'body_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
@@ -2506,7 +2506,7 @@ set_parameters
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     body = dohq_teamcity.Properties() # Properties |  (optional)
     fields = 'fields_example' # str |  (optional)
     fields2 = 'fields_example' # str |  (optional)
@@ -2558,7 +2558,7 @@ unpin_build
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     body = 'body_example' # str |  (optional)
 
     try:

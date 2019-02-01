@@ -32,7 +32,7 @@ get_problems
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        locator = 'locator_example' # str |  (optional)
+    locator = 'locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -76,7 +76,7 @@ serve_instance
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        problem_locator = 'problem_locator_example' # str | 
+    problem_locator = 'problem_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:

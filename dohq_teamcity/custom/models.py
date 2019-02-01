@@ -1508,6 +1508,7 @@ class BuildType(BuildType, ReadMixin, DeleteMixin):
         """
         return self.api.remove_template(bt_locator=self, template_locator=template_locator,
                                         **kwargs)
+
     def replace_agent_requirement(self, agent_requirement_locator, **kwargs):
         """
         :param async_req: bool

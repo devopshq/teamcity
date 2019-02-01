@@ -33,7 +33,8 @@
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
     {{^hasAuthMethods}}
-    {{#allParams}}    {{paramName}} = {{{example}}} # {{{dataType}}} | {{{description}}}{{^required}} (optional){{/required}}{{#defaultValue}} (default to {{{.}}}){{/defaultValue}}
+    {{#allParams}}
+    {{paramName}} = {{{example}}} # {{{dataType}}} | {{{description}}}{{^required}} (optional){{/required}}{{#defaultValue}} (default to {{{.}}}){{/defaultValue}}
     {{/allParams}}
     {{/hasAuthMethods}}
 

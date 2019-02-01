@@ -40,7 +40,7 @@ create_instance
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        body = dohq_teamcity.Investigation() # Investigation |  (optional)
+    body = dohq_teamcity.Investigation() # Investigation |  (optional)
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -84,7 +84,7 @@ create_instances
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        body = dohq_teamcity.Investigations() # Investigations |  (optional)
+    body = dohq_teamcity.Investigations() # Investigations |  (optional)
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -128,7 +128,7 @@ delete_instance
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        investigation_locator = 'investigation_locator_example' # str | 
+    investigation_locator = 'investigation_locator_example' # str | 
 
     try:
         tc.investigation_api.delete_instance(investigation_locator)
@@ -167,7 +167,7 @@ get_investigations
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        locator = 'locator_example' # str |  (optional)
+    locator = 'locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -211,7 +211,7 @@ replace_instance
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        investigation_locator = 'investigation_locator_example' # str | 
+    investigation_locator = 'investigation_locator_example' # str | 
     body = dohq_teamcity.Investigation() # Investigation |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -259,7 +259,7 @@ serve_instance
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        investigation_locator = 'investigation_locator_example' # str | 
+    investigation_locator = 'investigation_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:

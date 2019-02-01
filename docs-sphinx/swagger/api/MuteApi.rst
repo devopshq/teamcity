@@ -38,7 +38,7 @@ create_instance
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        body = dohq_teamcity.Mute() # Mute |  (optional)
+    body = dohq_teamcity.Mute() # Mute |  (optional)
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -82,7 +82,7 @@ create_instances
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        body = dohq_teamcity.Mutes() # Mutes |  (optional)
+    body = dohq_teamcity.Mutes() # Mutes |  (optional)
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -126,7 +126,7 @@ delete_instance
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        mute_locator = 'mute_locator_example' # str | 
+    mute_locator = 'mute_locator_example' # str | 
     body = 'body_example' # str |  (optional)
 
     try:
@@ -169,7 +169,7 @@ get_mutes
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        locator = 'locator_example' # str |  (optional)
+    locator = 'locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -213,7 +213,7 @@ serve_instance
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        mute_locator = 'mute_locator_example' # str | 
+    mute_locator = 'mute_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:

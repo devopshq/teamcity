@@ -38,7 +38,7 @@ serve_api_version
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-    
+
     try:
         api_response = tc.default_api.serve_api_version()
        pprint(api_response)
@@ -66,7 +66,7 @@ serve_build_field_short
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     bt_locator = 'bt_locator_example' # str | 
     build_locator = 'build_locator_example' # str | 
     field = 'field_example' # str | 
@@ -118,7 +118,7 @@ serve_plugin_info
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        fields = 'fields_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
 
     try:
         api_response = tc.default_api.serve_plugin_info(fields=fields)
@@ -158,7 +158,7 @@ serve_root
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-    
+
     try:
         api_response = tc.default_api.serve_root()
        pprint(api_response)
@@ -186,7 +186,7 @@ serve_version
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-    
+
     try:
         api_response = tc.default_api.serve_version()
        pprint(api_response)

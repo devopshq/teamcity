@@ -82,7 +82,7 @@ add_group
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        user_locator = 'user_locator_example' # str | 
+    user_locator = 'user_locator_example' # str | 
     body = dohq_teamcity.Group() # Group |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -130,7 +130,7 @@ add_role
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        user_locator = 'user_locator_example' # str | 
+    user_locator = 'user_locator_example' # str | 
     body = dohq_teamcity.Role() # Role |  (optional)
 
     try:
@@ -174,7 +174,7 @@ add_role_simple
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        user_locator = 'user_locator_example' # str | 
+    user_locator = 'user_locator_example' # str | 
     role_id = 'role_id_example' # str | 
     scope = 'scope_example' # str | 
 
@@ -222,7 +222,7 @@ add_role_simple_post
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        user_locator = 'user_locator_example' # str | 
+    user_locator = 'user_locator_example' # str | 
     role_id = 'role_id_example' # str | 
     scope = 'scope_example' # str | 
 
@@ -269,7 +269,7 @@ create_user
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        body = dohq_teamcity.User() # User |  (optional)
+    body = dohq_teamcity.User() # User |  (optional)
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -313,7 +313,7 @@ delete_remember_me
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        user_locator = 'user_locator_example' # str | 
+    user_locator = 'user_locator_example' # str | 
 
     try:
         tc.user_api.delete_remember_me(user_locator)
@@ -352,7 +352,7 @@ delete_role
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        user_locator = 'user_locator_example' # str | 
+    user_locator = 'user_locator_example' # str | 
     role_id = 'role_id_example' # str | 
     scope = 'scope_example' # str | 
 
@@ -399,7 +399,7 @@ delete_user
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        user_locator = 'user_locator_example' # str | 
+    user_locator = 'user_locator_example' # str | 
 
     try:
         tc.user_api.delete_user(user_locator)
@@ -438,7 +438,7 @@ delete_user_field
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        user_locator = 'user_locator_example' # str | 
+    user_locator = 'user_locator_example' # str | 
     field = 'field_example' # str | 
 
     try:
@@ -481,7 +481,7 @@ get_group
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        user_locator = 'user_locator_example' # str | 
+    user_locator = 'user_locator_example' # str | 
     group_locator = 'group_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
@@ -529,7 +529,7 @@ get_groups
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        user_locator = 'user_locator_example' # str | 
+    user_locator = 'user_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -573,7 +573,7 @@ get_permissions
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        user_locator = 'user_locator_example' # str | 
+    user_locator = 'user_locator_example' # str | 
 
     try:
         api_response = tc.user_api.get_permissions(user_locator)
@@ -613,7 +613,7 @@ get_permissions_0
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        user_locator = 'user_locator_example' # str | 
+    user_locator = 'user_locator_example' # str | 
     locator = 'locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -661,7 +661,7 @@ list_role
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        user_locator = 'user_locator_example' # str | 
+    user_locator = 'user_locator_example' # str | 
     role_id = 'role_id_example' # str | 
     scope = 'scope_example' # str | 
 
@@ -709,7 +709,7 @@ list_roles
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        user_locator = 'user_locator_example' # str | 
+    user_locator = 'user_locator_example' # str | 
 
     try:
         api_response = tc.user_api.list_roles(user_locator)
@@ -749,7 +749,7 @@ put_user_property
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        user_locator = 'user_locator_example' # str | 
+    user_locator = 'user_locator_example' # str | 
     name = 'name_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -797,7 +797,7 @@ remove_group
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        user_locator = 'user_locator_example' # str | 
+    user_locator = 'user_locator_example' # str | 
     group_locator = 'group_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
@@ -844,7 +844,7 @@ remove_user_property
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        user_locator = 'user_locator_example' # str | 
+    user_locator = 'user_locator_example' # str | 
     name = 'name_example' # str | 
 
     try:
@@ -887,7 +887,7 @@ replace_groups
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        user_locator = 'user_locator_example' # str | 
+    user_locator = 'user_locator_example' # str | 
     body = dohq_teamcity.Groups() # Groups |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -935,7 +935,7 @@ replace_roles
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        user_locator = 'user_locator_example' # str | 
+    user_locator = 'user_locator_example' # str | 
     body = dohq_teamcity.Roles() # Roles |  (optional)
 
     try:
@@ -979,7 +979,7 @@ serve_user
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        user_locator = 'user_locator_example' # str | 
+    user_locator = 'user_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -1023,7 +1023,7 @@ serve_user_field
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        user_locator = 'user_locator_example' # str | 
+    user_locator = 'user_locator_example' # str | 
     field = 'field_example' # str | 
 
     try:
@@ -1067,7 +1067,7 @@ serve_user_properties
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        user_locator = 'user_locator_example' # str | 
+    user_locator = 'user_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -1111,7 +1111,7 @@ serve_user_property
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        user_locator = 'user_locator_example' # str | 
+    user_locator = 'user_locator_example' # str | 
     name = 'name_example' # str | 
 
     try:
@@ -1155,7 +1155,7 @@ serve_users
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        locator = 'locator_example' # str |  (optional)
+    locator = 'locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -1199,7 +1199,7 @@ set_user_field
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        user_locator = 'user_locator_example' # str | 
+    user_locator = 'user_locator_example' # str | 
     field = 'field_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -1247,7 +1247,7 @@ update_user
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        user_locator = 'user_locator_example' # str | 
+    user_locator = 'user_locator_example' # str | 
     body = dohq_teamcity.User() # User |  (optional)
     fields = 'fields_example' # str |  (optional)
 

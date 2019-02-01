@@ -62,7 +62,7 @@ add_group
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        body = dohq_teamcity.Group() # Group |  (optional)
+    body = dohq_teamcity.Group() # Group |  (optional)
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -106,7 +106,7 @@ add_role
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        group_locator = 'group_locator_example' # str | 
+    group_locator = 'group_locator_example' # str | 
     body = dohq_teamcity.Role() # Role |  (optional)
 
     try:
@@ -150,7 +150,7 @@ add_role_simple
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        group_locator = 'group_locator_example' # str | 
+    group_locator = 'group_locator_example' # str | 
     role_id = 'role_id_example' # str | 
     scope = 'scope_example' # str | 
 
@@ -198,7 +198,7 @@ delete_group
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        group_locator = 'group_locator_example' # str | 
+    group_locator = 'group_locator_example' # str | 
 
     try:
         tc.group_api.delete_group(group_locator)
@@ -237,7 +237,7 @@ delete_role
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        group_locator = 'group_locator_example' # str | 
+    group_locator = 'group_locator_example' # str | 
     role_id = 'role_id_example' # str | 
     scope = 'scope_example' # str | 
 
@@ -284,7 +284,7 @@ get_parent_groups
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        group_locator = 'group_locator_example' # str | 
+    group_locator = 'group_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -328,7 +328,7 @@ get_permissions
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        group_locator = 'group_locator_example' # str | 
+    group_locator = 'group_locator_example' # str | 
 
     try:
         api_response = tc.group_api.get_permissions(group_locator)
@@ -368,7 +368,7 @@ get_properties
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        group_locator = 'group_locator_example' # str | 
+    group_locator = 'group_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -412,7 +412,7 @@ list_role
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        group_locator = 'group_locator_example' # str | 
+    group_locator = 'group_locator_example' # str | 
     role_id = 'role_id_example' # str | 
     scope = 'scope_example' # str | 
 
@@ -460,7 +460,7 @@ list_roles
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        group_locator = 'group_locator_example' # str | 
+    group_locator = 'group_locator_example' # str | 
 
     try:
         api_response = tc.group_api.list_roles(group_locator)
@@ -500,7 +500,7 @@ put_user_property
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        group_locator = 'group_locator_example' # str | 
+    group_locator = 'group_locator_example' # str | 
     name = 'name_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -548,7 +548,7 @@ remove_user_property
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        group_locator = 'group_locator_example' # str | 
+    group_locator = 'group_locator_example' # str | 
     name = 'name_example' # str | 
 
     try:
@@ -591,7 +591,7 @@ serve_group
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        group_locator = 'group_locator_example' # str | 
+    group_locator = 'group_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -635,7 +635,7 @@ serve_groups
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        fields = 'fields_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
 
     try:
         api_response = tc.group_api.serve_groups(fields=fields)
@@ -675,7 +675,7 @@ serve_user_properties
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        group_locator = 'group_locator_example' # str | 
+    group_locator = 'group_locator_example' # str | 
     name = 'name_example' # str | 
 
     try:
@@ -719,7 +719,7 @@ set_parent_groups
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        group_locator = 'group_locator_example' # str | 
+    group_locator = 'group_locator_example' # str | 
     body = dohq_teamcity.Groups() # Groups |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -767,7 +767,7 @@ set_roles
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        group_locator = 'group_locator_example' # str | 
+    group_locator = 'group_locator_example' # str | 
     body = dohq_teamcity.Roles() # Roles |  (optional)
 
     try:

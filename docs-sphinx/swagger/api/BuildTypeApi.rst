@@ -262,7 +262,7 @@ add_agent_requirement
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
     body = dohq_teamcity.AgentRequirement() # AgentRequirement |  (optional)
 
@@ -310,7 +310,7 @@ add_artifact_dep
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
     body = dohq_teamcity.ArtifactDependency() # ArtifactDependency |  (optional)
 
@@ -358,7 +358,7 @@ add_build_type
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        body = dohq_teamcity.BuildType() # BuildType |  (optional)
+    body = dohq_teamcity.BuildType() # BuildType |  (optional)
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -402,7 +402,7 @@ add_feature
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
     body = dohq_teamcity.Feature() # Feature |  (optional)
 
@@ -450,7 +450,7 @@ add_feature_parameter
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     feature_id = 'feature_id_example' # str | 
     parameter_name = 'parameter_name_example' # str | 
     body = 'body_example' # str |  (optional)
@@ -502,7 +502,7 @@ add_snapshot_dep
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
     body = dohq_teamcity.SnapshotDependency() # SnapshotDependency |  (optional)
 
@@ -550,7 +550,7 @@ add_step
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
     body = dohq_teamcity.Step() # Step |  (optional)
 
@@ -598,7 +598,7 @@ add_step_parameter
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     step_id = 'step_id_example' # str | 
     parameter_name = 'parameter_name_example' # str | 
     body = 'body_example' # str |  (optional)
@@ -650,7 +650,7 @@ add_template
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     body = dohq_teamcity.BuildType() # BuildType |  (optional)
     optimize_settings = true # bool |  (optional)
     fields = 'fields_example' # str |  (optional)
@@ -702,7 +702,7 @@ add_trigger
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
     body = dohq_teamcity.Trigger() # Trigger |  (optional)
 
@@ -750,7 +750,7 @@ add_vcs_root_entry
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     body = dohq_teamcity.VcsRootEntry() # VcsRootEntry |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -798,7 +798,7 @@ change_artifact_dep_setting
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     artifact_dep_locator = 'artifact_dep_locator_example' # str | 
     field_name = 'field_name_example' # str | 
     body = 'body_example' # str |  (optional)
@@ -850,7 +850,7 @@ change_feature_setting
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     feature_id = 'feature_id_example' # str | 
     name = 'name_example' # str | 
     body = 'body_example' # str |  (optional)
@@ -902,7 +902,7 @@ change_requirement_setting
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     agent_requirement_locator = 'agent_requirement_locator_example' # str | 
     field_name = 'field_name_example' # str | 
     body = 'body_example' # str |  (optional)
@@ -954,7 +954,7 @@ change_step_setting
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     step_id = 'step_id_example' # str | 
     field_name = 'field_name_example' # str | 
     body = 'body_example' # str |  (optional)
@@ -1006,7 +1006,7 @@ change_trigger_setting
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     trigger_locator = 'trigger_locator_example' # str | 
     field_name = 'field_name_example' # str | 
     body = 'body_example' # str |  (optional)
@@ -1058,7 +1058,7 @@ delete_agent_requirement
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     agent_requirement_locator = 'agent_requirement_locator_example' # str | 
 
     try:
@@ -1101,7 +1101,7 @@ delete_all_parameters
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
 
     try:
         tc.build_type_api.delete_all_parameters(bt_locator)
@@ -1140,7 +1140,7 @@ delete_all_parameters_0
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
 
     try:
         tc.build_type_api.delete_all_parameters_0(bt_locator)
@@ -1179,7 +1179,7 @@ delete_artifact_dep
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     artifact_dep_locator = 'artifact_dep_locator_example' # str | 
 
     try:
@@ -1222,7 +1222,7 @@ delete_build_type
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
 
     try:
         tc.build_type_api.delete_build_type(bt_locator)
@@ -1261,7 +1261,7 @@ delete_feature
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     feature_id = 'feature_id_example' # str | 
 
     try:
@@ -1304,7 +1304,7 @@ delete_parameter
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     bt_locator = 'bt_locator_example' # str | 
 
     try:
@@ -1347,7 +1347,7 @@ delete_parameter_0
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     bt_locator = 'bt_locator_example' # str | 
 
     try:
@@ -1390,7 +1390,7 @@ delete_snapshot_dep
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     snapshot_dep_locator = 'snapshot_dep_locator_example' # str | 
 
     try:
@@ -1433,7 +1433,7 @@ delete_step
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     step_id = 'step_id_example' # str | 
 
     try:
@@ -1476,7 +1476,7 @@ delete_trigger
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     trigger_locator = 'trigger_locator_example' # str | 
 
     try:
@@ -1519,7 +1519,7 @@ delete_vcs_root_entry
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     vcs_root_locator = 'vcs_root_locator_example' # str | 
 
     try:
@@ -1562,7 +1562,7 @@ get_agent_requirement
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     agent_requirement_locator = 'agent_requirement_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
@@ -1610,7 +1610,7 @@ get_agent_requirements
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -1654,7 +1654,7 @@ get_aliases
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     field = 'field_example' # str | 
 
     try:
@@ -1698,7 +1698,7 @@ get_artifact_dep
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     artifact_dep_locator = 'artifact_dep_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
@@ -1746,7 +1746,7 @@ get_artifact_dep_setting
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     artifact_dep_locator = 'artifact_dep_locator_example' # str | 
     field_name = 'field_name_example' # str | 
 
@@ -1794,7 +1794,7 @@ get_artifact_deps
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -1838,7 +1838,7 @@ get_build_types
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        locator = 'locator_example' # str |  (optional)
+    locator = 'locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -1882,7 +1882,7 @@ get_children
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        path = 'path_example' # str | 
+    path = 'path_example' # str | 
     bt_locator = 'bt_locator_example' # str | 
     base_path = 'base_path_example' # str |  (optional)
     locator = 'locator_example' # str |  (optional)
@@ -1942,7 +1942,7 @@ get_children_alias
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        path = 'path_example' # str | 
+    path = 'path_example' # str | 
     bt_locator = 'bt_locator_example' # str | 
     base_path = 'base_path_example' # str |  (optional)
     locator = 'locator_example' # str |  (optional)
@@ -2002,7 +2002,7 @@ get_content
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        path = 'path_example' # str | 
+    path = 'path_example' # str | 
     bt_locator = 'bt_locator_example' # str | 
     response_builder = 'response_builder_example' # str |  (optional)
     resolve_parameters = true # bool |  (optional)
@@ -2053,7 +2053,7 @@ get_content_alias
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        path = 'path_example' # str | 
+    path = 'path_example' # str | 
     bt_locator = 'bt_locator_example' # str | 
     resolve_parameters = true # bool |  (optional)
 
@@ -2100,7 +2100,7 @@ get_current_vcs_instances
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -2144,7 +2144,7 @@ get_current_vcs_instances_obsolete
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -2188,7 +2188,7 @@ get_example_new_project_description
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
 
     try:
         api_response = tc.build_type_api.get_example_new_project_description(bt_locator)
@@ -2228,7 +2228,7 @@ get_example_new_project_description_compatibility_version1
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
 
     try:
         api_response = tc.build_type_api.get_example_new_project_description_compatibility_version1(bt_locator)
@@ -2268,7 +2268,7 @@ get_feature
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     feature_id = 'feature_id_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
@@ -2316,7 +2316,7 @@ get_feature_parameter
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     feature_id = 'feature_id_example' # str | 
     parameter_name = 'parameter_name_example' # str | 
 
@@ -2364,7 +2364,7 @@ get_feature_parameters
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     feature_id = 'feature_id_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
@@ -2412,7 +2412,7 @@ get_feature_setting
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     feature_id = 'feature_id_example' # str | 
     name = 'name_example' # str | 
 
@@ -2460,7 +2460,7 @@ get_features
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -2504,7 +2504,7 @@ get_investigations
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -2548,7 +2548,7 @@ get_metadata
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        path = 'path_example' # str | 
+    path = 'path_example' # str | 
     bt_locator = 'bt_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
     resolve_parameters = true # bool |  (optional)
@@ -2600,7 +2600,7 @@ get_parameter
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     bt_locator = 'bt_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
@@ -2648,7 +2648,7 @@ get_parameter_0
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     bt_locator = 'bt_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
@@ -2696,7 +2696,7 @@ get_parameter_type
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     bt_locator = 'bt_locator_example' # str | 
 
     try:
@@ -2740,7 +2740,7 @@ get_parameter_type_raw_value
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     bt_locator = 'bt_locator_example' # str | 
 
     try:
@@ -2784,7 +2784,7 @@ get_parameter_value_long
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     bt_locator = 'bt_locator_example' # str | 
 
     try:
@@ -2828,7 +2828,7 @@ get_parameter_value_long_0
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     bt_locator = 'bt_locator_example' # str | 
 
     try:
@@ -2872,7 +2872,7 @@ get_parameters
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     locator = 'locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -2920,7 +2920,7 @@ get_parameters_0
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     locator = 'locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -2968,7 +2968,7 @@ get_requirement_setting
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     agent_requirement_locator = 'agent_requirement_locator_example' # str | 
     field_name = 'field_name_example' # str | 
 
@@ -3016,7 +3016,7 @@ get_root
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     base_path = 'base_path_example' # str |  (optional)
     locator = 'locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
@@ -3072,7 +3072,7 @@ get_settings_file
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
 
     try:
         api_response = tc.build_type_api.get_settings_file(bt_locator)
@@ -3112,7 +3112,7 @@ get_snapshot_dep
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     snapshot_dep_locator = 'snapshot_dep_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
@@ -3160,7 +3160,7 @@ get_snapshot_deps
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -3204,7 +3204,7 @@ get_step
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     step_id = 'step_id_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
@@ -3252,7 +3252,7 @@ get_step_parameter
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     step_id = 'step_id_example' # str | 
     parameter_name = 'parameter_name_example' # str | 
 
@@ -3300,7 +3300,7 @@ get_step_parameters
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     step_id = 'step_id_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
@@ -3348,7 +3348,7 @@ get_step_setting
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     step_id = 'step_id_example' # str | 
     field_name = 'field_name_example' # str | 
 
@@ -3396,7 +3396,7 @@ get_steps
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -3440,7 +3440,7 @@ get_template
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     template_locator = 'template_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
@@ -3488,7 +3488,7 @@ get_templates
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -3532,7 +3532,7 @@ get_trigger
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     trigger_locator = 'trigger_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
@@ -3580,7 +3580,7 @@ get_trigger_setting
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     trigger_locator = 'trigger_locator_example' # str | 
     field_name = 'field_name_example' # str | 
 
@@ -3628,7 +3628,7 @@ get_triggers
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -3672,7 +3672,7 @@ get_vcs_labeling_options
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
 
     try:
         api_response = tc.build_type_api.get_vcs_labeling_options(bt_locator)
@@ -3712,7 +3712,7 @@ get_vcs_root_entries
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -3756,7 +3756,7 @@ get_vcs_root_entry
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     vcs_root_locator = 'vcs_root_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
@@ -3804,7 +3804,7 @@ get_vcs_root_entry_checkout_rules
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     vcs_root_locator = 'vcs_root_locator_example' # str | 
 
     try:
@@ -3848,7 +3848,7 @@ get_zipped
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        path = 'path_example' # str | 
+    path = 'path_example' # str | 
     bt_locator = 'bt_locator_example' # str | 
     base_path = 'base_path_example' # str |  (optional)
     locator = 'locator_example' # str |  (optional)
@@ -3907,7 +3907,7 @@ remove_all_templates
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     inline_settings = true # bool |  (optional)
 
     try:
@@ -3950,7 +3950,7 @@ remove_template
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     template_locator = 'template_locator_example' # str | 
     inline_settings = true # bool |  (optional)
 
@@ -3997,7 +3997,7 @@ replace_agent_requirement
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     agent_requirement_locator = 'agent_requirement_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
     body = dohq_teamcity.AgentRequirement() # AgentRequirement |  (optional)
@@ -4049,7 +4049,7 @@ replace_agent_requirements
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
     body = dohq_teamcity.AgentRequirements() # AgentRequirements |  (optional)
 
@@ -4097,7 +4097,7 @@ replace_artifact_dep
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     artifact_dep_locator = 'artifact_dep_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
     body = dohq_teamcity.ArtifactDependency() # ArtifactDependency |  (optional)
@@ -4149,7 +4149,7 @@ replace_artifact_deps
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
     body = dohq_teamcity.ArtifactDependencies() # ArtifactDependencies |  (optional)
 
@@ -4197,7 +4197,7 @@ replace_feature
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     feature_id = 'feature_id_example' # str | 
     fields = 'fields_example' # str |  (optional)
     body = dohq_teamcity.Feature() # Feature |  (optional)
@@ -4249,7 +4249,7 @@ replace_feature_parameters
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     feature_id = 'feature_id_example' # str | 
     body = dohq_teamcity.Properties() # Properties |  (optional)
     fields = 'fields_example' # str |  (optional)
@@ -4301,7 +4301,7 @@ replace_features
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
     body = dohq_teamcity.Features() # Features |  (optional)
 
@@ -4349,7 +4349,7 @@ replace_snapshot_dep
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     snapshot_dep_locator = 'snapshot_dep_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
     body = dohq_teamcity.SnapshotDependency() # SnapshotDependency |  (optional)
@@ -4401,7 +4401,7 @@ replace_snapshot_deps
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
     body = dohq_teamcity.SnapshotDependencies() # SnapshotDependencies |  (optional)
 
@@ -4449,7 +4449,7 @@ replace_step
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     step_id = 'step_id_example' # str | 
     fields = 'fields_example' # str |  (optional)
     body = dohq_teamcity.Step() # Step |  (optional)
@@ -4501,7 +4501,7 @@ replace_step_parameters
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     step_id = 'step_id_example' # str | 
     body = dohq_teamcity.Properties() # Properties |  (optional)
     fields = 'fields_example' # str |  (optional)
@@ -4553,7 +4553,7 @@ replace_steps
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
     body = dohq_teamcity.Steps() # Steps |  (optional)
 
@@ -4601,7 +4601,7 @@ replace_trigger
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     trigger_locator = 'trigger_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
     body = dohq_teamcity.Trigger() # Trigger |  (optional)
@@ -4653,7 +4653,7 @@ replace_triggers
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
     body = dohq_teamcity.Triggers() # Triggers |  (optional)
 
@@ -4701,7 +4701,7 @@ replace_vcs_root_entries
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     body = dohq_teamcity.VcsRootEntries() # VcsRootEntries |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -4749,7 +4749,7 @@ serve_branches
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     locator = 'locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -4797,7 +4797,7 @@ serve_build_field
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     build_locator = 'build_locator_example' # str | 
     field = 'field_example' # str | 
 
@@ -4845,7 +4845,7 @@ serve_build_type_builds_tags
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     field = 'field_example' # str | 
 
     try:
@@ -4889,7 +4889,7 @@ serve_build_type_field
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     field = 'field_example' # str | 
 
     try:
@@ -4933,7 +4933,7 @@ serve_build_type_xml
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -4977,7 +4977,7 @@ serve_build_with_project
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     build_locator = 'build_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
@@ -5025,7 +5025,7 @@ serve_builds
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     status = 'status_example' # str |  (optional)
     triggered_by_user = 'triggered_by_user_example' # str |  (optional)
     include_personal = true # bool |  (optional)
@@ -5117,7 +5117,7 @@ set_build_type_field
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     field = 'field_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -5165,7 +5165,7 @@ set_parameter
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     body = dohq_teamcity.ModelProperty() # ModelProperty |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -5213,7 +5213,7 @@ set_parameter_0
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     bt_locator = 'bt_locator_example' # str | 
     body = dohq_teamcity.ModelProperty() # ModelProperty |  (optional)
     fields = 'fields_example' # str |  (optional)
@@ -5265,7 +5265,7 @@ set_parameter_1
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     body = dohq_teamcity.ModelProperty() # ModelProperty |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -5313,7 +5313,7 @@ set_parameter_2
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     bt_locator = 'bt_locator_example' # str | 
     body = dohq_teamcity.ModelProperty() # ModelProperty |  (optional)
     fields = 'fields_example' # str |  (optional)
@@ -5365,7 +5365,7 @@ set_parameter_type
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     bt_locator = 'bt_locator_example' # str | 
     body = dohq_teamcity.Type() # Type |  (optional)
 
@@ -5413,7 +5413,7 @@ set_parameter_type_raw_value
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     bt_locator = 'bt_locator_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -5461,7 +5461,7 @@ set_parameter_value_long
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     bt_locator = 'bt_locator_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -5509,7 +5509,7 @@ set_parameter_value_long_0
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     bt_locator = 'bt_locator_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -5557,7 +5557,7 @@ set_parameters
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     body = dohq_teamcity.Properties() # Properties |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -5605,7 +5605,7 @@ set_parameters_0
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     body = dohq_teamcity.Properties() # Properties |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -5653,7 +5653,7 @@ set_templates
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     body = dohq_teamcity.BuildTypes() # BuildTypes |  (optional)
     optimize_settings = true # bool |  (optional)
     fields = 'fields_example' # str |  (optional)
@@ -5705,7 +5705,7 @@ set_vcs_labeling_options
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     body = dohq_teamcity.VcsLabeling() # VcsLabeling |  (optional)
 
     try:
@@ -5749,7 +5749,7 @@ update_vcs_root_entry
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     vcs_root_locator = 'vcs_root_locator_example' # str | 
     body = dohq_teamcity.VcsRootEntry() # VcsRootEntry |  (optional)
     fields = 'fields_example' # str |  (optional)
@@ -5801,7 +5801,7 @@ update_vcs_root_entry_checkout_rules
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        bt_locator = 'bt_locator_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
     vcs_root_locator = 'vcs_root_locator_example' # str | 
     body = 'body_example' # str |  (optional)
 

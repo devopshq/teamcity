@@ -62,7 +62,7 @@ add_license_keys
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        body = 'body_example' # str |  (optional)
+    body = 'body_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -106,7 +106,7 @@ delete_license_key
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        license_key = 'license_key_example' # str | 
+    license_key = 'license_key_example' # str | 
 
     try:
         tc.server_api.delete_license_key(license_key)
@@ -145,7 +145,7 @@ get_backup_status
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        body = dohq_teamcity.BackupProcessManager() # BackupProcessManager |  (optional)
+    body = dohq_teamcity.BackupProcessManager() # BackupProcessManager |  (optional)
 
     try:
         api_response = tc.server_api.get_backup_status(body=body)
@@ -185,7 +185,7 @@ get_children
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        path = 'path_example' # str | 
+    path = 'path_example' # str | 
     area_id = 'area_id_example' # str | 
     base_path = 'base_path_example' # str |  (optional)
     locator = 'locator_example' # str |  (optional)
@@ -241,7 +241,7 @@ get_children_alias
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        path = 'path_example' # str | 
+    path = 'path_example' # str | 
     area_id = 'area_id_example' # str | 
     base_path = 'base_path_example' # str |  (optional)
     locator = 'locator_example' # str |  (optional)
@@ -297,7 +297,7 @@ get_content
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        path = 'path_example' # str | 
+    path = 'path_example' # str | 
     area_id = 'area_id_example' # str | 
     response_builder = 'response_builder_example' # str |  (optional)
 
@@ -344,7 +344,7 @@ get_content_alias
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        path = 'path_example' # str | 
+    path = 'path_example' # str | 
     area_id = 'area_id_example' # str | 
 
     try:
@@ -387,7 +387,7 @@ get_license_key
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        license_key = 'license_key_example' # str | 
+    license_key = 'license_key_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -431,7 +431,7 @@ get_license_keys
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        fields = 'fields_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
 
     try:
         api_response = tc.server_api.get_license_keys(fields=fields)
@@ -471,7 +471,7 @@ get_licensing_data
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        fields = 'fields_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
 
     try:
         api_response = tc.server_api.get_licensing_data(fields=fields)
@@ -511,7 +511,7 @@ get_metadata
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        path = 'path_example' # str | 
+    path = 'path_example' # str | 
     area_id = 'area_id_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
@@ -559,7 +559,7 @@ get_root
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        area_id = 'area_id_example' # str | 
+    area_id = 'area_id_example' # str | 
     base_path = 'base_path_example' # str |  (optional)
     locator = 'locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
@@ -611,7 +611,7 @@ get_zipped
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        path = 'path_example' # str | 
+    path = 'path_example' # str | 
     area_id = 'area_id_example' # str | 
     base_path = 'base_path_example' # str |  (optional)
     locator = 'locator_example' # str |  (optional)
@@ -666,7 +666,7 @@ serve_plugins
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        fields = 'fields_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
 
     try:
         api_response = tc.server_api.serve_plugins(fields=fields)
@@ -706,7 +706,7 @@ serve_server_info
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        fields = 'fields_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
 
     try:
         api_response = tc.server_api.serve_server_info(fields=fields)
@@ -746,7 +746,7 @@ serve_server_version
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        field = 'field_example' # str | 
+    field = 'field_example' # str | 
 
     try:
         api_response = tc.server_api.serve_server_version(field)
@@ -786,7 +786,7 @@ start_backup
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        file_name = 'file_name_example' # str |  (optional)
+    file_name = 'file_name_example' # str |  (optional)
     add_timestamp = true # bool |  (optional)
     include_configs = true # bool |  (optional)
     include_database = true # bool |  (optional)
