@@ -14,6 +14,9 @@ Examples
 ========
 Some action::
 
-    # soon...
+    # Get pool by agent name
+    agent = "linux-ci-01.example.com"
+    pool = teamcity.agents.get("name:{}".format(agent)).pool.name
+
 
 

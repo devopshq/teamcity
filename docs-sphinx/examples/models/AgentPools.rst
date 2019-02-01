@@ -14,6 +14,11 @@ Examples
 ========
 Some action::
 
-    # soon...
+    # Get enabled agents in the pool by name
+    pool = "My Build Pool"
+    _pool = teamcity.agent_pools.get("name:{}".format(pool))
+    agents = [agent.read() for agent in _pool.agents]
+    agents = [agent.name for agent in agents if agent.enabled]
+    print(agents)
 
 
