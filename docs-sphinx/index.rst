@@ -18,8 +18,8 @@ Contents:
 
     install
     api-usage
-    faq
     examples
+    faq
     swagger
     api/dohq_teamcity
     development
