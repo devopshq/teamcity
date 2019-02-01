@@ -21,99 +21,57 @@ class SnapshotDependency(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'disabled': 'bool',
-        'href': 'str',
         'id': 'str',
-        'inherited': 'bool',
         'name': 'str',
+        'type': 'str',
+        'disabled': 'bool',
+        'inherited': 'bool',
+        'href': 'str',
         'properties': 'Properties',
-        'source_build_type': 'BuildType',
-        'type': 'str'
+        'source_build_type': 'BuildType'
     }
 
     attribute_map = {
-        'disabled': 'disabled',
-        'href': 'href',
         'id': 'id',
-        'inherited': 'inherited',
         'name': 'name',
+        'type': 'type',
+        'disabled': 'disabled',
+        'inherited': 'inherited',
+        'href': 'href',
         'properties': 'properties',
-        'source_build_type': 'source-buildType',
-        'type': 'type'
+        'source_build_type': 'source-buildType'
     }
 
-    def __init__(self, disabled=False, href=None, id=None, inherited=False, name=None, properties=None, source_build_type=None, type=None, teamcity=None):  # noqa: E501
+    def __init__(self, id=None, name=None, type=None, disabled=False, inherited=False, href=None, properties=None, source_build_type=None, teamcity=None):  # noqa: E501
         """SnapshotDependency - a model defined in Swagger"""  # noqa: E501
 
-        self._disabled = None
-        self._href = None
         self._id = None
-        self._inherited = None
         self._name = None
+        self._type = None
+        self._disabled = None
+        self._inherited = None
+        self._href = None
         self._properties = None
         self._source_build_type = None
-        self._type = None
         self.discriminator = None
 
-        if disabled is not None:
-            self.disabled = disabled
-        if href is not None:
-            self.href = href
         if id is not None:
             self.id = id
-        if inherited is not None:
-            self.inherited = inherited
         if name is not None:
             self.name = name
+        if type is not None:
+            self.type = type
+        if disabled is not None:
+            self.disabled = disabled
+        if inherited is not None:
+            self.inherited = inherited
+        if href is not None:
+            self.href = href
         if properties is not None:
             self.properties = properties
         if source_build_type is not None:
             self.source_build_type = source_build_type
-        if type is not None:
-            self.type = type
         super(SnapshotDependency, self).__init__(teamcity=teamcity)
-
-    @property
-    def disabled(self):
-        """Gets the disabled of this SnapshotDependency.  # noqa: E501
-
-
-        :return: The disabled of this SnapshotDependency.  # noqa: E501
-        :rtype: bool
-        """
-        return self._disabled
-
-    @disabled.setter
-    def disabled(self, disabled):
-        """Sets the disabled of this SnapshotDependency.
-
-
-        :param disabled: The disabled of this SnapshotDependency.  # noqa: E501
-        :type: bool
-        """
-
-        self._disabled = disabled
-
-    @property
-    def href(self):
-        """Gets the href of this SnapshotDependency.  # noqa: E501
-
-
-        :return: The href of this SnapshotDependency.  # noqa: E501
-        :rtype: str
-        """
-        return self._href
-
-    @href.setter
-    def href(self, href):
-        """Sets the href of this SnapshotDependency.
-
-
-        :param href: The href of this SnapshotDependency.  # noqa: E501
-        :type: str
-        """
-
-        self._href = href
 
     @property
     def id(self):
@@ -137,6 +95,69 @@ class SnapshotDependency(TeamCityObject):
         self._id = id
 
     @property
+    def name(self):
+        """Gets the name of this SnapshotDependency.  # noqa: E501
+
+
+        :return: The name of this SnapshotDependency.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this SnapshotDependency.
+
+
+        :param name: The name of this SnapshotDependency.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
+
+    @property
+    def type(self):
+        """Gets the type of this SnapshotDependency.  # noqa: E501
+
+
+        :return: The type of this SnapshotDependency.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this SnapshotDependency.
+
+
+        :param type: The type of this SnapshotDependency.  # noqa: E501
+        :type: str
+        """
+
+        self._type = type
+
+    @property
+    def disabled(self):
+        """Gets the disabled of this SnapshotDependency.  # noqa: E501
+
+
+        :return: The disabled of this SnapshotDependency.  # noqa: E501
+        :rtype: bool
+        """
+        return self._disabled
+
+    @disabled.setter
+    def disabled(self, disabled):
+        """Sets the disabled of this SnapshotDependency.
+
+
+        :param disabled: The disabled of this SnapshotDependency.  # noqa: E501
+        :type: bool
+        """
+
+        self._disabled = disabled
+
+    @property
     def inherited(self):
         """Gets the inherited of this SnapshotDependency.  # noqa: E501
 
@@ -158,25 +179,25 @@ class SnapshotDependency(TeamCityObject):
         self._inherited = inherited
 
     @property
-    def name(self):
-        """Gets the name of this SnapshotDependency.  # noqa: E501
+    def href(self):
+        """Gets the href of this SnapshotDependency.  # noqa: E501
 
 
-        :return: The name of this SnapshotDependency.  # noqa: E501
+        :return: The href of this SnapshotDependency.  # noqa: E501
         :rtype: str
         """
-        return self._name
+        return self._href
 
-    @name.setter
-    def name(self, name):
-        """Sets the name of this SnapshotDependency.
+    @href.setter
+    def href(self, href):
+        """Sets the href of this SnapshotDependency.
 
 
-        :param name: The name of this SnapshotDependency.  # noqa: E501
+        :param href: The href of this SnapshotDependency.  # noqa: E501
         :type: str
         """
 
-        self._name = name
+        self._href = href
 
     @property
     def properties(self):
@@ -219,24 +240,3 @@ class SnapshotDependency(TeamCityObject):
         """
 
         self._source_build_type = source_build_type
-
-    @property
-    def type(self):
-        """Gets the type of this SnapshotDependency.  # noqa: E501
-
-
-        :return: The type of this SnapshotDependency.  # noqa: E501
-        :rtype: str
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type):
-        """Sets the type of this SnapshotDependency.
-
-
-        :param type: The type of this SnapshotDependency.  # noqa: E501
-        :type: str
-        """
-
-        self._type = type

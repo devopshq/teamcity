@@ -15,59 +15,59 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **build**
-     -  `Build <./Build.html>`_
-     - `optional` 
-   * - **currently_investigated**
-     - **bool**
-     - `optional` [default to ``False``]
-   * - **currently_muted**
-     - **bool**
-     - `optional` [default to ``False``]
-   * - **details**
-     - **str**
-     - `optional` 
-   * - **duration**
-     - **int**
-     - `optional` 
-   * - **first_failed**
-     -  `TestOccurrence <./TestOccurrence.html>`_
-     - `optional` 
-   * - **href**
-     - **str**
-     - `optional` 
    * - **id**
      - **str**
      - `optional` 
-   * - **ignore_details**
-     - **str**
-     - `optional` 
-   * - **ignored**
-     - **bool**
-     - `optional` [default to ``False``]
-   * - **invocations**
-     -  `TestOccurrences <./TestOccurrences.html>`_
-     - `optional` 
-   * - **mute**
-     -  `Mute <./Mute.html>`_
-     - `optional` 
-   * - **muted**
-     - **bool**
-     - `optional` [default to ``False``]
    * - **name**
-     - **str**
-     - `optional` 
-   * - **next_fixed**
-     -  `TestOccurrence <./TestOccurrence.html>`_
-     - `optional` 
-   * - **run_order**
      - **str**
      - `optional` 
    * - **status**
      - **str**
      - `optional` 
+   * - **ignored**
+     - **bool**
+     - `optional` [default to ``False``]
+   * - **duration**
+     - **int**
+     - `optional` 
+   * - **run_order**
+     - **str**
+     - `optional` 
+   * - **muted**
+     - **bool**
+     - `optional` [default to ``False``]
+   * - **currently_muted**
+     - **bool**
+     - `optional` [default to ``False``]
+   * - **currently_investigated**
+     - **bool**
+     - `optional` [default to ``False``]
+   * - **href**
+     - **str**
+     - `optional` 
+   * - **ignore_details**
+     - **str**
+     - `optional` 
+   * - **details**
+     - **str**
+     - `optional` 
    * - **test**
      -  `Test <./Test.html>`_
+     - `optional` 
+   * - **mute**
+     -  `Mute <./Mute.html>`_
+     - `optional` 
+   * - **build**
+     -  `Build <./Build.html>`_
+     - `optional` 
+   * - **first_failed**
+     -  `TestOccurrence <./TestOccurrence.html>`_
+     - `optional` 
+   * - **next_fixed**
+     -  `TestOccurrence <./TestOccurrence.html>`_
+     - `optional` 
+   * - **invocations**
+     -  `TestOccurrences <./TestOccurrences.html>`_
      - `optional` 
 
 

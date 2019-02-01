@@ -16,6 +16,8 @@ dohq_teamcity.AgentApi
      - HTTP request
    * - :ref:`delete_agent`
      - **DELETE** ``/app/rest/agents/{agentLocator}``
+   * - :ref:`ge_incompatible_build_types`
+     - **GET** ``/app/rest/agents/{agentLocator}/incompatibleBuildTypes``
    * - :ref:`get_agent_pool`
      - **GET** ``/app/rest/agents/{agentLocator}/pool``
    * - :ref:`get_authorized_info`
@@ -24,8 +26,6 @@ dohq_teamcity.AgentApi
      - **GET** ``/app/rest/agents/{agentLocator}/compatibleBuildTypes``
    * - :ref:`get_enabled_info`
      - **GET** ``/app/rest/agents/{agentLocator}/enabledInfo``
-   * - :ref:`get_incompatible_build_types`
-     - **GET** ``/app/rest/agents/{agentLocator}/incompatibleBuildTypes``
    * - :ref:`serve_agent`
      - **GET** ``/app/rest/agents/{agentLocator}``
    * - :ref:`serve_agent_field`
@@ -54,7 +54,7 @@ delete_agent
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_locator = 'agent_locator_example' # str | 
+    agent_locator = 'agent_locator_example' # str | 
 
     try:
         tc.agent_api.delete_agent(agent_locator)
@@ -80,6 +80,50 @@ Return type:
 
 `Back to top <#>`_
 
+.. _ge_incompatible_build_types:
+
+ge_incompatible_build_types
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    agent_locator = 'agent_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        api_response = tc.agent_api.ge_incompatible_build_types(agent_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AgentApi->ge_incompatible_build_types: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **agent_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Compatibilities <../models/Compatibilities.html>`_
+
+`Back to top <#>`_
+
 .. _get_agent_pool:
 
 get_agent_pool
@@ -93,7 +137,7 @@ get_agent_pool
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_locator = 'agent_locator_example' # str | 
+    agent_locator = 'agent_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -137,7 +181,7 @@ get_authorized_info
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_locator = 'agent_locator_example' # str | 
+    agent_locator = 'agent_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -181,7 +225,7 @@ get_compatible_build_types
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_locator = 'agent_locator_example' # str | 
+    agent_locator = 'agent_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -225,7 +269,7 @@ get_enabled_info
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_locator = 'agent_locator_example' # str | 
+    agent_locator = 'agent_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -256,50 +300,6 @@ Return type:
 
 `Back to top <#>`_
 
-.. _get_incompatible_build_types:
-
-get_incompatible_build_types
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-        agent_locator = 'agent_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.agent_api.get_incompatible_build_types(agent_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling AgentApi->get_incompatible_build_types: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **agent_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Compatibilities <../models/Compatibilities.html>`_
-
-`Back to top <#>`_
-
 .. _serve_agent:
 
 serve_agent
@@ -313,7 +313,7 @@ serve_agent
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_locator = 'agent_locator_example' # str | 
+    agent_locator = 'agent_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -357,7 +357,7 @@ serve_agent_field
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_locator = 'agent_locator_example' # str | 
+    agent_locator = 'agent_locator_example' # str | 
     field = 'field_example' # str | 
 
     try:
@@ -401,7 +401,7 @@ serve_agents
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        include_disconnected = true # bool |  (optional)
+    include_disconnected = true # bool |  (optional)
     include_unauthorized = true # bool |  (optional)
     locator = 'locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
@@ -453,7 +453,7 @@ set_agent_field
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_locator = 'agent_locator_example' # str | 
+    agent_locator = 'agent_locator_example' # str | 
     field = 'field_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -501,7 +501,7 @@ set_agent_pool
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_locator = 'agent_locator_example' # str | 
+    agent_locator = 'agent_locator_example' # str | 
     body = dohq_teamcity.AgentPool() # AgentPool |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -549,7 +549,7 @@ set_authorized_info
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_locator = 'agent_locator_example' # str | 
+    agent_locator = 'agent_locator_example' # str | 
     body = dohq_teamcity.AuthorizedInfo() # AuthorizedInfo |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -597,7 +597,7 @@ set_enabled_info
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        agent_locator = 'agent_locator_example' # str | 
+    agent_locator = 'agent_locator_example' # str | 
     body = dohq_teamcity.EnabledInfo() # EnabledInfo |  (optional)
     fields = 'fields_example' # str |  (optional)
 

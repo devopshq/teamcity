@@ -15,48 +15,6 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **agent_pools**
-     -  `Href <./Href.html>`_
-     - `optional` 
-   * - **agents**
-     -  `Href <./Href.html>`_
-     - `optional` 
-   * - **build_date**
-     - **str**
-     - `optional` 
-   * - **build_number**
-     - **str**
-     - `optional` 
-   * - **build_queue**
-     -  `Href <./Href.html>`_
-     - `optional` 
-   * - **builds**
-     -  `Href <./Href.html>`_
-     - `optional` 
-   * - **current_time**
-     - **str**
-     - `optional` 
-   * - **internal_id**
-     - **str**
-     - `optional` 
-   * - **projects**
-     -  `Href <./Href.html>`_
-     - `optional` 
-   * - **role**
-     - **str**
-     - `optional` 
-   * - **start_time**
-     - **str**
-     - `optional` 
-   * - **user_groups**
-     -  `Href <./Href.html>`_
-     - `optional` 
-   * - **users**
-     -  `Href <./Href.html>`_
-     - `optional` 
-   * - **vcs_roots**
-     -  `Href <./Href.html>`_
-     - `optional` 
    * - **version**
      - **str**
      - `optional` 
@@ -66,8 +24,56 @@ Properties
    * - **version_minor**
      - **int**
      - `optional` 
+   * - **start_time**
+     - **str**
+     - `optional` 
+   * - **current_time**
+     - **str**
+     - `optional` 
+   * - **build_number**
+     - **str**
+     - `optional` 
+   * - **build_date**
+     - **str**
+     - `optional` 
+   * - **internal_id**
+     - **str**
+     - `optional` 
+   * - **role**
+     - **str**
+     - `optional` 
    * - **web_url**
      - **str**
+     - `optional` 
+   * - **projects**
+     -  `Href <./Href.html>`_
+     - `optional` 
+   * - **vcs_roots**
+     -  `Href <./Href.html>`_
+     - `optional` 
+   * - **builds**
+     -  `Href <./Href.html>`_
+     - `optional` 
+   * - **users**
+     -  `Href <./Href.html>`_
+     - `optional` 
+   * - **user_groups**
+     -  `Href <./Href.html>`_
+     - `optional` 
+   * - **agents**
+     -  `Href <./Href.html>`_
+     - `optional` 
+   * - **build_queue**
+     -  `Href <./Href.html>`_
+     - `optional` 
+   * - **agent_pools**
+     -  `Href <./Href.html>`_
+     - `optional` 
+   * - **investigations**
+     -  `Href <./Href.html>`_
+     - `optional` 
+   * - **mutes**
+     -  `Href <./Href.html>`_
      - `optional` 
 
 

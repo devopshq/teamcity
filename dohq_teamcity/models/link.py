@@ -17,53 +17,32 @@ class Link(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'relative_url': 'str',
         'type': 'str',
-        'url': 'str'
+        'url': 'str',
+        'relative_url': 'str'
     }
 
     attribute_map = {
-        'relative_url': 'relativeUrl',
         'type': 'type',
-        'url': 'url'
+        'url': 'url',
+        'relative_url': 'relativeUrl'
     }
 
-    def __init__(self, relative_url=None, type=None, url=None, teamcity=None):  # noqa: E501
+    def __init__(self, type=None, url=None, relative_url=None, teamcity=None):  # noqa: E501
         """Link - a model defined in Swagger"""  # noqa: E501
 
-        self._relative_url = None
         self._type = None
         self._url = None
+        self._relative_url = None
         self.discriminator = None
 
-        if relative_url is not None:
-            self.relative_url = relative_url
         if type is not None:
             self.type = type
         if url is not None:
             self.url = url
+        if relative_url is not None:
+            self.relative_url = relative_url
         super(Link, self).__init__(teamcity=teamcity)
-
-    @property
-    def relative_url(self):
-        """Gets the relative_url of this Link.  # noqa: E501
-
-
-        :return: The relative_url of this Link.  # noqa: E501
-        :rtype: str
-        """
-        return self._relative_url
-
-    @relative_url.setter
-    def relative_url(self, relative_url):
-        """Sets the relative_url of this Link.
-
-
-        :param relative_url: The relative_url of this Link.  # noqa: E501
-        :type: str
-        """
-
-        self._relative_url = relative_url
 
     @property
     def type(self):
@@ -106,3 +85,24 @@ class Link(TeamCityObject):
         """
 
         self._url = url
+
+    @property
+    def relative_url(self):
+        """Gets the relative_url of this Link.  # noqa: E501
+
+
+        :return: The relative_url of this Link.  # noqa: E501
+        :rtype: str
+        """
+        return self._relative_url
+
+    @relative_url.setter
+    def relative_url(self, relative_url):
+        """Sets the relative_url of this Link.
+
+
+        :param relative_url: The relative_url of this Link.  # noqa: E501
+        :type: str
+        """
+
+        self._relative_url = relative_url

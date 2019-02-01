@@ -22,119 +22,182 @@ class ProblemOccurrence(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'additional_data': 'str',
-        'build': 'Build',
+        'id': 'str',
+        'type': 'str',
+        'identity': 'str',
+        'href': 'str',
+        'muted': 'bool',
         'currently_investigated': 'bool',
         'currently_muted': 'bool',
         'details': 'str',
-        'href': 'str',
-        'id': 'str',
-        'identity': 'str',
-        'mute': 'Mute',
-        'muted': 'bool',
+        'additional_data': 'str',
         'problem': 'Problem',
-        'type': 'str'
+        'mute': 'Mute',
+        'build': 'Build'
     }
 
     attribute_map = {
-        'additional_data': 'additionalData',
-        'build': 'build',
+        'id': 'id',
+        'type': 'type',
+        'identity': 'identity',
+        'href': 'href',
+        'muted': 'muted',
         'currently_investigated': 'currentlyInvestigated',
         'currently_muted': 'currentlyMuted',
         'details': 'details',
-        'href': 'href',
-        'id': 'id',
-        'identity': 'identity',
-        'mute': 'mute',
-        'muted': 'muted',
+        'additional_data': 'additionalData',
         'problem': 'problem',
-        'type': 'type'
+        'mute': 'mute',
+        'build': 'build'
     }
 
-    def __init__(self, additional_data=None, build=None, currently_investigated=False, currently_muted=False, details=None, href=None, id=None, identity=None, mute=None, muted=False, problem=None, type=None, teamcity=None):  # noqa: E501
+    def __init__(self, id=None, type=None, identity=None, href=None, muted=False, currently_investigated=False, currently_muted=False, details=None, additional_data=None, problem=None, mute=None, build=None, teamcity=None):  # noqa: E501
         """ProblemOccurrence - a model defined in Swagger"""  # noqa: E501
 
-        self._additional_data = None
-        self._build = None
+        self._id = None
+        self._type = None
+        self._identity = None
+        self._href = None
+        self._muted = None
         self._currently_investigated = None
         self._currently_muted = None
         self._details = None
-        self._href = None
-        self._id = None
-        self._identity = None
-        self._mute = None
-        self._muted = None
+        self._additional_data = None
         self._problem = None
-        self._type = None
+        self._mute = None
+        self._build = None
         self.discriminator = None
 
-        if additional_data is not None:
-            self.additional_data = additional_data
-        if build is not None:
-            self.build = build
+        if id is not None:
+            self.id = id
+        if type is not None:
+            self.type = type
+        if identity is not None:
+            self.identity = identity
+        if href is not None:
+            self.href = href
+        if muted is not None:
+            self.muted = muted
         if currently_investigated is not None:
             self.currently_investigated = currently_investigated
         if currently_muted is not None:
             self.currently_muted = currently_muted
         if details is not None:
             self.details = details
-        if href is not None:
-            self.href = href
-        if id is not None:
-            self.id = id
-        if identity is not None:
-            self.identity = identity
-        if mute is not None:
-            self.mute = mute
-        if muted is not None:
-            self.muted = muted
+        if additional_data is not None:
+            self.additional_data = additional_data
         if problem is not None:
             self.problem = problem
-        if type is not None:
-            self.type = type
+        if mute is not None:
+            self.mute = mute
+        if build is not None:
+            self.build = build
         super(ProblemOccurrence, self).__init__(teamcity=teamcity)
 
     @property
-    def additional_data(self):
-        """Gets the additional_data of this ProblemOccurrence.  # noqa: E501
+    def id(self):
+        """Gets the id of this ProblemOccurrence.  # noqa: E501
 
 
-        :return: The additional_data of this ProblemOccurrence.  # noqa: E501
+        :return: The id of this ProblemOccurrence.  # noqa: E501
         :rtype: str
         """
-        return self._additional_data
+        return self._id
 
-    @additional_data.setter
-    def additional_data(self, additional_data):
-        """Sets the additional_data of this ProblemOccurrence.
+    @id.setter
+    def id(self, id):
+        """Sets the id of this ProblemOccurrence.
 
 
-        :param additional_data: The additional_data of this ProblemOccurrence.  # noqa: E501
+        :param id: The id of this ProblemOccurrence.  # noqa: E501
         :type: str
         """
 
-        self._additional_data = additional_data
+        self._id = id
 
     @property
-    def build(self):
-        """Gets the build of this ProblemOccurrence.  # noqa: E501
+    def type(self):
+        """Gets the type of this ProblemOccurrence.  # noqa: E501
 
 
-        :return: The build of this ProblemOccurrence.  # noqa: E501
-        :rtype: Build
+        :return: The type of this ProblemOccurrence.  # noqa: E501
+        :rtype: str
         """
-        return self._build
+        return self._type
 
-    @build.setter
-    def build(self, build):
-        """Sets the build of this ProblemOccurrence.
+    @type.setter
+    def type(self, type):
+        """Sets the type of this ProblemOccurrence.
 
 
-        :param build: The build of this ProblemOccurrence.  # noqa: E501
-        :type: Build
+        :param type: The type of this ProblemOccurrence.  # noqa: E501
+        :type: str
         """
 
-        self._build = build
+        self._type = type
+
+    @property
+    def identity(self):
+        """Gets the identity of this ProblemOccurrence.  # noqa: E501
+
+
+        :return: The identity of this ProblemOccurrence.  # noqa: E501
+        :rtype: str
+        """
+        return self._identity
+
+    @identity.setter
+    def identity(self, identity):
+        """Sets the identity of this ProblemOccurrence.
+
+
+        :param identity: The identity of this ProblemOccurrence.  # noqa: E501
+        :type: str
+        """
+
+        self._identity = identity
+
+    @property
+    def href(self):
+        """Gets the href of this ProblemOccurrence.  # noqa: E501
+
+
+        :return: The href of this ProblemOccurrence.  # noqa: E501
+        :rtype: str
+        """
+        return self._href
+
+    @href.setter
+    def href(self, href):
+        """Sets the href of this ProblemOccurrence.
+
+
+        :param href: The href of this ProblemOccurrence.  # noqa: E501
+        :type: str
+        """
+
+        self._href = href
+
+    @property
+    def muted(self):
+        """Gets the muted of this ProblemOccurrence.  # noqa: E501
+
+
+        :return: The muted of this ProblemOccurrence.  # noqa: E501
+        :rtype: bool
+        """
+        return self._muted
+
+    @muted.setter
+    def muted(self, muted):
+        """Sets the muted of this ProblemOccurrence.
+
+
+        :param muted: The muted of this ProblemOccurrence.  # noqa: E501
+        :type: bool
+        """
+
+        self._muted = muted
 
     @property
     def currently_investigated(self):
@@ -200,109 +263,25 @@ class ProblemOccurrence(TeamCityObject):
         self._details = details
 
     @property
-    def href(self):
-        """Gets the href of this ProblemOccurrence.  # noqa: E501
+    def additional_data(self):
+        """Gets the additional_data of this ProblemOccurrence.  # noqa: E501
 
 
-        :return: The href of this ProblemOccurrence.  # noqa: E501
+        :return: The additional_data of this ProblemOccurrence.  # noqa: E501
         :rtype: str
         """
-        return self._href
+        return self._additional_data
 
-    @href.setter
-    def href(self, href):
-        """Sets the href of this ProblemOccurrence.
+    @additional_data.setter
+    def additional_data(self, additional_data):
+        """Sets the additional_data of this ProblemOccurrence.
 
 
-        :param href: The href of this ProblemOccurrence.  # noqa: E501
+        :param additional_data: The additional_data of this ProblemOccurrence.  # noqa: E501
         :type: str
         """
 
-        self._href = href
-
-    @property
-    def id(self):
-        """Gets the id of this ProblemOccurrence.  # noqa: E501
-
-
-        :return: The id of this ProblemOccurrence.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this ProblemOccurrence.
-
-
-        :param id: The id of this ProblemOccurrence.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
-
-    @property
-    def identity(self):
-        """Gets the identity of this ProblemOccurrence.  # noqa: E501
-
-
-        :return: The identity of this ProblemOccurrence.  # noqa: E501
-        :rtype: str
-        """
-        return self._identity
-
-    @identity.setter
-    def identity(self, identity):
-        """Sets the identity of this ProblemOccurrence.
-
-
-        :param identity: The identity of this ProblemOccurrence.  # noqa: E501
-        :type: str
-        """
-
-        self._identity = identity
-
-    @property
-    def mute(self):
-        """Gets the mute of this ProblemOccurrence.  # noqa: E501
-
-
-        :return: The mute of this ProblemOccurrence.  # noqa: E501
-        :rtype: Mute
-        """
-        return self._mute
-
-    @mute.setter
-    def mute(self, mute):
-        """Sets the mute of this ProblemOccurrence.
-
-
-        :param mute: The mute of this ProblemOccurrence.  # noqa: E501
-        :type: Mute
-        """
-
-        self._mute = mute
-
-    @property
-    def muted(self):
-        """Gets the muted of this ProblemOccurrence.  # noqa: E501
-
-
-        :return: The muted of this ProblemOccurrence.  # noqa: E501
-        :rtype: bool
-        """
-        return self._muted
-
-    @muted.setter
-    def muted(self, muted):
-        """Sets the muted of this ProblemOccurrence.
-
-
-        :param muted: The muted of this ProblemOccurrence.  # noqa: E501
-        :type: bool
-        """
-
-        self._muted = muted
+        self._additional_data = additional_data
 
     @property
     def problem(self):
@@ -326,22 +305,43 @@ class ProblemOccurrence(TeamCityObject):
         self._problem = problem
 
     @property
-    def type(self):
-        """Gets the type of this ProblemOccurrence.  # noqa: E501
+    def mute(self):
+        """Gets the mute of this ProblemOccurrence.  # noqa: E501
 
 
-        :return: The type of this ProblemOccurrence.  # noqa: E501
-        :rtype: str
+        :return: The mute of this ProblemOccurrence.  # noqa: E501
+        :rtype: Mute
         """
-        return self._type
+        return self._mute
 
-    @type.setter
-    def type(self, type):
-        """Sets the type of this ProblemOccurrence.
+    @mute.setter
+    def mute(self, mute):
+        """Sets the mute of this ProblemOccurrence.
 
 
-        :param type: The type of this ProblemOccurrence.  # noqa: E501
-        :type: str
+        :param mute: The mute of this ProblemOccurrence.  # noqa: E501
+        :type: Mute
         """
 
-        self._type = type
+        self._mute = mute
+
+    @property
+    def build(self):
+        """Gets the build of this ProblemOccurrence.  # noqa: E501
+
+
+        :return: The build of this ProblemOccurrence.  # noqa: E501
+        :rtype: Build
+        """
+        return self._build
+
+    @build.setter
+    def build(self, build):
+        """Sets the build of this ProblemOccurrence.
+
+
+        :param build: The build of this ProblemOccurrence.  # noqa: E501
+        :type: Build
+        """
+
+        self._build = build

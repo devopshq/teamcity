@@ -15,10 +15,10 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **requestor_type**
+   * - **status**
      - **str**
      - `optional` 
-   * - **status**
+   * - **requestor_type**
      - **str**
      - `optional` 
    * - **timestamp**

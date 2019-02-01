@@ -17,89 +17,68 @@ class BackupProcessInfo(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'file_name': 'str',
-        'file_size': 'int',
-        'finish_timestamp': 'datetime',
-        'id': 'int',
         'start_timestamp': 'datetime',
-        'status': 'str'
+        'finish_timestamp': 'datetime',
+        'file_size': 'int',
+        'status': 'str',
+        'id': 'int',
+        'file_name': 'str'
     }
 
     attribute_map = {
-        'file_name': 'fileName',
-        'file_size': 'fileSize',
-        'finish_timestamp': 'finishTimestamp',
-        'id': 'id',
         'start_timestamp': 'startTimestamp',
-        'status': 'status'
+        'finish_timestamp': 'finishTimestamp',
+        'file_size': 'fileSize',
+        'status': 'status',
+        'id': 'id',
+        'file_name': 'fileName'
     }
 
-    def __init__(self, file_name=None, file_size=None, finish_timestamp=None, id=None, start_timestamp=None, status=None, teamcity=None):  # noqa: E501
+    def __init__(self, start_timestamp=None, finish_timestamp=None, file_size=None, status=None, id=None, file_name=None, teamcity=None):  # noqa: E501
         """BackupProcessInfo - a model defined in Swagger"""  # noqa: E501
 
-        self._file_name = None
-        self._file_size = None
-        self._finish_timestamp = None
-        self._id = None
         self._start_timestamp = None
+        self._finish_timestamp = None
+        self._file_size = None
         self._status = None
+        self._id = None
+        self._file_name = None
         self.discriminator = None
 
-        if file_name is not None:
-            self.file_name = file_name
-        if file_size is not None:
-            self.file_size = file_size
-        if finish_timestamp is not None:
-            self.finish_timestamp = finish_timestamp
-        if id is not None:
-            self.id = id
         if start_timestamp is not None:
             self.start_timestamp = start_timestamp
+        if finish_timestamp is not None:
+            self.finish_timestamp = finish_timestamp
+        if file_size is not None:
+            self.file_size = file_size
         if status is not None:
             self.status = status
+        if id is not None:
+            self.id = id
+        if file_name is not None:
+            self.file_name = file_name
         super(BackupProcessInfo, self).__init__(teamcity=teamcity)
 
     @property
-    def file_name(self):
-        """Gets the file_name of this BackupProcessInfo.  # noqa: E501
+    def start_timestamp(self):
+        """Gets the start_timestamp of this BackupProcessInfo.  # noqa: E501
 
 
-        :return: The file_name of this BackupProcessInfo.  # noqa: E501
-        :rtype: str
+        :return: The start_timestamp of this BackupProcessInfo.  # noqa: E501
+        :rtype: datetime
         """
-        return self._file_name
+        return self._start_timestamp
 
-    @file_name.setter
-    def file_name(self, file_name):
-        """Sets the file_name of this BackupProcessInfo.
-
-
-        :param file_name: The file_name of this BackupProcessInfo.  # noqa: E501
-        :type: str
-        """
-
-        self._file_name = file_name
-
-    @property
-    def file_size(self):
-        """Gets the file_size of this BackupProcessInfo.  # noqa: E501
+    @start_timestamp.setter
+    def start_timestamp(self, start_timestamp):
+        """Sets the start_timestamp of this BackupProcessInfo.
 
 
-        :return: The file_size of this BackupProcessInfo.  # noqa: E501
-        :rtype: int
-        """
-        return self._file_size
-
-    @file_size.setter
-    def file_size(self, file_size):
-        """Sets the file_size of this BackupProcessInfo.
-
-
-        :param file_size: The file_size of this BackupProcessInfo.  # noqa: E501
-        :type: int
+        :param start_timestamp: The start_timestamp of this BackupProcessInfo.  # noqa: E501
+        :type: datetime
         """
 
-        self._file_size = file_size
+        self._start_timestamp = start_timestamp
 
     @property
     def finish_timestamp(self):
@@ -123,46 +102,25 @@ class BackupProcessInfo(TeamCityObject):
         self._finish_timestamp = finish_timestamp
 
     @property
-    def id(self):
-        """Gets the id of this BackupProcessInfo.  # noqa: E501
+    def file_size(self):
+        """Gets the file_size of this BackupProcessInfo.  # noqa: E501
 
 
-        :return: The id of this BackupProcessInfo.  # noqa: E501
+        :return: The file_size of this BackupProcessInfo.  # noqa: E501
         :rtype: int
         """
-        return self._id
+        return self._file_size
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this BackupProcessInfo.
+    @file_size.setter
+    def file_size(self, file_size):
+        """Sets the file_size of this BackupProcessInfo.
 
 
-        :param id: The id of this BackupProcessInfo.  # noqa: E501
+        :param file_size: The file_size of this BackupProcessInfo.  # noqa: E501
         :type: int
         """
 
-        self._id = id
-
-    @property
-    def start_timestamp(self):
-        """Gets the start_timestamp of this BackupProcessInfo.  # noqa: E501
-
-
-        :return: The start_timestamp of this BackupProcessInfo.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._start_timestamp
-
-    @start_timestamp.setter
-    def start_timestamp(self, start_timestamp):
-        """Sets the start_timestamp of this BackupProcessInfo.
-
-
-        :param start_timestamp: The start_timestamp of this BackupProcessInfo.  # noqa: E501
-        :type: datetime
-        """
-
-        self._start_timestamp = start_timestamp
+        self._file_size = file_size
 
     @property
     def status(self):
@@ -190,3 +148,45 @@ class BackupProcessInfo(TeamCityObject):
             )
 
         self._status = status
+
+    @property
+    def id(self):
+        """Gets the id of this BackupProcessInfo.  # noqa: E501
+
+
+        :return: The id of this BackupProcessInfo.  # noqa: E501
+        :rtype: int
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this BackupProcessInfo.
+
+
+        :param id: The id of this BackupProcessInfo.  # noqa: E501
+        :type: int
+        """
+
+        self._id = id
+
+    @property
+    def file_name(self):
+        """Gets the file_name of this BackupProcessInfo.  # noqa: E501
+
+
+        :return: The file_name of this BackupProcessInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._file_name
+
+    @file_name.setter
+    def file_name(self, file_name):
+        """Sets the file_name of this BackupProcessInfo.
+
+
+        :param file_name: The file_name of this BackupProcessInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._file_name = file_name

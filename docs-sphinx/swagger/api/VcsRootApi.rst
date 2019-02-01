@@ -64,7 +64,7 @@ add_root
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        body = dohq_teamcity.VcsRoot() # VcsRoot |  (optional)
+    body = dohq_teamcity.VcsRoot() # VcsRoot |  (optional)
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -108,7 +108,7 @@ change_properties
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        vcs_root_locator = 'vcs_root_locator_example' # str | 
+    vcs_root_locator = 'vcs_root_locator_example' # str | 
     body = dohq_teamcity.Properties() # Properties |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -156,7 +156,7 @@ delete_all_properties
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        vcs_root_locator = 'vcs_root_locator_example' # str | 
+    vcs_root_locator = 'vcs_root_locator_example' # str | 
 
     try:
         tc.vcs_root_api.delete_all_properties(vcs_root_locator)
@@ -195,7 +195,7 @@ delete_parameter
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        vcs_root_locator = 'vcs_root_locator_example' # str | 
+    vcs_root_locator = 'vcs_root_locator_example' # str | 
     name = 'name_example' # str | 
 
     try:
@@ -238,7 +238,7 @@ delete_root
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        vcs_root_locator = 'vcs_root_locator_example' # str | 
+    vcs_root_locator = 'vcs_root_locator_example' # str | 
 
     try:
         tc.vcs_root_api.delete_root(vcs_root_locator)
@@ -277,7 +277,7 @@ get_settings_file
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        vcs_root_locator = 'vcs_root_locator_example' # str | 
+    vcs_root_locator = 'vcs_root_locator_example' # str | 
 
     try:
         api_response = tc.vcs_root_api.get_settings_file(vcs_root_locator)
@@ -317,7 +317,7 @@ put_parameter
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        vcs_root_locator = 'vcs_root_locator_example' # str | 
+    vcs_root_locator = 'vcs_root_locator_example' # str | 
     name = 'name_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -365,7 +365,7 @@ serve_field
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        vcs_root_locator = 'vcs_root_locator_example' # str | 
+    vcs_root_locator = 'vcs_root_locator_example' # str | 
     field = 'field_example' # str | 
 
     try:
@@ -409,7 +409,7 @@ serve_instance_field
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        vcs_root_locator = 'vcs_root_locator_example' # str | 
+    vcs_root_locator = 'vcs_root_locator_example' # str | 
     vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
     field = 'field_example' # str | 
 
@@ -457,7 +457,7 @@ serve_properties
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        vcs_root_locator = 'vcs_root_locator_example' # str | 
+    vcs_root_locator = 'vcs_root_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -501,7 +501,7 @@ serve_property
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        vcs_root_locator = 'vcs_root_locator_example' # str | 
+    vcs_root_locator = 'vcs_root_locator_example' # str | 
     name = 'name_example' # str | 
 
     try:
@@ -545,7 +545,7 @@ serve_root
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        vcs_root_locator = 'vcs_root_locator_example' # str | 
+    vcs_root_locator = 'vcs_root_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -589,7 +589,7 @@ serve_root_instance
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        vcs_root_locator = 'vcs_root_locator_example' # str | 
+    vcs_root_locator = 'vcs_root_locator_example' # str | 
     vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
@@ -637,7 +637,7 @@ serve_root_instance_properties
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        vcs_root_locator = 'vcs_root_locator_example' # str | 
+    vcs_root_locator = 'vcs_root_locator_example' # str | 
     vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
@@ -685,7 +685,7 @@ serve_root_instances
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        vcs_root_locator = 'vcs_root_locator_example' # str | 
+    vcs_root_locator = 'vcs_root_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -729,7 +729,7 @@ serve_roots
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        locator = 'locator_example' # str |  (optional)
+    locator = 'locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -773,7 +773,7 @@ set_field
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        vcs_root_locator = 'vcs_root_locator_example' # str | 
+    vcs_root_locator = 'vcs_root_locator_example' # str | 
     field = 'field_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -821,7 +821,7 @@ set_instance_field
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        vcs_root_locator = 'vcs_root_locator_example' # str | 
+    vcs_root_locator = 'vcs_root_locator_example' # str | 
     vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
     field = 'field_example' # str | 
     body = 'body_example' # str |  (optional)

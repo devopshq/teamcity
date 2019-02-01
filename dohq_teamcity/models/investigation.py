@@ -24,62 +24,125 @@ class Investigation(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'id': 'str',
+        'state': 'str',
+        'href': 'str',
         'assignee': 'User',
         'assignment': 'Comment',
-        'href': 'str',
-        'id': 'str',
-        'resolution': 'Resolution',
-        'responsible': 'User',
         'scope': 'ProblemScope',
-        'state': 'str',
-        'target': 'ProblemTarget'
+        'target': 'ProblemTarget',
+        'resolution': 'Resolution',
+        'responsible': 'User'
     }
 
     attribute_map = {
+        'id': 'id',
+        'state': 'state',
+        'href': 'href',
         'assignee': 'assignee',
         'assignment': 'assignment',
-        'href': 'href',
-        'id': 'id',
-        'resolution': 'resolution',
-        'responsible': 'responsible',
         'scope': 'scope',
-        'state': 'state',
-        'target': 'target'
+        'target': 'target',
+        'resolution': 'resolution',
+        'responsible': 'responsible'
     }
 
-    def __init__(self, assignee=None, assignment=None, href=None, id=None, resolution=None, responsible=None, scope=None, state=None, target=None, teamcity=None):  # noqa: E501
+    def __init__(self, id=None, state=None, href=None, assignee=None, assignment=None, scope=None, target=None, resolution=None, responsible=None, teamcity=None):  # noqa: E501
         """Investigation - a model defined in Swagger"""  # noqa: E501
 
+        self._id = None
+        self._state = None
+        self._href = None
         self._assignee = None
         self._assignment = None
-        self._href = None
-        self._id = None
+        self._scope = None
+        self._target = None
         self._resolution = None
         self._responsible = None
-        self._scope = None
-        self._state = None
-        self._target = None
         self.discriminator = None
 
+        if id is not None:
+            self.id = id
+        if state is not None:
+            self.state = state
+        if href is not None:
+            self.href = href
         if assignee is not None:
             self.assignee = assignee
         if assignment is not None:
             self.assignment = assignment
-        if href is not None:
-            self.href = href
-        if id is not None:
-            self.id = id
+        if scope is not None:
+            self.scope = scope
+        if target is not None:
+            self.target = target
         if resolution is not None:
             self.resolution = resolution
         if responsible is not None:
             self.responsible = responsible
-        if scope is not None:
-            self.scope = scope
-        if state is not None:
-            self.state = state
-        if target is not None:
-            self.target = target
         super(Investigation, self).__init__(teamcity=teamcity)
+
+    @property
+    def id(self):
+        """Gets the id of this Investigation.  # noqa: E501
+
+
+        :return: The id of this Investigation.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this Investigation.
+
+
+        :param id: The id of this Investigation.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
+
+    @property
+    def state(self):
+        """Gets the state of this Investigation.  # noqa: E501
+
+
+        :return: The state of this Investigation.  # noqa: E501
+        :rtype: str
+        """
+        return self._state
+
+    @state.setter
+    def state(self, state):
+        """Sets the state of this Investigation.
+
+
+        :param state: The state of this Investigation.  # noqa: E501
+        :type: str
+        """
+
+        self._state = state
+
+    @property
+    def href(self):
+        """Gets the href of this Investigation.  # noqa: E501
+
+
+        :return: The href of this Investigation.  # noqa: E501
+        :rtype: str
+        """
+        return self._href
+
+    @href.setter
+    def href(self, href):
+        """Sets the href of this Investigation.
+
+
+        :param href: The href of this Investigation.  # noqa: E501
+        :type: str
+        """
+
+        self._href = href
 
     @property
     def assignee(self):
@@ -124,46 +187,46 @@ class Investigation(TeamCityObject):
         self._assignment = assignment
 
     @property
-    def href(self):
-        """Gets the href of this Investigation.  # noqa: E501
+    def scope(self):
+        """Gets the scope of this Investigation.  # noqa: E501
 
 
-        :return: The href of this Investigation.  # noqa: E501
-        :rtype: str
+        :return: The scope of this Investigation.  # noqa: E501
+        :rtype: ProblemScope
         """
-        return self._href
+        return self._scope
 
-    @href.setter
-    def href(self, href):
-        """Sets the href of this Investigation.
+    @scope.setter
+    def scope(self, scope):
+        """Sets the scope of this Investigation.
 
 
-        :param href: The href of this Investigation.  # noqa: E501
-        :type: str
+        :param scope: The scope of this Investigation.  # noqa: E501
+        :type: ProblemScope
         """
 
-        self._href = href
+        self._scope = scope
 
     @property
-    def id(self):
-        """Gets the id of this Investigation.  # noqa: E501
+    def target(self):
+        """Gets the target of this Investigation.  # noqa: E501
 
 
-        :return: The id of this Investigation.  # noqa: E501
-        :rtype: str
+        :return: The target of this Investigation.  # noqa: E501
+        :rtype: ProblemTarget
         """
-        return self._id
+        return self._target
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this Investigation.
+    @target.setter
+    def target(self, target):
+        """Sets the target of this Investigation.
 
 
-        :param id: The id of this Investigation.  # noqa: E501
-        :type: str
+        :param target: The target of this Investigation.  # noqa: E501
+        :type: ProblemTarget
         """
 
-        self._id = id
+        self._target = target
 
     @property
     def resolution(self):
@@ -206,66 +269,3 @@ class Investigation(TeamCityObject):
         """
 
         self._responsible = responsible
-
-    @property
-    def scope(self):
-        """Gets the scope of this Investigation.  # noqa: E501
-
-
-        :return: The scope of this Investigation.  # noqa: E501
-        :rtype: ProblemScope
-        """
-        return self._scope
-
-    @scope.setter
-    def scope(self, scope):
-        """Sets the scope of this Investigation.
-
-
-        :param scope: The scope of this Investigation.  # noqa: E501
-        :type: ProblemScope
-        """
-
-        self._scope = scope
-
-    @property
-    def state(self):
-        """Gets the state of this Investigation.  # noqa: E501
-
-
-        :return: The state of this Investigation.  # noqa: E501
-        :rtype: str
-        """
-        return self._state
-
-    @state.setter
-    def state(self, state):
-        """Sets the state of this Investigation.
-
-
-        :param state: The state of this Investigation.  # noqa: E501
-        :type: str
-        """
-
-        self._state = state
-
-    @property
-    def target(self):
-        """Gets the target of this Investigation.  # noqa: E501
-
-
-        :return: The target of this Investigation.  # noqa: E501
-        :rtype: ProblemTarget
-        """
-        return self._target
-
-    @target.setter
-    def target(self, target):
-        """Sets the target of this Investigation.
-
-
-        :param target: The target of this Investigation.  # noqa: E501
-        :type: ProblemTarget
-        """
-
-        self._target = target

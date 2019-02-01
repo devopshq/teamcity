@@ -15,29 +15,44 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **commit_hook_mode**
-     - **bool**
-     - `optional` [default to ``False``]
-   * - **href**
-     - **str**
-     - `optional` 
    * - **id**
      - **str**
      - `optional` 
+   * - **vcs_root_id**
+     - **str**
+     - `optional` 
+   * - **vcs_root_internal_id**
+     - **str**
+     - `optional` 
+   * - **name**
+     - **str**
+     - `optional` 
+   * - **vcs_name**
+     - **str**
+     - `optional` 
+   * - **modification_check_interval**
+     - **int**
+     - `optional` 
+   * - **commit_hook_mode**
+     - **bool**
+     - `optional` [default to ``False``]
    * - **last_version**
      - **str**
      - `optional` 
    * - **last_version_internal**
      - **str**
      - `optional` 
-   * - **modification_check_interval**
-     - **int**
-     - `optional` 
-   * - **name**
+   * - **href**
      - **str**
      - `optional` 
-   * - **project_locator**
-     - **str**
+   * - **vcs_root**
+     -  `VcsRoot <./VcsRoot.html>`_
+     - `optional` 
+   * - **status**
+     -  `VcsStatus <./VcsStatus.html>`_
+     - `optional` 
+   * - **repository_state**
+     -  `RepositoryState <./RepositoryState.html>`_
      - `optional` 
    * - **properties**
      -  `Properties <./Properties.html>`_
@@ -45,22 +60,7 @@ Properties
    * - **repository_id_strings**
      -  `Items <./Items.html>`_
      - `optional` 
-   * - **repository_state**
-     -  `RepositoryState <./RepositoryState.html>`_
-     - `optional` 
-   * - **status**
-     -  `VcsStatus <./VcsStatus.html>`_
-     - `optional` 
-   * - **vcs_root**
-     -  `VcsRoot <./VcsRoot.html>`_
-     - `optional` 
-   * - **vcs_root_id**
-     - **str**
-     - `optional` 
-   * - **vcs_name**
-     - **str**
-     - `optional` 
-   * - **vcs_root_internal_id**
+   * - **project_locator**
      - **str**
      - `optional` 
 

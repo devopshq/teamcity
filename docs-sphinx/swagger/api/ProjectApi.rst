@@ -22,6 +22,8 @@ dohq_teamcity.ProjectApi
      - **POST** ``/app/rest/projects/{projectLocator}/templates``
    * - :ref:`create_project`
      - **POST** ``/app/rest/projects``
+   * - :ref:`create_secure_token`
+     - **POST** ``/app/rest/projects/{projectLocator}/secure/tokens``
    * - :ref:`delete`
      - **DELETE** ``/app/rest/projects/{projectLocator}/projectFeatures/{featureLocator}``
    * - :ref:`delete_all_parameters`
@@ -38,8 +40,12 @@ dohq_teamcity.ProjectApi
      - **DELETE** ``/app/rest/projects/{projectLocator}/agentPools/{agentPoolLocator}``
    * - :ref:`get`
      - **GET** ``/app/rest/projects/{projectLocator}/projectFeatures``
+   * - :ref:`get_branches`
+     - **GET** ``/app/rest/projects/{projectLocator}/branches``
    * - :ref:`get_build_types_order`
      - **GET** ``/app/rest/projects/{projectLocator}/order/buildTypes``
+   * - :ref:`get_default_template`
+     - **GET** ``/app/rest/projects/{projectLocator}/defaultTemplate``
    * - :ref:`get_example_new_project_description`
      - **GET** ``/app/rest/projects/{projectLocator}/example/newProjectDescription``
    * - :ref:`get_example_new_project_description_compatibility_version1`
@@ -66,12 +72,16 @@ dohq_teamcity.ProjectApi
      - **GET** ``/app/rest/projects/{projectLocator}/agentPools``
    * - :ref:`get_projects_order`
      - **GET** ``/app/rest/projects/{projectLocator}/order/projects``
+   * - :ref:`get_secure_value`
+     - **GET** ``/app/rest/projects/{projectLocator}/secure/values/{token}``
    * - :ref:`get_settings_file`
      - **GET** ``/app/rest/projects/{projectLocator}/settingsFile``
    * - :ref:`get_single`
      - **GET** ``/app/rest/projects/{projectLocator}/projectFeatures/{featureLocator}``
    * - :ref:`reload_settings_file`
      - **GET** ``/app/rest/projects/{projectLocator}/latest``
+   * - :ref:`remove_default_template`
+     - **DELETE** ``/app/rest/projects/{projectLocator}/defaultTemplate``
    * - :ref:`replace`
      - **PUT** ``/app/rest/projects/{projectLocator}/projectFeatures/{featureLocator}``
    * - :ref:`replace_all`
@@ -100,6 +110,8 @@ dohq_teamcity.ProjectApi
      - **GET** ``/app/rest/projects/{projectLocator}/templates``
    * - :ref:`set_build_types_order`
      - **PUT** ``/app/rest/projects/{projectLocator}/order/buildTypes``
+   * - :ref:`set_default_template`
+     - **PUT** ``/app/rest/projects/{projectLocator}/defaultTemplate``
    * - :ref:`set_parameter`
      - **POST** ``/app/rest/projects/{projectLocator}/parameters``
    * - :ref:`set_parameter_0`
@@ -126,7 +138,7 @@ dohq_teamcity.ProjectApi
      - **PUT** ``/app/rest/projects/{projectLocator}/agentPools``
    * - :ref:`set_project_agent_pools_0`
      - **POST** ``/app/rest/projects/{projectLocator}/agentPools``
-   * - :ref:`set_project_filed`
+   * - :ref:`set_project_field`
      - **PUT** ``/app/rest/projects/{projectLocator}/{field}``
    * - :ref:`set_projects_order`
      - **PUT** ``/app/rest/projects/{projectLocator}/order/projects``
@@ -144,7 +156,7 @@ add
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     body = dohq_teamcity.ProjectFeature() # ProjectFeature |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -192,7 +204,7 @@ create_build_type
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     body = dohq_teamcity.NewBuildTypeDescription() # NewBuildTypeDescription |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -240,7 +252,7 @@ create_build_type_template
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     body = dohq_teamcity.NewBuildTypeDescription() # NewBuildTypeDescription |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -288,7 +300,7 @@ create_project
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        body = dohq_teamcity.NewProjectDescription() # NewProjectDescription |  (optional)
+    body = dohq_teamcity.NewProjectDescription() # NewProjectDescription |  (optional)
 
     try:
         api_response = tc.project_api.create_project(body=body)
@@ -315,6 +327,50 @@ Return type:
 
 `Back to top <#>`_
 
+.. _create_secure_token:
+
+create_secure_token
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    project_locator = 'project_locator_example' # str | 
+    body = 'body_example' # str |  (optional)
+
+    try:
+        api_response = tc.project_api.create_secure_token(project_locator, body=body)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectApi->create_secure_token: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **project_locator**
+     - **str**
+     - 
+   * - **body**
+     - **str**
+     - [optional] 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
 .. _delete:
 
 delete
@@ -328,7 +384,7 @@ delete
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        feature_locator = 'feature_locator_example' # str | 
+    feature_locator = 'feature_locator_example' # str | 
     project_locator = 'project_locator_example' # str | 
 
     try:
@@ -371,7 +427,7 @@ delete_all_parameters
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
 
     try:
         tc.project_api.delete_all_parameters(project_locator)
@@ -410,7 +466,7 @@ delete_all_parameters_0
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        feature_locator = 'feature_locator_example' # str | 
+    feature_locator = 'feature_locator_example' # str | 
     project_locator = 'project_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
@@ -457,7 +513,7 @@ delete_parameter
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     project_locator = 'project_locator_example' # str | 
 
     try:
@@ -500,7 +556,7 @@ delete_parameter_0
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     feature_locator = 'feature_locator_example' # str | 
     project_locator = 'project_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
@@ -551,7 +607,7 @@ delete_project
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
 
     try:
         tc.project_api.delete_project(project_locator)
@@ -590,7 +646,7 @@ delete_project_agent_pools
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     agent_pool_locator = 'agent_pool_locator_example' # str | 
 
     try:
@@ -633,7 +689,7 @@ get
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     locator = 'locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -668,6 +724,54 @@ Return type:
 
 `Back to top <#>`_
 
+.. _get_branches:
+
+get_branches
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    project_locator = 'project_locator_example' # str | 
+    locator = 'locator_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        api_response = tc.project_api.get_branches(project_locator, locator=locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectApi->get_branches: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **project_locator**
+     - **str**
+     - 
+   * - **locator**
+     - **str**
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Branches <../models/Branches.html>`_
+
+`Back to top <#>`_
+
 .. _get_build_types_order:
 
 get_build_types_order
@@ -681,7 +785,7 @@ get_build_types_order
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     field = 'field_example' # str | 
 
     try:
@@ -712,6 +816,50 @@ Return type:
 
 `Back to top <#>`_
 
+.. _get_default_template:
+
+get_default_template
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    project_locator = 'project_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        api_response = tc.project_api.get_default_template(project_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectApi->get_default_template: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **project_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `BuildType <../models/BuildType.html>`_
+
+`Back to top <#>`_
+
 .. _get_example_new_project_description:
 
 get_example_new_project_description
@@ -725,7 +873,7 @@ get_example_new_project_description
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     id = 'id_example' # str |  (optional)
 
     try:
@@ -769,7 +917,7 @@ get_example_new_project_description_compatibility_version1
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     id = 'id_example' # str |  (optional)
 
     try:
@@ -813,7 +961,7 @@ get_parameter
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     project_locator = 'project_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
@@ -861,7 +1009,7 @@ get_parameter_0
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     feature_locator = 'feature_locator_example' # str | 
     project_locator = 'project_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
@@ -917,7 +1065,7 @@ get_parameter_type
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     project_locator = 'project_locator_example' # str | 
 
     try:
@@ -961,7 +1109,7 @@ get_parameter_type_raw_value
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     project_locator = 'project_locator_example' # str | 
 
     try:
@@ -1005,7 +1153,7 @@ get_parameter_value_long
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     project_locator = 'project_locator_example' # str | 
 
     try:
@@ -1049,7 +1197,7 @@ get_parameter_value_long_0
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     feature_locator = 'feature_locator_example' # str | 
     project_locator = 'project_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
@@ -1101,7 +1249,7 @@ get_parameters
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     locator = 'locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -1149,7 +1297,7 @@ get_parameters_0
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        feature_locator = 'feature_locator_example' # str | 
+    feature_locator = 'feature_locator_example' # str | 
     project_locator = 'project_locator_example' # str | 
     locator = 'locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
@@ -1205,7 +1353,7 @@ get_parent_project
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -1249,7 +1397,7 @@ get_project_agent_pools
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -1293,7 +1441,7 @@ get_projects_order
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     field = 'field_example' # str | 
 
     try:
@@ -1324,6 +1472,50 @@ Return type:
 
 `Back to top <#>`_
 
+.. _get_secure_value:
+
+get_secure_value
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    project_locator = 'project_locator_example' # str | 
+    token = 'token_example' # str | 
+
+    try:
+        api_response = tc.project_api.get_secure_value(project_locator, token)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectApi->get_secure_value: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **project_locator**
+     - **str**
+     - 
+   * - **token**
+     - **str**
+     - 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
 .. _get_settings_file:
 
 get_settings_file
@@ -1337,7 +1529,7 @@ get_settings_file
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
 
     try:
         api_response = tc.project_api.get_settings_file(project_locator)
@@ -1377,7 +1569,7 @@ get_single
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        feature_locator = 'feature_locator_example' # str | 
+    feature_locator = 'feature_locator_example' # str | 
     project_locator = 'project_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
@@ -1425,7 +1617,7 @@ reload_settings_file
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -1456,6 +1648,49 @@ Return type:
 
 `Back to top <#>`_
 
+.. _remove_default_template:
+
+remove_default_template
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    project_locator = 'project_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        tc.project_api.remove_default_template(project_locator, fields=fields)
+    except ApiException as e:
+        print("Exception when calling ProjectApi->remove_default_template: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **project_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    void (empty response body)
+
+`Back to top <#>`_
+
 .. _replace:
 
 replace
@@ -1469,7 +1704,7 @@ replace
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        feature_locator = 'feature_locator_example' # str | 
+    feature_locator = 'feature_locator_example' # str | 
     project_locator = 'project_locator_example' # str | 
     body = dohq_teamcity.ProjectFeature() # ProjectFeature |  (optional)
     fields = 'fields_example' # str |  (optional)
@@ -1521,7 +1756,7 @@ replace_all
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     body = dohq_teamcity.ProjectFeatures() # ProjectFeatures |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -1569,7 +1804,7 @@ serve_build_field_with_project
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     bt_locator = 'bt_locator_example' # str | 
     build_locator = 'build_locator_example' # str | 
     field = 'field_example' # str | 
@@ -1621,7 +1856,7 @@ serve_build_type
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     bt_locator = 'bt_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
@@ -1669,7 +1904,7 @@ serve_build_type_field_with_project
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     bt_locator = 'bt_locator_example' # str | 
     field = 'field_example' # str | 
 
@@ -1717,7 +1952,7 @@ serve_build_type_templates
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     bt_locator = 'bt_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
@@ -1765,7 +2000,7 @@ serve_build_types_in_project
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -1809,7 +2044,7 @@ serve_build_with_project
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     bt_locator = 'bt_locator_example' # str | 
     build_locator = 'build_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
@@ -1861,7 +2096,7 @@ serve_builds
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     bt_locator = 'bt_locator_example' # str | 
     status = 'status_example' # str |  (optional)
     triggered_by_user = 'triggered_by_user_example' # str |  (optional)
@@ -1957,7 +2192,7 @@ serve_project
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -2001,7 +2236,7 @@ serve_project_field
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     field = 'field_example' # str | 
 
     try:
@@ -2045,7 +2280,7 @@ serve_projects
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        locator = 'locator_example' # str |  (optional)
+    locator = 'locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -2089,7 +2324,7 @@ serve_templates_in_project
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -2133,7 +2368,7 @@ set_build_types_order
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     field = 'field_example' # str | 
     body = dohq_teamcity.BuildTypes() # BuildTypes |  (optional)
 
@@ -2168,6 +2403,54 @@ Return type:
 
 `Back to top <#>`_
 
+.. _set_default_template:
+
+set_default_template
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    project_locator = 'project_locator_example' # str | 
+    body = dohq_teamcity.BuildType() # BuildType |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        api_response = tc.project_api.set_default_template(project_locator, body=body, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectApi->set_default_template: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **project_locator**
+     - **str**
+     - 
+   * - **body**
+     - `BuildType <../models/BuildType.html>`_
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `BuildType <../models/BuildType.html>`_
+
+`Back to top <#>`_
+
 .. _set_parameter:
 
 set_parameter
@@ -2181,7 +2464,7 @@ set_parameter
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     body = dohq_teamcity.ModelProperty() # ModelProperty |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -2229,7 +2512,7 @@ set_parameter_0
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     project_locator = 'project_locator_example' # str | 
     body = dohq_teamcity.ModelProperty() # ModelProperty |  (optional)
     fields = 'fields_example' # str |  (optional)
@@ -2281,7 +2564,7 @@ set_parameter_1
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        feature_locator = 'feature_locator_example' # str | 
+    feature_locator = 'feature_locator_example' # str | 
     project_locator = 'project_locator_example' # str | 
     body = dohq_teamcity.ModelProperty() # ModelProperty |  (optional)
     fields = 'fields_example' # str |  (optional)
@@ -2337,7 +2620,7 @@ set_parameter_2
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     feature_locator = 'feature_locator_example' # str | 
     project_locator = 'project_locator_example' # str | 
     body = dohq_teamcity.ModelProperty() # ModelProperty |  (optional)
@@ -2397,7 +2680,7 @@ set_parameter_type
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     project_locator = 'project_locator_example' # str | 
     body = dohq_teamcity.Type() # Type |  (optional)
 
@@ -2445,7 +2728,7 @@ set_parameter_type_raw_value
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     project_locator = 'project_locator_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -2493,7 +2776,7 @@ set_parameter_value_long
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     project_locator = 'project_locator_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -2541,7 +2824,7 @@ set_parameter_value_long_0
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        name = 'name_example' # str | 
+    name = 'name_example' # str | 
     feature_locator = 'feature_locator_example' # str | 
     project_locator = 'project_locator_example' # str | 
     body = 'body_example' # str |  (optional)
@@ -2597,7 +2880,7 @@ set_parameters
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     body = dohq_teamcity.Properties() # Properties |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -2645,7 +2928,7 @@ set_parameters_0
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        feature_locator = 'feature_locator_example' # str | 
+    feature_locator = 'feature_locator_example' # str | 
     project_locator = 'project_locator_example' # str | 
     body = dohq_teamcity.Properties() # Properties |  (optional)
     fields = 'fields_example' # str |  (optional)
@@ -2701,11 +2984,12 @@ set_parent_project
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     body = dohq_teamcity.Project() # Project |  (optional)
+    fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.project_api.set_parent_project(project_locator, body=body)
+        api_response = tc.project_api.set_parent_project(project_locator, body=body, fields=fields)
        pprint(api_response)
     except ApiException as e:
         print("Exception when calling ProjectApi->set_parent_project: %s\n" % e)
@@ -2726,6 +3010,9 @@ set_parent_project
    * - **body**
      - `Project <../models/Project.html>`_
      - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
 
 Return type:
     `Project <../models/Project.html>`_
@@ -2745,7 +3032,7 @@ set_project_agent_pools
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     body = dohq_teamcity.AgentPools() # AgentPools |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -2793,7 +3080,7 @@ set_project_agent_pools_0
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     body = dohq_teamcity.AgentPool() # AgentPool |  (optional)
 
     try:
@@ -2824,9 +3111,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _set_project_filed:
+.. _set_project_field:
 
-set_project_filed
+set_project_field
 -----------------
 
 .. code-block:: python
@@ -2837,15 +3124,15 @@ set_project_filed
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     field = 'field_example' # str | 
     body = 'body_example' # str |  (optional)
 
     try:
-        api_response = tc.project_api.set_project_filed(project_locator, field, body=body)
+        api_response = tc.project_api.set_project_field(project_locator, field, body=body)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling ProjectApi->set_project_filed: %s\n" % e)
+        print("Exception when calling ProjectApi->set_project_field: %s\n" % e)
 
 
 
@@ -2885,7 +3172,7 @@ set_projects_order
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project_locator = 'project_locator_example' # str | 
+    project_locator = 'project_locator_example' # str | 
     field = 'field_example' # str | 
     body = dohq_teamcity.Projects() # Projects |  (optional)
 

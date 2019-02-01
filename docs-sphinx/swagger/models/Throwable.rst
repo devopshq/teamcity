@@ -18,14 +18,14 @@ Properties
    * - **cause**
      -  `Throwable <./Throwable.html>`_
      - `optional` 
-   * - **localized_message**
-     - **str**
+   * - **stack_trace**
+     -  `list[StackTraceElement] <./StackTraceElement.html>`_
      - `optional` 
    * - **message**
      - **str**
      - `optional` 
-   * - **stack_trace**
-     -  `list[StackTraceElement] <./StackTraceElement.html>`_
+   * - **localized_message**
+     - **str**
      - `optional` 
    * - **suppressed**
      -  `list[Throwable] <./Throwable.html>`_

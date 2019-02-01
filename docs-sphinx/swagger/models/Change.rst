@@ -15,26 +15,44 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **comment**
+   * - **id**
+     - **int**
+     - `optional` 
+   * - **version**
+     - **str**
+     - `optional` 
+   * - **internal_version**
+     - **str**
+     - `optional` 
+   * - **username**
      - **str**
      - `optional` 
    * - **_date**
      - **str**
      - `optional` 
-   * - **files**
-     -  `FileChanges <./FileChanges.html>`_
+   * - **registration_date**
+     - **str**
      - `optional` 
+   * - **personal**
+     - **bool**
+     - `optional` [default to ``False``]
    * - **href**
      - **str**
      - `optional` 
-   * - **id**
-     - **int**
-     - `optional` 
-   * - **internal_version**
+   * - **web_url**
      - **str**
      - `optional` 
-   * - **locator**
+   * - **comment**
      - **str**
+     - `optional` 
+   * - **user**
+     -  `User <./User.html>`_
+     - `optional` 
+   * - **files**
+     -  `FileChanges <./FileChanges.html>`_
+     - `optional` 
+   * - **vcs_root_instance**
+     -  `VcsRootInstance <./VcsRootInstance.html>`_
      - `optional` 
    * - **parent_changes**
      -  `Changes <./Changes.html>`_
@@ -42,25 +60,7 @@ Properties
    * - **parent_revisions**
      -  `Items <./Items.html>`_
      - `optional` 
-   * - **personal**
-     - **bool**
-     - `optional` [default to ``False``]
-   * - **registration_date**
-     - **str**
-     - `optional` 
-   * - **user**
-     -  `User <./User.html>`_
-     - `optional` 
-   * - **username**
-     - **str**
-     - `optional` 
-   * - **vcs_root_instance**
-     -  `VcsRootInstance <./VcsRootInstance.html>`_
-     - `optional` 
-   * - **version**
-     - **str**
-     - `optional` 
-   * - **web_url**
+   * - **locator**
      - **str**
      - `optional` 
 

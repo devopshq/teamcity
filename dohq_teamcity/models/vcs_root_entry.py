@@ -20,58 +20,37 @@ class VcsRootEntry(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'checkout_rules': 'str',
         'id': 'str',
         'inherited': 'bool',
-        'vcs_root': 'VcsRoot'
+        'vcs_root': 'VcsRoot',
+        'checkout_rules': 'str'
     }
 
     attribute_map = {
-        'checkout_rules': 'checkout-rules',
         'id': 'id',
         'inherited': 'inherited',
-        'vcs_root': 'vcs-root'
+        'vcs_root': 'vcs-root',
+        'checkout_rules': 'checkout-rules'
     }
 
-    def __init__(self, checkout_rules=None, id=None, inherited=False, vcs_root=None, teamcity=None):  # noqa: E501
+    def __init__(self, id=None, inherited=False, vcs_root=None, checkout_rules=None, teamcity=None):  # noqa: E501
         """VcsRootEntry - a model defined in Swagger"""  # noqa: E501
 
-        self._checkout_rules = None
         self._id = None
         self._inherited = None
         self._vcs_root = None
+        self._checkout_rules = None
         self.discriminator = None
 
-        if checkout_rules is not None:
-            self.checkout_rules = checkout_rules
         if id is not None:
             self.id = id
         if inherited is not None:
             self.inherited = inherited
         if vcs_root is not None:
             self.vcs_root = vcs_root
+        if checkout_rules is not None:
+            self.checkout_rules = checkout_rules
         super(VcsRootEntry, self).__init__(teamcity=teamcity)
-
-    @property
-    def checkout_rules(self):
-        """Gets the checkout_rules of this VcsRootEntry.  # noqa: E501
-
-
-        :return: The checkout_rules of this VcsRootEntry.  # noqa: E501
-        :rtype: str
-        """
-        return self._checkout_rules
-
-    @checkout_rules.setter
-    def checkout_rules(self, checkout_rules):
-        """Sets the checkout_rules of this VcsRootEntry.
-
-
-        :param checkout_rules: The checkout_rules of this VcsRootEntry.  # noqa: E501
-        :type: str
-        """
-
-        self._checkout_rules = checkout_rules
 
     @property
     def id(self):
@@ -135,3 +114,24 @@ class VcsRootEntry(TeamCityObject):
         """
 
         self._vcs_root = vcs_root
+
+    @property
+    def checkout_rules(self):
+        """Gets the checkout_rules of this VcsRootEntry.  # noqa: E501
+
+
+        :return: The checkout_rules of this VcsRootEntry.  # noqa: E501
+        :rtype: str
+        """
+        return self._checkout_rules
+
+    @checkout_rules.setter
+    def checkout_rules(self, checkout_rules):
+        """Sets the checkout_rules of this VcsRootEntry.
+
+
+        :param checkout_rules: The checkout_rules of this VcsRootEntry.  # noqa: E501
+        :type: str
+        """
+
+        self._checkout_rules = checkout_rules

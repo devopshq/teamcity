@@ -20,84 +20,42 @@ class Changes(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'change': 'list[Change]',
-        'count': 'int',
         'href': 'str',
         'next_href': 'str',
-        'prev_href': 'str'
+        'prev_href': 'str',
+        'change': 'list[Change]',
+        'count': 'int'
     }
 
     attribute_map = {
-        'change': 'change',
-        'count': 'count',
         'href': 'href',
         'next_href': 'nextHref',
-        'prev_href': 'prevHref'
+        'prev_href': 'prevHref',
+        'change': 'change',
+        'count': 'count'
     }
 
-    def __init__(self, change=None, count=None, href=None, next_href=None, prev_href=None, teamcity=None):  # noqa: E501
+    def __init__(self, href=None, next_href=None, prev_href=None, change=None, count=None, teamcity=None):  # noqa: E501
         """Changes - a model defined in Swagger"""  # noqa: E501
 
-        self._change = None
-        self._count = None
         self._href = None
         self._next_href = None
         self._prev_href = None
+        self._change = None
+        self._count = None
         self.discriminator = None
 
-        if change is not None:
-            self.change = change
-        if count is not None:
-            self.count = count
         if href is not None:
             self.href = href
         if next_href is not None:
             self.next_href = next_href
         if prev_href is not None:
             self.prev_href = prev_href
+        if change is not None:
+            self.change = change
+        if count is not None:
+            self.count = count
         super(Changes, self).__init__(teamcity=teamcity)
-
-    @property
-    def change(self):
-        """Gets the change of this Changes.  # noqa: E501
-
-
-        :return: The change of this Changes.  # noqa: E501
-        :rtype: list[Change]
-        """
-        return self._change
-
-    @change.setter
-    def change(self, change):
-        """Sets the change of this Changes.
-
-
-        :param change: The change of this Changes.  # noqa: E501
-        :type: list[Change]
-        """
-
-        self._change = change
-
-    @property
-    def count(self):
-        """Gets the count of this Changes.  # noqa: E501
-
-
-        :return: The count of this Changes.  # noqa: E501
-        :rtype: int
-        """
-        return self._count
-
-    @count.setter
-    def count(self, count):
-        """Sets the count of this Changes.
-
-
-        :param count: The count of this Changes.  # noqa: E501
-        :type: int
-        """
-
-        self._count = count
 
     @property
     def href(self):
@@ -161,3 +119,45 @@ class Changes(TeamCityObject):
         """
 
         self._prev_href = prev_href
+
+    @property
+    def change(self):
+        """Gets the change of this Changes.  # noqa: E501
+
+
+        :return: The change of this Changes.  # noqa: E501
+        :rtype: list[Change]
+        """
+        return self._change
+
+    @change.setter
+    def change(self, change):
+        """Sets the change of this Changes.
+
+
+        :param change: The change of this Changes.  # noqa: E501
+        :type: list[Change]
+        """
+
+        self._change = change
+
+    @property
+    def count(self):
+        """Gets the count of this Changes.  # noqa: E501
+
+
+        :return: The count of this Changes.  # noqa: E501
+        :rtype: int
+        """
+        return self._count
+
+    @count.setter
+    def count(self, count):
+        """Sets the count of this Changes.
+
+
+        :param count: The count of this Changes.  # noqa: E501
+        :type: int
+        """
+
+        self._count = count

@@ -18,17 +18,17 @@ Properties
    * - **count**
      - **int**
      - `optional` 
-   * - **href**
-     - **str**
-     - `optional` 
-   * - **investigation**
-     -  `list[Investigation] <./Investigation.html>`_
-     - `optional` 
    * - **next_href**
      - **str**
      - `optional` 
    * - **prev_href**
      - **str**
+     - `optional` 
+   * - **href**
+     - **str**
+     - `optional` 
+   * - **investigation**
+     -  `list[Investigation] <./Investigation.html>`_
      - `optional` 
 
 

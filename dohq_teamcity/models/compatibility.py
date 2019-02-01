@@ -22,37 +22,58 @@ class Compatibility(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'compatible': 'bool',
         'agent': 'Agent',
         'build_type': 'BuildType',
-        'compatible': 'bool',
         'unmet_requirements': 'Requirements'
     }
 
     attribute_map = {
+        'compatible': 'compatible',
         'agent': 'agent',
         'build_type': 'buildType',
-        'compatible': 'compatible',
         'unmet_requirements': 'unmetRequirements'
     }
 
-    def __init__(self, agent=None, build_type=None, compatible=False, unmet_requirements=None, teamcity=None):  # noqa: E501
+    def __init__(self, compatible=False, agent=None, build_type=None, unmet_requirements=None, teamcity=None):  # noqa: E501
         """Compatibility - a model defined in Swagger"""  # noqa: E501
 
+        self._compatible = None
         self._agent = None
         self._build_type = None
-        self._compatible = None
         self._unmet_requirements = None
         self.discriminator = None
 
+        if compatible is not None:
+            self.compatible = compatible
         if agent is not None:
             self.agent = agent
         if build_type is not None:
             self.build_type = build_type
-        if compatible is not None:
-            self.compatible = compatible
         if unmet_requirements is not None:
             self.unmet_requirements = unmet_requirements
         super(Compatibility, self).__init__(teamcity=teamcity)
+
+    @property
+    def compatible(self):
+        """Gets the compatible of this Compatibility.  # noqa: E501
+
+
+        :return: The compatible of this Compatibility.  # noqa: E501
+        :rtype: bool
+        """
+        return self._compatible
+
+    @compatible.setter
+    def compatible(self, compatible):
+        """Sets the compatible of this Compatibility.
+
+
+        :param compatible: The compatible of this Compatibility.  # noqa: E501
+        :type: bool
+        """
+
+        self._compatible = compatible
 
     @property
     def agent(self):
@@ -95,27 +116,6 @@ class Compatibility(TeamCityObject):
         """
 
         self._build_type = build_type
-
-    @property
-    def compatible(self):
-        """Gets the compatible of this Compatibility.  # noqa: E501
-
-
-        :return: The compatible of this Compatibility.  # noqa: E501
-        :rtype: bool
-        """
-        return self._compatible
-
-    @compatible.setter
-    def compatible(self, compatible):
-        """Sets the compatible of this Compatibility.
-
-
-        :param compatible: The compatible of this Compatibility.  # noqa: E501
-        :type: bool
-        """
-
-        self._compatible = compatible
 
     @property
     def unmet_requirements(self):

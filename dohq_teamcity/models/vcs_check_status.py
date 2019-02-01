@@ -17,53 +17,32 @@ class VcsCheckStatus(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'requestor_type': 'str',
         'status': 'str',
+        'requestor_type': 'str',
         'timestamp': 'str'
     }
 
     attribute_map = {
-        'requestor_type': 'requestorType',
         'status': 'status',
+        'requestor_type': 'requestorType',
         'timestamp': 'timestamp'
     }
 
-    def __init__(self, requestor_type=None, status=None, timestamp=None, teamcity=None):  # noqa: E501
+    def __init__(self, status=None, requestor_type=None, timestamp=None, teamcity=None):  # noqa: E501
         """VcsCheckStatus - a model defined in Swagger"""  # noqa: E501
 
-        self._requestor_type = None
         self._status = None
+        self._requestor_type = None
         self._timestamp = None
         self.discriminator = None
 
-        if requestor_type is not None:
-            self.requestor_type = requestor_type
         if status is not None:
             self.status = status
+        if requestor_type is not None:
+            self.requestor_type = requestor_type
         if timestamp is not None:
             self.timestamp = timestamp
         super(VcsCheckStatus, self).__init__(teamcity=teamcity)
-
-    @property
-    def requestor_type(self):
-        """Gets the requestor_type of this VcsCheckStatus.  # noqa: E501
-
-
-        :return: The requestor_type of this VcsCheckStatus.  # noqa: E501
-        :rtype: str
-        """
-        return self._requestor_type
-
-    @requestor_type.setter
-    def requestor_type(self, requestor_type):
-        """Sets the requestor_type of this VcsCheckStatus.
-
-
-        :param requestor_type: The requestor_type of this VcsCheckStatus.  # noqa: E501
-        :type: str
-        """
-
-        self._requestor_type = requestor_type
 
     @property
     def status(self):
@@ -85,6 +64,27 @@ class VcsCheckStatus(TeamCityObject):
         """
 
         self._status = status
+
+    @property
+    def requestor_type(self):
+        """Gets the requestor_type of this VcsCheckStatus.  # noqa: E501
+
+
+        :return: The requestor_type of this VcsCheckStatus.  # noqa: E501
+        :rtype: str
+        """
+        return self._requestor_type
+
+    @requestor_type.setter
+    def requestor_type(self, requestor_type):
+        """Sets the requestor_type of this VcsCheckStatus.
+
+
+        :param requestor_type: The requestor_type of this VcsCheckStatus.  # noqa: E501
+        :type: str
+        """
+
+        self._requestor_type = requestor_type
 
     @property
     def timestamp(self):

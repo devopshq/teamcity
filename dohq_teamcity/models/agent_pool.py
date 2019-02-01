@@ -21,94 +21,52 @@ class AgentPool(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'agents': 'Agents',
-        'href': 'str',
         'id': 'int',
-        'locator': 'str',
-        'max_agents': 'int',
         'name': 'str',
-        'projects': 'Projects'
+        'href': 'str',
+        'max_agents': 'int',
+        'projects': 'Projects',
+        'agents': 'Agents',
+        'locator': 'str'
     }
 
     attribute_map = {
-        'agents': 'agents',
-        'href': 'href',
         'id': 'id',
-        'locator': 'locator',
-        'max_agents': 'maxAgents',
         'name': 'name',
-        'projects': 'projects'
+        'href': 'href',
+        'max_agents': 'maxAgents',
+        'projects': 'projects',
+        'agents': 'agents',
+        'locator': 'locator'
     }
 
-    def __init__(self, agents=None, href=None, id=None, locator=None, max_agents=None, name=None, projects=None, teamcity=None):  # noqa: E501
+    def __init__(self, id=None, name=None, href=None, max_agents=None, projects=None, agents=None, locator=None, teamcity=None):  # noqa: E501
         """AgentPool - a model defined in Swagger"""  # noqa: E501
 
-        self._agents = None
-        self._href = None
         self._id = None
-        self._locator = None
-        self._max_agents = None
         self._name = None
+        self._href = None
+        self._max_agents = None
         self._projects = None
+        self._agents = None
+        self._locator = None
         self.discriminator = None
 
-        if agents is not None:
-            self.agents = agents
-        if href is not None:
-            self.href = href
         if id is not None:
             self.id = id
-        if locator is not None:
-            self.locator = locator
-        if max_agents is not None:
-            self.max_agents = max_agents
         if name is not None:
             self.name = name
+        if href is not None:
+            self.href = href
+        if max_agents is not None:
+            self.max_agents = max_agents
         if projects is not None:
             self.projects = projects
+        if agents is not None:
+            self.agents = agents
+        if locator is not None:
+            self.locator = locator
         super(AgentPool, self).__init__(teamcity=teamcity)
-
-    @property
-    def agents(self):
-        """Gets the agents of this AgentPool.  # noqa: E501
-
-
-        :return: The agents of this AgentPool.  # noqa: E501
-        :rtype: Agents
-        """
-        return self._agents
-
-    @agents.setter
-    def agents(self, agents):
-        """Sets the agents of this AgentPool.
-
-
-        :param agents: The agents of this AgentPool.  # noqa: E501
-        :type: Agents
-        """
-
-        self._agents = agents
-
-    @property
-    def href(self):
-        """Gets the href of this AgentPool.  # noqa: E501
-
-
-        :return: The href of this AgentPool.  # noqa: E501
-        :rtype: str
-        """
-        return self._href
-
-    @href.setter
-    def href(self, href):
-        """Sets the href of this AgentPool.
-
-
-        :param href: The href of this AgentPool.  # noqa: E501
-        :type: str
-        """
-
-        self._href = href
 
     @property
     def id(self):
@@ -132,25 +90,46 @@ class AgentPool(TeamCityObject):
         self._id = id
 
     @property
-    def locator(self):
-        """Gets the locator of this AgentPool.  # noqa: E501
+    def name(self):
+        """Gets the name of this AgentPool.  # noqa: E501
 
 
-        :return: The locator of this AgentPool.  # noqa: E501
+        :return: The name of this AgentPool.  # noqa: E501
         :rtype: str
         """
-        return self._locator
+        return self._name
 
-    @locator.setter
-    def locator(self, locator):
-        """Sets the locator of this AgentPool.
+    @name.setter
+    def name(self, name):
+        """Sets the name of this AgentPool.
 
 
-        :param locator: The locator of this AgentPool.  # noqa: E501
+        :param name: The name of this AgentPool.  # noqa: E501
         :type: str
         """
 
-        self._locator = locator
+        self._name = name
+
+    @property
+    def href(self):
+        """Gets the href of this AgentPool.  # noqa: E501
+
+
+        :return: The href of this AgentPool.  # noqa: E501
+        :rtype: str
+        """
+        return self._href
+
+    @href.setter
+    def href(self, href):
+        """Sets the href of this AgentPool.
+
+
+        :param href: The href of this AgentPool.  # noqa: E501
+        :type: str
+        """
+
+        self._href = href
 
     @property
     def max_agents(self):
@@ -174,27 +153,6 @@ class AgentPool(TeamCityObject):
         self._max_agents = max_agents
 
     @property
-    def name(self):
-        """Gets the name of this AgentPool.  # noqa: E501
-
-
-        :return: The name of this AgentPool.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this AgentPool.
-
-
-        :param name: The name of this AgentPool.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
-
-    @property
     def projects(self):
         """Gets the projects of this AgentPool.  # noqa: E501
 
@@ -214,3 +172,45 @@ class AgentPool(TeamCityObject):
         """
 
         self._projects = projects
+
+    @property
+    def agents(self):
+        """Gets the agents of this AgentPool.  # noqa: E501
+
+
+        :return: The agents of this AgentPool.  # noqa: E501
+        :rtype: Agents
+        """
+        return self._agents
+
+    @agents.setter
+    def agents(self, agents):
+        """Sets the agents of this AgentPool.
+
+
+        :param agents: The agents of this AgentPool.  # noqa: E501
+        :type: Agents
+        """
+
+        self._agents = agents
+
+    @property
+    def locator(self):
+        """Gets the locator of this AgentPool.  # noqa: E501
+
+
+        :return: The locator of this AgentPool.  # noqa: E501
+        :rtype: str
+        """
+        return self._locator
+
+    @locator.setter
+    def locator(self, locator):
+        """Sets the locator of this AgentPool.
+
+
+        :param locator: The locator of this AgentPool.  # noqa: E501
+        :type: str
+        """
+
+        self._locator = locator

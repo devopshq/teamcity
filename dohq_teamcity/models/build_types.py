@@ -20,33 +20,31 @@ class BuildTypes(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'build_type': 'list[BuildType]',
         'count': 'int',
         'href': 'str',
         'next_href': 'str',
-        'prev_href': 'str'
+        'prev_href': 'str',
+        'build_type': 'list[BuildType]'
     }
 
     attribute_map = {
-        'build_type': 'buildType',
         'count': 'count',
         'href': 'href',
         'next_href': 'nextHref',
-        'prev_href': 'prevHref'
+        'prev_href': 'prevHref',
+        'build_type': 'buildType'
     }
 
-    def __init__(self, build_type=None, count=None, href=None, next_href=None, prev_href=None, teamcity=None):  # noqa: E501
+    def __init__(self, count=None, href=None, next_href=None, prev_href=None, build_type=None, teamcity=None):  # noqa: E501
         """BuildTypes - a model defined in Swagger"""  # noqa: E501
 
-        self._build_type = None
         self._count = None
         self._href = None
         self._next_href = None
         self._prev_href = None
+        self._build_type = None
         self.discriminator = None
 
-        if build_type is not None:
-            self.build_type = build_type
         if count is not None:
             self.count = count
         if href is not None:
@@ -55,28 +53,9 @@ class BuildTypes(TeamCityObject):
             self.next_href = next_href
         if prev_href is not None:
             self.prev_href = prev_href
+        if build_type is not None:
+            self.build_type = build_type
         super(BuildTypes, self).__init__(teamcity=teamcity)
-
-    @property
-    def build_type(self):
-        """Gets the build_type of this BuildTypes.  # noqa: E501
-
-
-        :return: The build_type of this BuildTypes.  # noqa: E501
-        :rtype: list[BuildType]
-        """
-        return self._build_type
-
-    @build_type.setter
-    def build_type(self, build_type):
-        """Sets the build_type of this BuildTypes.
-
-
-        :param build_type: The build_type of this BuildTypes.  # noqa: E501
-        :type: list[BuildType]
-        """
-
-        self._build_type = build_type
 
     @property
     def count(self):
@@ -161,3 +140,24 @@ class BuildTypes(TeamCityObject):
         """
 
         self._prev_href = prev_href
+
+    @property
+    def build_type(self):
+        """Gets the build_type of this BuildTypes.  # noqa: E501
+
+
+        :return: The build_type of this BuildTypes.  # noqa: E501
+        :rtype: list[BuildType]
+        """
+        return self._build_type
+
+    @build_type.setter
+    def build_type(self, build_type):
+        """Sets the build_type of this BuildTypes.
+
+
+        :param build_type: The build_type of this BuildTypes.  # noqa: E501
+        :type: list[BuildType]
+        """
+
+        self._build_type = build_type

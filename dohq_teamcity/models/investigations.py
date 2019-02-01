@@ -21,40 +21,40 @@ class Investigations(TeamCityObject):
     """
     swagger_types = {
         'count': 'int',
-        'href': 'str',
-        'investigation': 'list[Investigation]',
         'next_href': 'str',
-        'prev_href': 'str'
+        'prev_href': 'str',
+        'href': 'str',
+        'investigation': 'list[Investigation]'
     }
 
     attribute_map = {
         'count': 'count',
-        'href': 'href',
-        'investigation': 'investigation',
         'next_href': 'nextHref',
-        'prev_href': 'prevHref'
+        'prev_href': 'prevHref',
+        'href': 'href',
+        'investigation': 'investigation'
     }
 
-    def __init__(self, count=None, href=None, investigation=None, next_href=None, prev_href=None, teamcity=None):  # noqa: E501
+    def __init__(self, count=None, next_href=None, prev_href=None, href=None, investigation=None, teamcity=None):  # noqa: E501
         """Investigations - a model defined in Swagger"""  # noqa: E501
 
         self._count = None
-        self._href = None
-        self._investigation = None
         self._next_href = None
         self._prev_href = None
+        self._href = None
+        self._investigation = None
         self.discriminator = None
 
         if count is not None:
             self.count = count
-        if href is not None:
-            self.href = href
-        if investigation is not None:
-            self.investigation = investigation
         if next_href is not None:
             self.next_href = next_href
         if prev_href is not None:
             self.prev_href = prev_href
+        if href is not None:
+            self.href = href
+        if investigation is not None:
+            self.investigation = investigation
         super(Investigations, self).__init__(teamcity=teamcity)
 
     @property
@@ -77,48 +77,6 @@ class Investigations(TeamCityObject):
         """
 
         self._count = count
-
-    @property
-    def href(self):
-        """Gets the href of this Investigations.  # noqa: E501
-
-
-        :return: The href of this Investigations.  # noqa: E501
-        :rtype: str
-        """
-        return self._href
-
-    @href.setter
-    def href(self, href):
-        """Sets the href of this Investigations.
-
-
-        :param href: The href of this Investigations.  # noqa: E501
-        :type: str
-        """
-
-        self._href = href
-
-    @property
-    def investigation(self):
-        """Gets the investigation of this Investigations.  # noqa: E501
-
-
-        :return: The investigation of this Investigations.  # noqa: E501
-        :rtype: list[Investigation]
-        """
-        return self._investigation
-
-    @investigation.setter
-    def investigation(self, investigation):
-        """Sets the investigation of this Investigations.
-
-
-        :param investigation: The investigation of this Investigations.  # noqa: E501
-        :type: list[Investigation]
-        """
-
-        self._investigation = investigation
 
     @property
     def next_href(self):
@@ -161,3 +119,45 @@ class Investigations(TeamCityObject):
         """
 
         self._prev_href = prev_href
+
+    @property
+    def href(self):
+        """Gets the href of this Investigations.  # noqa: E501
+
+
+        :return: The href of this Investigations.  # noqa: E501
+        :rtype: str
+        """
+        return self._href
+
+    @href.setter
+    def href(self, href):
+        """Sets the href of this Investigations.
+
+
+        :param href: The href of this Investigations.  # noqa: E501
+        :type: str
+        """
+
+        self._href = href
+
+    @property
+    def investigation(self):
+        """Gets the investigation of this Investigations.  # noqa: E501
+
+
+        :return: The investigation of this Investigations.  # noqa: E501
+        :rtype: list[Investigation]
+        """
+        return self._investigation
+
+    @investigation.setter
+    def investigation(self, investigation):
+        """Sets the investigation of this Investigations.
+
+
+        :param investigation: The investigation of this Investigations.  # noqa: E501
+        :type: list[Investigation]
+        """
+
+        self._investigation = investigation

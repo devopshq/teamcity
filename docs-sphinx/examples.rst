@@ -2,8 +2,6 @@
 API Examples
 ############
 
-.. contents::
-
 Models
 =======
 
@@ -12,13 +10,3 @@ Models
    :glob:
 
    examples/models/*
-
-API
-===
-
-.. toctree::
-   :maxdepth: 3
-   :glob:
-
-   examples/api/*
-

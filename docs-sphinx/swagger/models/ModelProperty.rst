@@ -15,17 +15,17 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **inherited**
-     - **bool**
-     - `optional` [default to ``False``]
    * - **name**
      - **str**
      - `optional` 
-   * - **type**
-     -  `Type <./Type.html>`_
-     - `optional` 
    * - **value**
      - **str**
+     - `optional` 
+   * - **inherited**
+     - **bool**
+     - `optional` [default to ``False``]
+   * - **type**
+     -  `Type <./Type.html>`_
      - `optional` 
 
 

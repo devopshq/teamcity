@@ -20,48 +20,27 @@ class MetaData(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'entries': 'Entries',
-        'id': 'str'
+        'id': 'str',
+        'entries': 'Entries'
     }
 
     attribute_map = {
-        'entries': 'entries',
-        'id': 'id'
+        'id': 'id',
+        'entries': 'entries'
     }
 
-    def __init__(self, entries=None, id=None, teamcity=None):  # noqa: E501
+    def __init__(self, id=None, entries=None, teamcity=None):  # noqa: E501
         """MetaData - a model defined in Swagger"""  # noqa: E501
 
-        self._entries = None
         self._id = None
+        self._entries = None
         self.discriminator = None
 
-        if entries is not None:
-            self.entries = entries
         if id is not None:
             self.id = id
+        if entries is not None:
+            self.entries = entries
         super(MetaData, self).__init__(teamcity=teamcity)
-
-    @property
-    def entries(self):
-        """Gets the entries of this MetaData.  # noqa: E501
-
-
-        :return: The entries of this MetaData.  # noqa: E501
-        :rtype: Entries
-        """
-        return self._entries
-
-    @entries.setter
-    def entries(self, entries):
-        """Sets the entries of this MetaData.
-
-
-        :param entries: The entries of this MetaData.  # noqa: E501
-        :type: Entries
-        """
-
-        self._entries = entries
 
     @property
     def id(self):
@@ -83,3 +62,24 @@ class MetaData(TeamCityObject):
         """
 
         self._id = id
+
+    @property
+    def entries(self):
+        """Gets the entries of this MetaData.  # noqa: E501
+
+
+        :return: The entries of this MetaData.  # noqa: E501
+        :rtype: Entries
+        """
+        return self._entries
+
+    @entries.setter
+    def entries(self, entries):
+        """Sets the entries of this MetaData.
+
+
+        :param entries: The entries of this MetaData.  # noqa: E501
+        :type: Entries
+        """
+
+        self._entries = entries

@@ -18,35 +18,35 @@ Properties
    * - **count**
      - **int**
      - `optional` 
-   * - **default**
-     - **bool**
-     - `optional` [default to ``False``]
-   * - **failed**
-     - **int**
-     - `optional` 
    * - **href**
      - **str**
      - `optional` 
-   * - **ignored**
-     - **int**
-     - `optional` 
-   * - **muted**
-     - **int**
-     - `optional` 
-   * - **new_failed**
-     - **int**
-     - `optional` 
    * - **next_href**
      - **str**
-     - `optional` 
-   * - **passed**
-     - **int**
      - `optional` 
    * - **prev_href**
      - **str**
      - `optional` 
    * - **test_occurrence**
      -  `list[TestOccurrence] <./TestOccurrence.html>`_
+     - `optional` 
+   * - **default**
+     - **bool**
+     - `optional` [default to ``False``]
+   * - **passed**
+     - **int**
+     - `optional` 
+   * - **failed**
+     - **int**
+     - `optional` 
+   * - **new_failed**
+     - **int**
+     - `optional` 
+   * - **ignored**
+     - **int**
+     - `optional` 
+   * - **muted**
+     - **int**
      - `optional` 
 
 

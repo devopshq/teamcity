@@ -66,7 +66,7 @@ delete_instance_field
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
+    vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
     field = 'field_example' # str | 
 
     try:
@@ -109,7 +109,7 @@ delete_repository_state
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
+    vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
 
     try:
         tc.vcs_root_instance_api.delete_repository_state(vcs_root_instance_locator)
@@ -148,7 +148,7 @@ get_children
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        path = 'path_example' # str | 
+    path = 'path_example' # str | 
     vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
     base_path = 'base_path_example' # str |  (optional)
     locator = 'locator_example' # str |  (optional)
@@ -204,7 +204,7 @@ get_children_alias
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        path = 'path_example' # str | 
+    path = 'path_example' # str | 
     vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
     base_path = 'base_path_example' # str |  (optional)
     locator = 'locator_example' # str |  (optional)
@@ -260,11 +260,12 @@ get_content
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        path = 'path_example' # str | 
+    path = 'path_example' # str | 
     vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
+    response_builder = 'response_builder_example' # str |  (optional)
 
     try:
-        tc.vcs_root_instance_api.get_content(path, vcs_root_instance_locator)
+        tc.vcs_root_instance_api.get_content(path, vcs_root_instance_locator, response_builder=response_builder)
     except ApiException as e:
         print("Exception when calling VcsRootInstanceApi->get_content: %s\n" % e)
 
@@ -284,6 +285,9 @@ get_content
    * - **vcs_root_instance_locator**
      - **str**
      - 
+   * - **response_builder**
+     - **str**
+     - [optional] 
 
 Return type:
     void (empty response body)
@@ -303,7 +307,7 @@ get_content_alias
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        path = 'path_example' # str | 
+    path = 'path_example' # str | 
     vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
 
     try:
@@ -346,7 +350,7 @@ get_metadata
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        path = 'path_example' # str | 
+    path = 'path_example' # str | 
     vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
@@ -394,7 +398,7 @@ get_repository_state
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
+    vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -438,7 +442,7 @@ get_repository_state_creation_date
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
+    vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
 
     try:
         api_response = tc.vcs_root_instance_api.get_repository_state_creation_date(vcs_root_instance_locator)
@@ -478,7 +482,7 @@ get_root
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
+    vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
     base_path = 'base_path_example' # str |  (optional)
     locator = 'locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
@@ -530,7 +534,7 @@ get_zipped
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        path = 'path_example' # str | 
+    path = 'path_example' # str | 
     vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
     base_path = 'base_path_example' # str |  (optional)
     locator = 'locator_example' # str |  (optional)
@@ -585,7 +589,7 @@ schedule_checking_for_changes
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        locator = 'locator_example' # str |  (optional)
+    locator = 'locator_example' # str |  (optional)
     requestor = 'requestor_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -633,7 +637,7 @@ schedule_checking_for_changes_0
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        locator = 'locator_example' # str |  (optional)
+    locator = 'locator_example' # str |  (optional)
     ok_on_nothing_found = true # bool |  (optional)
 
     try:
@@ -676,7 +680,7 @@ serve_instance
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
+    vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -720,7 +724,7 @@ serve_instance_field
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
+    vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
     field = 'field_example' # str | 
 
     try:
@@ -764,7 +768,7 @@ serve_instances
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        locator = 'locator_example' # str |  (optional)
+    locator = 'locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -808,7 +812,7 @@ serve_root_instance_properties
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
+    vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -852,7 +856,7 @@ set_instance_field
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
+    vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
     field = 'field_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -900,7 +904,7 @@ set_repository_state
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
+    vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
     body = dohq_teamcity.Entries() # Entries |  (optional)
     fields = 'fields_example' # str |  (optional)
 

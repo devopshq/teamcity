@@ -21,9 +21,6 @@ Properties
    * - **max_active**
      - **int**
      - `optional` 
-   * - **session**
-     -  `list[Session] <./Session.html>`_
-     - `optional` 
    * - **session_counter**
      - **int**
      - `optional` 
@@ -35,6 +32,9 @@ Properties
      - `optional` 
    * - **session_max_alive_time**
      - **int**
+     - `optional` 
+   * - **session**
+     -  `list[Session] <./Session.html>`_
      - `optional` 
 
 

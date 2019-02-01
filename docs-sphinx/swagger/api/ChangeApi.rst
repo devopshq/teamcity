@@ -52,7 +52,7 @@ get_change_attributes
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        change_locator = 'change_locator_example' # str | 
+    change_locator = 'change_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -96,7 +96,7 @@ get_change_duplicates
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        change_locator = 'change_locator_example' # str | 
+    change_locator = 'change_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -140,7 +140,7 @@ get_change_field
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        change_locator = 'change_locator_example' # str | 
+    change_locator = 'change_locator_example' # str | 
     field = 'field_example' # str | 
 
     try:
@@ -184,7 +184,7 @@ get_change_first_builds
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        change_locator = 'change_locator_example' # str | 
+    change_locator = 'change_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -228,7 +228,7 @@ get_change_issue
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        change_locator = 'change_locator_example' # str | 
+    change_locator = 'change_locator_example' # str | 
 
     try:
         api_response = tc.change_api.get_change_issue(change_locator)
@@ -268,7 +268,7 @@ get_change_parent_revisions
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        change_locator = 'change_locator_example' # str | 
+    change_locator = 'change_locator_example' # str | 
 
     try:
         api_response = tc.change_api.get_change_parent_revisions(change_locator)
@@ -308,7 +308,7 @@ get_change_vcs_root
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        change_locator = 'change_locator_example' # str | 
+    change_locator = 'change_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -352,7 +352,7 @@ get_change_vcs_root_instance
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        change_locator = 'change_locator_example' # str | 
+    change_locator = 'change_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -396,7 +396,7 @@ get_parent_changes
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        change_locator = 'change_locator_example' # str | 
+    change_locator = 'change_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -440,7 +440,7 @@ get_related_build_types
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        change_locator = 'change_locator_example' # str | 
+    change_locator = 'change_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -484,7 +484,7 @@ serve_change
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        change_locator = 'change_locator_example' # str | 
+    change_locator = 'change_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -528,7 +528,7 @@ serve_changes
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        project = 'project_example' # str |  (optional)
+    project = 'project_example' # str |  (optional)
     build_type = 'build_type_example' # str |  (optional)
     build = 'build_example' # str |  (optional)
     vcs_root = 'vcs_root_example' # str |  (optional)

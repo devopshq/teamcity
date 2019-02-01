@@ -15,12 +15,6 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **change**
-     -  `list[Change] <./Change.html>`_
-     - `optional` 
-   * - **count**
-     - **int**
-     - `optional` 
    * - **href**
      - **str**
      - `optional` 
@@ -29,6 +23,12 @@ Properties
      - `optional` 
    * - **prev_href**
      - **str**
+     - `optional` 
+   * - **change**
+     -  `list[Change] <./Change.html>`_
+     - `optional` 
+   * - **count**
+     - **int**
      - `optional` 
 
 

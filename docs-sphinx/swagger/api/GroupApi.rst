@@ -18,14 +18,14 @@ dohq_teamcity.GroupApi
      - **POST** ``/app/rest/userGroups``
    * - :ref:`add_role`
      - **POST** ``/app/rest/userGroups/{groupLocator}/roles``
-   * - :ref:`add_role_put`
-     - **PUT** ``/app/rest/userGroups/{groupLocator}/roles``
    * - :ref:`add_role_simple`
      - **POST** ``/app/rest/userGroups/{groupLocator}/roles/{roleId}/{scope}``
    * - :ref:`delete_group`
      - **DELETE** ``/app/rest/userGroups/{groupLocator}``
    * - :ref:`delete_role`
      - **DELETE** ``/app/rest/userGroups/{groupLocator}/roles/{roleId}/{scope}``
+   * - :ref:`get_parent_groups`
+     - **GET** ``/app/rest/userGroups/{groupLocator}/parent-groups``
    * - :ref:`get_permissions`
      - **GET** ``/app/rest/userGroups/{groupLocator}/debug/permissions``
    * - :ref:`get_properties`
@@ -44,6 +44,10 @@ dohq_teamcity.GroupApi
      - **GET** ``/app/rest/userGroups``
    * - :ref:`serve_user_properties`
      - **GET** ``/app/rest/userGroups/{groupLocator}/properties/{name}``
+   * - :ref:`set_parent_groups`
+     - **PUT** ``/app/rest/userGroups/{groupLocator}/parent-groups``
+   * - :ref:`set_roles`
+     - **PUT** ``/app/rest/userGroups/{groupLocator}/roles``
 
 .. _add_group:
 
@@ -58,7 +62,7 @@ add_group
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        body = dohq_teamcity.Group() # Group |  (optional)
+    body = dohq_teamcity.Group() # Group |  (optional)
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -102,7 +106,7 @@ add_role
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        group_locator = 'group_locator_example' # str | 
+    group_locator = 'group_locator_example' # str | 
     body = dohq_teamcity.Role() # Role |  (optional)
 
     try:
@@ -133,50 +137,6 @@ Return type:
 
 `Back to top <#>`_
 
-.. _add_role_put:
-
-add_role_put
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-        group_locator = 'group_locator_example' # str | 
-    body = dohq_teamcity.Roles() # Roles |  (optional)
-
-    try:
-        api_response = tc.group_api.add_role_put(group_locator, body=body)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling GroupApi->add_role_put: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **group_locator**
-     - **str**
-     - 
-   * - **body**
-     - `Roles <../models/Roles.html>`_
-     - [optional] 
-
-Return type:
-    `Roles <../models/Roles.html>`_
-
-`Back to top <#>`_
-
 .. _add_role_simple:
 
 add_role_simple
@@ -190,7 +150,7 @@ add_role_simple
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        group_locator = 'group_locator_example' # str | 
+    group_locator = 'group_locator_example' # str | 
     role_id = 'role_id_example' # str | 
     scope = 'scope_example' # str | 
 
@@ -238,7 +198,7 @@ delete_group
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        group_locator = 'group_locator_example' # str | 
+    group_locator = 'group_locator_example' # str | 
 
     try:
         tc.group_api.delete_group(group_locator)
@@ -277,7 +237,7 @@ delete_role
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        group_locator = 'group_locator_example' # str | 
+    group_locator = 'group_locator_example' # str | 
     role_id = 'role_id_example' # str | 
     scope = 'scope_example' # str | 
 
@@ -311,6 +271,50 @@ Return type:
 
 `Back to top <#>`_
 
+.. _get_parent_groups:
+
+get_parent_groups
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    group_locator = 'group_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        api_response = tc.group_api.get_parent_groups(group_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling GroupApi->get_parent_groups: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **group_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Groups <../models/Groups.html>`_
+
+`Back to top <#>`_
+
 .. _get_permissions:
 
 get_permissions
@@ -324,7 +328,7 @@ get_permissions
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        group_locator = 'group_locator_example' # str | 
+    group_locator = 'group_locator_example' # str | 
 
     try:
         api_response = tc.group_api.get_permissions(group_locator)
@@ -364,7 +368,7 @@ get_properties
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        group_locator = 'group_locator_example' # str | 
+    group_locator = 'group_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -408,7 +412,7 @@ list_role
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        group_locator = 'group_locator_example' # str | 
+    group_locator = 'group_locator_example' # str | 
     role_id = 'role_id_example' # str | 
     scope = 'scope_example' # str | 
 
@@ -456,7 +460,7 @@ list_roles
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        group_locator = 'group_locator_example' # str | 
+    group_locator = 'group_locator_example' # str | 
 
     try:
         api_response = tc.group_api.list_roles(group_locator)
@@ -496,7 +500,7 @@ put_user_property
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        group_locator = 'group_locator_example' # str | 
+    group_locator = 'group_locator_example' # str | 
     name = 'name_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -544,7 +548,7 @@ remove_user_property
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        group_locator = 'group_locator_example' # str | 
+    group_locator = 'group_locator_example' # str | 
     name = 'name_example' # str | 
 
     try:
@@ -587,7 +591,7 @@ serve_group
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        group_locator = 'group_locator_example' # str | 
+    group_locator = 'group_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -631,7 +635,7 @@ serve_groups
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        fields = 'fields_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
 
     try:
         api_response = tc.group_api.serve_groups(fields=fields)
@@ -671,7 +675,7 @@ serve_user_properties
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        group_locator = 'group_locator_example' # str | 
+    group_locator = 'group_locator_example' # str | 
     name = 'name_example' # str | 
 
     try:
@@ -699,6 +703,98 @@ serve_user_properties
 
 Return type:
     **str**
+
+`Back to top <#>`_
+
+.. _set_parent_groups:
+
+set_parent_groups
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    group_locator = 'group_locator_example' # str | 
+    body = dohq_teamcity.Groups() # Groups |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        api_response = tc.group_api.set_parent_groups(group_locator, body=body, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling GroupApi->set_parent_groups: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **group_locator**
+     - **str**
+     - 
+   * - **body**
+     - `Groups <../models/Groups.html>`_
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Groups <../models/Groups.html>`_
+
+`Back to top <#>`_
+
+.. _set_roles:
+
+set_roles
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    group_locator = 'group_locator_example' # str | 
+    body = dohq_teamcity.Roles() # Roles |  (optional)
+
+    try:
+        api_response = tc.group_api.set_roles(group_locator, body=body)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling GroupApi->set_roles: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **group_locator**
+     - **str**
+     - 
+   * - **body**
+     - `Roles <../models/Roles.html>`_
+     - [optional] 
+
+Return type:
+    `Roles <../models/Roles.html>`_
 
 `Back to top <#>`_
 

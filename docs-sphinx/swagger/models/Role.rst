@@ -15,13 +15,13 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **href**
-     - **str**
-     - `optional` 
    * - **role_id**
      - **str**
      - `optional` 
    * - **scope**
+     - **str**
+     - `optional` 
+   * - **href**
      - **str**
      - `optional` 
 

@@ -42,6 +42,10 @@ dohq_teamcity.BuildQueueApi
      - **GET** ``/app/rest/buildQueue/{buildLocator}/tags``
    * - :ref:`set_build_queue_order`
      - **PUT** ``/app/rest/buildQueue/order``
+   * - :ref:`set_build_queue_position`
+     - **GET** ``/app/rest/buildQueue/order/{queuePosition}``
+   * - :ref:`set_build_queue_position_0`
+     - **PUT** ``/app/rest/buildQueue/order/{queuePosition}``
 
 .. _add_tags:
 
@@ -56,7 +60,7 @@ add_tags
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     body = dohq_teamcity.Tags() # Tags |  (optional)
 
     try:
@@ -99,7 +103,7 @@ cancel_build
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
 
     try:
         api_response = tc.build_queue_api.cancel_build(build_locator)
@@ -139,7 +143,7 @@ cancel_build_0
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        queued_build_locator = 'queued_build_locator_example' # str | 
+    queued_build_locator = 'queued_build_locator_example' # str | 
     body = dohq_teamcity.BuildCancelRequest() # BuildCancelRequest |  (optional)
 
     try:
@@ -183,7 +187,7 @@ delete_build
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        queued_build_locator = 'queued_build_locator_example' # str | 
+    queued_build_locator = 'queued_build_locator_example' # str | 
 
     try:
         tc.build_queue_api.delete_build(queued_build_locator)
@@ -222,7 +226,7 @@ delete_builds_experimental
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        locator = 'locator_example' # str |  (optional)
+    locator = 'locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -265,7 +269,7 @@ get_build
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        queued_build_locator = 'queued_build_locator_example' # str | 
+    queued_build_locator = 'queued_build_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -309,7 +313,7 @@ get_builds
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        locator = 'locator_example' # str |  (optional)
+    locator = 'locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -353,7 +357,7 @@ queue_new_build
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        body = dohq_teamcity.Build() # Build |  (optional)
+    body = dohq_teamcity.Build() # Build |  (optional)
     move_to_top = true # bool |  (optional)
 
     try:
@@ -397,7 +401,7 @@ replace_builds
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        body = dohq_teamcity.Builds() # Builds |  (optional)
+    body = dohq_teamcity.Builds() # Builds |  (optional)
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -441,7 +445,7 @@ replace_tags
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     locator = 'locator_example' # str |  (optional)
     body = dohq_teamcity.Tags() # Tags |  (optional)
     fields = 'fields_example' # str |  (optional)
@@ -493,7 +497,7 @@ serve_build_field_by_build_only
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     field = 'field_example' # str | 
 
     try:
@@ -537,7 +541,7 @@ serve_compatible_agents
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        queued_build_locator = 'queued_build_locator_example' # str | 
+    queued_build_locator = 'queued_build_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
@@ -581,7 +585,7 @@ serve_tags
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        build_locator = 'build_locator_example' # str | 
+    build_locator = 'build_locator_example' # str | 
     locator = 'locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
 
@@ -629,11 +633,11 @@ set_build_queue_order
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        fields = 'fields_example' # str | 
     body = dohq_teamcity.Builds() # Builds |  (optional)
+    fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.build_queue_api.set_build_queue_order(fields, body=body)
+        api_response = tc.build_queue_api.set_build_queue_order(body=body, fields=fields)
        pprint(api_response)
     except ApiException as e:
         print("Exception when calling BuildQueueApi->set_build_queue_order: %s\n" % e)
@@ -648,15 +652,107 @@ set_build_queue_order
      - Types
      - Notes
 
-   * - **fields**
-     - **str**
-     - 
    * - **body**
      - `Builds <../models/Builds.html>`_
+     - [optional] 
+   * - **fields**
+     - **str**
      - [optional] 
 
 Return type:
     `Builds <../models/Builds.html>`_
+
+`Back to top <#>`_
+
+.. _set_build_queue_position:
+
+set_build_queue_position
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    queue_position = 'queue_position_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        api_response = tc.build_queue_api.set_build_queue_position(queue_position, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildQueueApi->set_build_queue_position: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **queue_position**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Build <../models/Build.html>`_
+
+`Back to top <#>`_
+
+.. _set_build_queue_position_0:
+
+set_build_queue_position_0
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    queue_position = 'queue_position_example' # str | 
+    body = dohq_teamcity.Build() # Build |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        api_response = tc.build_queue_api.set_build_queue_position_0(queue_position, body=body, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildQueueApi->set_build_queue_position_0: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **queue_position**
+     - **str**
+     - 
+   * - **body**
+     - `Build <../models/Build.html>`_
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Build <../models/Build.html>`_
 
 `Back to top <#>`_
 

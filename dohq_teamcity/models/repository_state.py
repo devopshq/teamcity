@@ -20,53 +20,53 @@ class RepositoryState(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'branch': 'list[BranchVersion]',
+        'timestamp': 'str',
         'count': 'int',
-        'timestamp': 'str'
+        'branch': 'list[BranchVersion]'
     }
 
     attribute_map = {
-        'branch': 'branch',
+        'timestamp': 'timestamp',
         'count': 'count',
-        'timestamp': 'timestamp'
+        'branch': 'branch'
     }
 
-    def __init__(self, branch=None, count=None, timestamp=None, teamcity=None):  # noqa: E501
+    def __init__(self, timestamp=None, count=None, branch=None, teamcity=None):  # noqa: E501
         """RepositoryState - a model defined in Swagger"""  # noqa: E501
 
-        self._branch = None
-        self._count = None
         self._timestamp = None
+        self._count = None
+        self._branch = None
         self.discriminator = None
 
-        if branch is not None:
-            self.branch = branch
-        if count is not None:
-            self.count = count
         if timestamp is not None:
             self.timestamp = timestamp
+        if count is not None:
+            self.count = count
+        if branch is not None:
+            self.branch = branch
         super(RepositoryState, self).__init__(teamcity=teamcity)
 
     @property
-    def branch(self):
-        """Gets the branch of this RepositoryState.  # noqa: E501
+    def timestamp(self):
+        """Gets the timestamp of this RepositoryState.  # noqa: E501
 
 
-        :return: The branch of this RepositoryState.  # noqa: E501
-        :rtype: list[BranchVersion]
+        :return: The timestamp of this RepositoryState.  # noqa: E501
+        :rtype: str
         """
-        return self._branch
+        return self._timestamp
 
-    @branch.setter
-    def branch(self, branch):
-        """Sets the branch of this RepositoryState.
+    @timestamp.setter
+    def timestamp(self, timestamp):
+        """Sets the timestamp of this RepositoryState.
 
 
-        :param branch: The branch of this RepositoryState.  # noqa: E501
-        :type: list[BranchVersion]
+        :param timestamp: The timestamp of this RepositoryState.  # noqa: E501
+        :type: str
         """
 
-        self._branch = branch
+        self._timestamp = timestamp
 
     @property
     def count(self):
@@ -90,22 +90,22 @@ class RepositoryState(TeamCityObject):
         self._count = count
 
     @property
-    def timestamp(self):
-        """Gets the timestamp of this RepositoryState.  # noqa: E501
+    def branch(self):
+        """Gets the branch of this RepositoryState.  # noqa: E501
 
 
-        :return: The timestamp of this RepositoryState.  # noqa: E501
-        :rtype: str
+        :return: The branch of this RepositoryState.  # noqa: E501
+        :rtype: list[BranchVersion]
         """
-        return self._timestamp
+        return self._branch
 
-    @timestamp.setter
-    def timestamp(self, timestamp):
-        """Sets the timestamp of this RepositoryState.
+    @branch.setter
+    def branch(self, branch):
+        """Sets the branch of this RepositoryState.
 
 
-        :param timestamp: The timestamp of this RepositoryState.  # noqa: E501
-        :type: str
+        :param branch: The branch of this RepositoryState.  # noqa: E501
+        :type: list[BranchVersion]
         """
 
-        self._timestamp = timestamp
+        self._branch = branch

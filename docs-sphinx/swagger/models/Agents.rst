@@ -15,20 +15,20 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **agent**
-     -  `list[Agent] <./Agent.html>`_
-     - `optional` 
    * - **count**
      - **int**
-     - `optional` 
-   * - **href**
-     - **str**
      - `optional` 
    * - **next_href**
      - **str**
      - `optional` 
    * - **prev_href**
      - **str**
+     - `optional` 
+   * - **href**
+     - **str**
+     - `optional` 
+   * - **agent**
+     -  `list[Agent] <./Agent.html>`_
      - `optional` 
 
 

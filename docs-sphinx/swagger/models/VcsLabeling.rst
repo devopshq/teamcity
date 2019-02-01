@@ -15,13 +15,13 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **branch_filter**
-     - **str**
-     - `optional` 
    * - **label_name**
      - **str**
      - `optional` 
    * - **type**
+     - **str**
+     - `optional` 
+   * - **branch_filter**
      - **str**
      - `optional` 
    * - **vcs_roots**

@@ -21,78 +21,57 @@ class NewBuildTypeDescription(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'build_types_ids_map': 'Properties',
         'copy_all_associated_settings': 'bool',
-        'id': 'str',
-        'name': 'str',
         'projects_ids_map': 'Properties',
-        'source_build_type': 'BuildType',
+        'build_types_ids_map': 'Properties',
+        'vcs_roots_ids_map': 'Properties',
+        'name': 'str',
+        'id': 'str',
         'source_build_type_locator': 'str',
-        'vcs_roots_ids_map': 'Properties'
+        'source_build_type': 'BuildType'
     }
 
     attribute_map = {
-        'build_types_ids_map': 'buildTypesIdsMap',
         'copy_all_associated_settings': 'copyAllAssociatedSettings',
-        'id': 'id',
-        'name': 'name',
         'projects_ids_map': 'projectsIdsMap',
-        'source_build_type': 'sourceBuildType',
+        'build_types_ids_map': 'buildTypesIdsMap',
+        'vcs_roots_ids_map': 'vcsRootsIdsMap',
+        'name': 'name',
+        'id': 'id',
         'source_build_type_locator': 'sourceBuildTypeLocator',
-        'vcs_roots_ids_map': 'vcsRootsIdsMap'
+        'source_build_type': 'sourceBuildType'
     }
 
-    def __init__(self, build_types_ids_map=None, copy_all_associated_settings=False, id=None, name=None, projects_ids_map=None, source_build_type=None, source_build_type_locator=None, vcs_roots_ids_map=None, teamcity=None):  # noqa: E501
+    def __init__(self, copy_all_associated_settings=False, projects_ids_map=None, build_types_ids_map=None, vcs_roots_ids_map=None, name=None, id=None, source_build_type_locator=None, source_build_type=None, teamcity=None):  # noqa: E501
         """NewBuildTypeDescription - a model defined in Swagger"""  # noqa: E501
 
-        self._build_types_ids_map = None
         self._copy_all_associated_settings = None
-        self._id = None
-        self._name = None
         self._projects_ids_map = None
-        self._source_build_type = None
-        self._source_build_type_locator = None
+        self._build_types_ids_map = None
         self._vcs_roots_ids_map = None
+        self._name = None
+        self._id = None
+        self._source_build_type_locator = None
+        self._source_build_type = None
         self.discriminator = None
 
-        if build_types_ids_map is not None:
-            self.build_types_ids_map = build_types_ids_map
         if copy_all_associated_settings is not None:
             self.copy_all_associated_settings = copy_all_associated_settings
-        if id is not None:
-            self.id = id
-        if name is not None:
-            self.name = name
         if projects_ids_map is not None:
             self.projects_ids_map = projects_ids_map
-        if source_build_type is not None:
-            self.source_build_type = source_build_type
-        if source_build_type_locator is not None:
-            self.source_build_type_locator = source_build_type_locator
+        if build_types_ids_map is not None:
+            self.build_types_ids_map = build_types_ids_map
         if vcs_roots_ids_map is not None:
             self.vcs_roots_ids_map = vcs_roots_ids_map
+        if name is not None:
+            self.name = name
+        if id is not None:
+            self.id = id
+        if source_build_type_locator is not None:
+            self.source_build_type_locator = source_build_type_locator
+        if source_build_type is not None:
+            self.source_build_type = source_build_type
         super(NewBuildTypeDescription, self).__init__(teamcity=teamcity)
-
-    @property
-    def build_types_ids_map(self):
-        """Gets the build_types_ids_map of this NewBuildTypeDescription.  # noqa: E501
-
-
-        :return: The build_types_ids_map of this NewBuildTypeDescription.  # noqa: E501
-        :rtype: Properties
-        """
-        return self._build_types_ids_map
-
-    @build_types_ids_map.setter
-    def build_types_ids_map(self, build_types_ids_map):
-        """Sets the build_types_ids_map of this NewBuildTypeDescription.
-
-
-        :param build_types_ids_map: The build_types_ids_map of this NewBuildTypeDescription.  # noqa: E501
-        :type: Properties
-        """
-
-        self._build_types_ids_map = build_types_ids_map
 
     @property
     def copy_all_associated_settings(self):
@@ -116,25 +95,67 @@ class NewBuildTypeDescription(TeamCityObject):
         self._copy_all_associated_settings = copy_all_associated_settings
 
     @property
-    def id(self):
-        """Gets the id of this NewBuildTypeDescription.  # noqa: E501
+    def projects_ids_map(self):
+        """Gets the projects_ids_map of this NewBuildTypeDescription.  # noqa: E501
 
 
-        :return: The id of this NewBuildTypeDescription.  # noqa: E501
-        :rtype: str
+        :return: The projects_ids_map of this NewBuildTypeDescription.  # noqa: E501
+        :rtype: Properties
         """
-        return self._id
+        return self._projects_ids_map
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this NewBuildTypeDescription.
+    @projects_ids_map.setter
+    def projects_ids_map(self, projects_ids_map):
+        """Sets the projects_ids_map of this NewBuildTypeDescription.
 
 
-        :param id: The id of this NewBuildTypeDescription.  # noqa: E501
-        :type: str
+        :param projects_ids_map: The projects_ids_map of this NewBuildTypeDescription.  # noqa: E501
+        :type: Properties
         """
 
-        self._id = id
+        self._projects_ids_map = projects_ids_map
+
+    @property
+    def build_types_ids_map(self):
+        """Gets the build_types_ids_map of this NewBuildTypeDescription.  # noqa: E501
+
+
+        :return: The build_types_ids_map of this NewBuildTypeDescription.  # noqa: E501
+        :rtype: Properties
+        """
+        return self._build_types_ids_map
+
+    @build_types_ids_map.setter
+    def build_types_ids_map(self, build_types_ids_map):
+        """Sets the build_types_ids_map of this NewBuildTypeDescription.
+
+
+        :param build_types_ids_map: The build_types_ids_map of this NewBuildTypeDescription.  # noqa: E501
+        :type: Properties
+        """
+
+        self._build_types_ids_map = build_types_ids_map
+
+    @property
+    def vcs_roots_ids_map(self):
+        """Gets the vcs_roots_ids_map of this NewBuildTypeDescription.  # noqa: E501
+
+
+        :return: The vcs_roots_ids_map of this NewBuildTypeDescription.  # noqa: E501
+        :rtype: Properties
+        """
+        return self._vcs_roots_ids_map
+
+    @vcs_roots_ids_map.setter
+    def vcs_roots_ids_map(self, vcs_roots_ids_map):
+        """Sets the vcs_roots_ids_map of this NewBuildTypeDescription.
+
+
+        :param vcs_roots_ids_map: The vcs_roots_ids_map of this NewBuildTypeDescription.  # noqa: E501
+        :type: Properties
+        """
+
+        self._vcs_roots_ids_map = vcs_roots_ids_map
 
     @property
     def name(self):
@@ -158,46 +179,25 @@ class NewBuildTypeDescription(TeamCityObject):
         self._name = name
 
     @property
-    def projects_ids_map(self):
-        """Gets the projects_ids_map of this NewBuildTypeDescription.  # noqa: E501
+    def id(self):
+        """Gets the id of this NewBuildTypeDescription.  # noqa: E501
 
 
-        :return: The projects_ids_map of this NewBuildTypeDescription.  # noqa: E501
-        :rtype: Properties
+        :return: The id of this NewBuildTypeDescription.  # noqa: E501
+        :rtype: str
         """
-        return self._projects_ids_map
+        return self._id
 
-    @projects_ids_map.setter
-    def projects_ids_map(self, projects_ids_map):
-        """Sets the projects_ids_map of this NewBuildTypeDescription.
-
-
-        :param projects_ids_map: The projects_ids_map of this NewBuildTypeDescription.  # noqa: E501
-        :type: Properties
-        """
-
-        self._projects_ids_map = projects_ids_map
-
-    @property
-    def source_build_type(self):
-        """Gets the source_build_type of this NewBuildTypeDescription.  # noqa: E501
+    @id.setter
+    def id(self, id):
+        """Sets the id of this NewBuildTypeDescription.
 
 
-        :return: The source_build_type of this NewBuildTypeDescription.  # noqa: E501
-        :rtype: BuildType
-        """
-        return self._source_build_type
-
-    @source_build_type.setter
-    def source_build_type(self, source_build_type):
-        """Sets the source_build_type of this NewBuildTypeDescription.
-
-
-        :param source_build_type: The source_build_type of this NewBuildTypeDescription.  # noqa: E501
-        :type: BuildType
+        :param id: The id of this NewBuildTypeDescription.  # noqa: E501
+        :type: str
         """
 
-        self._source_build_type = source_build_type
+        self._id = id
 
     @property
     def source_build_type_locator(self):
@@ -221,22 +221,22 @@ class NewBuildTypeDescription(TeamCityObject):
         self._source_build_type_locator = source_build_type_locator
 
     @property
-    def vcs_roots_ids_map(self):
-        """Gets the vcs_roots_ids_map of this NewBuildTypeDescription.  # noqa: E501
+    def source_build_type(self):
+        """Gets the source_build_type of this NewBuildTypeDescription.  # noqa: E501
 
 
-        :return: The vcs_roots_ids_map of this NewBuildTypeDescription.  # noqa: E501
-        :rtype: Properties
+        :return: The source_build_type of this NewBuildTypeDescription.  # noqa: E501
+        :rtype: BuildType
         """
-        return self._vcs_roots_ids_map
+        return self._source_build_type
 
-    @vcs_roots_ids_map.setter
-    def vcs_roots_ids_map(self, vcs_roots_ids_map):
-        """Sets the vcs_roots_ids_map of this NewBuildTypeDescription.
+    @source_build_type.setter
+    def source_build_type(self, source_build_type):
+        """Sets the source_build_type of this NewBuildTypeDescription.
 
 
-        :param vcs_roots_ids_map: The vcs_roots_ids_map of this NewBuildTypeDescription.  # noqa: E501
-        :type: Properties
+        :param source_build_type: The source_build_type of this NewBuildTypeDescription.  # noqa: E501
+        :type: BuildType
         """
 
-        self._vcs_roots_ids_map = vcs_roots_ids_map
+        self._source_build_type = source_build_type

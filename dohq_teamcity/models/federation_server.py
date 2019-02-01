@@ -17,48 +17,27 @@ class FederationServer(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'url': 'str'
+        'url': 'str',
+        'name': 'str'
     }
 
     attribute_map = {
-        'name': 'name',
-        'url': 'url'
+        'url': 'url',
+        'name': 'name'
     }
 
-    def __init__(self, name=None, url=None, teamcity=None):  # noqa: E501
+    def __init__(self, url=None, name=None, teamcity=None):  # noqa: E501
         """FederationServer - a model defined in Swagger"""  # noqa: E501
 
-        self._name = None
         self._url = None
+        self._name = None
         self.discriminator = None
 
-        if name is not None:
-            self.name = name
         if url is not None:
             self.url = url
+        if name is not None:
+            self.name = name
         super(FederationServer, self).__init__(teamcity=teamcity)
-
-    @property
-    def name(self):
-        """Gets the name of this FederationServer.  # noqa: E501
-
-
-        :return: The name of this FederationServer.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this FederationServer.
-
-
-        :param name: The name of this FederationServer.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
 
     @property
     def url(self):
@@ -80,3 +59,24 @@ class FederationServer(TeamCityObject):
         """
 
         self._url = url
+
+    @property
+    def name(self):
+        """Gets the name of this FederationServer.  # noqa: E501
+
+
+        :return: The name of this FederationServer.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this FederationServer.
+
+
+        :param name: The name of this FederationServer.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name

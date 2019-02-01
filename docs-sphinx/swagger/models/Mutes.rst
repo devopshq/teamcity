@@ -18,6 +18,12 @@ Properties
    * - **count**
      - **int**
      - `optional` 
+   * - **next_href**
+     - **str**
+     - `optional` 
+   * - **prev_href**
+     - **str**
+     - `optional` 
    * - **default**
      - **bool**
      - `optional` [default to ``False``]
@@ -26,12 +32,6 @@ Properties
      - `optional` 
    * - **mute**
      -  `list[Mute] <./Mute.html>`_
-     - `optional` 
-   * - **next_href**
-     - **str**
-     - `optional` 
-   * - **prev_href**
-     - **str**
      - `optional` 
 
 

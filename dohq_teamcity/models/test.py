@@ -22,68 +22,52 @@ class Test(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'href': 'str',
         'id': 'str',
-        'investigations': 'Investigations',
-        'mutes': 'Mutes',
         'name': 'str',
-        'test_occurrences': 'TestOccurrences'
+        'mutes': 'Mutes',
+        'investigations': 'Investigations',
+        'test_occurrences': 'TestOccurrences',
+        'href': 'str',
+        'locator': 'str'
     }
 
     attribute_map = {
-        'href': 'href',
         'id': 'id',
-        'investigations': 'investigations',
-        'mutes': 'mutes',
         'name': 'name',
-        'test_occurrences': 'testOccurrences'
+        'mutes': 'mutes',
+        'investigations': 'investigations',
+        'test_occurrences': 'testOccurrences',
+        'href': 'href',
+        'locator': 'locator'
     }
 
-    def __init__(self, href=None, id=None, investigations=None, mutes=None, name=None, test_occurrences=None, teamcity=None):  # noqa: E501
+    def __init__(self, id=None, name=None, mutes=None, investigations=None, test_occurrences=None, href=None, locator=None, teamcity=None):  # noqa: E501
         """Test - a model defined in Swagger"""  # noqa: E501
 
-        self._href = None
         self._id = None
-        self._investigations = None
-        self._mutes = None
         self._name = None
+        self._mutes = None
+        self._investigations = None
         self._test_occurrences = None
+        self._href = None
+        self._locator = None
         self.discriminator = None
 
-        if href is not None:
-            self.href = href
         if id is not None:
             self.id = id
-        if investigations is not None:
-            self.investigations = investigations
-        if mutes is not None:
-            self.mutes = mutes
         if name is not None:
             self.name = name
+        if mutes is not None:
+            self.mutes = mutes
+        if investigations is not None:
+            self.investigations = investigations
         if test_occurrences is not None:
             self.test_occurrences = test_occurrences
+        if href is not None:
+            self.href = href
+        if locator is not None:
+            self.locator = locator
         super(Test, self).__init__(teamcity=teamcity)
-
-    @property
-    def href(self):
-        """Gets the href of this Test.  # noqa: E501
-
-
-        :return: The href of this Test.  # noqa: E501
-        :rtype: str
-        """
-        return self._href
-
-    @href.setter
-    def href(self, href):
-        """Sets the href of this Test.
-
-
-        :param href: The href of this Test.  # noqa: E501
-        :type: str
-        """
-
-        self._href = href
 
     @property
     def id(self):
@@ -107,25 +91,25 @@ class Test(TeamCityObject):
         self._id = id
 
     @property
-    def investigations(self):
-        """Gets the investigations of this Test.  # noqa: E501
+    def name(self):
+        """Gets the name of this Test.  # noqa: E501
 
 
-        :return: The investigations of this Test.  # noqa: E501
-        :rtype: Investigations
+        :return: The name of this Test.  # noqa: E501
+        :rtype: str
         """
-        return self._investigations
+        return self._name
 
-    @investigations.setter
-    def investigations(self, investigations):
-        """Sets the investigations of this Test.
+    @name.setter
+    def name(self, name):
+        """Sets the name of this Test.
 
 
-        :param investigations: The investigations of this Test.  # noqa: E501
-        :type: Investigations
+        :param name: The name of this Test.  # noqa: E501
+        :type: str
         """
 
-        self._investigations = investigations
+        self._name = name
 
     @property
     def mutes(self):
@@ -149,25 +133,25 @@ class Test(TeamCityObject):
         self._mutes = mutes
 
     @property
-    def name(self):
-        """Gets the name of this Test.  # noqa: E501
+    def investigations(self):
+        """Gets the investigations of this Test.  # noqa: E501
 
 
-        :return: The name of this Test.  # noqa: E501
-        :rtype: str
+        :return: The investigations of this Test.  # noqa: E501
+        :rtype: Investigations
         """
-        return self._name
+        return self._investigations
 
-    @name.setter
-    def name(self, name):
-        """Sets the name of this Test.
+    @investigations.setter
+    def investigations(self, investigations):
+        """Sets the investigations of this Test.
 
 
-        :param name: The name of this Test.  # noqa: E501
-        :type: str
+        :param investigations: The investigations of this Test.  # noqa: E501
+        :type: Investigations
         """
 
-        self._name = name
+        self._investigations = investigations
 
     @property
     def test_occurrences(self):
@@ -189,3 +173,45 @@ class Test(TeamCityObject):
         """
 
         self._test_occurrences = test_occurrences
+
+    @property
+    def href(self):
+        """Gets the href of this Test.  # noqa: E501
+
+
+        :return: The href of this Test.  # noqa: E501
+        :rtype: str
+        """
+        return self._href
+
+    @href.setter
+    def href(self, href):
+        """Sets the href of this Test.
+
+
+        :param href: The href of this Test.  # noqa: E501
+        :type: str
+        """
+
+        self._href = href
+
+    @property
+    def locator(self):
+        """Gets the locator of this Test.  # noqa: E501
+
+
+        :return: The locator of this Test.  # noqa: E501
+        :rtype: str
+        """
+        return self._locator
+
+    @locator.setter
+    def locator(self, locator):
+        """Sets the locator of this Test.
+
+
+        :param locator: The locator of this Test.  # noqa: E501
+        :type: str
+        """
+
+        self._locator = locator

@@ -15,22 +15,22 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **file_name**
-     - **str**
-     - `optional` 
-   * - **file_size**
-     - **int**
+   * - **start_timestamp**
+     - **datetime**
      - `optional` 
    * - **finish_timestamp**
      - **datetime**
      - `optional` 
+   * - **file_size**
+     - **int**
+     - `optional` 
+   * - **status**
+     - **str**
+     - `optional` 
    * - **id**
      - **int**
      - `optional` 
-   * - **start_timestamp**
-     - **datetime**
-     - `optional` 
-   * - **status**
+   * - **file_name**
      - **str**
      - `optional` 
 

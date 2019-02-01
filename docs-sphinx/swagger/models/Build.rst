@@ -15,23 +15,11 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **agent**
-     -  `Agent <./Agent.html>`_
+   * - **id**
+     - **int**
      - `optional` 
-   * - **artifact_dependencies**
-     -  `Builds <./Builds.html>`_
-     - `optional` 
-   * - **artifacts**
-     -  `Files <./Files.html>`_
-     - `optional` 
-   * - **attributes**
-     -  `Entries <./Entries.html>`_
-     - `optional` 
-   * - **branch_name**
-     - **str**
-     - `optional` 
-   * - **build_type**
-     -  `BuildType <./BuildType.html>`_
+   * - **task_id**
+     - **int**
      - `optional` 
    * - **build_type_id**
      - **str**
@@ -39,151 +27,190 @@ Properties
    * - **build_type_internal_id**
      - **str**
      - `optional` 
-   * - **canceled_info**
-     -  `Comment <./Comment.html>`_
-     - `optional` 
-   * - **chain_modification_id**
-     - **str**
-     - `optional` 
-   * - **changes**
-     -  `Changes <./Changes.html>`_
-     - `optional` 
-   * - **comment**
-     -  `Comment <./Comment.html>`_
-     - `optional` 
-   * - **compatible_agents**
-     -  `Agents <./Agents.html>`_
-     - `optional` 
-   * - **current_settings_hash**
-     - **str**
-     - `optional` 
-   * - **custom_artifact_dependencies**
-     -  `ArtifactDependencies <./ArtifactDependencies.html>`_
-     - `optional` 
-   * - **default_branch**
-     - **bool**
-     - `optional` [default to ``False``]
-   * - **failed_to_start**
-     - **bool**
-     - `optional` [default to ``False``]
-   * - **finish_date**
-     - **str**
-     - `optional` 
-   * - **history**
-     - **bool**
-     - `optional` [default to ``False``]
-   * - **href**
-     - **str**
-     - `optional` 
-   * - **id**
-     - **int**
-     - `optional` 
-   * - **last_changes**
-     -  `Changes <./Changes.html>`_
-     - `optional` 
-   * - **locator**
-     - **str**
-     - `optional` 
-   * - **metadata**
-     -  `Datas <./Datas.html>`_
-     - `optional` 
-   * - **modification_id**
-     - **str**
-     - `optional` 
    * - **number**
      - **str**
      - `optional` 
-   * - **percentage_complete**
-     - **int**
-     - `optional` 
-   * - **personal**
-     - **bool**
-     - `optional` [default to ``False``]
-   * - **pin_info**
-     -  `Comment <./Comment.html>`_
-     - `optional` 
-   * - **pinned**
-     - **bool**
-     - `optional` [default to ``False``]
-   * - **problem_occurrences**
-     -  `ProblemOccurrences <./ProblemOccurrences.html>`_
-     - `optional` 
-   * - **properties**
-     -  `Properties <./Properties.html>`_
-     - `optional` 
-   * - **queued_date**
-     - **str**
-     - `optional` 
-   * - **related_issues**
-     -  `IssuesUsages <./IssuesUsages.html>`_
-     - `optional` 
-   * - **replacement_ids**
-     -  `Items <./Items.html>`_
-     - `optional` 
-   * - **resulting_properties**
-     -  `Properties <./Properties.html>`_
-     - `optional` 
-   * - **revisions**
-     -  `Revisions <./Revisions.html>`_
-     - `optional` 
-   * - **running**
-     - **bool**
-     - `optional` [default to ``False``]
-   * - **running_info**
-     -  `ProgressInfo <./ProgressInfo.html>`_
-     - `optional` 
-   * - **settings_hash**
-     - **str**
-     - `optional` 
-   * - **snapshot_dependencies**
-     -  `Builds <./Builds.html>`_
-     - `optional` 
-   * - **start_date**
-     - **str**
-     - `optional` 
-   * - **start_estimate**
+   * - **status**
      - **str**
      - `optional` 
    * - **state**
      - **str**
      - `optional` 
-   * - **statistics**
-     -  `Properties <./Properties.html>`_
+   * - **running**
+     - **bool**
+     - `optional` [default to ``False``]
+   * - **composite**
+     - **bool**
+     - `optional` [default to ``False``]
+   * - **failed_to_start**
+     - **bool**
+     - `optional` [default to ``False``]
+   * - **personal**
+     - **bool**
+     - `optional` [default to ``False``]
+   * - **percentage_complete**
+     - **int**
      - `optional` 
-   * - **status**
+   * - **branch_name**
      - **str**
+     - `optional` 
+   * - **default_branch**
+     - **bool**
+     - `optional` [default to ``False``]
+   * - **unspecified_branch**
+     - **bool**
+     - `optional` [default to ``False``]
+   * - **history**
+     - **bool**
+     - `optional` [default to ``False``]
+   * - **pinned**
+     - **bool**
+     - `optional` [default to ``False``]
+   * - **href**
+     - **str**
+     - `optional` 
+   * - **web_url**
+     - **str**
+     - `optional` 
+   * - **queue_position**
+     - **int**
+     - `optional` 
+   * - **limited_changes_count**
+     - **int**
+     - `optional` 
+   * - **artifacts_directory**
+     - **str**
+     - `optional` 
+   * - **links**
+     -  `Links <./Links.html>`_
      - `optional` 
    * - **status_text**
      - **str**
      - `optional` 
+   * - **build_type**
+     -  `BuildType <./BuildType.html>`_
+     - `optional` 
+   * - **comment**
+     -  `Comment <./Comment.html>`_
+     - `optional` 
    * - **tags**
      -  `Tags <./Tags.html>`_
      - `optional` 
-   * - **task_id**
-     - **int**
+   * - **pin_info**
+     -  `Comment <./Comment.html>`_
      - `optional` 
-   * - **test_occurrences**
-     -  `TestOccurrences <./TestOccurrences.html>`_
-     - `optional` 
-   * - **triggered**
-     -  `TriggeredBy <./TriggeredBy.html>`_
-     - `optional` 
-   * - **triggering_options**
-     -  `BuildTriggeringOptions <./BuildTriggeringOptions.html>`_
-     - `optional` 
-   * - **unspecified_branch**
-     - **bool**
-     - `optional` [default to ``False``]
    * - **user**
      -  `User <./User.html>`_
      - `optional` 
-   * - **versioned_settings_revision**
-     -  `Revision <./Revision.html>`_
+   * - **start_estimate**
+     - **str**
      - `optional` 
    * - **wait_reason**
      - **str**
      - `optional` 
-   * - **web_url**
+   * - **running_info**
+     -  `ProgressInfo <./ProgressInfo.html>`_
+     - `optional` 
+   * - **canceled_info**
+     -  `Comment <./Comment.html>`_
+     - `optional` 
+   * - **queued_date**
+     - **str**
+     - `optional` 
+   * - **start_date**
+     - **str**
+     - `optional` 
+   * - **finish_date**
+     - **str**
+     - `optional` 
+   * - **triggered**
+     -  `TriggeredBy <./TriggeredBy.html>`_
+     - `optional` 
+   * - **last_changes**
+     -  `Changes <./Changes.html>`_
+     - `optional` 
+   * - **changes**
+     -  `Changes <./Changes.html>`_
+     - `optional` 
+   * - **revisions**
+     -  `Revisions <./Revisions.html>`_
+     - `optional` 
+   * - **versioned_settings_revision**
+     -  `Revision <./Revision.html>`_
+     - `optional` 
+   * - **artifact_dependency_changes**
+     -  `BuildChanges <./BuildChanges.html>`_
+     - `optional` 
+   * - **agent**
+     -  `Agent <./Agent.html>`_
+     - `optional` 
+   * - **compatible_agents**
+     -  `Agents <./Agents.html>`_
+     - `optional` 
+   * - **test_occurrences**
+     -  `TestOccurrences <./TestOccurrences.html>`_
+     - `optional` 
+   * - **problem_occurrences**
+     -  `ProblemOccurrences <./ProblemOccurrences.html>`_
+     - `optional` 
+   * - **artifacts**
+     -  `Files <./Files.html>`_
+     - `optional` 
+   * - **related_issues**
+     -  `IssuesUsages <./IssuesUsages.html>`_
+     - `optional` 
+   * - **properties**
+     -  `Properties <./Properties.html>`_
+     - `optional` 
+   * - **resulting_properties**
+     -  `Properties <./Properties.html>`_
+     - `optional` 
+   * - **attributes**
+     -  `Entries <./Entries.html>`_
+     - `optional` 
+   * - **statistics**
+     -  `Properties <./Properties.html>`_
+     - `optional` 
+   * - **metadata**
+     -  `Datas <./Datas.html>`_
+     - `optional` 
+   * - **snapshot_dependencies**
+     -  `Builds <./Builds.html>`_
+     - `optional` 
+   * - **artifact_dependencies**
+     -  `Builds <./Builds.html>`_
+     - `optional` 
+   * - **custom_artifact_dependencies**
+     -  `ArtifactDependencies <./ArtifactDependencies.html>`_
+     - `optional` 
+   * - **settings_hash**
+     - **str**
+     - `optional` 
+   * - **current_settings_hash**
+     - **str**
+     - `optional` 
+   * - **modification_id**
+     - **str**
+     - `optional` 
+   * - **chain_modification_id**
+     - **str**
+     - `optional` 
+   * - **replacement_ids**
+     -  `Items <./Items.html>`_
+     - `optional` 
+   * - **related**
+     -  `Related <./Related.html>`_
+     - `optional` 
+   * - **triggering_options**
+     -  `BuildTriggeringOptions <./BuildTriggeringOptions.html>`_
+     - `optional` 
+   * - **used_by_other_builds**
+     - **bool**
+     - `optional` [default to ``False``]
+   * - **status_change_comment**
+     -  `Comment <./Comment.html>`_
+     - `optional` 
+   * - **locator**
      - **str**
      - `optional` 
 

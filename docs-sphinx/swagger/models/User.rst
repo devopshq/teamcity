@@ -15,43 +15,43 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **email**
-     - **str**
-     - `optional` 
-   * - **groups**
-     -  `Groups <./Groups.html>`_
-     - `optional` 
-   * - **has_password**
-     - **bool**
-     - `optional` [default to ``False``]
-   * - **href**
-     - **str**
-     - `optional` 
-   * - **id**
-     - **int**
-     - `optional` 
-   * - **last_login**
-     - **str**
-     - `optional` 
-   * - **locator**
+   * - **username**
      - **str**
      - `optional` 
    * - **name**
      - **str**
      - `optional` 
+   * - **id**
+     - **int**
+     - `optional` 
+   * - **email**
+     - **str**
+     - `optional` 
+   * - **last_login**
+     - **str**
+     - `optional` 
    * - **password**
+     - **str**
+     - `optional` 
+   * - **has_password**
+     - **bool**
+     - `optional` [default to ``False``]
+   * - **realm**
+     - **str**
+     - `optional` 
+   * - **href**
      - **str**
      - `optional` 
    * - **properties**
      -  `Properties <./Properties.html>`_
      - `optional` 
-   * - **realm**
-     - **str**
-     - `optional` 
    * - **roles**
      -  `Roles <./Roles.html>`_
      - `optional` 
-   * - **username**
+   * - **groups**
+     -  `Groups <./Groups.html>`_
+     - `optional` 
+   * - **locator**
      - **str**
      - `optional` 
 

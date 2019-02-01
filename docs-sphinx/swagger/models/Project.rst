@@ -15,38 +15,17 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **archived**
-     - **bool**
-     - `optional` [default to ``False``]
-   * - **build_types**
-     -  `BuildTypes <./BuildTypes.html>`_
-     - `optional` 
-   * - **description**
-     - **str**
-     - `optional` 
-   * - **href**
-     - **str**
-     - `optional` 
    * - **id**
      - **str**
      - `optional` 
    * - **internal_id**
      - **str**
      - `optional` 
-   * - **links**
-     -  `Links <./Links.html>`_
-     - `optional` 
-   * - **locator**
+   * - **uuid**
      - **str**
      - `optional` 
    * - **name**
      - **str**
-     - `optional` 
-   * - **parameters**
-     -  `Properties <./Properties.html>`_
-     - `optional` 
-   * - **parent_project**
-     -  `Project <./Project.html>`_
      - `optional` 
    * - **parent_project_id**
      - **str**
@@ -57,25 +36,49 @@ Properties
    * - **parent_project_name**
      - **str**
      - `optional` 
+   * - **archived**
+     - **bool**
+     - `optional` [default to ``False``]
+   * - **description**
+     - **str**
+     - `optional` 
+   * - **href**
+     - **str**
+     - `optional` 
+   * - **web_url**
+     - **str**
+     - `optional` 
+   * - **links**
+     -  `Links <./Links.html>`_
+     - `optional` 
+   * - **parent_project**
+     -  `Project <./Project.html>`_
+     - `optional` 
+   * - **read_only_ui**
+     -  `StateField <./StateField.html>`_
+     - `optional` 
+   * - **default_template**
+     -  `BuildType <./BuildType.html>`_
+     - `optional` 
+   * - **build_types**
+     -  `BuildTypes <./BuildTypes.html>`_
+     - `optional` 
+   * - **templates**
+     -  `BuildTypes <./BuildTypes.html>`_
+     - `optional` 
+   * - **parameters**
+     -  `Properties <./Properties.html>`_
+     - `optional` 
+   * - **vcs_roots**
+     -  `VcsRoots <./VcsRoots.html>`_
+     - `optional` 
    * - **project_features**
      -  `ProjectFeatures <./ProjectFeatures.html>`_
      - `optional` 
    * - **projects**
      -  `Projects <./Projects.html>`_
      - `optional` 
-   * - **read_only_ui**
-     -  `StateField <./StateField.html>`_
-     - `optional` 
-   * - **templates**
-     -  `BuildTypes <./BuildTypes.html>`_
-     - `optional` 
-   * - **uuid**
-     - **str**
-     - `optional` 
-   * - **vcs_roots**
-     -  `VcsRoots <./VcsRoots.html>`_
-     - `optional` 
-   * - **web_url**
+   * - **locator**
      - **str**
      - `optional` 
 

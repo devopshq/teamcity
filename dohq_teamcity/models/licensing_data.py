@@ -20,130 +20,67 @@ class LicensingData(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'agents_left': 'int',
-        'build_types_left': 'int',
-        'license_keys': 'LicenseKeys',
         'license_use_exceeded': 'bool',
         'max_agents': 'int',
-        'max_build_types': 'int',
-        'server_effective_release_date': 'str',
-        'server_license_type': 'str',
         'unlimited_agents': 'bool',
-        'unlimited_build_types': 'bool'
+        'agents_left': 'int',
+        'max_build_types': 'int',
+        'unlimited_build_types': 'bool',
+        'build_types_left': 'int',
+        'server_license_type': 'str',
+        'server_effective_release_date': 'str',
+        'license_keys': 'LicenseKeys'
     }
 
     attribute_map = {
-        'agents_left': 'agentsLeft',
-        'build_types_left': 'buildTypesLeft',
-        'license_keys': 'licenseKeys',
         'license_use_exceeded': 'licenseUseExceeded',
         'max_agents': 'maxAgents',
-        'max_build_types': 'maxBuildTypes',
-        'server_effective_release_date': 'serverEffectiveReleaseDate',
-        'server_license_type': 'serverLicenseType',
         'unlimited_agents': 'unlimitedAgents',
-        'unlimited_build_types': 'unlimitedBuildTypes'
+        'agents_left': 'agentsLeft',
+        'max_build_types': 'maxBuildTypes',
+        'unlimited_build_types': 'unlimitedBuildTypes',
+        'build_types_left': 'buildTypesLeft',
+        'server_license_type': 'serverLicenseType',
+        'server_effective_release_date': 'serverEffectiveReleaseDate',
+        'license_keys': 'licenseKeys'
     }
 
-    def __init__(self, agents_left=None, build_types_left=None, license_keys=None, license_use_exceeded=False, max_agents=None, max_build_types=None, server_effective_release_date=None, server_license_type=None, unlimited_agents=False, unlimited_build_types=False, teamcity=None):  # noqa: E501
+    def __init__(self, license_use_exceeded=False, max_agents=None, unlimited_agents=False, agents_left=None, max_build_types=None, unlimited_build_types=False, build_types_left=None, server_license_type=None, server_effective_release_date=None, license_keys=None, teamcity=None):  # noqa: E501
         """LicensingData - a model defined in Swagger"""  # noqa: E501
 
-        self._agents_left = None
-        self._build_types_left = None
-        self._license_keys = None
         self._license_use_exceeded = None
         self._max_agents = None
-        self._max_build_types = None
-        self._server_effective_release_date = None
-        self._server_license_type = None
         self._unlimited_agents = None
+        self._agents_left = None
+        self._max_build_types = None
         self._unlimited_build_types = None
+        self._build_types_left = None
+        self._server_license_type = None
+        self._server_effective_release_date = None
+        self._license_keys = None
         self.discriminator = None
 
-        if agents_left is not None:
-            self.agents_left = agents_left
-        if build_types_left is not None:
-            self.build_types_left = build_types_left
-        if license_keys is not None:
-            self.license_keys = license_keys
         if license_use_exceeded is not None:
             self.license_use_exceeded = license_use_exceeded
         if max_agents is not None:
             self.max_agents = max_agents
-        if max_build_types is not None:
-            self.max_build_types = max_build_types
-        if server_effective_release_date is not None:
-            self.server_effective_release_date = server_effective_release_date
-        if server_license_type is not None:
-            self.server_license_type = server_license_type
         if unlimited_agents is not None:
             self.unlimited_agents = unlimited_agents
+        if agents_left is not None:
+            self.agents_left = agents_left
+        if max_build_types is not None:
+            self.max_build_types = max_build_types
         if unlimited_build_types is not None:
             self.unlimited_build_types = unlimited_build_types
+        if build_types_left is not None:
+            self.build_types_left = build_types_left
+        if server_license_type is not None:
+            self.server_license_type = server_license_type
+        if server_effective_release_date is not None:
+            self.server_effective_release_date = server_effective_release_date
+        if license_keys is not None:
+            self.license_keys = license_keys
         super(LicensingData, self).__init__(teamcity=teamcity)
-
-    @property
-    def agents_left(self):
-        """Gets the agents_left of this LicensingData.  # noqa: E501
-
-
-        :return: The agents_left of this LicensingData.  # noqa: E501
-        :rtype: int
-        """
-        return self._agents_left
-
-    @agents_left.setter
-    def agents_left(self, agents_left):
-        """Sets the agents_left of this LicensingData.
-
-
-        :param agents_left: The agents_left of this LicensingData.  # noqa: E501
-        :type: int
-        """
-
-        self._agents_left = agents_left
-
-    @property
-    def build_types_left(self):
-        """Gets the build_types_left of this LicensingData.  # noqa: E501
-
-
-        :return: The build_types_left of this LicensingData.  # noqa: E501
-        :rtype: int
-        """
-        return self._build_types_left
-
-    @build_types_left.setter
-    def build_types_left(self, build_types_left):
-        """Sets the build_types_left of this LicensingData.
-
-
-        :param build_types_left: The build_types_left of this LicensingData.  # noqa: E501
-        :type: int
-        """
-
-        self._build_types_left = build_types_left
-
-    @property
-    def license_keys(self):
-        """Gets the license_keys of this LicensingData.  # noqa: E501
-
-
-        :return: The license_keys of this LicensingData.  # noqa: E501
-        :rtype: LicenseKeys
-        """
-        return self._license_keys
-
-    @license_keys.setter
-    def license_keys(self, license_keys):
-        """Sets the license_keys of this LicensingData.
-
-
-        :param license_keys: The license_keys of this LicensingData.  # noqa: E501
-        :type: LicenseKeys
-        """
-
-        self._license_keys = license_keys
 
     @property
     def license_use_exceeded(self):
@@ -188,6 +125,48 @@ class LicensingData(TeamCityObject):
         self._max_agents = max_agents
 
     @property
+    def unlimited_agents(self):
+        """Gets the unlimited_agents of this LicensingData.  # noqa: E501
+
+
+        :return: The unlimited_agents of this LicensingData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._unlimited_agents
+
+    @unlimited_agents.setter
+    def unlimited_agents(self, unlimited_agents):
+        """Sets the unlimited_agents of this LicensingData.
+
+
+        :param unlimited_agents: The unlimited_agents of this LicensingData.  # noqa: E501
+        :type: bool
+        """
+
+        self._unlimited_agents = unlimited_agents
+
+    @property
+    def agents_left(self):
+        """Gets the agents_left of this LicensingData.  # noqa: E501
+
+
+        :return: The agents_left of this LicensingData.  # noqa: E501
+        :rtype: int
+        """
+        return self._agents_left
+
+    @agents_left.setter
+    def agents_left(self, agents_left):
+        """Sets the agents_left of this LicensingData.
+
+
+        :param agents_left: The agents_left of this LicensingData.  # noqa: E501
+        :type: int
+        """
+
+        self._agents_left = agents_left
+
+    @property
     def max_build_types(self):
         """Gets the max_build_types of this LicensingData.  # noqa: E501
 
@@ -209,25 +188,46 @@ class LicensingData(TeamCityObject):
         self._max_build_types = max_build_types
 
     @property
-    def server_effective_release_date(self):
-        """Gets the server_effective_release_date of this LicensingData.  # noqa: E501
+    def unlimited_build_types(self):
+        """Gets the unlimited_build_types of this LicensingData.  # noqa: E501
 
 
-        :return: The server_effective_release_date of this LicensingData.  # noqa: E501
-        :rtype: str
+        :return: The unlimited_build_types of this LicensingData.  # noqa: E501
+        :rtype: bool
         """
-        return self._server_effective_release_date
+        return self._unlimited_build_types
 
-    @server_effective_release_date.setter
-    def server_effective_release_date(self, server_effective_release_date):
-        """Sets the server_effective_release_date of this LicensingData.
+    @unlimited_build_types.setter
+    def unlimited_build_types(self, unlimited_build_types):
+        """Sets the unlimited_build_types of this LicensingData.
 
 
-        :param server_effective_release_date: The server_effective_release_date of this LicensingData.  # noqa: E501
-        :type: str
+        :param unlimited_build_types: The unlimited_build_types of this LicensingData.  # noqa: E501
+        :type: bool
         """
 
-        self._server_effective_release_date = server_effective_release_date
+        self._unlimited_build_types = unlimited_build_types
+
+    @property
+    def build_types_left(self):
+        """Gets the build_types_left of this LicensingData.  # noqa: E501
+
+
+        :return: The build_types_left of this LicensingData.  # noqa: E501
+        :rtype: int
+        """
+        return self._build_types_left
+
+    @build_types_left.setter
+    def build_types_left(self, build_types_left):
+        """Sets the build_types_left of this LicensingData.
+
+
+        :param build_types_left: The build_types_left of this LicensingData.  # noqa: E501
+        :type: int
+        """
+
+        self._build_types_left = build_types_left
 
     @property
     def server_license_type(self):
@@ -251,43 +251,43 @@ class LicensingData(TeamCityObject):
         self._server_license_type = server_license_type
 
     @property
-    def unlimited_agents(self):
-        """Gets the unlimited_agents of this LicensingData.  # noqa: E501
+    def server_effective_release_date(self):
+        """Gets the server_effective_release_date of this LicensingData.  # noqa: E501
 
 
-        :return: The unlimited_agents of this LicensingData.  # noqa: E501
-        :rtype: bool
+        :return: The server_effective_release_date of this LicensingData.  # noqa: E501
+        :rtype: str
         """
-        return self._unlimited_agents
+        return self._server_effective_release_date
 
-    @unlimited_agents.setter
-    def unlimited_agents(self, unlimited_agents):
-        """Sets the unlimited_agents of this LicensingData.
+    @server_effective_release_date.setter
+    def server_effective_release_date(self, server_effective_release_date):
+        """Sets the server_effective_release_date of this LicensingData.
 
 
-        :param unlimited_agents: The unlimited_agents of this LicensingData.  # noqa: E501
-        :type: bool
+        :param server_effective_release_date: The server_effective_release_date of this LicensingData.  # noqa: E501
+        :type: str
         """
 
-        self._unlimited_agents = unlimited_agents
+        self._server_effective_release_date = server_effective_release_date
 
     @property
-    def unlimited_build_types(self):
-        """Gets the unlimited_build_types of this LicensingData.  # noqa: E501
+    def license_keys(self):
+        """Gets the license_keys of this LicensingData.  # noqa: E501
 
 
-        :return: The unlimited_build_types of this LicensingData.  # noqa: E501
-        :rtype: bool
+        :return: The license_keys of this LicensingData.  # noqa: E501
+        :rtype: LicenseKeys
         """
-        return self._unlimited_build_types
+        return self._license_keys
 
-    @unlimited_build_types.setter
-    def unlimited_build_types(self, unlimited_build_types):
-        """Sets the unlimited_build_types of this LicensingData.
+    @license_keys.setter
+    def license_keys(self, license_keys):
+        """Sets the license_keys of this LicensingData.
 
 
-        :param unlimited_build_types: The unlimited_build_types of this LicensingData.  # noqa: E501
-        :type: bool
+        :param license_keys: The license_keys of this LicensingData.  # noqa: E501
+        :type: LicenseKeys
         """
 
-        self._unlimited_build_types = unlimited_build_types
+        self._license_keys = license_keys

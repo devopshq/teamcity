@@ -20,53 +20,32 @@ class Comment(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'text': 'str',
         'timestamp': 'str',
+        'text': 'str',
         'user': 'User'
     }
 
     attribute_map = {
-        'text': 'text',
         'timestamp': 'timestamp',
+        'text': 'text',
         'user': 'user'
     }
 
-    def __init__(self, text=None, timestamp=None, user=None, teamcity=None):  # noqa: E501
+    def __init__(self, timestamp=None, text=None, user=None, teamcity=None):  # noqa: E501
         """Comment - a model defined in Swagger"""  # noqa: E501
 
-        self._text = None
         self._timestamp = None
+        self._text = None
         self._user = None
         self.discriminator = None
 
-        if text is not None:
-            self.text = text
         if timestamp is not None:
             self.timestamp = timestamp
+        if text is not None:
+            self.text = text
         if user is not None:
             self.user = user
         super(Comment, self).__init__(teamcity=teamcity)
-
-    @property
-    def text(self):
-        """Gets the text of this Comment.  # noqa: E501
-
-
-        :return: The text of this Comment.  # noqa: E501
-        :rtype: str
-        """
-        return self._text
-
-    @text.setter
-    def text(self, text):
-        """Sets the text of this Comment.
-
-
-        :param text: The text of this Comment.  # noqa: E501
-        :type: str
-        """
-
-        self._text = text
 
     @property
     def timestamp(self):
@@ -88,6 +67,27 @@ class Comment(TeamCityObject):
         """
 
         self._timestamp = timestamp
+
+    @property
+    def text(self):
+        """Gets the text of this Comment.  # noqa: E501
+
+
+        :return: The text of this Comment.  # noqa: E501
+        :rtype: str
+        """
+        return self._text
+
+    @text.setter
+    def text(self, text):
+        """Sets the text of this Comment.
+
+
+        :param text: The text of this Comment.  # noqa: E501
+        :type: str
+        """
+
+        self._text = text
 
     @property
     def user(self):

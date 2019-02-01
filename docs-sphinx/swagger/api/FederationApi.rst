@@ -32,7 +32,7 @@ add_server
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        body = dohq_teamcity.Servers() # Servers |  (optional)
+    body = dohq_teamcity.Servers() # Servers |  (optional)
 
     try:
         api_response = tc.federation_api.add_server(body=body)
@@ -72,7 +72,7 @@ servers
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-        fields = 'fields_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
 
     try:
         api_response = tc.federation_api.servers(fields=fields)

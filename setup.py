@@ -2,8 +2,9 @@
 
 from setuptools import setup  # noqa: H301
 
+from dohq_teamcity import __version__ as VERSION
+
 NAME = "dohq-teamcity"
-VERSION = "0.1.1"
 REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil"]
 
 setup(

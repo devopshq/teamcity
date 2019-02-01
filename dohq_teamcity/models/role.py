@@ -17,53 +17,32 @@ class Role(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'href': 'str',
         'role_id': 'str',
-        'scope': 'str'
+        'scope': 'str',
+        'href': 'str'
     }
 
     attribute_map = {
-        'href': 'href',
         'role_id': 'roleId',
-        'scope': 'scope'
+        'scope': 'scope',
+        'href': 'href'
     }
 
-    def __init__(self, href=None, role_id=None, scope=None, teamcity=None):  # noqa: E501
+    def __init__(self, role_id=None, scope=None, href=None, teamcity=None):  # noqa: E501
         """Role - a model defined in Swagger"""  # noqa: E501
 
-        self._href = None
         self._role_id = None
         self._scope = None
+        self._href = None
         self.discriminator = None
 
-        if href is not None:
-            self.href = href
         if role_id is not None:
             self.role_id = role_id
         if scope is not None:
             self.scope = scope
+        if href is not None:
+            self.href = href
         super(Role, self).__init__(teamcity=teamcity)
-
-    @property
-    def href(self):
-        """Gets the href of this Role.  # noqa: E501
-
-
-        :return: The href of this Role.  # noqa: E501
-        :rtype: str
-        """
-        return self._href
-
-    @href.setter
-    def href(self, href):
-        """Sets the href of this Role.
-
-
-        :param href: The href of this Role.  # noqa: E501
-        :type: str
-        """
-
-        self._href = href
 
     @property
     def role_id(self):
@@ -106,3 +85,24 @@ class Role(TeamCityObject):
         """
 
         self._scope = scope
+
+    @property
+    def href(self):
+        """Gets the href of this Role.  # noqa: E501
+
+
+        :return: The href of this Role.  # noqa: E501
+        :rtype: str
+        """
+        return self._href
+
+    @href.setter
+    def href(self, href):
+        """Sets the href of this Role.
+
+
+        :param href: The href of this Role.  # noqa: E501
+        :type: str
+        """
+
+        self._href = href
