@@ -1,0 +1,452 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>API Examples &mdash; dohq-teamcity 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Agent" href="examples/models/Agent.html" />
+    <link rel="prev" title="Getting started with the API" href="api-usage.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> dohq-teamcity
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-usage.html">Getting started with the API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#models">Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Agent.html">Agent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/AgentPool.html">AgentPool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/AgentPools.html">AgentPools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/AgentRequirement.html">AgentRequirement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/AgentRequirements.html">AgentRequirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Agents.html">Agents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/ArtifactDependencies.html">ArtifactDependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/ArtifactDependency.html">ArtifactDependency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/AuthorizedInfo.html">AuthorizedInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/BackupProcess.html">BackupProcess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/BackupProcessInfo.html">BackupProcessInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/BackupProcessManager.html">BackupProcessManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Branch.html">Branch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/BranchVersion.html">BranchVersion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Branches.html">Branches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Build.html">Build</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/BuildCancelRequest.html">BuildCancelRequest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/BuildTriggeringOptions.html">BuildTriggeringOptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/BuildType.html">BuildType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/BuildTypes.html">BuildTypes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Builds.html">Builds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Change.html">Change</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Changes.html">Changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Comment.html">Comment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Compatibilities.html">Compatibilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Compatibility.html">Compatibility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Datas.html">Datas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/EnabledInfo.html">EnabledInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Entries.html">Entries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Entry.html">Entry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Exception.html">Exception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Feature.html">Feature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Features.html">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/FederationServer.html">FederationServer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/File.html">File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/FileChange.html">FileChange</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/FileChanges.html">FileChanges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Files.html">Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Group.html">Group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Groups.html">Groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Href.html">Href</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Investigation.html">Investigation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Investigations.html">Investigations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Issue.html">Issue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/IssueUsage.html">IssueUsage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Issues.html">Issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/IssuesUsages.html">IssuesUsages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Items.html">Items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/LicenseKey.html">LicenseKey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/LicenseKeys.html">LicenseKeys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/LicensingData.html">LicensingData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Link.html">Link</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Links.html">Links</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/MetaData.html">MetaData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/ModelProperty.html">ModelProperty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Mute.html">Mute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Mutes.html">Mutes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/NewBuildTypeDescription.html">NewBuildTypeDescription</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/NewProjectDescription.html">NewProjectDescription</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Plugin.html">Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Plugins.html">Plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Problem.html">Problem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/ProblemOccurrence.html">ProblemOccurrence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/ProblemOccurrences.html">ProblemOccurrences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/ProblemScope.html">ProblemScope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/ProblemTarget.html">ProblemTarget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Problems.html">Problems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/ProgressInfo.html">ProgressInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Project.html">Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/ProjectFeature.html">ProjectFeature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/ProjectFeatures.html">ProjectFeatures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Projects.html">Projects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Properties.html">Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/RepositoryState.html">RepositoryState</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Requirements.html">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Resolution.html">Resolution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Revision.html">Revision</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Revisions.html">Revisions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Role.html">Role</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Roles.html">Roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Server.html">Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Servers.html">Servers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Session.html">Session</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Sessions.html">Sessions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/SnapshotDependencies.html">SnapshotDependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/SnapshotDependency.html">SnapshotDependency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/StackTraceElement.html">StackTraceElement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/StateField.html">StateField</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Step.html">Step</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Steps.html">Steps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Tag.html">Tag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Tags.html">Tags</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Test.html">Test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/TestOccurrence.html">TestOccurrence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/TestOccurrences.html">TestOccurrences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Tests.html">Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Throwable.html">Throwable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Trigger.html">Trigger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/TriggeredBy.html">TriggeredBy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Triggers.html">Triggers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Type.html">Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/User.html">User</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/Users.html">Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/VcsCheckStatus.html">VcsCheckStatus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/VcsLabeling.html">VcsLabeling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/VcsRoot.html">VcsRoot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/VcsRootEntries.html">VcsRootEntries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/VcsRootEntry.html">VcsRootEntry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/VcsRootInstance.html">VcsRootInstance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/VcsRootInstances.html">VcsRootInstances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/VcsRoots.html">VcsRoots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/models/VcsStatus.html">VcsStatus</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger.html">Full API description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/dohq_teamcity.html">dohq_teamcity package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">dohq-teamcity</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>API Examples</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/examples.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="api-examples">
+<h1>API Examples<a class="headerlink" href="#api-examples" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="models">
+<h2>Models<a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Agent.html">Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/AgentPool.html">AgentPool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/AgentPools.html">AgentPools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/AgentRequirement.html">AgentRequirement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/AgentRequirements.html">AgentRequirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Agents.html">Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/ArtifactDependencies.html">ArtifactDependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/ArtifactDependency.html">ArtifactDependency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/AuthorizedInfo.html">AuthorizedInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/BackupProcess.html">BackupProcess</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/BackupProcessInfo.html">BackupProcessInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/BackupProcessManager.html">BackupProcessManager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Branch.html">Branch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/BranchVersion.html">BranchVersion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Branches.html">Branches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Build.html">Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/BuildCancelRequest.html">BuildCancelRequest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/BuildTriggeringOptions.html">BuildTriggeringOptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/BuildType.html">BuildType</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/BuildTypes.html">BuildTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Builds.html">Builds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Change.html">Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Changes.html">Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Comment.html">Comment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Compatibilities.html">Compatibilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Compatibility.html">Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Datas.html">Datas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/EnabledInfo.html">EnabledInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Entries.html">Entries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Entry.html">Entry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Exception.html">Exception</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Feature.html">Feature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/FederationServer.html">FederationServer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/File.html">File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/FileChange.html">FileChange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/FileChanges.html">FileChanges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Files.html">Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Group.html">Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Groups.html">Groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Href.html">Href</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Investigation.html">Investigation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Investigations.html">Investigations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Issue.html">Issue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/IssueUsage.html">IssueUsage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Issues.html">Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/IssuesUsages.html">IssuesUsages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Items.html">Items</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/LicenseKey.html">LicenseKey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/LicenseKeys.html">LicenseKeys</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/LicensingData.html">LicensingData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Link.html">Link</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Links.html">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/MetaData.html">MetaData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/ModelProperty.html">ModelProperty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Mute.html">Mute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Mutes.html">Mutes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/NewBuildTypeDescription.html">NewBuildTypeDescription</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/NewProjectDescription.html">NewProjectDescription</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Plugin.html">Plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Plugins.html">Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Problem.html">Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/ProblemOccurrence.html">ProblemOccurrence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/ProblemOccurrences.html">ProblemOccurrences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/ProblemScope.html">ProblemScope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/ProblemTarget.html">ProblemTarget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Problems.html">Problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/ProgressInfo.html">ProgressInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Project.html">Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/ProjectFeature.html">ProjectFeature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/ProjectFeatures.html">ProjectFeatures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Projects.html">Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Properties.html">Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/RepositoryState.html">RepositoryState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Requirements.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Resolution.html">Resolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Revision.html">Revision</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Revisions.html">Revisions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Role.html">Role</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Roles.html">Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Server.html">Server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Servers.html">Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Session.html">Session</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Sessions.html">Sessions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/SnapshotDependencies.html">SnapshotDependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/SnapshotDependency.html">SnapshotDependency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/StackTraceElement.html">StackTraceElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/StateField.html">StateField</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Step.html">Step</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Steps.html">Steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Tag.html">Tag</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Tags.html">Tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Test.html">Test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/TestOccurrence.html">TestOccurrence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/TestOccurrences.html">TestOccurrences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Tests.html">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Throwable.html">Throwable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Trigger.html">Trigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/TriggeredBy.html">TriggeredBy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Triggers.html">Triggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Type.html">Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/User.html">User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/Users.html">Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/VcsCheckStatus.html">VcsCheckStatus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/VcsLabeling.html">VcsLabeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/VcsRoot.html">VcsRoot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/VcsRootEntries.html">VcsRootEntries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/VcsRootEntry.html">VcsRootEntry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/VcsRootInstance.html">VcsRootInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/VcsRootInstances.html">VcsRootInstances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/VcsRoots.html">VcsRoots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/models/VcsStatus.html">VcsStatus</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="examples/models/Agent.html" class="btn btn-neutral float-right" title="Agent" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="api-usage.html" class="btn btn-neutral" title="Getting started with the API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, DevOpsHQ
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

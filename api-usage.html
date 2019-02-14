@@ -1,0 +1,482 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting started with the API &mdash; dohq-teamcity 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API Examples" href="examples.html" />
+    <link rel="prev" title="Installation" href="install.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> dohq-teamcity
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting started with the API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#dohq-teamcity-teamcity-class"><code class="docutils literal notranslate"><span class="pre">dohq_teamcity.TeamCity</span></code> class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#managers">Managers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#managers-functions">Managers functions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#teamcity-objects">TeamCity Objects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#read-function">Read function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lazy-objects">Lazy objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#list-objects">List objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#save-as-dict">Save as dict</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#base-types">Base types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#advanced-http-configuration">Advanced HTTP configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#asynchronous-requests">Asynchronous requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#debug-and-troubleshooting">Debug and troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-connect-to-teamcity-by-proxy">How connect to TeamCity by proxy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">API Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger.html">Full API description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/dohq_teamcity.html">dohq_teamcity package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">dohq-teamcity</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Getting started with the API</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/api-usage.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started-with-the-api">
+<h1>Getting started with the API<a class="headerlink" href="#getting-started-with-the-api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="dohq-teamcity-teamcity-class">
+<h2><code class="docutils literal notranslate"><span class="pre">dohq_teamcity.TeamCity</span></code> class<a class="headerlink" href="#dohq-teamcity-teamcity-class" title="Permalink to this headline">¶</a></h2>
+<p>To connect to a TeamCity server, create a <code class="xref py py-class docutils literal notranslate"><span class="pre">dohq_teamcity.TeamCity</span></code> object (<code class="docutils literal notranslate"><span class="pre">dohq</span></code> means <a class="reference external" href="https://devopshq.github.io">DevOpsHQ</a>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="managers">
+<h2>Managers<a class="headerlink" href="#managers" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">dohq_teamcity.TeamCity</span></code> class provides managers (APIs) to access the TeamCity resources.
+Each manager provides a set of methods to act on the resources. The available
+methods depend on the resource type.</p>
+<p>Manager (API) have two alias:</p>
+<blockquote>
+<div><ul class="simple">
+<li>More readable: <code class="docutils literal notranslate"><span class="pre">tc.agents</span></code>, <code class="docutils literal notranslate"><span class="pre">tc.builds</span></code>, <code class="docutils literal notranslate"><span class="pre">tc.server</span></code></li>
+<li>with api: <code class="docutils literal notranslate"><span class="pre">tc.agent_api</span></code>, <code class="docutils literal notranslate"><span class="pre">tc.build_api</span></code>, <code class="docutils literal notranslate"><span class="pre">tc.server_api</span></code></li>
+</ul>
+</div></blockquote>
+<p>Examples:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># list all the projects</span>
+<span class="n">projects</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">projects</span><span class="o">.</span><span class="n">get_projects</span><span class="p">()</span>
+<span class="c1"># OR</span>
+<span class="c1"># projects = tc.project_api.get_projects()</span>
+<span class="k">for</span> <span class="n">project</span> <span class="ow">in</span> <span class="n">projects</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">project</span><span class="p">)</span>
+
+<span class="c1"># get the group with name = groupname</span>
+<span class="n">group</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">group</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name:groupname&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+
+<span class="c1"># get the user with name = username</span>
+<span class="n">user</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;username:devopshq&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+
+<span class="c1"># create a new user and delete</span>
+ <span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">User</span>
+ <span class="n">new_user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;New user&#39;</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="s1">&#39;new_user&#39;</span><span class="p">)</span>
+ <span class="n">new_user</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">users</span><span class="o">.</span><span class="n">create_user</span><span class="p">(</span><span class="n">body</span><span class="o">=</span><span class="n">new_user</span><span class="p">)</span>
+ <span class="n">new_user</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+
+ <span class="c1"># other way - create object, connect with exist instance and load it</span>
+ <span class="kn">import</span> <span class="nn">dohq_teamcity</span>
+ <span class="n">bt</span> <span class="o">=</span> <span class="n">dohq_teamcity</span><span class="o">.</span><span class="n">BuildType</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;MyBuildTypeId&#39;</span><span class="p">,</span> <span class="n">teamcity</span><span class="o">=</span><span class="n">tc</span><span class="p">)</span>
+ <span class="n">bt</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The attributes of objects are defined upon object creation, and depend on the
+TeamCity API itself. To list the available information associated with an object
+use the <code class="docutils literal notranslate"><span class="pre">attributes</span></code> attribute:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">project</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">projects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">project</span><span class="o">.</span><span class="n">attribute_map</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="section" id="managers-functions">
+<h3>Managers functions<a class="headerlink" href="#managers-functions" title="Permalink to this headline">¶</a></h3>
+<p>Many Managers function have parameters:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="15%" />
+<col width="15%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Functions</th>
+<th class="head">Parameters</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">get_*</span></code> and <code class="docutils literal notranslate"><span class="pre">serve_*</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">some_locator</span></code></td>
+<td><p class="first">Positional or named argument, can be string or one of <code class="docutils literal notranslate"><span class="pre">dohq_teamcity.TeamCityObject</span></code>.</p>
+<p class="last">Read more about locator in <a class="reference external" href="https://confluence.jetbrains.com/display/TCD10/REST+API#RESTAPI-Locator">TeamCity Documantation</a></p>
+</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">set_*</span></code>, <code class="docutils literal notranslate"><span class="pre">add_**</span></code> or <code class="docutils literal notranslate"><span class="pre">create_*</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">body</span></code></td>
+<td><strong>named</strong> argument, must be one of <code class="docutils literal notranslate"><span class="pre">dohq_teamcity.TeamCityObject</span></code> object</td>
+</tr>
+<tr class="row-even"><td>All functions</td>
+<td><code class="docutils literal notranslate"><span class="pre">async_req=True|False</span></code></td>
+<td>For asynchronous requests. Read more in <a href="#id1"><span class="problematic" id="id2">`Asynchronous requests`__</span></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="teamcity-objects">
+<h2>TeamCity Objects<a class="headerlink" href="#teamcity-objects" title="Permalink to this headline">¶</a></h2>
+<p>You can delete a remote object when it exists locally:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># delete the resource</span>
+<span class="n">project</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">projects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;id:MyProject&#39;</span><span class="p">)</span>
+<span class="n">project</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Some classes provide additional methods, allowing more actions on the TeamCity
+resources. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add property to build type</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcit</span> <span class="kn">import</span> <span class="n">Type</span><span class="p">,</span> <span class="n">ModeProperty</span>
+<span class="n">bt1</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">build_types</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;id:MyBuildType&#39;</span><span class="p">)</span>
+<span class="n">tp</span> <span class="o">=</span> <span class="n">Type</span><span class="p">(</span><span class="n">raw_value</span><span class="o">=</span><span class="s2">&quot;text display=&#39;normal&#39; validationMode=&#39;any&#39;&quot;</span><span class="p">)</span>
+<span class="n">pr</span> <span class="o">=</span> <span class="n">ModelProperty</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;from_script&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;testnew&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">tp</span><span class="p">)</span>
+<span class="n">pr</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="n">body</span><span class="o">=</span><span class="n">pr</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="read-function">
+<h3>Read function<a class="headerlink" href="#read-function" title="Permalink to this headline">¶</a></h3>
+<p>If some objects contains other object (eg - <code class="docutils literal notranslate"><span class="pre">Project</span></code> contain <code class="docutils literal notranslate"><span class="pre">BuildType</span></code>) we need execute <code class="docutils literal notranslate"><span class="pre">read()</span></code> function to get <strong>full</strong> object, because it does not contain full information about related object and we must reload object.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># list the build_type properties for a project</span>
+<span class="n">project</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">projects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;id:MyProject&#39;</span><span class="p">)</span>
+<span class="n">bt</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">build_types</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">bt</span><span class="o">.</span><span class="n">parameters</span> <span class="c1"># None</span>
+<span class="n">bt</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">bt</span><span class="o">.</span><span class="n">parameters</span> <span class="c1"># Properties object like list[Property]</span>
+
+<span class="c1"># get agents for pool which used in build</span>
+<span class="n">build</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">builds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;id:123456&#39;</span><span class="p">)</span> <span class="c1"># Make 1 API call</span>
+<span class="n">agents</span> <span class="o">=</span> <span class="n">build</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">agent</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">pool</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">agents</span> <span class="c1"># Make 3 API calls</span>
+<span class="k">print</span><span class="p">([</span><span class="n">x</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">agents</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>We try to user auto-read when we get property and if <code class="docutils literal notranslate"><span class="pre">self._property_name</span> <span class="pre">is</span> <span class="pre">None</span></code>,
+but this way have problem in debug-mode (PyCharm Debug Configuration)
+- it makes endless recursive API calls for viewing object in debugger.</p>
+<p>We also try detect “Debug-mode”, and don’t make call, but but then the behavior in Debug-mode is different
+from Production-mode. And for now, we have <code class="docutils literal notranslate"><span class="pre">read</span></code> function which
+must be called before accessing the nested object if we want to get the full object :)</p>
+<blockquote>
+<div>Explicit is better than implicit © PEP 20</div></blockquote>
+</div>
+<div class="section" id="lazy-objects">
+<h3>Lazy objects<a class="headerlink" href="#lazy-objects" title="Permalink to this headline">¶</a></h3>
+<p>All objects are a <code class="docutils literal notranslate"><span class="pre">lazy</span></code>-object - it’s not make API call on create, only on <cite>get read update</cite> operations. You can create object directly and not make API call.</p>
+<p>The following example will only make one API call to the TeamCity server to set parameter in a project:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># project</span>
+<span class="n">project</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">projects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;id:MyProject&#39;</span><span class="p">)</span>  <span class="c1"># API call, full object</span>
+<span class="n">project</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="n">body</span><span class="o">=</span><span class="n">parameter_obj</span><span class="p">)</span>  <span class="c1"># API call</span>
+
+<span class="c1"># project lazy</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">Project</span>
+<span class="n">project</span> <span class="o">=</span> <span class="n">Project</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;MyProject&#39;</span><span class="p">,</span> <span class="n">teamcity</span><span class="o">=</span><span class="n">tc</span><span class="p">)</span> <span class="c1"># no API call</span>
+<span class="n">project</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="n">body</span><span class="o">=</span><span class="n">parameter_obj</span><span class="p">)</span>  <span class="c1"># API call</span>
+
+<span class="c1"># project lazy 2</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">Project</span>
+<span class="n">project</span> <span class="o">=</span> <span class="n">Project</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;MyProject&#39;</span><span class="p">)</span> <span class="c1"># no API call</span>
+<span class="n">tc</span><span class="o">.</span><span class="n">projects</span><span class="o">.</span><span class="n">set_parameter</span><span class="p">(</span><span class="n">project</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="n">parameter_obj</span><span class="p">)</span>  <span class="c1"># API call</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="list-objects">
+<h3>List objects<a class="headerlink" href="#list-objects" title="Permalink to this headline">¶</a></h3>
+<p>Some <code class="docutils literal notranslate"><span class="pre">TeamCityObject</span></code> are essentially containers and their purpose is only to store other objects.</p>
+<p>For example, when searching, we get a list, we can see how its attributes, and make a cycle on objects:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">builds</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">builds</span><span class="o">.</span><span class="n">get_all_builds</span><span class="p">(</span><span class="n">count</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">builds</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>
+<span class="n">ids_</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">builds</span><span class="o">.</span><span class="n">build</span><span class="p">]</span>
+<span class="n">ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">builds</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">ids</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">ids_</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">ids</span> <span class="o">==</span> <span class="n">ids_</span><span class="p">)</span>
+
+<span class="c1"># If you need work with some build - don&#39;t forget use read() function</span>
+<span class="n">agent_0</span> <span class="o">=</span> <span class="n">builds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">agent</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="save-as-dict">
+<h3>Save as dict<a class="headerlink" href="#save-as-dict" title="Permalink to this headline">¶</a></h3>
+<p>Objects can dump as python-dict and save as JSON:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+
+<span class="c1"># convert to JSON if needed</span>
+<span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="base-types">
+<h2>Base types<a class="headerlink" href="#base-types" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">dohq_teamcity</span></code> package provides some base types.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">dohq_teamcity.TeamCity</span></code> is the primary class, handling the HTTP requests. It holds
+the TeamCity URL and authentication information.</li>
+<li><code class="docutils literal notranslate"><span class="pre">dohq_teamcity.custom.base_model</span></code> is the base class for all the TeamCity objects.
+These objects provide an abstraction for TeamCity resources (projects, groups,
+and so on).</li>
+<li><code class="docutils literal notranslate"><span class="pre">dohq_teamcity.custom.models</span></code> is the extended class for  objects managers,
+providing the API to manipulate the resources and their attributes.</li>
+<li><code class="docutils literal notranslate"><span class="pre">dohq_teamcity.custom.api</span></code> is the extended class for  objects, providing the friendly API to manipulate the resources.</li>
+<li><code class="docutils literal notranslate"><span class="pre">dohq_teamcity.models.*</span></code> autogenerated Models object by swagger.</li>
+<li><code class="docutils literal notranslate"><span class="pre">dohq_teamcity.api.*</span></code> autogenerated objects Managers and APIs by swagger.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Most objects and managers and their functions genereted automatically by <a class="reference external" href="https://github.com/swagger-api/swagger-codegen">https://github.com/swagger-api/swagger-codegen</a> - see more <code class="docutils literal notranslate"><span class="pre">swagger.sh</span></code> file and other swagger files.
+Custom interfaces for apis and objects are in folder <strong>dohq_teamcity/custom</strong></p>
+<p class="last">For more information, please see the section on <a class="reference internal" href="development.html"><span class="doc">Development</span></a>.</p>
+</div>
+</div>
+<div class="section" id="advanced-http-configuration">
+<h2>Advanced HTTP configuration<a class="headerlink" href="#advanced-http-configuration" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">dohq-teamcity</span></code> relies on <code class="docutils literal notranslate"><span class="pre">urllib3</span></code> objects to perform all the
+HTTP requests to the TeamCity servers.</p>
+<div class="section" id="asynchronous-requests">
+<h3>Asynchronous requests<a class="headerlink" href="#asynchronous-requests" title="Permalink to this headline">¶</a></h3>
+<p>All method makes a synchronous HTTP request by default. To make an asynchronous HTTP request, please pass <code class="docutils literal notranslate"><span class="pre">async_req=True</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">thread</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">builds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">bt_locator</span><span class="p">,</span> <span class="n">async_req</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="c1"># If the method is called asynchronously, returns the request thread.</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">thread</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># get all archived projects build types ids</span>
+ <span class="n">prs</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">projects</span><span class="o">.</span><span class="n">get_projects</span><span class="p">(</span><span class="n">locator</span><span class="o">=</span><span class="s1">&#39;archived:true&#39;</span><span class="p">)</span> <span class="c1">#</span>
+ <span class="n">hr</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">async_req</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">prs</span><span class="o">.</span><span class="n">project</span><span class="p">[]]</span> <span class="c1"># async request</span>
+ <span class="n">rs</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">thr</span><span class="p">]</span>
+ <span class="n">bt_ids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+ <span class="k">for</span> <span class="n">pr</span> <span class="ow">in</span> <span class="n">prs</span><span class="p">:</span>
+     <span class="n">bt_pr</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">pr</span><span class="o">.</span><span class="n">build_types</span><span class="o">.</span><span class="n">build_type</span><span class="p">]</span>
+     <span class="n">bt_ids</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">bt_pr</span><span class="p">)</span>
+ <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">bt_pr</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="debug-and-troubleshooting">
+<h3>Debug and troubleshooting<a class="headerlink" href="#debug-and-troubleshooting" title="Permalink to this headline">¶</a></h3>
+<p>You can use logging for debug query</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;urllib3&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;dohq_teamcity&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-connect-to-teamcity-by-proxy">
+<h3>How connect to TeamCity by proxy<a class="headerlink" href="#how-connect-to-teamcity-by-proxy" title="Permalink to this headline">¶</a></h3>
+<p>There is possibility to use proxy to establish connection with your TeamCity server.
+You can do it easily by passing additional parameter with proxy url to init method.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">),</span> <span class="n">proxy</span><span class="o">=</span><span class="s1">&#39;http://localhost:8080/&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="examples.html" class="btn btn-neutral float-right" title="API Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="install.html" class="btn btn-neutral" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, DevOpsHQ
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

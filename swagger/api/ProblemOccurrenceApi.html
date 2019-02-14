@@ -1,0 +1,371 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>dohq_teamcity.ProblemOccurrenceApi &mdash; dohq-teamcity 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="dohq_teamcity.ProjectApi" href="ProjectApi.html" />
+    <link rel="prev" title="dohq_teamcity.ProblemApi" href="ProblemApi.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> dohq-teamcity
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api-usage.html">Getting started with the API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples.html">API Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../swagger.html">Full API description</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../swagger.html#api">API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="AgentApi.html">dohq_teamcity.AgentApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AgentPoolApi.html">dohq_teamcity.AgentPoolApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BuildApi.html">dohq_teamcity.BuildApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BuildQueueApi.html">dohq_teamcity.BuildQueueApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BuildTypeApi.html">dohq_teamcity.BuildTypeApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ChangeApi.html">dohq_teamcity.ChangeApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DebugApi.html">dohq_teamcity.DebugApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DefaultApi.html">dohq_teamcity.DefaultApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FederationApi.html">dohq_teamcity.FederationApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GroupApi.html">dohq_teamcity.GroupApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="InvestigationApi.html">dohq_teamcity.InvestigationApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MuteApi.html">dohq_teamcity.MuteApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProblemApi.html">dohq_teamcity.ProblemApi</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">dohq_teamcity.ProblemOccurrenceApi</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#get-problems">get_problems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#serve-instance">serve_instance</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ProjectApi.html">dohq_teamcity.ProjectApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ServerApi.html">dohq_teamcity.ServerApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TestApi.html">dohq_teamcity.TestApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TestOccurrenceApi.html">dohq_teamcity.TestOccurrenceApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UserApi.html">dohq_teamcity.UserApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VcsRootApi.html">dohq_teamcity.VcsRootApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VcsRootInstanceApi.html">dohq_teamcity.VcsRootInstanceApi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../swagger.html#models">Models</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/dohq_teamcity.html">dohq_teamcity package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Development</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">dohq-teamcity</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../swagger.html">Full API description</a> &raquo;</li>
+        
+      <li>dohq_teamcity.ProblemOccurrenceApi</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/swagger/api/ProblemOccurrenceApi.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dohq-teamcity-problemoccurrenceapi">
+<h1>dohq_teamcity.ProblemOccurrenceApi<a class="headerlink" href="#dohq-teamcity-problemoccurrenceapi" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>All <code class="docutils literal notranslate"><span class="pre">serve_*</span></code> method have aliases with get: <code class="docutils literal notranslate"><span class="pre">serve_something</span></code> == <code class="docutils literal notranslate"><span class="pre">get_something</span></code></li>
+<li>Some API have <code class="docutils literal notranslate"><span class="pre">get</span></code> method - default method to get object by locator (e.g <code class="docutils literal notranslate"><span class="pre">agent_api.get('id:123')</span></code> return <code class="docutils literal notranslate"><span class="pre">Agent</span></code> model by id</li>
+<li>See more examples on page <span class="xref std std-doc">/examples/api/ProblemOccurrenceApi</span> and model examples</li>
+<li>This is autogenerated page, don’t change them directly, use template. Read more in <a class="reference internal" href="../../development.html"><span class="doc">Development</span></a></li>
+</ul>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Method</th>
+<th class="head">HTTP request</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="#get-problems"><span class="std std-ref">get_problems</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/problemOccurrences</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="VcsRootInstanceApi.html#serve-instance"><span class="std std-ref">serve_instance</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/problemOccurrences/{problemLocator}</span></code></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="get-problems">
+<span id="id1"></span><h2>get_problems<a class="headerlink" href="#get-problems" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">locator</span> <span class="o">=</span> <span class="s1">&#39;locator_example&#39;</span> <span class="c1"># str |  (optional)</span>
+<span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;fields_example&#39;</span> <span class="c1"># str |  (optional)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">problem_occurrence_api</span><span class="o">.</span><span class="n">get_problems</span><span class="p">(</span><span class="n">locator</span><span class="o">=</span><span class="n">locator</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="n">fields</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling ProblemOccurrenceApi-&gt;get_problems: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>locator</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+<tr class="row-odd"><td><strong>fields</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><a class="reference external" href="../models/ProblemOccurrences.html">ProblemOccurrences</a></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="serve-instance">
+<span id="id2"></span><h2>serve_instance<a class="headerlink" href="#serve-instance" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">problem_locator</span> <span class="o">=</span> <span class="s1">&#39;problem_locator_example&#39;</span> <span class="c1"># str |</span>
+<span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;fields_example&#39;</span> <span class="c1"># str |  (optional)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">problem_occurrence_api</span><span class="o">.</span><span class="n">serve_instance</span><span class="p">(</span><span class="n">problem_locator</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="n">fields</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling ProblemOccurrenceApi-&gt;serve_instance: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>problem_locator</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>fields</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><a class="reference external" href="../models/ProblemOccurrence.html">ProblemOccurrence</a></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ProjectApi.html" class="btn btn-neutral float-right" title="dohq_teamcity.ProjectApi" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ProblemApi.html" class="btn btn-neutral" title="dohq_teamcity.ProblemApi" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, DevOpsHQ
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

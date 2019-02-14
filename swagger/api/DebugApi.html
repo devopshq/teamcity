@@ -1,0 +1,1705 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>dohq_teamcity.DebugApi &mdash; dohq-teamcity 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="dohq_teamcity.DefaultApi" href="DefaultApi.html" />
+    <link rel="prev" title="dohq_teamcity.ChangeApi" href="ChangeApi.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> dohq-teamcity
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api-usage.html">Getting started with the API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples.html">API Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../swagger.html">Full API description</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../swagger.html#api">API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="AgentApi.html">dohq_teamcity.AgentApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AgentPoolApi.html">dohq_teamcity.AgentPoolApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BuildApi.html">dohq_teamcity.BuildApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BuildQueueApi.html">dohq_teamcity.BuildQueueApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BuildTypeApi.html">dohq_teamcity.BuildTypeApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ChangeApi.html">dohq_teamcity.ChangeApi</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">dohq_teamcity.DebugApi</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#delete-current-remember-me">delete_current_remember_me</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#empty-task">empty_task</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#execute-db-query">execute_db_query</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-build-chain-optimization-log">get_build_chain_optimization_log</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-cached-build-promotions">get_cached_build_promotions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-cached-build-promotions-stats">get_cached_build_promotions_stats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-cached-builds-stat">get_cached_builds_stat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-current-session">get_current_session</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-current-session-max-inactive-interval">get_current_session_max_inactive_interval</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-current-user-permissions">get_current_user_permissions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-date">get_date</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-diagnostics-perf-stats">get_diagnostics_perf_stats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-environment-variables">get_environment_variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-hashed">get_hashed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-ip-address">get_ip_address</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-raw-investigations">get_raw_investigations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-request-details">get_request_details</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-scrambled">get_scrambled</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-sessions">get_sessions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-system-properties">get_system_properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-thread-dump">get_thread_dump</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-thread-interrupted">get_thread_interrupted</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-unscrambled">get_unscrambled</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#interrupt-thread">interrupt_thread</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#invalidate-current-session">invalidate_current_session</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#list-db-tables">list_db_tables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#new-remember-me">new_remember_me</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#post-request-details">post_request_details</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#put-request-details">put_request_details</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#save-memory-dump">save_memory_dump</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#schedule-checking-for-changes">schedule_checking_for_changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-current-session-max-inactive-interval">set_current_session_max_inactive_interval</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="DefaultApi.html">dohq_teamcity.DefaultApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FederationApi.html">dohq_teamcity.FederationApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GroupApi.html">dohq_teamcity.GroupApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="InvestigationApi.html">dohq_teamcity.InvestigationApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MuteApi.html">dohq_teamcity.MuteApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProblemApi.html">dohq_teamcity.ProblemApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProblemOccurrenceApi.html">dohq_teamcity.ProblemOccurrenceApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProjectApi.html">dohq_teamcity.ProjectApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ServerApi.html">dohq_teamcity.ServerApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TestApi.html">dohq_teamcity.TestApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TestOccurrenceApi.html">dohq_teamcity.TestOccurrenceApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UserApi.html">dohq_teamcity.UserApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VcsRootApi.html">dohq_teamcity.VcsRootApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VcsRootInstanceApi.html">dohq_teamcity.VcsRootInstanceApi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../swagger.html#models">Models</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/dohq_teamcity.html">dohq_teamcity package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Development</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">dohq-teamcity</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../swagger.html">Full API description</a> &raquo;</li>
+        
+      <li>dohq_teamcity.DebugApi</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/swagger/api/DebugApi.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dohq-teamcity-debugapi">
+<h1>dohq_teamcity.DebugApi<a class="headerlink" href="#dohq-teamcity-debugapi" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>All <code class="docutils literal notranslate"><span class="pre">serve_*</span></code> method have aliases with get: <code class="docutils literal notranslate"><span class="pre">serve_something</span></code> == <code class="docutils literal notranslate"><span class="pre">get_something</span></code></li>
+<li>Some API have <code class="docutils literal notranslate"><span class="pre">get</span></code> method - default method to get object by locator (e.g <code class="docutils literal notranslate"><span class="pre">agent_api.get('id:123')</span></code> return <code class="docutils literal notranslate"><span class="pre">Agent</span></code> model by id</li>
+<li>See more examples on page <span class="xref std std-doc">/examples/api/DebugApi</span> and model examples</li>
+<li>This is autogenerated page, don’t change them directly, use template. Read more in <a class="reference internal" href="../../development.html"><span class="doc">Development</span></a></li>
+</ul>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Method</th>
+<th class="head">HTTP request</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="#delete-current-remember-me"><span class="std std-ref">delete_current_remember_me</span></a></td>
+<td><strong>DELETE</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/currentRequest/rememberMe</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#empty-task"><span class="std std-ref">empty_task</span></a></td>
+<td><strong>POST</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/emptyTask</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#execute-db-query"><span class="std std-ref">execute_db_query</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/database/query/{query}</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-build-chain-optimization-log"><span class="std std-ref">get_build_chain_optimization_log</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/buildChainOptimizationLog/{buildLocator}</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#get-cached-build-promotions"><span class="std std-ref">get_cached_build_promotions</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/caches/buildPromotions/content</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-cached-build-promotions-stats"><span class="std std-ref">get_cached_build_promotions_stats</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/caches/buildPromotions/stats</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#get-cached-builds-stat"><span class="std std-ref">get_cached_builds_stat</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/caches/builds/stats</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-current-session"><span class="std std-ref">get_current_session</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/currentRequest/session</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#get-current-session-max-inactive-interval"><span class="std std-ref">get_current_session_max_inactive_interval</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/currentRequest/session/maxInactiveSeconds</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-current-user-permissions"><span class="std std-ref">get_current_user_permissions</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/currentUserPermissions</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#get-date"><span class="std std-ref">get_date</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/date/{dateLocator}</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-diagnostics-perf-stats"><span class="std std-ref">get_diagnostics_perf_stats</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/diagnostics/threadPerfStat/stats</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#get-environment-variables"><span class="std std-ref">get_environment_variables</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/jvm/environmentVariables</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-hashed"><span class="std std-ref">get_hashed</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/values/transform/{method}</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#get-ip-address"><span class="std std-ref">get_ip_address</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/dns/lookup/{host}</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-raw-investigations"><span class="std std-ref">get_raw_investigations</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/investigations</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#get-request-details"><span class="std std-ref">get_request_details</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/currentRequest/details{extra}</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-scrambled"><span class="std std-ref">get_scrambled</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/values/password/scrambled</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#get-sessions"><span class="std std-ref">get_sessions</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/sessions</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-system-properties"><span class="std std-ref">get_system_properties</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/jvm/systemProperties</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#get-thread-dump"><span class="std std-ref">get_thread_dump</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/threadDump</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-thread-interrupted"><span class="std std-ref">get_thread_interrupted</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/threads/{threadLocator}/interrupted</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#get-unscrambled"><span class="std std-ref">get_unscrambled</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/values/password/unscrambled</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#interrupt-thread"><span class="std std-ref">interrupt_thread</span></a></td>
+<td><strong>PUT</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/threads/{threadLocator}/interrupted</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#invalidate-current-session"><span class="std std-ref">invalidate_current_session</span></a></td>
+<td><strong>DELETE</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/currentRequest/session</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#list-db-tables"><span class="std std-ref">list_db_tables</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/database/tables</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#new-remember-me"><span class="std std-ref">new_remember_me</span></a></td>
+<td><strong>POST</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/currentRequest/rememberMe</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-request-details"><span class="std std-ref">post_request_details</span></a></td>
+<td><strong>POST</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/currentRequest/details{extra}</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#put-request-details"><span class="std std-ref">put_request_details</span></a></td>
+<td><strong>PUT</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/currentRequest/details{extra}</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#save-memory-dump"><span class="std std-ref">save_memory_dump</span></a></td>
+<td><strong>POST</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/memory/dumps</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="VcsRootInstanceApi.html#schedule-checking-for-changes"><span class="std std-ref">schedule_checking_for_changes</span></a></td>
+<td><strong>POST</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/vcsCheckingForChangesQueue</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#set-current-session-max-inactive-interval"><span class="std std-ref">set_current_session_max_inactive_interval</span></a></td>
+<td><strong>PUT</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/debug/currentRequest/session/maxInactiveSeconds</span></code></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="delete-current-remember-me">
+<span id="id1"></span><h2>delete_current_remember_me<a class="headerlink" href="#delete-current-remember-me" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">delete_current_remember_me</span><span class="p">()</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;delete_current_remember_me: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This endpoint does not need any parameter.</p>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd>void (empty response body)</dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="empty-task">
+<span id="id2"></span><h2>empty_task<a class="headerlink" href="#empty-task" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">time</span> <span class="o">=</span> <span class="s1">&#39;time_example&#39;</span> <span class="c1"># str |  (optional)</span>
+<span class="n">load</span> <span class="o">=</span> <span class="mi">56</span> <span class="c1"># int |  (optional)</span>
+<span class="n">memory</span> <span class="o">=</span> <span class="mi">56</span> <span class="c1"># int |  (optional)</span>
+<span class="n">memory_chunks</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># int |  (optional) (default to 1)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">empty_task</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">time</span><span class="p">,</span> <span class="n">load</span><span class="o">=</span><span class="n">load</span><span class="p">,</span> <span class="n">memory</span><span class="o">=</span><span class="n">memory</span><span class="p">,</span> <span class="n">memory_chunks</span><span class="o">=</span><span class="n">memory_chunks</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;empty_task: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>time</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+<tr class="row-odd"><td><strong>load</strong></td>
+<td><strong>int</strong></td>
+<td>[optional]</td>
+</tr>
+<tr class="row-even"><td><strong>memory</strong></td>
+<td><strong>int</strong></td>
+<td>[optional]</td>
+</tr>
+<tr class="row-odd"><td><strong>memory_chunks</strong></td>
+<td><strong>int</strong></td>
+<td>[optional] [default to <code class="docutils literal notranslate"><span class="pre">1</span></code>]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><strong>str</strong></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="execute-db-query">
+<span id="id4"></span><h2>execute_db_query<a class="headerlink" href="#execute-db-query" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;query_example&#39;</span> <span class="c1"># str |</span>
+<span class="n">field_delimiter</span> <span class="o">=</span> <span class="s1">&#39;, &#39;</span> <span class="c1"># str |  (optional) (default to , )</span>
+<span class="n">data_retrieve_query</span> <span class="o">=</span> <span class="s1">&#39;data_retrieve_query_example&#39;</span> <span class="c1"># str |  (optional)</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1"># int |  (optional) (default to 1000)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">execute_db_query</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">field_delimiter</span><span class="o">=</span><span class="n">field_delimiter</span><span class="p">,</span> <span class="n">data_retrieve_query</span><span class="o">=</span><span class="n">data_retrieve_query</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="n">count</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;execute_db_query: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>query</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>field_delimiter</strong></td>
+<td><strong>str</strong></td>
+<td>[optional] [default to <a href="#id5"><span class="problematic" id="id6">``</span></a>, <a href="#id7"><span class="problematic" id="id8">``</span></a>]</td>
+</tr>
+<tr class="row-even"><td><strong>data_retrieve_query</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+<tr class="row-odd"><td><strong>count</strong></td>
+<td><strong>int</strong></td>
+<td>[optional] [default to <code class="docutils literal notranslate"><span class="pre">1000</span></code>]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><strong>str</strong></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="get-build-chain-optimization-log">
+<span id="id10"></span><h2>get_build_chain_optimization_log<a class="headerlink" href="#get-build-chain-optimization-log" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">build_locator</span> <span class="o">=</span> <span class="s1">&#39;build_locator_example&#39;</span> <span class="c1"># str |</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">get_build_chain_optimization_log</span><span class="p">(</span><span class="n">build_locator</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;get_build_chain_optimization_log: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>build_locator</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><strong>str</strong></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="get-cached-build-promotions">
+<span id="id12"></span><h2>get_cached_build_promotions<a class="headerlink" href="#get-cached-build-promotions" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">build_type_locator</span> <span class="o">=</span> <span class="s1">&#39;build_type_locator_example&#39;</span> <span class="c1"># str |  (optional)</span>
+<span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;fields_example&#39;</span> <span class="c1"># str |  (optional)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">get_cached_build_promotions</span><span class="p">(</span><span class="n">build_type_locator</span><span class="o">=</span><span class="n">build_type_locator</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="n">fields</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;get_cached_build_promotions: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>build_type_locator</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+<tr class="row-odd"><td><strong>fields</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><a class="reference external" href="../models/Builds.html">Builds</a></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="get-cached-build-promotions-stats">
+<span id="id14"></span><h2>get_cached_build_promotions_stats<a class="headerlink" href="#get-cached-build-promotions-stats" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;fields_example&#39;</span> <span class="c1"># str |  (optional)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">get_cached_build_promotions_stats</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="n">fields</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;get_cached_build_promotions_stats: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>fields</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><a class="reference external" href="../models/Properties.html">Properties</a></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="get-cached-builds-stat">
+<span id="id16"></span><h2>get_cached_builds_stat<a class="headerlink" href="#get-cached-builds-stat" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;fields_example&#39;</span> <span class="c1"># str |  (optional)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">get_cached_builds_stat</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="n">fields</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;get_cached_builds_stat: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>fields</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><a class="reference external" href="../models/Properties.html">Properties</a></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="get-current-session">
+<span id="id19"></span><h2>get_current_session<a class="headerlink" href="#get-current-session" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;fields_example&#39;</span> <span class="c1"># str |  (optional)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">get_current_session</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="n">fields</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;get_current_session: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>fields</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><a class="reference external" href="../models/Session.html">Session</a></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="get-current-session-max-inactive-interval">
+<span id="id21"></span><h2>get_current_session_max_inactive_interval<a class="headerlink" href="#get-current-session-max-inactive-interval" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">get_current_session_max_inactive_interval</span><span class="p">()</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;get_current_session_max_inactive_interval: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This endpoint does not need any parameter.</p>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><strong>str</strong></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="get-current-user-permissions">
+<span id="id23"></span><h2>get_current_user_permissions<a class="headerlink" href="#get-current-user-permissions" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">get_current_user_permissions</span><span class="p">()</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;get_current_user_permissions: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This endpoint does not need any parameter.</p>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><strong>str</strong></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="get-date">
+<span id="id25"></span><h2>get_date<a class="headerlink" href="#get-date" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">date_locator</span> <span class="o">=</span> <span class="s1">&#39;date_locator_example&#39;</span> <span class="c1"># str |</span>
+<span class="n">format</span> <span class="o">=</span> <span class="s1">&#39;format_example&#39;</span> <span class="c1"># str |  (optional)</span>
+<span class="n">timezone</span> <span class="o">=</span> <span class="s1">&#39;timezone_example&#39;</span> <span class="c1"># str |  (optional)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">get_date</span><span class="p">(</span><span class="n">date_locator</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="n">format</span><span class="p">,</span> <span class="n">timezone</span><span class="o">=</span><span class="n">timezone</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;get_date: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>date_locator</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>format</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+<tr class="row-even"><td><strong>timezone</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><strong>str</strong></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="get-diagnostics-perf-stats">
+<span id="id27"></span><h2>get_diagnostics_perf_stats<a class="headerlink" href="#get-diagnostics-perf-stats" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;fields_example&#39;</span> <span class="c1"># str |  (optional)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">get_diagnostics_perf_stats</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="n">fields</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;get_diagnostics_perf_stats: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>fields</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><a class="reference external" href="../models/Properties.html">Properties</a></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="get-environment-variables">
+<span id="id30"></span><h2>get_environment_variables<a class="headerlink" href="#get-environment-variables" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;fields_example&#39;</span> <span class="c1"># str |  (optional)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">get_environment_variables</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="n">fields</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;get_environment_variables: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>fields</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><a class="reference external" href="../models/Properties.html">Properties</a></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="get-hashed">
+<span id="id33"></span><h2>get_hashed<a class="headerlink" href="#get-hashed" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;method_example&#39;</span> <span class="c1"># str |</span>
+<span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;value_example&#39;</span> <span class="c1"># str |  (optional)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">get_hashed</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;get_hashed: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>method</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>value</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><strong>str</strong></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="get-ip-address">
+<span id="id35"></span><h2>get_ip_address<a class="headerlink" href="#get-ip-address" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">host</span> <span class="o">=</span> <span class="s1">&#39;host_example&#39;</span> <span class="c1"># str |</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">get_ip_address</span><span class="p">(</span><span class="n">host</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;get_ip_address: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>host</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><a class="reference external" href="../models/Items.html">Items</a></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="get-raw-investigations">
+<span id="id37"></span><h2>get_raw_investigations<a class="headerlink" href="#get-raw-investigations" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;fields_example&#39;</span> <span class="c1"># str |  (optional)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">get_raw_investigations</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="n">fields</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;get_raw_investigations: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>fields</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><a class="reference external" href="../models/Investigations.html">Investigations</a></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="get-request-details">
+<span id="id39"></span><h2>get_request_details<a class="headerlink" href="#get-request-details" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">extra</span> <span class="o">=</span> <span class="s1">&#39;extra_example&#39;</span> <span class="c1"># str |</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">get_request_details</span><span class="p">(</span><span class="n">extra</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;get_request_details: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>extra</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><strong>str</strong></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="get-scrambled">
+<span id="id41"></span><h2>get_scrambled<a class="headerlink" href="#get-scrambled" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;value_example&#39;</span> <span class="c1"># str |  (optional)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">get_scrambled</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;get_scrambled: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>value</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><strong>str</strong></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="get-sessions">
+<span id="id43"></span><h2>get_sessions<a class="headerlink" href="#get-sessions" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">manager</span> <span class="o">=</span> <span class="mi">789</span> <span class="c1"># int |  (optional)</span>
+<span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;fields_example&#39;</span> <span class="c1"># str |  (optional)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">get_sessions</span><span class="p">(</span><span class="n">manager</span><span class="o">=</span><span class="n">manager</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="n">fields</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;get_sessions: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>manager</strong></td>
+<td><strong>int</strong></td>
+<td>[optional]</td>
+</tr>
+<tr class="row-odd"><td><strong>fields</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><a class="reference external" href="../models/Sessions.html">Sessions</a></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="get-system-properties">
+<span id="id45"></span><h2>get_system_properties<a class="headerlink" href="#get-system-properties" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;fields_example&#39;</span> <span class="c1"># str |  (optional)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">get_system_properties</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="n">fields</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;get_system_properties: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>fields</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><a class="reference external" href="../models/Properties.html">Properties</a></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="get-thread-dump">
+<span id="id48"></span><h2>get_thread_dump<a class="headerlink" href="#get-thread-dump" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">locked_monitors</span> <span class="o">=</span> <span class="s1">&#39;locked_monitors_example&#39;</span> <span class="c1"># str |  (optional)</span>
+<span class="n">locked_synchronizers</span> <span class="o">=</span> <span class="s1">&#39;locked_synchronizers_example&#39;</span> <span class="c1"># str |  (optional)</span>
+<span class="n">detect_locks</span> <span class="o">=</span> <span class="s1">&#39;detect_locks_example&#39;</span> <span class="c1"># str |  (optional)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">get_thread_dump</span><span class="p">(</span><span class="n">locked_monitors</span><span class="o">=</span><span class="n">locked_monitors</span><span class="p">,</span> <span class="n">locked_synchronizers</span><span class="o">=</span><span class="n">locked_synchronizers</span><span class="p">,</span> <span class="n">detect_locks</span><span class="o">=</span><span class="n">detect_locks</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;get_thread_dump: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>locked_monitors</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+<tr class="row-odd"><td><strong>locked_synchronizers</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+<tr class="row-even"><td><strong>detect_locks</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><strong>str</strong></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="get-thread-interrupted">
+<span id="id50"></span><h2>get_thread_interrupted<a class="headerlink" href="#get-thread-interrupted" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">thread_locator</span> <span class="o">=</span> <span class="s1">&#39;thread_locator_example&#39;</span> <span class="c1"># str |</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">get_thread_interrupted</span><span class="p">(</span><span class="n">thread_locator</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;get_thread_interrupted: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>thread_locator</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><strong>str</strong></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="get-unscrambled">
+<span id="id52"></span><h2>get_unscrambled<a class="headerlink" href="#get-unscrambled" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;value_example&#39;</span> <span class="c1"># str |  (optional)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">get_unscrambled</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;get_unscrambled: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>value</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><strong>str</strong></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="interrupt-thread">
+<span id="id54"></span><h2>interrupt_thread<a class="headerlink" href="#interrupt-thread" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">thread_locator</span> <span class="o">=</span> <span class="s1">&#39;thread_locator_example&#39;</span> <span class="c1"># str |</span>
+<span class="n">body</span> <span class="o">=</span> <span class="s1">&#39;body_example&#39;</span> <span class="c1"># str |  (optional)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">interrupt_thread</span><span class="p">(</span><span class="n">thread_locator</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="n">body</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;interrupt_thread: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>thread_locator</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>body</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><strong>str</strong></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="invalidate-current-session">
+<span id="id56"></span><h2>invalidate_current_session<a class="headerlink" href="#invalidate-current-session" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">invalidate_current_session</span><span class="p">()</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;invalidate_current_session: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This endpoint does not need any parameter.</p>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd>void (empty response body)</dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="list-db-tables">
+<span id="id58"></span><h2>list_db_tables<a class="headerlink" href="#list-db-tables" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">list_db_tables</span><span class="p">()</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;list_db_tables: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This endpoint does not need any parameter.</p>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><strong>str</strong></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="new-remember-me">
+<span id="id60"></span><h2>new_remember_me<a class="headerlink" href="#new-remember-me" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">new_remember_me</span><span class="p">()</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;new_remember_me: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This endpoint does not need any parameter.</p>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><strong>str</strong></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="post-request-details">
+<span id="id62"></span><h2>post_request_details<a class="headerlink" href="#post-request-details" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">extra</span> <span class="o">=</span> <span class="s1">&#39;extra_example&#39;</span> <span class="c1"># str |</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">post_request_details</span><span class="p">(</span><span class="n">extra</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;post_request_details: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>extra</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><strong>str</strong></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="put-request-details">
+<span id="id64"></span><h2>put_request_details<a class="headerlink" href="#put-request-details" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">extra</span> <span class="o">=</span> <span class="s1">&#39;extra_example&#39;</span> <span class="c1"># str |</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">put_request_details</span><span class="p">(</span><span class="n">extra</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;put_request_details: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>extra</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><strong>str</strong></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="save-memory-dump">
+<span id="id66"></span><h2>save_memory_dump<a class="headerlink" href="#save-memory-dump" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">archived</span> <span class="o">=</span> <span class="n">true</span> <span class="c1"># bool |  (optional)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">save_memory_dump</span><span class="p">(</span><span class="n">archived</span><span class="o">=</span><span class="n">archived</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;save_memory_dump: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>archived</strong></td>
+<td><strong>bool</strong></td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><strong>str</strong></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="schedule-checking-for-changes">
+<span id="id68"></span><h2>schedule_checking_for_changes<a class="headerlink" href="#schedule-checking-for-changes" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">locator</span> <span class="o">=</span> <span class="s1">&#39;locator_example&#39;</span> <span class="c1"># str |  (optional)</span>
+<span class="n">requestor</span> <span class="o">=</span> <span class="s1">&#39;requestor_example&#39;</span> <span class="c1"># str |  (optional)</span>
+<span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;fields_example&#39;</span> <span class="c1"># str |  (optional)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">schedule_checking_for_changes</span><span class="p">(</span><span class="n">locator</span><span class="o">=</span><span class="n">locator</span><span class="p">,</span> <span class="n">requestor</span><span class="o">=</span><span class="n">requestor</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="n">fields</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;schedule_checking_for_changes: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>locator</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+<tr class="row-odd"><td><strong>requestor</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+<tr class="row-even"><td><strong>fields</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><a class="reference external" href="../models/VcsRootInstances.html">VcsRootInstances</a></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="set-current-session-max-inactive-interval">
+<span id="id70"></span><h2>set_current_session_max_inactive_interval<a class="headerlink" href="#set-current-session-max-inactive-interval" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">body</span> <span class="o">=</span> <span class="s1">&#39;body_example&#39;</span> <span class="c1"># str |  (optional)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">debug_api</span><span class="o">.</span><span class="n">set_current_session_max_inactive_interval</span><span class="p">(</span><span class="n">body</span><span class="o">=</span><span class="n">body</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling DebugApi-&gt;set_current_session_max_inactive_interval: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>body</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><strong>str</strong></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="DefaultApi.html" class="btn btn-neutral float-right" title="dohq_teamcity.DefaultApi" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ChangeApi.html" class="btn btn-neutral" title="dohq_teamcity.ChangeApi" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, DevOpsHQ
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

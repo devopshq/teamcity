@@ -1,0 +1,391 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>StackTraceElement &mdash; dohq-teamcity 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="StateField" href="StateField.html" />
+    <link rel="prev" title="SnapshotDependency" href="SnapshotDependency.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> dohq-teamcity
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api-usage.html">Getting started with the API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples.html">API Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../swagger.html">Full API description</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../swagger.html#api">API</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../swagger.html#models">Models</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Agent.html">Agent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AgentPool.html">AgentPool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AgentPools.html">AgentPools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AgentRequirement.html">AgentRequirement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AgentRequirements.html">AgentRequirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Agents.html">Agents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ArtifactDependencies.html">ArtifactDependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ArtifactDependency.html">ArtifactDependency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AuthorizedInfo.html">AuthorizedInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BackupProcess.html">BackupProcess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BackupProcessInfo.html">BackupProcessInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BackupProcessManager.html">BackupProcessManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Branch.html">Branch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BranchVersion.html">BranchVersion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Branches.html">Branches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Build.html">Build</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BuildCancelRequest.html">BuildCancelRequest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BuildChange.html">BuildChange</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BuildChanges.html">BuildChanges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BuildTriggeringOptions.html">BuildTriggeringOptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BuildType.html">BuildType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BuildTypes.html">BuildTypes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Builds.html">Builds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Change.html">Change</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Changes.html">Changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Comment.html">Comment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Compatibilities.html">Compatibilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Compatibility.html">Compatibility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Datas.html">Datas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EnabledInfo.html">EnabledInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Entries.html">Entries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Entry.html">Entry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Environment.html">Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Exception.html">Exception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Feature.html">Feature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Features.html">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FederationServer.html">FederationServer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="File.html">File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FileChange.html">FileChange</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FileChanges.html">FileChanges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Files.html">Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Group.html">Group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Groups.html">Groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Href.html">Href</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Investigation.html">Investigation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Investigations.html">Investigations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Issue.html">Issue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IssueUsage.html">IssueUsage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Issues.html">Issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IssuesUsages.html">IssuesUsages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Items.html">Items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LicenseKey.html">LicenseKey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LicenseKeys.html">LicenseKeys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LicensingData.html">LicensingData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Link.html">Link</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Links.html">Links</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MetaData.html">MetaData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ModelProperty.html">ModelProperty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Mute.html">Mute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Mutes.html">Mutes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NewBuildTypeDescription.html">NewBuildTypeDescription</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NewProjectDescription.html">NewProjectDescription</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Permission.html">Permission</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PermissionAssignment.html">PermissionAssignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PermissionAssignments.html">PermissionAssignments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Plugin.html">Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Plugins.html">Plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Problem.html">Problem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProblemOccurrence.html">ProblemOccurrence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProblemOccurrences.html">ProblemOccurrences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProblemScope.html">ProblemScope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProblemTarget.html">ProblemTarget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Problems.html">Problems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProgressInfo.html">ProgressInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Project.html">Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProjectFeature.html">ProjectFeature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProjectFeatures.html">ProjectFeatures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Projects.html">Projects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Properties.html">Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Related.html">Related</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RepositoryState.html">RepositoryState</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Requirements.html">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Resolution.html">Resolution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Revision.html">Revision</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Revisions.html">Revisions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Role.html">Role</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Roles.html">Roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Server.html">Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Servers.html">Servers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Session.html">Session</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Sessions.html">Sessions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SnapshotDependencies.html">SnapshotDependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SnapshotDependency.html">SnapshotDependency</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">StackTraceElement</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#properties">Properties</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="StateField.html">StateField</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Step.html">Step</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Steps.html">Steps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Tag.html">Tag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Tags.html">Tags</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Test.html">Test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TestOccurrence.html">TestOccurrence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TestOccurrences.html">TestOccurrences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Tests.html">Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Throwable.html">Throwable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Trigger.html">Trigger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TriggeredBy.html">TriggeredBy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Triggers.html">Triggers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Type.html">Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="User.html">User</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Users.html">Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VcsCheckStatus.html">VcsCheckStatus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VcsLabeling.html">VcsLabeling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VcsRoot.html">VcsRoot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VcsRootEntries.html">VcsRootEntries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VcsRootEntry.html">VcsRootEntry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VcsRootInstance.html">VcsRootInstance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VcsRootInstances.html">VcsRootInstances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VcsRoots.html">VcsRoots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VcsStatus.html">VcsStatus</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/dohq_teamcity.html">dohq_teamcity package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Development</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">dohq-teamcity</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../swagger.html">Full API description</a> &raquo;</li>
+        
+      <li>StackTraceElement</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/swagger/models/StackTraceElement.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="stacktraceelement">
+<h1>StackTraceElement<a class="headerlink" href="#stacktraceelement" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>Examples for model: <a class="reference internal" href="../../examples/models/StackTraceElement.html"><span class="doc">StackTraceElement</span></a></li>
+<li>This is autogenerated page, don’t change them directly, use template. Read more in <a class="reference internal" href="../../development.html"><span class="doc">Development</span></a></li>
+</ul>
+</div>
+<div class="section" id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="15%" />
+<col width="15%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>method_name</strong></td>
+<td><strong>str</strong></td>
+<td><cite>optional</cite></td>
+</tr>
+<tr class="row-odd"><td><strong>file_name</strong></td>
+<td><strong>str</strong></td>
+<td><cite>optional</cite></td>
+</tr>
+<tr class="row-even"><td><strong>line_number</strong></td>
+<td><strong>int</strong></td>
+<td><cite>optional</cite></td>
+</tr>
+<tr class="row-odd"><td><strong>class_name</strong></td>
+<td><strong>str</strong></td>
+<td><cite>optional</cite></td>
+</tr>
+<tr class="row-even"><td><strong>native_method</strong></td>
+<td><strong>bool</strong></td>
+<td><cite>optional</cite> [default to <code class="docutils literal notranslate"><span class="pre">False</span></code>]</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="StateField.html" class="btn btn-neutral float-right" title="StateField" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="SnapshotDependency.html" class="btn btn-neutral" title="SnapshotDependency" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, DevOpsHQ
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

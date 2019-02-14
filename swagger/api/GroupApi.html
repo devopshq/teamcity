@@ -1,0 +1,1138 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>dohq_teamcity.GroupApi &mdash; dohq-teamcity 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="dohq_teamcity.InvestigationApi" href="InvestigationApi.html" />
+    <link rel="prev" title="dohq_teamcity.FederationApi" href="FederationApi.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> dohq-teamcity
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api-usage.html">Getting started with the API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples.html">API Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../swagger.html">Full API description</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../swagger.html#api">API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="AgentApi.html">dohq_teamcity.AgentApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AgentPoolApi.html">dohq_teamcity.AgentPoolApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BuildApi.html">dohq_teamcity.BuildApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BuildQueueApi.html">dohq_teamcity.BuildQueueApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BuildTypeApi.html">dohq_teamcity.BuildTypeApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ChangeApi.html">dohq_teamcity.ChangeApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DebugApi.html">dohq_teamcity.DebugApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DefaultApi.html">dohq_teamcity.DefaultApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FederationApi.html">dohq_teamcity.FederationApi</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">dohq_teamcity.GroupApi</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#add-group">add_group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-role">add_role</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-role-simple">add_role_simple</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delete-group">delete_group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delete-role">delete_role</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-parent-groups">get_parent_groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-permissions">get_permissions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-properties">get_properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#list-role">list_role</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#list-roles">list_roles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#put-user-property">put_user_property</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remove-user-property">remove_user_property</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#serve-group">serve_group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#serve-groups">serve_groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#serve-user-properties">serve_user_properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-parent-groups">set_parent_groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-roles">set_roles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="InvestigationApi.html">dohq_teamcity.InvestigationApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MuteApi.html">dohq_teamcity.MuteApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProblemApi.html">dohq_teamcity.ProblemApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProblemOccurrenceApi.html">dohq_teamcity.ProblemOccurrenceApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProjectApi.html">dohq_teamcity.ProjectApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ServerApi.html">dohq_teamcity.ServerApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TestApi.html">dohq_teamcity.TestApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TestOccurrenceApi.html">dohq_teamcity.TestOccurrenceApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UserApi.html">dohq_teamcity.UserApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VcsRootApi.html">dohq_teamcity.VcsRootApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VcsRootInstanceApi.html">dohq_teamcity.VcsRootInstanceApi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../swagger.html#models">Models</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/dohq_teamcity.html">dohq_teamcity package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Development</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">dohq-teamcity</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../swagger.html">Full API description</a> &raquo;</li>
+        
+      <li>dohq_teamcity.GroupApi</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/swagger/api/GroupApi.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dohq-teamcity-groupapi">
+<h1>dohq_teamcity.GroupApi<a class="headerlink" href="#dohq-teamcity-groupapi" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>All <code class="docutils literal notranslate"><span class="pre">serve_*</span></code> method have aliases with get: <code class="docutils literal notranslate"><span class="pre">serve_something</span></code> == <code class="docutils literal notranslate"><span class="pre">get_something</span></code></li>
+<li>Some API have <code class="docutils literal notranslate"><span class="pre">get</span></code> method - default method to get object by locator (e.g <code class="docutils literal notranslate"><span class="pre">agent_api.get('id:123')</span></code> return <code class="docutils literal notranslate"><span class="pre">Agent</span></code> model by id</li>
+<li>See more examples on page <span class="xref std std-doc">/examples/api/GroupApi</span> and model examples</li>
+<li>This is autogenerated page, don’t change them directly, use template. Read more in <a class="reference internal" href="../../development.html"><span class="doc">Development</span></a></li>
+</ul>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Method</th>
+<th class="head">HTTP request</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="UserApi.html#add-group"><span class="std std-ref">add_group</span></a></td>
+<td><strong>POST</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/userGroups</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="UserApi.html#add-role"><span class="std std-ref">add_role</span></a></td>
+<td><strong>POST</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/userGroups/{groupLocator}/roles</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="UserApi.html#add-role-simple"><span class="std std-ref">add_role_simple</span></a></td>
+<td><strong>POST</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/userGroups/{groupLocator}/roles/{roleId}/{scope}</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#delete-group"><span class="std std-ref">delete_group</span></a></td>
+<td><strong>DELETE</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/userGroups/{groupLocator}</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="UserApi.html#delete-role"><span class="std std-ref">delete_role</span></a></td>
+<td><strong>DELETE</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/userGroups/{groupLocator}/roles/{roleId}/{scope}</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-parent-groups"><span class="std std-ref">get_parent_groups</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/userGroups/{groupLocator}/parent-groups</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="UserApi.html#get-permissions"><span class="std std-ref">get_permissions</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/userGroups/{groupLocator}/debug/permissions</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-properties"><span class="std std-ref">get_properties</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/userGroups/{groupLocator}/properties</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="UserApi.html#list-role"><span class="std std-ref">list_role</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/userGroups/{groupLocator}/roles/{roleId}/{scope}</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="UserApi.html#list-roles"><span class="std std-ref">list_roles</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/userGroups/{groupLocator}/roles</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="UserApi.html#put-user-property"><span class="std std-ref">put_user_property</span></a></td>
+<td><strong>PUT</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/userGroups/{groupLocator}/properties/{name}</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="UserApi.html#remove-user-property"><span class="std std-ref">remove_user_property</span></a></td>
+<td><strong>DELETE</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/userGroups/{groupLocator}/properties/{name}</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#serve-group"><span class="std std-ref">serve_group</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/userGroups/{groupLocator}</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#serve-groups"><span class="std std-ref">serve_groups</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/userGroups</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="UserApi.html#serve-user-properties"><span class="std std-ref">serve_user_properties</span></a></td>
+<td><strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/userGroups/{groupLocator}/properties/{name}</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#set-parent-groups"><span class="std std-ref">set_parent_groups</span></a></td>
+<td><strong>PUT</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/userGroups/{groupLocator}/parent-groups</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#set-roles"><span class="std std-ref">set_roles</span></a></td>
+<td><strong>PUT</strong> <code class="docutils literal notranslate"><span class="pre">/app/rest/userGroups/{groupLocator}/roles</span></code></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="add-group">
+<span id="id1"></span><h2>add_group<a class="headerlink" href="#add-group" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">body</span> <span class="o">=</span> <span class="n">dohq_teamcity</span><span class="o">.</span><span class="n">Group</span><span class="p">()</span> <span class="c1"># Group |  (optional)</span>
+<span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;fields_example&#39;</span> <span class="c1"># str |  (optional)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">group_api</span><span class="o">.</span><span class="n">add_group</span><span class="p">(</span><span class="n">body</span><span class="o">=</span><span class="n">body</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="n">fields</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling GroupApi-&gt;add_group: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>body</strong></td>
+<td><a class="reference external" href="../models/Group.html">Group</a></td>
+<td>[optional]</td>
+</tr>
+<tr class="row-odd"><td><strong>fields</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><a class="reference external" href="../models/Group.html">Group</a></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="add-role">
+<span id="id3"></span><h2>add_role<a class="headerlink" href="#add-role" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">group_locator</span> <span class="o">=</span> <span class="s1">&#39;group_locator_example&#39;</span> <span class="c1"># str |</span>
+<span class="n">body</span> <span class="o">=</span> <span class="n">dohq_teamcity</span><span class="o">.</span><span class="n">Role</span><span class="p">()</span> <span class="c1"># Role |  (optional)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">group_api</span><span class="o">.</span><span class="n">add_role</span><span class="p">(</span><span class="n">group_locator</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="n">body</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling GroupApi-&gt;add_role: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>group_locator</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>body</strong></td>
+<td><a class="reference external" href="../models/Role.html">Role</a></td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><a class="reference external" href="../models/Role.html">Role</a></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="add-role-simple">
+<span id="id6"></span><h2>add_role_simple<a class="headerlink" href="#add-role-simple" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">group_locator</span> <span class="o">=</span> <span class="s1">&#39;group_locator_example&#39;</span> <span class="c1"># str |</span>
+<span class="n">role_id</span> <span class="o">=</span> <span class="s1">&#39;role_id_example&#39;</span> <span class="c1"># str |</span>
+<span class="n">scope</span> <span class="o">=</span> <span class="s1">&#39;scope_example&#39;</span> <span class="c1"># str |</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">group_api</span><span class="o">.</span><span class="n">add_role_simple</span><span class="p">(</span><span class="n">group_locator</span><span class="p">,</span> <span class="n">role_id</span><span class="p">,</span> <span class="n">scope</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling GroupApi-&gt;add_role_simple: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>group_locator</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>role_id</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>scope</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><a class="reference external" href="../models/Role.html">Role</a></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="delete-group">
+<span id="id9"></span><h2>delete_group<a class="headerlink" href="#delete-group" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">group_locator</span> <span class="o">=</span> <span class="s1">&#39;group_locator_example&#39;</span> <span class="c1"># str |</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">tc</span><span class="o">.</span><span class="n">group_api</span><span class="o">.</span><span class="n">delete_group</span><span class="p">(</span><span class="n">group_locator</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling GroupApi-&gt;delete_group: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>group_locator</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd>void (empty response body)</dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="delete-role">
+<span id="id11"></span><h2>delete_role<a class="headerlink" href="#delete-role" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">group_locator</span> <span class="o">=</span> <span class="s1">&#39;group_locator_example&#39;</span> <span class="c1"># str |</span>
+<span class="n">role_id</span> <span class="o">=</span> <span class="s1">&#39;role_id_example&#39;</span> <span class="c1"># str |</span>
+<span class="n">scope</span> <span class="o">=</span> <span class="s1">&#39;scope_example&#39;</span> <span class="c1"># str |</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">tc</span><span class="o">.</span><span class="n">group_api</span><span class="o">.</span><span class="n">delete_role</span><span class="p">(</span><span class="n">group_locator</span><span class="p">,</span> <span class="n">role_id</span><span class="p">,</span> <span class="n">scope</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling GroupApi-&gt;delete_role: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>group_locator</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>role_id</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>scope</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd>void (empty response body)</dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="get-parent-groups">
+<span id="id13"></span><h2>get_parent_groups<a class="headerlink" href="#get-parent-groups" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">group_locator</span> <span class="o">=</span> <span class="s1">&#39;group_locator_example&#39;</span> <span class="c1"># str |</span>
+<span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;fields_example&#39;</span> <span class="c1"># str |  (optional)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">group_api</span><span class="o">.</span><span class="n">get_parent_groups</span><span class="p">(</span><span class="n">group_locator</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="n">fields</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling GroupApi-&gt;get_parent_groups: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>group_locator</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>fields</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><a class="reference external" href="../models/Groups.html">Groups</a></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="get-permissions">
+<span id="id15"></span><h2>get_permissions<a class="headerlink" href="#get-permissions" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">group_locator</span> <span class="o">=</span> <span class="s1">&#39;group_locator_example&#39;</span> <span class="c1"># str |</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">group_api</span><span class="o">.</span><span class="n">get_permissions</span><span class="p">(</span><span class="n">group_locator</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling GroupApi-&gt;get_permissions: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>group_locator</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><strong>str</strong></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="get-properties">
+<span id="id17"></span><h2>get_properties<a class="headerlink" href="#get-properties" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">group_locator</span> <span class="o">=</span> <span class="s1">&#39;group_locator_example&#39;</span> <span class="c1"># str |</span>
+<span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;fields_example&#39;</span> <span class="c1"># str |  (optional)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">group_api</span><span class="o">.</span><span class="n">get_properties</span><span class="p">(</span><span class="n">group_locator</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="n">fields</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling GroupApi-&gt;get_properties: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>group_locator</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>fields</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><a class="reference external" href="../models/Properties.html">Properties</a></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="list-role">
+<span id="id19"></span><h2>list_role<a class="headerlink" href="#list-role" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">group_locator</span> <span class="o">=</span> <span class="s1">&#39;group_locator_example&#39;</span> <span class="c1"># str |</span>
+<span class="n">role_id</span> <span class="o">=</span> <span class="s1">&#39;role_id_example&#39;</span> <span class="c1"># str |</span>
+<span class="n">scope</span> <span class="o">=</span> <span class="s1">&#39;scope_example&#39;</span> <span class="c1"># str |</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">group_api</span><span class="o">.</span><span class="n">list_role</span><span class="p">(</span><span class="n">group_locator</span><span class="p">,</span> <span class="n">role_id</span><span class="p">,</span> <span class="n">scope</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling GroupApi-&gt;list_role: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>group_locator</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>role_id</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>scope</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><a class="reference external" href="../models/Role.html">Role</a></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="list-roles">
+<span id="id22"></span><h2>list_roles<a class="headerlink" href="#list-roles" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">group_locator</span> <span class="o">=</span> <span class="s1">&#39;group_locator_example&#39;</span> <span class="c1"># str |</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">group_api</span><span class="o">.</span><span class="n">list_roles</span><span class="p">(</span><span class="n">group_locator</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling GroupApi-&gt;list_roles: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>group_locator</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><a class="reference external" href="../models/Roles.html">Roles</a></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="put-user-property">
+<span id="id24"></span><h2>put_user_property<a class="headerlink" href="#put-user-property" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">group_locator</span> <span class="o">=</span> <span class="s1">&#39;group_locator_example&#39;</span> <span class="c1"># str |</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;name_example&#39;</span> <span class="c1"># str |</span>
+<span class="n">body</span> <span class="o">=</span> <span class="s1">&#39;body_example&#39;</span> <span class="c1"># str |  (optional)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">group_api</span><span class="o">.</span><span class="n">put_user_property</span><span class="p">(</span><span class="n">group_locator</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="n">body</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling GroupApi-&gt;put_user_property: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>group_locator</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>name</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>body</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><strong>str</strong></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="remove-user-property">
+<span id="id26"></span><h2>remove_user_property<a class="headerlink" href="#remove-user-property" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">group_locator</span> <span class="o">=</span> <span class="s1">&#39;group_locator_example&#39;</span> <span class="c1"># str |</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;name_example&#39;</span> <span class="c1"># str |</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">tc</span><span class="o">.</span><span class="n">group_api</span><span class="o">.</span><span class="n">remove_user_property</span><span class="p">(</span><span class="n">group_locator</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling GroupApi-&gt;remove_user_property: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>group_locator</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>name</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd>void (empty response body)</dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="serve-group">
+<span id="id28"></span><h2>serve_group<a class="headerlink" href="#serve-group" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">group_locator</span> <span class="o">=</span> <span class="s1">&#39;group_locator_example&#39;</span> <span class="c1"># str |</span>
+<span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;fields_example&#39;</span> <span class="c1"># str |  (optional)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">group_api</span><span class="o">.</span><span class="n">serve_group</span><span class="p">(</span><span class="n">group_locator</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="n">fields</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling GroupApi-&gt;serve_group: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>group_locator</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>fields</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><a class="reference external" href="../models/Group.html">Group</a></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="serve-groups">
+<span id="id31"></span><h2>serve_groups<a class="headerlink" href="#serve-groups" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;fields_example&#39;</span> <span class="c1"># str |  (optional)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">group_api</span><span class="o">.</span><span class="n">serve_groups</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="n">fields</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling GroupApi-&gt;serve_groups: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>fields</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><a class="reference external" href="../models/Groups.html">Groups</a></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="serve-user-properties">
+<span id="id34"></span><h2>serve_user_properties<a class="headerlink" href="#serve-user-properties" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">group_locator</span> <span class="o">=</span> <span class="s1">&#39;group_locator_example&#39;</span> <span class="c1"># str |</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;name_example&#39;</span> <span class="c1"># str |</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">group_api</span><span class="o">.</span><span class="n">serve_user_properties</span><span class="p">(</span><span class="n">group_locator</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling GroupApi-&gt;serve_user_properties: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>group_locator</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>name</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><strong>str</strong></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="set-parent-groups">
+<span id="id36"></span><h2>set_parent_groups<a class="headerlink" href="#set-parent-groups" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">group_locator</span> <span class="o">=</span> <span class="s1">&#39;group_locator_example&#39;</span> <span class="c1"># str |</span>
+<span class="n">body</span> <span class="o">=</span> <span class="n">dohq_teamcity</span><span class="o">.</span><span class="n">Groups</span><span class="p">()</span> <span class="c1"># Groups |  (optional)</span>
+<span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;fields_example&#39;</span> <span class="c1"># str |  (optional)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">group_api</span><span class="o">.</span><span class="n">set_parent_groups</span><span class="p">(</span><span class="n">group_locator</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="n">body</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="n">fields</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling GroupApi-&gt;set_parent_groups: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>group_locator</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>body</strong></td>
+<td><a class="reference external" href="../models/Groups.html">Groups</a></td>
+<td>[optional]</td>
+</tr>
+<tr class="row-even"><td><strong>fields</strong></td>
+<td><strong>str</strong></td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><a class="reference external" href="../models/Groups.html">Groups</a></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+<div class="section" id="set-roles">
+<span id="id40"></span><h2>set_roles<a class="headerlink" href="#set-roles" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">dohq_teamcity</span> <span class="kn">import</span> <span class="n">TeamCity</span><span class="p">,</span> <span class="n">ApiException</span>
+
+<span class="c1"># username/password authentication</span>
+<span class="n">tc</span> <span class="o">=</span> <span class="n">TeamCity</span><span class="p">(</span><span class="s2">&quot;https://teamcity.example.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
+
+<span class="n">group_locator</span> <span class="o">=</span> <span class="s1">&#39;group_locator_example&#39;</span> <span class="c1"># str |</span>
+<span class="n">body</span> <span class="o">=</span> <span class="n">dohq_teamcity</span><span class="o">.</span><span class="n">Roles</span><span class="p">()</span> <span class="c1"># Roles |  (optional)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">api_response</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">group_api</span><span class="o">.</span><span class="n">set_roles</span><span class="p">(</span><span class="n">group_locator</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="n">body</span><span class="p">)</span>
+   <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling GroupApi-&gt;set_roles: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Types</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>group_locator</strong></td>
+<td><strong>str</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>body</strong></td>
+<td><a class="reference external" href="../models/Roles.html">Roles</a></td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Return type:</dt>
+<dd><a class="reference external" href="../models/Roles.html">Roles</a></dd>
+</dl>
+<p><a class="reference external" href="#">Back to top</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="InvestigationApi.html" class="btn btn-neutral float-right" title="dohq_teamcity.InvestigationApi" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="FederationApi.html" class="btn btn-neutral" title="dohq_teamcity.FederationApi" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, DevOpsHQ
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

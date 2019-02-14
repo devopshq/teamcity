@@ -1,0 +1,1014 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Full API description &mdash; dohq-teamcity 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="dohq_teamcity.AgentApi" href="swagger/api/AgentApi.html" />
+    <link rel="prev" title="FAQ" href="faq.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> dohq-teamcity
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-usage.html">Getting started with the API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">API Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Full API description</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#api">API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="swagger/api/AgentApi.html">dohq_teamcity.AgentApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/api/AgentPoolApi.html">dohq_teamcity.AgentPoolApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/api/BuildApi.html">dohq_teamcity.BuildApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/api/BuildQueueApi.html">dohq_teamcity.BuildQueueApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/api/BuildTypeApi.html">dohq_teamcity.BuildTypeApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/api/ChangeApi.html">dohq_teamcity.ChangeApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/api/DebugApi.html">dohq_teamcity.DebugApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/api/DefaultApi.html">dohq_teamcity.DefaultApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/api/FederationApi.html">dohq_teamcity.FederationApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/api/GroupApi.html">dohq_teamcity.GroupApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/api/InvestigationApi.html">dohq_teamcity.InvestigationApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/api/MuteApi.html">dohq_teamcity.MuteApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/api/ProblemApi.html">dohq_teamcity.ProblemApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/api/ProblemOccurrenceApi.html">dohq_teamcity.ProblemOccurrenceApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/api/ProjectApi.html">dohq_teamcity.ProjectApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/api/ServerApi.html">dohq_teamcity.ServerApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/api/TestApi.html">dohq_teamcity.TestApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/api/TestOccurrenceApi.html">dohq_teamcity.TestOccurrenceApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/api/UserApi.html">dohq_teamcity.UserApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/api/VcsRootApi.html">dohq_teamcity.VcsRootApi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/api/VcsRootInstanceApi.html">dohq_teamcity.VcsRootInstanceApi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#models">Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Agent.html">Agent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/AgentPool.html">AgentPool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/AgentPools.html">AgentPools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/AgentRequirement.html">AgentRequirement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/AgentRequirements.html">AgentRequirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Agents.html">Agents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/ArtifactDependencies.html">ArtifactDependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/ArtifactDependency.html">ArtifactDependency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/AuthorizedInfo.html">AuthorizedInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/BackupProcess.html">BackupProcess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/BackupProcessInfo.html">BackupProcessInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/BackupProcessManager.html">BackupProcessManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Branch.html">Branch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/BranchVersion.html">BranchVersion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Branches.html">Branches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Build.html">Build</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/BuildCancelRequest.html">BuildCancelRequest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/BuildChange.html">BuildChange</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/BuildChanges.html">BuildChanges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/BuildTriggeringOptions.html">BuildTriggeringOptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/BuildType.html">BuildType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/BuildTypes.html">BuildTypes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Builds.html">Builds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Change.html">Change</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Changes.html">Changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Comment.html">Comment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Compatibilities.html">Compatibilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Compatibility.html">Compatibility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Datas.html">Datas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/EnabledInfo.html">EnabledInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Entries.html">Entries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Entry.html">Entry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Environment.html">Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Exception.html">Exception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Feature.html">Feature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Features.html">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/FederationServer.html">FederationServer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/File.html">File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/FileChange.html">FileChange</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/FileChanges.html">FileChanges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Files.html">Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Group.html">Group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Groups.html">Groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Href.html">Href</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Investigation.html">Investigation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Investigations.html">Investigations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Issue.html">Issue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/IssueUsage.html">IssueUsage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Issues.html">Issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/IssuesUsages.html">IssuesUsages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Items.html">Items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/LicenseKey.html">LicenseKey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/LicenseKeys.html">LicenseKeys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/LicensingData.html">LicensingData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Link.html">Link</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Links.html">Links</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/MetaData.html">MetaData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/ModelProperty.html">ModelProperty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Mute.html">Mute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Mutes.html">Mutes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/NewBuildTypeDescription.html">NewBuildTypeDescription</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/NewProjectDescription.html">NewProjectDescription</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Permission.html">Permission</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/PermissionAssignment.html">PermissionAssignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/PermissionAssignments.html">PermissionAssignments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Plugin.html">Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Plugins.html">Plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Problem.html">Problem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/ProblemOccurrence.html">ProblemOccurrence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/ProblemOccurrences.html">ProblemOccurrences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/ProblemScope.html">ProblemScope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/ProblemTarget.html">ProblemTarget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Problems.html">Problems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/ProgressInfo.html">ProgressInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Project.html">Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/ProjectFeature.html">ProjectFeature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/ProjectFeatures.html">ProjectFeatures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Projects.html">Projects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Properties.html">Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Related.html">Related</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/RepositoryState.html">RepositoryState</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Requirements.html">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Resolution.html">Resolution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Revision.html">Revision</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Revisions.html">Revisions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Role.html">Role</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Roles.html">Roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Server.html">Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Servers.html">Servers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Session.html">Session</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Sessions.html">Sessions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/SnapshotDependencies.html">SnapshotDependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/SnapshotDependency.html">SnapshotDependency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/StackTraceElement.html">StackTraceElement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/StateField.html">StateField</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Step.html">Step</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Steps.html">Steps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Tag.html">Tag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Tags.html">Tags</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Test.html">Test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/TestOccurrence.html">TestOccurrence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/TestOccurrences.html">TestOccurrences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Tests.html">Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Throwable.html">Throwable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Trigger.html">Trigger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/TriggeredBy.html">TriggeredBy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Triggers.html">Triggers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Type.html">Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/User.html">User</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/Users.html">Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/VcsCheckStatus.html">VcsCheckStatus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/VcsLabeling.html">VcsLabeling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/VcsRoot.html">VcsRoot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/VcsRootEntries.html">VcsRootEntries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/VcsRootEntry.html">VcsRootEntry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/VcsRootInstance.html">VcsRootInstance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/VcsRootInstances.html">VcsRootInstances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/VcsRoots.html">VcsRoots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swagger/models/VcsStatus.html">VcsStatus</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/dohq_teamcity.html">dohq_teamcity package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">dohq-teamcity</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Full API description</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/swagger.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="full-api-description">
+<h1><a class="toc-backref" href="#id1">Full API description</a><a class="headerlink" href="#full-api-description" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#full-api-description" id="id1">Full API description</a><ul>
+<li><a class="reference internal" href="#api" id="id2">API</a></li>
+<li><a class="reference internal" href="#models" id="id3">Models</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="api">
+<h2><a class="toc-backref" href="#id2">API</a><a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="swagger/api/AgentApi.html">dohq_teamcity.AgentApi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/AgentApi.html#delete-agent">delete_agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/AgentApi.html#ge-incompatible-build-types">ge_incompatible_build_types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/AgentApi.html#get-agent-pool">get_agent_pool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/AgentApi.html#get-authorized-info">get_authorized_info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/AgentApi.html#get-compatible-build-types">get_compatible_build_types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/AgentApi.html#get-enabled-info">get_enabled_info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/AgentApi.html#serve-agent">serve_agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/AgentApi.html#serve-agent-field">serve_agent_field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/AgentApi.html#serve-agents">serve_agents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/AgentApi.html#set-agent-field">set_agent_field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/AgentApi.html#set-agent-pool">set_agent_pool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/AgentApi.html#set-authorized-info">set_authorized_info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/AgentApi.html#set-enabled-info">set_enabled_info</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/api/AgentPoolApi.html">dohq_teamcity.AgentPoolApi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/AgentPoolApi.html#add-agent">add_agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/AgentPoolApi.html#add-project">add_project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/AgentPoolApi.html#create-pool">create_pool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/AgentPoolApi.html#delete-pool">delete_pool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/AgentPoolApi.html#delete-pool-project">delete_pool_project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/AgentPoolApi.html#delete-projects">delete_projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/AgentPoolApi.html#get-field">get_field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/AgentPoolApi.html#get-pool">get_pool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/AgentPoolApi.html#get-pool-agents">get_pool_agents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/AgentPoolApi.html#get-pool-project">get_pool_project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/AgentPoolApi.html#get-pool-projects">get_pool_projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/AgentPoolApi.html#get-pools">get_pools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/AgentPoolApi.html#replace-projects">replace_projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/AgentPoolApi.html#set-field">set_field</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/api/BuildApi.html">dohq_teamcity.BuildApi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#add-tags">add_tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#cancel-build">cancel_build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#cancel-build-0">cancel_build_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#delete-all-parameters">delete_all_parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#delete-build">delete_build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#delete-builds">delete_builds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#delete-comment">delete_comment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#delete-parameter">delete_parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#get-artifact-dependency-changes">get_artifact_dependency_changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#get-artifacts-directory">get_artifacts_directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#get-build-number">get_build_number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#get-build-status-text">get_build_status_text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#get-canceled-info">get_canceled_info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#get-children">get_children</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#get-children-alias">get_children_alias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#get-content">get_content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#get-content-alias">get_content_alias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#get-metadata">get_metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#get-parameter">get_parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#get-parameter-0">get_parameter_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#get-parameter-value-long">get_parameter_value_long</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#get-parameters">get_parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#get-pinned">get_pinned</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#get-problems">get_problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#get-resolved-parameter">get_resolved_parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#get-root">get_root</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#get-tests">get_tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#get-zipped">get_zipped</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#pin-build">pin_build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#replace-comment">replace_comment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#replace-tags">replace_tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#reset-build-finish-parameters">reset_build_finish_parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#serve-aggregated-build-status">serve_aggregated_build_status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#serve-aggregated-build-status-icon">serve_aggregated_build_status_icon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#serve-all-builds">serve_all_builds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#serve-build">serve_build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#serve-build-actual-parameters">serve_build_actual_parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#serve-build-field-by-build-only">serve_build_field_by_build_only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#serve-build-related-issues">serve_build_related_issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#serve-build-related-issues-old">serve_build_related_issues_old</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#serve-build-statistic-value">serve_build_statistic_value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#serve-build-statistic-values">serve_build_statistic_values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#serve-build-status-icon">serve_build_status_icon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#serve-source-file">serve_source_file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#serve-tags">serve_tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#set-build-number">set_build_number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#set-build-status-text">set_build_status_text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#set-parameter">set_parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#set-parameter-0">set_parameter_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#set-parameter-value-long">set_parameter_value_long</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#set-parameters">set_parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildApi.html#unpin-build">unpin_build</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/api/BuildQueueApi.html">dohq_teamcity.BuildQueueApi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildQueueApi.html#add-tags">add_tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildQueueApi.html#cancel-build">cancel_build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildQueueApi.html#cancel-build-0">cancel_build_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildQueueApi.html#delete-build">delete_build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildQueueApi.html#delete-builds-experimental">delete_builds_experimental</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildQueueApi.html#get-build">get_build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildQueueApi.html#get-builds">get_builds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildQueueApi.html#queue-new-build">queue_new_build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildQueueApi.html#replace-builds">replace_builds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildQueueApi.html#replace-tags">replace_tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildQueueApi.html#serve-build-field-by-build-only">serve_build_field_by_build_only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildQueueApi.html#serve-compatible-agents">serve_compatible_agents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildQueueApi.html#serve-tags">serve_tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildQueueApi.html#set-build-queue-order">set_build_queue_order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildQueueApi.html#set-build-queue-position">set_build_queue_position</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildQueueApi.html#set-build-queue-position-0">set_build_queue_position_0</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/api/BuildTypeApi.html">dohq_teamcity.BuildTypeApi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#add-agent-requirement">add_agent_requirement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#add-artifact-dep">add_artifact_dep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#add-build-type">add_build_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#add-feature">add_feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#add-feature-parameter">add_feature_parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#add-snapshot-dep">add_snapshot_dep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#add-step">add_step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#add-step-parameter">add_step_parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#add-template">add_template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#add-trigger">add_trigger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#add-vcs-root-entry">add_vcs_root_entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#change-artifact-dep-setting">change_artifact_dep_setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#change-feature-setting">change_feature_setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#change-requirement-setting">change_requirement_setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#change-step-setting">change_step_setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#change-trigger-setting">change_trigger_setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#delete-agent-requirement">delete_agent_requirement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#delete-all-parameters">delete_all_parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#delete-all-parameters-0">delete_all_parameters_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#delete-artifact-dep">delete_artifact_dep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#delete-build-type">delete_build_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#delete-feature">delete_feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#delete-parameter">delete_parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#delete-parameter-0">delete_parameter_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#delete-snapshot-dep">delete_snapshot_dep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#delete-step">delete_step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#delete-trigger">delete_trigger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#delete-vcs-root-entry">delete_vcs_root_entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-agent-requirement">get_agent_requirement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-agent-requirements">get_agent_requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-aliases">get_aliases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-artifact-dep">get_artifact_dep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-artifact-dep-setting">get_artifact_dep_setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-artifact-deps">get_artifact_deps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-build-types">get_build_types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-children">get_children</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-children-alias">get_children_alias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-content">get_content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-content-alias">get_content_alias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-current-vcs-instances">get_current_vcs_instances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-current-vcs-instances-obsolete">get_current_vcs_instances_obsolete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-example-new-project-description">get_example_new_project_description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-example-new-project-description-compatibility-version1">get_example_new_project_description_compatibility_version1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-feature">get_feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-feature-parameter">get_feature_parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-feature-parameters">get_feature_parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-feature-setting">get_feature_setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-features">get_features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-investigations">get_investigations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-metadata">get_metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-parameter">get_parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-parameter-0">get_parameter_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-parameter-type">get_parameter_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-parameter-type-raw-value">get_parameter_type_raw_value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-parameter-value-long">get_parameter_value_long</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-parameter-value-long-0">get_parameter_value_long_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-parameters">get_parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-parameters-0">get_parameters_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-requirement-setting">get_requirement_setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-root">get_root</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-settings-file">get_settings_file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-snapshot-dep">get_snapshot_dep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-snapshot-deps">get_snapshot_deps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-step">get_step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-step-parameter">get_step_parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-step-parameters">get_step_parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-step-setting">get_step_setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-steps">get_steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-template">get_template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-templates">get_templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-trigger">get_trigger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-trigger-setting">get_trigger_setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-triggers">get_triggers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-vcs-labeling-options">get_vcs_labeling_options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-vcs-root-entries">get_vcs_root_entries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-vcs-root-entry">get_vcs_root_entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-vcs-root-entry-checkout-rules">get_vcs_root_entry_checkout_rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#get-zipped">get_zipped</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#remove-all-templates">remove_all_templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#remove-template">remove_template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#replace-agent-requirement">replace_agent_requirement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#replace-agent-requirements">replace_agent_requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#replace-artifact-dep">replace_artifact_dep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#replace-artifact-deps">replace_artifact_deps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#replace-feature">replace_feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#replace-feature-parameters">replace_feature_parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#replace-features">replace_features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#replace-snapshot-dep">replace_snapshot_dep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#replace-snapshot-deps">replace_snapshot_deps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#replace-step">replace_step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#replace-step-parameters">replace_step_parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#replace-steps">replace_steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#replace-trigger">replace_trigger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#replace-triggers">replace_triggers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#replace-vcs-root-entries">replace_vcs_root_entries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#serve-branches">serve_branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#serve-build-field">serve_build_field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#serve-build-type-builds-tags">serve_build_type_builds_tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#serve-build-type-field">serve_build_type_field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#serve-build-type-xml">serve_build_type_xml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#serve-build-with-project">serve_build_with_project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#serve-builds">serve_builds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#set-build-type-field">set_build_type_field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#set-parameter">set_parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#set-parameter-0">set_parameter_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#set-parameter-1">set_parameter_1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#set-parameter-2">set_parameter_2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#set-parameter-type">set_parameter_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#set-parameter-type-raw-value">set_parameter_type_raw_value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#set-parameter-value-long">set_parameter_value_long</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#set-parameter-value-long-0">set_parameter_value_long_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#set-parameters">set_parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#set-parameters-0">set_parameters_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#set-templates">set_templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#set-vcs-labeling-options">set_vcs_labeling_options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#update-vcs-root-entry">update_vcs_root_entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/BuildTypeApi.html#update-vcs-root-entry-checkout-rules">update_vcs_root_entry_checkout_rules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/api/ChangeApi.html">dohq_teamcity.ChangeApi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ChangeApi.html#get-change-attributes">get_change_attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ChangeApi.html#get-change-duplicates">get_change_duplicates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ChangeApi.html#get-change-field">get_change_field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ChangeApi.html#get-change-first-builds">get_change_first_builds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ChangeApi.html#get-change-issue">get_change_issue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ChangeApi.html#get-change-parent-revisions">get_change_parent_revisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ChangeApi.html#get-change-vcs-root">get_change_vcs_root</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ChangeApi.html#get-change-vcs-root-instance">get_change_vcs_root_instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ChangeApi.html#get-parent-changes">get_parent_changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ChangeApi.html#get-related-build-types">get_related_build_types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ChangeApi.html#serve-change">serve_change</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ChangeApi.html#serve-changes">serve_changes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/api/DebugApi.html">dohq_teamcity.DebugApi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#delete-current-remember-me">delete_current_remember_me</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#empty-task">empty_task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#execute-db-query">execute_db_query</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#get-build-chain-optimization-log">get_build_chain_optimization_log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#get-cached-build-promotions">get_cached_build_promotions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#get-cached-build-promotions-stats">get_cached_build_promotions_stats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#get-cached-builds-stat">get_cached_builds_stat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#get-current-session">get_current_session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#get-current-session-max-inactive-interval">get_current_session_max_inactive_interval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#get-current-user-permissions">get_current_user_permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#get-date">get_date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#get-diagnostics-perf-stats">get_diagnostics_perf_stats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#get-environment-variables">get_environment_variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#get-hashed">get_hashed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#get-ip-address">get_ip_address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#get-raw-investigations">get_raw_investigations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#get-request-details">get_request_details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#get-scrambled">get_scrambled</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#get-sessions">get_sessions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#get-system-properties">get_system_properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#get-thread-dump">get_thread_dump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#get-thread-interrupted">get_thread_interrupted</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#get-unscrambled">get_unscrambled</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#interrupt-thread">interrupt_thread</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#invalidate-current-session">invalidate_current_session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#list-db-tables">list_db_tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#new-remember-me">new_remember_me</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#post-request-details">post_request_details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#put-request-details">put_request_details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#save-memory-dump">save_memory_dump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#schedule-checking-for-changes">schedule_checking_for_changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DebugApi.html#set-current-session-max-inactive-interval">set_current_session_max_inactive_interval</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/api/DefaultApi.html">dohq_teamcity.DefaultApi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DefaultApi.html#serve-api-version">serve_api_version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DefaultApi.html#serve-build-field-short">serve_build_field_short</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DefaultApi.html#serve-plugin-info">serve_plugin_info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DefaultApi.html#serve-root">serve_root</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/DefaultApi.html#serve-version">serve_version</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/api/FederationApi.html">dohq_teamcity.FederationApi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/FederationApi.html#add-server">add_server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/FederationApi.html#id3">servers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/api/GroupApi.html">dohq_teamcity.GroupApi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/GroupApi.html#add-group">add_group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/GroupApi.html#add-role">add_role</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/GroupApi.html#add-role-simple">add_role_simple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/GroupApi.html#delete-group">delete_group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/GroupApi.html#delete-role">delete_role</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/GroupApi.html#get-parent-groups">get_parent_groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/GroupApi.html#get-permissions">get_permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/GroupApi.html#get-properties">get_properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/GroupApi.html#list-role">list_role</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/GroupApi.html#list-roles">list_roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/GroupApi.html#put-user-property">put_user_property</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/GroupApi.html#remove-user-property">remove_user_property</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/GroupApi.html#serve-group">serve_group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/GroupApi.html#serve-groups">serve_groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/GroupApi.html#serve-user-properties">serve_user_properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/GroupApi.html#set-parent-groups">set_parent_groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/GroupApi.html#set-roles">set_roles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/api/InvestigationApi.html">dohq_teamcity.InvestigationApi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/InvestigationApi.html#create-instance">create_instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/InvestigationApi.html#create-instances">create_instances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/InvestigationApi.html#delete-instance">delete_instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/InvestigationApi.html#get-investigations">get_investigations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/InvestigationApi.html#replace-instance">replace_instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/InvestigationApi.html#serve-instance">serve_instance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/api/MuteApi.html">dohq_teamcity.MuteApi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/MuteApi.html#create-instance">create_instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/MuteApi.html#create-instances">create_instances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/MuteApi.html#delete-instance">delete_instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/MuteApi.html#get-mutes">get_mutes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/MuteApi.html#serve-instance">serve_instance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/api/ProblemApi.html">dohq_teamcity.ProblemApi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProblemApi.html#get-problems">get_problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProblemApi.html#serve-instance">serve_instance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/api/ProblemOccurrenceApi.html">dohq_teamcity.ProblemOccurrenceApi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProblemOccurrenceApi.html#get-problems">get_problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProblemOccurrenceApi.html#serve-instance">serve_instance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/api/ProjectApi.html">dohq_teamcity.ProjectApi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#add">add</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#create-build-type">create_build_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#create-build-type-template">create_build_type_template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#create-project">create_project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#create-secure-token">create_secure_token</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#delete">delete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#delete-all-parameters">delete_all_parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#delete-all-parameters-0">delete_all_parameters_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#delete-parameter">delete_parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#delete-parameter-0">delete_parameter_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#delete-project">delete_project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#delete-project-agent-pools">delete_project_agent_pools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#get">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#get-branches">get_branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#get-build-types-order">get_build_types_order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#get-default-template">get_default_template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#get-example-new-project-description">get_example_new_project_description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#get-example-new-project-description-compatibility-version1">get_example_new_project_description_compatibility_version1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#get-parameter">get_parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#get-parameter-0">get_parameter_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#get-parameter-type">get_parameter_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#get-parameter-type-raw-value">get_parameter_type_raw_value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#get-parameter-value-long">get_parameter_value_long</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#get-parameter-value-long-0">get_parameter_value_long_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#get-parameters">get_parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#get-parameters-0">get_parameters_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#get-parent-project">get_parent_project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#get-project-agent-pools">get_project_agent_pools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#get-projects-order">get_projects_order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#get-secure-value">get_secure_value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#get-settings-file">get_settings_file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#get-single">get_single</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#reload-settings-file">reload_settings_file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#remove-default-template">remove_default_template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#replace">replace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#replace-all">replace_all</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#serve-build-field-with-project">serve_build_field_with_project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#serve-build-type">serve_build_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#serve-build-type-field-with-project">serve_build_type_field_with_project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#serve-build-type-templates">serve_build_type_templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#serve-build-types-in-project">serve_build_types_in_project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#serve-build-with-project">serve_build_with_project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#serve-builds">serve_builds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#serve-project">serve_project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#serve-project-field">serve_project_field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#serve-projects">serve_projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#serve-templates-in-project">serve_templates_in_project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#set-build-types-order">set_build_types_order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#set-default-template">set_default_template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#set-parameter">set_parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#set-parameter-0">set_parameter_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#set-parameter-1">set_parameter_1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#set-parameter-2">set_parameter_2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#set-parameter-type">set_parameter_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#set-parameter-type-raw-value">set_parameter_type_raw_value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#set-parameter-value-long">set_parameter_value_long</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#set-parameter-value-long-0">set_parameter_value_long_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#set-parameters">set_parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#set-parameters-0">set_parameters_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#set-parent-project">set_parent_project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#set-project-agent-pools">set_project_agent_pools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#set-project-agent-pools-0">set_project_agent_pools_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#set-project-field">set_project_field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ProjectApi.html#set-projects-order">set_projects_order</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/api/ServerApi.html">dohq_teamcity.ServerApi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ServerApi.html#add-license-keys">add_license_keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ServerApi.html#delete-license-key">delete_license_key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ServerApi.html#get-backup-status">get_backup_status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ServerApi.html#get-children">get_children</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ServerApi.html#get-children-alias">get_children_alias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ServerApi.html#get-content">get_content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ServerApi.html#get-content-alias">get_content_alias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ServerApi.html#get-license-key">get_license_key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ServerApi.html#get-license-keys">get_license_keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ServerApi.html#get-licensing-data">get_licensing_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ServerApi.html#get-metadata">get_metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ServerApi.html#get-root">get_root</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ServerApi.html#get-zipped">get_zipped</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ServerApi.html#serve-plugins">serve_plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ServerApi.html#serve-server-info">serve_server_info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ServerApi.html#serve-server-version">serve_server_version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/ServerApi.html#start-backup">start_backup</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/api/TestApi.html">dohq_teamcity.TestApi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/TestApi.html#get-tests">get_tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/TestApi.html#serve-instance">serve_instance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/api/TestOccurrenceApi.html">dohq_teamcity.TestOccurrenceApi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/TestOccurrenceApi.html#get-test-occurrences">get_test_occurrences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/TestOccurrenceApi.html#serve-instance">serve_instance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/api/UserApi.html">dohq_teamcity.UserApi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/UserApi.html#add-group">add_group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/UserApi.html#add-role">add_role</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/UserApi.html#add-role-simple">add_role_simple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/UserApi.html#add-role-simple-post">add_role_simple_post</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/UserApi.html#create-user">create_user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/UserApi.html#delete-remember-me">delete_remember_me</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/UserApi.html#delete-role">delete_role</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/UserApi.html#delete-user">delete_user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/UserApi.html#delete-user-field">delete_user_field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/UserApi.html#get-group">get_group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/UserApi.html#get-groups">get_groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/UserApi.html#get-permissions">get_permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/UserApi.html#get-permissions-0">get_permissions_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/UserApi.html#list-role">list_role</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/UserApi.html#list-roles">list_roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/UserApi.html#put-user-property">put_user_property</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/UserApi.html#remove-group">remove_group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/UserApi.html#remove-user-property">remove_user_property</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/UserApi.html#replace-groups">replace_groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/UserApi.html#replace-roles">replace_roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/UserApi.html#serve-user">serve_user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/UserApi.html#serve-user-field">serve_user_field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/UserApi.html#serve-user-properties">serve_user_properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/UserApi.html#serve-user-property">serve_user_property</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/UserApi.html#serve-users">serve_users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/UserApi.html#set-user-field">set_user_field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/UserApi.html#update-user">update_user</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/api/VcsRootApi.html">dohq_teamcity.VcsRootApi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootApi.html#add-root">add_root</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootApi.html#change-properties">change_properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootApi.html#delete-all-properties">delete_all_properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootApi.html#delete-parameter">delete_parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootApi.html#delete-root">delete_root</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootApi.html#get-settings-file">get_settings_file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootApi.html#put-parameter">put_parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootApi.html#serve-field">serve_field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootApi.html#serve-instance-field">serve_instance_field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootApi.html#serve-properties">serve_properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootApi.html#serve-property">serve_property</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootApi.html#serve-root">serve_root</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootApi.html#serve-root-instance">serve_root_instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootApi.html#serve-root-instance-properties">serve_root_instance_properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootApi.html#serve-root-instances">serve_root_instances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootApi.html#serve-roots">serve_roots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootApi.html#set-field">set_field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootApi.html#set-instance-field">set_instance_field</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/api/VcsRootInstanceApi.html">dohq_teamcity.VcsRootInstanceApi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootInstanceApi.html#delete-instance-field">delete_instance_field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootInstanceApi.html#delete-repository-state">delete_repository_state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootInstanceApi.html#get-children">get_children</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootInstanceApi.html#get-children-alias">get_children_alias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootInstanceApi.html#get-content">get_content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootInstanceApi.html#get-content-alias">get_content_alias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootInstanceApi.html#get-metadata">get_metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootInstanceApi.html#get-repository-state">get_repository_state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootInstanceApi.html#get-repository-state-creation-date">get_repository_state_creation_date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootInstanceApi.html#get-root">get_root</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootInstanceApi.html#get-zipped">get_zipped</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootInstanceApi.html#schedule-checking-for-changes">schedule_checking_for_changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootInstanceApi.html#schedule-checking-for-changes-0">schedule_checking_for_changes_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootInstanceApi.html#serve-instance">serve_instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootInstanceApi.html#serve-instance-field">serve_instance_field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootInstanceApi.html#serve-instances">serve_instances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootInstanceApi.html#serve-root-instance-properties">serve_root_instance_properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootInstanceApi.html#set-instance-field">set_instance_field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swagger/api/VcsRootInstanceApi.html#set-repository-state">set_repository_state</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="models">
+<h2><a class="toc-backref" href="#id3">Models</a><a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Agent.html">Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/AgentPool.html">AgentPool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/AgentPools.html">AgentPools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/AgentRequirement.html">AgentRequirement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/AgentRequirements.html">AgentRequirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Agents.html">Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/ArtifactDependencies.html">ArtifactDependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/ArtifactDependency.html">ArtifactDependency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/AuthorizedInfo.html">AuthorizedInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/BackupProcess.html">BackupProcess</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/BackupProcessInfo.html">BackupProcessInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/BackupProcessManager.html">BackupProcessManager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Branch.html">Branch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/BranchVersion.html">BranchVersion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Branches.html">Branches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Build.html">Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/BuildCancelRequest.html">BuildCancelRequest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/BuildChange.html">BuildChange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/BuildChanges.html">BuildChanges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/BuildTriggeringOptions.html">BuildTriggeringOptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/BuildType.html">BuildType</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/BuildTypes.html">BuildTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Builds.html">Builds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Change.html">Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Changes.html">Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Comment.html">Comment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Compatibilities.html">Compatibilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Compatibility.html">Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Datas.html">Datas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/EnabledInfo.html">EnabledInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Entries.html">Entries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Entry.html">Entry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Exception.html">Exception</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Feature.html">Feature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/FederationServer.html">FederationServer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/File.html">File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/FileChange.html">FileChange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/FileChanges.html">FileChanges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Files.html">Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Group.html">Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Groups.html">Groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Href.html">Href</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Investigation.html">Investigation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Investigations.html">Investigations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Issue.html">Issue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/IssueUsage.html">IssueUsage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Issues.html">Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/IssuesUsages.html">IssuesUsages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Items.html">Items</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/LicenseKey.html">LicenseKey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/LicenseKeys.html">LicenseKeys</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/LicensingData.html">LicensingData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Link.html">Link</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Links.html">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/MetaData.html">MetaData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/ModelProperty.html">ModelProperty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Mute.html">Mute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Mutes.html">Mutes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/NewBuildTypeDescription.html">NewBuildTypeDescription</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/NewProjectDescription.html">NewProjectDescription</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Permission.html">Permission</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/PermissionAssignment.html">PermissionAssignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/PermissionAssignments.html">PermissionAssignments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Plugin.html">Plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Plugins.html">Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Problem.html">Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/ProblemOccurrence.html">ProblemOccurrence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/ProblemOccurrences.html">ProblemOccurrences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/ProblemScope.html">ProblemScope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/ProblemTarget.html">ProblemTarget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Problems.html">Problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/ProgressInfo.html">ProgressInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Project.html">Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/ProjectFeature.html">ProjectFeature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/ProjectFeatures.html">ProjectFeatures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Projects.html">Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Properties.html">Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Related.html">Related</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/RepositoryState.html">RepositoryState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Requirements.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Resolution.html">Resolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Revision.html">Revision</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Revisions.html">Revisions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Role.html">Role</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Roles.html">Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Server.html">Server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Servers.html">Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Session.html">Session</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Sessions.html">Sessions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/SnapshotDependencies.html">SnapshotDependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/SnapshotDependency.html">SnapshotDependency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/StackTraceElement.html">StackTraceElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/StateField.html">StateField</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Step.html">Step</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Steps.html">Steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Tag.html">Tag</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Tags.html">Tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Test.html">Test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/TestOccurrence.html">TestOccurrence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/TestOccurrences.html">TestOccurrences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Tests.html">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Throwable.html">Throwable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Trigger.html">Trigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/TriggeredBy.html">TriggeredBy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Triggers.html">Triggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Type.html">Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/User.html">User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/Users.html">Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/VcsCheckStatus.html">VcsCheckStatus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/VcsLabeling.html">VcsLabeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/VcsRoot.html">VcsRoot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/VcsRootEntries.html">VcsRootEntries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/VcsRootEntry.html">VcsRootEntry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/VcsRootInstance.html">VcsRootInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/VcsRootInstances.html">VcsRootInstances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/VcsRoots.html">VcsRoots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger/models/VcsStatus.html">VcsStatus</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="swagger/api/AgentApi.html" class="btn btn-neutral float-right" title="dohq_teamcity.AgentApi" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="faq.html" class="btn btn-neutral" title="FAQ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, DevOpsHQ
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
