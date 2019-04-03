@@ -189,6 +189,15 @@ For example, when searching, we get a list, we can see how its attributes, and m
 
 
 
+Save as dict
+------------
+Objects can dump as python-dict and save as JSON::
+
+    data = obj.to_dict()
+
+    # convert to JSON if needed
+    json.dumps(data)
+
 Base types
 ==========
 

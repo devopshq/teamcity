@@ -7,5 +7,4 @@ from __future__ import absolute_import
 from dohq_teamcity.custom.client import TeamCity
 from dohq_teamcity.custom.models import *  # noqa
 from dohq_teamcity.rest import ApiException
-
-__version__ = "1.0.1"
+from dohq_teamcity.version import __version__

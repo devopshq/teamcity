@@ -4,8 +4,8 @@ from dohq_teamcity.custom.api import *
 
 
 class TeamCity(ApiClient):
-    def __init__(self, url, auth, proxy=None):
-        configuration = Configuration()
+    def __init__(self, url, auth, proxy=None, configuration=None):
+        configuration = configuration or Configuration()
         configuration.host = url
         if isinstance(auth, tuple):
             configuration.username, configuration.password = auth
