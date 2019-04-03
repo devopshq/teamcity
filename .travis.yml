@@ -21,4 +21,4 @@ deploy:
   skip_cleanup: false
   on:
     branch: master
-    python: '3.4'
+    python: '3.6'
