@@ -3506,6 +3506,16 @@ class Properties(Properties, ContainerMixin):
     def _container_mixin_data(self):
         return self._property
 
+    def get(self, name, value=None):
+        """
+        Get Property by name or value
+        :param name:
+        :return:
+        """
+        return next((x for x in self.data if x.name == name), None)
+
+
+
 
 class VcsRootEntries(VcsRootEntries, ContainerMixin):
     @property
