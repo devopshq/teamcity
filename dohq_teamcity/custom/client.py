@@ -12,7 +12,7 @@ class TeamCity(ApiClient):
         if proxy is not None:
             configuration.proxy = proxy
         super(TeamCity, self).__init__(configuration=configuration)
-        self.default_headers.update({'Content-type': 'application/json',
+        self.default_headers.update({'Content-Type': 'application/json',
                                      'Accept': 'application/json',
                                      'Content-Encoding': 'utf-8'})
 
