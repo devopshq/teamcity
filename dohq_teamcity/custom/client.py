@@ -4,11 +4,12 @@ from dohq_teamcity.custom.api import *
 
 
 class TeamCity(ApiClient):
-    def __init__(self, url, auth, proxy=None, configuration=None):
+    def __init__(self, url, auth=["Basic"], proxy=None, configuration=None):
         configuration = configuration or Configuration()
         configuration.host = url
         if isinstance(auth, tuple):
             configuration.username, configuration.password = auth
+        self.auth_settings = auth
         if proxy is not None:
             configuration.proxy = proxy
         super(TeamCity, self).__init__(configuration=configuration)
@@ -65,7 +66,7 @@ class TeamCity(ApiClient):
         """
         Quick hack for add Basic auth to swagger-codegen python
         """
-        kwargs['auth_settings'] = ['Basic']
+        kwargs['auth_settings'] = self.auth_settings
         return super(TeamCity, self).call_api(*args, **kwargs)
 
     def to_str(self):
