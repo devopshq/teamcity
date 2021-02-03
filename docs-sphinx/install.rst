@@ -2,7 +2,7 @@
 Installation
 ############
 
-``dohq-teamcity`` is compatible with Python 2.7 and 3.4+ (``dohq`` means `DevOpsHQ <https://devopshq.github.io>`_).
+``dohq-teamcity`` is compatible with 3.4+ (``dohq`` means `DevOpsHQ <https://devopshq.github.io>`_).
 
 Use :command:`pip` to install the latest stable version of ``dohq-teamcity``:
 
