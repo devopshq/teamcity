@@ -4,12 +4,12 @@ from dohq_teamcity.custom.api import *
 
 
 class TeamCity(ApiClient):
-    def __init__(self, url, auth=["Basic"], proxy=None, configuration=None):
+    def __init__(self, url, auth=None, auth_settings=["Basic"], proxy=None, configuration=None):
         configuration = configuration or Configuration()
         configuration.host = url
         if isinstance(auth, tuple):
             configuration.username, configuration.password = auth
-        self.auth_settings = auth
+        self.auth_settings = auth_settings
         if proxy is not None:
             configuration.proxy = proxy
         super(TeamCity, self).__init__(configuration=configuration)
