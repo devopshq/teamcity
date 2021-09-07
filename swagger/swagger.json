@@ -5236,7 +5236,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/files"
+              "$ref": "#/definitions/Files"
             },
             "headers": {}
           }
@@ -5344,7 +5344,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/files"
+              "$ref": "#/definitions/Files"
             },
             "headers": {}
           }
@@ -5462,7 +5462,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/file"
+              "$ref": "#/definitions/File"
             },
             "headers": {}
           }
@@ -5518,7 +5518,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/files"
+              "$ref": "#/definitions/Files"
             },
             "headers": {}
           }
@@ -6027,7 +6027,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/files"
+              "$ref": "#/definitions/Files"
             },
             "headers": {}
           }
@@ -6147,7 +6147,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/files"
+              "$ref": "#/definitions/Files"
             },
             "headers": {}
           }
@@ -6283,7 +6283,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/file"
+              "$ref": "#/definitions/File"
             },
             "headers": {}
           }
@@ -6345,7 +6345,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/files"
+              "$ref": "#/definitions/Files"
             },
             "headers": {}
           }
@@ -11813,7 +11813,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/files"
+              "$ref": "#/definitions/Files"
             },
             "headers": {}
           }
@@ -11909,7 +11909,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/files"
+              "$ref": "#/definitions/Files"
             },
             "headers": {}
           }
@@ -12009,7 +12009,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/file"
+              "$ref": "#/definitions/File"
             },
             "headers": {}
           }
@@ -12059,7 +12059,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/files"
+              "$ref": "#/definitions/Files"
             },
             "headers": {}
           }
@@ -13890,7 +13890,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/files"
+              "$ref": "#/definitions/Files"
             },
             "headers": {}
           }
@@ -13986,7 +13986,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/files"
+              "$ref": "#/definitions/Files"
             },
             "headers": {}
           }
@@ -14086,7 +14086,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/file"
+              "$ref": "#/definitions/File"
             },
             "headers": {}
           }
@@ -14136,7 +14136,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/files"
+              "$ref": "#/definitions/Files"
             },
             "headers": {}
           }
@@ -16261,7 +16261,7 @@
           "$ref": "#/definitions/problemOccurrences"
         },
         "artifacts": {
-          "$ref": "#/definitions/files"
+          "$ref": "#/definitions/Files"
         },
         "relatedIssues": {
           "$ref": "#/definitions/issuesUsages"
@@ -17053,7 +17053,7 @@
         "name": "federationServer"
       }
     },
-    "file": {
+    "File": {
       "type": "object",
       "properties": {
         "name": {
@@ -17088,20 +17088,20 @@
           }
         },
         "parent": {
-          "$ref": "#/definitions/file"
+          "$ref": "#/definitions/File"
         },
         "content": {
           "$ref": "#/definitions/href"
         },
         "children": {
-          "$ref": "#/definitions/files"
+          "$ref": "#/definitions/Files"
         }
       },
       "xml": {
         "name": "file"
       }
     },
-    "files": {
+    "Files": {
       "type": "object",
       "properties": {
         "count": {
@@ -17120,7 +17120,7 @@
         "file": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/file"
+            "$ref": "#/definitions/File"
           }
         }
       },

@@ -20,13 +20,13 @@ import re  # noqa: F401
 import six
 
 from dohq_teamcity.models.backup_process_manager import BackupProcessManager  # noqa: F401,E501
+from dohq_teamcity.models.file import File  # noqa: F401,E501
 from dohq_teamcity.models.files import Files  # noqa: F401,E501
 from dohq_teamcity.models.license_key import LicenseKey  # noqa: F401,E501
 from dohq_teamcity.models.license_keys import LicenseKeys  # noqa: F401,E501
 from dohq_teamcity.models.licensing_data import LicensingData  # noqa: F401,E501
 from dohq_teamcity.models.plugins import Plugins  # noqa: F401,E501
 from dohq_teamcity.models.server import Server  # noqa: F401,E501
-from dohq_teamcity.models.file import file  # noqa: F401,E501
 
 
 class ServerApi(object):
@@ -275,7 +275,7 @@ class ServerApi(object):
         :param str path: (required)
         :param str area_id: (required)
         :param str fields:
-        :return: file
+        :return: File
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1196,7 +1196,7 @@ class ServerApi(object):
         :param str path: (required)
         :param str area_id: (required)
         :param str fields:
-        :return: file
+        :return: File
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1262,7 +1262,7 @@ class ServerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='file',  # noqa: E501
+            response_type='File',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

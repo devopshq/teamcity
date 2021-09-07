@@ -20,11 +20,11 @@ import re  # noqa: F401
 import six
 
 from dohq_teamcity.models.entries import Entries  # noqa: F401,E501
+from dohq_teamcity.models.file import File  # noqa: F401,E501
 from dohq_teamcity.models.files import Files  # noqa: F401,E501
 from dohq_teamcity.models.properties import Properties  # noqa: F401,E501
 from dohq_teamcity.models.vcs_root_instance import VcsRootInstance  # noqa: F401,E501
 from dohq_teamcity.models.vcs_root_instances import VcsRootInstances  # noqa: F401,E501
-from dohq_teamcity.models.file import file  # noqa: F401,E501
 
 
 class VcsRootInstanceApi(object):
@@ -188,7 +188,7 @@ class VcsRootInstanceApi(object):
         :param str path: (required)
         :param str vcs_root_instance_locator: (required)
         :param str fields:
-        :return: file
+        :return: File
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -987,7 +987,7 @@ class VcsRootInstanceApi(object):
         :param str path: (required)
         :param str vcs_root_instance_locator: (required)
         :param str fields:
-        :return: file
+        :return: File
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1053,7 +1053,7 @@ class VcsRootInstanceApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='file',  # noqa: E501
+            response_type='File',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

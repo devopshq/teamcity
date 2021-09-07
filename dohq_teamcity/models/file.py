@@ -3,7 +3,7 @@
 from dohq_teamcity.custom.base_model import TeamCityObject
 
 
-# from dohq_teamcity.models.file import file  # noqa: F401,E501
+# from dohq_teamcity.models.file import File  # noqa: F401,E501
 # from dohq_teamcity.models.files import Files  # noqa: F401,E501
 # from dohq_teamcity.models.href import Href  # noqa: F401,E501
 
@@ -27,7 +27,7 @@ class File(TeamCityObject):
         'size': 'int',
         'modification_time': 'str',
         'href': 'str',
-        'parent': 'file',
+        'parent': 'File',
         'content': 'Href',
         'children': 'Files'
     }
@@ -185,7 +185,7 @@ class File(TeamCityObject):
 
 
         :return: The parent of this File.  # noqa: E501
-        :rtype: file
+        :rtype: File
         """
         return self._parent
 
@@ -195,7 +195,7 @@ class File(TeamCityObject):
 
 
         :param parent: The parent of this File.  # noqa: E501
-        :type: file
+        :type: File
         """
 
         self._parent = parent

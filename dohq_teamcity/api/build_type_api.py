@@ -30,6 +30,7 @@ from dohq_teamcity.models.build_types import BuildTypes  # noqa: F401,E501
 from dohq_teamcity.models.builds import Builds  # noqa: F401,E501
 from dohq_teamcity.models.feature import Feature  # noqa: F401,E501
 from dohq_teamcity.models.features import Features  # noqa: F401,E501
+from dohq_teamcity.models.file import File  # noqa: F401,E501
 from dohq_teamcity.models.files import Files  # noqa: F401,E501
 from dohq_teamcity.models.investigations import Investigations  # noqa: F401,E501
 from dohq_teamcity.models.items import Items  # noqa: F401,E501
@@ -48,7 +49,6 @@ from dohq_teamcity.models.vcs_labeling import VcsLabeling  # noqa: F401,E501
 from dohq_teamcity.models.vcs_root_entries import VcsRootEntries  # noqa: F401,E501
 from dohq_teamcity.models.vcs_root_entry import VcsRootEntry  # noqa: F401,E501
 from dohq_teamcity.models.vcs_root_instances import VcsRootInstances  # noqa: F401,E501
-from dohq_teamcity.models.file import file  # noqa: F401,E501
 
 
 class BuildTypeApi(object):
@@ -1189,7 +1189,7 @@ class BuildTypeApi(object):
         :param str bt_locator: (required)
         :param str fields:
         :param bool resolve_parameters:
-        :return: file
+        :return: File
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -6757,7 +6757,7 @@ class BuildTypeApi(object):
         :param str bt_locator: (required)
         :param str fields:
         :param bool resolve_parameters:
-        :return: file
+        :return: File
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -6825,7 +6825,7 @@ class BuildTypeApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='file',  # noqa: E501
+            response_type='File',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
