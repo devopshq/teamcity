@@ -241,7 +241,7 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
                     'key': 'Authorization',
                     'value': self.get_api_key_with_prefix(self.active_api_key)
                 }
-            }
+        }
 
     def to_debug_report(self):
         """Gets the essential information for debugging.
