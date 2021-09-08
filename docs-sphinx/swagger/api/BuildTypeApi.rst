@@ -2583,7 +2583,7 @@ get_metadata
      - [optional] 
 
 Return type:
-    `file <../models/file.html>`_
+    `File <../models/File.html>`_
 
 `Back to top <#>`_
 

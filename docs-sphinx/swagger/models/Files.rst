@@ -22,7 +22,7 @@ Properties
      - **str**
      - `optional` 
    * - **file**
-     -  `list[file] <./file.html>`_
+     -  `list[File] <./File.html>`_
      - `optional` 
 
 

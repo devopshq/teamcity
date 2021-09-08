@@ -3515,8 +3515,6 @@ class Properties(Properties, ContainerMixin):
         return next((x for x in self.data if x.name == name), None)
 
 
-
-
 class VcsRootEntries(VcsRootEntries, ContainerMixin):
     @property
     def _container_mixin_data(self):
