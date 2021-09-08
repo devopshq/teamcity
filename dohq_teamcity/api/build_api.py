@@ -24,6 +24,7 @@ from dohq_teamcity.models.build_cancel_request import BuildCancelRequest  # noqa
 from dohq_teamcity.models.build_changes import BuildChanges  # noqa: F401,E501
 from dohq_teamcity.models.builds import Builds  # noqa: F401,E501
 from dohq_teamcity.models.comment import Comment  # noqa: F401,E501
+from dohq_teamcity.models.file import File  # noqa: F401,E501
 from dohq_teamcity.models.files import Files  # noqa: F401,E501
 from dohq_teamcity.models.issues_usages import IssuesUsages  # noqa: F401,E501
 from dohq_teamcity.models.model_property import ModelProperty  # noqa: F401,E501
@@ -31,7 +32,6 @@ from dohq_teamcity.models.problem_occurrences import ProblemOccurrences  # noqa:
 from dohq_teamcity.models.properties import Properties  # noqa: F401,E501
 from dohq_teamcity.models.tags import Tags  # noqa: F401,E501
 from dohq_teamcity.models.test_occurrences import TestOccurrences  # noqa: F401,E501
-from dohq_teamcity.models.file import file  # noqa: F401,E501
 
 
 class BuildApi(object):
@@ -444,7 +444,7 @@ class BuildApi(object):
         :param str fields:
         :param bool resolve_parameters:
         :param bool log_build_usage:
-        :return: file
+        :return: File
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2233,8 +2233,8 @@ class BuildApi(object):
                 params['build_locator'] is None):
             raise ValueError("Missing the required parameter `build_locator` when calling `get_children`")  # noqa: E501
 
-        if 'path' in params and not re.search(r'(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError(r"Invalid value for parameter `path` when calling `get_children`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError("Invalid value for parameter `path` when calling `get_children`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -2427,8 +2427,8 @@ class BuildApi(object):
                 params['build_locator'] is None):
             raise ValueError("Missing the required parameter `build_locator` when calling `get_content`")  # noqa: E501
 
-        if 'path' in params and not re.search(r'(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError(r"Invalid value for parameter `path` when calling `get_content`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError("Invalid value for parameter `path` when calling `get_content`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -2518,8 +2518,8 @@ class BuildApi(object):
                 params['build_locator'] is None):
             raise ValueError("Missing the required parameter `build_locator` when calling `get_content_alias`")  # noqa: E501
 
-        if 'path' in params and not re.search(r'(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError(r"Invalid value for parameter `path` when calling `get_content_alias`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError("Invalid value for parameter `path` when calling `get_content_alias`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -2579,7 +2579,7 @@ class BuildApi(object):
         :param str fields:
         :param bool resolve_parameters:
         :param bool log_build_usage:
-        :return: file
+        :return: File
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2608,8 +2608,8 @@ class BuildApi(object):
                 params['build_locator'] is None):
             raise ValueError("Missing the required parameter `build_locator` when calling `get_metadata`")  # noqa: E501
 
-        if 'path' in params and not re.search(r'(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError(r"Invalid value for parameter `path` when calling `get_metadata`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError("Invalid value for parameter `path` when calling `get_metadata`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -2649,7 +2649,7 @@ class BuildApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='file',  # noqa: E501
+            response_type='File',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -3420,8 +3420,8 @@ class BuildApi(object):
                 params['build_locator'] is None):
             raise ValueError("Missing the required parameter `build_locator` when calling `get_zipped`")  # noqa: E501
 
-        if 'path' in params and not re.search(r'(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError(r"Invalid value for parameter `path` when calling `get_zipped`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError("Invalid value for parameter `path` when calling `get_zipped`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
