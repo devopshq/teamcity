@@ -6195,7 +6195,10 @@
         ],
         "responses": {
           "default": {
-            "description": "successful operation"
+            "description": "successful operation",
+            "schema": {
+              "type": "file"
+            }
           }
         }
       }
