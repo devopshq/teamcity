@@ -32,6 +32,7 @@ from dohq_teamcity.models.problem_occurrences import ProblemOccurrences  # noqa:
 from dohq_teamcity.models.properties import Properties  # noqa: F401,E501
 from dohq_teamcity.models.tags import Tags  # noqa: F401,E501
 from dohq_teamcity.models.test_occurrences import TestOccurrences  # noqa: F401,E501
+from dohq_teamcity.models.file import file  # noqa: F401,E501
 
 
 class BuildApi(object):
@@ -395,7 +396,7 @@ class BuildApi(object):
         :param str response_builder:
         :param bool resolve_parameters:
         :param bool log_build_usage:
-        :return: None
+        :return: file
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2398,7 +2399,7 @@ class BuildApi(object):
         :param str response_builder:
         :param bool resolve_parameters:
         :param bool log_build_usage:
-        :return: None
+        :return: file
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2468,7 +2469,7 @@ class BuildApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='file',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

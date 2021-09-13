@@ -818,7 +818,8 @@ get_content
     log_build_usage = true # bool |  (optional)
 
     try:
-        tc.build_api.get_content(path, build_locator, response_builder=response_builder, resolve_parameters=resolve_parameters, log_build_usage=log_build_usage)
+        api_response = tc.build_api.get_content(path, build_locator, response_builder=response_builder, resolve_parameters=resolve_parameters, log_build_usage=log_build_usage)
+        pprint(api_response)
     except ApiException as e:
         print("Exception when calling BuildApi->get_content: %s\n" % e)
 
@@ -849,7 +850,7 @@ get_content
      - [optional] 
 
 Return type:
-    void (empty response body)
+    `file <../models/file.html>`_
 
 `Back to top <#>`_
 
