@@ -528,7 +528,7 @@ class ApiClient(object):
 
         content_disposition = response.getheader("Content-Disposition")
         if content_disposition:
-            filename = re.search(r'filename=[\'"]?([^\'"\s]+)[\'"]?',
+            filename = re.search(r'[\'"]?([^\'"\s]+)[\'"]?',
                                  content_disposition).group(1)
             path = os.path.join(os.path.dirname(path), filename)
 
