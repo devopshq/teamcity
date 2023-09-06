@@ -819,7 +819,7 @@ get_content
 
     try:
         api_response = tc.build_api.get_content(path, build_locator, response_builder=response_builder, resolve_parameters=resolve_parameters, log_build_usage=log_build_usage)
-        pprint(api_response)
+       pprint(api_response)
     except ApiException as e:
         print("Exception when calling BuildApi->get_content: %s\n" % e)
 
