@@ -21,7 +21,6 @@ import six
 
 from dohq_teamcity.models.properties import Properties  # noqa: F401,E501
 from dohq_teamcity.models.vcs_root import VcsRoot  # noqa: F401,E501
-from dohq_teamcity.models.vcs_root_instance import VcsRootInstance  # noqa: F401,E501
 from dohq_teamcity.models.vcs_root_instances import VcsRootInstances  # noqa: F401,E501
 from dohq_teamcity.models.vcs_roots import VcsRoots  # noqa: F401,E501
 
@@ -37,12 +36,13 @@ class VcsRootApi(object):
     def __init__(self, api_client=None):
         self.api_client = api_client
 
-    def add_root(self, **kwargs):  # noqa: E501
-        """add_root  # noqa: E501
+    def add_vcs_root(self, **kwargs):  # noqa: E501
+        """Add a new VCS root.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_root(async_req=True)
+        >>> thread = api.add_vcs_root(async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -54,17 +54,269 @@ class VcsRootApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__add_root_with_http_info(**kwargs)  # noqa: E501
+            return self.__add_vcs_root_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.__add_root_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.__add_vcs_root_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def change_properties(self, vcs_root_locator, **kwargs):  # noqa: E501
-        """change_properties  # noqa: E501
+    def delete_all_vcs_root_properties(self, vcs_root_locator, **kwargs):  # noqa: E501
+        """Delete all properties of the matching VCS root.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.change_properties(vcs_root_locator, async_req=True)
+        >>> thread = api.delete_all_vcs_root_properties(vcs_root_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str vcs_root_locator: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__delete_all_vcs_root_properties_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__delete_all_vcs_root_properties_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
+            return data
+
+    def delete_vcs_root(self, vcs_root_locator, **kwargs):  # noqa: E501
+        """Remove VCS root matching the locator.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_vcs_root(vcs_root_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str vcs_root_locator: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__delete_vcs_root_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__delete_vcs_root_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
+            return data
+
+    def delete_vcs_root_property(self, vcs_root_locator, name, **kwargs):  # noqa: E501
+        """Delete a property of the matching VCS root.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_vcs_root_property(vcs_root_locator, name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str vcs_root_locator: (required)
+        :param str name: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__delete_vcs_root_property_with_http_info(vcs_root_locator, name, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__delete_vcs_root_property_with_http_info(vcs_root_locator, name, **kwargs)  # noqa: E501
+            return data
+
+    def get_all_vcs_root_properties(self, vcs_root_locator, **kwargs):  # noqa: E501
+        """Get all properties of the matching VCS root.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_all_vcs_root_properties(vcs_root_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str vcs_root_locator: (required)
+        :param str fields:
+        :return: Properties
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_all_vcs_root_properties_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_all_vcs_root_properties_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_all_vcs_roots(self, **kwargs):  # noqa: E501
+        """Get all VCS roots.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_all_vcs_roots(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str locator:
+        :param str fields:
+        :return: VcsRoots
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_all_vcs_roots_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_all_vcs_roots_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def get_root_endpoints(self, vcs_root_locator, **kwargs):  # noqa: E501
+        """Get root endpoints.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_root_endpoints(vcs_root_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str vcs_root_locator: (required)
+        :param str fields:
+        :return: VcsRoot
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_root_endpoints_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_root_endpoints_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_vcs_root_field(self, vcs_root_locator, field, **kwargs):  # noqa: E501
+        """Get a field of the matching VCS root.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_vcs_root_field(vcs_root_locator, field, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str vcs_root_locator: (required)
+        :param str field: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_vcs_root_field_with_http_info(vcs_root_locator, field, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_vcs_root_field_with_http_info(vcs_root_locator, field, **kwargs)  # noqa: E501
+            return data
+
+    def get_vcs_root_instances(self, vcs_root_locator, **kwargs):  # noqa: E501
+        """Get all VCS root instances of the matching VCS root.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_vcs_root_instances(vcs_root_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str vcs_root_locator: (required)
+        :param str fields:
+        :return: VcsRootInstances
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_vcs_root_instances_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_vcs_root_instances_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_vcs_root_property(self, vcs_root_locator, name, **kwargs):  # noqa: E501
+        """Get a property on the matching VCS root.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_vcs_root_property(vcs_root_locator, name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str vcs_root_locator: (required)
+        :param str name: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_vcs_root_property_with_http_info(vcs_root_locator, name, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_vcs_root_property_with_http_info(vcs_root_locator, name, **kwargs)  # noqa: E501
+            return data
+
+    def get_vcs_root_settings_file(self, vcs_root_locator, **kwargs):  # noqa: E501
+        """Get the settings file of the matching VCS root.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_vcs_root_settings_file(vcs_root_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str vcs_root_locator: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_vcs_root_settings_file_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_vcs_root_settings_file_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
+            return data
+
+    def set_vcs_root_field(self, vcs_root_locator, field, **kwargs):  # noqa: E501
+        """Update a field of the matching VCS root.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.set_vcs_root_field(vcs_root_locator, field, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str vcs_root_locator: (required)
+        :param str field: (required)
+        :param str body:
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__set_vcs_root_field_with_http_info(vcs_root_locator, field, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__set_vcs_root_field_with_http_info(vcs_root_locator, field, **kwargs)  # noqa: E501
+            return data
+
+    def set_vcs_root_properties(self, vcs_root_locator, **kwargs):  # noqa: E501
+        """Update all properties of the matching VCS root.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.set_vcs_root_properties(vcs_root_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -77,102 +329,18 @@ class VcsRootApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__change_properties_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
+            return self.__set_vcs_root_properties_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__change_properties_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
+            (data) = self.__set_vcs_root_properties_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
             return data
 
-    def delete_all_properties(self, vcs_root_locator, **kwargs):  # noqa: E501
-        """delete_all_properties  # noqa: E501
+    def set_vcs_root_property(self, vcs_root_locator, name, **kwargs):  # noqa: E501
+        """Update a property of the matching VCS root.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_all_properties(vcs_root_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str vcs_root_locator: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__delete_all_properties_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__delete_all_properties_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
-            return data
-
-    def delete_parameter(self, vcs_root_locator, name, **kwargs):  # noqa: E501
-        """delete_parameter  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_parameter(vcs_root_locator, name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str vcs_root_locator: (required)
-        :param str name: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__delete_parameter_with_http_info(vcs_root_locator, name, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__delete_parameter_with_http_info(vcs_root_locator, name, **kwargs)  # noqa: E501
-            return data
-
-    def delete_root(self, vcs_root_locator, **kwargs):  # noqa: E501
-        """delete_root  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_root(vcs_root_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str vcs_root_locator: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__delete_root_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__delete_root_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_settings_file(self, vcs_root_locator, **kwargs):  # noqa: E501
-        """get_settings_file  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_settings_file(vcs_root_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str vcs_root_locator: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_settings_file_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_settings_file_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
-            return data
-
-    def put_parameter(self, vcs_root_locator, name, **kwargs):  # noqa: E501
-        """put_parameter  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.put_parameter(vcs_root_locator, name, async_req=True)
+        >>> thread = api.set_vcs_root_property(vcs_root_locator, name, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -185,265 +353,18 @@ class VcsRootApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__put_parameter_with_http_info(vcs_root_locator, name, **kwargs)  # noqa: E501
+            return self.__set_vcs_root_property_with_http_info(vcs_root_locator, name, **kwargs)  # noqa: E501
         else:
-            (data) = self.__put_parameter_with_http_info(vcs_root_locator, name, **kwargs)  # noqa: E501
+            (data) = self.__set_vcs_root_property_with_http_info(vcs_root_locator, name, **kwargs)  # noqa: E501
             return data
 
-    def serve_field(self, vcs_root_locator, field, **kwargs):  # noqa: E501
-        """serve_field  # noqa: E501
+    def __add_vcs_root_with_http_info(self, **kwargs):  # noqa: E501
+        """Add a new VCS root.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_field(vcs_root_locator, field, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str vcs_root_locator: (required)
-        :param str field: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_field_with_http_info(vcs_root_locator, field, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_field_with_http_info(vcs_root_locator, field, **kwargs)  # noqa: E501
-            return data
-
-    def serve_instance_field(self, vcs_root_locator, vcs_root_instance_locator, field, **kwargs):  # noqa: E501
-        """serve_instance_field  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_instance_field(vcs_root_locator, vcs_root_instance_locator, field, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str vcs_root_locator: (required)
-        :param str vcs_root_instance_locator: (required)
-        :param str field: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_instance_field_with_http_info(vcs_root_locator, vcs_root_instance_locator, field, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_instance_field_with_http_info(vcs_root_locator, vcs_root_instance_locator, field, **kwargs)  # noqa: E501
-            return data
-
-    def serve_properties(self, vcs_root_locator, **kwargs):  # noqa: E501
-        """serve_properties  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_properties(vcs_root_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str vcs_root_locator: (required)
-        :param str fields:
-        :return: Properties
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_properties_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_properties_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
-            return data
-
-    def serve_property(self, vcs_root_locator, name, **kwargs):  # noqa: E501
-        """serve_property  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_property(vcs_root_locator, name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str vcs_root_locator: (required)
-        :param str name: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_property_with_http_info(vcs_root_locator, name, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_property_with_http_info(vcs_root_locator, name, **kwargs)  # noqa: E501
-            return data
-
-    def serve_root(self, vcs_root_locator, **kwargs):  # noqa: E501
-        """serve_root  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_root(vcs_root_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str vcs_root_locator: (required)
-        :param str fields:
-        :return: VcsRoot
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_root_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_root_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
-            return data
-
-    def serve_root_instance(self, vcs_root_locator, vcs_root_instance_locator, **kwargs):  # noqa: E501
-        """serve_root_instance  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_root_instance(vcs_root_locator, vcs_root_instance_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str vcs_root_locator: (required)
-        :param str vcs_root_instance_locator: (required)
-        :param str fields:
-        :return: VcsRootInstance
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_root_instance_with_http_info(vcs_root_locator, vcs_root_instance_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_root_instance_with_http_info(vcs_root_locator, vcs_root_instance_locator, **kwargs)  # noqa: E501
-            return data
-
-    def serve_root_instance_properties(self, vcs_root_locator, vcs_root_instance_locator, **kwargs):  # noqa: E501
-        """serve_root_instance_properties  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_root_instance_properties(vcs_root_locator, vcs_root_instance_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str vcs_root_locator: (required)
-        :param str vcs_root_instance_locator: (required)
-        :param str fields:
-        :return: Properties
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_root_instance_properties_with_http_info(vcs_root_locator, vcs_root_instance_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_root_instance_properties_with_http_info(vcs_root_locator, vcs_root_instance_locator, **kwargs)  # noqa: E501
-            return data
-
-    def serve_root_instances(self, vcs_root_locator, **kwargs):  # noqa: E501
-        """serve_root_instances  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_root_instances(vcs_root_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str vcs_root_locator: (required)
-        :param str fields:
-        :return: VcsRootInstances
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_root_instances_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_root_instances_with_http_info(vcs_root_locator, **kwargs)  # noqa: E501
-            return data
-
-    def serve_roots(self, **kwargs):  # noqa: E501
-        """serve_roots  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_roots(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str locator:
-        :param str fields:
-        :return: VcsRoots
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_roots_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_roots_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def set_field(self, vcs_root_locator, field, **kwargs):  # noqa: E501
-        """set_field  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_field(vcs_root_locator, field, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str vcs_root_locator: (required)
-        :param str field: (required)
-        :param str body:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__set_field_with_http_info(vcs_root_locator, field, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__set_field_with_http_info(vcs_root_locator, field, **kwargs)  # noqa: E501
-            return data
-
-    def set_instance_field(self, vcs_root_locator, vcs_root_instance_locator, field, **kwargs):  # noqa: E501
-        """set_instance_field  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_instance_field(vcs_root_locator, vcs_root_instance_locator, field, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str vcs_root_locator: (required)
-        :param str vcs_root_instance_locator: (required)
-        :param str field: (required)
-        :param str body:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__set_instance_field_with_http_info(vcs_root_locator, vcs_root_instance_locator, field, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__set_instance_field_with_http_info(vcs_root_locator, vcs_root_instance_locator, field, **kwargs)  # noqa: E501
-            return data
-
-    def __add_root_with_http_info(self, **kwargs):  # noqa: E501
-        """add_root  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__add_root_with_http_info(async_req=True)
+        >>> thread = api.__add_vcs_root_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -465,7 +386,7 @@ class VcsRootApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method add_root" % key
+                    " to method add_vcs_root" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -486,6 +407,14 @@ class VcsRootApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -505,89 +434,13 @@ class VcsRootApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __change_properties_with_http_info(self, vcs_root_locator, **kwargs):  # noqa: E501
-        """change_properties  # noqa: E501
+    def __delete_all_vcs_root_properties_with_http_info(self, vcs_root_locator, **kwargs):  # noqa: E501
+        """Delete all properties of the matching VCS root.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__change_properties_with_http_info(vcs_root_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str vcs_root_locator: (required)
-        :param Properties body:
-        :param str fields:
-        :return: Properties
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['vcs_root_locator', 'body', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method change_properties" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'vcs_root_locator' is set
-        if ('vcs_root_locator' not in params or
-                params['vcs_root_locator'] is None):
-            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `change_properties`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'vcs_root_locator' in params:
-            if isinstance(params['vcs_root_locator'], TeamCityObject):
-                path_params['vcsRootLocator'] = params['vcs_root_locator'].locator_id
-            else:
-                path_params['vcsRootLocator'] = params['vcs_root_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/vcs-roots/{vcsRootLocator}/properties', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Properties',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __delete_all_properties_with_http_info(self, vcs_root_locator, **kwargs):  # noqa: E501
-        """delete_all_properties  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__delete_all_properties_with_http_info(vcs_root_locator, async_req=True)
+        >>> thread = api.__delete_all_vcs_root_properties_with_http_info(vcs_root_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -608,14 +461,14 @@ class VcsRootApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_all_properties" % key
+                    " to method delete_all_vcs_root_properties" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'vcs_root_locator' is set
         if ('vcs_root_locator' not in params or
                 params['vcs_root_locator'] is None):
-            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `delete_all_properties`")  # noqa: E501
+            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `delete_all_vcs_root_properties`")  # noqa: E501
 
         collection_formats = {}
 
@@ -653,12 +506,85 @@ class VcsRootApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __delete_parameter_with_http_info(self, vcs_root_locator, name, **kwargs):  # noqa: E501
-        """delete_parameter  # noqa: E501
+    def __delete_vcs_root_with_http_info(self, vcs_root_locator, **kwargs):  # noqa: E501
+        """Remove VCS root matching the locator.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__delete_parameter_with_http_info(vcs_root_locator, name, async_req=True)
+        >>> thread = api.__delete_vcs_root_with_http_info(vcs_root_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str vcs_root_locator: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['vcs_root_locator']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_vcs_root" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'vcs_root_locator' is set
+        if ('vcs_root_locator' not in params or
+                params['vcs_root_locator'] is None):
+            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `delete_vcs_root`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'vcs_root_locator' in params:
+            if isinstance(params['vcs_root_locator'], TeamCityObject):
+                path_params['vcsRootLocator'] = params['vcs_root_locator'].locator_id
+            else:
+                path_params['vcsRootLocator'] = params['vcs_root_locator']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/vcs-roots/{vcsRootLocator}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __delete_vcs_root_property_with_http_info(self, vcs_root_locator, name, **kwargs):  # noqa: E501
+        """Delete a property of the matching VCS root.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__delete_vcs_root_property_with_http_info(vcs_root_locator, name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -680,18 +606,18 @@ class VcsRootApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_parameter" % key
+                    " to method delete_vcs_root_property" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'vcs_root_locator' is set
         if ('vcs_root_locator' not in params or
                 params['vcs_root_locator'] is None):
-            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `delete_parameter`")  # noqa: E501
+            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `delete_vcs_root_property`")  # noqa: E501
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `delete_parameter`")  # noqa: E501
+            raise ValueError("Missing the required parameter `name` when calling `delete_vcs_root_property`")  # noqa: E501
 
         collection_formats = {}
 
@@ -734,410 +660,13 @@ class VcsRootApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __delete_root_with_http_info(self, vcs_root_locator, **kwargs):  # noqa: E501
-        """delete_root  # noqa: E501
+    def __get_all_vcs_root_properties_with_http_info(self, vcs_root_locator, **kwargs):  # noqa: E501
+        """Get all properties of the matching VCS root.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__delete_root_with_http_info(vcs_root_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str vcs_root_locator: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['vcs_root_locator']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_root" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'vcs_root_locator' is set
-        if ('vcs_root_locator' not in params or
-                params['vcs_root_locator'] is None):
-            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `delete_root`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'vcs_root_locator' in params:
-            if isinstance(params['vcs_root_locator'], TeamCityObject):
-                path_params['vcsRootLocator'] = params['vcs_root_locator'].locator_id
-            else:
-                path_params['vcsRootLocator'] = params['vcs_root_locator']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/vcs-roots/{vcsRootLocator}', 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type=None,  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_settings_file_with_http_info(self, vcs_root_locator, **kwargs):  # noqa: E501
-        """get_settings_file  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_settings_file_with_http_info(vcs_root_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str vcs_root_locator: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['vcs_root_locator']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_settings_file" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'vcs_root_locator' is set
-        if ('vcs_root_locator' not in params or
-                params['vcs_root_locator'] is None):
-            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `get_settings_file`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'vcs_root_locator' in params:
-            if isinstance(params['vcs_root_locator'], TeamCityObject):
-                path_params['vcsRootLocator'] = params['vcs_root_locator'].locator_id
-            else:
-                path_params['vcsRootLocator'] = params['vcs_root_locator']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/vcs-roots/{vcsRootLocator}/settingsFile', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __put_parameter_with_http_info(self, vcs_root_locator, name, **kwargs):  # noqa: E501
-        """put_parameter  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__put_parameter_with_http_info(vcs_root_locator, name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str vcs_root_locator: (required)
-        :param str name: (required)
-        :param str body:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['vcs_root_locator', 'name', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method put_parameter" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'vcs_root_locator' is set
-        if ('vcs_root_locator' not in params or
-                params['vcs_root_locator'] is None):
-            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `put_parameter`")  # noqa: E501
-        # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `put_parameter`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'vcs_root_locator' in params:
-            if isinstance(params['vcs_root_locator'], TeamCityObject):
-                path_params['vcsRootLocator'] = params['vcs_root_locator'].locator_id
-            else:
-                path_params['vcsRootLocator'] = params['vcs_root_locator']  # noqa: E501
-        if 'name' in params:
-            if isinstance(params['name'], TeamCityObject):
-                path_params['name'] = params['name'].locator_id
-            else:
-                path_params['name'] = params['name']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/vcs-roots/{vcsRootLocator}/properties/{name}', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __serve_field_with_http_info(self, vcs_root_locator, field, **kwargs):  # noqa: E501
-        """serve_field  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_field_with_http_info(vcs_root_locator, field, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str vcs_root_locator: (required)
-        :param str field: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['vcs_root_locator', 'field']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method serve_field" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'vcs_root_locator' is set
-        if ('vcs_root_locator' not in params or
-                params['vcs_root_locator'] is None):
-            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `serve_field`")  # noqa: E501
-        # verify the required parameter 'field' is set
-        if ('field' not in params or
-                params['field'] is None):
-            raise ValueError("Missing the required parameter `field` when calling `serve_field`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'vcs_root_locator' in params:
-            if isinstance(params['vcs_root_locator'], TeamCityObject):
-                path_params['vcsRootLocator'] = params['vcs_root_locator'].locator_id
-            else:
-                path_params['vcsRootLocator'] = params['vcs_root_locator']  # noqa: E501
-        if 'field' in params:
-            if isinstance(params['field'], TeamCityObject):
-                path_params['field'] = params['field'].locator_id
-            else:
-                path_params['field'] = params['field']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/vcs-roots/{vcsRootLocator}/{field}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __serve_instance_field_with_http_info(self, vcs_root_locator, vcs_root_instance_locator, field, **kwargs):  # noqa: E501
-        """serve_instance_field  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_instance_field_with_http_info(vcs_root_locator, vcs_root_instance_locator, field, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str vcs_root_locator: (required)
-        :param str vcs_root_instance_locator: (required)
-        :param str field: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['vcs_root_locator', 'vcs_root_instance_locator', 'field']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method serve_instance_field" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'vcs_root_locator' is set
-        if ('vcs_root_locator' not in params or
-                params['vcs_root_locator'] is None):
-            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `serve_instance_field`")  # noqa: E501
-        # verify the required parameter 'vcs_root_instance_locator' is set
-        if ('vcs_root_instance_locator' not in params or
-                params['vcs_root_instance_locator'] is None):
-            raise ValueError("Missing the required parameter `vcs_root_instance_locator` when calling `serve_instance_field`")  # noqa: E501
-        # verify the required parameter 'field' is set
-        if ('field' not in params or
-                params['field'] is None):
-            raise ValueError("Missing the required parameter `field` when calling `serve_instance_field`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'vcs_root_locator' in params:
-            if isinstance(params['vcs_root_locator'], TeamCityObject):
-                path_params['vcsRootLocator'] = params['vcs_root_locator'].locator_id
-            else:
-                path_params['vcsRootLocator'] = params['vcs_root_locator']  # noqa: E501
-        if 'vcs_root_instance_locator' in params:
-            if isinstance(params['vcs_root_instance_locator'], TeamCityObject):
-                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator'].locator_id
-            else:
-                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
-        if 'field' in params:
-            if isinstance(params['field'], TeamCityObject):
-                path_params['field'] = params['field'].locator_id
-            else:
-                path_params['field'] = params['field']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/vcs-roots/{vcsRootLocator}/instances/{vcsRootInstanceLocator}/{field}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __serve_properties_with_http_info(self, vcs_root_locator, **kwargs):  # noqa: E501
-        """serve_properties  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_properties_with_http_info(vcs_root_locator, async_req=True)
+        >>> thread = api.__get_all_vcs_root_properties_with_http_info(vcs_root_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1159,14 +688,14 @@ class VcsRootApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method serve_properties" % key
+                    " to method get_all_vcs_root_properties" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'vcs_root_locator' is set
         if ('vcs_root_locator' not in params or
                 params['vcs_root_locator'] is None):
-            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `serve_properties`")  # noqa: E501
+            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `get_all_vcs_root_properties`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1187,6 +716,10 @@ class VcsRootApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -1206,409 +739,13 @@ class VcsRootApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __serve_property_with_http_info(self, vcs_root_locator, name, **kwargs):  # noqa: E501
-        """serve_property  # noqa: E501
+    def __get_all_vcs_roots_with_http_info(self, **kwargs):  # noqa: E501
+        """Get all VCS roots.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_property_with_http_info(vcs_root_locator, name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str vcs_root_locator: (required)
-        :param str name: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['vcs_root_locator', 'name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method serve_property" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'vcs_root_locator' is set
-        if ('vcs_root_locator' not in params or
-                params['vcs_root_locator'] is None):
-            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `serve_property`")  # noqa: E501
-        # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `serve_property`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'vcs_root_locator' in params:
-            if isinstance(params['vcs_root_locator'], TeamCityObject):
-                path_params['vcsRootLocator'] = params['vcs_root_locator'].locator_id
-            else:
-                path_params['vcsRootLocator'] = params['vcs_root_locator']  # noqa: E501
-        if 'name' in params:
-            if isinstance(params['name'], TeamCityObject):
-                path_params['name'] = params['name'].locator_id
-            else:
-                path_params['name'] = params['name']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/vcs-roots/{vcsRootLocator}/properties/{name}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __serve_root_with_http_info(self, vcs_root_locator, **kwargs):  # noqa: E501
-        """serve_root  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_root_with_http_info(vcs_root_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str vcs_root_locator: (required)
-        :param str fields:
-        :return: VcsRoot
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['vcs_root_locator', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method serve_root" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'vcs_root_locator' is set
-        if ('vcs_root_locator' not in params or
-                params['vcs_root_locator'] is None):
-            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `serve_root`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'vcs_root_locator' in params:
-            if isinstance(params['vcs_root_locator'], TeamCityObject):
-                path_params['vcsRootLocator'] = params['vcs_root_locator'].locator_id
-            else:
-                path_params['vcsRootLocator'] = params['vcs_root_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/vcs-roots/{vcsRootLocator}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='VcsRoot',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __serve_root_instance_with_http_info(self, vcs_root_locator, vcs_root_instance_locator, **kwargs):  # noqa: E501
-        """serve_root_instance  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_root_instance_with_http_info(vcs_root_locator, vcs_root_instance_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str vcs_root_locator: (required)
-        :param str vcs_root_instance_locator: (required)
-        :param str fields:
-        :return: VcsRootInstance
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['vcs_root_locator', 'vcs_root_instance_locator', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method serve_root_instance" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'vcs_root_locator' is set
-        if ('vcs_root_locator' not in params or
-                params['vcs_root_locator'] is None):
-            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `serve_root_instance`")  # noqa: E501
-        # verify the required parameter 'vcs_root_instance_locator' is set
-        if ('vcs_root_instance_locator' not in params or
-                params['vcs_root_instance_locator'] is None):
-            raise ValueError("Missing the required parameter `vcs_root_instance_locator` when calling `serve_root_instance`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'vcs_root_locator' in params:
-            if isinstance(params['vcs_root_locator'], TeamCityObject):
-                path_params['vcsRootLocator'] = params['vcs_root_locator'].locator_id
-            else:
-                path_params['vcsRootLocator'] = params['vcs_root_locator']  # noqa: E501
-        if 'vcs_root_instance_locator' in params:
-            if isinstance(params['vcs_root_instance_locator'], TeamCityObject):
-                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator'].locator_id
-            else:
-                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/vcs-roots/{vcsRootLocator}/instances/{vcsRootInstanceLocator}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='VcsRootInstance',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __serve_root_instance_properties_with_http_info(self, vcs_root_locator, vcs_root_instance_locator, **kwargs):  # noqa: E501
-        """serve_root_instance_properties  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_root_instance_properties_with_http_info(vcs_root_locator, vcs_root_instance_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str vcs_root_locator: (required)
-        :param str vcs_root_instance_locator: (required)
-        :param str fields:
-        :return: Properties
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['vcs_root_locator', 'vcs_root_instance_locator', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method serve_root_instance_properties" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'vcs_root_locator' is set
-        if ('vcs_root_locator' not in params or
-                params['vcs_root_locator'] is None):
-            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `serve_root_instance_properties`")  # noqa: E501
-        # verify the required parameter 'vcs_root_instance_locator' is set
-        if ('vcs_root_instance_locator' not in params or
-                params['vcs_root_instance_locator'] is None):
-            raise ValueError("Missing the required parameter `vcs_root_instance_locator` when calling `serve_root_instance_properties`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'vcs_root_locator' in params:
-            if isinstance(params['vcs_root_locator'], TeamCityObject):
-                path_params['vcsRootLocator'] = params['vcs_root_locator'].locator_id
-            else:
-                path_params['vcsRootLocator'] = params['vcs_root_locator']  # noqa: E501
-        if 'vcs_root_instance_locator' in params:
-            if isinstance(params['vcs_root_instance_locator'], TeamCityObject):
-                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator'].locator_id
-            else:
-                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/vcs-roots/{vcsRootLocator}/instances/{vcsRootInstanceLocator}/properties', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Properties',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __serve_root_instances_with_http_info(self, vcs_root_locator, **kwargs):  # noqa: E501
-        """serve_root_instances  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_root_instances_with_http_info(vcs_root_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str vcs_root_locator: (required)
-        :param str fields:
-        :return: VcsRootInstances
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['vcs_root_locator', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method serve_root_instances" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'vcs_root_locator' is set
-        if ('vcs_root_locator' not in params or
-                params['vcs_root_locator'] is None):
-            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `serve_root_instances`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'vcs_root_locator' in params:
-            if isinstance(params['vcs_root_locator'], TeamCityObject):
-                path_params['vcsRootLocator'] = params['vcs_root_locator'].locator_id
-            else:
-                path_params['vcsRootLocator'] = params['vcs_root_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/vcs-roots/{vcsRootLocator}/instances', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='VcsRootInstances',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __serve_roots_with_http_info(self, **kwargs):  # noqa: E501
-        """serve_roots  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_roots_with_http_info(async_req=True)
+        >>> thread = api.__get_all_vcs_roots_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1630,7 +767,7 @@ class VcsRootApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method serve_roots" % key
+                    " to method get_all_vcs_roots" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -1651,6 +788,10 @@ class VcsRootApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -1670,12 +811,419 @@ class VcsRootApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __set_field_with_http_info(self, vcs_root_locator, field, **kwargs):  # noqa: E501
-        """set_field  # noqa: E501
+    def __get_root_endpoints_with_http_info(self, vcs_root_locator, **kwargs):  # noqa: E501
+        """Get root endpoints.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__set_field_with_http_info(vcs_root_locator, field, async_req=True)
+        >>> thread = api.__get_root_endpoints_with_http_info(vcs_root_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str vcs_root_locator: (required)
+        :param str fields:
+        :return: VcsRoot
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['vcs_root_locator', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_root_endpoints" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'vcs_root_locator' is set
+        if ('vcs_root_locator' not in params or
+                params['vcs_root_locator'] is None):
+            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `get_root_endpoints`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'vcs_root_locator' in params:
+            if isinstance(params['vcs_root_locator'], TeamCityObject):
+                path_params['vcsRootLocator'] = params['vcs_root_locator'].locator_id
+            else:
+                path_params['vcsRootLocator'] = params['vcs_root_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/vcs-roots/{vcsRootLocator}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='VcsRoot',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_vcs_root_field_with_http_info(self, vcs_root_locator, field, **kwargs):  # noqa: E501
+        """Get a field of the matching VCS root.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_vcs_root_field_with_http_info(vcs_root_locator, field, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str vcs_root_locator: (required)
+        :param str field: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['vcs_root_locator', 'field']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_vcs_root_field" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'vcs_root_locator' is set
+        if ('vcs_root_locator' not in params or
+                params['vcs_root_locator'] is None):
+            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `get_vcs_root_field`")  # noqa: E501
+        # verify the required parameter 'field' is set
+        if ('field' not in params or
+                params['field'] is None):
+            raise ValueError("Missing the required parameter `field` when calling `get_vcs_root_field`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'vcs_root_locator' in params:
+            if isinstance(params['vcs_root_locator'], TeamCityObject):
+                path_params['vcsRootLocator'] = params['vcs_root_locator'].locator_id
+            else:
+                path_params['vcsRootLocator'] = params['vcs_root_locator']  # noqa: E501
+        if 'field' in params:
+            if isinstance(params['field'], TeamCityObject):
+                path_params['field'] = params['field'].locator_id
+            else:
+                path_params['field'] = params['field']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/vcs-roots/{vcsRootLocator}/{field}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_vcs_root_instances_with_http_info(self, vcs_root_locator, **kwargs):  # noqa: E501
+        """Get all VCS root instances of the matching VCS root.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_vcs_root_instances_with_http_info(vcs_root_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str vcs_root_locator: (required)
+        :param str fields:
+        :return: VcsRootInstances
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['vcs_root_locator', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_vcs_root_instances" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'vcs_root_locator' is set
+        if ('vcs_root_locator' not in params or
+                params['vcs_root_locator'] is None):
+            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `get_vcs_root_instances`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'vcs_root_locator' in params:
+            if isinstance(params['vcs_root_locator'], TeamCityObject):
+                path_params['vcsRootLocator'] = params['vcs_root_locator'].locator_id
+            else:
+                path_params['vcsRootLocator'] = params['vcs_root_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/vcs-roots/{vcsRootLocator}/instances', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='VcsRootInstances',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_vcs_root_property_with_http_info(self, vcs_root_locator, name, **kwargs):  # noqa: E501
+        """Get a property on the matching VCS root.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_vcs_root_property_with_http_info(vcs_root_locator, name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str vcs_root_locator: (required)
+        :param str name: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['vcs_root_locator', 'name']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_vcs_root_property" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'vcs_root_locator' is set
+        if ('vcs_root_locator' not in params or
+                params['vcs_root_locator'] is None):
+            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `get_vcs_root_property`")  # noqa: E501
+        # verify the required parameter 'name' is set
+        if ('name' not in params or
+                params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `get_vcs_root_property`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'vcs_root_locator' in params:
+            if isinstance(params['vcs_root_locator'], TeamCityObject):
+                path_params['vcsRootLocator'] = params['vcs_root_locator'].locator_id
+            else:
+                path_params['vcsRootLocator'] = params['vcs_root_locator']  # noqa: E501
+        if 'name' in params:
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/vcs-roots/{vcsRootLocator}/properties/{name}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_vcs_root_settings_file_with_http_info(self, vcs_root_locator, **kwargs):  # noqa: E501
+        """Get the settings file of the matching VCS root.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_vcs_root_settings_file_with_http_info(vcs_root_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str vcs_root_locator: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['vcs_root_locator']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_vcs_root_settings_file" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'vcs_root_locator' is set
+        if ('vcs_root_locator' not in params or
+                params['vcs_root_locator'] is None):
+            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `get_vcs_root_settings_file`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'vcs_root_locator' in params:
+            if isinstance(params['vcs_root_locator'], TeamCityObject):
+                path_params['vcsRootLocator'] = params['vcs_root_locator'].locator_id
+            else:
+                path_params['vcsRootLocator'] = params['vcs_root_locator']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/vcs-roots/{vcsRootLocator}/settingsFile', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __set_vcs_root_field_with_http_info(self, vcs_root_locator, field, **kwargs):  # noqa: E501
+        """Update a field of the matching VCS root.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__set_vcs_root_field_with_http_info(vcs_root_locator, field, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1698,18 +1246,18 @@ class VcsRootApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method set_field" % key
+                    " to method set_vcs_root_field" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'vcs_root_locator' is set
         if ('vcs_root_locator' not in params or
                 params['vcs_root_locator'] is None):
-            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `set_field`")  # noqa: E501
+            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `set_vcs_root_field`")  # noqa: E501
         # verify the required parameter 'field' is set
         if ('field' not in params or
                 params['field'] is None):
-            raise ValueError("Missing the required parameter `field` when calling `set_field`")  # noqa: E501
+            raise ValueError("Missing the required parameter `field` when calling `set_vcs_root_field`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1735,6 +1283,14 @@ class VcsRootApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['text/plain'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -1754,25 +1310,25 @@ class VcsRootApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __set_instance_field_with_http_info(self, vcs_root_locator, vcs_root_instance_locator, field, **kwargs):  # noqa: E501
-        """set_instance_field  # noqa: E501
+    def __set_vcs_root_properties_with_http_info(self, vcs_root_locator, **kwargs):  # noqa: E501
+        """Update all properties of the matching VCS root.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__set_instance_field_with_http_info(vcs_root_locator, vcs_root_instance_locator, field, async_req=True)
+        >>> thread = api.__set_vcs_root_properties_with_http_info(vcs_root_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str vcs_root_locator: (required)
-        :param str vcs_root_instance_locator: (required)
-        :param str field: (required)
-        :param str body:
-        :return: str
+        :param Properties body:
+        :param str fields:
+        :return: Properties
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['vcs_root_locator', 'vcs_root_instance_locator', 'field', 'body']  # noqa: E501
+        all_params = ['vcs_root_locator', 'body', 'fields']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1783,22 +1339,14 @@ class VcsRootApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method set_instance_field" % key
+                    " to method set_vcs_root_properties" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'vcs_root_locator' is set
         if ('vcs_root_locator' not in params or
                 params['vcs_root_locator'] is None):
-            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `set_instance_field`")  # noqa: E501
-        # verify the required parameter 'vcs_root_instance_locator' is set
-        if ('vcs_root_instance_locator' not in params or
-                params['vcs_root_instance_locator'] is None):
-            raise ValueError("Missing the required parameter `vcs_root_instance_locator` when calling `set_instance_field`")  # noqa: E501
-        # verify the required parameter 'field' is set
-        if ('field' not in params or
-                params['field'] is None):
-            raise ValueError("Missing the required parameter `field` when calling `set_instance_field`")  # noqa: E501
+            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `set_vcs_root_properties`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1808,16 +1356,101 @@ class VcsRootApi(object):
                 path_params['vcsRootLocator'] = params['vcs_root_locator'].locator_id
             else:
                 path_params['vcsRootLocator'] = params['vcs_root_locator']  # noqa: E501
-        if 'vcs_root_instance_locator' in params:
-            if isinstance(params['vcs_root_instance_locator'], TeamCityObject):
-                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator'].locator_id
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/vcs-roots/{vcsRootLocator}/properties', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Properties',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __set_vcs_root_property_with_http_info(self, vcs_root_locator, name, **kwargs):  # noqa: E501
+        """Update a property of the matching VCS root.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__set_vcs_root_property_with_http_info(vcs_root_locator, name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str vcs_root_locator: (required)
+        :param str name: (required)
+        :param str body:
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['vcs_root_locator', 'name', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method set_vcs_root_property" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'vcs_root_locator' is set
+        if ('vcs_root_locator' not in params or
+                params['vcs_root_locator'] is None):
+            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `set_vcs_root_property`")  # noqa: E501
+        # verify the required parameter 'name' is set
+        if ('name' not in params or
+                params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `set_vcs_root_property`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'vcs_root_locator' in params:
+            if isinstance(params['vcs_root_locator'], TeamCityObject):
+                path_params['vcsRootLocator'] = params['vcs_root_locator'].locator_id
             else:
-                path_params['vcsRootInstanceLocator'] = params['vcs_root_instance_locator']  # noqa: E501
-        if 'field' in params:
-            if isinstance(params['field'], TeamCityObject):
-                path_params['field'] = params['field'].locator_id
+                path_params['vcsRootLocator'] = params['vcs_root_locator']  # noqa: E501
+        if 'name' in params:
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
             else:
-                path_params['field'] = params['field']  # noqa: E501
+                path_params['name'] = params['name']  # noqa: E501
 
         query_params = []
 
@@ -1829,11 +1462,19 @@ class VcsRootApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['text/plain'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/app/rest/vcs-roots/{vcsRootLocator}/instances/{vcsRootInstanceLocator}/{field}', 'PUT',
+            '/app/rest/vcs-roots/{vcsRootLocator}/properties/{name}', 'PUT',
             path_params,
             query_params,
             header_params,

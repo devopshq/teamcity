@@ -39,7 +39,9 @@ class Server(TeamCityObject):
         'build_queue': 'Href',
         'agent_pools': 'Href',
         'investigations': 'Href',
-        'mutes': 'Href'
+        'mutes': 'Href',
+        'artifacts_url': 'str',
+        'nodes': 'Href'
     }
 
     attribute_map = {
@@ -62,10 +64,12 @@ class Server(TeamCityObject):
         'build_queue': 'buildQueue',
         'agent_pools': 'agentPools',
         'investigations': 'investigations',
-        'mutes': 'mutes'
+        'mutes': 'mutes',
+        'artifacts_url': 'artifactsUrl',
+        'nodes': 'nodes'
     }
 
-    def __init__(self, version=None, version_major=None, version_minor=None, start_time=None, current_time=None, build_number=None, build_date=None, internal_id=None, role=None, web_url=None, projects=None, vcs_roots=None, builds=None, users=None, user_groups=None, agents=None, build_queue=None, agent_pools=None, investigations=None, mutes=None, teamcity=None):  # noqa: E501
+    def __init__(self, version=None, version_major=None, version_minor=None, start_time=None, current_time=None, build_number=None, build_date=None, internal_id=None, role=None, web_url=None, projects=None, vcs_roots=None, builds=None, users=None, user_groups=None, agents=None, build_queue=None, agent_pools=None, investigations=None, mutes=None, artifacts_url=None, nodes=None, teamcity=None):  # noqa: E501
         """Server - a model defined in Swagger"""  # noqa: E501
 
         self._version = None
@@ -88,6 +92,8 @@ class Server(TeamCityObject):
         self._agent_pools = None
         self._investigations = None
         self._mutes = None
+        self._artifacts_url = None
+        self._nodes = None
         self.discriminator = None
 
         if version is not None:
@@ -130,6 +136,10 @@ class Server(TeamCityObject):
             self.investigations = investigations
         if mutes is not None:
             self.mutes = mutes
+        if artifacts_url is not None:
+            self.artifacts_url = artifacts_url
+        if nodes is not None:
+            self.nodes = nodes
         super(Server, self).__init__(teamcity=teamcity)
 
     @property
@@ -551,3 +561,45 @@ class Server(TeamCityObject):
         """
 
         self._mutes = mutes
+
+    @property
+    def artifacts_url(self):
+        """Gets the artifacts_url of this Server.  # noqa: E501
+
+
+        :return: The artifacts_url of this Server.  # noqa: E501
+        :rtype: str
+        """
+        return self._artifacts_url
+
+    @artifacts_url.setter
+    def artifacts_url(self, artifacts_url):
+        """Sets the artifacts_url of this Server.
+
+
+        :param artifacts_url: The artifacts_url of this Server.  # noqa: E501
+        :type: str
+        """
+
+        self._artifacts_url = artifacts_url
+
+    @property
+    def nodes(self):
+        """Gets the nodes of this Server.  # noqa: E501
+
+
+        :return: The nodes of this Server.  # noqa: E501
+        :rtype: Href
+        """
+        return self._nodes
+
+    @nodes.setter
+    def nodes(self, nodes):
+        """Sets the nodes of this Server.
+
+
+        :param nodes: The nodes of this Server.  # noqa: E501
+        :type: Href
+        """
+
+        self._nodes = nodes

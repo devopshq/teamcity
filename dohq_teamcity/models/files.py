@@ -3,7 +3,7 @@
 from dohq_teamcity.custom.base_model import TeamCityObject
 
 
-# from dohq_teamcity.models.file import File  # noqa: F401,E501
+# from dohq_teamcity.models.file import file  # noqa: F401,E501
 
 
 class Files(TeamCityObject):
@@ -22,7 +22,7 @@ class Files(TeamCityObject):
     swagger_types = {
         'count': 'int',
         'href': 'str',
-        'file': 'list[File]'
+        'file': 'list[file]'
     }
 
     attribute_map = {
@@ -95,7 +95,7 @@ class Files(TeamCityObject):
 
 
         :return: The file of this Files.  # noqa: E501
-        :rtype: list[File]
+        :rtype: list[file]
         """
         return self._file
 
@@ -105,7 +105,7 @@ class Files(TeamCityObject):
 
 
         :param file: The file of this Files.  # noqa: E501
-        :type: list[File]
+        :type: list[file]
         """
 
         self._file = file

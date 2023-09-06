@@ -20,6 +20,6 @@ Properties
      - `optional` 
    * - **readd_into_queue**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
 
 

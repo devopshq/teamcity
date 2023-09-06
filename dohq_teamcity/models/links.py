@@ -20,48 +20,27 @@ class Links(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'count': 'int',
-        'link': 'list[Link]'
+        'link': 'list[Link]',
+        'count': 'int'
     }
 
     attribute_map = {
-        'count': 'count',
-        'link': 'link'
+        'link': 'link',
+        'count': 'count'
     }
 
-    def __init__(self, count=None, link=None, teamcity=None):  # noqa: E501
+    def __init__(self, link=None, count=None, teamcity=None):  # noqa: E501
         """Links - a model defined in Swagger"""  # noqa: E501
 
-        self._count = None
         self._link = None
+        self._count = None
         self.discriminator = None
 
-        if count is not None:
-            self.count = count
         if link is not None:
             self.link = link
+        if count is not None:
+            self.count = count
         super(Links, self).__init__(teamcity=teamcity)
-
-    @property
-    def count(self):
-        """Gets the count of this Links.  # noqa: E501
-
-
-        :return: The count of this Links.  # noqa: E501
-        :rtype: int
-        """
-        return self._count
-
-    @count.setter
-    def count(self, count):
-        """Sets the count of this Links.
-
-
-        :param count: The count of this Links.  # noqa: E501
-        :type: int
-        """
-
-        self._count = count
 
     @property
     def link(self):
@@ -83,3 +62,24 @@ class Links(TeamCityObject):
         """
 
         self._link = link
+
+    @property
+    def count(self):
+        """Gets the count of this Links.  # noqa: E501
+
+
+        :return: The count of this Links.  # noqa: E501
+        :rtype: int
+        """
+        return self._count
+
+    @count.setter
+    def count(self, count):
+        """Sets the count of this Links.
+
+
+        :param count: The count of this Links.  # noqa: E501
+        :type: int
+        """
+
+        self._count = count

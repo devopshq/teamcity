@@ -26,22 +26,25 @@ Properties
      - `optional` 
    * - **ignored**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **duration**
      - **int**
      - `optional` 
    * - **run_order**
      - **str**
      - `optional` 
+   * - **new_failure**
+     - **bool**
+     - `optional` 
    * - **muted**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **currently_muted**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **currently_investigated**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **href**
      - **str**
      - `optional` 
@@ -68,6 +71,12 @@ Properties
      - `optional` 
    * - **invocations**
      -  `TestOccurrences <./TestOccurrences.html>`_
+     - `optional` 
+   * - **metadata**
+     -  `TestRunMetadata <./TestRunMetadata.html>`_
+     - `optional` 
+   * - **log_anchor**
+     - **str**
      - `optional` 
 
 

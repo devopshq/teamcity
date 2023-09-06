@@ -14,6 +14,10 @@ dohq_teamcity.ChangeApi
 
    * - Method
      - HTTP request
+   * - :ref:`get_all_changes`
+     - **GET** ``/app/rest/changes``
+   * - :ref:`get_change`
+     - **GET** ``/app/rest/changes/{changeLocator}``
    * - :ref:`get_change_attributes`
      - **GET** ``/app/rest/changes/{changeLocator}/attributes``
    * - :ref:`get_change_duplicates`
@@ -24,20 +28,102 @@ dohq_teamcity.ChangeApi
      - **GET** ``/app/rest/changes/{changeLocator}/firstBuilds``
    * - :ref:`get_change_issue`
      - **GET** ``/app/rest/changes/{changeLocator}/issues``
+   * - :ref:`get_change_parent_changes`
+     - **GET** ``/app/rest/changes/{changeLocator}/parentChanges``
    * - :ref:`get_change_parent_revisions`
      - **GET** ``/app/rest/changes/{changeLocator}/parentRevisions``
    * - :ref:`get_change_vcs_root`
-     - **GET** ``/app/rest/changes/{changeLocator}/vcsRoot``
-   * - :ref:`get_change_vcs_root_instance`
      - **GET** ``/app/rest/changes/{changeLocator}/vcsRootInstance``
-   * - :ref:`get_parent_changes`
-     - **GET** ``/app/rest/changes/{changeLocator}/parentChanges``
-   * - :ref:`get_related_build_types`
-     - **GET** ``/app/rest/changes/{changeLocator}/buildTypes``
-   * - :ref:`serve_change`
-     - **GET** ``/app/rest/changes/{changeLocator}``
-   * - :ref:`serve_changes`
-     - **GET** ``/app/rest/changes``
+
+.. _get_all_changes:
+
+get_all_changes
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    locator = 'locator_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get all changes.
+        api_response = tc.change_api.get_all_changes(locator=locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ChangeApi->get_all_changes: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **locator**
+     - **str**
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Changes <../models/Changes.html>`_
+
+`Back to top <#>`_
+
+.. _get_change:
+
+get_change
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    change_locator = 'change_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get change matching the locator.
+        api_response = tc.change_api.get_change(change_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ChangeApi->get_change: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **change_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Change <../models/Change.html>`_
+
+`Back to top <#>`_
 
 .. _get_change_attributes:
 
@@ -56,6 +142,7 @@ get_change_attributes
     fields = 'fields_example' # str |  (optional)
 
     try:
+        # Get attributes of the matching change.
         api_response = tc.change_api.get_change_attributes(change_locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
@@ -100,6 +187,7 @@ get_change_duplicates
     fields = 'fields_example' # str |  (optional)
 
     try:
+        # Get duplicates of the matching change.
         api_response = tc.change_api.get_change_duplicates(change_locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
@@ -144,6 +232,7 @@ get_change_field
     field = 'field_example' # str | 
 
     try:
+        # Get a field of the matching change.
         api_response = tc.change_api.get_change_field(change_locator, field)
        pprint(api_response)
     except ApiException as e:
@@ -188,6 +277,7 @@ get_change_first_builds
     fields = 'fields_example' # str |  (optional)
 
     try:
+        # Get first builds of the matching change.
         api_response = tc.change_api.get_change_first_builds(change_locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
@@ -231,6 +321,7 @@ get_change_issue
     change_locator = 'change_locator_example' # str | 
 
     try:
+        # Get issues of the matching change.
         api_response = tc.change_api.get_change_issue(change_locator)
        pprint(api_response)
     except ApiException as e:
@@ -255,6 +346,51 @@ Return type:
 
 `Back to top <#>`_
 
+.. _get_change_parent_changes:
+
+get_change_parent_changes
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    change_locator = 'change_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get parent changes of the matching change.
+        api_response = tc.change_api.get_change_parent_changes(change_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ChangeApi->get_change_parent_changes: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **change_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Changes <../models/Changes.html>`_
+
+`Back to top <#>`_
+
 .. _get_change_parent_revisions:
 
 get_change_parent_revisions
@@ -271,6 +407,7 @@ get_change_parent_revisions
     change_locator = 'change_locator_example' # str | 
 
     try:
+        # Get parent revisions of the matching change.
         api_response = tc.change_api.get_change_parent_revisions(change_locator)
        pprint(api_response)
     except ApiException as e:
@@ -312,6 +449,7 @@ get_change_vcs_root
     fields = 'fields_example' # str |  (optional)
 
     try:
+        # Get a VCS root instance of the matching change.
         api_response = tc.change_api.get_change_vcs_root(change_locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
@@ -336,254 +474,6 @@ get_change_vcs_root
 
 Return type:
     `VcsRootInstance <../models/VcsRootInstance.html>`_
-
-`Back to top <#>`_
-
-.. _get_change_vcs_root_instance:
-
-get_change_vcs_root_instance
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    change_locator = 'change_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.change_api.get_change_vcs_root_instance(change_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling ChangeApi->get_change_vcs_root_instance: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **change_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `VcsRootInstance <../models/VcsRootInstance.html>`_
-
-`Back to top <#>`_
-
-.. _get_parent_changes:
-
-get_parent_changes
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    change_locator = 'change_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.change_api.get_parent_changes(change_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling ChangeApi->get_parent_changes: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **change_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Changes <../models/Changes.html>`_
-
-`Back to top <#>`_
-
-.. _get_related_build_types:
-
-get_related_build_types
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    change_locator = 'change_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.change_api.get_related_build_types(change_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling ChangeApi->get_related_build_types: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **change_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `BuildTypes <../models/BuildTypes.html>`_
-
-`Back to top <#>`_
-
-.. _serve_change:
-
-serve_change
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    change_locator = 'change_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.change_api.serve_change(change_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling ChangeApi->serve_change: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **change_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Change <../models/Change.html>`_
-
-`Back to top <#>`_
-
-.. _serve_changes:
-
-serve_changes
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    project = 'project_example' # str |  (optional)
-    build_type = 'build_type_example' # str |  (optional)
-    build = 'build_example' # str |  (optional)
-    vcs_root = 'vcs_root_example' # str |  (optional)
-    since_change = 'since_change_example' # str |  (optional)
-    start = 789 # int |  (optional)
-    count = 56 # int |  (optional)
-    locator = 'locator_example' # str |  (optional)
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.change_api.serve_changes(project=project, build_type=build_type, build=build, vcs_root=vcs_root, since_change=since_change, start=start, count=count, locator=locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling ChangeApi->serve_changes: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **project**
-     - **str**
-     - [optional] 
-   * - **build_type**
-     - **str**
-     - [optional] 
-   * - **build**
-     - **str**
-     - [optional] 
-   * - **vcs_root**
-     - **str**
-     - [optional] 
-   * - **since_change**
-     - **str**
-     - [optional] 
-   * - **start**
-     - **int**
-     - [optional] 
-   * - **count**
-     - **int**
-     - [optional] 
-   * - **locator**
-     - **str**
-     - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Changes <../models/Changes.html>`_
 
 `Back to top <#>`_
 

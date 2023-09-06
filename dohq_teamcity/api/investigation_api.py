@@ -34,12 +34,13 @@ class InvestigationApi(object):
     def __init__(self, api_client=None):
         self.api_client = api_client
 
-    def create_instance(self, **kwargs):  # noqa: E501
-        """create_instance  # noqa: E501
+    def add_investigation(self, **kwargs):  # noqa: E501
+        """Create a new investigation.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_instance(async_req=True)
+        >>> thread = api.add_investigation(async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -51,17 +52,18 @@ class InvestigationApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__create_instance_with_http_info(**kwargs)  # noqa: E501
+            return self.__add_investigation_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.__create_instance_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.__add_investigation_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def create_instances(self, **kwargs):  # noqa: E501
-        """create_instances  # noqa: E501
+    def add_multiple_investigations(self, **kwargs):  # noqa: E501
+        """Create multiple new investigations.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_instances(async_req=True)
+        >>> thread = api.add_multiple_investigations(async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -73,17 +75,18 @@ class InvestigationApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__create_instances_with_http_info(**kwargs)  # noqa: E501
+            return self.__add_multiple_investigations_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.__create_instances_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.__add_multiple_investigations_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def delete_instance(self, investigation_locator, **kwargs):  # noqa: E501
-        """delete_instance  # noqa: E501
+    def delete_investigation(self, investigation_locator, **kwargs):  # noqa: E501
+        """Delete investigation matching the locator.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_instance(investigation_locator, async_req=True)
+        >>> thread = api.delete_investigation(investigation_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -94,17 +97,18 @@ class InvestigationApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__delete_instance_with_http_info(investigation_locator, **kwargs)  # noqa: E501
+            return self.__delete_investigation_with_http_info(investigation_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__delete_instance_with_http_info(investigation_locator, **kwargs)  # noqa: E501
+            (data) = self.__delete_investigation_with_http_info(investigation_locator, **kwargs)  # noqa: E501
             return data
 
-    def get_investigations(self, **kwargs):  # noqa: E501
-        """get_investigations  # noqa: E501
+    def get_all_investigations(self, **kwargs):  # noqa: E501
+        """Get all investigations.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_investigations(async_req=True)
+        >>> thread = api.get_all_investigations(async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -116,17 +120,41 @@ class InvestigationApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__get_investigations_with_http_info(**kwargs)  # noqa: E501
+            return self.__get_all_investigations_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.__get_investigations_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.__get_all_investigations_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def replace_instance(self, investigation_locator, **kwargs):  # noqa: E501
-        """replace_instance  # noqa: E501
+    def get_investigation(self, investigation_locator, **kwargs):  # noqa: E501
+        """Get investigation matching the locator.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.replace_instance(investigation_locator, async_req=True)
+        >>> thread = api.get_investigation(investigation_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str investigation_locator: (required)
+        :param str fields:
+        :return: Investigation
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_investigation_with_http_info(investigation_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_investigation_with_http_info(investigation_locator, **kwargs)  # noqa: E501
+            return data
+
+    def replace_investigation(self, investigation_locator, **kwargs):  # noqa: E501
+        """Update investigation matching the locator.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.replace_investigation(investigation_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -139,39 +167,18 @@ class InvestigationApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__replace_instance_with_http_info(investigation_locator, **kwargs)  # noqa: E501
+            return self.__replace_investigation_with_http_info(investigation_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__replace_instance_with_http_info(investigation_locator, **kwargs)  # noqa: E501
+            (data) = self.__replace_investigation_with_http_info(investigation_locator, **kwargs)  # noqa: E501
             return data
 
-    def serve_instance(self, investigation_locator, **kwargs):  # noqa: E501
-        """serve_instance  # noqa: E501
+    def __add_investigation_with_http_info(self, **kwargs):  # noqa: E501
+        """Create a new investigation.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_instance(investigation_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str investigation_locator: (required)
-        :param str fields:
-        :return: Investigation
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_instance_with_http_info(investigation_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_instance_with_http_info(investigation_locator, **kwargs)  # noqa: E501
-            return data
-
-    def __create_instance_with_http_info(self, **kwargs):  # noqa: E501
-        """create_instance  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__create_instance_with_http_info(async_req=True)
+        >>> thread = api.__add_investigation_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -193,7 +200,7 @@ class InvestigationApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_instance" % key
+                    " to method add_investigation" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -214,6 +221,14 @@ class InvestigationApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -233,12 +248,13 @@ class InvestigationApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __create_instances_with_http_info(self, **kwargs):  # noqa: E501
-        """create_instances  # noqa: E501
+    def __add_multiple_investigations_with_http_info(self, **kwargs):  # noqa: E501
+        """Create multiple new investigations.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__create_instances_with_http_info(async_req=True)
+        >>> thread = api.__add_multiple_investigations_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -260,7 +276,7 @@ class InvestigationApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_instances" % key
+                    " to method add_multiple_investigations" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -281,6 +297,14 @@ class InvestigationApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -300,12 +324,13 @@ class InvestigationApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __delete_instance_with_http_info(self, investigation_locator, **kwargs):  # noqa: E501
-        """delete_instance  # noqa: E501
+    def __delete_investigation_with_http_info(self, investigation_locator, **kwargs):  # noqa: E501
+        """Delete investigation matching the locator.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__delete_instance_with_http_info(investigation_locator, async_req=True)
+        >>> thread = api.__delete_investigation_with_http_info(investigation_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -326,14 +351,14 @@ class InvestigationApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_instance" % key
+                    " to method delete_investigation" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'investigation_locator' is set
         if ('investigation_locator' not in params or
                 params['investigation_locator'] is None):
-            raise ValueError("Missing the required parameter `investigation_locator` when calling `delete_instance`")  # noqa: E501
+            raise ValueError("Missing the required parameter `investigation_locator` when calling `delete_investigation`")  # noqa: E501
 
         collection_formats = {}
 
@@ -352,6 +377,10 @@ class InvestigationApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -371,12 +400,13 @@ class InvestigationApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __get_investigations_with_http_info(self, **kwargs):  # noqa: E501
-        """get_investigations  # noqa: E501
+    def __get_all_investigations_with_http_info(self, **kwargs):  # noqa: E501
+        """Get all investigations.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_investigations_with_http_info(async_req=True)
+        >>> thread = api.__get_all_investigations_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -398,7 +428,7 @@ class InvestigationApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_investigations" % key
+                    " to method get_all_investigations" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -419,6 +449,10 @@ class InvestigationApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -438,12 +472,92 @@ class InvestigationApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __replace_instance_with_http_info(self, investigation_locator, **kwargs):  # noqa: E501
-        """replace_instance  # noqa: E501
+    def __get_investigation_with_http_info(self, investigation_locator, **kwargs):  # noqa: E501
+        """Get investigation matching the locator.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__replace_instance_with_http_info(investigation_locator, async_req=True)
+        >>> thread = api.__get_investigation_with_http_info(investigation_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str investigation_locator: (required)
+        :param str fields:
+        :return: Investigation
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['investigation_locator', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_investigation" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'investigation_locator' is set
+        if ('investigation_locator' not in params or
+                params['investigation_locator'] is None):
+            raise ValueError("Missing the required parameter `investigation_locator` when calling `get_investigation`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'investigation_locator' in params:
+            if isinstance(params['investigation_locator'], TeamCityObject):
+                path_params['investigationLocator'] = params['investigation_locator'].locator_id
+            else:
+                path_params['investigationLocator'] = params['investigation_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/investigations/{investigationLocator}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Investigation',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __replace_investigation_with_http_info(self, investigation_locator, **kwargs):  # noqa: E501
+        """Update investigation matching the locator.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__replace_investigation_with_http_info(investigation_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -466,14 +580,14 @@ class InvestigationApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method replace_instance" % key
+                    " to method replace_investigation" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'investigation_locator' is set
         if ('investigation_locator' not in params or
                 params['investigation_locator'] is None):
-            raise ValueError("Missing the required parameter `investigation_locator` when calling `replace_instance`")  # noqa: E501
+            raise ValueError("Missing the required parameter `investigation_locator` when calling `replace_investigation`")  # noqa: E501
 
         collection_formats = {}
 
@@ -496,85 +610,19 @@ class InvestigationApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
             '/app/rest/investigations/{investigationLocator}', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Investigation',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __serve_instance_with_http_info(self, investigation_locator, **kwargs):  # noqa: E501
-        """serve_instance  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_instance_with_http_info(investigation_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str investigation_locator: (required)
-        :param str fields:
-        :return: Investigation
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['investigation_locator', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method serve_instance" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'investigation_locator' is set
-        if ('investigation_locator' not in params or
-                params['investigation_locator'] is None):
-            raise ValueError("Missing the required parameter `investigation_locator` when calling `serve_instance`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'investigation_locator' in params:
-            if isinstance(params['investigation_locator'], TeamCityObject):
-                path_params['investigationLocator'] = params['investigation_locator'].locator_id
-            else:
-                path_params['investigationLocator'] = params['investigation_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/investigations/{investigationLocator}', 'GET',
             path_params,
             query_params,
             header_params,

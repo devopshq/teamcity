@@ -14,161 +14,143 @@ dohq_teamcity.BuildTypeApi
 
    * - Method
      - HTTP request
-   * - :ref:`add_agent_requirement`
+   * - :ref:`add_agent_requirement_to_build_type`
      - **POST** ``/app/rest/buildTypes/{btLocator}/agent-requirements``
-   * - :ref:`add_artifact_dep`
+   * - :ref:`add_artifact_dependency_to_build_type`
      - **POST** ``/app/rest/buildTypes/{btLocator}/artifact-dependencies``
-   * - :ref:`add_build_type`
-     - **POST** ``/app/rest/buildTypes``
-   * - :ref:`add_feature`
+   * - :ref:`add_build_feature_to_build_type`
      - **POST** ``/app/rest/buildTypes/{btLocator}/features``
-   * - :ref:`add_feature_parameter`
-     - **PUT** ``/app/rest/buildTypes/{btLocator}/features/{featureId}/parameters/{parameterName}``
-   * - :ref:`add_snapshot_dep`
-     - **POST** ``/app/rest/buildTypes/{btLocator}/snapshot-dependencies``
-   * - :ref:`add_step`
+   * - :ref:`add_build_step_to_build_type`
      - **POST** ``/app/rest/buildTypes/{btLocator}/steps``
-   * - :ref:`add_step_parameter`
-     - **PUT** ``/app/rest/buildTypes/{btLocator}/steps/{stepId}/parameters/{parameterName}``
-   * - :ref:`add_template`
+   * - :ref:`add_build_template`
      - **POST** ``/app/rest/buildTypes/{btLocator}/templates``
-   * - :ref:`add_trigger`
+   * - :ref:`add_parameter_to_build_feature`
+     - **PUT** ``/app/rest/buildTypes/{btLocator}/features/{featureId}/parameters/{parameterName}``
+   * - :ref:`add_parameter_to_build_step`
+     - **PUT** ``/app/rest/buildTypes/{btLocator}/steps/{stepId}/parameters/{parameterName}``
+   * - :ref:`add_snapshot_dependency_to_build_type`
+     - **POST** ``/app/rest/buildTypes/{btLocator}/snapshot-dependencies``
+   * - :ref:`add_trigger_to_build_type`
      - **POST** ``/app/rest/buildTypes/{btLocator}/triggers``
-   * - :ref:`add_vcs_root_entry`
+   * - :ref:`add_vcs_root_to_build_type`
      - **POST** ``/app/rest/buildTypes/{btLocator}/vcs-root-entries``
-   * - :ref:`change_artifact_dep_setting`
-     - **PUT** ``/app/rest/buildTypes/{btLocator}/artifact-dependencies/{artifactDepLocator}/{fieldName}``
-   * - :ref:`change_feature_setting`
-     - **PUT** ``/app/rest/buildTypes/{btLocator}/features/{featureId}/{name}``
-   * - :ref:`change_requirement_setting`
-     - **PUT** ``/app/rest/buildTypes/{btLocator}/agent-requirements/{agentRequirementLocator}/{fieldName}``
-   * - :ref:`change_step_setting`
-     - **PUT** ``/app/rest/buildTypes/{btLocator}/steps/{stepId}/{fieldName}``
-   * - :ref:`change_trigger_setting`
-     - **PUT** ``/app/rest/buildTypes/{btLocator}/triggers/{triggerLocator}/{fieldName}``
+   * - :ref:`create_build_parameter_of_build_type`
+     - **POST** ``/app/rest/buildTypes/{btLocator}/parameters``
+   * - :ref:`create_build_type`
+     - **POST** ``/app/rest/buildTypes``
    * - :ref:`delete_agent_requirement`
      - **DELETE** ``/app/rest/buildTypes/{btLocator}/agent-requirements/{agentRequirementLocator}``
-   * - :ref:`delete_all_parameters`
-     - **DELETE** ``/app/rest/buildTypes/{btLocator}/parameters``
-   * - :ref:`delete_all_parameters_0`
-     - **DELETE** ``/app/rest/buildTypes/{btLocator}/settings``
-   * - :ref:`delete_artifact_dep`
+   * - :ref:`delete_artifact_dependency`
      - **DELETE** ``/app/rest/buildTypes/{btLocator}/artifact-dependencies/{artifactDepLocator}``
+   * - :ref:`delete_build_parameter_of_build_type`
+     - **DELETE** ``/app/rest/buildTypes/{btLocator}/parameters/{name}``
+   * - :ref:`delete_build_parameters_of_build_type`
+     - **DELETE** ``/app/rest/buildTypes/{btLocator}/parameters``
+   * - :ref:`delete_build_step`
+     - **DELETE** ``/app/rest/buildTypes/{btLocator}/steps/{stepId}``
+   * - :ref:`delete_build_step_parameters`
+     - **PUT** ``/app/rest/buildTypes/{btLocator}/steps/{stepId}/parameters``
    * - :ref:`delete_build_type`
      - **DELETE** ``/app/rest/buildTypes/{btLocator}``
-   * - :ref:`delete_feature`
+   * - :ref:`delete_feature_of_build_type`
      - **DELETE** ``/app/rest/buildTypes/{btLocator}/features/{featureId}``
-   * - :ref:`delete_parameter`
-     - **DELETE** ``/app/rest/buildTypes/{btLocator}/parameters/{name}``
-   * - :ref:`delete_parameter_0`
-     - **DELETE** ``/app/rest/buildTypes/{btLocator}/settings/{name}``
-   * - :ref:`delete_snapshot_dep`
+   * - :ref:`delete_snapshot_dependency`
      - **DELETE** ``/app/rest/buildTypes/{btLocator}/snapshot-dependencies/{snapshotDepLocator}``
-   * - :ref:`delete_step`
-     - **DELETE** ``/app/rest/buildTypes/{btLocator}/steps/{stepId}``
    * - :ref:`delete_trigger`
      - **DELETE** ``/app/rest/buildTypes/{btLocator}/triggers/{triggerLocator}``
-   * - :ref:`delete_vcs_root_entry`
+   * - :ref:`delete_vcs_root_of_build_type`
      - **DELETE** ``/app/rest/buildTypes/{btLocator}/vcs-root-entries/{vcsRootLocator}``
+   * - :ref:`download_file_of_build_type`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/vcs/files/latest/files{path}``
    * - :ref:`get_agent_requirement`
      - **GET** ``/app/rest/buildTypes/{btLocator}/agent-requirements/{agentRequirementLocator}``
-   * - :ref:`get_agent_requirements`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/agent-requirements``
+   * - :ref:`get_agent_requirement_parameter`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/agent-requirements/{agentRequirementLocator}/{fieldName}``
    * - :ref:`get_aliases`
      - **GET** ``/app/rest/buildTypes/{btLocator}/aliases``
-   * - :ref:`get_artifact_dep`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/artifact-dependencies/{artifactDepLocator}``
-   * - :ref:`get_artifact_dep_setting`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/artifact-dependencies/{artifactDepLocator}/{fieldName}``
-   * - :ref:`get_artifact_deps`
+   * - :ref:`get_all_agent_requirements`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/agent-requirements``
+   * - :ref:`get_all_artifact_dependencies`
      - **GET** ``/app/rest/buildTypes/{btLocator}/artifact-dependencies``
-   * - :ref:`get_build_types`
-     - **GET** ``/app/rest/buildTypes``
-   * - :ref:`get_children`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/vcs/files/latest/children{path}``
-   * - :ref:`get_children_alias`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/vcs/files/latest/{path}``
-   * - :ref:`get_content`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/vcs/files/latest/content{path}``
-   * - :ref:`get_content_alias`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/vcs/files/latest/files{path}``
-   * - :ref:`get_current_vcs_instances`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/vcsRootInstances``
-   * - :ref:`get_current_vcs_instances_obsolete`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/vcs-root-instances``
-   * - :ref:`get_example_new_project_description`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/example/newBuildTypeDescription``
-   * - :ref:`get_example_new_project_description_compatibility_version1`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/newBuildTypeDescription``
-   * - :ref:`get_feature`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/features/{featureId}``
-   * - :ref:`get_feature_parameter`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/features/{featureId}/parameters/{parameterName}``
-   * - :ref:`get_feature_parameters`
+   * - :ref:`get_all_branches_of_build_type`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/branches``
+   * - :ref:`get_all_build_feature_parameters`
      - **GET** ``/app/rest/buildTypes/{btLocator}/features/{featureId}/parameters``
-   * - :ref:`get_feature_setting`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/features/{featureId}/{name}``
-   * - :ref:`get_features`
+   * - :ref:`get_all_build_features`
      - **GET** ``/app/rest/buildTypes/{btLocator}/features``
-   * - :ref:`get_investigations`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/investigations``
-   * - :ref:`get_metadata`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/vcs/files/latest/metadata{path}``
-   * - :ref:`get_parameter`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/parameters/{name}``
-   * - :ref:`get_parameter_0`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/settings/{name}``
-   * - :ref:`get_parameter_type`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/parameters/{name}/type``
-   * - :ref:`get_parameter_type_raw_value`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/parameters/{name}/type/rawValue``
-   * - :ref:`get_parameter_value_long`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/parameters/{name}/value``
-   * - :ref:`get_parameter_value_long_0`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/settings/{name}/value``
-   * - :ref:`get_parameters`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/parameters``
-   * - :ref:`get_parameters_0`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/settings``
-   * - :ref:`get_requirement_setting`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/agent-requirements/{agentRequirementLocator}/{fieldName}``
-   * - :ref:`get_root`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/vcs/files/latest``
-   * - :ref:`get_settings_file`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/settingsFile``
-   * - :ref:`get_snapshot_dep`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/snapshot-dependencies/{snapshotDepLocator}``
-   * - :ref:`get_snapshot_deps`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/snapshot-dependencies``
-   * - :ref:`get_step`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/steps/{stepId}``
-   * - :ref:`get_step_parameter`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/steps/{stepId}/parameters/{parameterName}``
-   * - :ref:`get_step_parameters`
+   * - :ref:`get_all_build_step_parameters`
      - **GET** ``/app/rest/buildTypes/{btLocator}/steps/{stepId}/parameters``
-   * - :ref:`get_step_setting`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/steps/{stepId}/{fieldName}``
-   * - :ref:`get_steps`
+   * - :ref:`get_all_build_steps`
      - **GET** ``/app/rest/buildTypes/{btLocator}/steps``
-   * - :ref:`get_template`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/templates/{templateLocator}``
-   * - :ref:`get_templates`
+   * - :ref:`get_all_build_templates`
      - **GET** ``/app/rest/buildTypes/{btLocator}/templates``
+   * - :ref:`get_all_build_types`
+     - **GET** ``/app/rest/buildTypes``
+   * - :ref:`get_all_investigations_of_build_type`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/investigations``
+   * - :ref:`get_all_snapshot_dependencies`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/snapshot-dependencies``
+   * - :ref:`get_all_triggers`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/triggers``
+   * - :ref:`get_all_vcs_roots_of_build_type`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/vcs-root-entries``
+   * - :ref:`get_artifact_dependency`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/artifact-dependencies/{artifactDepLocator}``
+   * - :ref:`get_artifact_dependency_parameter`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/artifact-dependencies/{artifactDepLocator}/{fieldName}``
+   * - :ref:`get_build_feature`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/features/{featureId}``
+   * - :ref:`get_build_feature_parameter`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/features/{featureId}/parameters/{parameterName}``
+   * - :ref:`get_build_feature_setting`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/features/{featureId}/{name}``
+   * - :ref:`get_build_parameter_of_build_type`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/parameters/{name}``
+   * - :ref:`get_build_parameter_specification_of_build_type`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/parameters/{name}/type/rawValue``
+   * - :ref:`get_build_parameter_type_of_build_type`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/parameters/{name}/type``
+   * - :ref:`get_build_parameter_value_of_build_type`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/parameters/{name}/value``
+   * - :ref:`get_build_parameters_of_build_type`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/parameters``
+   * - :ref:`get_build_step`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/steps/{stepId}``
+   * - :ref:`get_build_step_parameter`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/steps/{stepId}/parameters/{parameterName}``
+   * - :ref:`get_build_step_setting`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/steps/{stepId}/{fieldName}``
+   * - :ref:`get_build_template`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/templates/{templateLocator}``
+   * - :ref:`get_build_type`
+     - **GET** ``/app/rest/buildTypes/{btLocator}``
+   * - :ref:`get_build_type_build_tags`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/buildTags``
+   * - :ref:`get_build_type_builds`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/builds``
+   * - :ref:`get_build_type_field`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/{field}``
+   * - :ref:`get_build_type_settings_file`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/settingsFile``
+   * - :ref:`get_file_metadata_of_build_type`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/vcs/files/latest/metadata{path}``
+   * - :ref:`get_files_list_for_subpath_of_build_type`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/vcs/files/latest/{path}``
+   * - :ref:`get_files_list_of_build_type`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/vcs/files/latest``
+   * - :ref:`get_snapshot_dependency`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/snapshot-dependencies/{snapshotDepLocator}``
    * - :ref:`get_trigger`
      - **GET** ``/app/rest/buildTypes/{btLocator}/triggers/{triggerLocator}``
-   * - :ref:`get_trigger_setting`
+   * - :ref:`get_trigger_parameter`
      - **GET** ``/app/rest/buildTypes/{btLocator}/triggers/{triggerLocator}/{fieldName}``
-   * - :ref:`get_triggers`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/triggers``
-   * - :ref:`get_vcs_labeling_options`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/vcsLabeling``
-   * - :ref:`get_vcs_root_entries`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/vcs-root-entries``
-   * - :ref:`get_vcs_root_entry`
+   * - :ref:`get_vcs_root`
      - **GET** ``/app/rest/buildTypes/{btLocator}/vcs-root-entries/{vcsRootLocator}``
-   * - :ref:`get_vcs_root_entry_checkout_rules`
+   * - :ref:`get_vcs_root_checkout_rules`
      - **GET** ``/app/rest/buildTypes/{btLocator}/vcs-root-entries/{vcsRootLocator}/checkout-rules``
-   * - :ref:`get_zipped`
+   * - :ref:`get_vcs_root_instances_of_build_type`
+     - **GET** ``/app/rest/buildTypes/{btLocator}/vcsRootInstances``
+   * - :ref:`get_zipped_file_of_build_type`
      - **GET** ``/app/rest/buildTypes/{btLocator}/vcs/files/latest/archived{path}``
    * - :ref:`remove_all_templates`
      - **DELETE** ``/app/rest/buildTypes/{btLocator}/templates``
@@ -176,82 +158,64 @@ dohq_teamcity.BuildTypeApi
      - **DELETE** ``/app/rest/buildTypes/{btLocator}/templates/{templateLocator}``
    * - :ref:`replace_agent_requirement`
      - **PUT** ``/app/rest/buildTypes/{btLocator}/agent-requirements/{agentRequirementLocator}``
-   * - :ref:`replace_agent_requirements`
+   * - :ref:`replace_all_agent_requirements`
      - **PUT** ``/app/rest/buildTypes/{btLocator}/agent-requirements``
-   * - :ref:`replace_artifact_dep`
-     - **PUT** ``/app/rest/buildTypes/{btLocator}/artifact-dependencies/{artifactDepLocator}``
-   * - :ref:`replace_artifact_deps`
+   * - :ref:`replace_all_artifact_dependencies`
      - **PUT** ``/app/rest/buildTypes/{btLocator}/artifact-dependencies``
-   * - :ref:`replace_feature`
-     - **PUT** ``/app/rest/buildTypes/{btLocator}/features/{featureId}``
-   * - :ref:`replace_feature_parameters`
-     - **PUT** ``/app/rest/buildTypes/{btLocator}/features/{featureId}/parameters``
-   * - :ref:`replace_features`
+   * - :ref:`replace_all_build_features`
      - **PUT** ``/app/rest/buildTypes/{btLocator}/features``
-   * - :ref:`replace_snapshot_dep`
-     - **PUT** ``/app/rest/buildTypes/{btLocator}/snapshot-dependencies/{snapshotDepLocator}``
-   * - :ref:`replace_snapshot_deps`
-     - **PUT** ``/app/rest/buildTypes/{btLocator}/snapshot-dependencies``
-   * - :ref:`replace_step`
-     - **PUT** ``/app/rest/buildTypes/{btLocator}/steps/{stepId}``
-   * - :ref:`replace_step_parameters`
-     - **PUT** ``/app/rest/buildTypes/{btLocator}/steps/{stepId}/parameters``
-   * - :ref:`replace_steps`
+   * - :ref:`replace_all_build_steps`
      - **PUT** ``/app/rest/buildTypes/{btLocator}/steps``
+   * - :ref:`replace_all_snapshot_dependencies`
+     - **PUT** ``/app/rest/buildTypes/{btLocator}/snapshot-dependencies``
+   * - :ref:`replace_all_triggers`
+     - **PUT** ``/app/rest/buildTypes/{btLocator}/triggers``
+   * - :ref:`replace_all_vcs_roots`
+     - **PUT** ``/app/rest/buildTypes/{btLocator}/vcs-root-entries``
+   * - :ref:`replace_artifact_dependency`
+     - **PUT** ``/app/rest/buildTypes/{btLocator}/artifact-dependencies/{artifactDepLocator}``
+   * - :ref:`replace_build_feature`
+     - **PUT** ``/app/rest/buildTypes/{btLocator}/features/{featureId}``
+   * - :ref:`replace_build_feature_parameters`
+     - **PUT** ``/app/rest/buildTypes/{btLocator}/features/{featureId}/parameters``
+   * - :ref:`replace_build_step`
+     - **PUT** ``/app/rest/buildTypes/{btLocator}/steps/{stepId}``
+   * - :ref:`replace_snapshot_dependency`
+     - **PUT** ``/app/rest/buildTypes/{btLocator}/snapshot-dependencies/{snapshotDepLocator}``
    * - :ref:`replace_trigger`
      - **PUT** ``/app/rest/buildTypes/{btLocator}/triggers/{triggerLocator}``
-   * - :ref:`replace_triggers`
-     - **PUT** ``/app/rest/buildTypes/{btLocator}/triggers``
-   * - :ref:`replace_vcs_root_entries`
-     - **PUT** ``/app/rest/buildTypes/{btLocator}/vcs-root-entries``
-   * - :ref:`serve_branches`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/branches``
-   * - :ref:`serve_build_field`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/builds/{buildLocator}/{field}``
-   * - :ref:`serve_build_type_builds_tags`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/buildTags``
-   * - :ref:`serve_build_type_field`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/{field}``
-   * - :ref:`serve_build_type_xml`
-     - **GET** ``/app/rest/buildTypes/{btLocator}``
-   * - :ref:`serve_build_with_project`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/builds/{buildLocator}``
-   * - :ref:`serve_builds`
-     - **GET** ``/app/rest/buildTypes/{btLocator}/builds``
+   * - :ref:`set_agent_requirement_parameter`
+     - **PUT** ``/app/rest/buildTypes/{btLocator}/agent-requirements/{agentRequirementLocator}/{fieldName}``
+   * - :ref:`set_artifact_dependency_parameter`
+     - **PUT** ``/app/rest/buildTypes/{btLocator}/artifact-dependencies/{artifactDepLocator}/{fieldName}``
+   * - :ref:`set_build_feature_parameter`
+     - **PUT** ``/app/rest/buildTypes/{btLocator}/features/{featureId}/{name}``
+   * - :ref:`set_build_step_parameter`
+     - **PUT** ``/app/rest/buildTypes/{btLocator}/steps/{stepId}/{fieldName}``
    * - :ref:`set_build_type_field`
      - **PUT** ``/app/rest/buildTypes/{btLocator}/{field}``
-   * - :ref:`set_parameter`
-     - **POST** ``/app/rest/buildTypes/{btLocator}/parameters``
-   * - :ref:`set_parameter_0`
-     - **PUT** ``/app/rest/buildTypes/{btLocator}/parameters/{name}``
-   * - :ref:`set_parameter_1`
-     - **POST** ``/app/rest/buildTypes/{btLocator}/settings``
-   * - :ref:`set_parameter_2`
-     - **PUT** ``/app/rest/buildTypes/{btLocator}/settings/{name}``
-   * - :ref:`set_parameter_type`
-     - **PUT** ``/app/rest/buildTypes/{btLocator}/parameters/{name}/type``
-   * - :ref:`set_parameter_type_raw_value`
-     - **PUT** ``/app/rest/buildTypes/{btLocator}/parameters/{name}/type/rawValue``
-   * - :ref:`set_parameter_value_long`
-     - **PUT** ``/app/rest/buildTypes/{btLocator}/parameters/{name}/value``
-   * - :ref:`set_parameter_value_long_0`
-     - **PUT** ``/app/rest/buildTypes/{btLocator}/settings/{name}/value``
-   * - :ref:`set_parameters`
-     - **PUT** ``/app/rest/buildTypes/{btLocator}/parameters``
-   * - :ref:`set_parameters_0`
-     - **PUT** ``/app/rest/buildTypes/{btLocator}/settings``
-   * - :ref:`set_templates`
+   * - :ref:`set_build_type_templates`
      - **PUT** ``/app/rest/buildTypes/{btLocator}/templates``
-   * - :ref:`set_vcs_labeling_options`
-     - **PUT** ``/app/rest/buildTypes/{btLocator}/vcsLabeling``
-   * - :ref:`update_vcs_root_entry`
+   * - :ref:`set_trigger_parameter`
+     - **PUT** ``/app/rest/buildTypes/{btLocator}/triggers/{triggerLocator}/{fieldName}``
+   * - :ref:`update_build_parameter_of_build_type`
+     - **PUT** ``/app/rest/buildTypes/{btLocator}/parameters/{name}``
+   * - :ref:`update_build_parameter_specification_of_build_type`
+     - **PUT** ``/app/rest/buildTypes/{btLocator}/parameters/{name}/type/rawValue``
+   * - :ref:`update_build_parameter_type_of_build_type`
+     - **PUT** ``/app/rest/buildTypes/{btLocator}/parameters/{name}/type``
+   * - :ref:`update_build_parameter_value_of_build_type`
+     - **PUT** ``/app/rest/buildTypes/{btLocator}/parameters/{name}/value``
+   * - :ref:`update_build_parameters_of_build_type`
+     - **PUT** ``/app/rest/buildTypes/{btLocator}/parameters``
+   * - :ref:`update_build_type_vcs_root`
      - **PUT** ``/app/rest/buildTypes/{btLocator}/vcs-root-entries/{vcsRootLocator}``
-   * - :ref:`update_vcs_root_entry_checkout_rules`
+   * - :ref:`update_build_type_vcs_root_checkout_rules`
      - **PUT** ``/app/rest/buildTypes/{btLocator}/vcs-root-entries/{vcsRootLocator}/checkout-rules``
 
-.. _add_agent_requirement:
+.. _add_agent_requirement_to_build_type:
 
-add_agent_requirement
+add_agent_requirement_to_build_type
 -----------------
 
 .. code-block:: python
@@ -267,10 +231,11 @@ add_agent_requirement
     body = dohq_teamcity.AgentRequirement() # AgentRequirement |  (optional)
 
     try:
-        api_response = tc.build_type_api.add_agent_requirement(bt_locator, fields=fields, body=body)
+        # Add an agent requirement to the matching build configuration.
+        api_response = tc.build_type_api.add_agent_requirement_to_build_type(bt_locator, fields=fields, body=body)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->add_agent_requirement: %s\n" % e)
+        print("Exception when calling BuildTypeApi->add_agent_requirement_to_build_type: %s\n" % e)
 
 
 
@@ -297,9 +262,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _add_artifact_dep:
+.. _add_artifact_dependency_to_build_type:
 
-add_artifact_dep
+add_artifact_dependency_to_build_type
 -----------------
 
 .. code-block:: python
@@ -315,10 +280,11 @@ add_artifact_dep
     body = dohq_teamcity.ArtifactDependency() # ArtifactDependency |  (optional)
 
     try:
-        api_response = tc.build_type_api.add_artifact_dep(bt_locator, fields=fields, body=body)
+        # Add an artifact dependency to the matching build configuration.
+        api_response = tc.build_type_api.add_artifact_dependency_to_build_type(bt_locator, fields=fields, body=body)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->add_artifact_dep: %s\n" % e)
+        print("Exception when calling BuildTypeApi->add_artifact_dependency_to_build_type: %s\n" % e)
 
 
 
@@ -345,53 +311,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _add_build_type:
+.. _add_build_feature_to_build_type:
 
-add_build_type
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    body = dohq_teamcity.BuildType() # BuildType |  (optional)
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.add_build_type(body=body, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->add_build_type: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **body**
-     - `BuildType <../models/BuildType.html>`_
-     - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `BuildType <../models/BuildType.html>`_
-
-`Back to top <#>`_
-
-.. _add_feature:
-
-add_feature
+add_build_feature_to_build_type
 -----------------
 
 .. code-block:: python
@@ -407,10 +329,11 @@ add_feature
     body = dohq_teamcity.Feature() # Feature |  (optional)
 
     try:
-        api_response = tc.build_type_api.add_feature(bt_locator, fields=fields, body=body)
+        # Add build feature to the matching build configuration.
+        api_response = tc.build_type_api.add_build_feature_to_build_type(bt_locator, fields=fields, body=body)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->add_feature: %s\n" % e)
+        print("Exception when calling BuildTypeApi->add_build_feature_to_build_type: %s\n" % e)
 
 
 
@@ -437,109 +360,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _add_feature_parameter:
+.. _add_build_step_to_build_type:
 
-add_feature_parameter
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    feature_id = 'feature_id_example' # str | 
-    parameter_name = 'parameter_name_example' # str | 
-    body = 'body_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.add_feature_parameter(bt_locator, feature_id, parameter_name, body=body)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->add_feature_parameter: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **feature_id**
-     - **str**
-     - 
-   * - **parameter_name**
-     - **str**
-     - 
-   * - **body**
-     - **str**
-     - [optional] 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _add_snapshot_dep:
-
-add_snapshot_dep
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-    body = dohq_teamcity.SnapshotDependency() # SnapshotDependency |  (optional)
-
-    try:
-        api_response = tc.build_type_api.add_snapshot_dep(bt_locator, fields=fields, body=body)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->add_snapshot_dep: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-   * - **body**
-     - `SnapshotDependency <../models/SnapshotDependency.html>`_
-     - [optional] 
-
-Return type:
-    `SnapshotDependency <../models/SnapshotDependency.html>`_
-
-`Back to top <#>`_
-
-.. _add_step:
-
-add_step
+add_build_step_to_build_type
 -----------------
 
 .. code-block:: python
@@ -555,10 +378,11 @@ add_step
     body = dohq_teamcity.Step() # Step |  (optional)
 
     try:
-        api_response = tc.build_type_api.add_step(bt_locator, fields=fields, body=body)
+        # Add a build step to the matching build configuration.
+        api_response = tc.build_type_api.add_build_step_to_build_type(bt_locator, fields=fields, body=body)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->add_step: %s\n" % e)
+        print("Exception when calling BuildTypeApi->add_build_step_to_build_type: %s\n" % e)
 
 
 
@@ -585,61 +409,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _add_step_parameter:
+.. _add_build_template:
 
-add_step_parameter
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    step_id = 'step_id_example' # str | 
-    parameter_name = 'parameter_name_example' # str | 
-    body = 'body_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.add_step_parameter(bt_locator, step_id, parameter_name, body=body)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->add_step_parameter: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **step_id**
-     - **str**
-     - 
-   * - **parameter_name**
-     - **str**
-     - 
-   * - **body**
-     - **str**
-     - [optional] 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _add_template:
-
-add_template
+add_build_template
 -----------------
 
 .. code-block:: python
@@ -656,10 +428,11 @@ add_template
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.build_type_api.add_template(bt_locator, body=body, optimize_settings=optimize_settings, fields=fields)
+        # Add a build template to the matching build configuration.
+        api_response = tc.build_type_api.add_build_template(bt_locator, body=body, optimize_settings=optimize_settings, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->add_template: %s\n" % e)
+        print("Exception when calling BuildTypeApi->add_build_template: %s\n" % e)
 
 
 
@@ -689,9 +462,164 @@ Return type:
 
 `Back to top <#>`_
 
-.. _add_trigger:
+.. _add_parameter_to_build_feature:
 
-add_trigger
+add_parameter_to_build_feature
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    feature_id = 'feature_id_example' # str | 
+    parameter_name = 'parameter_name_example' # str | 
+    body = 'body_example' # str |  (optional)
+
+    try:
+        # Update build feature parameter for the matching build configuration.
+        api_response = tc.build_type_api.add_parameter_to_build_feature(bt_locator, feature_id, parameter_name, body=body)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->add_parameter_to_build_feature: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **feature_id**
+     - **str**
+     - 
+   * - **parameter_name**
+     - **str**
+     - 
+   * - **body**
+     - **str**
+     - [optional] 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
+.. _add_parameter_to_build_step:
+
+add_parameter_to_build_step
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    step_id = 'step_id_example' # str | 
+    parameter_name = 'parameter_name_example' # str | 
+    body = 'body_example' # str |  (optional)
+
+    try:
+        # Add a parameter to a build step of the matching build configuration.
+        api_response = tc.build_type_api.add_parameter_to_build_step(bt_locator, step_id, parameter_name, body=body)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->add_parameter_to_build_step: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **step_id**
+     - **str**
+     - 
+   * - **parameter_name**
+     - **str**
+     - 
+   * - **body**
+     - **str**
+     - [optional] 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
+.. _add_snapshot_dependency_to_build_type:
+
+add_snapshot_dependency_to_build_type
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+    body = dohq_teamcity.SnapshotDependency() # SnapshotDependency |  (optional)
+
+    try:
+        # Add a snapshot dependency to the matching build configuration.
+        api_response = tc.build_type_api.add_snapshot_dependency_to_build_type(bt_locator, fields=fields, body=body)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->add_snapshot_dependency_to_build_type: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+   * - **body**
+     - `SnapshotDependency <../models/SnapshotDependency.html>`_
+     - [optional] 
+
+Return type:
+    `SnapshotDependency <../models/SnapshotDependency.html>`_
+
+`Back to top <#>`_
+
+.. _add_trigger_to_build_type:
+
+add_trigger_to_build_type
 -----------------
 
 .. code-block:: python
@@ -707,10 +635,11 @@ add_trigger
     body = dohq_teamcity.Trigger() # Trigger |  (optional)
 
     try:
-        api_response = tc.build_type_api.add_trigger(bt_locator, fields=fields, body=body)
+        # Add a trigger to the matching build configuration.
+        api_response = tc.build_type_api.add_trigger_to_build_type(bt_locator, fields=fields, body=body)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->add_trigger: %s\n" % e)
+        print("Exception when calling BuildTypeApi->add_trigger_to_build_type: %s\n" % e)
 
 
 
@@ -737,9 +666,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _add_vcs_root_entry:
+.. _add_vcs_root_to_build_type:
 
-add_vcs_root_entry
+add_vcs_root_to_build_type
 -----------------
 
 .. code-block:: python
@@ -755,10 +684,11 @@ add_vcs_root_entry
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.build_type_api.add_vcs_root_entry(bt_locator, body=body, fields=fields)
+        # Add a VCS root to the matching build.
+        api_response = tc.build_type_api.add_vcs_root_to_build_type(bt_locator, body=body, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->add_vcs_root_entry: %s\n" % e)
+        print("Exception when calling BuildTypeApi->add_vcs_root_to_build_type: %s\n" % e)
 
 
 
@@ -785,9 +715,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _change_artifact_dep_setting:
+.. _create_build_parameter_of_build_type:
 
-change_artifact_dep_setting
+create_build_parameter_of_build_type
 -----------------
 
 .. code-block:: python
@@ -799,15 +729,15 @@ change_artifact_dep_setting
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
     bt_locator = 'bt_locator_example' # str | 
-    artifact_dep_locator = 'artifact_dep_locator_example' # str | 
-    field_name = 'field_name_example' # str | 
-    body = 'body_example' # str |  (optional)
+    body = dohq_teamcity.ModelProperty() # ModelProperty |  (optional)
+    fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.build_type_api.change_artifact_dep_setting(bt_locator, artifact_dep_locator, field_name, body=body)
+        # Create a build parameter.
+        api_response = tc.build_type_api.create_build_parameter_of_build_type(bt_locator, body=body, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->change_artifact_dep_setting: %s\n" % e)
+        print("Exception when calling BuildTypeApi->create_build_parameter_of_build_type: %s\n" % e)
 
 
 
@@ -822,24 +752,21 @@ change_artifact_dep_setting
    * - **bt_locator**
      - **str**
      - 
-   * - **artifact_dep_locator**
-     - **str**
-     - 
-   * - **field_name**
-     - **str**
-     - 
    * - **body**
+     - `ModelProperty <../models/ModelProperty.html>`_
+     - [optional] 
+   * - **fields**
      - **str**
      - [optional] 
 
 Return type:
-    **str**
+    `ModelProperty <../models/ModelProperty.html>`_
 
 `Back to top <#>`_
 
-.. _change_feature_setting:
+.. _create_build_type:
 
-change_feature_setting
+create_build_type
 -----------------
 
 .. code-block:: python
@@ -850,16 +777,15 @@ change_feature_setting
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-    bt_locator = 'bt_locator_example' # str | 
-    feature_id = 'feature_id_example' # str | 
-    name = 'name_example' # str | 
-    body = 'body_example' # str |  (optional)
+    body = dohq_teamcity.BuildType() # BuildType |  (optional)
+    fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.build_type_api.change_feature_setting(bt_locator, feature_id, name, body=body)
+        # Create a new build configuration.
+        api_response = tc.build_type_api.create_build_type(body=body, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->change_feature_setting: %s\n" % e)
+        print("Exception when calling BuildTypeApi->create_build_type: %s\n" % e)
 
 
 
@@ -871,177 +797,15 @@ change_feature_setting
      - Types
      - Notes
 
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **feature_id**
-     - **str**
-     - 
-   * - **name**
-     - **str**
-     - 
    * - **body**
+     - `BuildType <../models/BuildType.html>`_
+     - [optional] 
+   * - **fields**
      - **str**
      - [optional] 
 
 Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _change_requirement_setting:
-
-change_requirement_setting
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    agent_requirement_locator = 'agent_requirement_locator_example' # str | 
-    field_name = 'field_name_example' # str | 
-    body = 'body_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.change_requirement_setting(bt_locator, agent_requirement_locator, field_name, body=body)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->change_requirement_setting: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **agent_requirement_locator**
-     - **str**
-     - 
-   * - **field_name**
-     - **str**
-     - 
-   * - **body**
-     - **str**
-     - [optional] 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _change_step_setting:
-
-change_step_setting
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    step_id = 'step_id_example' # str | 
-    field_name = 'field_name_example' # str | 
-    body = 'body_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.change_step_setting(bt_locator, step_id, field_name, body=body)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->change_step_setting: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **step_id**
-     - **str**
-     - 
-   * - **field_name**
-     - **str**
-     - 
-   * - **body**
-     - **str**
-     - [optional] 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _change_trigger_setting:
-
-change_trigger_setting
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    trigger_locator = 'trigger_locator_example' # str | 
-    field_name = 'field_name_example' # str | 
-    body = 'body_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.change_trigger_setting(bt_locator, trigger_locator, field_name, body=body)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->change_trigger_setting: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **trigger_locator**
-     - **str**
-     - 
-   * - **field_name**
-     - **str**
-     - 
-   * - **body**
-     - **str**
-     - [optional] 
-
-Return type:
-    **str**
+    `BuildType <../models/BuildType.html>`_
 
 `Back to top <#>`_
 
@@ -1062,6 +826,7 @@ delete_agent_requirement
     agent_requirement_locator = 'agent_requirement_locator_example' # str | 
 
     try:
+        # Remove an agent requirement of the matching build configuration.
         tc.build_type_api.delete_agent_requirement(bt_locator, agent_requirement_locator)
     except ApiException as e:
         print("Exception when calling BuildTypeApi->delete_agent_requirement: %s\n" % e)
@@ -1088,87 +853,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _delete_all_parameters:
+.. _delete_artifact_dependency:
 
-delete_all_parameters
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-
-    try:
-        tc.build_type_api.delete_all_parameters(bt_locator)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->delete_all_parameters: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-
-Return type:
-    void (empty response body)
-
-`Back to top <#>`_
-
-.. _delete_all_parameters_0:
-
-delete_all_parameters_0
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-
-    try:
-        tc.build_type_api.delete_all_parameters_0(bt_locator)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->delete_all_parameters_0: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-
-Return type:
-    void (empty response body)
-
-`Back to top <#>`_
-
-.. _delete_artifact_dep:
-
-delete_artifact_dep
+delete_artifact_dependency
 -----------------
 
 .. code-block:: python
@@ -1183,9 +870,10 @@ delete_artifact_dep
     artifact_dep_locator = 'artifact_dep_locator_example' # str | 
 
     try:
-        tc.build_type_api.delete_artifact_dep(bt_locator, artifact_dep_locator)
+        # Remove an artifact dependency from the matching build configuration.
+        tc.build_type_api.delete_artifact_dependency(bt_locator, artifact_dep_locator)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->delete_artifact_dep: %s\n" % e)
+        print("Exception when calling BuildTypeApi->delete_artifact_dependency: %s\n" % e)
 
 
 
@@ -1209,6 +897,187 @@ Return type:
 
 `Back to top <#>`_
 
+.. _delete_build_parameter_of_build_type:
+
+delete_build_parameter_of_build_type
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    name = 'name_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
+
+    try:
+        # Delete build parameter.
+        tc.build_type_api.delete_build_parameter_of_build_type(name, bt_locator)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->delete_build_parameter_of_build_type: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **name**
+     - **str**
+     - 
+   * - **bt_locator**
+     - **str**
+     - 
+
+Return type:
+    void (empty response body)
+
+`Back to top <#>`_
+
+.. _delete_build_parameters_of_build_type:
+
+delete_build_parameters_of_build_type
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+
+    try:
+        # Delete all build parameters.
+        tc.build_type_api.delete_build_parameters_of_build_type(bt_locator)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->delete_build_parameters_of_build_type: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+
+Return type:
+    void (empty response body)
+
+`Back to top <#>`_
+
+.. _delete_build_step:
+
+delete_build_step
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    step_id = 'step_id_example' # str | 
+
+    try:
+        # Delete a build step of the matching build configuration.
+        tc.build_type_api.delete_build_step(bt_locator, step_id)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->delete_build_step: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **step_id**
+     - **str**
+     - 
+
+Return type:
+    void (empty response body)
+
+`Back to top <#>`_
+
+.. _delete_build_step_parameters:
+
+delete_build_step_parameters
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    step_id = 'step_id_example' # str | 
+    body = dohq_teamcity.Properties() # Properties |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Update a parameter of a build step of the matching build configuration.
+        api_response = tc.build_type_api.delete_build_step_parameters(bt_locator, step_id, body=body, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->delete_build_step_parameters: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **step_id**
+     - **str**
+     - 
+   * - **body**
+     - `Properties <../models/Properties.html>`_
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Properties <../models/Properties.html>`_
+
+`Back to top <#>`_
+
 .. _delete_build_type:
 
 delete_build_type
@@ -1225,6 +1094,7 @@ delete_build_type
     bt_locator = 'bt_locator_example' # str | 
 
     try:
+        # Delete build configuration matching the locator.
         tc.build_type_api.delete_build_type(bt_locator)
     except ApiException as e:
         print("Exception when calling BuildTypeApi->delete_build_type: %s\n" % e)
@@ -1248,9 +1118,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _delete_feature:
+.. _delete_feature_of_build_type:
 
-delete_feature
+delete_feature_of_build_type
 -----------------
 
 .. code-block:: python
@@ -1265,9 +1135,10 @@ delete_feature
     feature_id = 'feature_id_example' # str | 
 
     try:
-        tc.build_type_api.delete_feature(bt_locator, feature_id)
+        # Remove a build feature of the matching build configuration.
+        tc.build_type_api.delete_feature_of_build_type(bt_locator, feature_id)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->delete_feature: %s\n" % e)
+        print("Exception when calling BuildTypeApi->delete_feature_of_build_type: %s\n" % e)
 
 
 
@@ -1291,95 +1162,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _delete_parameter:
+.. _delete_snapshot_dependency:
 
-delete_parameter
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    name = 'name_example' # str | 
-    bt_locator = 'bt_locator_example' # str | 
-
-    try:
-        tc.build_type_api.delete_parameter(name, bt_locator)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->delete_parameter: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **name**
-     - **str**
-     - 
-   * - **bt_locator**
-     - **str**
-     - 
-
-Return type:
-    void (empty response body)
-
-`Back to top <#>`_
-
-.. _delete_parameter_0:
-
-delete_parameter_0
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    name = 'name_example' # str | 
-    bt_locator = 'bt_locator_example' # str | 
-
-    try:
-        tc.build_type_api.delete_parameter_0(name, bt_locator)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->delete_parameter_0: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **name**
-     - **str**
-     - 
-   * - **bt_locator**
-     - **str**
-     - 
-
-Return type:
-    void (empty response body)
-
-`Back to top <#>`_
-
-.. _delete_snapshot_dep:
-
-delete_snapshot_dep
+delete_snapshot_dependency
 -----------------
 
 .. code-block:: python
@@ -1394,9 +1179,10 @@ delete_snapshot_dep
     snapshot_dep_locator = 'snapshot_dep_locator_example' # str | 
 
     try:
-        tc.build_type_api.delete_snapshot_dep(bt_locator, snapshot_dep_locator)
+        # Delete a snapshot dependency of the matching build configuration.
+        tc.build_type_api.delete_snapshot_dependency(bt_locator, snapshot_dep_locator)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->delete_snapshot_dep: %s\n" % e)
+        print("Exception when calling BuildTypeApi->delete_snapshot_dependency: %s\n" % e)
 
 
 
@@ -1412,49 +1198,6 @@ delete_snapshot_dep
      - **str**
      - 
    * - **snapshot_dep_locator**
-     - **str**
-     - 
-
-Return type:
-    void (empty response body)
-
-`Back to top <#>`_
-
-.. _delete_step:
-
-delete_step
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    step_id = 'step_id_example' # str | 
-
-    try:
-        tc.build_type_api.delete_step(bt_locator, step_id)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->delete_step: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **step_id**
      - **str**
      - 
 
@@ -1480,6 +1223,7 @@ delete_trigger
     trigger_locator = 'trigger_locator_example' # str | 
 
     try:
+        # Delete a trigger of the matching build configuration.
         tc.build_type_api.delete_trigger(bt_locator, trigger_locator)
     except ApiException as e:
         print("Exception when calling BuildTypeApi->delete_trigger: %s\n" % e)
@@ -1506,9 +1250,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _delete_vcs_root_entry:
+.. _delete_vcs_root_of_build_type:
 
-delete_vcs_root_entry
+delete_vcs_root_of_build_type
 -----------------
 
 .. code-block:: python
@@ -1523,9 +1267,10 @@ delete_vcs_root_entry
     vcs_root_locator = 'vcs_root_locator_example' # str | 
 
     try:
-        tc.build_type_api.delete_vcs_root_entry(bt_locator, vcs_root_locator)
+        # Remove a VCS root of the matching build configuration.
+        tc.build_type_api.delete_vcs_root_of_build_type(bt_locator, vcs_root_locator)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->delete_vcs_root_entry: %s\n" % e)
+        print("Exception when calling BuildTypeApi->delete_vcs_root_of_build_type: %s\n" % e)
 
 
 
@@ -1543,6 +1288,54 @@ delete_vcs_root_entry
    * - **vcs_root_locator**
      - **str**
      - 
+
+Return type:
+    void (empty response body)
+
+`Back to top <#>`_
+
+.. _download_file_of_build_type:
+
+download_file_of_build_type
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    path = 'path_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
+    resolve_parameters = true # bool |  (optional)
+
+    try:
+        # Download specific file.
+        tc.build_type_api.download_file_of_build_type(path, bt_locator, resolve_parameters=resolve_parameters)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->download_file_of_build_type: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **path**
+     - **str**
+     - 
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **resolve_parameters**
+     - **bool**
+     - [optional] 
 
 Return type:
     void (empty response body)
@@ -1567,6 +1360,7 @@ get_agent_requirement
     fields = 'fields_example' # str |  (optional)
 
     try:
+        # Get an agent requirement of the matching build configuration.
         api_response = tc.build_type_api.get_agent_requirement(bt_locator, agent_requirement_locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
@@ -1597,1367 +1391,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _get_agent_requirements:
+.. _get_agent_requirement_parameter:
 
-get_agent_requirements
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.get_agent_requirements(bt_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_agent_requirements: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `AgentRequirements <../models/AgentRequirements.html>`_
-
-`Back to top <#>`_
-
-.. _get_aliases:
-
-get_aliases
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    field = 'field_example' # str | 
-
-    try:
-        api_response = tc.build_type_api.get_aliases(bt_locator, field)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_aliases: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **field**
-     - **str**
-     - 
-
-Return type:
-    `Items <../models/Items.html>`_
-
-`Back to top <#>`_
-
-.. _get_artifact_dep:
-
-get_artifact_dep
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    artifact_dep_locator = 'artifact_dep_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.get_artifact_dep(bt_locator, artifact_dep_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_artifact_dep: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **artifact_dep_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `ArtifactDependency <../models/ArtifactDependency.html>`_
-
-`Back to top <#>`_
-
-.. _get_artifact_dep_setting:
-
-get_artifact_dep_setting
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    artifact_dep_locator = 'artifact_dep_locator_example' # str | 
-    field_name = 'field_name_example' # str | 
-
-    try:
-        api_response = tc.build_type_api.get_artifact_dep_setting(bt_locator, artifact_dep_locator, field_name)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_artifact_dep_setting: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **artifact_dep_locator**
-     - **str**
-     - 
-   * - **field_name**
-     - **str**
-     - 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _get_artifact_deps:
-
-get_artifact_deps
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.get_artifact_deps(bt_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_artifact_deps: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `ArtifactDependencies <../models/ArtifactDependencies.html>`_
-
-`Back to top <#>`_
-
-.. _get_build_types:
-
-get_build_types
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    locator = 'locator_example' # str |  (optional)
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.get_build_types(locator=locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_build_types: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **locator**
-     - **str**
-     - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `BuildTypes <../models/BuildTypes.html>`_
-
-`Back to top <#>`_
-
-.. _get_children:
-
-get_children
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    path = 'path_example' # str | 
-    bt_locator = 'bt_locator_example' # str | 
-    base_path = 'base_path_example' # str |  (optional)
-    locator = 'locator_example' # str |  (optional)
-    fields = 'fields_example' # str |  (optional)
-    resolve_parameters = true # bool |  (optional)
-
-    try:
-        api_response = tc.build_type_api.get_children(path, bt_locator, base_path=base_path, locator=locator, fields=fields, resolve_parameters=resolve_parameters)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_children: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **path**
-     - **str**
-     - 
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **base_path**
-     - **str**
-     - [optional] 
-   * - **locator**
-     - **str**
-     - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-   * - **resolve_parameters**
-     - **bool**
-     - [optional] 
-
-Return type:
-    `Files <../models/Files.html>`_
-
-`Back to top <#>`_
-
-.. _get_children_alias:
-
-get_children_alias
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    path = 'path_example' # str | 
-    bt_locator = 'bt_locator_example' # str | 
-    base_path = 'base_path_example' # str |  (optional)
-    locator = 'locator_example' # str |  (optional)
-    fields = 'fields_example' # str |  (optional)
-    resolve_parameters = true # bool |  (optional)
-
-    try:
-        api_response = tc.build_type_api.get_children_alias(path, bt_locator, base_path=base_path, locator=locator, fields=fields, resolve_parameters=resolve_parameters)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_children_alias: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **path**
-     - **str**
-     - 
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **base_path**
-     - **str**
-     - [optional] 
-   * - **locator**
-     - **str**
-     - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-   * - **resolve_parameters**
-     - **bool**
-     - [optional] 
-
-Return type:
-    `Files <../models/Files.html>`_
-
-`Back to top <#>`_
-
-.. _get_content:
-
-get_content
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    path = 'path_example' # str | 
-    bt_locator = 'bt_locator_example' # str | 
-    response_builder = 'response_builder_example' # str |  (optional)
-    resolve_parameters = true # bool |  (optional)
-
-    try:
-        tc.build_type_api.get_content(path, bt_locator, response_builder=response_builder, resolve_parameters=resolve_parameters)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_content: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **path**
-     - **str**
-     - 
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **response_builder**
-     - **str**
-     - [optional] 
-   * - **resolve_parameters**
-     - **bool**
-     - [optional] 
-
-Return type:
-    void (empty response body)
-
-`Back to top <#>`_
-
-.. _get_content_alias:
-
-get_content_alias
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    path = 'path_example' # str | 
-    bt_locator = 'bt_locator_example' # str | 
-    resolve_parameters = true # bool |  (optional)
-
-    try:
-        tc.build_type_api.get_content_alias(path, bt_locator, resolve_parameters=resolve_parameters)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_content_alias: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **path**
-     - **str**
-     - 
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **resolve_parameters**
-     - **bool**
-     - [optional] 
-
-Return type:
-    void (empty response body)
-
-`Back to top <#>`_
-
-.. _get_current_vcs_instances:
-
-get_current_vcs_instances
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.get_current_vcs_instances(bt_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_current_vcs_instances: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `VcsRootInstances <../models/VcsRootInstances.html>`_
-
-`Back to top <#>`_
-
-.. _get_current_vcs_instances_obsolete:
-
-get_current_vcs_instances_obsolete
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.get_current_vcs_instances_obsolete(bt_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_current_vcs_instances_obsolete: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `VcsRootInstances <../models/VcsRootInstances.html>`_
-
-`Back to top <#>`_
-
-.. _get_example_new_project_description:
-
-get_example_new_project_description
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-
-    try:
-        api_response = tc.build_type_api.get_example_new_project_description(bt_locator)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_example_new_project_description: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-
-Return type:
-    `NewBuildTypeDescription <../models/NewBuildTypeDescription.html>`_
-
-`Back to top <#>`_
-
-.. _get_example_new_project_description_compatibility_version1:
-
-get_example_new_project_description_compatibility_version1
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-
-    try:
-        api_response = tc.build_type_api.get_example_new_project_description_compatibility_version1(bt_locator)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_example_new_project_description_compatibility_version1: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-
-Return type:
-    `NewBuildTypeDescription <../models/NewBuildTypeDescription.html>`_
-
-`Back to top <#>`_
-
-.. _get_feature:
-
-get_feature
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    feature_id = 'feature_id_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.get_feature(bt_locator, feature_id, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_feature: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **feature_id**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Feature <../models/Feature.html>`_
-
-`Back to top <#>`_
-
-.. _get_feature_parameter:
-
-get_feature_parameter
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    feature_id = 'feature_id_example' # str | 
-    parameter_name = 'parameter_name_example' # str | 
-
-    try:
-        api_response = tc.build_type_api.get_feature_parameter(bt_locator, feature_id, parameter_name)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_feature_parameter: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **feature_id**
-     - **str**
-     - 
-   * - **parameter_name**
-     - **str**
-     - 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _get_feature_parameters:
-
-get_feature_parameters
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    feature_id = 'feature_id_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.get_feature_parameters(bt_locator, feature_id, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_feature_parameters: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **feature_id**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Properties <../models/Properties.html>`_
-
-`Back to top <#>`_
-
-.. _get_feature_setting:
-
-get_feature_setting
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    feature_id = 'feature_id_example' # str | 
-    name = 'name_example' # str | 
-
-    try:
-        api_response = tc.build_type_api.get_feature_setting(bt_locator, feature_id, name)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_feature_setting: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **feature_id**
-     - **str**
-     - 
-   * - **name**
-     - **str**
-     - 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _get_features:
-
-get_features
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.get_features(bt_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_features: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Features <../models/Features.html>`_
-
-`Back to top <#>`_
-
-.. _get_investigations:
-
-get_investigations
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.get_investigations(bt_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_investigations: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Investigations <../models/Investigations.html>`_
-
-`Back to top <#>`_
-
-.. _get_metadata:
-
-get_metadata
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    path = 'path_example' # str | 
-    bt_locator = 'bt_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-    resolve_parameters = true # bool |  (optional)
-
-    try:
-        api_response = tc.build_type_api.get_metadata(path, bt_locator, fields=fields, resolve_parameters=resolve_parameters)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_metadata: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **path**
-     - **str**
-     - 
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-   * - **resolve_parameters**
-     - **bool**
-     - [optional] 
-
-Return type:
-    `File <../models/File.html>`_
-
-`Back to top <#>`_
-
-.. _get_parameter:
-
-get_parameter
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    name = 'name_example' # str | 
-    bt_locator = 'bt_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.get_parameter(name, bt_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_parameter: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **name**
-     - **str**
-     - 
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `ModelProperty <../models/ModelProperty.html>`_
-
-`Back to top <#>`_
-
-.. _get_parameter_0:
-
-get_parameter_0
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    name = 'name_example' # str | 
-    bt_locator = 'bt_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.get_parameter_0(name, bt_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_parameter_0: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **name**
-     - **str**
-     - 
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `ModelProperty <../models/ModelProperty.html>`_
-
-`Back to top <#>`_
-
-.. _get_parameter_type:
-
-get_parameter_type
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    name = 'name_example' # str | 
-    bt_locator = 'bt_locator_example' # str | 
-
-    try:
-        api_response = tc.build_type_api.get_parameter_type(name, bt_locator)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_parameter_type: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **name**
-     - **str**
-     - 
-   * - **bt_locator**
-     - **str**
-     - 
-
-Return type:
-    `Type <../models/Type.html>`_
-
-`Back to top <#>`_
-
-.. _get_parameter_type_raw_value:
-
-get_parameter_type_raw_value
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    name = 'name_example' # str | 
-    bt_locator = 'bt_locator_example' # str | 
-
-    try:
-        api_response = tc.build_type_api.get_parameter_type_raw_value(name, bt_locator)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_parameter_type_raw_value: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **name**
-     - **str**
-     - 
-   * - **bt_locator**
-     - **str**
-     - 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _get_parameter_value_long:
-
-get_parameter_value_long
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    name = 'name_example' # str | 
-    bt_locator = 'bt_locator_example' # str | 
-
-    try:
-        api_response = tc.build_type_api.get_parameter_value_long(name, bt_locator)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_parameter_value_long: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **name**
-     - **str**
-     - 
-   * - **bt_locator**
-     - **str**
-     - 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _get_parameter_value_long_0:
-
-get_parameter_value_long_0
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    name = 'name_example' # str | 
-    bt_locator = 'bt_locator_example' # str | 
-
-    try:
-        api_response = tc.build_type_api.get_parameter_value_long_0(name, bt_locator)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_parameter_value_long_0: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **name**
-     - **str**
-     - 
-   * - **bt_locator**
-     - **str**
-     - 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _get_parameters:
-
-get_parameters
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    locator = 'locator_example' # str |  (optional)
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.get_parameters(bt_locator, locator=locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_parameters: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **locator**
-     - **str**
-     - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Properties <../models/Properties.html>`_
-
-`Back to top <#>`_
-
-.. _get_parameters_0:
-
-get_parameters_0
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    locator = 'locator_example' # str |  (optional)
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.get_parameters_0(bt_locator, locator=locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_parameters_0: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **locator**
-     - **str**
-     - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Properties <../models/Properties.html>`_
-
-`Back to top <#>`_
-
-.. _get_requirement_setting:
-
-get_requirement_setting
+get_agent_requirement_parameter
 -----------------
 
 .. code-block:: python
@@ -2973,10 +1409,11 @@ get_requirement_setting
     field_name = 'field_name_example' # str | 
 
     try:
-        api_response = tc.build_type_api.get_requirement_setting(bt_locator, agent_requirement_locator, field_name)
+        # Get a setting of an agent requirement of the matching build configuration.
+        api_response = tc.build_type_api.get_agent_requirement_parameter(bt_locator, agent_requirement_locator, field_name)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_requirement_setting: %s\n" % e)
+        print("Exception when calling BuildTypeApi->get_agent_requirement_parameter: %s\n" % e)
 
 
 
@@ -3003,9 +1440,1660 @@ Return type:
 
 `Back to top <#>`_
 
-.. _get_root:
+.. _get_aliases:
 
-get_root
+get_aliases
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    field = 'field_example' # str |  (optional)
+
+    try:
+        # Get external IDs of the matching build configuration.
+        api_response = tc.build_type_api.get_aliases(bt_locator, field=field)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_aliases: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **field**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Items <../models/Items.html>`_
+
+`Back to top <#>`_
+
+.. _get_all_agent_requirements:
+
+get_all_agent_requirements
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get all agent requirements of the matching build configuration.
+        api_response = tc.build_type_api.get_all_agent_requirements(bt_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_all_agent_requirements: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `AgentRequirements <../models/AgentRequirements.html>`_
+
+`Back to top <#>`_
+
+.. _get_all_artifact_dependencies:
+
+get_all_artifact_dependencies
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get all artifact dependencies of the matching build configuration.
+        api_response = tc.build_type_api.get_all_artifact_dependencies(bt_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_all_artifact_dependencies: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `ArtifactDependencies <../models/ArtifactDependencies.html>`_
+
+`Back to top <#>`_
+
+.. _get_all_branches_of_build_type:
+
+get_all_branches_of_build_type
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    locator = 'locator_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get all branches of the matching build configuration.
+        api_response = tc.build_type_api.get_all_branches_of_build_type(bt_locator, locator=locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_all_branches_of_build_type: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **locator**
+     - **str**
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Branches <../models/Branches.html>`_
+
+`Back to top <#>`_
+
+.. _get_all_build_feature_parameters:
+
+get_all_build_feature_parameters
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    feature_id = 'feature_id_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get all parameters of a build feature of the matching build configuration.
+        api_response = tc.build_type_api.get_all_build_feature_parameters(bt_locator, feature_id, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_all_build_feature_parameters: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **feature_id**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Properties <../models/Properties.html>`_
+
+`Back to top <#>`_
+
+.. _get_all_build_features:
+
+get_all_build_features
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get all build features of the matching build configuration.
+        api_response = tc.build_type_api.get_all_build_features(bt_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_all_build_features: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Features <../models/Features.html>`_
+
+`Back to top <#>`_
+
+.. _get_all_build_step_parameters:
+
+get_all_build_step_parameters
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    step_id = 'step_id_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get all parameters of a build step of the matching build configuration.
+        api_response = tc.build_type_api.get_all_build_step_parameters(bt_locator, step_id, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_all_build_step_parameters: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **step_id**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Properties <../models/Properties.html>`_
+
+`Back to top <#>`_
+
+.. _get_all_build_steps:
+
+get_all_build_steps
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get all build steps of the matching build configuration.
+        api_response = tc.build_type_api.get_all_build_steps(bt_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_all_build_steps: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Steps <../models/Steps.html>`_
+
+`Back to top <#>`_
+
+.. _get_all_build_templates:
+
+get_all_build_templates
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get all build templates of the matching build configuration.
+        api_response = tc.build_type_api.get_all_build_templates(bt_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_all_build_templates: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `BuildTypes <../models/BuildTypes.html>`_
+
+`Back to top <#>`_
+
+.. _get_all_build_types:
+
+get_all_build_types
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    locator = 'locator_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get all build configurations.
+        api_response = tc.build_type_api.get_all_build_types(locator=locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_all_build_types: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **locator**
+     - **str**
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `BuildTypes <../models/BuildTypes.html>`_
+
+`Back to top <#>`_
+
+.. _get_all_investigations_of_build_type:
+
+get_all_investigations_of_build_type
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get all investigations of the matching build configuration.
+        api_response = tc.build_type_api.get_all_investigations_of_build_type(bt_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_all_investigations_of_build_type: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Investigations <../models/Investigations.html>`_
+
+`Back to top <#>`_
+
+.. _get_all_snapshot_dependencies:
+
+get_all_snapshot_dependencies
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get all snapshot dependencies of the matching build configuration.
+        api_response = tc.build_type_api.get_all_snapshot_dependencies(bt_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_all_snapshot_dependencies: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `SnapshotDependencies <../models/SnapshotDependencies.html>`_
+
+`Back to top <#>`_
+
+.. _get_all_triggers:
+
+get_all_triggers
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get all triggers of the matching build configuration.
+        api_response = tc.build_type_api.get_all_triggers(bt_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_all_triggers: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Triggers <../models/Triggers.html>`_
+
+`Back to top <#>`_
+
+.. _get_all_vcs_roots_of_build_type:
+
+get_all_vcs_roots_of_build_type
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get all VCS roots of the matching build configuration.
+        api_response = tc.build_type_api.get_all_vcs_roots_of_build_type(bt_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_all_vcs_roots_of_build_type: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `VcsRootEntries <../models/VcsRootEntries.html>`_
+
+`Back to top <#>`_
+
+.. _get_artifact_dependency:
+
+get_artifact_dependency
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    artifact_dep_locator = 'artifact_dep_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get an artifact dependency of the matching build configuration.
+        api_response = tc.build_type_api.get_artifact_dependency(bt_locator, artifact_dep_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_artifact_dependency: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **artifact_dep_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `ArtifactDependency <../models/ArtifactDependency.html>`_
+
+`Back to top <#>`_
+
+.. _get_artifact_dependency_parameter:
+
+get_artifact_dependency_parameter
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    artifact_dep_locator = 'artifact_dep_locator_example' # str | 
+    field_name = 'field_name_example' # str | 
+
+    try:
+        # Get a parameter of an artifact dependency of the matching build configuration.
+        api_response = tc.build_type_api.get_artifact_dependency_parameter(bt_locator, artifact_dep_locator, field_name)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_artifact_dependency_parameter: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **artifact_dep_locator**
+     - **str**
+     - 
+   * - **field_name**
+     - **str**
+     - 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
+.. _get_build_feature:
+
+get_build_feature
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    feature_id = 'feature_id_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get a build feature of the matching build configuration.
+        api_response = tc.build_type_api.get_build_feature(bt_locator, feature_id, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_build_feature: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **feature_id**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Feature <../models/Feature.html>`_
+
+`Back to top <#>`_
+
+.. _get_build_feature_parameter:
+
+get_build_feature_parameter
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    feature_id = 'feature_id_example' # str | 
+    parameter_name = 'parameter_name_example' # str | 
+
+    try:
+        # Get a parameter of a build feature of the matching build configuration.
+        api_response = tc.build_type_api.get_build_feature_parameter(bt_locator, feature_id, parameter_name)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_build_feature_parameter: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **feature_id**
+     - **str**
+     - 
+   * - **parameter_name**
+     - **str**
+     - 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
+.. _get_build_feature_setting:
+
+get_build_feature_setting
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    feature_id = 'feature_id_example' # str | 
+    name = 'name_example' # str | 
+
+    try:
+        # Get the setting of a build feature of the matching build configuration.
+        api_response = tc.build_type_api.get_build_feature_setting(bt_locator, feature_id, name)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_build_feature_setting: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **feature_id**
+     - **str**
+     - 
+   * - **name**
+     - **str**
+     - 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
+.. _get_build_parameter_of_build_type:
+
+get_build_parameter_of_build_type
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    name = 'name_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get build parameter.
+        api_response = tc.build_type_api.get_build_parameter_of_build_type(name, bt_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_build_parameter_of_build_type: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **name**
+     - **str**
+     - 
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `ModelProperty <../models/ModelProperty.html>`_
+
+`Back to top <#>`_
+
+.. _get_build_parameter_specification_of_build_type:
+
+get_build_parameter_specification_of_build_type
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    name = 'name_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
+
+    try:
+        # Get build parameter specification.
+        api_response = tc.build_type_api.get_build_parameter_specification_of_build_type(name, bt_locator)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_build_parameter_specification_of_build_type: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **name**
+     - **str**
+     - 
+   * - **bt_locator**
+     - **str**
+     - 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
+.. _get_build_parameter_type_of_build_type:
+
+get_build_parameter_type_of_build_type
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    name = 'name_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
+
+    try:
+        # Get type of build parameter.
+        api_response = tc.build_type_api.get_build_parameter_type_of_build_type(name, bt_locator)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_build_parameter_type_of_build_type: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **name**
+     - **str**
+     - 
+   * - **bt_locator**
+     - **str**
+     - 
+
+Return type:
+    `Type <../models/Type.html>`_
+
+`Back to top <#>`_
+
+.. _get_build_parameter_value_of_build_type:
+
+get_build_parameter_value_of_build_type
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    name = 'name_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
+
+    try:
+        # Get value of build parameter.
+        api_response = tc.build_type_api.get_build_parameter_value_of_build_type(name, bt_locator)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_build_parameter_value_of_build_type: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **name**
+     - **str**
+     - 
+   * - **bt_locator**
+     - **str**
+     - 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
+.. _get_build_parameters_of_build_type:
+
+get_build_parameters_of_build_type
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    locator = 'locator_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get build parameters.
+        api_response = tc.build_type_api.get_build_parameters_of_build_type(bt_locator, locator=locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_build_parameters_of_build_type: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **locator**
+     - **str**
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Properties <../models/Properties.html>`_
+
+`Back to top <#>`_
+
+.. _get_build_step:
+
+get_build_step
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    step_id = 'step_id_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get a build step of the matching build configuration.
+        api_response = tc.build_type_api.get_build_step(bt_locator, step_id, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_build_step: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **step_id**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Step <../models/Step.html>`_
+
+`Back to top <#>`_
+
+.. _get_build_step_parameter:
+
+get_build_step_parameter
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    step_id = 'step_id_example' # str | 
+    parameter_name = 'parameter_name_example' # str | 
+
+    try:
+        # Get a parameter of a build step of the matching build configuration.
+        api_response = tc.build_type_api.get_build_step_parameter(bt_locator, step_id, parameter_name)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_build_step_parameter: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **step_id**
+     - **str**
+     - 
+   * - **parameter_name**
+     - **str**
+     - 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
+.. _get_build_step_setting:
+
+get_build_step_setting
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    step_id = 'step_id_example' # str | 
+    field_name = 'field_name_example' # str | 
+
+    try:
+        # Get the setting of a build step of the matching build configuration.
+        api_response = tc.build_type_api.get_build_step_setting(bt_locator, step_id, field_name)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_build_step_setting: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **step_id**
+     - **str**
+     - 
+   * - **field_name**
+     - **str**
+     - 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
+.. _get_build_template:
+
+get_build_template
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    template_locator = 'template_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get a template of the matching build configuration.
+        api_response = tc.build_type_api.get_build_template(bt_locator, template_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_build_template: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **template_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `BuildType <../models/BuildType.html>`_
+
+`Back to top <#>`_
+
+.. _get_build_type:
+
+get_build_type
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get build configuration matching the locator.
+        api_response = tc.build_type_api.get_build_type(bt_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_build_type: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `BuildType <../models/BuildType.html>`_
+
+`Back to top <#>`_
+
+.. _get_build_type_build_tags:
+
+get_build_type_build_tags
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    field = 'field_example' # str |  (optional)
+
+    try:
+        # Get tags of builds of the matching build configuration.
+        api_response = tc.build_type_api.get_build_type_build_tags(bt_locator, field=field)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_build_type_build_tags: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **field**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Tags <../models/Tags.html>`_
+
+`Back to top <#>`_
+
+.. _get_build_type_builds:
+
+get_build_type_builds
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get builds of the matching build configuration.
+        api_response = tc.build_type_api.get_build_type_builds(bt_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_build_type_builds: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Builds <../models/Builds.html>`_
+
+`Back to top <#>`_
+
+.. _get_build_type_field:
+
+get_build_type_field
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    field = 'field_example' # str | 
+
+    try:
+        # Get a field of the matching build configuration.
+        api_response = tc.build_type_api.get_build_type_field(bt_locator, field)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_build_type_field: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **field**
+     - **str**
+     - 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
+.. _get_build_type_settings_file:
+
+get_build_type_settings_file
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+
+    try:
+        # Get the settings file of the matching build configuration.
+        api_response = tc.build_type_api.get_build_type_settings_file(bt_locator)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_build_type_settings_file: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
+.. _get_file_metadata_of_build_type:
+
+get_file_metadata_of_build_type
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    path = 'path_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+    resolve_parameters = true # bool |  (optional)
+
+    try:
+        # Get metadata of specific file.
+        api_response = tc.build_type_api.get_file_metadata_of_build_type(path, bt_locator, fields=fields, resolve_parameters=resolve_parameters)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_file_metadata_of_build_type: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **path**
+     - **str**
+     - 
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+   * - **resolve_parameters**
+     - **bool**
+     - [optional] 
+
+Return type:
+    `file <../models/file.html>`_
+
+`Back to top <#>`_
+
+.. _get_files_list_for_subpath_of_build_type:
+
+get_files_list_for_subpath_of_build_type
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    path = 'path_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
+    base_path = 'base_path_example' # str |  (optional)
+    locator = 'locator_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
+    resolve_parameters = true # bool |  (optional)
+
+    try:
+        # List files under this path.
+        api_response = tc.build_type_api.get_files_list_for_subpath_of_build_type(path, bt_locator, base_path=base_path, locator=locator, fields=fields, resolve_parameters=resolve_parameters)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_files_list_for_subpath_of_build_type: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **path**
+     - **str**
+     - 
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **base_path**
+     - **str**
+     - [optional] 
+   * - **locator**
+     - **str**
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+   * - **resolve_parameters**
+     - **bool**
+     - [optional] 
+
+Return type:
+    `Files <../models/Files.html>`_
+
+`Back to top <#>`_
+
+.. _get_files_list_of_build_type:
+
+get_files_list_of_build_type
 -----------------
 
 .. code-block:: python
@@ -3023,10 +3111,11 @@ get_root
     resolve_parameters = true # bool |  (optional)
 
     try:
-        api_response = tc.build_type_api.get_root(bt_locator, base_path=base_path, locator=locator, fields=fields, resolve_parameters=resolve_parameters)
+        # List all files.
+        api_response = tc.build_type_api.get_files_list_of_build_type(bt_locator, base_path=base_path, locator=locator, fields=fields, resolve_parameters=resolve_parameters)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_root: %s\n" % e)
+        print("Exception when calling BuildTypeApi->get_files_list_of_build_type: %s\n" % e)
 
 
 
@@ -3059,49 +3148,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _get_settings_file:
+.. _get_snapshot_dependency:
 
-get_settings_file
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-
-    try:
-        api_response = tc.build_type_api.get_settings_file(bt_locator)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_settings_file: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _get_snapshot_dep:
-
-get_snapshot_dep
+get_snapshot_dependency
 -----------------
 
 .. code-block:: python
@@ -3117,10 +3166,11 @@ get_snapshot_dep
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.build_type_api.get_snapshot_dep(bt_locator, snapshot_dep_locator, fields=fields)
+        # Get a snapshot dependency of the matching build configuration.
+        api_response = tc.build_type_api.get_snapshot_dependency(bt_locator, snapshot_dep_locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_snapshot_dep: %s\n" % e)
+        print("Exception when calling BuildTypeApi->get_snapshot_dependency: %s\n" % e)
 
 
 
@@ -3147,378 +3197,6 @@ Return type:
 
 `Back to top <#>`_
 
-.. _get_snapshot_deps:
-
-get_snapshot_deps
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.get_snapshot_deps(bt_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_snapshot_deps: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `SnapshotDependencies <../models/SnapshotDependencies.html>`_
-
-`Back to top <#>`_
-
-.. _get_step:
-
-get_step
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    step_id = 'step_id_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.get_step(bt_locator, step_id, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_step: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **step_id**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Step <../models/Step.html>`_
-
-`Back to top <#>`_
-
-.. _get_step_parameter:
-
-get_step_parameter
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    step_id = 'step_id_example' # str | 
-    parameter_name = 'parameter_name_example' # str | 
-
-    try:
-        api_response = tc.build_type_api.get_step_parameter(bt_locator, step_id, parameter_name)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_step_parameter: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **step_id**
-     - **str**
-     - 
-   * - **parameter_name**
-     - **str**
-     - 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _get_step_parameters:
-
-get_step_parameters
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    step_id = 'step_id_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.get_step_parameters(bt_locator, step_id, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_step_parameters: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **step_id**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Properties <../models/Properties.html>`_
-
-`Back to top <#>`_
-
-.. _get_step_setting:
-
-get_step_setting
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    step_id = 'step_id_example' # str | 
-    field_name = 'field_name_example' # str | 
-
-    try:
-        api_response = tc.build_type_api.get_step_setting(bt_locator, step_id, field_name)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_step_setting: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **step_id**
-     - **str**
-     - 
-   * - **field_name**
-     - **str**
-     - 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _get_steps:
-
-get_steps
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.get_steps(bt_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_steps: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Steps <../models/Steps.html>`_
-
-`Back to top <#>`_
-
-.. _get_template:
-
-get_template
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    template_locator = 'template_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.get_template(bt_locator, template_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_template: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **template_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `BuildType <../models/BuildType.html>`_
-
-`Back to top <#>`_
-
-.. _get_templates:
-
-get_templates
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.get_templates(bt_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_templates: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `BuildTypes <../models/BuildTypes.html>`_
-
-`Back to top <#>`_
-
 .. _get_trigger:
 
 get_trigger
@@ -3537,6 +3215,7 @@ get_trigger
     fields = 'fields_example' # str |  (optional)
 
     try:
+        # Get a trigger of the matching build configuration.
         api_response = tc.build_type_api.get_trigger(bt_locator, trigger_locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
@@ -3567,9 +3246,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _get_trigger_setting:
+.. _get_trigger_parameter:
 
-get_trigger_setting
+get_trigger_parameter
 -----------------
 
 .. code-block:: python
@@ -3585,10 +3264,11 @@ get_trigger_setting
     field_name = 'field_name_example' # str | 
 
     try:
-        api_response = tc.build_type_api.get_trigger_setting(bt_locator, trigger_locator, field_name)
+        # Get a parameter of a trigger of the matching build configuration.
+        api_response = tc.build_type_api.get_trigger_parameter(bt_locator, trigger_locator, field_name)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_trigger_setting: %s\n" % e)
+        print("Exception when calling BuildTypeApi->get_trigger_parameter: %s\n" % e)
 
 
 
@@ -3615,137 +3295,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _get_triggers:
+.. _get_vcs_root:
 
-get_triggers
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.get_triggers(bt_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_triggers: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Triggers <../models/Triggers.html>`_
-
-`Back to top <#>`_
-
-.. _get_vcs_labeling_options:
-
-get_vcs_labeling_options
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-
-    try:
-        api_response = tc.build_type_api.get_vcs_labeling_options(bt_locator)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_vcs_labeling_options: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-
-Return type:
-    `VcsLabeling <../models/VcsLabeling.html>`_
-
-`Back to top <#>`_
-
-.. _get_vcs_root_entries:
-
-get_vcs_root_entries
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.get_vcs_root_entries(bt_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_vcs_root_entries: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `VcsRootEntries <../models/VcsRootEntries.html>`_
-
-`Back to top <#>`_
-
-.. _get_vcs_root_entry:
-
-get_vcs_root_entry
+get_vcs_root
 -----------------
 
 .. code-block:: python
@@ -3761,10 +3313,11 @@ get_vcs_root_entry
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.build_type_api.get_vcs_root_entry(bt_locator, vcs_root_locator, fields=fields)
+        # Get a VCS root of the matching build configuration.
+        api_response = tc.build_type_api.get_vcs_root(bt_locator, vcs_root_locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_vcs_root_entry: %s\n" % e)
+        print("Exception when calling BuildTypeApi->get_vcs_root: %s\n" % e)
 
 
 
@@ -3791,9 +3344,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _get_vcs_root_entry_checkout_rules:
+.. _get_vcs_root_checkout_rules:
 
-get_vcs_root_entry_checkout_rules
+get_vcs_root_checkout_rules
 -----------------
 
 .. code-block:: python
@@ -3808,10 +3361,11 @@ get_vcs_root_entry_checkout_rules
     vcs_root_locator = 'vcs_root_locator_example' # str | 
 
     try:
-        api_response = tc.build_type_api.get_vcs_root_entry_checkout_rules(bt_locator, vcs_root_locator)
+        # Get checkout rules of a VCS root of the matching build configuration.
+        api_response = tc.build_type_api.get_vcs_root_checkout_rules(bt_locator, vcs_root_locator)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_vcs_root_entry_checkout_rules: %s\n" % e)
+        print("Exception when calling BuildTypeApi->get_vcs_root_checkout_rules: %s\n" % e)
 
 
 
@@ -3835,9 +3389,54 @@ Return type:
 
 `Back to top <#>`_
 
-.. _get_zipped:
+.. _get_vcs_root_instances_of_build_type:
 
-get_zipped
+get_vcs_root_instances_of_build_type
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get all VCS root instances of the matching build configuration.
+        api_response = tc.build_type_api.get_vcs_root_instances_of_build_type(bt_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->get_vcs_root_instances_of_build_type: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `VcsRootInstances <../models/VcsRootInstances.html>`_
+
+`Back to top <#>`_
+
+.. _get_zipped_file_of_build_type:
+
+get_zipped_file_of_build_type
 -----------------
 
 .. code-block:: python
@@ -3856,9 +3455,10 @@ get_zipped
     resolve_parameters = true # bool |  (optional)
 
     try:
-        tc.build_type_api.get_zipped(path, bt_locator, base_path=base_path, locator=locator, name=name, resolve_parameters=resolve_parameters)
+        # Get specific file zipped.
+        tc.build_type_api.get_zipped_file_of_build_type(path, bt_locator, base_path=base_path, locator=locator, name=name, resolve_parameters=resolve_parameters)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->get_zipped: %s\n" % e)
+        print("Exception when calling BuildTypeApi->get_zipped_file_of_build_type: %s\n" % e)
 
 
 
@@ -3911,6 +3511,7 @@ remove_all_templates
     inline_settings = true # bool |  (optional)
 
     try:
+        # Detach all templates from the matching build configuration.
         tc.build_type_api.remove_all_templates(bt_locator, inline_settings=inline_settings)
     except ApiException as e:
         print("Exception when calling BuildTypeApi->remove_all_templates: %s\n" % e)
@@ -3955,6 +3556,7 @@ remove_template
     inline_settings = true # bool |  (optional)
 
     try:
+        # Detach a template from the matching build configuration.
         tc.build_type_api.remove_template(bt_locator, template_locator, inline_settings=inline_settings)
     except ApiException as e:
         print("Exception when calling BuildTypeApi->remove_template: %s\n" % e)
@@ -4003,6 +3605,7 @@ replace_agent_requirement
     body = dohq_teamcity.AgentRequirement() # AgentRequirement |  (optional)
 
     try:
+        # Update an agent requirement of the matching build configuration.
         api_response = tc.build_type_api.replace_agent_requirement(bt_locator, agent_requirement_locator, fields=fields, body=body)
        pprint(api_response)
     except ApiException as e:
@@ -4036,9 +3639,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _replace_agent_requirements:
+.. _replace_all_agent_requirements:
 
-replace_agent_requirements
+replace_all_agent_requirements
 -----------------
 
 .. code-block:: python
@@ -4054,10 +3657,11 @@ replace_agent_requirements
     body = dohq_teamcity.AgentRequirements() # AgentRequirements |  (optional)
 
     try:
-        api_response = tc.build_type_api.replace_agent_requirements(bt_locator, fields=fields, body=body)
+        # Update all agent requirements of the matching build configuration.
+        api_response = tc.build_type_api.replace_all_agent_requirements(bt_locator, fields=fields, body=body)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->replace_agent_requirements: %s\n" % e)
+        print("Exception when calling BuildTypeApi->replace_all_agent_requirements: %s\n" % e)
 
 
 
@@ -4084,9 +3688,303 @@ Return type:
 
 `Back to top <#>`_
 
-.. _replace_artifact_dep:
+.. _replace_all_artifact_dependencies:
 
-replace_artifact_dep
+replace_all_artifact_dependencies
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+    body = dohq_teamcity.ArtifactDependencies() # ArtifactDependencies |  (optional)
+
+    try:
+        # Update all artifact dependencies of the matching build configuration.
+        api_response = tc.build_type_api.replace_all_artifact_dependencies(bt_locator, fields=fields, body=body)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->replace_all_artifact_dependencies: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+   * - **body**
+     - `ArtifactDependencies <../models/ArtifactDependencies.html>`_
+     - [optional] 
+
+Return type:
+    `ArtifactDependencies <../models/ArtifactDependencies.html>`_
+
+`Back to top <#>`_
+
+.. _replace_all_build_features:
+
+replace_all_build_features
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+    body = dohq_teamcity.Features() # Features |  (optional)
+
+    try:
+        # Update all build features of the matching build configuration.
+        api_response = tc.build_type_api.replace_all_build_features(bt_locator, fields=fields, body=body)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->replace_all_build_features: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+   * - **body**
+     - `Features <../models/Features.html>`_
+     - [optional] 
+
+Return type:
+    `Features <../models/Features.html>`_
+
+`Back to top <#>`_
+
+.. _replace_all_build_steps:
+
+replace_all_build_steps
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+    body = dohq_teamcity.Steps() # Steps |  (optional)
+
+    try:
+        # Update all build steps of the matching build configuration.
+        api_response = tc.build_type_api.replace_all_build_steps(bt_locator, fields=fields, body=body)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->replace_all_build_steps: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+   * - **body**
+     - `Steps <../models/Steps.html>`_
+     - [optional] 
+
+Return type:
+    `Steps <../models/Steps.html>`_
+
+`Back to top <#>`_
+
+.. _replace_all_snapshot_dependencies:
+
+replace_all_snapshot_dependencies
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+    body = dohq_teamcity.SnapshotDependencies() # SnapshotDependencies |  (optional)
+
+    try:
+        # Update all snapshot dependencies of the matching build configuration.
+        api_response = tc.build_type_api.replace_all_snapshot_dependencies(bt_locator, fields=fields, body=body)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->replace_all_snapshot_dependencies: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+   * - **body**
+     - `SnapshotDependencies <../models/SnapshotDependencies.html>`_
+     - [optional] 
+
+Return type:
+    `SnapshotDependencies <../models/SnapshotDependencies.html>`_
+
+`Back to top <#>`_
+
+.. _replace_all_triggers:
+
+replace_all_triggers
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+    body = dohq_teamcity.Triggers() # Triggers |  (optional)
+
+    try:
+        # Update all triggers of the matching build configuration.
+        api_response = tc.build_type_api.replace_all_triggers(bt_locator, fields=fields, body=body)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->replace_all_triggers: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+   * - **body**
+     - `Triggers <../models/Triggers.html>`_
+     - [optional] 
+
+Return type:
+    `Triggers <../models/Triggers.html>`_
+
+`Back to top <#>`_
+
+.. _replace_all_vcs_roots:
+
+replace_all_vcs_roots
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    body = dohq_teamcity.VcsRootEntries() # VcsRootEntries |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Update all VCS roots of the matching build configuration.
+        api_response = tc.build_type_api.replace_all_vcs_roots(bt_locator, body=body, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->replace_all_vcs_roots: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **body**
+     - `VcsRootEntries <../models/VcsRootEntries.html>`_
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `VcsRootEntries <../models/VcsRootEntries.html>`_
+
+`Back to top <#>`_
+
+.. _replace_artifact_dependency:
+
+replace_artifact_dependency
 -----------------
 
 .. code-block:: python
@@ -4103,10 +4001,11 @@ replace_artifact_dep
     body = dohq_teamcity.ArtifactDependency() # ArtifactDependency |  (optional)
 
     try:
-        api_response = tc.build_type_api.replace_artifact_dep(bt_locator, artifact_dep_locator, fields=fields, body=body)
+        # Update an artifact dependency of the matching build configuration.
+        api_response = tc.build_type_api.replace_artifact_dependency(bt_locator, artifact_dep_locator, fields=fields, body=body)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->replace_artifact_dep: %s\n" % e)
+        print("Exception when calling BuildTypeApi->replace_artifact_dependency: %s\n" % e)
 
 
 
@@ -4136,57 +4035,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _replace_artifact_deps:
+.. _replace_build_feature:
 
-replace_artifact_deps
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-    body = dohq_teamcity.ArtifactDependencies() # ArtifactDependencies |  (optional)
-
-    try:
-        api_response = tc.build_type_api.replace_artifact_deps(bt_locator, fields=fields, body=body)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->replace_artifact_deps: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-   * - **body**
-     - `ArtifactDependencies <../models/ArtifactDependencies.html>`_
-     - [optional] 
-
-Return type:
-    `ArtifactDependencies <../models/ArtifactDependencies.html>`_
-
-`Back to top <#>`_
-
-.. _replace_feature:
-
-replace_feature
+replace_build_feature
 -----------------
 
 .. code-block:: python
@@ -4203,10 +4054,11 @@ replace_feature
     body = dohq_teamcity.Feature() # Feature |  (optional)
 
     try:
-        api_response = tc.build_type_api.replace_feature(bt_locator, feature_id, fields=fields, body=body)
+        # Update a build feature of the matching build configuration.
+        api_response = tc.build_type_api.replace_build_feature(bt_locator, feature_id, fields=fields, body=body)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->replace_feature: %s\n" % e)
+        print("Exception when calling BuildTypeApi->replace_build_feature: %s\n" % e)
 
 
 
@@ -4236,9 +4088,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _replace_feature_parameters:
+.. _replace_build_feature_parameters:
 
-replace_feature_parameters
+replace_build_feature_parameters
 -----------------
 
 .. code-block:: python
@@ -4255,10 +4107,11 @@ replace_feature_parameters
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.build_type_api.replace_feature_parameters(bt_locator, feature_id, body=body, fields=fields)
+        # Update a parameter of a build feature of the matching build configuration.
+        api_response = tc.build_type_api.replace_build_feature_parameters(bt_locator, feature_id, body=body, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->replace_feature_parameters: %s\n" % e)
+        print("Exception when calling BuildTypeApi->replace_build_feature_parameters: %s\n" % e)
 
 
 
@@ -4288,157 +4141,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _replace_features:
+.. _replace_build_step:
 
-replace_features
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-    body = dohq_teamcity.Features() # Features |  (optional)
-
-    try:
-        api_response = tc.build_type_api.replace_features(bt_locator, fields=fields, body=body)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->replace_features: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-   * - **body**
-     - `Features <../models/Features.html>`_
-     - [optional] 
-
-Return type:
-    `Features <../models/Features.html>`_
-
-`Back to top <#>`_
-
-.. _replace_snapshot_dep:
-
-replace_snapshot_dep
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    snapshot_dep_locator = 'snapshot_dep_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-    body = dohq_teamcity.SnapshotDependency() # SnapshotDependency |  (optional)
-
-    try:
-        api_response = tc.build_type_api.replace_snapshot_dep(bt_locator, snapshot_dep_locator, fields=fields, body=body)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->replace_snapshot_dep: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **snapshot_dep_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-   * - **body**
-     - `SnapshotDependency <../models/SnapshotDependency.html>`_
-     - [optional] 
-
-Return type:
-    `SnapshotDependency <../models/SnapshotDependency.html>`_
-
-`Back to top <#>`_
-
-.. _replace_snapshot_deps:
-
-replace_snapshot_deps
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-    body = dohq_teamcity.SnapshotDependencies() # SnapshotDependencies |  (optional)
-
-    try:
-        api_response = tc.build_type_api.replace_snapshot_deps(bt_locator, fields=fields, body=body)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->replace_snapshot_deps: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-   * - **body**
-     - `SnapshotDependencies <../models/SnapshotDependencies.html>`_
-     - [optional] 
-
-Return type:
-    `SnapshotDependencies <../models/SnapshotDependencies.html>`_
-
-`Back to top <#>`_
-
-.. _replace_step:
-
-replace_step
+replace_build_step
 -----------------
 
 .. code-block:: python
@@ -4455,10 +4160,11 @@ replace_step
     body = dohq_teamcity.Step() # Step |  (optional)
 
     try:
-        api_response = tc.build_type_api.replace_step(bt_locator, step_id, fields=fields, body=body)
+        # Replace a build step of the matching build configuration.
+        api_response = tc.build_type_api.replace_build_step(bt_locator, step_id, fields=fields, body=body)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->replace_step: %s\n" % e)
+        print("Exception when calling BuildTypeApi->replace_build_step: %s\n" % e)
 
 
 
@@ -4488,9 +4194,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _replace_step_parameters:
+.. _replace_snapshot_dependency:
 
-replace_step_parameters
+replace_snapshot_dependency
 -----------------
 
 .. code-block:: python
@@ -4502,15 +4208,16 @@ replace_step_parameters
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
     bt_locator = 'bt_locator_example' # str | 
-    step_id = 'step_id_example' # str | 
-    body = dohq_teamcity.Properties() # Properties |  (optional)
+    snapshot_dep_locator = 'snapshot_dep_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
+    body = dohq_teamcity.SnapshotDependency() # SnapshotDependency |  (optional)
 
     try:
-        api_response = tc.build_type_api.replace_step_parameters(bt_locator, step_id, body=body, fields=fields)
+        # Update a snapshot dependency of the matching build configuration.
+        api_response = tc.build_type_api.replace_snapshot_dependency(bt_locator, snapshot_dep_locator, fields=fields, body=body)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->replace_step_parameters: %s\n" % e)
+        print("Exception when calling BuildTypeApi->replace_snapshot_dependency: %s\n" % e)
 
 
 
@@ -4525,66 +4232,18 @@ replace_step_parameters
    * - **bt_locator**
      - **str**
      - 
-   * - **step_id**
-     - **str**
-     - 
-   * - **body**
-     - `Properties <../models/Properties.html>`_
-     - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Properties <../models/Properties.html>`_
-
-`Back to top <#>`_
-
-.. _replace_steps:
-
-replace_steps
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-    body = dohq_teamcity.Steps() # Steps |  (optional)
-
-    try:
-        api_response = tc.build_type_api.replace_steps(bt_locator, fields=fields, body=body)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->replace_steps: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
+   * - **snapshot_dep_locator**
      - **str**
      - 
    * - **fields**
      - **str**
      - [optional] 
    * - **body**
-     - `Steps <../models/Steps.html>`_
+     - `SnapshotDependency <../models/SnapshotDependency.html>`_
      - [optional] 
 
 Return type:
-    `Steps <../models/Steps.html>`_
+    `SnapshotDependency <../models/SnapshotDependency.html>`_
 
 `Back to top <#>`_
 
@@ -4607,6 +4266,7 @@ replace_trigger
     body = dohq_teamcity.Trigger() # Trigger |  (optional)
 
     try:
+        # Update a trigger of the matching build configuration.
         api_response = tc.build_type_api.replace_trigger(bt_locator, trigger_locator, fields=fields, body=body)
        pprint(api_response)
     except ApiException as e:
@@ -4640,9 +4300,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _replace_triggers:
+.. _set_agent_requirement_parameter:
 
-replace_triggers
+set_agent_requirement_parameter
 -----------------
 
 .. code-block:: python
@@ -4654,14 +4314,16 @@ replace_triggers
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
     bt_locator = 'bt_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-    body = dohq_teamcity.Triggers() # Triggers |  (optional)
+    agent_requirement_locator = 'agent_requirement_locator_example' # str | 
+    field_name = 'field_name_example' # str | 
+    body = 'body_example' # str |  (optional)
 
     try:
-        api_response = tc.build_type_api.replace_triggers(bt_locator, fields=fields, body=body)
+        # Update a parameter of an agent requirement of the matching build configuration.
+        api_response = tc.build_type_api.set_agent_requirement_parameter(bt_locator, agent_requirement_locator, field_name, body=body)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->replace_triggers: %s\n" % e)
+        print("Exception when calling BuildTypeApi->set_agent_requirement_parameter: %s\n" % e)
 
 
 
@@ -4676,165 +4338,24 @@ replace_triggers
    * - **bt_locator**
      - **str**
      - 
-   * - **fields**
+   * - **agent_requirement_locator**
      - **str**
-     - [optional] 
-   * - **body**
-     - `Triggers <../models/Triggers.html>`_
-     - [optional] 
-
-Return type:
-    `Triggers <../models/Triggers.html>`_
-
-`Back to top <#>`_
-
-.. _replace_vcs_root_entries:
-
-replace_vcs_root_entries
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    body = dohq_teamcity.VcsRootEntries() # VcsRootEntries |  (optional)
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.replace_vcs_root_entries(bt_locator, body=body, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->replace_vcs_root_entries: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
+     - 
+   * - **field_name**
      - **str**
      - 
    * - **body**
-     - `VcsRootEntries <../models/VcsRootEntries.html>`_
-     - [optional] 
-   * - **fields**
      - **str**
      - [optional] 
-
-Return type:
-    `VcsRootEntries <../models/VcsRootEntries.html>`_
-
-`Back to top <#>`_
-
-.. _serve_branches:
-
-serve_branches
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    locator = 'locator_example' # str |  (optional)
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.serve_branches(bt_locator, locator=locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->serve_branches: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **locator**
-     - **str**
-     - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Branches <../models/Branches.html>`_
-
-`Back to top <#>`_
-
-.. _serve_build_field:
-
-serve_build_field
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    build_locator = 'build_locator_example' # str | 
-    field = 'field_example' # str | 
-
-    try:
-        api_response = tc.build_type_api.serve_build_field(bt_locator, build_locator, field)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->serve_build_field: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **build_locator**
-     - **str**
-     - 
-   * - **field**
-     - **str**
-     - 
 
 Return type:
     **str**
 
 `Back to top <#>`_
 
-.. _serve_build_type_builds_tags:
+.. _set_artifact_dependency_parameter:
 
-serve_build_type_builds_tags
+set_artifact_dependency_parameter
 -----------------
 
 .. code-block:: python
@@ -4846,13 +4367,16 @@ serve_build_type_builds_tags
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
     bt_locator = 'bt_locator_example' # str | 
-    field = 'field_example' # str | 
+    artifact_dep_locator = 'artifact_dep_locator_example' # str | 
+    field_name = 'field_name_example' # str | 
+    body = 'body_example' # str |  (optional)
 
     try:
-        api_response = tc.build_type_api.serve_build_type_builds_tags(bt_locator, field)
+        # Update a parameter of an artifact dependency of the matching build configuration.
+        api_response = tc.build_type_api.set_artifact_dependency_parameter(bt_locator, artifact_dep_locator, field_name, body=body)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->serve_build_type_builds_tags: %s\n" % e)
+        print("Exception when calling BuildTypeApi->set_artifact_dependency_parameter: %s\n" % e)
 
 
 
@@ -4867,62 +4391,24 @@ serve_build_type_builds_tags
    * - **bt_locator**
      - **str**
      - 
-   * - **field**
+   * - **artifact_dep_locator**
      - **str**
      - 
-
-Return type:
-    `Tags <../models/Tags.html>`_
-
-`Back to top <#>`_
-
-.. _serve_build_type_field:
-
-serve_build_type_field
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    field = 'field_example' # str | 
-
-    try:
-        api_response = tc.build_type_api.serve_build_type_field(bt_locator, field)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->serve_build_type_field: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
+   * - **field_name**
      - **str**
      - 
-   * - **field**
+   * - **body**
      - **str**
-     - 
+     - [optional] 
 
 Return type:
     **str**
 
 `Back to top <#>`_
 
-.. _serve_build_type_xml:
+.. _set_build_feature_parameter:
 
-serve_build_type_xml
+set_build_feature_parameter
 -----------------
 
 .. code-block:: python
@@ -4934,13 +4420,16 @@ serve_build_type_xml
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
     bt_locator = 'bt_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
+    feature_id = 'feature_id_example' # str | 
+    name = 'name_example' # str | 
+    body = 'body_example' # str |  (optional)
 
     try:
-        api_response = tc.build_type_api.serve_build_type_xml(bt_locator, fields=fields)
+        # Update a parameter of a build feature of the matching build configuration.
+        api_response = tc.build_type_api.set_build_feature_parameter(bt_locator, feature_id, name, body=body)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->serve_build_type_xml: %s\n" % e)
+        print("Exception when calling BuildTypeApi->set_build_feature_parameter: %s\n" % e)
 
 
 
@@ -4955,18 +4444,24 @@ serve_build_type_xml
    * - **bt_locator**
      - **str**
      - 
-   * - **fields**
+   * - **feature_id**
+     - **str**
+     - 
+   * - **name**
+     - **str**
+     - 
+   * - **body**
      - **str**
      - [optional] 
 
 Return type:
-    `BuildType <../models/BuildType.html>`_
+    **str**
 
 `Back to top <#>`_
 
-.. _serve_build_with_project:
+.. _set_build_step_parameter:
 
-serve_build_with_project
+set_build_step_parameter
 -----------------
 
 .. code-block:: python
@@ -4978,14 +4473,16 @@ serve_build_with_project
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
     bt_locator = 'bt_locator_example' # str | 
-    build_locator = 'build_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
+    step_id = 'step_id_example' # str | 
+    field_name = 'field_name_example' # str | 
+    body = 'body_example' # str |  (optional)
 
     try:
-        api_response = tc.build_type_api.serve_build_with_project(bt_locator, build_locator, fields=fields)
+        # Update a parameter of a build step of the matching build configuration.
+        api_response = tc.build_type_api.set_build_step_parameter(bt_locator, step_id, field_name, body=body)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->serve_build_with_project: %s\n" % e)
+        print("Exception when calling BuildTypeApi->set_build_step_parameter: %s\n" % e)
 
 
 
@@ -5000,107 +4497,18 @@ serve_build_with_project
    * - **bt_locator**
      - **str**
      - 
-   * - **build_locator**
+   * - **step_id**
      - **str**
      - 
-   * - **fields**
+   * - **field_name**
+     - **str**
+     - 
+   * - **body**
      - **str**
      - [optional] 
 
 Return type:
-    `Build <../models/Build.html>`_
-
-`Back to top <#>`_
-
-.. _serve_builds:
-
-serve_builds
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    status = 'status_example' # str |  (optional)
-    triggered_by_user = 'triggered_by_user_example' # str |  (optional)
-    include_personal = true # bool |  (optional)
-    include_canceled = true # bool |  (optional)
-    only_pinned = true # bool |  (optional)
-    tag = ['tag_example'] # list[str] |  (optional)
-    agent_name = 'agent_name_example' # str |  (optional)
-    since_build = 'since_build_example' # str |  (optional)
-    since_date = 'since_date_example' # str |  (optional)
-    start = 789 # int |  (optional)
-    count = 56 # int |  (optional)
-    locator = 'locator_example' # str |  (optional)
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.serve_builds(bt_locator, status=status, triggered_by_user=triggered_by_user, include_personal=include_personal, include_canceled=include_canceled, only_pinned=only_pinned, tag=tag, agent_name=agent_name, since_build=since_build, since_date=since_date, start=start, count=count, locator=locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->serve_builds: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **status**
-     - **str**
-     - [optional] 
-   * - **triggered_by_user**
-     - **str**
-     - [optional] 
-   * - **include_personal**
-     - **bool**
-     - [optional] 
-   * - **include_canceled**
-     - **bool**
-     - [optional] 
-   * - **only_pinned**
-     - **bool**
-     - [optional] 
-   * - **tag**
-     - `list[str] <../models/str.html>`_
-     - [optional] 
-   * - **agent_name**
-     - **str**
-     - [optional] 
-   * - **since_build**
-     - **str**
-     - [optional] 
-   * - **since_date**
-     - **str**
-     - [optional] 
-   * - **start**
-     - **int**
-     - [optional] 
-   * - **count**
-     - **int**
-     - [optional] 
-   * - **locator**
-     - **str**
-     - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Builds <../models/Builds.html>`_
+    **str**
 
 `Back to top <#>`_
 
@@ -5122,6 +4530,7 @@ set_build_type_field
     body = 'body_example' # str |  (optional)
 
     try:
+        # Update a field of the matching build configuration.
         api_response = tc.build_type_api.set_build_type_field(bt_locator, field, body=body)
        pprint(api_response)
     except ApiException as e:
@@ -5152,497 +4561,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _set_parameter:
+.. _set_build_type_templates:
 
-set_parameter
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    body = dohq_teamcity.ModelProperty() # ModelProperty |  (optional)
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.set_parameter(bt_locator, body=body, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->set_parameter: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **body**
-     - `ModelProperty <../models/ModelProperty.html>`_
-     - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `ModelProperty <../models/ModelProperty.html>`_
-
-`Back to top <#>`_
-
-.. _set_parameter_0:
-
-set_parameter_0
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    name = 'name_example' # str | 
-    bt_locator = 'bt_locator_example' # str | 
-    body = dohq_teamcity.ModelProperty() # ModelProperty |  (optional)
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.set_parameter_0(name, bt_locator, body=body, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->set_parameter_0: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **name**
-     - **str**
-     - 
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **body**
-     - `ModelProperty <../models/ModelProperty.html>`_
-     - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `ModelProperty <../models/ModelProperty.html>`_
-
-`Back to top <#>`_
-
-.. _set_parameter_1:
-
-set_parameter_1
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    body = dohq_teamcity.ModelProperty() # ModelProperty |  (optional)
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.set_parameter_1(bt_locator, body=body, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->set_parameter_1: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **body**
-     - `ModelProperty <../models/ModelProperty.html>`_
-     - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `ModelProperty <../models/ModelProperty.html>`_
-
-`Back to top <#>`_
-
-.. _set_parameter_2:
-
-set_parameter_2
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    name = 'name_example' # str | 
-    bt_locator = 'bt_locator_example' # str | 
-    body = dohq_teamcity.ModelProperty() # ModelProperty |  (optional)
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.set_parameter_2(name, bt_locator, body=body, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->set_parameter_2: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **name**
-     - **str**
-     - 
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **body**
-     - `ModelProperty <../models/ModelProperty.html>`_
-     - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `ModelProperty <../models/ModelProperty.html>`_
-
-`Back to top <#>`_
-
-.. _set_parameter_type:
-
-set_parameter_type
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    name = 'name_example' # str | 
-    bt_locator = 'bt_locator_example' # str | 
-    body = dohq_teamcity.Type() # Type |  (optional)
-
-    try:
-        api_response = tc.build_type_api.set_parameter_type(name, bt_locator, body=body)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->set_parameter_type: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **name**
-     - **str**
-     - 
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **body**
-     - `Type <../models/Type.html>`_
-     - [optional] 
-
-Return type:
-    `Type <../models/Type.html>`_
-
-`Back to top <#>`_
-
-.. _set_parameter_type_raw_value:
-
-set_parameter_type_raw_value
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    name = 'name_example' # str | 
-    bt_locator = 'bt_locator_example' # str | 
-    body = 'body_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.set_parameter_type_raw_value(name, bt_locator, body=body)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->set_parameter_type_raw_value: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **name**
-     - **str**
-     - 
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **body**
-     - **str**
-     - [optional] 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _set_parameter_value_long:
-
-set_parameter_value_long
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    name = 'name_example' # str | 
-    bt_locator = 'bt_locator_example' # str | 
-    body = 'body_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.set_parameter_value_long(name, bt_locator, body=body)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->set_parameter_value_long: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **name**
-     - **str**
-     - 
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **body**
-     - **str**
-     - [optional] 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _set_parameter_value_long_0:
-
-set_parameter_value_long_0
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    name = 'name_example' # str | 
-    bt_locator = 'bt_locator_example' # str | 
-    body = 'body_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.set_parameter_value_long_0(name, bt_locator, body=body)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->set_parameter_value_long_0: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **name**
-     - **str**
-     - 
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **body**
-     - **str**
-     - [optional] 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _set_parameters:
-
-set_parameters
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    body = dohq_teamcity.Properties() # Properties |  (optional)
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.set_parameters(bt_locator, body=body, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->set_parameters: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **body**
-     - `Properties <../models/Properties.html>`_
-     - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Properties <../models/Properties.html>`_
-
-`Back to top <#>`_
-
-.. _set_parameters_0:
-
-set_parameters_0
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    bt_locator = 'bt_locator_example' # str | 
-    body = dohq_teamcity.Properties() # Properties |  (optional)
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_type_api.set_parameters_0(bt_locator, body=body, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildTypeApi->set_parameters_0: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **bt_locator**
-     - **str**
-     - 
-   * - **body**
-     - `Properties <../models/Properties.html>`_
-     - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Properties <../models/Properties.html>`_
-
-`Back to top <#>`_
-
-.. _set_templates:
-
-set_templates
+set_build_type_templates
 -----------------
 
 .. code-block:: python
@@ -5659,10 +4580,11 @@ set_templates
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.build_type_api.set_templates(bt_locator, body=body, optimize_settings=optimize_settings, fields=fields)
+        # Update all templates of the matching build configuration.
+        api_response = tc.build_type_api.set_build_type_templates(bt_locator, body=body, optimize_settings=optimize_settings, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->set_templates: %s\n" % e)
+        print("Exception when calling BuildTypeApi->set_build_type_templates: %s\n" % e)
 
 
 
@@ -5692,9 +4614,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _set_vcs_labeling_options:
+.. _set_trigger_parameter:
 
-set_vcs_labeling_options
+set_trigger_parameter
 -----------------
 
 .. code-block:: python
@@ -5706,13 +4628,268 @@ set_vcs_labeling_options
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
     bt_locator = 'bt_locator_example' # str | 
-    body = dohq_teamcity.VcsLabeling() # VcsLabeling |  (optional)
+    trigger_locator = 'trigger_locator_example' # str | 
+    field_name = 'field_name_example' # str | 
+    body = 'body_example' # str |  (optional)
 
     try:
-        api_response = tc.build_type_api.set_vcs_labeling_options(bt_locator, body=body)
+        # Update a parameter of a trigger of the matching build configuration.
+        api_response = tc.build_type_api.set_trigger_parameter(bt_locator, trigger_locator, field_name, body=body)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->set_vcs_labeling_options: %s\n" % e)
+        print("Exception when calling BuildTypeApi->set_trigger_parameter: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **trigger_locator**
+     - **str**
+     - 
+   * - **field_name**
+     - **str**
+     - 
+   * - **body**
+     - **str**
+     - [optional] 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
+.. _update_build_parameter_of_build_type:
+
+update_build_parameter_of_build_type
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    name = 'name_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
+    body = dohq_teamcity.ModelProperty() # ModelProperty |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Update build parameter.
+        api_response = tc.build_type_api.update_build_parameter_of_build_type(name, bt_locator, body=body, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->update_build_parameter_of_build_type: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **name**
+     - **str**
+     - 
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **body**
+     - `ModelProperty <../models/ModelProperty.html>`_
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `ModelProperty <../models/ModelProperty.html>`_
+
+`Back to top <#>`_
+
+.. _update_build_parameter_specification_of_build_type:
+
+update_build_parameter_specification_of_build_type
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    name = 'name_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
+    body = 'body_example' # str |  (optional)
+
+    try:
+        # Update build parameter specification.
+        api_response = tc.build_type_api.update_build_parameter_specification_of_build_type(name, bt_locator, body=body)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->update_build_parameter_specification_of_build_type: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **name**
+     - **str**
+     - 
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **body**
+     - **str**
+     - [optional] 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
+.. _update_build_parameter_type_of_build_type:
+
+update_build_parameter_type_of_build_type
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    name = 'name_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
+    body = dohq_teamcity.Type() # Type |  (optional)
+
+    try:
+        # Update type of build parameter.
+        api_response = tc.build_type_api.update_build_parameter_type_of_build_type(name, bt_locator, body=body)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->update_build_parameter_type_of_build_type: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **name**
+     - **str**
+     - 
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **body**
+     - `Type <../models/Type.html>`_
+     - [optional] 
+
+Return type:
+    `Type <../models/Type.html>`_
+
+`Back to top <#>`_
+
+.. _update_build_parameter_value_of_build_type:
+
+update_build_parameter_value_of_build_type
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    name = 'name_example' # str | 
+    bt_locator = 'bt_locator_example' # str | 
+    body = 'body_example' # str |  (optional)
+
+    try:
+        # Update value of build parameter.
+        api_response = tc.build_type_api.update_build_parameter_value_of_build_type(name, bt_locator, body=body)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->update_build_parameter_value_of_build_type: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **name**
+     - **str**
+     - 
+   * - **bt_locator**
+     - **str**
+     - 
+   * - **body**
+     - **str**
+     - [optional] 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
+.. _update_build_parameters_of_build_type:
+
+update_build_parameters_of_build_type
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    bt_locator = 'bt_locator_example' # str | 
+    body = dohq_teamcity.Properties() # Properties |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Update build parameters.
+        api_response = tc.build_type_api.update_build_parameters_of_build_type(bt_locator, body=body, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildTypeApi->update_build_parameters_of_build_type: %s\n" % e)
 
 
 
@@ -5728,17 +4905,20 @@ set_vcs_labeling_options
      - **str**
      - 
    * - **body**
-     - `VcsLabeling <../models/VcsLabeling.html>`_
+     - `Properties <../models/Properties.html>`_
+     - [optional] 
+   * - **fields**
+     - **str**
      - [optional] 
 
 Return type:
-    `VcsLabeling <../models/VcsLabeling.html>`_
+    `Properties <../models/Properties.html>`_
 
 `Back to top <#>`_
 
-.. _update_vcs_root_entry:
+.. _update_build_type_vcs_root:
 
-update_vcs_root_entry
+update_build_type_vcs_root
 -----------------
 
 .. code-block:: python
@@ -5755,10 +4935,11 @@ update_vcs_root_entry
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.build_type_api.update_vcs_root_entry(bt_locator, vcs_root_locator, body=body, fields=fields)
+        # Update a VCS root of the matching build configuration.
+        api_response = tc.build_type_api.update_build_type_vcs_root(bt_locator, vcs_root_locator, body=body, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->update_vcs_root_entry: %s\n" % e)
+        print("Exception when calling BuildTypeApi->update_build_type_vcs_root: %s\n" % e)
 
 
 
@@ -5788,9 +4969,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _update_vcs_root_entry_checkout_rules:
+.. _update_build_type_vcs_root_checkout_rules:
 
-update_vcs_root_entry_checkout_rules
+update_build_type_vcs_root_checkout_rules
 -----------------
 
 .. code-block:: python
@@ -5806,10 +4987,11 @@ update_vcs_root_entry_checkout_rules
     body = 'body_example' # str |  (optional)
 
     try:
-        api_response = tc.build_type_api.update_vcs_root_entry_checkout_rules(bt_locator, vcs_root_locator, body=body)
+        # Update checkout rules of a VCS root of the matching build configuration.
+        api_response = tc.build_type_api.update_build_type_vcs_root_checkout_rules(bt_locator, vcs_root_locator, body=body)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildTypeApi->update_vcs_root_entry_checkout_rules: %s\n" % e)
+        print("Exception when calling BuildTypeApi->update_build_type_vcs_root_checkout_rules: %s\n" % e)
 
 
 

@@ -17,7 +17,7 @@ Properties
      - Notes
    * - **copy_all_associated_settings**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **projects_ids_map**
      -  `Properties <./Properties.html>`_
      - `optional` 

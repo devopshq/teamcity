@@ -38,16 +38,16 @@ Properties
      - `optional` 
    * - **running**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **composite**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **failed_to_start**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **personal**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **percentage_complete**
      - **int**
      - `optional` 
@@ -56,16 +56,16 @@ Properties
      - `optional` 
    * - **default_branch**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **unspecified_branch**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **history**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **pinned**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **href**
      - **str**
      - `optional` 
@@ -108,6 +108,18 @@ Properties
    * - **wait_reason**
      - **str**
      - `optional` 
+   * - **finish_estimate**
+     - **str**
+     - `optional` 
+   * - **delayed_by_build**
+     -  `Build <./Build.html>`_
+     - `optional` 
+   * - **planned_agent**
+     -  `Agent <./Agent.html>`_
+     - `optional` 
+   * - **approval_info**
+     -  `ApprovalInfo <./ApprovalInfo.html>`_
+     - `optional` 
    * - **running_info**
      -  `ProgressInfo <./ProgressInfo.html>`_
      - `optional` 
@@ -147,6 +159,9 @@ Properties
    * - **compatible_agents**
      -  `Agents <./Agents.html>`_
      - `optional` 
+   * - **compatible_cloud_images**
+     -  `CloudImages <./CloudImages.html>`_
+     - `optional` 
    * - **test_occurrences**
      -  `TestOccurrences <./TestOccurrences.html>`_
      - `optional` 
@@ -163,6 +178,12 @@ Properties
      -  `Properties <./Properties.html>`_
      - `optional` 
    * - **resulting_properties**
+     -  `Properties <./Properties.html>`_
+     - `optional` 
+   * - **original_properties**
+     -  `Properties <./Properties.html>`_
+     - `optional` 
+   * - **start_properties**
      -  `Properties <./Properties.html>`_
      - `optional` 
    * - **attributes**
@@ -206,9 +227,36 @@ Properties
      - `optional` 
    * - **used_by_other_builds**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **status_change_comment**
      -  `Comment <./Comment.html>`_
+     - `optional` 
+   * - **vcs_labels**
+     -  `list[VcsLabel] <./VcsLabel.html>`_
+     - `optional` 
+   * - **detached_from_agent**
+     - **bool**
+     - `optional` 
+   * - **finish_on_agent_date**
+     - **str**
+     - `optional` 
+   * - **customized**
+     - **bool**
+     - `optional` 
+   * - **customization**
+     -  `Customizations <./Customizations.html>`_
+     - `optional` 
+   * - **changes_collecting_in_progress**
+     - **bool**
+     - `optional` 
+   * - **queued_wait_reasons**
+     -  `Properties <./Properties.html>`_
+     - `optional` 
+   * - **downloaded_artifacts**
+     -  `DownloadedArtifacts <./DownloadedArtifacts.html>`_
+     - `optional` 
+   * - **first_build_with_same_changes**
+     -  `Build <./Build.html>`_
      - `optional` 
    * - **locator**
      - **str**

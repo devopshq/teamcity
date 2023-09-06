@@ -3,6 +3,7 @@
 from dohq_teamcity.custom.base_model import TeamCityObject
 
 
+# from dohq_teamcity.models.test_counters import TestCounters  # noqa: F401,E501
 # from dohq_teamcity.models.test_occurrence import TestOccurrence  # noqa: F401,E501
 
 
@@ -25,11 +26,11 @@ class TestOccurrences(TeamCityObject):
         'next_href': 'str',
         'prev_href': 'str',
         'test_occurrence': 'list[TestOccurrence]',
-        'default': 'bool',
-        'passed': 'int',
-        'failed': 'int',
-        'new_failed': 'int',
+        'test_counters': 'TestCounters',
         'ignored': 'int',
+        'failed': 'int',
+        'passed': 'int',
+        'new_failed': 'int',
         'muted': 'int'
     }
 
@@ -39,15 +40,15 @@ class TestOccurrences(TeamCityObject):
         'next_href': 'nextHref',
         'prev_href': 'prevHref',
         'test_occurrence': 'testOccurrence',
-        'default': 'default',
-        'passed': 'passed',
-        'failed': 'failed',
-        'new_failed': 'newFailed',
+        'test_counters': 'testCounters',
         'ignored': 'ignored',
+        'failed': 'failed',
+        'passed': 'passed',
+        'new_failed': 'newFailed',
         'muted': 'muted'
     }
 
-    def __init__(self, count=None, href=None, next_href=None, prev_href=None, test_occurrence=None, default=False, passed=None, failed=None, new_failed=None, ignored=None, muted=None, teamcity=None):  # noqa: E501
+    def __init__(self, count=None, href=None, next_href=None, prev_href=None, test_occurrence=None, test_counters=None, ignored=None, failed=None, passed=None, new_failed=None, muted=None, teamcity=None):  # noqa: E501
         """TestOccurrences - a model defined in Swagger"""  # noqa: E501
 
         self._count = None
@@ -55,11 +56,11 @@ class TestOccurrences(TeamCityObject):
         self._next_href = None
         self._prev_href = None
         self._test_occurrence = None
-        self._default = None
-        self._passed = None
-        self._failed = None
-        self._new_failed = None
+        self._test_counters = None
         self._ignored = None
+        self._failed = None
+        self._passed = None
+        self._new_failed = None
         self._muted = None
         self.discriminator = None
 
@@ -73,16 +74,16 @@ class TestOccurrences(TeamCityObject):
             self.prev_href = prev_href
         if test_occurrence is not None:
             self.test_occurrence = test_occurrence
-        if default is not None:
-            self.default = default
-        if passed is not None:
-            self.passed = passed
-        if failed is not None:
-            self.failed = failed
-        if new_failed is not None:
-            self.new_failed = new_failed
+        if test_counters is not None:
+            self.test_counters = test_counters
         if ignored is not None:
             self.ignored = ignored
+        if failed is not None:
+            self.failed = failed
+        if passed is not None:
+            self.passed = passed
+        if new_failed is not None:
+            self.new_failed = new_failed
         if muted is not None:
             self.muted = muted
         super(TestOccurrences, self).__init__(teamcity=teamcity)
@@ -193,46 +194,46 @@ class TestOccurrences(TeamCityObject):
         self._test_occurrence = test_occurrence
 
     @property
-    def default(self):
-        """Gets the default of this TestOccurrences.  # noqa: E501
+    def test_counters(self):
+        """Gets the test_counters of this TestOccurrences.  # noqa: E501
 
 
-        :return: The default of this TestOccurrences.  # noqa: E501
-        :rtype: bool
+        :return: The test_counters of this TestOccurrences.  # noqa: E501
+        :rtype: TestCounters
         """
-        return self._default
+        return self._test_counters
 
-    @default.setter
-    def default(self, default):
-        """Sets the default of this TestOccurrences.
+    @test_counters.setter
+    def test_counters(self, test_counters):
+        """Sets the test_counters of this TestOccurrences.
 
 
-        :param default: The default of this TestOccurrences.  # noqa: E501
-        :type: bool
+        :param test_counters: The test_counters of this TestOccurrences.  # noqa: E501
+        :type: TestCounters
         """
 
-        self._default = default
+        self._test_counters = test_counters
 
     @property
-    def passed(self):
-        """Gets the passed of this TestOccurrences.  # noqa: E501
+    def ignored(self):
+        """Gets the ignored of this TestOccurrences.  # noqa: E501
 
 
-        :return: The passed of this TestOccurrences.  # noqa: E501
+        :return: The ignored of this TestOccurrences.  # noqa: E501
         :rtype: int
         """
-        return self._passed
+        return self._ignored
 
-    @passed.setter
-    def passed(self, passed):
-        """Sets the passed of this TestOccurrences.
+    @ignored.setter
+    def ignored(self, ignored):
+        """Sets the ignored of this TestOccurrences.
 
 
-        :param passed: The passed of this TestOccurrences.  # noqa: E501
+        :param ignored: The ignored of this TestOccurrences.  # noqa: E501
         :type: int
         """
 
-        self._passed = passed
+        self._ignored = ignored
 
     @property
     def failed(self):
@@ -256,6 +257,27 @@ class TestOccurrences(TeamCityObject):
         self._failed = failed
 
     @property
+    def passed(self):
+        """Gets the passed of this TestOccurrences.  # noqa: E501
+
+
+        :return: The passed of this TestOccurrences.  # noqa: E501
+        :rtype: int
+        """
+        return self._passed
+
+    @passed.setter
+    def passed(self, passed):
+        """Sets the passed of this TestOccurrences.
+
+
+        :param passed: The passed of this TestOccurrences.  # noqa: E501
+        :type: int
+        """
+
+        self._passed = passed
+
+    @property
     def new_failed(self):
         """Gets the new_failed of this TestOccurrences.  # noqa: E501
 
@@ -275,27 +297,6 @@ class TestOccurrences(TeamCityObject):
         """
 
         self._new_failed = new_failed
-
-    @property
-    def ignored(self):
-        """Gets the ignored of this TestOccurrences.  # noqa: E501
-
-
-        :return: The ignored of this TestOccurrences.  # noqa: E501
-        :rtype: int
-        """
-        return self._ignored
-
-    @ignored.setter
-    def ignored(self, ignored):
-        """Sets the ignored of this TestOccurrences.
-
-
-        :param ignored: The ignored of this TestOccurrences.  # noqa: E501
-        :type: int
-        """
-
-        self._ignored = ignored
 
     @property
     def muted(self):

@@ -30,19 +30,19 @@ Properties
    * - **test_occurrence**
      -  `list[TestOccurrence] <./TestOccurrence.html>`_
      - `optional` 
-   * - **default**
-     - **bool**
-     - `optional` [default to ``False``]
-   * - **passed**
+   * - **test_counters**
+     -  `TestCounters <./TestCounters.html>`_
+     - `optional` 
+   * - **ignored**
      - **int**
      - `optional` 
    * - **failed**
      - **int**
      - `optional` 
-   * - **new_failed**
+   * - **passed**
      - **int**
      - `optional` 
-   * - **ignored**
+   * - **new_failed**
      - **int**
      - `optional` 
    * - **muted**

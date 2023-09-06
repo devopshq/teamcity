@@ -30,9 +30,6 @@ Properties
    * - **problem_occurrence**
      -  `list[ProblemOccurrence] <./ProblemOccurrence.html>`_
      - `optional` 
-   * - **default**
-     - **bool**
-     - `optional` [default to ``False``]
    * - **passed**
      - **int**
      - `optional` 

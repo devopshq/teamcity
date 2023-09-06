@@ -26,6 +26,7 @@ class Problem(TeamCityObject):
         'type': 'str',
         'identity': 'str',
         'href': 'str',
+        'description': 'str',
         'mutes': 'Mutes',
         'investigations': 'Investigations',
         'problem_occurrences': 'ProblemOccurrences',
@@ -37,19 +38,21 @@ class Problem(TeamCityObject):
         'type': 'type',
         'identity': 'identity',
         'href': 'href',
+        'description': 'description',
         'mutes': 'mutes',
         'investigations': 'investigations',
         'problem_occurrences': 'problemOccurrences',
         'locator': 'locator'
     }
 
-    def __init__(self, id=None, type=None, identity=None, href=None, mutes=None, investigations=None, problem_occurrences=None, locator=None, teamcity=None):  # noqa: E501
+    def __init__(self, id=None, type=None, identity=None, href=None, description=None, mutes=None, investigations=None, problem_occurrences=None, locator=None, teamcity=None):  # noqa: E501
         """Problem - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._type = None
         self._identity = None
         self._href = None
+        self._description = None
         self._mutes = None
         self._investigations = None
         self._problem_occurrences = None
@@ -64,6 +67,8 @@ class Problem(TeamCityObject):
             self.identity = identity
         if href is not None:
             self.href = href
+        if description is not None:
+            self.description = description
         if mutes is not None:
             self.mutes = mutes
         if investigations is not None:
@@ -157,6 +162,27 @@ class Problem(TeamCityObject):
         """
 
         self._href = href
+
+    @property
+    def description(self):
+        """Gets the description of this Problem.  # noqa: E501
+
+
+        :return: The description of this Problem.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this Problem.
+
+
+        :param description: The description of this Problem.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def mutes(self):

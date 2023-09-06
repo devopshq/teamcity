@@ -52,7 +52,7 @@ class LicenseKey(TeamCityObject):
         'raw_type': 'rawType'
     }
 
-    def __init__(self, valid=False, active=False, expired=False, obsolete=False, expiration_date=None, maintenance_end_date=None, type=None, servers=None, agents=None, unlimited_agents=False, build_types=None, unlimited_build_types=False, error_details=None, key=None, raw_type=None, teamcity=None):  # noqa: E501
+    def __init__(self, valid=None, active=None, expired=None, obsolete=None, expiration_date=None, maintenance_end_date=None, type=None, servers=None, agents=None, unlimited_agents=None, build_types=None, unlimited_build_types=None, error_details=None, key=None, raw_type=None, teamcity=None):  # noqa: E501
         """LicenseKey - a model defined in Swagger"""  # noqa: E501
 
         self._valid = None
@@ -248,6 +248,12 @@ class LicenseKey(TeamCityObject):
         :param type: The type of this LicenseKey.  # noqa: E501
         :type: str
         """
+        allowed_values = ["evaluation", "eap", "open_source", "commercial", "enterprise", "professional"]  # noqa: E501
+        if type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                .format(type, allowed_values)
+            )
 
         self._type = type
 

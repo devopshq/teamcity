@@ -22,54 +22,59 @@ class BranchVersion(TeamCityObject):
     swagger_types = {
         'version': 'str',
         'unspecified': 'bool',
-        'last_activity': 'str',
+        'group_flag': 'bool',
         'builds': 'Builds',
+        'last_activity': 'str',
         'internal_name': 'str',
-        'active': 'bool',
         'name': 'str',
-        'default': 'bool'
+        'default': 'bool',
+        'active': 'bool'
     }
 
     attribute_map = {
         'version': 'version',
         'unspecified': 'unspecified',
-        'last_activity': 'lastActivity',
+        'group_flag': 'groupFlag',
         'builds': 'builds',
+        'last_activity': 'lastActivity',
         'internal_name': 'internalName',
-        'active': 'active',
         'name': 'name',
-        'default': 'default'
+        'default': 'default',
+        'active': 'active'
     }
 
-    def __init__(self, version=None, unspecified=False, last_activity=None, builds=None, internal_name=None, active=False, name=None, default=False, teamcity=None):  # noqa: E501
+    def __init__(self, version=None, unspecified=None, group_flag=None, builds=None, last_activity=None, internal_name=None, name=None, default=None, active=None, teamcity=None):  # noqa: E501
         """BranchVersion - a model defined in Swagger"""  # noqa: E501
 
         self._version = None
         self._unspecified = None
-        self._last_activity = None
+        self._group_flag = None
         self._builds = None
+        self._last_activity = None
         self._internal_name = None
-        self._active = None
         self._name = None
         self._default = None
+        self._active = None
         self.discriminator = None
 
         if version is not None:
             self.version = version
         if unspecified is not None:
             self.unspecified = unspecified
-        if last_activity is not None:
-            self.last_activity = last_activity
+        if group_flag is not None:
+            self.group_flag = group_flag
         if builds is not None:
             self.builds = builds
+        if last_activity is not None:
+            self.last_activity = last_activity
         if internal_name is not None:
             self.internal_name = internal_name
-        if active is not None:
-            self.active = active
         if name is not None:
             self.name = name
         if default is not None:
             self.default = default
+        if active is not None:
+            self.active = active
         super(BranchVersion, self).__init__(teamcity=teamcity)
 
     @property
@@ -115,25 +120,25 @@ class BranchVersion(TeamCityObject):
         self._unspecified = unspecified
 
     @property
-    def last_activity(self):
-        """Gets the last_activity of this BranchVersion.  # noqa: E501
+    def group_flag(self):
+        """Gets the group_flag of this BranchVersion.  # noqa: E501
 
 
-        :return: The last_activity of this BranchVersion.  # noqa: E501
-        :rtype: str
+        :return: The group_flag of this BranchVersion.  # noqa: E501
+        :rtype: bool
         """
-        return self._last_activity
+        return self._group_flag
 
-    @last_activity.setter
-    def last_activity(self, last_activity):
-        """Sets the last_activity of this BranchVersion.
+    @group_flag.setter
+    def group_flag(self, group_flag):
+        """Sets the group_flag of this BranchVersion.
 
 
-        :param last_activity: The last_activity of this BranchVersion.  # noqa: E501
-        :type: str
+        :param group_flag: The group_flag of this BranchVersion.  # noqa: E501
+        :type: bool
         """
 
-        self._last_activity = last_activity
+        self._group_flag = group_flag
 
     @property
     def builds(self):
@@ -157,6 +162,27 @@ class BranchVersion(TeamCityObject):
         self._builds = builds
 
     @property
+    def last_activity(self):
+        """Gets the last_activity of this BranchVersion.  # noqa: E501
+
+
+        :return: The last_activity of this BranchVersion.  # noqa: E501
+        :rtype: str
+        """
+        return self._last_activity
+
+    @last_activity.setter
+    def last_activity(self, last_activity):
+        """Sets the last_activity of this BranchVersion.
+
+
+        :param last_activity: The last_activity of this BranchVersion.  # noqa: E501
+        :type: str
+        """
+
+        self._last_activity = last_activity
+
+    @property
     def internal_name(self):
         """Gets the internal_name of this BranchVersion.  # noqa: E501
 
@@ -176,27 +202,6 @@ class BranchVersion(TeamCityObject):
         """
 
         self._internal_name = internal_name
-
-    @property
-    def active(self):
-        """Gets the active of this BranchVersion.  # noqa: E501
-
-
-        :return: The active of this BranchVersion.  # noqa: E501
-        :rtype: bool
-        """
-        return self._active
-
-    @active.setter
-    def active(self, active):
-        """Sets the active of this BranchVersion.
-
-
-        :param active: The active of this BranchVersion.  # noqa: E501
-        :type: bool
-        """
-
-        self._active = active
 
     @property
     def name(self):
@@ -239,3 +244,24 @@ class BranchVersion(TeamCityObject):
         """
 
         self._default = default
+
+    @property
+    def active(self):
+        """Gets the active of this BranchVersion.  # noqa: E501
+
+
+        :return: The active of this BranchVersion.  # noqa: E501
+        :rtype: bool
+        """
+        return self._active
+
+    @active.setter
+    def active(self, active):
+        """Sets the active of this BranchVersion.
+
+
+        :param active: The active of this BranchVersion.  # noqa: E501
+        :type: bool
+        """
+
+        self._active = active

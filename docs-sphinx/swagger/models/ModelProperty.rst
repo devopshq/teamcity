@@ -23,7 +23,7 @@ Properties
      - `optional` 
    * - **inherited**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **type**
      -  `Type <./Type.html>`_
      - `optional` 

@@ -20,24 +20,27 @@ Properties
      - `optional` 
    * - **unspecified**
      - **bool**
-     - `optional` [default to ``False``]
-   * - **last_activity**
-     - **str**
+     - `optional` 
+   * - **group_flag**
+     - **bool**
      - `optional` 
    * - **builds**
      -  `Builds <./Builds.html>`_
      - `optional` 
+   * - **last_activity**
+     - **str**
+     - `optional` 
    * - **internal_name**
      - **str**
      - `optional` 
-   * - **active**
-     - **bool**
-     - `optional` [default to ``False``]
    * - **name**
      - **str**
      - `optional` 
    * - **default**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
+   * - **active**
+     - **bool**
+     - `optional` 
 
 

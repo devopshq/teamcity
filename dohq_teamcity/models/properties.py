@@ -20,53 +20,32 @@ class Properties(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'count': 'int',
         'href': 'str',
+        'count': 'int',
         '_property': 'list[ModelProperty]'
     }
 
     attribute_map = {
-        'count': 'count',
         'href': 'href',
+        'count': 'count',
         '_property': 'property'
     }
 
-    def __init__(self, count=None, href=None, _property=None, teamcity=None):  # noqa: E501
+    def __init__(self, href=None, count=None, _property=None, teamcity=None):  # noqa: E501
         """Properties - a model defined in Swagger"""  # noqa: E501
 
-        self._count = None
         self._href = None
+        self._count = None
         self.__property = None
         self.discriminator = None
 
-        if count is not None:
-            self.count = count
         if href is not None:
             self.href = href
+        if count is not None:
+            self.count = count
         if _property is not None:
             self._property = _property
         super(Properties, self).__init__(teamcity=teamcity)
-
-    @property
-    def count(self):
-        """Gets the count of this Properties.  # noqa: E501
-
-
-        :return: The count of this Properties.  # noqa: E501
-        :rtype: int
-        """
-        return self._count
-
-    @count.setter
-    def count(self, count):
-        """Sets the count of this Properties.
-
-
-        :param count: The count of this Properties.  # noqa: E501
-        :type: int
-        """
-
-        self._count = count
 
     @property
     def href(self):
@@ -88,6 +67,27 @@ class Properties(TeamCityObject):
         """
 
         self._href = href
+
+    @property
+    def count(self):
+        """Gets the count of this Properties.  # noqa: E501
+
+
+        :return: The count of this Properties.  # noqa: E501
+        :rtype: int
+        """
+        return self._count
+
+    @count.setter
+    def count(self, count):
+        """Sets the count of this Properties.
+
+
+        :param count: The count of this Properties.  # noqa: E501
+        :type: int
+        """
+
+        self._count = count
 
     @property
     def _property(self):

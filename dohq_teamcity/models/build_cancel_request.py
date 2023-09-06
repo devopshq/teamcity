@@ -26,7 +26,7 @@ class BuildCancelRequest(TeamCityObject):
         'readd_into_queue': 'readdIntoQueue'
     }
 
-    def __init__(self, comment=None, readd_into_queue=False, teamcity=None):  # noqa: E501
+    def __init__(self, comment=None, readd_into_queue=None, teamcity=None):  # noqa: E501
         """BuildCancelRequest - a model defined in Swagger"""  # noqa: E501
 
         self._comment = None

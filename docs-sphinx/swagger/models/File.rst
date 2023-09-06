@@ -31,7 +31,7 @@ Properties
      - **str**
      - `optional` 
    * - **parent**
-     -  `File <./File.html>`_
+     -  `file <./file.html>`_
      - `optional` 
    * - **content**
      -  `Href <./Href.html>`_

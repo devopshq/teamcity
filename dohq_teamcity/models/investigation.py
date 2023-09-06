@@ -120,6 +120,12 @@ class Investigation(TeamCityObject):
         :param state: The state of this Investigation.  # noqa: E501
         :type: str
         """
+        allowed_values = ["TAKEN", "FIXED", "GIVEN_UP", "NONE"]  # noqa: E501
+        if state not in allowed_values:
+            raise ValueError(
+                "Invalid value for `state` ({0}), must be one of {1}"  # noqa: E501
+                .format(state, allowed_values)
+            )
 
         self._state = state
 

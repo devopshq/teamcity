@@ -26,10 +26,10 @@ Properties
      - `optional` 
    * - **disabled**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **inherited**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **href**
      - **str**
      - `optional` 

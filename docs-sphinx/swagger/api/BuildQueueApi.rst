@@ -14,339 +14,38 @@ dohq_teamcity.BuildQueueApi
 
    * - Method
      - HTTP request
-   * - :ref:`add_tags`
-     - **POST** ``/app/rest/buildQueue/{buildLocator}/tags``
-   * - :ref:`cancel_build`
-     - **GET** ``/app/rest/buildQueue/{buildLocator}/example/buildCancelRequest``
-   * - :ref:`cancel_build_0`
-     - **POST** ``/app/rest/buildQueue/{queuedBuildLocator}``
-   * - :ref:`delete_build`
-     - **DELETE** ``/app/rest/buildQueue/{queuedBuildLocator}``
-   * - :ref:`delete_builds_experimental`
-     - **DELETE** ``/app/rest/buildQueue``
-   * - :ref:`get_build`
-     - **GET** ``/app/rest/buildQueue/{queuedBuildLocator}``
-   * - :ref:`get_builds`
-     - **GET** ``/app/rest/buildQueue``
-   * - :ref:`queue_new_build`
+   * - :ref:`add_build_to_queue`
      - **POST** ``/app/rest/buildQueue``
-   * - :ref:`replace_builds`
-     - **PUT** ``/app/rest/buildQueue``
-   * - :ref:`replace_tags`
-     - **PUT** ``/app/rest/buildQueue/{buildLocator}/tags``
-   * - :ref:`serve_build_field_by_build_only`
-     - **GET** ``/app/rest/buildQueue/{buildLocator}/{field}``
-   * - :ref:`serve_compatible_agents`
+   * - :ref:`add_tags_to_build_of_build_queue`
+     - **POST** ``/app/rest/buildQueue/{buildLocator}/tags``
+   * - :ref:`approve_queued_build`
+     - **POST** ``/app/rest/buildQueue/{buildLocator}/approve``
+   * - :ref:`cancel_queued_build`
+     - **POST** ``/app/rest/buildQueue/{queuedBuildLocator}``
+   * - :ref:`delete_all_queued_builds`
+     - **DELETE** ``/app/rest/buildQueue``
+   * - :ref:`delete_queued_build`
+     - **DELETE** ``/app/rest/buildQueue/{queuedBuildLocator}``
+   * - :ref:`get_all_queued_builds`
+     - **GET** ``/app/rest/buildQueue``
+   * - :ref:`get_approval_info`
+     - **GET** ``/app/rest/buildQueue/{buildLocator}/approvalInfo``
+   * - :ref:`get_compatible_agents_for_build`
      - **GET** ``/app/rest/buildQueue/{queuedBuildLocator}/compatibleAgents``
-   * - :ref:`serve_tags`
-     - **GET** ``/app/rest/buildQueue/{buildLocator}/tags``
-   * - :ref:`set_build_queue_order`
-     - **PUT** ``/app/rest/buildQueue/order``
-   * - :ref:`set_build_queue_position`
+   * - :ref:`get_queued_build`
+     - **GET** ``/app/rest/buildQueue/{queuedBuildLocator}``
+   * - :ref:`get_queued_build_position`
      - **GET** ``/app/rest/buildQueue/order/{queuePosition}``
-   * - :ref:`set_build_queue_position_0`
+   * - :ref:`get_queued_build_tags`
+     - **GET** ``/app/rest/buildQueue/{buildLocator}/tags``
+   * - :ref:`set_queued_build_position`
      - **PUT** ``/app/rest/buildQueue/order/{queuePosition}``
+   * - :ref:`set_queued_builds_order`
+     - **PUT** ``/app/rest/buildQueue/order``
 
-.. _add_tags:
+.. _add_build_to_queue:
 
-add_tags
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    build_locator = 'build_locator_example' # str | 
-    body = dohq_teamcity.Tags() # Tags |  (optional)
-
-    try:
-        tc.build_queue_api.add_tags(build_locator, body=body)
-    except ApiException as e:
-        print("Exception when calling BuildQueueApi->add_tags: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **build_locator**
-     - **str**
-     - 
-   * - **body**
-     - `Tags <../models/Tags.html>`_
-     - [optional] 
-
-Return type:
-    void (empty response body)
-
-`Back to top <#>`_
-
-.. _cancel_build:
-
-cancel_build
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    build_locator = 'build_locator_example' # str | 
-
-    try:
-        api_response = tc.build_queue_api.cancel_build(build_locator)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildQueueApi->cancel_build: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **build_locator**
-     - **str**
-     - 
-
-Return type:
-    `BuildCancelRequest <../models/BuildCancelRequest.html>`_
-
-`Back to top <#>`_
-
-.. _cancel_build_0:
-
-cancel_build_0
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    queued_build_locator = 'queued_build_locator_example' # str | 
-    body = dohq_teamcity.BuildCancelRequest() # BuildCancelRequest |  (optional)
-
-    try:
-        api_response = tc.build_queue_api.cancel_build_0(queued_build_locator, body=body)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildQueueApi->cancel_build_0: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **queued_build_locator**
-     - **str**
-     - 
-   * - **body**
-     - `BuildCancelRequest <../models/BuildCancelRequest.html>`_
-     - [optional] 
-
-Return type:
-    `Build <../models/Build.html>`_
-
-`Back to top <#>`_
-
-.. _delete_build:
-
-delete_build
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    queued_build_locator = 'queued_build_locator_example' # str | 
-
-    try:
-        tc.build_queue_api.delete_build(queued_build_locator)
-    except ApiException as e:
-        print("Exception when calling BuildQueueApi->delete_build: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **queued_build_locator**
-     - **str**
-     - 
-
-Return type:
-    void (empty response body)
-
-`Back to top <#>`_
-
-.. _delete_builds_experimental:
-
-delete_builds_experimental
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    locator = 'locator_example' # str |  (optional)
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        tc.build_queue_api.delete_builds_experimental(locator=locator, fields=fields)
-    except ApiException as e:
-        print("Exception when calling BuildQueueApi->delete_builds_experimental: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **locator**
-     - **str**
-     - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    void (empty response body)
-
-`Back to top <#>`_
-
-.. _get_build:
-
-get_build
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    queued_build_locator = 'queued_build_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_queue_api.get_build(queued_build_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildQueueApi->get_build: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **queued_build_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Build <../models/Build.html>`_
-
-`Back to top <#>`_
-
-.. _get_builds:
-
-get_builds
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    locator = 'locator_example' # str |  (optional)
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_queue_api.get_builds(locator=locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildQueueApi->get_builds: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **locator**
-     - **str**
-     - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Builds <../models/Builds.html>`_
-
-`Back to top <#>`_
-
-.. _queue_new_build:
-
-queue_new_build
+add_build_to_queue
 -----------------
 
 .. code-block:: python
@@ -361,10 +60,11 @@ queue_new_build
     move_to_top = true # bool |  (optional)
 
     try:
-        api_response = tc.build_queue_api.queue_new_build(body=body, move_to_top=move_to_top)
+        # Add a new build to the queue.
+        api_response = tc.build_queue_api.add_build_to_queue(body=body, move_to_top=move_to_top)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildQueueApi->queue_new_build: %s\n" % e)
+        print("Exception when calling BuildQueueApi->add_build_to_queue: %s\n" % e)
 
 
 
@@ -388,9 +88,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _replace_builds:
+.. _add_tags_to_build_of_build_queue:
 
-replace_builds
+add_tags_to_build_of_build_queue
 -----------------
 
 .. code-block:: python
@@ -401,14 +101,14 @@ replace_builds
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-    body = dohq_teamcity.Builds() # Builds |  (optional)
-    fields = 'fields_example' # str |  (optional)
+    build_locator = 'build_locator_example' # str | 
+    body = dohq_teamcity.Tags() # Tags |  (optional)
 
     try:
-        api_response = tc.build_queue_api.replace_builds(body=body, fields=fields)
-       pprint(api_response)
+        # Add tags to the matching build.
+        tc.build_queue_api.add_tags_to_build_of_build_queue(build_locator, body=body)
     except ApiException as e:
-        print("Exception when calling BuildQueueApi->replace_builds: %s\n" % e)
+        print("Exception when calling BuildQueueApi->add_tags_to_build_of_build_queue: %s\n" % e)
 
 
 
@@ -420,8 +120,231 @@ replace_builds
      - Types
      - Notes
 
+   * - **build_locator**
+     - **str**
+     - 
    * - **body**
-     - `Builds <../models/Builds.html>`_
+     - `Tags <../models/Tags.html>`_
+     - [optional] 
+
+Return type:
+    void (empty response body)
+
+`Back to top <#>`_
+
+.. _approve_queued_build:
+
+approve_queued_build
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    build_locator = 'build_locator_example' # str | 
+    body = 'body_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Approve queued build with approval feature enabled.
+        api_response = tc.build_queue_api.approve_queued_build(build_locator, body=body, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildQueueApi->approve_queued_build: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **build_locator**
+     - **str**
+     - 
+   * - **body**
+     - **str**
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `ApprovalInfo <../models/ApprovalInfo.html>`_
+
+`Back to top <#>`_
+
+.. _cancel_queued_build:
+
+cancel_queued_build
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    queued_build_locator = 'queued_build_locator_example' # str | 
+    body = dohq_teamcity.BuildCancelRequest() # BuildCancelRequest |  (optional)
+
+    try:
+        # Cancel a queued matching build.
+        api_response = tc.build_queue_api.cancel_queued_build(queued_build_locator, body=body)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildQueueApi->cancel_queued_build: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **queued_build_locator**
+     - **str**
+     - 
+   * - **body**
+     - `BuildCancelRequest <../models/BuildCancelRequest.html>`_
+     - [optional] 
+
+Return type:
+    `Build <../models/Build.html>`_
+
+`Back to top <#>`_
+
+.. _delete_all_queued_builds:
+
+delete_all_queued_builds
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    locator = 'locator_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Delete all queued builds.
+        tc.build_queue_api.delete_all_queued_builds(locator=locator, fields=fields)
+    except ApiException as e:
+        print("Exception when calling BuildQueueApi->delete_all_queued_builds: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **locator**
+     - **str**
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    void (empty response body)
+
+`Back to top <#>`_
+
+.. _delete_queued_build:
+
+delete_queued_build
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    queued_build_locator = 'queued_build_locator_example' # str | 
+
+    try:
+        # Delete a queued matching build.
+        tc.build_queue_api.delete_queued_build(queued_build_locator)
+    except ApiException as e:
+        print("Exception when calling BuildQueueApi->delete_queued_build: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **queued_build_locator**
+     - **str**
+     - 
+
+Return type:
+    void (empty response body)
+
+`Back to top <#>`_
+
+.. _get_all_queued_builds:
+
+get_all_queued_builds
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    locator = 'locator_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get all queued builds.
+        api_response = tc.build_queue_api.get_all_queued_builds(locator=locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildQueueApi->get_all_queued_builds: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **locator**
+     - **str**
      - [optional] 
    * - **fields**
      - **str**
@@ -432,9 +355,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _replace_tags:
+.. _get_approval_info:
 
-replace_tags
+get_approval_info
 -----------------
 
 .. code-block:: python
@@ -446,15 +369,14 @@ replace_tags
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
     build_locator = 'build_locator_example' # str | 
-    locator = 'locator_example' # str |  (optional)
-    body = dohq_teamcity.Tags() # Tags |  (optional)
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.build_queue_api.replace_tags(build_locator, locator=locator, body=body, fields=fields)
+        # Get approval info of a queued matching build.
+        api_response = tc.build_queue_api.get_approval_info(build_locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildQueueApi->replace_tags: %s\n" % e)
+        print("Exception when calling BuildQueueApi->get_approval_info: %s\n" % e)
 
 
 
@@ -469,68 +391,18 @@ replace_tags
    * - **build_locator**
      - **str**
      - 
-   * - **locator**
-     - **str**
-     - [optional] 
-   * - **body**
-     - `Tags <../models/Tags.html>`_
-     - [optional] 
    * - **fields**
      - **str**
      - [optional] 
 
 Return type:
-    `Tags <../models/Tags.html>`_
+    `ApprovalInfo <../models/ApprovalInfo.html>`_
 
 `Back to top <#>`_
 
-.. _serve_build_field_by_build_only:
+.. _get_compatible_agents_for_build:
 
-serve_build_field_by_build_only
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    build_locator = 'build_locator_example' # str | 
-    field = 'field_example' # str | 
-
-    try:
-        api_response = tc.build_queue_api.serve_build_field_by_build_only(build_locator, field)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildQueueApi->serve_build_field_by_build_only: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **build_locator**
-     - **str**
-     - 
-   * - **field**
-     - **str**
-     - 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _serve_compatible_agents:
-
-serve_compatible_agents
+get_compatible_agents_for_build
 -----------------
 
 .. code-block:: python
@@ -545,10 +417,11 @@ serve_compatible_agents
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.build_queue_api.serve_compatible_agents(queued_build_locator, fields=fields)
+        # Get compatible agents for a queued matching build.
+        api_response = tc.build_queue_api.get_compatible_agents_for_build(queued_build_locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildQueueApi->serve_compatible_agents: %s\n" % e)
+        print("Exception when calling BuildQueueApi->get_compatible_agents_for_build: %s\n" % e)
 
 
 
@@ -572,9 +445,99 @@ Return type:
 
 `Back to top <#>`_
 
-.. _serve_tags:
+.. _get_queued_build:
 
-serve_tags
+get_queued_build
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    queued_build_locator = 'queued_build_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get a queued matching build.
+        api_response = tc.build_queue_api.get_queued_build(queued_build_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildQueueApi->get_queued_build: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **queued_build_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Build <../models/Build.html>`_
+
+`Back to top <#>`_
+
+.. _get_queued_build_position:
+
+get_queued_build_position
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    queue_position = 'queue_position_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get the queue position of a queued matching build.
+        api_response = tc.build_queue_api.get_queued_build_position(queue_position, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildQueueApi->get_queued_build_position: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **queue_position**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Build <../models/Build.html>`_
+
+`Back to top <#>`_
+
+.. _get_queued_build_tags:
+
+get_queued_build_tags
 -----------------
 
 .. code-block:: python
@@ -590,10 +553,11 @@ serve_tags
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.build_queue_api.serve_tags(build_locator, locator=locator, fields=fields)
+        # Get tags of the queued matching build.
+        api_response = tc.build_queue_api.get_queued_build_tags(build_locator, locator=locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildQueueApi->serve_tags: %s\n" % e)
+        print("Exception when calling BuildQueueApi->get_queued_build_tags: %s\n" % e)
 
 
 
@@ -620,97 +584,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _set_build_queue_order:
+.. _set_queued_build_position:
 
-set_build_queue_order
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    body = dohq_teamcity.Builds() # Builds |  (optional)
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_queue_api.set_build_queue_order(body=body, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildQueueApi->set_build_queue_order: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **body**
-     - `Builds <../models/Builds.html>`_
-     - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Builds <../models/Builds.html>`_
-
-`Back to top <#>`_
-
-.. _set_build_queue_position:
-
-set_build_queue_position
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    queue_position = 'queue_position_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.build_queue_api.set_build_queue_position(queue_position, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling BuildQueueApi->set_build_queue_position: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **queue_position**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Build <../models/Build.html>`_
-
-`Back to top <#>`_
-
-.. _set_build_queue_position_0:
-
-set_build_queue_position_0
+set_queued_build_position
 -----------------
 
 .. code-block:: python
@@ -726,10 +602,11 @@ set_build_queue_position_0
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.build_queue_api.set_build_queue_position_0(queue_position, body=body, fields=fields)
+        # Update the queue position of a queued matching build.
+        api_response = tc.build_queue_api.set_queued_build_position(queue_position, body=body, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BuildQueueApi->set_build_queue_position_0: %s\n" % e)
+        print("Exception when calling BuildQueueApi->set_queued_build_position: %s\n" % e)
 
 
 
@@ -753,6 +630,51 @@ set_build_queue_position_0
 
 Return type:
     `Build <../models/Build.html>`_
+
+`Back to top <#>`_
+
+.. _set_queued_builds_order:
+
+set_queued_builds_order
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    body = dohq_teamcity.Builds() # Builds |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Update the build queue order.
+        api_response = tc.build_queue_api.set_queued_builds_order(body=body, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BuildQueueApi->set_queued_builds_order: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **body**
+     - `Builds <../models/Builds.html>`_
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Builds <../models/Builds.html>`_
 
 `Back to top <#>`_
 

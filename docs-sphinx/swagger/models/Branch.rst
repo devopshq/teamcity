@@ -23,15 +23,18 @@ Properties
      - `optional` 
    * - **default**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **unspecified**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **active**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **last_activity**
      - **str**
+     - `optional` 
+   * - **group_flag**
+     - **bool**
      - `optional` 
    * - **builds**
      -  `Builds <./Builds.html>`_

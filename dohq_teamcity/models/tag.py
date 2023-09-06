@@ -31,7 +31,7 @@ class Tag(TeamCityObject):
         'private': 'private'
     }
 
-    def __init__(self, name=None, owner=None, private=False, teamcity=None):  # noqa: E501
+    def __init__(self, name=None, owner=None, private=None, teamcity=None):  # noqa: E501
         """Tag - a model defined in Swagger"""  # noqa: E501
 
         self._name = None

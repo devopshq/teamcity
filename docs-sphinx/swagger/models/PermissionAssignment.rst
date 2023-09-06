@@ -15,6 +15,9 @@ Properties
    * - Name
      - Type
      - Notes
+   * - **is_global_scope**
+     - **bool**
+     - `optional` 
    * - **permission**
      -  `Permission <./Permission.html>`_
      - `optional` 

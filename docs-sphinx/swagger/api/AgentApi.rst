@@ -16,28 +16,32 @@ dohq_teamcity.AgentApi
      - HTTP request
    * - :ref:`delete_agent`
      - **DELETE** ``/app/rest/agents/{agentLocator}``
-   * - :ref:`ge_incompatible_build_types`
-     - **GET** ``/app/rest/agents/{agentLocator}/incompatibleBuildTypes``
+   * - :ref:`get_agent`
+     - **GET** ``/app/rest/agents/{agentLocator}``
+   * - :ref:`get_agent_field`
+     - **GET** ``/app/rest/agents/{agentLocator}/{field}``
    * - :ref:`get_agent_pool`
      - **GET** ``/app/rest/agents/{agentLocator}/pool``
+   * - :ref:`get_all_agents`
+     - **GET** ``/app/rest/agents``
    * - :ref:`get_authorized_info`
      - **GET** ``/app/rest/agents/{agentLocator}/authorizedInfo``
+   * - :ref:`get_build_configuration_run_policy`
+     - **GET** ``/app/rest/agents/{agentLocator}/compatibilityPolicy``
    * - :ref:`get_compatible_build_types`
      - **GET** ``/app/rest/agents/{agentLocator}/compatibleBuildTypes``
    * - :ref:`get_enabled_info`
      - **GET** ``/app/rest/agents/{agentLocator}/enabledInfo``
-   * - :ref:`serve_agent`
-     - **GET** ``/app/rest/agents/{agentLocator}``
-   * - :ref:`serve_agent_field`
-     - **GET** ``/app/rest/agents/{agentLocator}/{field}``
-   * - :ref:`serve_agents`
-     - **GET** ``/app/rest/agents``
+   * - :ref:`get_incompatible_build_types`
+     - **GET** ``/app/rest/agents/{agentLocator}/incompatibleBuildTypes``
    * - :ref:`set_agent_field`
      - **PUT** ``/app/rest/agents/{agentLocator}/{field}``
    * - :ref:`set_agent_pool`
      - **PUT** ``/app/rest/agents/{agentLocator}/pool``
    * - :ref:`set_authorized_info`
      - **PUT** ``/app/rest/agents/{agentLocator}/authorizedInfo``
+   * - :ref:`set_build_configuration_run_policy`
+     - **PUT** ``/app/rest/agents/{agentLocator}/compatibilityPolicy``
    * - :ref:`set_enabled_info`
      - **PUT** ``/app/rest/agents/{agentLocator}/enabledInfo``
 
@@ -57,6 +61,7 @@ delete_agent
     agent_locator = 'agent_locator_example' # str | 
 
     try:
+        # Delete an inactive agent.
         tc.agent_api.delete_agent(agent_locator)
     except ApiException as e:
         print("Exception when calling AgentApi->delete_agent: %s\n" % e)
@@ -80,9 +85,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _ge_incompatible_build_types:
+.. _get_agent:
 
-ge_incompatible_build_types
+get_agent
 -----------------
 
 .. code-block:: python
@@ -97,10 +102,11 @@ ge_incompatible_build_types
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.agent_api.ge_incompatible_build_types(agent_locator, fields=fields)
+        # Get agent matching the locator.
+        api_response = tc.agent_api.get_agent(agent_locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling AgentApi->ge_incompatible_build_types: %s\n" % e)
+        print("Exception when calling AgentApi->get_agent: %s\n" % e)
 
 
 
@@ -120,7 +126,52 @@ ge_incompatible_build_types
      - [optional] 
 
 Return type:
-    `Compatibilities <../models/Compatibilities.html>`_
+    `Agent <../models/Agent.html>`_
+
+`Back to top <#>`_
+
+.. _get_agent_field:
+
+get_agent_field
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    agent_locator = 'agent_locator_example' # str | 
+    field = 'field_example' # str | 
+
+    try:
+        # Get a field of the matching agent.
+        api_response = tc.agent_api.get_agent_field(agent_locator, field)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AgentApi->get_agent_field: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **agent_locator**
+     - **str**
+     - 
+   * - **field**
+     - **str**
+     - 
+
+Return type:
+    **str**
 
 `Back to top <#>`_
 
@@ -141,6 +192,7 @@ get_agent_pool
     fields = 'fields_example' # str |  (optional)
 
     try:
+        # Get the agent pool of the matching agent.
         api_response = tc.agent_api.get_agent_pool(agent_locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
@@ -168,6 +220,51 @@ Return type:
 
 `Back to top <#>`_
 
+.. _get_all_agents:
+
+get_all_agents
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    locator = 'locator_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get all known agents.
+        api_response = tc.agent_api.get_all_agents(locator=locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AgentApi->get_all_agents: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **locator**
+     - **str**
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Agents <../models/Agents.html>`_
+
+`Back to top <#>`_
+
 .. _get_authorized_info:
 
 get_authorized_info
@@ -185,6 +282,7 @@ get_authorized_info
     fields = 'fields_example' # str |  (optional)
 
     try:
+        # Get the authorization info of the matching agent.
         api_response = tc.agent_api.get_authorized_info(agent_locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
@@ -212,6 +310,51 @@ Return type:
 
 `Back to top <#>`_
 
+.. _get_build_configuration_run_policy:
+
+get_build_configuration_run_policy
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    agent_locator = 'agent_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get the build configuration run policy of the matching agent.
+        api_response = tc.agent_api.get_build_configuration_run_policy(agent_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AgentApi->get_build_configuration_run_policy: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **agent_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `CompatibilityPolicy <../models/CompatibilityPolicy.html>`_
+
+`Back to top <#>`_
+
 .. _get_compatible_build_types:
 
 get_compatible_build_types
@@ -229,6 +372,7 @@ get_compatible_build_types
     fields = 'fields_example' # str |  (optional)
 
     try:
+        # Get build types compatible with the matching agent.
         api_response = tc.agent_api.get_compatible_build_types(agent_locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
@@ -273,6 +417,7 @@ get_enabled_info
     fields = 'fields_example' # str |  (optional)
 
     try:
+        # Check if the matching agent is enabled.
         api_response = tc.agent_api.get_enabled_info(agent_locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
@@ -300,9 +445,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _serve_agent:
+.. _get_incompatible_build_types:
 
-serve_agent
+get_incompatible_build_types
 -----------------
 
 .. code-block:: python
@@ -317,10 +462,11 @@ serve_agent
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.agent_api.serve_agent(agent_locator, fields=fields)
+        # Get build types incompatible with the matching agent.
+        api_response = tc.agent_api.get_incompatible_build_types(agent_locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling AgentApi->serve_agent: %s\n" % e)
+        print("Exception when calling AgentApi->get_incompatible_build_types: %s\n" % e)
 
 
 
@@ -340,103 +486,7 @@ serve_agent
      - [optional] 
 
 Return type:
-    `Agent <../models/Agent.html>`_
-
-`Back to top <#>`_
-
-.. _serve_agent_field:
-
-serve_agent_field
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    agent_locator = 'agent_locator_example' # str | 
-    field = 'field_example' # str | 
-
-    try:
-        api_response = tc.agent_api.serve_agent_field(agent_locator, field)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling AgentApi->serve_agent_field: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **agent_locator**
-     - **str**
-     - 
-   * - **field**
-     - **str**
-     - 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _serve_agents:
-
-serve_agents
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    include_disconnected = true # bool |  (optional)
-    include_unauthorized = true # bool |  (optional)
-    locator = 'locator_example' # str |  (optional)
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.agent_api.serve_agents(include_disconnected=include_disconnected, include_unauthorized=include_unauthorized, locator=locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling AgentApi->serve_agents: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **include_disconnected**
-     - **bool**
-     - [optional] 
-   * - **include_unauthorized**
-     - **bool**
-     - [optional] 
-   * - **locator**
-     - **str**
-     - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Agents <../models/Agents.html>`_
+    `Compatibilities <../models/Compatibilities.html>`_
 
 `Back to top <#>`_
 
@@ -458,6 +508,7 @@ set_agent_field
     body = 'body_example' # str |  (optional)
 
     try:
+        # Update a field of the matching agent.
         api_response = tc.agent_api.set_agent_field(agent_locator, field, body=body)
        pprint(api_response)
     except ApiException as e:
@@ -506,6 +557,7 @@ set_agent_pool
     fields = 'fields_example' # str |  (optional)
 
     try:
+        # Assign the matching agent to the specified agent pool.
         api_response = tc.agent_api.set_agent_pool(agent_locator, body=body, fields=fields)
        pprint(api_response)
     except ApiException as e:
@@ -554,6 +606,7 @@ set_authorized_info
     fields = 'fields_example' # str |  (optional)
 
     try:
+        # Update the authorization info of the matching agent.
         api_response = tc.agent_api.set_authorized_info(agent_locator, body=body, fields=fields)
        pprint(api_response)
     except ApiException as e:
@@ -584,6 +637,55 @@ Return type:
 
 `Back to top <#>`_
 
+.. _set_build_configuration_run_policy:
+
+set_build_configuration_run_policy
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    agent_locator = 'agent_locator_example' # str | 
+    body = dohq_teamcity.CompatibilityPolicy() # CompatibilityPolicy |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Update build configuration run policy of agent matching locator.
+        api_response = tc.agent_api.set_build_configuration_run_policy(agent_locator, body=body, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AgentApi->set_build_configuration_run_policy: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **agent_locator**
+     - **str**
+     - 
+   * - **body**
+     - `CompatibilityPolicy <../models/CompatibilityPolicy.html>`_
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `CompatibilityPolicy <../models/CompatibilityPolicy.html>`_
+
+`Back to top <#>`_
+
 .. _set_enabled_info:
 
 set_enabled_info
@@ -602,6 +704,7 @@ set_enabled_info
     fields = 'fields_example' # str |  (optional)
 
     try:
+        # Update the enablement status of the matching agent.
         api_response = tc.agent_api.set_enabled_info(agent_locator, body=body, fields=fields)
        pprint(api_response)
     except ApiException as e:

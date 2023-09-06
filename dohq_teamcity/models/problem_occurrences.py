@@ -25,7 +25,6 @@ class ProblemOccurrences(TeamCityObject):
         'next_href': 'str',
         'prev_href': 'str',
         'problem_occurrence': 'list[ProblemOccurrence]',
-        'default': 'bool',
         'passed': 'int',
         'failed': 'int',
         'new_failed': 'int',
@@ -39,7 +38,6 @@ class ProblemOccurrences(TeamCityObject):
         'next_href': 'nextHref',
         'prev_href': 'prevHref',
         'problem_occurrence': 'problemOccurrence',
-        'default': 'default',
         'passed': 'passed',
         'failed': 'failed',
         'new_failed': 'newFailed',
@@ -47,7 +45,7 @@ class ProblemOccurrences(TeamCityObject):
         'muted': 'muted'
     }
 
-    def __init__(self, count=None, href=None, next_href=None, prev_href=None, problem_occurrence=None, default=False, passed=None, failed=None, new_failed=None, ignored=None, muted=None, teamcity=None):  # noqa: E501
+    def __init__(self, count=None, href=None, next_href=None, prev_href=None, problem_occurrence=None, passed=None, failed=None, new_failed=None, ignored=None, muted=None, teamcity=None):  # noqa: E501
         """ProblemOccurrences - a model defined in Swagger"""  # noqa: E501
 
         self._count = None
@@ -55,7 +53,6 @@ class ProblemOccurrences(TeamCityObject):
         self._next_href = None
         self._prev_href = None
         self._problem_occurrence = None
-        self._default = None
         self._passed = None
         self._failed = None
         self._new_failed = None
@@ -73,8 +70,6 @@ class ProblemOccurrences(TeamCityObject):
             self.prev_href = prev_href
         if problem_occurrence is not None:
             self.problem_occurrence = problem_occurrence
-        if default is not None:
-            self.default = default
         if passed is not None:
             self.passed = passed
         if failed is not None:
@@ -191,27 +186,6 @@ class ProblemOccurrences(TeamCityObject):
         """
 
         self._problem_occurrence = problem_occurrence
-
-    @property
-    def default(self):
-        """Gets the default of this ProblemOccurrences.  # noqa: E501
-
-
-        :return: The default of this ProblemOccurrences.  # noqa: E501
-        :rtype: bool
-        """
-        return self._default
-
-    @default.setter
-    def default(self, default):
-        """Sets the default of this ProblemOccurrences.
-
-
-        :param default: The default of this ProblemOccurrences.  # noqa: E501
-        :type: bool
-        """
-
-        self._default = default
 
     @property
     def passed(self):

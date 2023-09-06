@@ -14,112 +14,64 @@ dohq_teamcity.UserApi
 
    * - Method
      - HTTP request
-   * - :ref:`add_group`
-     - **POST** ``/app/rest/users/{userLocator}/groups``
-   * - :ref:`add_role`
+   * - :ref:`add_role_to_user`
      - **POST** ``/app/rest/users/{userLocator}/roles``
-   * - :ref:`add_role_simple`
+   * - :ref:`add_role_to_user_at_scope`
      - **PUT** ``/app/rest/users/{userLocator}/roles/{roleId}/{scope}``
-   * - :ref:`add_role_simple_post`
-     - **POST** ``/app/rest/users/{userLocator}/roles/{roleId}/{scope}``
-   * - :ref:`create_user`
+   * - :ref:`add_user`
      - **POST** ``/app/rest/users``
-   * - :ref:`delete_remember_me`
-     - **DELETE** ``/app/rest/users/{userLocator}/debug/rememberMe``
-   * - :ref:`delete_role`
-     - **DELETE** ``/app/rest/users/{userLocator}/roles/{roleId}/{scope}``
+   * - :ref:`add_user_token`
+     - **POST** ``/app/rest/users/{userLocator}/tokens``
    * - :ref:`delete_user`
      - **DELETE** ``/app/rest/users/{userLocator}``
    * - :ref:`delete_user_field`
      - **DELETE** ``/app/rest/users/{userLocator}/{field}``
-   * - :ref:`get_group`
-     - **GET** ``/app/rest/users/{userLocator}/groups/{groupLocator}``
-   * - :ref:`get_groups`
+   * - :ref:`delete_user_token`
+     - **DELETE** ``/app/rest/users/{userLocator}/tokens/{name}``
+   * - :ref:`get_all_user_groups`
      - **GET** ``/app/rest/users/{userLocator}/groups``
-   * - :ref:`get_permissions`
-     - **GET** ``/app/rest/users/{userLocator}/debug/permissions``
-   * - :ref:`get_permissions_0`
-     - **GET** ``/app/rest/users/{userLocator}/permissions``
-   * - :ref:`list_role`
-     - **GET** ``/app/rest/users/{userLocator}/roles/{roleId}/{scope}``
-   * - :ref:`list_roles`
+   * - :ref:`get_all_user_roles`
      - **GET** ``/app/rest/users/{userLocator}/roles``
-   * - :ref:`put_user_property`
-     - **PUT** ``/app/rest/users/{userLocator}/properties/{name}``
-   * - :ref:`remove_group`
+   * - :ref:`get_all_users`
+     - **GET** ``/app/rest/users``
+   * - :ref:`get_user`
+     - **GET** ``/app/rest/users/{userLocator}``
+   * - :ref:`get_user_field`
+     - **GET** ``/app/rest/users/{userLocator}/{field}``
+   * - :ref:`get_user_group`
+     - **GET** ``/app/rest/users/{userLocator}/groups/{groupLocator}``
+   * - :ref:`get_user_permissions`
+     - **GET** ``/app/rest/users/{userLocator}/permissions``
+   * - :ref:`get_user_properties`
+     - **GET** ``/app/rest/users/{userLocator}/properties``
+   * - :ref:`get_user_property`
+     - **GET** ``/app/rest/users/{userLocator}/properties/{name}``
+   * - :ref:`get_user_roles_at_scope`
+     - **GET** ``/app/rest/users/{userLocator}/roles/{roleId}/{scope}``
+   * - :ref:`get_user_tokens`
+     - **GET** ``/app/rest/users/{userLocator}/tokens``
+   * - :ref:`remove_user_from_group`
      - **DELETE** ``/app/rest/users/{userLocator}/groups/{groupLocator}``
    * - :ref:`remove_user_property`
      - **DELETE** ``/app/rest/users/{userLocator}/properties/{name}``
-   * - :ref:`replace_groups`
-     - **PUT** ``/app/rest/users/{userLocator}/groups``
-   * - :ref:`replace_roles`
-     - **PUT** ``/app/rest/users/{userLocator}/roles``
-   * - :ref:`serve_user`
-     - **GET** ``/app/rest/users/{userLocator}``
-   * - :ref:`serve_user_field`
-     - **GET** ``/app/rest/users/{userLocator}/{field}``
-   * - :ref:`serve_user_properties`
-     - **GET** ``/app/rest/users/{userLocator}/properties``
-   * - :ref:`serve_user_property`
-     - **GET** ``/app/rest/users/{userLocator}/properties/{name}``
-   * - :ref:`serve_users`
-     - **GET** ``/app/rest/users``
+   * - :ref:`remove_user_remember_me`
+     - **DELETE** ``/app/rest/users/{userLocator}/debug/rememberMe``
+   * - :ref:`remove_user_role_at_scope`
+     - **DELETE** ``/app/rest/users/{userLocator}/roles/{roleId}/{scope}``
+   * - :ref:`replace_user`
+     - **PUT** ``/app/rest/users/{userLocator}``
    * - :ref:`set_user_field`
      - **PUT** ``/app/rest/users/{userLocator}/{field}``
-   * - :ref:`update_user`
-     - **PUT** ``/app/rest/users/{userLocator}``
+   * - :ref:`set_user_groups`
+     - **PUT** ``/app/rest/users/{userLocator}/groups``
+   * - :ref:`set_user_property`
+     - **PUT** ``/app/rest/users/{userLocator}/properties/{name}``
+   * - :ref:`set_user_roles`
+     - **PUT** ``/app/rest/users/{userLocator}/roles``
 
-.. _add_group:
+.. _add_role_to_user:
 
-add_group
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    user_locator = 'user_locator_example' # str | 
-    body = dohq_teamcity.Group() # Group |  (optional)
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.user_api.add_group(user_locator, body=body, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling UserApi->add_group: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **user_locator**
-     - **str**
-     - 
-   * - **body**
-     - `Group <../models/Group.html>`_
-     - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Group <../models/Group.html>`_
-
-`Back to top <#>`_
-
-.. _add_role:
-
-add_role
+add_role_to_user
 -----------------
 
 .. code-block:: python
@@ -134,10 +86,11 @@ add_role
     body = dohq_teamcity.Role() # Role |  (optional)
 
     try:
-        api_response = tc.user_api.add_role(user_locator, body=body)
+        # Add a role to the matching user.
+        api_response = tc.user_api.add_role_to_user(user_locator, body=body)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling UserApi->add_role: %s\n" % e)
+        print("Exception when calling UserApi->add_role_to_user: %s\n" % e)
 
 
 
@@ -161,9 +114,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _add_role_simple:
+.. _add_role_to_user_at_scope:
 
-add_role_simple
+add_role_to_user_at_scope
 -----------------
 
 .. code-block:: python
@@ -179,10 +132,11 @@ add_role_simple
     scope = 'scope_example' # str | 
 
     try:
-        api_response = tc.user_api.add_role_simple(user_locator, role_id, scope)
+        # Add a role with the specific scope to the matching user.
+        api_response = tc.user_api.add_role_to_user_at_scope(user_locator, role_id, scope)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling UserApi->add_role_simple: %s\n" % e)
+        print("Exception when calling UserApi->add_role_to_user_at_scope: %s\n" % e)
 
 
 
@@ -209,56 +163,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _add_role_simple_post:
+.. _add_user:
 
-add_role_simple_post
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    user_locator = 'user_locator_example' # str | 
-    role_id = 'role_id_example' # str | 
-    scope = 'scope_example' # str | 
-
-    try:
-        tc.user_api.add_role_simple_post(user_locator, role_id, scope)
-    except ApiException as e:
-        print("Exception when calling UserApi->add_role_simple_post: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **user_locator**
-     - **str**
-     - 
-   * - **role_id**
-     - **str**
-     - 
-   * - **scope**
-     - **str**
-     - 
-
-Return type:
-    void (empty response body)
-
-`Back to top <#>`_
-
-.. _create_user:
-
-create_user
+add_user
 -----------------
 
 .. code-block:: python
@@ -273,10 +180,11 @@ create_user
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.user_api.create_user(body=body, fields=fields)
+        # Create a new user.
+        api_response = tc.user_api.add_user(body=body, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling UserApi->create_user: %s\n" % e)
+        print("Exception when calling UserApi->add_user: %s\n" % e)
 
 
 
@@ -300,9 +208,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _delete_remember_me:
+.. _add_user_token:
 
-delete_remember_me
+add_user_token
 -----------------
 
 .. code-block:: python
@@ -314,11 +222,15 @@ delete_remember_me
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
     user_locator = 'user_locator_example' # str | 
+    body = dohq_teamcity.Token() # Token |  (optional)
+    fields = 'fields_example' # str |  (optional)
 
     try:
-        tc.user_api.delete_remember_me(user_locator)
+        # Create a new authentication token for the matching user.
+        api_response = tc.user_api.add_user_token(user_locator, body=body, fields=fields)
+       pprint(api_response)
     except ApiException as e:
-        print("Exception when calling UserApi->delete_remember_me: %s\n" % e)
+        print("Exception when calling UserApi->add_user_token: %s\n" % e)
 
 
 
@@ -333,56 +245,15 @@ delete_remember_me
    * - **user_locator**
      - **str**
      - 
+   * - **body**
+     - `Token <../models/Token.html>`_
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
 
 Return type:
-    void (empty response body)
-
-`Back to top <#>`_
-
-.. _delete_role:
-
-delete_role
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    user_locator = 'user_locator_example' # str | 
-    role_id = 'role_id_example' # str | 
-    scope = 'scope_example' # str | 
-
-    try:
-        tc.user_api.delete_role(user_locator, role_id, scope)
-    except ApiException as e:
-        print("Exception when calling UserApi->delete_role: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **user_locator**
-     - **str**
-     - 
-   * - **role_id**
-     - **str**
-     - 
-   * - **scope**
-     - **str**
-     - 
-
-Return type:
-    void (empty response body)
+    `Token <../models/Token.html>`_
 
 `Back to top <#>`_
 
@@ -402,6 +273,7 @@ delete_user
     user_locator = 'user_locator_example' # str | 
 
     try:
+        # Delete user matching the locator.
         tc.user_api.delete_user(user_locator)
     except ApiException as e:
         print("Exception when calling UserApi->delete_user: %s\n" % e)
@@ -442,6 +314,7 @@ delete_user_field
     field = 'field_example' # str | 
 
     try:
+        # Remove a property of the matching user.
         tc.user_api.delete_user_field(user_locator, field)
     except ApiException as e:
         print("Exception when calling UserApi->delete_user_field: %s\n" % e)
@@ -468,9 +341,274 @@ Return type:
 
 `Back to top <#>`_
 
-.. _get_group:
+.. _delete_user_token:
 
-get_group
+delete_user_token
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    user_locator = 'user_locator_example' # str | 
+    name = 'name_example' # str | 
+
+    try:
+        # Remove an authentication token from the matching user.
+        tc.user_api.delete_user_token(user_locator, name)
+    except ApiException as e:
+        print("Exception when calling UserApi->delete_user_token: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **user_locator**
+     - **str**
+     - 
+   * - **name**
+     - **str**
+     - 
+
+Return type:
+    void (empty response body)
+
+`Back to top <#>`_
+
+.. _get_all_user_groups:
+
+get_all_user_groups
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    user_locator = 'user_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get all groups of the matching user.
+        api_response = tc.user_api.get_all_user_groups(user_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UserApi->get_all_user_groups: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **user_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Groups <../models/Groups.html>`_
+
+`Back to top <#>`_
+
+.. _get_all_user_roles:
+
+get_all_user_roles
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    user_locator = 'user_locator_example' # str | 
+
+    try:
+        # Get all user roles of the matching user.
+        api_response = tc.user_api.get_all_user_roles(user_locator)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UserApi->get_all_user_roles: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **user_locator**
+     - **str**
+     - 
+
+Return type:
+    `Roles <../models/Roles.html>`_
+
+`Back to top <#>`_
+
+.. _get_all_users:
+
+get_all_users
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    locator = 'locator_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get all users.
+        api_response = tc.user_api.get_all_users(locator=locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UserApi->get_all_users: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **locator**
+     - **str**
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Users <../models/Users.html>`_
+
+`Back to top <#>`_
+
+.. _get_user:
+
+get_user
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    user_locator = 'user_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get user matching the locator.
+        api_response = tc.user_api.get_user(user_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UserApi->get_user: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **user_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `User <../models/User.html>`_
+
+`Back to top <#>`_
+
+.. _get_user_field:
+
+get_user_field
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    user_locator = 'user_locator_example' # str | 
+    field = 'field_example' # str | 
+
+    try:
+        # Get a field of the matching user.
+        api_response = tc.user_api.get_user_field(user_locator, field)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UserApi->get_user_field: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **user_locator**
+     - **str**
+     - 
+   * - **field**
+     - **str**
+     - 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
+.. _get_user_group:
+
+get_user_group
 -----------------
 
 .. code-block:: python
@@ -486,10 +624,11 @@ get_group
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.user_api.get_group(user_locator, group_locator, fields=fields)
+        # Get a user group of the matching user.
+        api_response = tc.user_api.get_user_group(user_locator, group_locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling UserApi->get_group: %s\n" % e)
+        print("Exception when calling UserApi->get_user_group: %s\n" % e)
 
 
 
@@ -516,93 +655,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _get_groups:
+.. _get_user_permissions:
 
-get_groups
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    user_locator = 'user_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.user_api.get_groups(user_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling UserApi->get_groups: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **user_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Groups <../models/Groups.html>`_
-
-`Back to top <#>`_
-
-.. _get_permissions:
-
-get_permissions
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    user_locator = 'user_locator_example' # str | 
-
-    try:
-        api_response = tc.user_api.get_permissions(user_locator)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling UserApi->get_permissions: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **user_locator**
-     - **str**
-     - 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _get_permissions_0:
-
-get_permissions_0
+get_user_permissions
 -----------------
 
 .. code-block:: python
@@ -618,10 +673,11 @@ get_permissions_0
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.user_api.get_permissions_0(user_locator, locator=locator, fields=fields)
+        # Get all permissions effective for the matching user.
+        api_response = tc.user_api.get_user_permissions(user_locator, locator=locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling UserApi->get_permissions_0: %s\n" % e)
+        print("Exception when calling UserApi->get_user_permissions: %s\n" % e)
 
 
 
@@ -648,9 +704,99 @@ Return type:
 
 `Back to top <#>`_
 
-.. _list_role:
+.. _get_user_properties:
 
-list_role
+get_user_properties
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    user_locator = 'user_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get all properties of the matching user.
+        api_response = tc.user_api.get_user_properties(user_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UserApi->get_user_properties: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **user_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Properties <../models/Properties.html>`_
+
+`Back to top <#>`_
+
+.. _get_user_property:
+
+get_user_property
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    user_locator = 'user_locator_example' # str | 
+    name = 'name_example' # str | 
+
+    try:
+        # Get a property of the matching user.
+        api_response = tc.user_api.get_user_property(user_locator, name)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UserApi->get_user_property: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **user_locator**
+     - **str**
+     - 
+   * - **name**
+     - **str**
+     - 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
+.. _get_user_roles_at_scope:
+
+get_user_roles_at_scope
 -----------------
 
 .. code-block:: python
@@ -666,10 +812,11 @@ list_role
     scope = 'scope_example' # str | 
 
     try:
-        api_response = tc.user_api.list_role(user_locator, role_id, scope)
+        # Get a user role with the specific scope from the matching user.
+        api_response = tc.user_api.get_user_roles_at_scope(user_locator, role_id, scope)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling UserApi->list_role: %s\n" % e)
+        print("Exception when calling UserApi->get_user_roles_at_scope: %s\n" % e)
 
 
 
@@ -696,9 +843,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _list_roles:
+.. _get_user_tokens:
 
-list_roles
+get_user_tokens
 -----------------
 
 .. code-block:: python
@@ -710,12 +857,14 @@ list_roles
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
     user_locator = 'user_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.user_api.list_roles(user_locator)
+        # Get all authentication tokens of the matching user.
+        api_response = tc.user_api.get_user_tokens(user_locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling UserApi->list_roles: %s\n" % e)
+        print("Exception when calling UserApi->get_user_tokens: %s\n" % e)
 
 
 
@@ -730,63 +879,18 @@ list_roles
    * - **user_locator**
      - **str**
      - 
-
-Return type:
-    `Roles <../models/Roles.html>`_
-
-`Back to top <#>`_
-
-.. _put_user_property:
-
-put_user_property
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    user_locator = 'user_locator_example' # str | 
-    name = 'name_example' # str | 
-    body = 'body_example' # str |  (optional)
-
-    try:
-        api_response = tc.user_api.put_user_property(user_locator, name, body=body)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling UserApi->put_user_property: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **user_locator**
-     - **str**
-     - 
-   * - **name**
-     - **str**
-     - 
-   * - **body**
+   * - **fields**
      - **str**
      - [optional] 
 
 Return type:
-    **str**
+    `Tokens <../models/Tokens.html>`_
 
 `Back to top <#>`_
 
-.. _remove_group:
+.. _remove_user_from_group:
 
-remove_group
+remove_user_from_group
 -----------------
 
 .. code-block:: python
@@ -802,9 +906,10 @@ remove_group
     fields = 'fields_example' # str |  (optional)
 
     try:
-        tc.user_api.remove_group(user_locator, group_locator, fields=fields)
+        # Remove the matching user from the specific group.
+        tc.user_api.remove_user_from_group(user_locator, group_locator, fields=fields)
     except ApiException as e:
-        print("Exception when calling UserApi->remove_group: %s\n" % e)
+        print("Exception when calling UserApi->remove_user_from_group: %s\n" % e)
 
 
 
@@ -848,6 +953,7 @@ remove_user_property
     name = 'name_example' # str | 
 
     try:
+        # Remove a property of the matching user.
         tc.user_api.remove_user_property(user_locator, name)
     except ApiException as e:
         print("Exception when calling UserApi->remove_user_property: %s\n" % e)
@@ -874,9 +980,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _replace_groups:
+.. _remove_user_remember_me:
 
-replace_groups
+remove_user_remember_me
 -----------------
 
 .. code-block:: python
@@ -888,14 +994,103 @@ replace_groups
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
     user_locator = 'user_locator_example' # str | 
-    body = dohq_teamcity.Groups() # Groups |  (optional)
+
+    try:
+        # Remove the RememberMe data of the matching user.
+        tc.user_api.remove_user_remember_me(user_locator)
+    except ApiException as e:
+        print("Exception when calling UserApi->remove_user_remember_me: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **user_locator**
+     - **str**
+     - 
+
+Return type:
+    void (empty response body)
+
+`Back to top <#>`_
+
+.. _remove_user_role_at_scope:
+
+remove_user_role_at_scope
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    user_locator = 'user_locator_example' # str | 
+    role_id = 'role_id_example' # str | 
+    scope = 'scope_example' # str | 
+
+    try:
+        # Remove a role with the specific scope from the matching user.
+        tc.user_api.remove_user_role_at_scope(user_locator, role_id, scope)
+    except ApiException as e:
+        print("Exception when calling UserApi->remove_user_role_at_scope: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **user_locator**
+     - **str**
+     - 
+   * - **role_id**
+     - **str**
+     - 
+   * - **scope**
+     - **str**
+     - 
+
+Return type:
+    void (empty response body)
+
+`Back to top <#>`_
+
+.. _replace_user:
+
+replace_user
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    user_locator = 'user_locator_example' # str | 
+    body = dohq_teamcity.User() # User |  (optional)
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.user_api.replace_groups(user_locator, body=body, fields=fields)
+        # Update user matching the locator.
+        api_response = tc.user_api.replace_user(user_locator, body=body, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling UserApi->replace_groups: %s\n" % e)
+        print("Exception when calling UserApi->replace_user: %s\n" % e)
 
 
 
@@ -911,278 +1106,14 @@ replace_groups
      - **str**
      - 
    * - **body**
-     - `Groups <../models/Groups.html>`_
+     - `User <../models/User.html>`_
      - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Groups <../models/Groups.html>`_
-
-`Back to top <#>`_
-
-.. _replace_roles:
-
-replace_roles
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    user_locator = 'user_locator_example' # str | 
-    body = dohq_teamcity.Roles() # Roles |  (optional)
-
-    try:
-        api_response = tc.user_api.replace_roles(user_locator, body=body)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling UserApi->replace_roles: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **user_locator**
-     - **str**
-     - 
-   * - **body**
-     - `Roles <../models/Roles.html>`_
-     - [optional] 
-
-Return type:
-    `Roles <../models/Roles.html>`_
-
-`Back to top <#>`_
-
-.. _serve_user:
-
-serve_user
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    user_locator = 'user_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.user_api.serve_user(user_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling UserApi->serve_user: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **user_locator**
-     - **str**
-     - 
    * - **fields**
      - **str**
      - [optional] 
 
 Return type:
     `User <../models/User.html>`_
-
-`Back to top <#>`_
-
-.. _serve_user_field:
-
-serve_user_field
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    user_locator = 'user_locator_example' # str | 
-    field = 'field_example' # str | 
-
-    try:
-        api_response = tc.user_api.serve_user_field(user_locator, field)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling UserApi->serve_user_field: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **user_locator**
-     - **str**
-     - 
-   * - **field**
-     - **str**
-     - 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _serve_user_properties:
-
-serve_user_properties
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    user_locator = 'user_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.user_api.serve_user_properties(user_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling UserApi->serve_user_properties: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **user_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Properties <../models/Properties.html>`_
-
-`Back to top <#>`_
-
-.. _serve_user_property:
-
-serve_user_property
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    user_locator = 'user_locator_example' # str | 
-    name = 'name_example' # str | 
-
-    try:
-        api_response = tc.user_api.serve_user_property(user_locator, name)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling UserApi->serve_user_property: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **user_locator**
-     - **str**
-     - 
-   * - **name**
-     - **str**
-     - 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _serve_users:
-
-serve_users
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    locator = 'locator_example' # str |  (optional)
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.user_api.serve_users(locator=locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling UserApi->serve_users: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **locator**
-     - **str**
-     - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Users <../models/Users.html>`_
 
 `Back to top <#>`_
 
@@ -1204,6 +1135,7 @@ set_user_field
     body = 'body_example' # str |  (optional)
 
     try:
+        # Update a field of the matching user.
         api_response = tc.user_api.set_user_field(user_locator, field, body=body)
        pprint(api_response)
     except ApiException as e:
@@ -1234,9 +1166,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _update_user:
+.. _set_user_groups:
 
-update_user
+set_user_groups
 -----------------
 
 .. code-block:: python
@@ -1248,14 +1180,15 @@ update_user
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
     user_locator = 'user_locator_example' # str | 
-    body = dohq_teamcity.User() # User |  (optional)
+    body = dohq_teamcity.Groups() # Groups |  (optional)
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.user_api.update_user(user_locator, body=body, fields=fields)
+        # Update groups of the matching user.
+        api_response = tc.user_api.set_user_groups(user_locator, body=body, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling UserApi->update_user: %s\n" % e)
+        print("Exception when calling UserApi->set_user_groups: %s\n" % e)
 
 
 
@@ -1271,14 +1204,108 @@ update_user
      - **str**
      - 
    * - **body**
-     - `User <../models/User.html>`_
+     - `Groups <../models/Groups.html>`_
      - [optional] 
    * - **fields**
      - **str**
      - [optional] 
 
 Return type:
-    `User <../models/User.html>`_
+    `Groups <../models/Groups.html>`_
+
+`Back to top <#>`_
+
+.. _set_user_property:
+
+set_user_property
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    user_locator = 'user_locator_example' # str | 
+    name = 'name_example' # str | 
+    body = 'body_example' # str |  (optional)
+
+    try:
+        # Update a property of the matching user.
+        api_response = tc.user_api.set_user_property(user_locator, name, body=body)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UserApi->set_user_property: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **user_locator**
+     - **str**
+     - 
+   * - **name**
+     - **str**
+     - 
+   * - **body**
+     - **str**
+     - [optional] 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
+.. _set_user_roles:
+
+set_user_roles
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    user_locator = 'user_locator_example' # str | 
+    body = dohq_teamcity.Roles() # Roles |  (optional)
+
+    try:
+        # Update user roles of the matching user.
+        api_response = tc.user_api.set_user_roles(user_locator, body=body)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UserApi->set_user_roles: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **user_locator**
+     - **str**
+     - 
+   * - **body**
+     - `Roles <../models/Roles.html>`_
+     - [optional] 
+
+Return type:
+    `Roles <../models/Roles.html>`_
 
 `Back to top <#>`_
 

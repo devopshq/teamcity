@@ -5,6 +5,7 @@ from dohq_teamcity.custom.base_model import TeamCityObject
 
 # from dohq_teamcity.models.investigations import Investigations  # noqa: F401,E501
 # from dohq_teamcity.models.mutes import Mutes  # noqa: F401,E501
+# from dohq_teamcity.models.parsed_test_name import ParsedTestName  # noqa: F401,E501
 # from dohq_teamcity.models.test_occurrences import TestOccurrences  # noqa: F401,E501
 
 
@@ -27,6 +28,7 @@ class Test(TeamCityObject):
         'mutes': 'Mutes',
         'investigations': 'Investigations',
         'test_occurrences': 'TestOccurrences',
+        'parsed_test_name': 'ParsedTestName',
         'href': 'str',
         'locator': 'str'
     }
@@ -37,11 +39,12 @@ class Test(TeamCityObject):
         'mutes': 'mutes',
         'investigations': 'investigations',
         'test_occurrences': 'testOccurrences',
+        'parsed_test_name': 'parsedTestName',
         'href': 'href',
         'locator': 'locator'
     }
 
-    def __init__(self, id=None, name=None, mutes=None, investigations=None, test_occurrences=None, href=None, locator=None, teamcity=None):  # noqa: E501
+    def __init__(self, id=None, name=None, mutes=None, investigations=None, test_occurrences=None, parsed_test_name=None, href=None, locator=None, teamcity=None):  # noqa: E501
         """Test - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -49,6 +52,7 @@ class Test(TeamCityObject):
         self._mutes = None
         self._investigations = None
         self._test_occurrences = None
+        self._parsed_test_name = None
         self._href = None
         self._locator = None
         self.discriminator = None
@@ -63,6 +67,8 @@ class Test(TeamCityObject):
             self.investigations = investigations
         if test_occurrences is not None:
             self.test_occurrences = test_occurrences
+        if parsed_test_name is not None:
+            self.parsed_test_name = parsed_test_name
         if href is not None:
             self.href = href
         if locator is not None:
@@ -173,6 +179,27 @@ class Test(TeamCityObject):
         """
 
         self._test_occurrences = test_occurrences
+
+    @property
+    def parsed_test_name(self):
+        """Gets the parsed_test_name of this Test.  # noqa: E501
+
+
+        :return: The parsed_test_name of this Test.  # noqa: E501
+        :rtype: ParsedTestName
+        """
+        return self._parsed_test_name
+
+    @parsed_test_name.setter
+    def parsed_test_name(self, parsed_test_name):
+        """Sets the parsed_test_name of this Test.
+
+
+        :param parsed_test_name: The parsed_test_name of this Test.  # noqa: E501
+        :type: ParsedTestName
+        """
+
+        self._parsed_test_name = parsed_test_name
 
     @property
     def href(self):

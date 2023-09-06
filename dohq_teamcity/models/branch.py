@@ -26,6 +26,7 @@ class Branch(TeamCityObject):
         'unspecified': 'bool',
         'active': 'bool',
         'last_activity': 'str',
+        'group_flag': 'bool',
         'builds': 'Builds'
     }
 
@@ -36,10 +37,11 @@ class Branch(TeamCityObject):
         'unspecified': 'unspecified',
         'active': 'active',
         'last_activity': 'lastActivity',
+        'group_flag': 'groupFlag',
         'builds': 'builds'
     }
 
-    def __init__(self, name=None, internal_name=None, default=False, unspecified=False, active=False, last_activity=None, builds=None, teamcity=None):  # noqa: E501
+    def __init__(self, name=None, internal_name=None, default=None, unspecified=None, active=None, last_activity=None, group_flag=None, builds=None, teamcity=None):  # noqa: E501
         """Branch - a model defined in Swagger"""  # noqa: E501
 
         self._name = None
@@ -48,6 +50,7 @@ class Branch(TeamCityObject):
         self._unspecified = None
         self._active = None
         self._last_activity = None
+        self._group_flag = None
         self._builds = None
         self.discriminator = None
 
@@ -63,6 +66,8 @@ class Branch(TeamCityObject):
             self.active = active
         if last_activity is not None:
             self.last_activity = last_activity
+        if group_flag is not None:
+            self.group_flag = group_flag
         if builds is not None:
             self.builds = builds
         super(Branch, self).__init__(teamcity=teamcity)
@@ -192,6 +197,27 @@ class Branch(TeamCityObject):
         """
 
         self._last_activity = last_activity
+
+    @property
+    def group_flag(self):
+        """Gets the group_flag of this Branch.  # noqa: E501
+
+
+        :return: The group_flag of this Branch.  # noqa: E501
+        :rtype: bool
+        """
+        return self._group_flag
+
+    @group_flag.setter
+    def group_flag(self, group_flag):
+        """Sets the group_flag of this Branch.
+
+
+        :param group_flag: The group_flag of this Branch.  # noqa: E501
+        :type: bool
+        """
+
+        self._group_flag = group_flag
 
     @property
     def builds(self):

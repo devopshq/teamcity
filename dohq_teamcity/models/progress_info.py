@@ -43,7 +43,7 @@ class ProgressInfo(TeamCityObject):
         'outdated_reason_build': 'outdatedReasonBuild'
     }
 
-    def __init__(self, percentage_complete=None, elapsed_seconds=None, estimated_total_seconds=None, left_seconds=None, current_stage_text=None, outdated=False, probably_hanging=False, last_activity_time=None, outdated_reason_build=None, teamcity=None):  # noqa: E501
+    def __init__(self, percentage_complete=None, elapsed_seconds=None, estimated_total_seconds=None, left_seconds=None, current_stage_text=None, outdated=None, probably_hanging=None, last_activity_time=None, outdated_reason_build=None, teamcity=None):  # noqa: E501
         """ProgressInfo - a model defined in Swagger"""  # noqa: E501
 
         self._percentage_complete = None

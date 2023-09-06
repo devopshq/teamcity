@@ -23,7 +23,6 @@ class Problems(TeamCityObject):
         'count': 'int',
         'next_href': 'str',
         'prev_href': 'str',
-        'default': 'bool',
         'problem': 'list[Problem]'
     }
 
@@ -31,17 +30,15 @@ class Problems(TeamCityObject):
         'count': 'count',
         'next_href': 'nextHref',
         'prev_href': 'prevHref',
-        'default': 'default',
         'problem': 'problem'
     }
 
-    def __init__(self, count=None, next_href=None, prev_href=None, default=False, problem=None, teamcity=None):  # noqa: E501
+    def __init__(self, count=None, next_href=None, prev_href=None, problem=None, teamcity=None):  # noqa: E501
         """Problems - a model defined in Swagger"""  # noqa: E501
 
         self._count = None
         self._next_href = None
         self._prev_href = None
-        self._default = None
         self._problem = None
         self.discriminator = None
 
@@ -51,8 +48,6 @@ class Problems(TeamCityObject):
             self.next_href = next_href
         if prev_href is not None:
             self.prev_href = prev_href
-        if default is not None:
-            self.default = default
         if problem is not None:
             self.problem = problem
         super(Problems, self).__init__(teamcity=teamcity)
@@ -119,27 +114,6 @@ class Problems(TeamCityObject):
         """
 
         self._prev_href = prev_href
-
-    @property
-    def default(self):
-        """Gets the default of this Problems.  # noqa: E501
-
-
-        :return: The default of this Problems.  # noqa: E501
-        :rtype: bool
-        """
-        return self._default
-
-    @default.setter
-    def default(self, default):
-        """Sets the default of this Problems.
-
-
-        :param default: The default of this Problems.  # noqa: E501
-        :type: bool
-        """
-
-        self._default = default
 
     @property
     def problem(self):

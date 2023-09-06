@@ -21,5 +21,8 @@ Properties
    * - **revision**
      -  `list[Revision] <./Revision.html>`_
      - `optional` 
+   * - **fail_on_missing_revisions**
+     - **bool**
+     - `optional` 
 
 

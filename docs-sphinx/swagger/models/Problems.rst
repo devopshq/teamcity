@@ -24,9 +24,6 @@ Properties
    * - **prev_href**
      - **str**
      - `optional` 
-   * - **default**
-     - **bool**
-     - `optional` [default to ``False``]
    * - **problem**
      -  `list[Problem] <./Problem.html>`_
      - `optional` 

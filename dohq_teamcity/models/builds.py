@@ -20,33 +20,31 @@ class Builds(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'count': 'int',
         'href': 'str',
         'next_href': 'str',
         'prev_href': 'str',
-        'build': 'list[Build]'
+        'build': 'list[Build]',
+        'count': 'int'
     }
 
     attribute_map = {
-        'count': 'count',
         'href': 'href',
         'next_href': 'nextHref',
         'prev_href': 'prevHref',
-        'build': 'build'
+        'build': 'build',
+        'count': 'count'
     }
 
-    def __init__(self, count=None, href=None, next_href=None, prev_href=None, build=None, teamcity=None):  # noqa: E501
+    def __init__(self, href=None, next_href=None, prev_href=None, build=None, count=None, teamcity=None):  # noqa: E501
         """Builds - a model defined in Swagger"""  # noqa: E501
 
-        self._count = None
         self._href = None
         self._next_href = None
         self._prev_href = None
         self._build = None
+        self._count = None
         self.discriminator = None
 
-        if count is not None:
-            self.count = count
         if href is not None:
             self.href = href
         if next_href is not None:
@@ -55,28 +53,9 @@ class Builds(TeamCityObject):
             self.prev_href = prev_href
         if build is not None:
             self.build = build
+        if count is not None:
+            self.count = count
         super(Builds, self).__init__(teamcity=teamcity)
-
-    @property
-    def count(self):
-        """Gets the count of this Builds.  # noqa: E501
-
-
-        :return: The count of this Builds.  # noqa: E501
-        :rtype: int
-        """
-        return self._count
-
-    @count.setter
-    def count(self, count):
-        """Sets the count of this Builds.
-
-
-        :param count: The count of this Builds.  # noqa: E501
-        :type: int
-        """
-
-        self._count = count
 
     @property
     def href(self):
@@ -161,3 +140,24 @@ class Builds(TeamCityObject):
         """
 
         self._build = build
+
+    @property
+    def count(self):
+        """Gets the count of this Builds.  # noqa: E501
+
+
+        :return: The count of this Builds.  # noqa: E501
+        :rtype: int
+        """
+        return self._count
+
+    @count.setter
+    def count(self, count):
+        """Sets the count of this Builds.
+
+
+        :param count: The count of this Builds.  # noqa: E501
+        :type: int
+        """
+
+        self._count = count

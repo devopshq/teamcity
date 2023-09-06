@@ -35,7 +35,7 @@ Properties
      - `optional` 
    * - **has_password**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **realm**
      - **str**
      - `optional` 
@@ -53,6 +53,12 @@ Properties
      - `optional` 
    * - **locator**
      - **str**
+     - `optional` 
+   * - **avatars**
+     -  `UserAvatars <./UserAvatars.html>`_
+     - `optional` 
+   * - **enabled2_fa**
+     - **bool**
      - `optional` 
 
 

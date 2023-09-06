@@ -14,151 +14,20 @@ dohq_teamcity.MuteApi
 
    * - Method
      - HTTP request
-   * - :ref:`create_instance`
-     - **POST** ``/app/rest/mutes``
-   * - :ref:`create_instances`
-     - **POST** ``/app/rest/mutes/multiple``
-   * - :ref:`delete_instance`
-     - **DELETE** ``/app/rest/mutes/{muteLocator}``
-   * - :ref:`get_mutes`
+   * - :ref:`get_all_muted_tests`
      - **GET** ``/app/rest/mutes``
-   * - :ref:`serve_instance`
+   * - :ref:`get_muted_test`
      - **GET** ``/app/rest/mutes/{muteLocator}``
+   * - :ref:`mute_multiple_tests`
+     - **POST** ``/app/rest/mutes/multiple``
+   * - :ref:`mute_test`
+     - **POST** ``/app/rest/mutes``
+   * - :ref:`unmute_test`
+     - **DELETE** ``/app/rest/mutes/{muteLocator}``
 
-.. _create_instance:
+.. _get_all_muted_tests:
 
-create_instance
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    body = dohq_teamcity.Mute() # Mute |  (optional)
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.mute_api.create_instance(body=body, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling MuteApi->create_instance: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **body**
-     - `Mute <../models/Mute.html>`_
-     - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Mute <../models/Mute.html>`_
-
-`Back to top <#>`_
-
-.. _create_instances:
-
-create_instances
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    body = dohq_teamcity.Mutes() # Mutes |  (optional)
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.mute_api.create_instances(body=body, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling MuteApi->create_instances: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **body**
-     - `Mutes <../models/Mutes.html>`_
-     - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Mutes <../models/Mutes.html>`_
-
-`Back to top <#>`_
-
-.. _delete_instance:
-
-delete_instance
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    mute_locator = 'mute_locator_example' # str | 
-    body = 'body_example' # str |  (optional)
-
-    try:
-        tc.mute_api.delete_instance(mute_locator, body=body)
-    except ApiException as e:
-        print("Exception when calling MuteApi->delete_instance: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **mute_locator**
-     - **str**
-     - 
-   * - **body**
-     - **str**
-     - [optional] 
-
-Return type:
-    void (empty response body)
-
-`Back to top <#>`_
-
-.. _get_mutes:
-
-get_mutes
+get_all_muted_tests
 -----------------
 
 .. code-block:: python
@@ -173,10 +42,11 @@ get_mutes
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.mute_api.get_mutes(locator=locator, fields=fields)
+        # Get all muted tests.
+        api_response = tc.mute_api.get_all_muted_tests(locator=locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling MuteApi->get_mutes: %s\n" % e)
+        print("Exception when calling MuteApi->get_all_muted_tests: %s\n" % e)
 
 
 
@@ -200,9 +70,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _serve_instance:
+.. _get_muted_test:
 
-serve_instance
+get_muted_test
 -----------------
 
 .. code-block:: python
@@ -217,10 +87,11 @@ serve_instance
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.mute_api.serve_instance(mute_locator, fields=fields)
+        # Get a muted test.
+        api_response = tc.mute_api.get_muted_test(mute_locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling MuteApi->serve_instance: %s\n" % e)
+        print("Exception when calling MuteApi->get_muted_test: %s\n" % e)
 
 
 
@@ -241,6 +112,140 @@ serve_instance
 
 Return type:
     `Mute <../models/Mute.html>`_
+
+`Back to top <#>`_
+
+.. _mute_multiple_tests:
+
+mute_multiple_tests
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    body = dohq_teamcity.Mutes() # Mutes |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Mute multiple tests.
+        api_response = tc.mute_api.mute_multiple_tests(body=body, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling MuteApi->mute_multiple_tests: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **body**
+     - `Mutes <../models/Mutes.html>`_
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Mutes <../models/Mutes.html>`_
+
+`Back to top <#>`_
+
+.. _mute_test:
+
+mute_test
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    body = dohq_teamcity.Mute() # Mute |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Mute a test.
+        api_response = tc.mute_api.mute_test(body=body, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling MuteApi->mute_test: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **body**
+     - `Mute <../models/Mute.html>`_
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Mute <../models/Mute.html>`_
+
+`Back to top <#>`_
+
+.. _unmute_test:
+
+unmute_test
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    mute_locator = 'mute_locator_example' # str | 
+    body = 'body_example' # str |  (optional)
+
+    try:
+        # Unmute the matching test.
+        tc.mute_api.unmute_test(mute_locator, body=body)
+    except ApiException as e:
+        print("Exception when calling MuteApi->unmute_test: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **mute_locator**
+     - **str**
+     - 
+   * - **body**
+     - **str**
+     - [optional] 
+
+Return type:
+    void (empty response body)
 
 `Back to top <#>`_
 

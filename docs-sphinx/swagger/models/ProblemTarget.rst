@@ -17,7 +17,7 @@ Properties
      - Notes
    * - **any_problem**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **tests**
      -  `Tests <./Tests.html>`_
      - `optional` 

@@ -23,6 +23,7 @@ class BuildTriggeringOptions(TeamCityObject):
         'clean_sources': 'bool',
         'clean_sources_in_all_dependencies': 'bool',
         'rebuild_all_dependencies': 'bool',
+        'rebuild_failed_or_incomplete_dependencies': 'bool',
         'queue_at_top': 'bool',
         'freeze_settings': 'bool',
         'tag_dependencies': 'bool',
@@ -33,18 +34,20 @@ class BuildTriggeringOptions(TeamCityObject):
         'clean_sources': 'cleanSources',
         'clean_sources_in_all_dependencies': 'cleanSourcesInAllDependencies',
         'rebuild_all_dependencies': 'rebuildAllDependencies',
+        'rebuild_failed_or_incomplete_dependencies': 'rebuildFailedOrIncompleteDependencies',
         'queue_at_top': 'queueAtTop',
         'freeze_settings': 'freezeSettings',
         'tag_dependencies': 'tagDependencies',
         'rebuild_dependencies': 'rebuildDependencies'
     }
 
-    def __init__(self, clean_sources=False, clean_sources_in_all_dependencies=False, rebuild_all_dependencies=False, queue_at_top=False, freeze_settings=False, tag_dependencies=False, rebuild_dependencies=None, teamcity=None):  # noqa: E501
+    def __init__(self, clean_sources=None, clean_sources_in_all_dependencies=None, rebuild_all_dependencies=None, rebuild_failed_or_incomplete_dependencies=None, queue_at_top=None, freeze_settings=None, tag_dependencies=None, rebuild_dependencies=None, teamcity=None):  # noqa: E501
         """BuildTriggeringOptions - a model defined in Swagger"""  # noqa: E501
 
         self._clean_sources = None
         self._clean_sources_in_all_dependencies = None
         self._rebuild_all_dependencies = None
+        self._rebuild_failed_or_incomplete_dependencies = None
         self._queue_at_top = None
         self._freeze_settings = None
         self._tag_dependencies = None
@@ -57,6 +60,8 @@ class BuildTriggeringOptions(TeamCityObject):
             self.clean_sources_in_all_dependencies = clean_sources_in_all_dependencies
         if rebuild_all_dependencies is not None:
             self.rebuild_all_dependencies = rebuild_all_dependencies
+        if rebuild_failed_or_incomplete_dependencies is not None:
+            self.rebuild_failed_or_incomplete_dependencies = rebuild_failed_or_incomplete_dependencies
         if queue_at_top is not None:
             self.queue_at_top = queue_at_top
         if freeze_settings is not None:
@@ -129,6 +134,27 @@ class BuildTriggeringOptions(TeamCityObject):
         """
 
         self._rebuild_all_dependencies = rebuild_all_dependencies
+
+    @property
+    def rebuild_failed_or_incomplete_dependencies(self):
+        """Gets the rebuild_failed_or_incomplete_dependencies of this BuildTriggeringOptions.  # noqa: E501
+
+
+        :return: The rebuild_failed_or_incomplete_dependencies of this BuildTriggeringOptions.  # noqa: E501
+        :rtype: bool
+        """
+        return self._rebuild_failed_or_incomplete_dependencies
+
+    @rebuild_failed_or_incomplete_dependencies.setter
+    def rebuild_failed_or_incomplete_dependencies(self, rebuild_failed_or_incomplete_dependencies):
+        """Sets the rebuild_failed_or_incomplete_dependencies of this BuildTriggeringOptions.
+
+
+        :param rebuild_failed_or_incomplete_dependencies: The rebuild_failed_or_incomplete_dependencies of this BuildTriggeringOptions.  # noqa: E501
+        :type: bool
+        """
+
+        self._rebuild_failed_or_incomplete_dependencies = rebuild_failed_or_incomplete_dependencies
 
     @property
     def queue_at_top(self):

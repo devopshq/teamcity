@@ -23,12 +23,12 @@ class LicensingData(TeamCityObject):
         'license_use_exceeded': 'bool',
         'max_agents': 'int',
         'unlimited_agents': 'bool',
-        'agents_left': 'int',
         'max_build_types': 'int',
         'unlimited_build_types': 'bool',
         'build_types_left': 'int',
         'server_license_type': 'str',
         'server_effective_release_date': 'str',
+        'agents_left': 'int',
         'license_keys': 'LicenseKeys'
     }
 
@@ -36,27 +36,27 @@ class LicensingData(TeamCityObject):
         'license_use_exceeded': 'licenseUseExceeded',
         'max_agents': 'maxAgents',
         'unlimited_agents': 'unlimitedAgents',
-        'agents_left': 'agentsLeft',
         'max_build_types': 'maxBuildTypes',
         'unlimited_build_types': 'unlimitedBuildTypes',
         'build_types_left': 'buildTypesLeft',
         'server_license_type': 'serverLicenseType',
         'server_effective_release_date': 'serverEffectiveReleaseDate',
+        'agents_left': 'agentsLeft',
         'license_keys': 'licenseKeys'
     }
 
-    def __init__(self, license_use_exceeded=False, max_agents=None, unlimited_agents=False, agents_left=None, max_build_types=None, unlimited_build_types=False, build_types_left=None, server_license_type=None, server_effective_release_date=None, license_keys=None, teamcity=None):  # noqa: E501
+    def __init__(self, license_use_exceeded=None, max_agents=None, unlimited_agents=None, max_build_types=None, unlimited_build_types=None, build_types_left=None, server_license_type=None, server_effective_release_date=None, agents_left=None, license_keys=None, teamcity=None):  # noqa: E501
         """LicensingData - a model defined in Swagger"""  # noqa: E501
 
         self._license_use_exceeded = None
         self._max_agents = None
         self._unlimited_agents = None
-        self._agents_left = None
         self._max_build_types = None
         self._unlimited_build_types = None
         self._build_types_left = None
         self._server_license_type = None
         self._server_effective_release_date = None
+        self._agents_left = None
         self._license_keys = None
         self.discriminator = None
 
@@ -66,8 +66,6 @@ class LicensingData(TeamCityObject):
             self.max_agents = max_agents
         if unlimited_agents is not None:
             self.unlimited_agents = unlimited_agents
-        if agents_left is not None:
-            self.agents_left = agents_left
         if max_build_types is not None:
             self.max_build_types = max_build_types
         if unlimited_build_types is not None:
@@ -78,6 +76,8 @@ class LicensingData(TeamCityObject):
             self.server_license_type = server_license_type
         if server_effective_release_date is not None:
             self.server_effective_release_date = server_effective_release_date
+        if agents_left is not None:
+            self.agents_left = agents_left
         if license_keys is not None:
             self.license_keys = license_keys
         super(LicensingData, self).__init__(teamcity=teamcity)
@@ -144,27 +144,6 @@ class LicensingData(TeamCityObject):
         """
 
         self._unlimited_agents = unlimited_agents
-
-    @property
-    def agents_left(self):
-        """Gets the agents_left of this LicensingData.  # noqa: E501
-
-
-        :return: The agents_left of this LicensingData.  # noqa: E501
-        :rtype: int
-        """
-        return self._agents_left
-
-    @agents_left.setter
-    def agents_left(self, agents_left):
-        """Sets the agents_left of this LicensingData.
-
-
-        :param agents_left: The agents_left of this LicensingData.  # noqa: E501
-        :type: int
-        """
-
-        self._agents_left = agents_left
 
     @property
     def max_build_types(self):
@@ -247,6 +226,12 @@ class LicensingData(TeamCityObject):
         :param server_license_type: The server_license_type of this LicensingData.  # noqa: E501
         :type: str
         """
+        allowed_values = ["evaluation", "eap", "open_source", "commercial", "enterprise", "professional"]  # noqa: E501
+        if server_license_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `server_license_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(server_license_type, allowed_values)
+            )
 
         self._server_license_type = server_license_type
 
@@ -270,6 +255,27 @@ class LicensingData(TeamCityObject):
         """
 
         self._server_effective_release_date = server_effective_release_date
+
+    @property
+    def agents_left(self):
+        """Gets the agents_left of this LicensingData.  # noqa: E501
+
+
+        :return: The agents_left of this LicensingData.  # noqa: E501
+        :rtype: int
+        """
+        return self._agents_left
+
+    @agents_left.setter
+    def agents_left(self, agents_left):
+        """Sets the agents_left of this LicensingData.
+
+
+        :param agents_left: The agents_left of this LicensingData.  # noqa: E501
+        :type: int
+        """
+
+        self._agents_left = agents_left
 
     @property
     def license_keys(self):

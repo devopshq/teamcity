@@ -20,7 +20,7 @@ Properties
      - `optional` 
    * - **inherited**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **vcs_root**
      -  `VcsRoot <./VcsRoot.html>`_
      - `optional` 

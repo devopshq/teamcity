@@ -17,9 +17,9 @@ Properties
      - Notes
    * - **value**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **inherited**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
 
 

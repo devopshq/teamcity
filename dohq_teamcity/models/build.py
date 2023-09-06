@@ -5,14 +5,19 @@ from dohq_teamcity.custom.base_model import TeamCityObject
 
 # from dohq_teamcity.models.agent import Agent  # noqa: F401,E501
 # from dohq_teamcity.models.agents import Agents  # noqa: F401,E501
+# from dohq_teamcity.models.approval_info import ApprovalInfo  # noqa: F401,E501
 # from dohq_teamcity.models.artifact_dependencies import ArtifactDependencies  # noqa: F401,E501
+# from dohq_teamcity.models.build import Build  # noqa: F401,E501
 # from dohq_teamcity.models.build_changes import BuildChanges  # noqa: F401,E501
 # from dohq_teamcity.models.build_triggering_options import BuildTriggeringOptions  # noqa: F401,E501
 # from dohq_teamcity.models.build_type import BuildType  # noqa: F401,E501
 # from dohq_teamcity.models.builds import Builds  # noqa: F401,E501
 # from dohq_teamcity.models.changes import Changes  # noqa: F401,E501
+# from dohq_teamcity.models.cloud_images import CloudImages  # noqa: F401,E501
 # from dohq_teamcity.models.comment import Comment  # noqa: F401,E501
+# from dohq_teamcity.models.customizations import Customizations  # noqa: F401,E501
 # from dohq_teamcity.models.datas import Datas  # noqa: F401,E501
+# from dohq_teamcity.models.downloaded_artifacts import DownloadedArtifacts  # noqa: F401,E501
 # from dohq_teamcity.models.entries import Entries  # noqa: F401,E501
 # from dohq_teamcity.models.files import Files  # noqa: F401,E501
 # from dohq_teamcity.models.issues_usages import IssuesUsages  # noqa: F401,E501
@@ -28,6 +33,7 @@ from dohq_teamcity.custom.base_model import TeamCityObject
 # from dohq_teamcity.models.test_occurrences import TestOccurrences  # noqa: F401,E501
 # from dohq_teamcity.models.triggered_by import TriggeredBy  # noqa: F401,E501
 # from dohq_teamcity.models.user import User  # noqa: F401,E501
+# from dohq_teamcity.models.vcs_label import VcsLabel  # noqa: F401,E501
 
 
 class Build(TeamCityObject):
@@ -75,6 +81,10 @@ class Build(TeamCityObject):
         'user': 'User',
         'start_estimate': 'str',
         'wait_reason': 'str',
+        'finish_estimate': 'str',
+        'delayed_by_build': 'Build',
+        'planned_agent': 'Agent',
+        'approval_info': 'ApprovalInfo',
         'running_info': 'ProgressInfo',
         'canceled_info': 'Comment',
         'queued_date': 'str',
@@ -88,12 +98,15 @@ class Build(TeamCityObject):
         'artifact_dependency_changes': 'BuildChanges',
         'agent': 'Agent',
         'compatible_agents': 'Agents',
+        'compatible_cloud_images': 'CloudImages',
         'test_occurrences': 'TestOccurrences',
         'problem_occurrences': 'ProblemOccurrences',
         'artifacts': 'Files',
         'related_issues': 'IssuesUsages',
         'properties': 'Properties',
         'resulting_properties': 'Properties',
+        'original_properties': 'Properties',
+        'start_properties': 'Properties',
         'attributes': 'Entries',
         'statistics': 'Properties',
         'metadata': 'Datas',
@@ -109,6 +122,15 @@ class Build(TeamCityObject):
         'triggering_options': 'BuildTriggeringOptions',
         'used_by_other_builds': 'bool',
         'status_change_comment': 'Comment',
+        'vcs_labels': 'list[VcsLabel]',
+        'detached_from_agent': 'bool',
+        'finish_on_agent_date': 'str',
+        'customized': 'bool',
+        'customization': 'Customizations',
+        'changes_collecting_in_progress': 'bool',
+        'queued_wait_reasons': 'Properties',
+        'downloaded_artifacts': 'DownloadedArtifacts',
+        'first_build_with_same_changes': 'Build',
         'locator': 'str'
     }
 
@@ -144,6 +166,10 @@ class Build(TeamCityObject):
         'user': 'user',
         'start_estimate': 'startEstimate',
         'wait_reason': 'waitReason',
+        'finish_estimate': 'finishEstimate',
+        'delayed_by_build': 'delayedByBuild',
+        'planned_agent': 'plannedAgent',
+        'approval_info': 'approvalInfo',
         'running_info': 'running-info',
         'canceled_info': 'canceledInfo',
         'queued_date': 'queuedDate',
@@ -157,12 +183,15 @@ class Build(TeamCityObject):
         'artifact_dependency_changes': 'artifactDependencyChanges',
         'agent': 'agent',
         'compatible_agents': 'compatibleAgents',
+        'compatible_cloud_images': 'compatibleCloudImages',
         'test_occurrences': 'testOccurrences',
         'problem_occurrences': 'problemOccurrences',
         'artifacts': 'artifacts',
         'related_issues': 'relatedIssues',
         'properties': 'properties',
         'resulting_properties': 'resultingProperties',
+        'original_properties': 'originalProperties',
+        'start_properties': 'startProperties',
         'attributes': 'attributes',
         'statistics': 'statistics',
         'metadata': 'metadata',
@@ -178,10 +207,19 @@ class Build(TeamCityObject):
         'triggering_options': 'triggeringOptions',
         'used_by_other_builds': 'usedByOtherBuilds',
         'status_change_comment': 'statusChangeComment',
+        'vcs_labels': 'vcsLabels',
+        'detached_from_agent': 'detachedFromAgent',
+        'finish_on_agent_date': 'finishOnAgentDate',
+        'customized': 'customized',
+        'customization': 'customization',
+        'changes_collecting_in_progress': 'changesCollectingInProgress',
+        'queued_wait_reasons': 'queuedWaitReasons',
+        'downloaded_artifacts': 'downloadedArtifacts',
+        'first_build_with_same_changes': 'firstBuildWithSameChanges',
         'locator': 'locator'
     }
 
-    def __init__(self, id=None, task_id=None, build_type_id=None, build_type_internal_id=None, number=None, status=None, state=None, running=False, composite=False, failed_to_start=False, personal=False, percentage_complete=None, branch_name=None, default_branch=False, unspecified_branch=False, history=False, pinned=False, href=None, web_url=None, queue_position=None, limited_changes_count=None, artifacts_directory=None, links=None, status_text=None, build_type=None, comment=None, tags=None, pin_info=None, user=None, start_estimate=None, wait_reason=None, running_info=None, canceled_info=None, queued_date=None, start_date=None, finish_date=None, triggered=None, last_changes=None, changes=None, revisions=None, versioned_settings_revision=None, artifact_dependency_changes=None, agent=None, compatible_agents=None, test_occurrences=None, problem_occurrences=None, artifacts=None, related_issues=None, properties=None, resulting_properties=None, attributes=None, statistics=None, metadata=None, snapshot_dependencies=None, artifact_dependencies=None, custom_artifact_dependencies=None, settings_hash=None, current_settings_hash=None, modification_id=None, chain_modification_id=None, replacement_ids=None, related=None, triggering_options=None, used_by_other_builds=False, status_change_comment=None, locator=None, teamcity=None):  # noqa: E501
+    def __init__(self, id=None, task_id=None, build_type_id=None, build_type_internal_id=None, number=None, status=None, state=None, running=None, composite=None, failed_to_start=None, personal=None, percentage_complete=None, branch_name=None, default_branch=None, unspecified_branch=None, history=None, pinned=None, href=None, web_url=None, queue_position=None, limited_changes_count=None, artifacts_directory=None, links=None, status_text=None, build_type=None, comment=None, tags=None, pin_info=None, user=None, start_estimate=None, wait_reason=None, finish_estimate=None, delayed_by_build=None, planned_agent=None, approval_info=None, running_info=None, canceled_info=None, queued_date=None, start_date=None, finish_date=None, triggered=None, last_changes=None, changes=None, revisions=None, versioned_settings_revision=None, artifact_dependency_changes=None, agent=None, compatible_agents=None, compatible_cloud_images=None, test_occurrences=None, problem_occurrences=None, artifacts=None, related_issues=None, properties=None, resulting_properties=None, original_properties=None, start_properties=None, attributes=None, statistics=None, metadata=None, snapshot_dependencies=None, artifact_dependencies=None, custom_artifact_dependencies=None, settings_hash=None, current_settings_hash=None, modification_id=None, chain_modification_id=None, replacement_ids=None, related=None, triggering_options=None, used_by_other_builds=None, status_change_comment=None, vcs_labels=None, detached_from_agent=None, finish_on_agent_date=None, customized=None, customization=None, changes_collecting_in_progress=None, queued_wait_reasons=None, downloaded_artifacts=None, first_build_with_same_changes=None, locator=None, teamcity=None):  # noqa: E501
         """Build - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -215,6 +253,10 @@ class Build(TeamCityObject):
         self._user = None
         self._start_estimate = None
         self._wait_reason = None
+        self._finish_estimate = None
+        self._delayed_by_build = None
+        self._planned_agent = None
+        self._approval_info = None
         self._running_info = None
         self._canceled_info = None
         self._queued_date = None
@@ -228,12 +270,15 @@ class Build(TeamCityObject):
         self._artifact_dependency_changes = None
         self._agent = None
         self._compatible_agents = None
+        self._compatible_cloud_images = None
         self._test_occurrences = None
         self._problem_occurrences = None
         self._artifacts = None
         self._related_issues = None
         self._properties = None
         self._resulting_properties = None
+        self._original_properties = None
+        self._start_properties = None
         self._attributes = None
         self._statistics = None
         self._metadata = None
@@ -249,6 +294,15 @@ class Build(TeamCityObject):
         self._triggering_options = None
         self._used_by_other_builds = None
         self._status_change_comment = None
+        self._vcs_labels = None
+        self._detached_from_agent = None
+        self._finish_on_agent_date = None
+        self._customized = None
+        self._customization = None
+        self._changes_collecting_in_progress = None
+        self._queued_wait_reasons = None
+        self._downloaded_artifacts = None
+        self._first_build_with_same_changes = None
         self._locator = None
         self.discriminator = None
 
@@ -314,6 +368,14 @@ class Build(TeamCityObject):
             self.start_estimate = start_estimate
         if wait_reason is not None:
             self.wait_reason = wait_reason
+        if finish_estimate is not None:
+            self.finish_estimate = finish_estimate
+        if delayed_by_build is not None:
+            self.delayed_by_build = delayed_by_build
+        if planned_agent is not None:
+            self.planned_agent = planned_agent
+        if approval_info is not None:
+            self.approval_info = approval_info
         if running_info is not None:
             self.running_info = running_info
         if canceled_info is not None:
@@ -340,6 +402,8 @@ class Build(TeamCityObject):
             self.agent = agent
         if compatible_agents is not None:
             self.compatible_agents = compatible_agents
+        if compatible_cloud_images is not None:
+            self.compatible_cloud_images = compatible_cloud_images
         if test_occurrences is not None:
             self.test_occurrences = test_occurrences
         if problem_occurrences is not None:
@@ -352,6 +416,10 @@ class Build(TeamCityObject):
             self.properties = properties
         if resulting_properties is not None:
             self.resulting_properties = resulting_properties
+        if original_properties is not None:
+            self.original_properties = original_properties
+        if start_properties is not None:
+            self.start_properties = start_properties
         if attributes is not None:
             self.attributes = attributes
         if statistics is not None:
@@ -382,6 +450,24 @@ class Build(TeamCityObject):
             self.used_by_other_builds = used_by_other_builds
         if status_change_comment is not None:
             self.status_change_comment = status_change_comment
+        if vcs_labels is not None:
+            self.vcs_labels = vcs_labels
+        if detached_from_agent is not None:
+            self.detached_from_agent = detached_from_agent
+        if finish_on_agent_date is not None:
+            self.finish_on_agent_date = finish_on_agent_date
+        if customized is not None:
+            self.customized = customized
+        if customization is not None:
+            self.customization = customization
+        if changes_collecting_in_progress is not None:
+            self.changes_collecting_in_progress = changes_collecting_in_progress
+        if queued_wait_reasons is not None:
+            self.queued_wait_reasons = queued_wait_reasons
+        if downloaded_artifacts is not None:
+            self.downloaded_artifacts = downloaded_artifacts
+        if first_build_with_same_changes is not None:
+            self.first_build_with_same_changes = first_build_with_same_changes
         if locator is not None:
             self.locator = locator
         super(Build, self).__init__(teamcity=teamcity)
@@ -530,6 +616,12 @@ class Build(TeamCityObject):
         :param state: The state of this Build.  # noqa: E501
         :type: str
         """
+        allowed_values = ["queued", "finished", "running", "deleted", "unknown"]  # noqa: E501
+        if state not in allowed_values:
+            raise ValueError(
+                "Invalid value for `state` ({0}), must be one of {1}"  # noqa: E501
+                .format(state, allowed_values)
+            )
 
         self._state = state
 
@@ -1038,6 +1130,90 @@ class Build(TeamCityObject):
         self._wait_reason = wait_reason
 
     @property
+    def finish_estimate(self):
+        """Gets the finish_estimate of this Build.  # noqa: E501
+
+
+        :return: The finish_estimate of this Build.  # noqa: E501
+        :rtype: str
+        """
+        return self._finish_estimate
+
+    @finish_estimate.setter
+    def finish_estimate(self, finish_estimate):
+        """Sets the finish_estimate of this Build.
+
+
+        :param finish_estimate: The finish_estimate of this Build.  # noqa: E501
+        :type: str
+        """
+
+        self._finish_estimate = finish_estimate
+
+    @property
+    def delayed_by_build(self):
+        """Gets the delayed_by_build of this Build.  # noqa: E501
+
+
+        :return: The delayed_by_build of this Build.  # noqa: E501
+        :rtype: Build
+        """
+        return self._delayed_by_build
+
+    @delayed_by_build.setter
+    def delayed_by_build(self, delayed_by_build):
+        """Sets the delayed_by_build of this Build.
+
+
+        :param delayed_by_build: The delayed_by_build of this Build.  # noqa: E501
+        :type: Build
+        """
+
+        self._delayed_by_build = delayed_by_build
+
+    @property
+    def planned_agent(self):
+        """Gets the planned_agent of this Build.  # noqa: E501
+
+
+        :return: The planned_agent of this Build.  # noqa: E501
+        :rtype: Agent
+        """
+        return self._planned_agent
+
+    @planned_agent.setter
+    def planned_agent(self, planned_agent):
+        """Sets the planned_agent of this Build.
+
+
+        :param planned_agent: The planned_agent of this Build.  # noqa: E501
+        :type: Agent
+        """
+
+        self._planned_agent = planned_agent
+
+    @property
+    def approval_info(self):
+        """Gets the approval_info of this Build.  # noqa: E501
+
+
+        :return: The approval_info of this Build.  # noqa: E501
+        :rtype: ApprovalInfo
+        """
+        return self._approval_info
+
+    @approval_info.setter
+    def approval_info(self, approval_info):
+        """Sets the approval_info of this Build.
+
+
+        :param approval_info: The approval_info of this Build.  # noqa: E501
+        :type: ApprovalInfo
+        """
+
+        self._approval_info = approval_info
+
+    @property
     def running_info(self):
         """Gets the running_info of this Build.  # noqa: E501
 
@@ -1311,6 +1487,27 @@ class Build(TeamCityObject):
         self._compatible_agents = compatible_agents
 
     @property
+    def compatible_cloud_images(self):
+        """Gets the compatible_cloud_images of this Build.  # noqa: E501
+
+
+        :return: The compatible_cloud_images of this Build.  # noqa: E501
+        :rtype: CloudImages
+        """
+        return self._compatible_cloud_images
+
+    @compatible_cloud_images.setter
+    def compatible_cloud_images(self, compatible_cloud_images):
+        """Sets the compatible_cloud_images of this Build.
+
+
+        :param compatible_cloud_images: The compatible_cloud_images of this Build.  # noqa: E501
+        :type: CloudImages
+        """
+
+        self._compatible_cloud_images = compatible_cloud_images
+
+    @property
     def test_occurrences(self):
         """Gets the test_occurrences of this Build.  # noqa: E501
 
@@ -1398,6 +1595,7 @@ class Build(TeamCityObject):
     def properties(self):
         """Gets the properties of this Build.  # noqa: E501
 
+        Parameters defined by users. Includes parameters added in custom builds. See \"originalProperties\" for more information.  # noqa: E501
 
         :return: The properties of this Build.  # noqa: E501
         :rtype: Properties
@@ -1408,6 +1606,7 @@ class Build(TeamCityObject):
     def properties(self, properties):
         """Sets the properties of this Build.
 
+        Parameters defined by users. Includes parameters added in custom builds. See \"originalProperties\" for more information.  # noqa: E501
 
         :param properties: The properties of this Build.  # noqa: E501
         :type: Properties
@@ -1419,6 +1618,7 @@ class Build(TeamCityObject):
     def resulting_properties(self):
         """Gets the resulting_properties of this Build.  # noqa: E501
 
+        Actual parameters reported by a build agent after a build finishes. To get the initial parameters reported when a build started, use \"startProperties\" instead.  # noqa: E501
 
         :return: The resulting_properties of this Build.  # noqa: E501
         :rtype: Properties
@@ -1429,12 +1629,59 @@ class Build(TeamCityObject):
     def resulting_properties(self, resulting_properties):
         """Sets the resulting_properties of this Build.
 
+        Actual parameters reported by a build agent after a build finishes. To get the initial parameters reported when a build started, use \"startProperties\" instead.  # noqa: E501
 
         :param resulting_properties: The resulting_properties of this Build.  # noqa: E501
         :type: Properties
         """
 
         self._resulting_properties = resulting_properties
+
+    @property
+    def original_properties(self):
+        """Gets the original_properties of this Build.  # noqa: E501
+
+        User-defined parameters from the build configuration (\"BuildType\" in REST API). See \"properties\" for more information.  # noqa: E501
+
+        :return: The original_properties of this Build.  # noqa: E501
+        :rtype: Properties
+        """
+        return self._original_properties
+
+    @original_properties.setter
+    def original_properties(self, original_properties):
+        """Sets the original_properties of this Build.
+
+        User-defined parameters from the build configuration (\"BuildType\" in REST API). See \"properties\" for more information.  # noqa: E501
+
+        :param original_properties: The original_properties of this Build.  # noqa: E501
+        :type: Properties
+        """
+
+        self._original_properties = original_properties
+
+    @property
+    def start_properties(self):
+        """Gets the start_properties of this Build.  # noqa: E501
+
+        Actual parameters reported by a build agent when a build starts. To get the final parameters reported when a build finishes, use \"resultingProperties\" instead.  # noqa: E501
+
+        :return: The start_properties of this Build.  # noqa: E501
+        :rtype: Properties
+        """
+        return self._start_properties
+
+    @start_properties.setter
+    def start_properties(self, start_properties):
+        """Sets the start_properties of this Build.
+
+        Actual parameters reported by a build agent when a build starts. To get the final parameters reported when a build finishes, use \"resultingProperties\" instead.  # noqa: E501
+
+        :param start_properties: The start_properties of this Build.  # noqa: E501
+        :type: Properties
+        """
+
+        self._start_properties = start_properties
 
     @property
     def attributes(self):
@@ -1750,6 +1997,195 @@ class Build(TeamCityObject):
         """
 
         self._status_change_comment = status_change_comment
+
+    @property
+    def vcs_labels(self):
+        """Gets the vcs_labels of this Build.  # noqa: E501
+
+
+        :return: The vcs_labels of this Build.  # noqa: E501
+        :rtype: list[VcsLabel]
+        """
+        return self._vcs_labels
+
+    @vcs_labels.setter
+    def vcs_labels(self, vcs_labels):
+        """Sets the vcs_labels of this Build.
+
+
+        :param vcs_labels: The vcs_labels of this Build.  # noqa: E501
+        :type: list[VcsLabel]
+        """
+
+        self._vcs_labels = vcs_labels
+
+    @property
+    def detached_from_agent(self):
+        """Gets the detached_from_agent of this Build.  # noqa: E501
+
+
+        :return: The detached_from_agent of this Build.  # noqa: E501
+        :rtype: bool
+        """
+        return self._detached_from_agent
+
+    @detached_from_agent.setter
+    def detached_from_agent(self, detached_from_agent):
+        """Sets the detached_from_agent of this Build.
+
+
+        :param detached_from_agent: The detached_from_agent of this Build.  # noqa: E501
+        :type: bool
+        """
+
+        self._detached_from_agent = detached_from_agent
+
+    @property
+    def finish_on_agent_date(self):
+        """Gets the finish_on_agent_date of this Build.  # noqa: E501
+
+
+        :return: The finish_on_agent_date of this Build.  # noqa: E501
+        :rtype: str
+        """
+        return self._finish_on_agent_date
+
+    @finish_on_agent_date.setter
+    def finish_on_agent_date(self, finish_on_agent_date):
+        """Sets the finish_on_agent_date of this Build.
+
+
+        :param finish_on_agent_date: The finish_on_agent_date of this Build.  # noqa: E501
+        :type: str
+        """
+
+        self._finish_on_agent_date = finish_on_agent_date
+
+    @property
+    def customized(self):
+        """Gets the customized of this Build.  # noqa: E501
+
+
+        :return: The customized of this Build.  # noqa: E501
+        :rtype: bool
+        """
+        return self._customized
+
+    @customized.setter
+    def customized(self, customized):
+        """Sets the customized of this Build.
+
+
+        :param customized: The customized of this Build.  # noqa: E501
+        :type: bool
+        """
+
+        self._customized = customized
+
+    @property
+    def customization(self):
+        """Gets the customization of this Build.  # noqa: E501
+
+
+        :return: The customization of this Build.  # noqa: E501
+        :rtype: Customizations
+        """
+        return self._customization
+
+    @customization.setter
+    def customization(self, customization):
+        """Sets the customization of this Build.
+
+
+        :param customization: The customization of this Build.  # noqa: E501
+        :type: Customizations
+        """
+
+        self._customization = customization
+
+    @property
+    def changes_collecting_in_progress(self):
+        """Gets the changes_collecting_in_progress of this Build.  # noqa: E501
+
+
+        :return: The changes_collecting_in_progress of this Build.  # noqa: E501
+        :rtype: bool
+        """
+        return self._changes_collecting_in_progress
+
+    @changes_collecting_in_progress.setter
+    def changes_collecting_in_progress(self, changes_collecting_in_progress):
+        """Sets the changes_collecting_in_progress of this Build.
+
+
+        :param changes_collecting_in_progress: The changes_collecting_in_progress of this Build.  # noqa: E501
+        :type: bool
+        """
+
+        self._changes_collecting_in_progress = changes_collecting_in_progress
+
+    @property
+    def queued_wait_reasons(self):
+        """Gets the queued_wait_reasons of this Build.  # noqa: E501
+
+
+        :return: The queued_wait_reasons of this Build.  # noqa: E501
+        :rtype: Properties
+        """
+        return self._queued_wait_reasons
+
+    @queued_wait_reasons.setter
+    def queued_wait_reasons(self, queued_wait_reasons):
+        """Sets the queued_wait_reasons of this Build.
+
+
+        :param queued_wait_reasons: The queued_wait_reasons of this Build.  # noqa: E501
+        :type: Properties
+        """
+
+        self._queued_wait_reasons = queued_wait_reasons
+
+    @property
+    def downloaded_artifacts(self):
+        """Gets the downloaded_artifacts of this Build.  # noqa: E501
+
+
+        :return: The downloaded_artifacts of this Build.  # noqa: E501
+        :rtype: DownloadedArtifacts
+        """
+        return self._downloaded_artifacts
+
+    @downloaded_artifacts.setter
+    def downloaded_artifacts(self, downloaded_artifacts):
+        """Sets the downloaded_artifacts of this Build.
+
+
+        :param downloaded_artifacts: The downloaded_artifacts of this Build.  # noqa: E501
+        :type: DownloadedArtifacts
+        """
+
+        self._downloaded_artifacts = downloaded_artifacts
+
+    @property
+    def first_build_with_same_changes(self):
+        """Gets the first_build_with_same_changes of this Build.  # noqa: E501
+
+
+        :return: The first_build_with_same_changes of this Build.  # noqa: E501
+        :rtype: Build
+        """
+        return self._first_build_with_same_changes
+
+    @first_build_with_same_changes.setter
+    def first_build_with_same_changes(self, first_build_with_same_changes):
+        """Sets the first_build_with_same_changes of this Build.
+
+
+        :param first_build_with_same_changes: The first_build_with_same_changes of this Build.  # noqa: E501
+        :type: Build
+        """
+
+        self._first_build_with_same_changes = first_build_with_same_changes
 
     @property
     def locator(self):

@@ -35,7 +35,7 @@ Properties
      - `optional` 
    * - **commit_hook_mode**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **last_version**
      - **str**
      - `optional` 

@@ -23,7 +23,6 @@ class Mutes(TeamCityObject):
         'count': 'int',
         'next_href': 'str',
         'prev_href': 'str',
-        'default': 'bool',
         'href': 'str',
         'mute': 'list[Mute]'
     }
@@ -32,18 +31,16 @@ class Mutes(TeamCityObject):
         'count': 'count',
         'next_href': 'nextHref',
         'prev_href': 'prevHref',
-        'default': 'default',
         'href': 'href',
         'mute': 'mute'
     }
 
-    def __init__(self, count=None, next_href=None, prev_href=None, default=False, href=None, mute=None, teamcity=None):  # noqa: E501
+    def __init__(self, count=None, next_href=None, prev_href=None, href=None, mute=None, teamcity=None):  # noqa: E501
         """Mutes - a model defined in Swagger"""  # noqa: E501
 
         self._count = None
         self._next_href = None
         self._prev_href = None
-        self._default = None
         self._href = None
         self._mute = None
         self.discriminator = None
@@ -54,8 +51,6 @@ class Mutes(TeamCityObject):
             self.next_href = next_href
         if prev_href is not None:
             self.prev_href = prev_href
-        if default is not None:
-            self.default = default
         if href is not None:
             self.href = href
         if mute is not None:
@@ -124,27 +119,6 @@ class Mutes(TeamCityObject):
         """
 
         self._prev_href = prev_href
-
-    @property
-    def default(self):
-        """Gets the default of this Mutes.  # noqa: E501
-
-
-        :return: The default of this Mutes.  # noqa: E501
-        :rtype: bool
-        """
-        return self._default
-
-    @default.setter
-    def default(self, default):
-        """Sets the default of this Mutes.
-
-
-        :param default: The default of this Mutes.  # noqa: E501
-        :type: bool
-        """
-
-        self._default = default
 
     @property
     def href(self):

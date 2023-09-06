@@ -18,5 +18,8 @@ Properties
    * - **os_type**
      - **str**
      - `optional` 
+   * - **os_name**
+     - **str**
+     - `optional` 
 
 

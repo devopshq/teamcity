@@ -17,16 +17,16 @@ Properties
      - Notes
    * - **valid**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **active**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **expired**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **obsolete**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **expiration_date**
      - **str**
      - `optional` 
@@ -44,13 +44,13 @@ Properties
      - `optional` 
    * - **unlimited_agents**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **build_types**
      - **int**
      - `optional` 
    * - **unlimited_build_types**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **error_details**
      - **str**
      - `optional` 

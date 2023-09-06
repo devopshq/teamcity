@@ -30,6 +30,9 @@ Properties
    * - **test_occurrences**
      -  `TestOccurrences <./TestOccurrences.html>`_
      - `optional` 
+   * - **parsed_test_name**
+     -  `ParsedTestName <./ParsedTestName.html>`_
+     - `optional` 
    * - **href**
      - **str**
      - `optional` 

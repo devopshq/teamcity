@@ -14,38 +14,36 @@ dohq_teamcity.AgentPoolApi
 
    * - Method
      - HTTP request
-   * - :ref:`add_agent`
+   * - :ref:`add_agent_to_agent_pool`
      - **POST** ``/app/rest/agentPools/{agentPoolLocator}/agents``
-   * - :ref:`add_project`
+   * - :ref:`add_project_to_agent_pool`
      - **POST** ``/app/rest/agentPools/{agentPoolLocator}/projects``
-   * - :ref:`create_pool`
+   * - :ref:`create_agent_pool`
      - **POST** ``/app/rest/agentPools``
-   * - :ref:`delete_pool`
+   * - :ref:`delete_agent_pool`
      - **DELETE** ``/app/rest/agentPools/{agentPoolLocator}``
-   * - :ref:`delete_pool_project`
-     - **DELETE** ``/app/rest/agentPools/{agentPoolLocator}/projects/{projectLocator}``
-   * - :ref:`delete_projects`
+   * - :ref:`delete_all_projects_from_agent_pool`
      - **DELETE** ``/app/rest/agentPools/{agentPoolLocator}/projects``
-   * - :ref:`get_field`
-     - **GET** ``/app/rest/agentPools/{agentPoolLocator}/{field}``
-   * - :ref:`get_pool`
+   * - :ref:`delete_project_from_agent_pool`
+     - **DELETE** ``/app/rest/agentPools/{agentPoolLocator}/projects/{projectLocator}``
+   * - :ref:`get_agent_pool_of_agent_pool`
      - **GET** ``/app/rest/agentPools/{agentPoolLocator}``
-   * - :ref:`get_pool_agents`
-     - **GET** ``/app/rest/agentPools/{agentPoolLocator}/agents``
-   * - :ref:`get_pool_project`
-     - **GET** ``/app/rest/agentPools/{agentPoolLocator}/projects/{projectLocator}``
-   * - :ref:`get_pool_projects`
-     - **GET** ``/app/rest/agentPools/{agentPoolLocator}/projects``
-   * - :ref:`get_pools`
+   * - :ref:`get_all_agent_pools`
      - **GET** ``/app/rest/agentPools``
-   * - :ref:`replace_projects`
-     - **PUT** ``/app/rest/agentPools/{agentPoolLocator}/projects``
-   * - :ref:`set_field`
+   * - :ref:`get_all_agents_from_agent_pool`
+     - **GET** ``/app/rest/agentPools/{agentPoolLocator}/agents``
+   * - :ref:`get_all_projects_from_agent_pool`
+     - **GET** ``/app/rest/agentPools/{agentPoolLocator}/projects``
+   * - :ref:`get_field_from_agent_pool`
+     - **GET** ``/app/rest/agentPools/{agentPoolLocator}/{field}``
+   * - :ref:`set_agent_pool_field`
      - **PUT** ``/app/rest/agentPools/{agentPoolLocator}/{field}``
+   * - :ref:`set_agent_pool_projects`
+     - **PUT** ``/app/rest/agentPools/{agentPoolLocator}/projects``
 
-.. _add_agent:
+.. _add_agent_to_agent_pool:
 
-add_agent
+add_agent_to_agent_pool
 -----------------
 
 .. code-block:: python
@@ -61,10 +59,11 @@ add_agent
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.agent_pool_api.add_agent(agent_pool_locator, body=body, fields=fields)
+        # Assign the agent to the matching agent pool.
+        api_response = tc.agent_pool_api.add_agent_to_agent_pool(agent_pool_locator, body=body, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling AgentPoolApi->add_agent: %s\n" % e)
+        print("Exception when calling AgentPoolApi->add_agent_to_agent_pool: %s\n" % e)
 
 
 
@@ -91,9 +90,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _add_project:
+.. _add_project_to_agent_pool:
 
-add_project
+add_project_to_agent_pool
 -----------------
 
 .. code-block:: python
@@ -108,10 +107,11 @@ add_project
     body = dohq_teamcity.Project() # Project |  (optional)
 
     try:
-        api_response = tc.agent_pool_api.add_project(agent_pool_locator, body=body)
+        # Assign the project to the matching agent pool.
+        api_response = tc.agent_pool_api.add_project_to_agent_pool(agent_pool_locator, body=body)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling AgentPoolApi->add_project: %s\n" % e)
+        print("Exception when calling AgentPoolApi->add_project_to_agent_pool: %s\n" % e)
 
 
 
@@ -135,9 +135,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _create_pool:
+.. _create_agent_pool:
 
-create_pool
+create_agent_pool
 -----------------
 
 .. code-block:: python
@@ -151,10 +151,11 @@ create_pool
     body = dohq_teamcity.AgentPool() # AgentPool |  (optional)
 
     try:
-        api_response = tc.agent_pool_api.create_pool(body=body)
+        # Create a new agent pool.
+        api_response = tc.agent_pool_api.create_agent_pool(body=body)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling AgentPoolApi->create_pool: %s\n" % e)
+        print("Exception when calling AgentPoolApi->create_agent_pool: %s\n" % e)
 
 
 
@@ -175,9 +176,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _delete_pool:
+.. _delete_agent_pool:
 
-delete_pool
+delete_agent_pool
 -----------------
 
 .. code-block:: python
@@ -191,9 +192,10 @@ delete_pool
     agent_pool_locator = 'agent_pool_locator_example' # str | 
 
     try:
-        tc.agent_pool_api.delete_pool(agent_pool_locator)
+        # Delete the agent pool matching the locator.
+        tc.agent_pool_api.delete_agent_pool(agent_pool_locator)
     except ApiException as e:
-        print("Exception when calling AgentPoolApi->delete_pool: %s\n" % e)
+        print("Exception when calling AgentPoolApi->delete_agent_pool: %s\n" % e)
 
 
 
@@ -214,9 +216,49 @@ Return type:
 
 `Back to top <#>`_
 
-.. _delete_pool_project:
+.. _delete_all_projects_from_agent_pool:
 
-delete_pool_project
+delete_all_projects_from_agent_pool
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    agent_pool_locator = 'agent_pool_locator_example' # str | 
+
+    try:
+        # Unassign all projects from the matching agent pool.
+        tc.agent_pool_api.delete_all_projects_from_agent_pool(agent_pool_locator)
+    except ApiException as e:
+        print("Exception when calling AgentPoolApi->delete_all_projects_from_agent_pool: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **agent_pool_locator**
+     - **str**
+     - 
+
+Return type:
+    void (empty response body)
+
+`Back to top <#>`_
+
+.. _delete_project_from_agent_pool:
+
+delete_project_from_agent_pool
 -----------------
 
 .. code-block:: python
@@ -231,9 +273,10 @@ delete_pool_project
     project_locator = 'project_locator_example' # str | 
 
     try:
-        tc.agent_pool_api.delete_pool_project(agent_pool_locator, project_locator)
+        # Unassign the project from the matching agent pool.
+        tc.agent_pool_api.delete_project_from_agent_pool(agent_pool_locator, project_locator)
     except ApiException as e:
-        print("Exception when calling AgentPoolApi->delete_pool_project: %s\n" % e)
+        print("Exception when calling AgentPoolApi->delete_project_from_agent_pool: %s\n" % e)
 
 
 
@@ -257,92 +300,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _delete_projects:
+.. _get_agent_pool_of_agent_pool:
 
-delete_projects
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    agent_pool_locator = 'agent_pool_locator_example' # str | 
-
-    try:
-        tc.agent_pool_api.delete_projects(agent_pool_locator)
-    except ApiException as e:
-        print("Exception when calling AgentPoolApi->delete_projects: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **agent_pool_locator**
-     - **str**
-     - 
-
-Return type:
-    void (empty response body)
-
-`Back to top <#>`_
-
-.. _get_field:
-
-get_field
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    agent_pool_locator = 'agent_pool_locator_example' # str | 
-    field = 'field_example' # str | 
-
-    try:
-        api_response = tc.agent_pool_api.get_field(agent_pool_locator, field)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling AgentPoolApi->get_field: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **agent_pool_locator**
-     - **str**
-     - 
-   * - **field**
-     - **str**
-     - 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _get_pool:
-
-get_pool
+get_agent_pool_of_agent_pool
 -----------------
 
 .. code-block:: python
@@ -357,10 +317,11 @@ get_pool
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.agent_pool_api.get_pool(agent_pool_locator, fields=fields)
+        # Get the agent pool matching the locator.
+        api_response = tc.agent_pool_api.get_agent_pool_of_agent_pool(agent_pool_locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling AgentPoolApi->get_pool: %s\n" % e)
+        print("Exception when calling AgentPoolApi->get_agent_pool_of_agent_pool: %s\n" % e)
 
 
 
@@ -384,9 +345,54 @@ Return type:
 
 `Back to top <#>`_
 
-.. _get_pool_agents:
+.. _get_all_agent_pools:
 
-get_pool_agents
+get_all_agent_pools
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    locator = 'locator_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get all agent pools.
+        api_response = tc.agent_pool_api.get_all_agent_pools(locator=locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AgentPoolApi->get_all_agent_pools: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **locator**
+     - **str**
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `AgentPools <../models/AgentPools.html>`_
+
+`Back to top <#>`_
+
+.. _get_all_agents_from_agent_pool:
+
+get_all_agents_from_agent_pool
 -----------------
 
 .. code-block:: python
@@ -402,10 +408,11 @@ get_pool_agents
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.agent_pool_api.get_pool_agents(agent_pool_locator, locator=locator, fields=fields)
+        # Get the agent of the matching agent pool.
+        api_response = tc.agent_pool_api.get_all_agents_from_agent_pool(agent_pool_locator, locator=locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling AgentPoolApi->get_pool_agents: %s\n" % e)
+        print("Exception when calling AgentPoolApi->get_all_agents_from_agent_pool: %s\n" % e)
 
 
 
@@ -432,57 +439,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _get_pool_project:
+.. _get_all_projects_from_agent_pool:
 
-get_pool_project
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    agent_pool_locator = 'agent_pool_locator_example' # str | 
-    project_locator = 'project_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.agent_pool_api.get_pool_project(agent_pool_locator, project_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling AgentPoolApi->get_pool_project: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **agent_pool_locator**
-     - **str**
-     - 
-   * - **project_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Project <../models/Project.html>`_
-
-`Back to top <#>`_
-
-.. _get_pool_projects:
-
-get_pool_projects
+get_all_projects_from_agent_pool
 -----------------
 
 .. code-block:: python
@@ -497,10 +456,11 @@ get_pool_projects
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.agent_pool_api.get_pool_projects(agent_pool_locator, fields=fields)
+        # Get all projects of the matching agent pool.
+        api_response = tc.agent_pool_api.get_all_projects_from_agent_pool(agent_pool_locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling AgentPoolApi->get_pool_projects: %s\n" % e)
+        print("Exception when calling AgentPoolApi->get_all_projects_from_agent_pool: %s\n" % e)
 
 
 
@@ -524,53 +484,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _get_pools:
+.. _get_field_from_agent_pool:
 
-get_pools
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    locator = 'locator_example' # str |  (optional)
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.agent_pool_api.get_pools(locator=locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling AgentPoolApi->get_pools: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **locator**
-     - **str**
-     - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `AgentPools <../models/AgentPools.html>`_
-
-`Back to top <#>`_
-
-.. _replace_projects:
-
-replace_projects
+get_field_from_agent_pool
 -----------------
 
 .. code-block:: python
@@ -582,13 +498,14 @@ replace_projects
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
     agent_pool_locator = 'agent_pool_locator_example' # str | 
-    body = dohq_teamcity.Projects() # Projects |  (optional)
+    field = 'field_example' # str | 
 
     try:
-        api_response = tc.agent_pool_api.replace_projects(agent_pool_locator, body=body)
+        # Get a field of the matching agent pool.
+        api_response = tc.agent_pool_api.get_field_from_agent_pool(agent_pool_locator, field)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling AgentPoolApi->replace_projects: %s\n" % e)
+        print("Exception when calling AgentPoolApi->get_field_from_agent_pool: %s\n" % e)
 
 
 
@@ -603,18 +520,18 @@ replace_projects
    * - **agent_pool_locator**
      - **str**
      - 
-   * - **body**
-     - `Projects <../models/Projects.html>`_
-     - [optional] 
+   * - **field**
+     - **str**
+     - 
 
 Return type:
-    `Projects <../models/Projects.html>`_
+    **str**
 
 `Back to top <#>`_
 
-.. _set_field:
+.. _set_agent_pool_field:
 
-set_field
+set_agent_pool_field
 -----------------
 
 .. code-block:: python
@@ -630,10 +547,11 @@ set_field
     body = 'body_example' # str |  (optional)
 
     try:
-        api_response = tc.agent_pool_api.set_field(agent_pool_locator, field, body=body)
+        # Update a field of the matching agent pool.
+        api_response = tc.agent_pool_api.set_agent_pool_field(agent_pool_locator, field, body=body)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling AgentPoolApi->set_field: %s\n" % e)
+        print("Exception when calling AgentPoolApi->set_agent_pool_field: %s\n" % e)
 
 
 
@@ -657,6 +575,51 @@ set_field
 
 Return type:
     **str**
+
+`Back to top <#>`_
+
+.. _set_agent_pool_projects:
+
+set_agent_pool_projects
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    agent_pool_locator = 'agent_pool_locator_example' # str | 
+    body = dohq_teamcity.Projects() # Projects |  (optional)
+
+    try:
+        # Update projects of the matching agent pool.
+        api_response = tc.agent_pool_api.set_agent_pool_projects(agent_pool_locator, body=body)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AgentPoolApi->set_agent_pool_projects: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **agent_pool_locator**
+     - **str**
+     - 
+   * - **body**
+     - `Projects <../models/Projects.html>`_
+     - [optional] 
+
+Return type:
+    `Projects <../models/Projects.html>`_
 
 `Back to top <#>`_
 

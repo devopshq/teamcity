@@ -31,7 +31,7 @@ class EnabledInfo(TeamCityObject):
         'status_switch_time': 'statusSwitchTime'
     }
 
-    def __init__(self, status=False, comment=None, status_switch_time=None, teamcity=None):  # noqa: E501
+    def __init__(self, status=None, comment=None, status_switch_time=None, teamcity=None):  # noqa: E501
         """EnabledInfo - a model defined in Swagger"""  # noqa: E501
 
         self._status = None

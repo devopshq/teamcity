@@ -26,13 +26,13 @@ Properties
      - `optional` 
    * - **template_flag**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **type**
      - **str**
      - `optional` 
    * - **paused**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **uuid**
      - **str**
      - `optional` 
@@ -56,7 +56,7 @@ Properties
      - `optional` 
    * - **inherited**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **links**
      -  `Links <./Links.html>`_
      - `optional` 
@@ -108,8 +108,17 @@ Properties
    * - **compatible_agents**
      -  `Agents <./Agents.html>`_
      - `optional` 
+   * - **compatible_cloud_images**
+     -  `CloudImages <./CloudImages.html>`_
+     - `optional` 
    * - **vcs_root_instances**
      -  `VcsRootInstances <./VcsRootInstances.html>`_
+     - `optional` 
+   * - **external_status_allowed**
+     - **bool**
+     - `optional` 
+   * - **pause_comment**
+     -  `Comment <./Comment.html>`_
      - `optional` 
    * - **locator**
      - **str**

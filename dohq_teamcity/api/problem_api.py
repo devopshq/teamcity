@@ -34,12 +34,13 @@ class ProblemApi(object):
     def __init__(self, api_client=None):
         self.api_client = api_client
 
-    def get_problems(self, **kwargs):  # noqa: E501
-        """get_problems  # noqa: E501
+    def get_all_build_problems(self, **kwargs):  # noqa: E501
+        """Get all build problems.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_problems(async_req=True)
+        >>> thread = api.get_all_build_problems(async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -51,17 +52,18 @@ class ProblemApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__get_problems_with_http_info(**kwargs)  # noqa: E501
+            return self.__get_all_build_problems_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.__get_problems_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.__get_all_build_problems_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def serve_instance(self, problem_locator, **kwargs):  # noqa: E501
-        """serve_instance  # noqa: E501
+    def get_build_problem(self, problem_locator, **kwargs):  # noqa: E501
+        """Get a matching build problem.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_instance(problem_locator, async_req=True)
+        >>> thread = api.get_build_problem(problem_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -73,17 +75,18 @@ class ProblemApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__serve_instance_with_http_info(problem_locator, **kwargs)  # noqa: E501
+            return self.__get_build_problem_with_http_info(problem_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__serve_instance_with_http_info(problem_locator, **kwargs)  # noqa: E501
+            (data) = self.__get_build_problem_with_http_info(problem_locator, **kwargs)  # noqa: E501
             return data
 
-    def __get_problems_with_http_info(self, **kwargs):  # noqa: E501
-        """get_problems  # noqa: E501
+    def __get_all_build_problems_with_http_info(self, **kwargs):  # noqa: E501
+        """Get all build problems.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_problems_with_http_info(async_req=True)
+        >>> thread = api.__get_all_build_problems_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -105,7 +108,7 @@ class ProblemApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_problems" % key
+                    " to method get_all_build_problems" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -126,6 +129,10 @@ class ProblemApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -145,12 +152,13 @@ class ProblemApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __serve_instance_with_http_info(self, problem_locator, **kwargs):  # noqa: E501
-        """serve_instance  # noqa: E501
+    def __get_build_problem_with_http_info(self, problem_locator, **kwargs):  # noqa: E501
+        """Get a matching build problem.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_instance_with_http_info(problem_locator, async_req=True)
+        >>> thread = api.__get_build_problem_with_http_info(problem_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -172,14 +180,14 @@ class ProblemApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method serve_instance" % key
+                    " to method get_build_problem" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'problem_locator' is set
         if ('problem_locator' not in params or
                 params['problem_locator'] is None):
-            raise ValueError("Missing the required parameter `problem_locator` when calling `serve_instance`")  # noqa: E501
+            raise ValueError("Missing the required parameter `problem_locator` when calling `get_build_problem`")  # noqa: E501
 
         collection_formats = {}
 
@@ -200,6 +208,10 @@ class ProblemApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 

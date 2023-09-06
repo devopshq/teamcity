@@ -32,10 +32,10 @@ Properties
      - `optional` 
    * - **outdated**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **probably_hanging**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **last_activity_time**
      - **str**
      - `optional` 

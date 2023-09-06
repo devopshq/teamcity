@@ -15,11 +15,11 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **count**
-     - **int**
-     - `optional` 
    * - **href**
      - **str**
+     - `optional` 
+   * - **count**
+     - **int**
      - `optional` 
    * - **_property**
      -  `list[ModelProperty] <./ModelProperty.html>`_

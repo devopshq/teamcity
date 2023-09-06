@@ -17,7 +17,7 @@ Properties
      - Notes
    * - **compatible**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **agent**
      -  `Agent <./Agent.html>`_
      - `optional` 

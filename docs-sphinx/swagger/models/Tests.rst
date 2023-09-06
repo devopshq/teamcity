@@ -18,15 +18,15 @@ Properties
    * - **count**
      - **int**
      - `optional` 
+   * - **my_test_counters**
+     -  `TestCounters <./TestCounters.html>`_
+     - `optional` 
    * - **next_href**
      - **str**
      - `optional` 
    * - **prev_href**
      - **str**
      - `optional` 
-   * - **default**
-     - **bool**
-     - `optional` [default to ``False``]
    * - **test**
      -  `list[Test] <./Test.html>`_
      - `optional` 

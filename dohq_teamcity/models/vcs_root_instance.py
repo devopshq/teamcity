@@ -61,7 +61,7 @@ class VcsRootInstance(TeamCityObject):
         'project_locator': 'projectLocator'
     }
 
-    def __init__(self, id=None, vcs_root_id=None, vcs_root_internal_id=None, name=None, vcs_name=None, modification_check_interval=None, commit_hook_mode=False, last_version=None, last_version_internal=None, href=None, vcs_root=None, status=None, repository_state=None, properties=None, repository_id_strings=None, project_locator=None, teamcity=None):  # noqa: E501
+    def __init__(self, id=None, vcs_root_id=None, vcs_root_internal_id=None, name=None, vcs_name=None, modification_check_interval=None, commit_hook_mode=None, last_version=None, last_version_internal=None, href=None, vcs_root=None, status=None, repository_state=None, properties=None, repository_id_strings=None, project_locator=None, teamcity=None):  # noqa: E501
         """VcsRootInstance - a model defined in Swagger"""  # noqa: E501
 
         self._id = None

@@ -33,7 +33,7 @@ class ModelProperty(TeamCityObject):
         'type': 'type'
     }
 
-    def __init__(self, name=None, value=None, inherited=False, type=None, teamcity=None):  # noqa: E501
+    def __init__(self, name=None, value=None, inherited=None, type=None, teamcity=None):  # noqa: E501
         """ModelProperty - a model defined in Swagger"""  # noqa: E501
 
         self._name = None

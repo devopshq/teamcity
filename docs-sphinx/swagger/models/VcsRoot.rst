@@ -48,10 +48,10 @@ Properties
    * - **repository_id_strings**
      -  `Items <./Items.html>`_
      - `optional` 
-   * - **project_locator**
+   * - **locator**
      - **str**
      - `optional` 
-   * - **locator**
+   * - **project_locator**
      - **str**
      - `optional` 
 

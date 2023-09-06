@@ -38,8 +38,9 @@ class GroupApi(object):
         self.api_client = api_client
 
     def add_group(self, **kwargs):  # noqa: E501
-        """add_group  # noqa: E501
+        """Add a new user group.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.add_group(async_req=True)
@@ -59,34 +60,13 @@ class GroupApi(object):
             (data) = self.__add_group_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def add_role(self, group_locator, **kwargs):  # noqa: E501
-        """add_role  # noqa: E501
+    def add_role_at_scope_to_group(self, group_locator, role_id, scope, **kwargs):  # noqa: E501
+        """Add a role with the specific scope to the matching user group.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_role(group_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str group_locator: (required)
-        :param Role body:
-        :return: Role
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__add_role_with_http_info(group_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__add_role_with_http_info(group_locator, **kwargs)  # noqa: E501
-            return data
-
-    def add_role_simple(self, group_locator, role_id, scope, **kwargs):  # noqa: E501
-        """add_role_simple  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_role_simple(group_locator, role_id, scope, async_req=True)
+        >>> thread = api.add_role_at_scope_to_group(group_locator, role_id, scope, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -99,14 +79,38 @@ class GroupApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__add_role_simple_with_http_info(group_locator, role_id, scope, **kwargs)  # noqa: E501
+            return self.__add_role_at_scope_to_group_with_http_info(group_locator, role_id, scope, **kwargs)  # noqa: E501
         else:
-            (data) = self.__add_role_simple_with_http_info(group_locator, role_id, scope, **kwargs)  # noqa: E501
+            (data) = self.__add_role_at_scope_to_group_with_http_info(group_locator, role_id, scope, **kwargs)  # noqa: E501
+            return data
+
+    def add_role_to_group(self, group_locator, **kwargs):  # noqa: E501
+        """Add a role to the matching user group.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.add_role_to_group(group_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str group_locator: (required)
+        :param Role body:
+        :return: Role
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__add_role_to_group_with_http_info(group_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__add_role_to_group_with_http_info(group_locator, **kwargs)  # noqa: E501
             return data
 
     def delete_group(self, group_locator, **kwargs):  # noqa: E501
-        """delete_group  # noqa: E501
+        """Delete user group matching the locator.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_group(group_locator, async_req=True)
@@ -125,35 +129,35 @@ class GroupApi(object):
             (data) = self.__delete_group_with_http_info(group_locator, **kwargs)  # noqa: E501
             return data
 
-    def delete_role(self, group_locator, role_id, scope, **kwargs):  # noqa: E501
-        """delete_role  # noqa: E501
+    def get_all_groups(self, **kwargs):  # noqa: E501
+        """Get all user groups.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_role(group_locator, role_id, scope, async_req=True)
+        >>> thread = api.get_all_groups(async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
-        :param str group_locator: (required)
-        :param str role_id: (required)
-        :param str scope: (required)
-        :return: None
+        :param str fields:
+        :return: Groups
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__delete_role_with_http_info(group_locator, role_id, scope, **kwargs)  # noqa: E501
+            return self.__get_all_groups_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.__delete_role_with_http_info(group_locator, role_id, scope, **kwargs)  # noqa: E501
+            (data) = self.__get_all_groups_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_parent_groups(self, group_locator, **kwargs):  # noqa: E501
-        """get_parent_groups  # noqa: E501
+    def get_group_parent_groups(self, group_locator, **kwargs):  # noqa: E501
+        """Get parent groups of the matching user group.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_parent_groups(group_locator, async_req=True)
+        >>> thread = api.get_group_parent_groups(group_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -165,38 +169,18 @@ class GroupApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__get_parent_groups_with_http_info(group_locator, **kwargs)  # noqa: E501
+            return self.__get_group_parent_groups_with_http_info(group_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__get_parent_groups_with_http_info(group_locator, **kwargs)  # noqa: E501
+            (data) = self.__get_group_parent_groups_with_http_info(group_locator, **kwargs)  # noqa: E501
             return data
 
-    def get_permissions(self, group_locator, **kwargs):  # noqa: E501
-        """get_permissions  # noqa: E501
+    def get_group_properties(self, group_locator, **kwargs):  # noqa: E501
+        """Get properties of the matching user group.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_permissions(group_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str group_locator: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_permissions_with_http_info(group_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_permissions_with_http_info(group_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_properties(self, group_locator, **kwargs):  # noqa: E501
-        """get_properties  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_properties(group_locator, async_req=True)
+        >>> thread = api.get_group_properties(group_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -208,17 +192,41 @@ class GroupApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__get_properties_with_http_info(group_locator, **kwargs)  # noqa: E501
+            return self.__get_group_properties_with_http_info(group_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__get_properties_with_http_info(group_locator, **kwargs)  # noqa: E501
+            (data) = self.__get_group_properties_with_http_info(group_locator, **kwargs)  # noqa: E501
             return data
 
-    def list_role(self, group_locator, role_id, scope, **kwargs):  # noqa: E501
-        """list_role  # noqa: E501
+    def get_group_property(self, group_locator, name, **kwargs):  # noqa: E501
+        """Get a property of the matching user group.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_role(group_locator, role_id, scope, async_req=True)
+        >>> thread = api.get_group_property(group_locator, name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str group_locator: (required)
+        :param str name: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_group_property_with_http_info(group_locator, name, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_group_property_with_http_info(group_locator, name, **kwargs)  # noqa: E501
+            return data
+
+    def get_group_role_at_scope(self, group_locator, role_id, scope, **kwargs):  # noqa: E501
+        """Get a role with the specific scope of the matching user group.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_group_role_at_scope(group_locator, role_id, scope, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -231,17 +239,18 @@ class GroupApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__list_role_with_http_info(group_locator, role_id, scope, **kwargs)  # noqa: E501
+            return self.__get_group_role_at_scope_with_http_info(group_locator, role_id, scope, **kwargs)  # noqa: E501
         else:
-            (data) = self.__list_role_with_http_info(group_locator, role_id, scope, **kwargs)  # noqa: E501
+            (data) = self.__get_group_role_at_scope_with_http_info(group_locator, role_id, scope, **kwargs)  # noqa: E501
             return data
 
-    def list_roles(self, group_locator, **kwargs):  # noqa: E501
-        """list_roles  # noqa: E501
+    def get_group_roles(self, group_locator, **kwargs):  # noqa: E501
+        """Get all roles of the matching user group.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_roles(group_locator, async_req=True)
+        >>> thread = api.get_group_roles(group_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -252,62 +261,18 @@ class GroupApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__list_roles_with_http_info(group_locator, **kwargs)  # noqa: E501
+            return self.__get_group_roles_with_http_info(group_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__list_roles_with_http_info(group_locator, **kwargs)  # noqa: E501
+            (data) = self.__get_group_roles_with_http_info(group_locator, **kwargs)  # noqa: E501
             return data
 
-    def put_user_property(self, group_locator, name, **kwargs):  # noqa: E501
-        """put_user_property  # noqa: E501
+    def get_user_group_of_group(self, group_locator, **kwargs):  # noqa: E501
+        """Get user group matching the locator.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.put_user_property(group_locator, name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str group_locator: (required)
-        :param str name: (required)
-        :param str body:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__put_user_property_with_http_info(group_locator, name, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__put_user_property_with_http_info(group_locator, name, **kwargs)  # noqa: E501
-            return data
-
-    def remove_user_property(self, group_locator, name, **kwargs):  # noqa: E501
-        """remove_user_property  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.remove_user_property(group_locator, name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str group_locator: (required)
-        :param str name: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__remove_user_property_with_http_info(group_locator, name, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__remove_user_property_with_http_info(group_locator, name, **kwargs)  # noqa: E501
-            return data
-
-    def serve_group(self, group_locator, **kwargs):  # noqa: E501
-        """serve_group  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_group(group_locator, async_req=True)
+        >>> thread = api.get_user_group_of_group(group_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -319,60 +284,65 @@ class GroupApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__serve_group_with_http_info(group_locator, **kwargs)  # noqa: E501
+            return self.__get_user_group_of_group_with_http_info(group_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__serve_group_with_http_info(group_locator, **kwargs)  # noqa: E501
+            (data) = self.__get_user_group_of_group_with_http_info(group_locator, **kwargs)  # noqa: E501
             return data
 
-    def serve_groups(self, **kwargs):  # noqa: E501
-        """serve_groups  # noqa: E501
+    def remove_group_property(self, group_locator, name, **kwargs):  # noqa: E501
+        """Remove a property of the matching user group.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_groups(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str fields:
-        :return: Groups
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_groups_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_groups_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def serve_user_properties(self, group_locator, name, **kwargs):  # noqa: E501
-        """serve_user_properties  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_user_properties(group_locator, name, async_req=True)
+        >>> thread = api.remove_group_property(group_locator, name, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
         :param str group_locator: (required)
         :param str name: (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__serve_user_properties_with_http_info(group_locator, name, **kwargs)  # noqa: E501
+            return self.__remove_group_property_with_http_info(group_locator, name, **kwargs)  # noqa: E501
         else:
-            (data) = self.__serve_user_properties_with_http_info(group_locator, name, **kwargs)  # noqa: E501
+            (data) = self.__remove_group_property_with_http_info(group_locator, name, **kwargs)  # noqa: E501
             return data
 
-    def set_parent_groups(self, group_locator, **kwargs):  # noqa: E501
-        """set_parent_groups  # noqa: E501
+    def remove_role_at_scope_from_group(self, group_locator, role_id, scope, **kwargs):  # noqa: E501
+        """Remove a role with the specific scope from the matching user group.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_parent_groups(group_locator, async_req=True)
+        >>> thread = api.remove_role_at_scope_from_group(group_locator, role_id, scope, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str group_locator: (required)
+        :param str role_id: (required)
+        :param str scope: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__remove_role_at_scope_from_group_with_http_info(group_locator, role_id, scope, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__remove_role_at_scope_from_group_with_http_info(group_locator, role_id, scope, **kwargs)  # noqa: E501
+            return data
+
+    def set_group_parent_groups(self, group_locator, **kwargs):  # noqa: E501
+        """Update parent groups of the matching user group.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.set_group_parent_groups(group_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -385,17 +355,42 @@ class GroupApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__set_parent_groups_with_http_info(group_locator, **kwargs)  # noqa: E501
+            return self.__set_group_parent_groups_with_http_info(group_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__set_parent_groups_with_http_info(group_locator, **kwargs)  # noqa: E501
+            (data) = self.__set_group_parent_groups_with_http_info(group_locator, **kwargs)  # noqa: E501
             return data
 
-    def set_roles(self, group_locator, **kwargs):  # noqa: E501
-        """set_roles  # noqa: E501
+    def set_group_property(self, group_locator, name, **kwargs):  # noqa: E501
+        """Update a property of the matching user group.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_roles(group_locator, async_req=True)
+        >>> thread = api.set_group_property(group_locator, name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str group_locator: (required)
+        :param str name: (required)
+        :param str body:
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__set_group_property_with_http_info(group_locator, name, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__set_group_property_with_http_info(group_locator, name, **kwargs)  # noqa: E501
+            return data
+
+    def set_group_roles(self, group_locator, **kwargs):  # noqa: E501
+        """Update roles of the matching user group.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.set_group_roles(group_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -407,14 +402,15 @@ class GroupApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__set_roles_with_http_info(group_locator, **kwargs)  # noqa: E501
+            return self.__set_group_roles_with_http_info(group_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__set_roles_with_http_info(group_locator, **kwargs)  # noqa: E501
+            (data) = self.__set_group_roles_with_http_info(group_locator, **kwargs)  # noqa: E501
             return data
 
     def __add_group_with_http_info(self, **kwargs):  # noqa: E501
-        """add_group  # noqa: E501
+        """Add a new user group.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.__add_group_with_http_info(async_req=True)
@@ -460,6 +456,14 @@ class GroupApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -479,86 +483,13 @@ class GroupApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __add_role_with_http_info(self, group_locator, **kwargs):  # noqa: E501
-        """add_role  # noqa: E501
+    def __add_role_at_scope_to_group_with_http_info(self, group_locator, role_id, scope, **kwargs):  # noqa: E501
+        """Add a role with the specific scope to the matching user group.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__add_role_with_http_info(group_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str group_locator: (required)
-        :param Role body:
-        :return: Role
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['group_locator', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_role" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'group_locator' is set
-        if ('group_locator' not in params or
-                params['group_locator'] is None):
-            raise ValueError("Missing the required parameter `group_locator` when calling `add_role`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'group_locator' in params:
-            if isinstance(params['group_locator'], TeamCityObject):
-                path_params['groupLocator'] = params['group_locator'].locator_id
-            else:
-                path_params['groupLocator'] = params['group_locator']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/userGroups/{groupLocator}/roles', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Role',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __add_role_simple_with_http_info(self, group_locator, role_id, scope, **kwargs):  # noqa: E501
-        """add_role_simple  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__add_role_simple_with_http_info(group_locator, role_id, scope, async_req=True)
+        >>> thread = api.__add_role_at_scope_to_group_with_http_info(group_locator, role_id, scope, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -581,22 +512,22 @@ class GroupApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method add_role_simple" % key
+                    " to method add_role_at_scope_to_group" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'group_locator' is set
         if ('group_locator' not in params or
                 params['group_locator'] is None):
-            raise ValueError("Missing the required parameter `group_locator` when calling `add_role_simple`")  # noqa: E501
+            raise ValueError("Missing the required parameter `group_locator` when calling `add_role_at_scope_to_group`")  # noqa: E501
         # verify the required parameter 'role_id' is set
         if ('role_id' not in params or
                 params['role_id'] is None):
-            raise ValueError("Missing the required parameter `role_id` when calling `add_role_simple`")  # noqa: E501
+            raise ValueError("Missing the required parameter `role_id` when calling `add_role_at_scope_to_group`")  # noqa: E501
         # verify the required parameter 'scope' is set
         if ('scope' not in params or
                 params['scope'] is None):
-            raise ValueError("Missing the required parameter `scope` when calling `add_role_simple`")  # noqa: E501
+            raise ValueError("Missing the required parameter `scope` when calling `add_role_at_scope_to_group`")  # noqa: E501
 
         collection_formats = {}
 
@@ -625,6 +556,10 @@ class GroupApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -644,9 +579,93 @@ class GroupApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __delete_group_with_http_info(self, group_locator, **kwargs):  # noqa: E501
-        """delete_group  # noqa: E501
+    def __add_role_to_group_with_http_info(self, group_locator, **kwargs):  # noqa: E501
+        """Add a role to the matching user group.  # noqa: E501
 
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__add_role_to_group_with_http_info(group_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str group_locator: (required)
+        :param Role body:
+        :return: Role
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['group_locator', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_role_to_group" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'group_locator' is set
+        if ('group_locator' not in params or
+                params['group_locator'] is None):
+            raise ValueError("Missing the required parameter `group_locator` when calling `add_role_to_group`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'group_locator' in params:
+            if isinstance(params['group_locator'], TeamCityObject):
+                path_params['groupLocator'] = params['group_locator'].locator_id
+            else:
+                path_params['groupLocator'] = params['group_locator']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/userGroups/{groupLocator}/roles', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Role',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __delete_group_with_http_info(self, group_locator, **kwargs):  # noqa: E501
+        """Delete user group matching the locator.  # noqa: E501
+
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.__delete_group_with_http_info(group_locator, async_req=True)
@@ -715,12 +734,659 @@ class GroupApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __delete_role_with_http_info(self, group_locator, role_id, scope, **kwargs):  # noqa: E501
-        """delete_role  # noqa: E501
+    def __get_all_groups_with_http_info(self, **kwargs):  # noqa: E501
+        """Get all user groups.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__delete_role_with_http_info(group_locator, role_id, scope, async_req=True)
+        >>> thread = api.__get_all_groups_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str fields:
+        :return: Groups
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_groups" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/userGroups', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Groups',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_group_parent_groups_with_http_info(self, group_locator, **kwargs):  # noqa: E501
+        """Get parent groups of the matching user group.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_group_parent_groups_with_http_info(group_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str group_locator: (required)
+        :param str fields:
+        :return: Groups
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['group_locator', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_group_parent_groups" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'group_locator' is set
+        if ('group_locator' not in params or
+                params['group_locator'] is None):
+            raise ValueError("Missing the required parameter `group_locator` when calling `get_group_parent_groups`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'group_locator' in params:
+            if isinstance(params['group_locator'], TeamCityObject):
+                path_params['groupLocator'] = params['group_locator'].locator_id
+            else:
+                path_params['groupLocator'] = params['group_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/userGroups/{groupLocator}/parent-groups', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Groups',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_group_properties_with_http_info(self, group_locator, **kwargs):  # noqa: E501
+        """Get properties of the matching user group.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_group_properties_with_http_info(group_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str group_locator: (required)
+        :param str fields:
+        :return: Properties
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['group_locator', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_group_properties" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'group_locator' is set
+        if ('group_locator' not in params or
+                params['group_locator'] is None):
+            raise ValueError("Missing the required parameter `group_locator` when calling `get_group_properties`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'group_locator' in params:
+            if isinstance(params['group_locator'], TeamCityObject):
+                path_params['groupLocator'] = params['group_locator'].locator_id
+            else:
+                path_params['groupLocator'] = params['group_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/userGroups/{groupLocator}/properties', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Properties',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_group_property_with_http_info(self, group_locator, name, **kwargs):  # noqa: E501
+        """Get a property of the matching user group.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_group_property_with_http_info(group_locator, name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str group_locator: (required)
+        :param str name: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['group_locator', 'name']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_group_property" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'group_locator' is set
+        if ('group_locator' not in params or
+                params['group_locator'] is None):
+            raise ValueError("Missing the required parameter `group_locator` when calling `get_group_property`")  # noqa: E501
+        # verify the required parameter 'name' is set
+        if ('name' not in params or
+                params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `get_group_property`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'group_locator' in params:
+            if isinstance(params['group_locator'], TeamCityObject):
+                path_params['groupLocator'] = params['group_locator'].locator_id
+            else:
+                path_params['groupLocator'] = params['group_locator']  # noqa: E501
+        if 'name' in params:
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/userGroups/{groupLocator}/properties/{name}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_group_role_at_scope_with_http_info(self, group_locator, role_id, scope, **kwargs):  # noqa: E501
+        """Get a role with the specific scope of the matching user group.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_group_role_at_scope_with_http_info(group_locator, role_id, scope, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str group_locator: (required)
+        :param str role_id: (required)
+        :param str scope: (required)
+        :return: Role
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['group_locator', 'role_id', 'scope']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_group_role_at_scope" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'group_locator' is set
+        if ('group_locator' not in params or
+                params['group_locator'] is None):
+            raise ValueError("Missing the required parameter `group_locator` when calling `get_group_role_at_scope`")  # noqa: E501
+        # verify the required parameter 'role_id' is set
+        if ('role_id' not in params or
+                params['role_id'] is None):
+            raise ValueError("Missing the required parameter `role_id` when calling `get_group_role_at_scope`")  # noqa: E501
+        # verify the required parameter 'scope' is set
+        if ('scope' not in params or
+                params['scope'] is None):
+            raise ValueError("Missing the required parameter `scope` when calling `get_group_role_at_scope`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'group_locator' in params:
+            if isinstance(params['group_locator'], TeamCityObject):
+                path_params['groupLocator'] = params['group_locator'].locator_id
+            else:
+                path_params['groupLocator'] = params['group_locator']  # noqa: E501
+        if 'role_id' in params:
+            if isinstance(params['role_id'], TeamCityObject):
+                path_params['roleId'] = params['role_id'].locator_id
+            else:
+                path_params['roleId'] = params['role_id']  # noqa: E501
+        if 'scope' in params:
+            if isinstance(params['scope'], TeamCityObject):
+                path_params['scope'] = params['scope'].locator_id
+            else:
+                path_params['scope'] = params['scope']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/userGroups/{groupLocator}/roles/{roleId}/{scope}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Role',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_group_roles_with_http_info(self, group_locator, **kwargs):  # noqa: E501
+        """Get all roles of the matching user group.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_group_roles_with_http_info(group_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str group_locator: (required)
+        :return: Roles
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['group_locator']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_group_roles" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'group_locator' is set
+        if ('group_locator' not in params or
+                params['group_locator'] is None):
+            raise ValueError("Missing the required parameter `group_locator` when calling `get_group_roles`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'group_locator' in params:
+            if isinstance(params['group_locator'], TeamCityObject):
+                path_params['groupLocator'] = params['group_locator'].locator_id
+            else:
+                path_params['groupLocator'] = params['group_locator']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/userGroups/{groupLocator}/roles', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Roles',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_user_group_of_group_with_http_info(self, group_locator, **kwargs):  # noqa: E501
+        """Get user group matching the locator.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_user_group_of_group_with_http_info(group_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str group_locator: (required)
+        :param str fields:
+        :return: Group
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['group_locator', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_user_group_of_group" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'group_locator' is set
+        if ('group_locator' not in params or
+                params['group_locator'] is None):
+            raise ValueError("Missing the required parameter `group_locator` when calling `get_user_group_of_group`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'group_locator' in params:
+            if isinstance(params['group_locator'], TeamCityObject):
+                path_params['groupLocator'] = params['group_locator'].locator_id
+            else:
+                path_params['groupLocator'] = params['group_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/userGroups/{groupLocator}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Group',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __remove_group_property_with_http_info(self, group_locator, name, **kwargs):  # noqa: E501
+        """Remove a property of the matching user group.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__remove_group_property_with_http_info(group_locator, name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str group_locator: (required)
+        :param str name: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['group_locator', 'name']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method remove_group_property" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'group_locator' is set
+        if ('group_locator' not in params or
+                params['group_locator'] is None):
+            raise ValueError("Missing the required parameter `group_locator` when calling `remove_group_property`")  # noqa: E501
+        # verify the required parameter 'name' is set
+        if ('name' not in params or
+                params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `remove_group_property`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'group_locator' in params:
+            if isinstance(params['group_locator'], TeamCityObject):
+                path_params['groupLocator'] = params['group_locator'].locator_id
+            else:
+                path_params['groupLocator'] = params['group_locator']  # noqa: E501
+        if 'name' in params:
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/userGroups/{groupLocator}/properties/{name}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __remove_role_at_scope_from_group_with_http_info(self, group_locator, role_id, scope, **kwargs):  # noqa: E501
+        """Remove a role with the specific scope from the matching user group.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__remove_role_at_scope_from_group_with_http_info(group_locator, role_id, scope, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -743,22 +1409,22 @@ class GroupApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_role" % key
+                    " to method remove_role_at_scope_from_group" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'group_locator' is set
         if ('group_locator' not in params or
                 params['group_locator'] is None):
-            raise ValueError("Missing the required parameter `group_locator` when calling `delete_role`")  # noqa: E501
+            raise ValueError("Missing the required parameter `group_locator` when calling `remove_role_at_scope_from_group`")  # noqa: E501
         # verify the required parameter 'role_id' is set
         if ('role_id' not in params or
                 params['role_id'] is None):
-            raise ValueError("Missing the required parameter `role_id` when calling `delete_role`")  # noqa: E501
+            raise ValueError("Missing the required parameter `role_id` when calling `remove_role_at_scope_from_group`")  # noqa: E501
         # verify the required parameter 'scope' is set
         if ('scope' not in params or
                 params['scope'] is None):
-            raise ValueError("Missing the required parameter `scope` when calling `delete_role`")  # noqa: E501
+            raise ValueError("Missing the required parameter `scope` when calling `remove_role_at_scope_from_group`")  # noqa: E501
 
         collection_formats = {}
 
@@ -806,777 +1472,13 @@ class GroupApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __get_parent_groups_with_http_info(self, group_locator, **kwargs):  # noqa: E501
-        """get_parent_groups  # noqa: E501
+    def __set_group_parent_groups_with_http_info(self, group_locator, **kwargs):  # noqa: E501
+        """Update parent groups of the matching user group.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_parent_groups_with_http_info(group_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str group_locator: (required)
-        :param str fields:
-        :return: Groups
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['group_locator', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_parent_groups" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'group_locator' is set
-        if ('group_locator' not in params or
-                params['group_locator'] is None):
-            raise ValueError("Missing the required parameter `group_locator` when calling `get_parent_groups`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'group_locator' in params:
-            if isinstance(params['group_locator'], TeamCityObject):
-                path_params['groupLocator'] = params['group_locator'].locator_id
-            else:
-                path_params['groupLocator'] = params['group_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/userGroups/{groupLocator}/parent-groups', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Groups',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_permissions_with_http_info(self, group_locator, **kwargs):  # noqa: E501
-        """get_permissions  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_permissions_with_http_info(group_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str group_locator: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['group_locator']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_permissions" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'group_locator' is set
-        if ('group_locator' not in params or
-                params['group_locator'] is None):
-            raise ValueError("Missing the required parameter `group_locator` when calling `get_permissions`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'group_locator' in params:
-            if isinstance(params['group_locator'], TeamCityObject):
-                path_params['groupLocator'] = params['group_locator'].locator_id
-            else:
-                path_params['groupLocator'] = params['group_locator']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/userGroups/{groupLocator}/debug/permissions', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_properties_with_http_info(self, group_locator, **kwargs):  # noqa: E501
-        """get_properties  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_properties_with_http_info(group_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str group_locator: (required)
-        :param str fields:
-        :return: Properties
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['group_locator', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_properties" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'group_locator' is set
-        if ('group_locator' not in params or
-                params['group_locator'] is None):
-            raise ValueError("Missing the required parameter `group_locator` when calling `get_properties`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'group_locator' in params:
-            if isinstance(params['group_locator'], TeamCityObject):
-                path_params['groupLocator'] = params['group_locator'].locator_id
-            else:
-                path_params['groupLocator'] = params['group_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/userGroups/{groupLocator}/properties', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Properties',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __list_role_with_http_info(self, group_locator, role_id, scope, **kwargs):  # noqa: E501
-        """list_role  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__list_role_with_http_info(group_locator, role_id, scope, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str group_locator: (required)
-        :param str role_id: (required)
-        :param str scope: (required)
-        :return: Role
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['group_locator', 'role_id', 'scope']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_role" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'group_locator' is set
-        if ('group_locator' not in params or
-                params['group_locator'] is None):
-            raise ValueError("Missing the required parameter `group_locator` when calling `list_role`")  # noqa: E501
-        # verify the required parameter 'role_id' is set
-        if ('role_id' not in params or
-                params['role_id'] is None):
-            raise ValueError("Missing the required parameter `role_id` when calling `list_role`")  # noqa: E501
-        # verify the required parameter 'scope' is set
-        if ('scope' not in params or
-                params['scope'] is None):
-            raise ValueError("Missing the required parameter `scope` when calling `list_role`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'group_locator' in params:
-            if isinstance(params['group_locator'], TeamCityObject):
-                path_params['groupLocator'] = params['group_locator'].locator_id
-            else:
-                path_params['groupLocator'] = params['group_locator']  # noqa: E501
-        if 'role_id' in params:
-            if isinstance(params['role_id'], TeamCityObject):
-                path_params['roleId'] = params['role_id'].locator_id
-            else:
-                path_params['roleId'] = params['role_id']  # noqa: E501
-        if 'scope' in params:
-            if isinstance(params['scope'], TeamCityObject):
-                path_params['scope'] = params['scope'].locator_id
-            else:
-                path_params['scope'] = params['scope']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/userGroups/{groupLocator}/roles/{roleId}/{scope}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Role',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __list_roles_with_http_info(self, group_locator, **kwargs):  # noqa: E501
-        """list_roles  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__list_roles_with_http_info(group_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str group_locator: (required)
-        :return: Roles
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['group_locator']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_roles" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'group_locator' is set
-        if ('group_locator' not in params or
-                params['group_locator'] is None):
-            raise ValueError("Missing the required parameter `group_locator` when calling `list_roles`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'group_locator' in params:
-            if isinstance(params['group_locator'], TeamCityObject):
-                path_params['groupLocator'] = params['group_locator'].locator_id
-            else:
-                path_params['groupLocator'] = params['group_locator']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/userGroups/{groupLocator}/roles', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Roles',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __put_user_property_with_http_info(self, group_locator, name, **kwargs):  # noqa: E501
-        """put_user_property  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__put_user_property_with_http_info(group_locator, name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str group_locator: (required)
-        :param str name: (required)
-        :param str body:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['group_locator', 'name', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method put_user_property" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'group_locator' is set
-        if ('group_locator' not in params or
-                params['group_locator'] is None):
-            raise ValueError("Missing the required parameter `group_locator` when calling `put_user_property`")  # noqa: E501
-        # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `put_user_property`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'group_locator' in params:
-            if isinstance(params['group_locator'], TeamCityObject):
-                path_params['groupLocator'] = params['group_locator'].locator_id
-            else:
-                path_params['groupLocator'] = params['group_locator']  # noqa: E501
-        if 'name' in params:
-            if isinstance(params['name'], TeamCityObject):
-                path_params['name'] = params['name'].locator_id
-            else:
-                path_params['name'] = params['name']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/userGroups/{groupLocator}/properties/{name}', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __remove_user_property_with_http_info(self, group_locator, name, **kwargs):  # noqa: E501
-        """remove_user_property  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__remove_user_property_with_http_info(group_locator, name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str group_locator: (required)
-        :param str name: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['group_locator', 'name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method remove_user_property" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'group_locator' is set
-        if ('group_locator' not in params or
-                params['group_locator'] is None):
-            raise ValueError("Missing the required parameter `group_locator` when calling `remove_user_property`")  # noqa: E501
-        # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `remove_user_property`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'group_locator' in params:
-            if isinstance(params['group_locator'], TeamCityObject):
-                path_params['groupLocator'] = params['group_locator'].locator_id
-            else:
-                path_params['groupLocator'] = params['group_locator']  # noqa: E501
-        if 'name' in params:
-            if isinstance(params['name'], TeamCityObject):
-                path_params['name'] = params['name'].locator_id
-            else:
-                path_params['name'] = params['name']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/userGroups/{groupLocator}/properties/{name}', 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type=None,  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __serve_group_with_http_info(self, group_locator, **kwargs):  # noqa: E501
-        """serve_group  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_group_with_http_info(group_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str group_locator: (required)
-        :param str fields:
-        :return: Group
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['group_locator', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method serve_group" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'group_locator' is set
-        if ('group_locator' not in params or
-                params['group_locator'] is None):
-            raise ValueError("Missing the required parameter `group_locator` when calling `serve_group`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'group_locator' in params:
-            if isinstance(params['group_locator'], TeamCityObject):
-                path_params['groupLocator'] = params['group_locator'].locator_id
-            else:
-                path_params['groupLocator'] = params['group_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/userGroups/{groupLocator}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Group',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __serve_groups_with_http_info(self, **kwargs):  # noqa: E501
-        """serve_groups  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_groups_with_http_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str fields:
-        :return: Groups
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method serve_groups" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/userGroups', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Groups',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __serve_user_properties_with_http_info(self, group_locator, name, **kwargs):  # noqa: E501
-        """serve_user_properties  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_user_properties_with_http_info(group_locator, name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str group_locator: (required)
-        :param str name: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['group_locator', 'name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method serve_user_properties" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'group_locator' is set
-        if ('group_locator' not in params or
-                params['group_locator'] is None):
-            raise ValueError("Missing the required parameter `group_locator` when calling `serve_user_properties`")  # noqa: E501
-        # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `serve_user_properties`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'group_locator' in params:
-            if isinstance(params['group_locator'], TeamCityObject):
-                path_params['groupLocator'] = params['group_locator'].locator_id
-            else:
-                path_params['groupLocator'] = params['group_locator']  # noqa: E501
-        if 'name' in params:
-            if isinstance(params['name'], TeamCityObject):
-                path_params['name'] = params['name'].locator_id
-            else:
-                path_params['name'] = params['name']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/userGroups/{groupLocator}/properties/{name}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __set_parent_groups_with_http_info(self, group_locator, **kwargs):  # noqa: E501
-        """set_parent_groups  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__set_parent_groups_with_http_info(group_locator, async_req=True)
+        >>> thread = api.__set_group_parent_groups_with_http_info(group_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1599,14 +1501,14 @@ class GroupApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method set_parent_groups" % key
+                    " to method set_group_parent_groups" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'group_locator' is set
         if ('group_locator' not in params or
                 params['group_locator'] is None):
-            raise ValueError("Missing the required parameter `group_locator` when calling `set_parent_groups`")  # noqa: E501
+            raise ValueError("Missing the required parameter `group_locator` when calling `set_group_parent_groups`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1629,6 +1531,14 @@ class GroupApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -1648,12 +1558,106 @@ class GroupApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __set_roles_with_http_info(self, group_locator, **kwargs):  # noqa: E501
-        """set_roles  # noqa: E501
+    def __set_group_property_with_http_info(self, group_locator, name, **kwargs):  # noqa: E501
+        """Update a property of the matching user group.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__set_roles_with_http_info(group_locator, async_req=True)
+        >>> thread = api.__set_group_property_with_http_info(group_locator, name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str group_locator: (required)
+        :param str name: (required)
+        :param str body:
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['group_locator', 'name', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method set_group_property" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'group_locator' is set
+        if ('group_locator' not in params or
+                params['group_locator'] is None):
+            raise ValueError("Missing the required parameter `group_locator` when calling `set_group_property`")  # noqa: E501
+        # verify the required parameter 'name' is set
+        if ('name' not in params or
+                params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `set_group_property`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'group_locator' in params:
+            if isinstance(params['group_locator'], TeamCityObject):
+                path_params['groupLocator'] = params['group_locator'].locator_id
+            else:
+                path_params['groupLocator'] = params['group_locator']  # noqa: E501
+        if 'name' in params:
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['text/plain'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/userGroups/{groupLocator}/properties/{name}', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __set_group_roles_with_http_info(self, group_locator, **kwargs):  # noqa: E501
+        """Update roles of the matching user group.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__set_group_roles_with_http_info(group_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1675,14 +1679,14 @@ class GroupApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method set_roles" % key
+                    " to method set_group_roles" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'group_locator' is set
         if ('group_locator' not in params or
                 params['group_locator'] is None):
-            raise ValueError("Missing the required parameter `group_locator` when calling `set_roles`")  # noqa: E501
+            raise ValueError("Missing the required parameter `group_locator` when calling `set_group_roles`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1703,6 +1707,14 @@ class GroupApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 

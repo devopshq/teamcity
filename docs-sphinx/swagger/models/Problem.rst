@@ -27,6 +27,9 @@ Properties
    * - **href**
      - **str**
      - `optional` 
+   * - **description**
+     - **str**
+     - `optional` 
    * - **mutes**
      -  `Mutes <./Mutes.html>`_
      - `optional` 

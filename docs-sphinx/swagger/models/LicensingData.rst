@@ -17,22 +17,19 @@ Properties
      - Notes
    * - **license_use_exceeded**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **max_agents**
      - **int**
      - `optional` 
    * - **unlimited_agents**
      - **bool**
-     - `optional` [default to ``False``]
-   * - **agents_left**
-     - **int**
      - `optional` 
    * - **max_build_types**
      - **int**
      - `optional` 
    * - **unlimited_build_types**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **build_types_left**
      - **int**
      - `optional` 
@@ -41,6 +38,9 @@ Properties
      - `optional` 
    * - **server_effective_release_date**
      - **str**
+     - `optional` 
+   * - **agents_left**
+     - **int**
      - `optional` 
    * - **license_keys**
      -  `LicenseKeys <./LicenseKeys.html>`_

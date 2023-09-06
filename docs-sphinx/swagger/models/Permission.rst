@@ -23,6 +23,6 @@ Properties
      - `optional` 
    * - **_global**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
 
 

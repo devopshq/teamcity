@@ -25,6 +25,7 @@ from dohq_teamcity.models.agents import Agents  # noqa: F401,E501
 from dohq_teamcity.models.authorized_info import AuthorizedInfo  # noqa: F401,E501
 from dohq_teamcity.models.build_types import BuildTypes  # noqa: F401,E501
 from dohq_teamcity.models.compatibilities import Compatibilities  # noqa: F401,E501
+from dohq_teamcity.models.compatibility_policy import CompatibilityPolicy  # noqa: F401,E501
 from dohq_teamcity.models.enabled_info import EnabledInfo  # noqa: F401,E501
 
 
@@ -40,8 +41,9 @@ class AgentApi(object):
         self.api_client = api_client
 
     def delete_agent(self, agent_locator, **kwargs):  # noqa: E501
-        """delete_agent  # noqa: E501
+        """Delete an inactive agent.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_agent(agent_locator, async_req=True)
@@ -60,31 +62,56 @@ class AgentApi(object):
             (data) = self.__delete_agent_with_http_info(agent_locator, **kwargs)  # noqa: E501
             return data
 
-    def ge_incompatible_build_types(self, agent_locator, **kwargs):  # noqa: E501
-        """ge_incompatible_build_types  # noqa: E501
+    def get_agent(self, agent_locator, **kwargs):  # noqa: E501
+        """Get agent matching the locator.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.ge_incompatible_build_types(agent_locator, async_req=True)
+        >>> thread = api.get_agent(agent_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
         :param str agent_locator: (required)
         :param str fields:
-        :return: Compatibilities
+        :return: Agent
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__ge_incompatible_build_types_with_http_info(agent_locator, **kwargs)  # noqa: E501
+            return self.__get_agent_with_http_info(agent_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__ge_incompatible_build_types_with_http_info(agent_locator, **kwargs)  # noqa: E501
+            (data) = self.__get_agent_with_http_info(agent_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_agent_field(self, agent_locator, field, **kwargs):  # noqa: E501
+        """Get a field of the matching agent.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_agent_field(agent_locator, field, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str agent_locator: (required)
+        :param str field: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_agent_field_with_http_info(agent_locator, field, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_agent_field_with_http_info(agent_locator, field, **kwargs)  # noqa: E501
             return data
 
     def get_agent_pool(self, agent_locator, **kwargs):  # noqa: E501
-        """get_agent_pool  # noqa: E501
+        """Get the agent pool of the matching agent.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_agent_pool(agent_locator, async_req=True)
@@ -104,9 +131,33 @@ class AgentApi(object):
             (data) = self.__get_agent_pool_with_http_info(agent_locator, **kwargs)  # noqa: E501
             return data
 
-    def get_authorized_info(self, agent_locator, **kwargs):  # noqa: E501
-        """get_authorized_info  # noqa: E501
+    def get_all_agents(self, **kwargs):  # noqa: E501
+        """Get all known agents.  # noqa: E501
 
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_all_agents(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str locator:
+        :param str fields:
+        :return: Agents
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_all_agents_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_all_agents_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def get_authorized_info(self, agent_locator, **kwargs):  # noqa: E501
+        """Get the authorization info of the matching agent.  # noqa: E501
+
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_authorized_info(agent_locator, async_req=True)
@@ -126,9 +177,33 @@ class AgentApi(object):
             (data) = self.__get_authorized_info_with_http_info(agent_locator, **kwargs)  # noqa: E501
             return data
 
-    def get_compatible_build_types(self, agent_locator, **kwargs):  # noqa: E501
-        """get_compatible_build_types  # noqa: E501
+    def get_build_configuration_run_policy(self, agent_locator, **kwargs):  # noqa: E501
+        """Get the build configuration run policy of the matching agent.  # noqa: E501
 
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_build_configuration_run_policy(agent_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str agent_locator: (required)
+        :param str fields:
+        :return: CompatibilityPolicy
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_build_configuration_run_policy_with_http_info(agent_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_build_configuration_run_policy_with_http_info(agent_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_compatible_build_types(self, agent_locator, **kwargs):  # noqa: E501
+        """Get build types compatible with the matching agent.  # noqa: E501
+
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_compatible_build_types(agent_locator, async_req=True)
@@ -149,8 +224,9 @@ class AgentApi(object):
             return data
 
     def get_enabled_info(self, agent_locator, **kwargs):  # noqa: E501
-        """get_enabled_info  # noqa: E501
+        """Check if the matching agent is enabled.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_enabled_info(agent_locator, async_req=True)
@@ -170,77 +246,33 @@ class AgentApi(object):
             (data) = self.__get_enabled_info_with_http_info(agent_locator, **kwargs)  # noqa: E501
             return data
 
-    def serve_agent(self, agent_locator, **kwargs):  # noqa: E501
-        """serve_agent  # noqa: E501
+    def get_incompatible_build_types(self, agent_locator, **kwargs):  # noqa: E501
+        """Get build types incompatible with the matching agent.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_agent(agent_locator, async_req=True)
+        >>> thread = api.get_incompatible_build_types(agent_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
         :param str agent_locator: (required)
         :param str fields:
-        :return: Agent
+        :return: Compatibilities
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__serve_agent_with_http_info(agent_locator, **kwargs)  # noqa: E501
+            return self.__get_incompatible_build_types_with_http_info(agent_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__serve_agent_with_http_info(agent_locator, **kwargs)  # noqa: E501
-            return data
-
-    def serve_agent_field(self, agent_locator, field, **kwargs):  # noqa: E501
-        """serve_agent_field  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_agent_field(agent_locator, field, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str agent_locator: (required)
-        :param str field: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_agent_field_with_http_info(agent_locator, field, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_agent_field_with_http_info(agent_locator, field, **kwargs)  # noqa: E501
-            return data
-
-    def serve_agents(self, **kwargs):  # noqa: E501
-        """serve_agents  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_agents(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param bool include_disconnected:
-        :param bool include_unauthorized:
-        :param str locator:
-        :param str fields:
-        :return: Agents
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_agents_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_agents_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.__get_incompatible_build_types_with_http_info(agent_locator, **kwargs)  # noqa: E501
             return data
 
     def set_agent_field(self, agent_locator, field, **kwargs):  # noqa: E501
-        """set_agent_field  # noqa: E501
+        """Update a field of the matching agent.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.set_agent_field(agent_locator, field, async_req=True)
@@ -262,8 +294,9 @@ class AgentApi(object):
             return data
 
     def set_agent_pool(self, agent_locator, **kwargs):  # noqa: E501
-        """set_agent_pool  # noqa: E501
+        """Assign the matching agent to the specified agent pool.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.set_agent_pool(agent_locator, async_req=True)
@@ -285,8 +318,9 @@ class AgentApi(object):
             return data
 
     def set_authorized_info(self, agent_locator, **kwargs):  # noqa: E501
-        """set_authorized_info  # noqa: E501
+        """Update the authorization info of the matching agent.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.set_authorized_info(agent_locator, async_req=True)
@@ -307,9 +341,34 @@ class AgentApi(object):
             (data) = self.__set_authorized_info_with_http_info(agent_locator, **kwargs)  # noqa: E501
             return data
 
-    def set_enabled_info(self, agent_locator, **kwargs):  # noqa: E501
-        """set_enabled_info  # noqa: E501
+    def set_build_configuration_run_policy(self, agent_locator, **kwargs):  # noqa: E501
+        """Update build configuration run policy of agent matching locator.  # noqa: E501
 
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.set_build_configuration_run_policy(agent_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str agent_locator: (required)
+        :param CompatibilityPolicy body:
+        :param str fields:
+        :return: CompatibilityPolicy
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__set_build_configuration_run_policy_with_http_info(agent_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__set_build_configuration_run_policy_with_http_info(agent_locator, **kwargs)  # noqa: E501
+            return data
+
+    def set_enabled_info(self, agent_locator, **kwargs):  # noqa: E501
+        """Update the enablement status of the matching agent.  # noqa: E501
+
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.set_enabled_info(agent_locator, async_req=True)
@@ -331,8 +390,9 @@ class AgentApi(object):
             return data
 
     def __delete_agent_with_http_info(self, agent_locator, **kwargs):  # noqa: E501
-        """delete_agent  # noqa: E501
+        """Delete an inactive agent.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.__delete_agent_with_http_info(agent_locator, async_req=True)
@@ -401,18 +461,19 @@ class AgentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __ge_incompatible_build_types_with_http_info(self, agent_locator, **kwargs):  # noqa: E501
-        """ge_incompatible_build_types  # noqa: E501
+    def __get_agent_with_http_info(self, agent_locator, **kwargs):  # noqa: E501
+        """Get agent matching the locator.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__ge_incompatible_build_types_with_http_info(agent_locator, async_req=True)
+        >>> thread = api.__get_agent_with_http_info(agent_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str agent_locator: (required)
         :param str fields:
-        :return: Compatibilities
+        :return: Agent
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -428,14 +489,14 @@ class AgentApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method ge_incompatible_build_types" % key
+                    " to method get_agent" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'agent_locator' is set
         if ('agent_locator' not in params or
                 params['agent_locator'] is None):
-            raise ValueError("Missing the required parameter `agent_locator` when calling `ge_incompatible_build_types`")  # noqa: E501
+            raise ValueError("Missing the required parameter `agent_locator` when calling `get_agent`")  # noqa: E501
 
         collection_formats = {}
 
@@ -456,18 +517,108 @@ class AgentApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/app/rest/agents/{agentLocator}/incompatibleBuildTypes', 'GET',
+            '/app/rest/agents/{agentLocator}', 'GET',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Compatibilities',  # noqa: E501
+            response_type='Agent',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_agent_field_with_http_info(self, agent_locator, field, **kwargs):  # noqa: E501
+        """Get a field of the matching agent.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_agent_field_with_http_info(agent_locator, field, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str agent_locator: (required)
+        :param str field: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['agent_locator', 'field']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_agent_field" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'agent_locator' is set
+        if ('agent_locator' not in params or
+                params['agent_locator'] is None):
+            raise ValueError("Missing the required parameter `agent_locator` when calling `get_agent_field`")  # noqa: E501
+        # verify the required parameter 'field' is set
+        if ('field' not in params or
+                params['field'] is None):
+            raise ValueError("Missing the required parameter `field` when calling `get_agent_field`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'agent_locator' in params:
+            if isinstance(params['agent_locator'], TeamCityObject):
+                path_params['agentLocator'] = params['agent_locator'].locator_id
+            else:
+                path_params['agentLocator'] = params['agent_locator']  # noqa: E501
+        if 'field' in params:
+            if isinstance(params['field'], TeamCityObject):
+                path_params['field'] = params['field'].locator_id
+            else:
+                path_params['field'] = params['field']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/agents/{agentLocator}/{field}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -476,8 +627,9 @@ class AgentApi(object):
             collection_formats=collection_formats)
 
     def __get_agent_pool_with_http_info(self, agent_locator, **kwargs):  # noqa: E501
-        """get_agent_pool  # noqa: E501
+        """Get the agent pool of the matching agent.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.__get_agent_pool_with_http_info(agent_locator, async_req=True)
@@ -530,6 +682,10 @@ class AgentApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -549,9 +705,82 @@ class AgentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __get_authorized_info_with_http_info(self, agent_locator, **kwargs):  # noqa: E501
-        """get_authorized_info  # noqa: E501
+    def __get_all_agents_with_http_info(self, **kwargs):  # noqa: E501
+        """Get all known agents.  # noqa: E501
 
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_all_agents_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str locator:
+        :param str fields:
+        :return: Agents
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['locator', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_agents" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'locator' in params:
+            query_params.append(('locator', params['locator']))  # noqa: E501
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/agents', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Agents',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_authorized_info_with_http_info(self, agent_locator, **kwargs):  # noqa: E501
+        """Get the authorization info of the matching agent.  # noqa: E501
+
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.__get_authorized_info_with_http_info(agent_locator, async_req=True)
@@ -604,6 +833,10 @@ class AgentApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -623,9 +856,89 @@ class AgentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __get_compatible_build_types_with_http_info(self, agent_locator, **kwargs):  # noqa: E501
-        """get_compatible_build_types  # noqa: E501
+    def __get_build_configuration_run_policy_with_http_info(self, agent_locator, **kwargs):  # noqa: E501
+        """Get the build configuration run policy of the matching agent.  # noqa: E501
 
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_build_configuration_run_policy_with_http_info(agent_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str agent_locator: (required)
+        :param str fields:
+        :return: CompatibilityPolicy
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['agent_locator', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_build_configuration_run_policy" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'agent_locator' is set
+        if ('agent_locator' not in params or
+                params['agent_locator'] is None):
+            raise ValueError("Missing the required parameter `agent_locator` when calling `get_build_configuration_run_policy`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'agent_locator' in params:
+            if isinstance(params['agent_locator'], TeamCityObject):
+                path_params['agentLocator'] = params['agent_locator'].locator_id
+            else:
+                path_params['agentLocator'] = params['agent_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/agents/{agentLocator}/compatibilityPolicy', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='CompatibilityPolicy',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_compatible_build_types_with_http_info(self, agent_locator, **kwargs):  # noqa: E501
+        """Get build types compatible with the matching agent.  # noqa: E501
+
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.__get_compatible_build_types_with_http_info(agent_locator, async_req=True)
@@ -678,6 +991,10 @@ class AgentApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -698,8 +1015,9 @@ class AgentApi(object):
             collection_formats=collection_formats)
 
     def __get_enabled_info_with_http_info(self, agent_locator, **kwargs):  # noqa: E501
-        """get_enabled_info  # noqa: E501
+        """Check if the matching agent is enabled.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.__get_enabled_info_with_http_info(agent_locator, async_req=True)
@@ -752,6 +1070,10 @@ class AgentApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -771,18 +1093,19 @@ class AgentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __serve_agent_with_http_info(self, agent_locator, **kwargs):  # noqa: E501
-        """serve_agent  # noqa: E501
+    def __get_incompatible_build_types_with_http_info(self, agent_locator, **kwargs):  # noqa: E501
+        """Get build types incompatible with the matching agent.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_agent_with_http_info(agent_locator, async_req=True)
+        >>> thread = api.__get_incompatible_build_types_with_http_info(agent_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str agent_locator: (required)
         :param str fields:
-        :return: Agent
+        :return: Compatibilities
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -798,14 +1121,14 @@ class AgentApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method serve_agent" % key
+                    " to method get_incompatible_build_types" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'agent_locator' is set
         if ('agent_locator' not in params or
                 params['agent_locator'] is None):
-            raise ValueError("Missing the required parameter `agent_locator` when calling `serve_agent`")  # noqa: E501
+            raise ValueError("Missing the required parameter `agent_locator` when calling `get_incompatible_build_types`")  # noqa: E501
 
         collection_formats = {}
 
@@ -826,172 +1149,22 @@ class AgentApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/app/rest/agents/{agentLocator}', 'GET',
+            '/app/rest/agents/{agentLocator}/incompatibleBuildTypes', 'GET',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Agent',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __serve_agent_field_with_http_info(self, agent_locator, field, **kwargs):  # noqa: E501
-        """serve_agent_field  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_agent_field_with_http_info(agent_locator, field, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str agent_locator: (required)
-        :param str field: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['agent_locator', 'field']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method serve_agent_field" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'agent_locator' is set
-        if ('agent_locator' not in params or
-                params['agent_locator'] is None):
-            raise ValueError("Missing the required parameter `agent_locator` when calling `serve_agent_field`")  # noqa: E501
-        # verify the required parameter 'field' is set
-        if ('field' not in params or
-                params['field'] is None):
-            raise ValueError("Missing the required parameter `field` when calling `serve_agent_field`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'agent_locator' in params:
-            if isinstance(params['agent_locator'], TeamCityObject):
-                path_params['agentLocator'] = params['agent_locator'].locator_id
-            else:
-                path_params['agentLocator'] = params['agent_locator']  # noqa: E501
-        if 'field' in params:
-            if isinstance(params['field'], TeamCityObject):
-                path_params['field'] = params['field'].locator_id
-            else:
-                path_params['field'] = params['field']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/agents/{agentLocator}/{field}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __serve_agents_with_http_info(self, **kwargs):  # noqa: E501
-        """serve_agents  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_agents_with_http_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param bool include_disconnected:
-        :param bool include_unauthorized:
-        :param str locator:
-        :param str fields:
-        :return: Agents
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['include_disconnected', 'include_unauthorized', 'locator', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method serve_agents" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'include_disconnected' in params:
-            query_params.append(('includeDisconnected', params['include_disconnected']))  # noqa: E501
-        if 'include_unauthorized' in params:
-            query_params.append(('includeUnauthorized', params['include_unauthorized']))  # noqa: E501
-        if 'locator' in params:
-            query_params.append(('locator', params['locator']))  # noqa: E501
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/agents', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Agents',  # noqa: E501
+            response_type='Compatibilities',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1000,8 +1173,9 @@ class AgentApi(object):
             collection_formats=collection_formats)
 
     def __set_agent_field_with_http_info(self, agent_locator, field, **kwargs):  # noqa: E501
-        """set_agent_field  # noqa: E501
+        """Update a field of the matching agent.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.__set_agent_field_with_http_info(agent_locator, field, async_req=True)
@@ -1064,6 +1238,14 @@ class AgentApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['text/plain'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -1084,8 +1266,9 @@ class AgentApi(object):
             collection_formats=collection_formats)
 
     def __set_agent_pool_with_http_info(self, agent_locator, **kwargs):  # noqa: E501
-        """set_agent_pool  # noqa: E501
+        """Assign the matching agent to the specified agent pool.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.__set_agent_pool_with_http_info(agent_locator, async_req=True)
@@ -1141,6 +1324,14 @@ class AgentApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -1161,8 +1352,9 @@ class AgentApi(object):
             collection_formats=collection_formats)
 
     def __set_authorized_info_with_http_info(self, agent_locator, **kwargs):  # noqa: E501
-        """set_authorized_info  # noqa: E501
+        """Update the authorization info of the matching agent.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.__set_authorized_info_with_http_info(agent_locator, async_req=True)
@@ -1218,6 +1410,14 @@ class AgentApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -1237,9 +1437,96 @@ class AgentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __set_enabled_info_with_http_info(self, agent_locator, **kwargs):  # noqa: E501
-        """set_enabled_info  # noqa: E501
+    def __set_build_configuration_run_policy_with_http_info(self, agent_locator, **kwargs):  # noqa: E501
+        """Update build configuration run policy of agent matching locator.  # noqa: E501
 
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__set_build_configuration_run_policy_with_http_info(agent_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str agent_locator: (required)
+        :param CompatibilityPolicy body:
+        :param str fields:
+        :return: CompatibilityPolicy
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['agent_locator', 'body', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method set_build_configuration_run_policy" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'agent_locator' is set
+        if ('agent_locator' not in params or
+                params['agent_locator'] is None):
+            raise ValueError("Missing the required parameter `agent_locator` when calling `set_build_configuration_run_policy`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'agent_locator' in params:
+            if isinstance(params['agent_locator'], TeamCityObject):
+                path_params['agentLocator'] = params['agent_locator'].locator_id
+            else:
+                path_params['agentLocator'] = params['agent_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/agents/{agentLocator}/compatibilityPolicy', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='CompatibilityPolicy',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __set_enabled_info_with_http_info(self, agent_locator, **kwargs):  # noqa: E501
+        """Update the enablement status of the matching agent.  # noqa: E501
+
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.__set_enabled_info_with_http_info(agent_locator, async_req=True)
@@ -1295,6 +1582,14 @@ class AgentApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 

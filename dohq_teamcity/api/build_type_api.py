@@ -24,18 +24,15 @@ from dohq_teamcity.models.agent_requirements import AgentRequirements  # noqa: F
 from dohq_teamcity.models.artifact_dependencies import ArtifactDependencies  # noqa: F401,E501
 from dohq_teamcity.models.artifact_dependency import ArtifactDependency  # noqa: F401,E501
 from dohq_teamcity.models.branches import Branches  # noqa: F401,E501
-from dohq_teamcity.models.build import Build  # noqa: F401,E501
 from dohq_teamcity.models.build_type import BuildType  # noqa: F401,E501
 from dohq_teamcity.models.build_types import BuildTypes  # noqa: F401,E501
 from dohq_teamcity.models.builds import Builds  # noqa: F401,E501
 from dohq_teamcity.models.feature import Feature  # noqa: F401,E501
 from dohq_teamcity.models.features import Features  # noqa: F401,E501
-from dohq_teamcity.models.file import File  # noqa: F401,E501
 from dohq_teamcity.models.files import Files  # noqa: F401,E501
 from dohq_teamcity.models.investigations import Investigations  # noqa: F401,E501
 from dohq_teamcity.models.items import Items  # noqa: F401,E501
 from dohq_teamcity.models.model_property import ModelProperty  # noqa: F401,E501
-from dohq_teamcity.models.new_build_type_description import NewBuildTypeDescription  # noqa: F401,E501
 from dohq_teamcity.models.properties import Properties  # noqa: F401,E501
 from dohq_teamcity.models.snapshot_dependencies import SnapshotDependencies  # noqa: F401,E501
 from dohq_teamcity.models.snapshot_dependency import SnapshotDependency  # noqa: F401,E501
@@ -45,10 +42,10 @@ from dohq_teamcity.models.tags import Tags  # noqa: F401,E501
 from dohq_teamcity.models.trigger import Trigger  # noqa: F401,E501
 from dohq_teamcity.models.triggers import Triggers  # noqa: F401,E501
 from dohq_teamcity.models.type import Type  # noqa: F401,E501
-from dohq_teamcity.models.vcs_labeling import VcsLabeling  # noqa: F401,E501
 from dohq_teamcity.models.vcs_root_entries import VcsRootEntries  # noqa: F401,E501
 from dohq_teamcity.models.vcs_root_entry import VcsRootEntry  # noqa: F401,E501
 from dohq_teamcity.models.vcs_root_instances import VcsRootInstances  # noqa: F401,E501
+from dohq_teamcity.models.file import file  # noqa: F401,E501
 
 
 class BuildTypeApi(object):
@@ -62,12 +59,13 @@ class BuildTypeApi(object):
     def __init__(self, api_client=None):
         self.api_client = api_client
 
-    def add_agent_requirement(self, bt_locator, **kwargs):  # noqa: E501
-        """add_agent_requirement  # noqa: E501
+    def add_agent_requirement_to_build_type(self, bt_locator, **kwargs):  # noqa: E501
+        """Add an agent requirement to the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_agent_requirement(bt_locator, async_req=True)
+        >>> thread = api.add_agent_requirement_to_build_type(bt_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -80,17 +78,18 @@ class BuildTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__add_agent_requirement_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return self.__add_agent_requirement_to_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__add_agent_requirement_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            (data) = self.__add_agent_requirement_to_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-    def add_artifact_dep(self, bt_locator, **kwargs):  # noqa: E501
-        """add_artifact_dep  # noqa: E501
+    def add_artifact_dependency_to_build_type(self, bt_locator, **kwargs):  # noqa: E501
+        """Add an artifact dependency to the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_artifact_dep(bt_locator, async_req=True)
+        >>> thread = api.add_artifact_dependency_to_build_type(bt_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -103,39 +102,18 @@ class BuildTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__add_artifact_dep_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return self.__add_artifact_dependency_to_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__add_artifact_dep_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            (data) = self.__add_artifact_dependency_to_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-    def add_build_type(self, **kwargs):  # noqa: E501
-        """add_build_type  # noqa: E501
+    def add_build_feature_to_build_type(self, bt_locator, **kwargs):  # noqa: E501
+        """Add build feature to the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_build_type(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param BuildType body:
-        :param str fields:
-        :return: BuildType
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__add_build_type_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__add_build_type_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def add_feature(self, bt_locator, **kwargs):  # noqa: E501
-        """add_feature  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_feature(bt_locator, async_req=True)
+        >>> thread = api.add_build_feature_to_build_type(bt_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -148,64 +126,18 @@ class BuildTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__add_feature_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return self.__add_build_feature_to_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__add_feature_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            (data) = self.__add_build_feature_to_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-    def add_feature_parameter(self, bt_locator, feature_id, parameter_name, **kwargs):  # noqa: E501
-        """add_feature_parameter  # noqa: E501
+    def add_build_step_to_build_type(self, bt_locator, **kwargs):  # noqa: E501
+        """Add a build step to the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_feature_parameter(bt_locator, feature_id, parameter_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str feature_id: (required)
-        :param str parameter_name: (required)
-        :param str body:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__add_feature_parameter_with_http_info(bt_locator, feature_id, parameter_name, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__add_feature_parameter_with_http_info(bt_locator, feature_id, parameter_name, **kwargs)  # noqa: E501
-            return data
-
-    def add_snapshot_dep(self, bt_locator, **kwargs):  # noqa: E501
-        """add_snapshot_dep  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_snapshot_dep(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str fields:
-        :param SnapshotDependency body:
-        :return: SnapshotDependency
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__add_snapshot_dep_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__add_snapshot_dep_with_http_info(bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def add_step(self, bt_locator, **kwargs):  # noqa: E501
-        """add_step  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_step(bt_locator, async_req=True)
+        >>> thread = api.add_build_step_to_build_type(bt_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -218,41 +150,18 @@ class BuildTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__add_step_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return self.__add_build_step_to_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__add_step_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            (data) = self.__add_build_step_to_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-    def add_step_parameter(self, bt_locator, step_id, parameter_name, **kwargs):  # noqa: E501
-        """add_step_parameter  # noqa: E501
+    def add_build_template(self, bt_locator, **kwargs):  # noqa: E501
+        """Add a build template to the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_step_parameter(bt_locator, step_id, parameter_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str step_id: (required)
-        :param str parameter_name: (required)
-        :param str body:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__add_step_parameter_with_http_info(bt_locator, step_id, parameter_name, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__add_step_parameter_with_http_info(bt_locator, step_id, parameter_name, **kwargs)  # noqa: E501
-            return data
-
-    def add_template(self, bt_locator, **kwargs):  # noqa: E501
-        """add_template  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_template(bt_locator, async_req=True)
+        >>> thread = api.add_build_template(bt_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -266,17 +175,92 @@ class BuildTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__add_template_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return self.__add_build_template_with_http_info(bt_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__add_template_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            (data) = self.__add_build_template_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-    def add_trigger(self, bt_locator, **kwargs):  # noqa: E501
-        """add_trigger  # noqa: E501
+    def add_parameter_to_build_feature(self, bt_locator, feature_id, parameter_name, **kwargs):  # noqa: E501
+        """Update build feature parameter for the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_trigger(bt_locator, async_req=True)
+        >>> thread = api.add_parameter_to_build_feature(bt_locator, feature_id, parameter_name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str feature_id: (required)
+        :param str parameter_name: (required)
+        :param str body:
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__add_parameter_to_build_feature_with_http_info(bt_locator, feature_id, parameter_name, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__add_parameter_to_build_feature_with_http_info(bt_locator, feature_id, parameter_name, **kwargs)  # noqa: E501
+            return data
+
+    def add_parameter_to_build_step(self, bt_locator, step_id, parameter_name, **kwargs):  # noqa: E501
+        """Add a parameter to a build step of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.add_parameter_to_build_step(bt_locator, step_id, parameter_name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str step_id: (required)
+        :param str parameter_name: (required)
+        :param str body:
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__add_parameter_to_build_step_with_http_info(bt_locator, step_id, parameter_name, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__add_parameter_to_build_step_with_http_info(bt_locator, step_id, parameter_name, **kwargs)  # noqa: E501
+            return data
+
+    def add_snapshot_dependency_to_build_type(self, bt_locator, **kwargs):  # noqa: E501
+        """Add a snapshot dependency to the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.add_snapshot_dependency_to_build_type(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :param SnapshotDependency body:
+        :return: SnapshotDependency
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__add_snapshot_dependency_to_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__add_snapshot_dependency_to_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def add_trigger_to_build_type(self, bt_locator, **kwargs):  # noqa: E501
+        """Add a trigger to the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.add_trigger_to_build_type(bt_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -289,17 +273,18 @@ class BuildTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__add_trigger_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return self.__add_trigger_to_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__add_trigger_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            (data) = self.__add_trigger_to_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-    def add_vcs_root_entry(self, bt_locator, **kwargs):  # noqa: E501
-        """add_vcs_root_entry  # noqa: E501
+    def add_vcs_root_to_build_type(self, bt_locator, **kwargs):  # noqa: E501
+        """Add a VCS root to the matching build.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_vcs_root_entry(bt_locator, async_req=True)
+        >>> thread = api.add_vcs_root_to_build_type(bt_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -312,134 +297,62 @@ class BuildTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__add_vcs_root_entry_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return self.__add_vcs_root_to_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__add_vcs_root_entry_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            (data) = self.__add_vcs_root_to_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-    def change_artifact_dep_setting(self, bt_locator, artifact_dep_locator, field_name, **kwargs):  # noqa: E501
-        """change_artifact_dep_setting  # noqa: E501
+    def create_build_parameter_of_build_type(self, bt_locator, **kwargs):  # noqa: E501
+        """Create a build parameter.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.change_artifact_dep_setting(bt_locator, artifact_dep_locator, field_name, async_req=True)
+        >>> thread = api.create_build_parameter_of_build_type(bt_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
         :param str bt_locator: (required)
-        :param str artifact_dep_locator: (required)
-        :param str field_name: (required)
-        :param str body:
-        :return: str
+        :param ModelProperty body:
+        :param str fields:
+        :return: ModelProperty
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__change_artifact_dep_setting_with_http_info(bt_locator, artifact_dep_locator, field_name, **kwargs)  # noqa: E501
+            return self.__create_build_parameter_of_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__change_artifact_dep_setting_with_http_info(bt_locator, artifact_dep_locator, field_name, **kwargs)  # noqa: E501
+            (data) = self.__create_build_parameter_of_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-    def change_feature_setting(self, bt_locator, feature_id, name, **kwargs):  # noqa: E501
-        """change_feature_setting  # noqa: E501
+    def create_build_type(self, **kwargs):  # noqa: E501
+        """Create a new build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.change_feature_setting(bt_locator, feature_id, name, async_req=True)
+        >>> thread = api.create_build_type(async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
-        :param str bt_locator: (required)
-        :param str feature_id: (required)
-        :param str name: (required)
-        :param str body:
-        :return: str
+        :param BuildType body:
+        :param str fields:
+        :return: BuildType
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__change_feature_setting_with_http_info(bt_locator, feature_id, name, **kwargs)  # noqa: E501
+            return self.__create_build_type_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.__change_feature_setting_with_http_info(bt_locator, feature_id, name, **kwargs)  # noqa: E501
-            return data
-
-    def change_requirement_setting(self, bt_locator, agent_requirement_locator, field_name, **kwargs):  # noqa: E501
-        """change_requirement_setting  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.change_requirement_setting(bt_locator, agent_requirement_locator, field_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str agent_requirement_locator: (required)
-        :param str field_name: (required)
-        :param str body:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__change_requirement_setting_with_http_info(bt_locator, agent_requirement_locator, field_name, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__change_requirement_setting_with_http_info(bt_locator, agent_requirement_locator, field_name, **kwargs)  # noqa: E501
-            return data
-
-    def change_step_setting(self, bt_locator, step_id, field_name, **kwargs):  # noqa: E501
-        """change_step_setting  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.change_step_setting(bt_locator, step_id, field_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str step_id: (required)
-        :param str field_name: (required)
-        :param str body:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__change_step_setting_with_http_info(bt_locator, step_id, field_name, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__change_step_setting_with_http_info(bt_locator, step_id, field_name, **kwargs)  # noqa: E501
-            return data
-
-    def change_trigger_setting(self, bt_locator, trigger_locator, field_name, **kwargs):  # noqa: E501
-        """change_trigger_setting  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.change_trigger_setting(bt_locator, trigger_locator, field_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str trigger_locator: (required)
-        :param str field_name: (required)
-        :param str body:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__change_trigger_setting_with_http_info(bt_locator, trigger_locator, field_name, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__change_trigger_setting_with_http_info(bt_locator, trigger_locator, field_name, **kwargs)  # noqa: E501
+            (data) = self.__create_build_type_with_http_info(**kwargs)  # noqa: E501
             return data
 
     def delete_agent_requirement(self, bt_locator, agent_requirement_locator, **kwargs):  # noqa: E501
-        """delete_agent_requirement  # noqa: E501
+        """Remove an agent requirement of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_agent_requirement(bt_locator, agent_requirement_locator, async_req=True)
@@ -459,54 +372,13 @@ class BuildTypeApi(object):
             (data) = self.__delete_agent_requirement_with_http_info(bt_locator, agent_requirement_locator, **kwargs)  # noqa: E501
             return data
 
-    def delete_all_parameters(self, bt_locator, **kwargs):  # noqa: E501
-        """delete_all_parameters  # noqa: E501
+    def delete_artifact_dependency(self, bt_locator, artifact_dep_locator, **kwargs):  # noqa: E501
+        """Remove an artifact dependency from the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_all_parameters(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__delete_all_parameters_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__delete_all_parameters_with_http_info(bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def delete_all_parameters_0(self, bt_locator, **kwargs):  # noqa: E501
-        """delete_all_parameters_0  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_all_parameters_0(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__delete_all_parameters_0_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__delete_all_parameters_0_with_http_info(bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def delete_artifact_dep(self, bt_locator, artifact_dep_locator, **kwargs):  # noqa: E501
-        """delete_artifact_dep  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_artifact_dep(bt_locator, artifact_dep_locator, async_req=True)
+        >>> thread = api.delete_artifact_dependency(bt_locator, artifact_dep_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -518,14 +390,108 @@ class BuildTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__delete_artifact_dep_with_http_info(bt_locator, artifact_dep_locator, **kwargs)  # noqa: E501
+            return self.__delete_artifact_dependency_with_http_info(bt_locator, artifact_dep_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__delete_artifact_dep_with_http_info(bt_locator, artifact_dep_locator, **kwargs)  # noqa: E501
+            (data) = self.__delete_artifact_dependency_with_http_info(bt_locator, artifact_dep_locator, **kwargs)  # noqa: E501
+            return data
+
+    def delete_build_parameter_of_build_type(self, name, bt_locator, **kwargs):  # noqa: E501
+        """Delete build parameter.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_build_parameter_of_build_type(name, bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str name: (required)
+        :param str bt_locator: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__delete_build_parameter_of_build_type_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__delete_build_parameter_of_build_type_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def delete_build_parameters_of_build_type(self, bt_locator, **kwargs):  # noqa: E501
+        """Delete all build parameters.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_build_parameters_of_build_type(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__delete_build_parameters_of_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__delete_build_parameters_of_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def delete_build_step(self, bt_locator, step_id, **kwargs):  # noqa: E501
+        """Delete a build step of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_build_step(bt_locator, step_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str step_id: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__delete_build_step_with_http_info(bt_locator, step_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__delete_build_step_with_http_info(bt_locator, step_id, **kwargs)  # noqa: E501
+            return data
+
+    def delete_build_step_parameters(self, bt_locator, step_id, **kwargs):  # noqa: E501
+        """Update a parameter of a build step of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_build_step_parameters(bt_locator, step_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str step_id: (required)
+        :param Properties body:
+        :param str fields:
+        :return: Properties
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__delete_build_step_parameters_with_http_info(bt_locator, step_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__delete_build_step_parameters_with_http_info(bt_locator, step_id, **kwargs)  # noqa: E501
             return data
 
     def delete_build_type(self, bt_locator, **kwargs):  # noqa: E501
-        """delete_build_type  # noqa: E501
+        """Delete build configuration matching the locator.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_build_type(bt_locator, async_req=True)
@@ -544,12 +510,13 @@ class BuildTypeApi(object):
             (data) = self.__delete_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-    def delete_feature(self, bt_locator, feature_id, **kwargs):  # noqa: E501
-        """delete_feature  # noqa: E501
+    def delete_feature_of_build_type(self, bt_locator, feature_id, **kwargs):  # noqa: E501
+        """Remove a build feature of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_feature(bt_locator, feature_id, async_req=True)
+        >>> thread = api.delete_feature_of_build_type(bt_locator, feature_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -561,61 +528,18 @@ class BuildTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__delete_feature_with_http_info(bt_locator, feature_id, **kwargs)  # noqa: E501
+            return self.__delete_feature_of_build_type_with_http_info(bt_locator, feature_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.__delete_feature_with_http_info(bt_locator, feature_id, **kwargs)  # noqa: E501
+            (data) = self.__delete_feature_of_build_type_with_http_info(bt_locator, feature_id, **kwargs)  # noqa: E501
             return data
 
-    def delete_parameter(self, name, bt_locator, **kwargs):  # noqa: E501
-        """delete_parameter  # noqa: E501
+    def delete_snapshot_dependency(self, bt_locator, snapshot_dep_locator, **kwargs):  # noqa: E501
+        """Delete a snapshot dependency of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_parameter(name, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str name: (required)
-        :param str bt_locator: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__delete_parameter_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__delete_parameter_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def delete_parameter_0(self, name, bt_locator, **kwargs):  # noqa: E501
-        """delete_parameter_0  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_parameter_0(name, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str name: (required)
-        :param str bt_locator: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__delete_parameter_0_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__delete_parameter_0_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def delete_snapshot_dep(self, bt_locator, snapshot_dep_locator, **kwargs):  # noqa: E501
-        """delete_snapshot_dep  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_snapshot_dep(bt_locator, snapshot_dep_locator, async_req=True)
+        >>> thread = api.delete_snapshot_dependency(bt_locator, snapshot_dep_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -627,36 +551,15 @@ class BuildTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__delete_snapshot_dep_with_http_info(bt_locator, snapshot_dep_locator, **kwargs)  # noqa: E501
+            return self.__delete_snapshot_dependency_with_http_info(bt_locator, snapshot_dep_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__delete_snapshot_dep_with_http_info(bt_locator, snapshot_dep_locator, **kwargs)  # noqa: E501
-            return data
-
-    def delete_step(self, bt_locator, step_id, **kwargs):  # noqa: E501
-        """delete_step  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_step(bt_locator, step_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str step_id: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__delete_step_with_http_info(bt_locator, step_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__delete_step_with_http_info(bt_locator, step_id, **kwargs)  # noqa: E501
+            (data) = self.__delete_snapshot_dependency_with_http_info(bt_locator, snapshot_dep_locator, **kwargs)  # noqa: E501
             return data
 
     def delete_trigger(self, bt_locator, trigger_locator, **kwargs):  # noqa: E501
-        """delete_trigger  # noqa: E501
+        """Delete a trigger of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_trigger(bt_locator, trigger_locator, async_req=True)
@@ -676,12 +579,13 @@ class BuildTypeApi(object):
             (data) = self.__delete_trigger_with_http_info(bt_locator, trigger_locator, **kwargs)  # noqa: E501
             return data
 
-    def delete_vcs_root_entry(self, bt_locator, vcs_root_locator, **kwargs):  # noqa: E501
-        """delete_vcs_root_entry  # noqa: E501
+    def delete_vcs_root_of_build_type(self, bt_locator, vcs_root_locator, **kwargs):  # noqa: E501
+        """Remove a VCS root of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_vcs_root_entry(bt_locator, vcs_root_locator, async_req=True)
+        >>> thread = api.delete_vcs_root_of_build_type(bt_locator, vcs_root_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -693,14 +597,39 @@ class BuildTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__delete_vcs_root_entry_with_http_info(bt_locator, vcs_root_locator, **kwargs)  # noqa: E501
+            return self.__delete_vcs_root_of_build_type_with_http_info(bt_locator, vcs_root_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__delete_vcs_root_entry_with_http_info(bt_locator, vcs_root_locator, **kwargs)  # noqa: E501
+            (data) = self.__delete_vcs_root_of_build_type_with_http_info(bt_locator, vcs_root_locator, **kwargs)  # noqa: E501
+            return data
+
+    def download_file_of_build_type(self, path, bt_locator, **kwargs):  # noqa: E501
+        """Download specific file.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.download_file_of_build_type(path, bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str path: (required)
+        :param str bt_locator: (required)
+        :param bool resolve_parameters:
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__download_file_of_build_type_with_http_info(path, bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__download_file_of_build_type_with_http_info(path, bt_locator, **kwargs)  # noqa: E501
             return data
 
     def get_agent_requirement(self, bt_locator, agent_requirement_locator, **kwargs):  # noqa: E501
-        """get_agent_requirement  # noqa: E501
+        """Get an agent requirement of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_agent_requirement(bt_locator, agent_requirement_locator, async_req=True)
@@ -721,671 +650,13 @@ class BuildTypeApi(object):
             (data) = self.__get_agent_requirement_with_http_info(bt_locator, agent_requirement_locator, **kwargs)  # noqa: E501
             return data
 
-    def get_agent_requirements(self, bt_locator, **kwargs):  # noqa: E501
-        """get_agent_requirements  # noqa: E501
+    def get_agent_requirement_parameter(self, bt_locator, agent_requirement_locator, field_name, **kwargs):  # noqa: E501
+        """Get a setting of an agent requirement of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_agent_requirements(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str fields:
-        :return: AgentRequirements
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_agent_requirements_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_agent_requirements_with_http_info(bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_aliases(self, bt_locator, field, **kwargs):  # noqa: E501
-        """get_aliases  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_aliases(bt_locator, field, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str field: (required)
-        :return: Items
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_aliases_with_http_info(bt_locator, field, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_aliases_with_http_info(bt_locator, field, **kwargs)  # noqa: E501
-            return data
-
-    def get_artifact_dep(self, bt_locator, artifact_dep_locator, **kwargs):  # noqa: E501
-        """get_artifact_dep  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_artifact_dep(bt_locator, artifact_dep_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str artifact_dep_locator: (required)
-        :param str fields:
-        :return: ArtifactDependency
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_artifact_dep_with_http_info(bt_locator, artifact_dep_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_artifact_dep_with_http_info(bt_locator, artifact_dep_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_artifact_dep_setting(self, bt_locator, artifact_dep_locator, field_name, **kwargs):  # noqa: E501
-        """get_artifact_dep_setting  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_artifact_dep_setting(bt_locator, artifact_dep_locator, field_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str artifact_dep_locator: (required)
-        :param str field_name: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_artifact_dep_setting_with_http_info(bt_locator, artifact_dep_locator, field_name, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_artifact_dep_setting_with_http_info(bt_locator, artifact_dep_locator, field_name, **kwargs)  # noqa: E501
-            return data
-
-    def get_artifact_deps(self, bt_locator, **kwargs):  # noqa: E501
-        """get_artifact_deps  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_artifact_deps(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str fields:
-        :return: ArtifactDependencies
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_artifact_deps_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_artifact_deps_with_http_info(bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_build_types(self, **kwargs):  # noqa: E501
-        """get_build_types  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_build_types(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str locator:
-        :param str fields:
-        :return: BuildTypes
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_build_types_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_build_types_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def get_children(self, path, bt_locator, **kwargs):  # noqa: E501
-        """get_children  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_children(path, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str path: (required)
-        :param str bt_locator: (required)
-        :param str base_path:
-        :param str locator:
-        :param str fields:
-        :param bool resolve_parameters:
-        :return: Files
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_children_with_http_info(path, bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_children_with_http_info(path, bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_children_alias(self, path, bt_locator, **kwargs):  # noqa: E501
-        """get_children_alias  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_children_alias(path, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str path: (required)
-        :param str bt_locator: (required)
-        :param str base_path:
-        :param str locator:
-        :param str fields:
-        :param bool resolve_parameters:
-        :return: Files
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_children_alias_with_http_info(path, bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_children_alias_with_http_info(path, bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_content(self, path, bt_locator, **kwargs):  # noqa: E501
-        """get_content  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_content(path, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str path: (required)
-        :param str bt_locator: (required)
-        :param str response_builder:
-        :param bool resolve_parameters:
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_content_with_http_info(path, bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_content_with_http_info(path, bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_content_alias(self, path, bt_locator, **kwargs):  # noqa: E501
-        """get_content_alias  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_content_alias(path, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str path: (required)
-        :param str bt_locator: (required)
-        :param bool resolve_parameters:
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_content_alias_with_http_info(path, bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_content_alias_with_http_info(path, bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_current_vcs_instances(self, bt_locator, **kwargs):  # noqa: E501
-        """get_current_vcs_instances  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_current_vcs_instances(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str fields:
-        :return: VcsRootInstances
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_current_vcs_instances_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_current_vcs_instances_with_http_info(bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_current_vcs_instances_obsolete(self, bt_locator, **kwargs):  # noqa: E501
-        """get_current_vcs_instances_obsolete  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_current_vcs_instances_obsolete(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str fields:
-        :return: VcsRootInstances
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_current_vcs_instances_obsolete_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_current_vcs_instances_obsolete_with_http_info(bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_example_new_project_description(self, bt_locator, **kwargs):  # noqa: E501
-        """get_example_new_project_description  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_example_new_project_description(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :return: NewBuildTypeDescription
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_example_new_project_description_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_example_new_project_description_with_http_info(bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_example_new_project_description_compatibility_version1(self, bt_locator, **kwargs):  # noqa: E501
-        """get_example_new_project_description_compatibility_version1  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_example_new_project_description_compatibility_version1(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :return: NewBuildTypeDescription
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_example_new_project_description_compatibility_version1_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_example_new_project_description_compatibility_version1_with_http_info(bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_feature(self, bt_locator, feature_id, **kwargs):  # noqa: E501
-        """get_feature  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_feature(bt_locator, feature_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str feature_id: (required)
-        :param str fields:
-        :return: Feature
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_feature_with_http_info(bt_locator, feature_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_feature_with_http_info(bt_locator, feature_id, **kwargs)  # noqa: E501
-            return data
-
-    def get_feature_parameter(self, bt_locator, feature_id, parameter_name, **kwargs):  # noqa: E501
-        """get_feature_parameter  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_feature_parameter(bt_locator, feature_id, parameter_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str feature_id: (required)
-        :param str parameter_name: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_feature_parameter_with_http_info(bt_locator, feature_id, parameter_name, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_feature_parameter_with_http_info(bt_locator, feature_id, parameter_name, **kwargs)  # noqa: E501
-            return data
-
-    def get_feature_parameters(self, bt_locator, feature_id, **kwargs):  # noqa: E501
-        """get_feature_parameters  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_feature_parameters(bt_locator, feature_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str feature_id: (required)
-        :param str fields:
-        :return: Properties
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_feature_parameters_with_http_info(bt_locator, feature_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_feature_parameters_with_http_info(bt_locator, feature_id, **kwargs)  # noqa: E501
-            return data
-
-    def get_feature_setting(self, bt_locator, feature_id, name, **kwargs):  # noqa: E501
-        """get_feature_setting  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_feature_setting(bt_locator, feature_id, name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str feature_id: (required)
-        :param str name: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_feature_setting_with_http_info(bt_locator, feature_id, name, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_feature_setting_with_http_info(bt_locator, feature_id, name, **kwargs)  # noqa: E501
-            return data
-
-    def get_features(self, bt_locator, **kwargs):  # noqa: E501
-        """get_features  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_features(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str fields:
-        :return: Features
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_features_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_features_with_http_info(bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_investigations(self, bt_locator, **kwargs):  # noqa: E501
-        """get_investigations  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_investigations(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str fields:
-        :return: Investigations
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_investigations_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_investigations_with_http_info(bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_metadata(self, path, bt_locator, **kwargs):  # noqa: E501
-        """get_metadata  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_metadata(path, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str path: (required)
-        :param str bt_locator: (required)
-        :param str fields:
-        :param bool resolve_parameters:
-        :return: File
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_metadata_with_http_info(path, bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_metadata_with_http_info(path, bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_parameter(self, name, bt_locator, **kwargs):  # noqa: E501
-        """get_parameter  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_parameter(name, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str name: (required)
-        :param str bt_locator: (required)
-        :param str fields:
-        :return: ModelProperty
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_parameter_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_parameter_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_parameter_0(self, name, bt_locator, **kwargs):  # noqa: E501
-        """get_parameter_0  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_parameter_0(name, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str name: (required)
-        :param str bt_locator: (required)
-        :param str fields:
-        :return: ModelProperty
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_parameter_0_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_parameter_0_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_parameter_type(self, name, bt_locator, **kwargs):  # noqa: E501
-        """get_parameter_type  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_parameter_type(name, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str name: (required)
-        :param str bt_locator: (required)
-        :return: Type
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_parameter_type_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_parameter_type_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_parameter_type_raw_value(self, name, bt_locator, **kwargs):  # noqa: E501
-        """get_parameter_type_raw_value  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_parameter_type_raw_value(name, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str name: (required)
-        :param str bt_locator: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_parameter_type_raw_value_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_parameter_type_raw_value_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_parameter_value_long(self, name, bt_locator, **kwargs):  # noqa: E501
-        """get_parameter_value_long  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_parameter_value_long(name, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str name: (required)
-        :param str bt_locator: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_parameter_value_long_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_parameter_value_long_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_parameter_value_long_0(self, name, bt_locator, **kwargs):  # noqa: E501
-        """get_parameter_value_long_0  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_parameter_value_long_0(name, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str name: (required)
-        :param str bt_locator: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_parameter_value_long_0_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_parameter_value_long_0_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_parameters(self, bt_locator, **kwargs):  # noqa: E501
-        """get_parameters  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_parameters(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str locator:
-        :param str fields:
-        :return: Properties
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_parameters_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_parameters_with_http_info(bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_parameters_0(self, bt_locator, **kwargs):  # noqa: E501
-        """get_parameters_0  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_parameters_0(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str locator:
-        :param str fields:
-        :return: Properties
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_parameters_0_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_parameters_0_with_http_info(bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_requirement_setting(self, bt_locator, agent_requirement_locator, field_name, **kwargs):  # noqa: E501
-        """get_requirement_setting  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_requirement_setting(bt_locator, agent_requirement_locator, field_name, async_req=True)
+        >>> thread = api.get_agent_requirement_parameter(bt_locator, agent_requirement_locator, field_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -1398,17 +669,842 @@ class BuildTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__get_requirement_setting_with_http_info(bt_locator, agent_requirement_locator, field_name, **kwargs)  # noqa: E501
+            return self.__get_agent_requirement_parameter_with_http_info(bt_locator, agent_requirement_locator, field_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.__get_requirement_setting_with_http_info(bt_locator, agent_requirement_locator, field_name, **kwargs)  # noqa: E501
+            (data) = self.__get_agent_requirement_parameter_with_http_info(bt_locator, agent_requirement_locator, field_name, **kwargs)  # noqa: E501
             return data
 
-    def get_root(self, bt_locator, **kwargs):  # noqa: E501
-        """get_root  # noqa: E501
+    def get_aliases(self, bt_locator, **kwargs):  # noqa: E501
+        """Get external IDs of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_root(bt_locator, async_req=True)
+        >>> thread = api.get_aliases(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str field:
+        :return: Items
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_aliases_with_http_info(bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_aliases_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_all_agent_requirements(self, bt_locator, **kwargs):  # noqa: E501
+        """Get all agent requirements of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_all_agent_requirements(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :return: AgentRequirements
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_all_agent_requirements_with_http_info(bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_all_agent_requirements_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_all_artifact_dependencies(self, bt_locator, **kwargs):  # noqa: E501
+        """Get all artifact dependencies of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_all_artifact_dependencies(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :return: ArtifactDependencies
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_all_artifact_dependencies_with_http_info(bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_all_artifact_dependencies_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_all_branches_of_build_type(self, bt_locator, **kwargs):  # noqa: E501
+        """Get all branches of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_all_branches_of_build_type(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str locator:
+        :param str fields:
+        :return: Branches
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_all_branches_of_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_all_branches_of_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_all_build_feature_parameters(self, bt_locator, feature_id, **kwargs):  # noqa: E501
+        """Get all parameters of a build feature of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_all_build_feature_parameters(bt_locator, feature_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str feature_id: (required)
+        :param str fields:
+        :return: Properties
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_all_build_feature_parameters_with_http_info(bt_locator, feature_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_all_build_feature_parameters_with_http_info(bt_locator, feature_id, **kwargs)  # noqa: E501
+            return data
+
+    def get_all_build_features(self, bt_locator, **kwargs):  # noqa: E501
+        """Get all build features of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_all_build_features(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :return: Features
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_all_build_features_with_http_info(bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_all_build_features_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_all_build_step_parameters(self, bt_locator, step_id, **kwargs):  # noqa: E501
+        """Get all parameters of a build step of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_all_build_step_parameters(bt_locator, step_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str step_id: (required)
+        :param str fields:
+        :return: Properties
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_all_build_step_parameters_with_http_info(bt_locator, step_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_all_build_step_parameters_with_http_info(bt_locator, step_id, **kwargs)  # noqa: E501
+            return data
+
+    def get_all_build_steps(self, bt_locator, **kwargs):  # noqa: E501
+        """Get all build steps of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_all_build_steps(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :return: Steps
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_all_build_steps_with_http_info(bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_all_build_steps_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_all_build_templates(self, bt_locator, **kwargs):  # noqa: E501
+        """Get all build templates of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_all_build_templates(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :return: BuildTypes
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_all_build_templates_with_http_info(bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_all_build_templates_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_all_build_types(self, **kwargs):  # noqa: E501
+        """Get all build configurations.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_all_build_types(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str locator:
+        :param str fields:
+        :return: BuildTypes
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_all_build_types_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_all_build_types_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def get_all_investigations_of_build_type(self, bt_locator, **kwargs):  # noqa: E501
+        """Get all investigations of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_all_investigations_of_build_type(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :return: Investigations
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_all_investigations_of_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_all_investigations_of_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_all_snapshot_dependencies(self, bt_locator, **kwargs):  # noqa: E501
+        """Get all snapshot dependencies of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_all_snapshot_dependencies(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :return: SnapshotDependencies
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_all_snapshot_dependencies_with_http_info(bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_all_snapshot_dependencies_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_all_triggers(self, bt_locator, **kwargs):  # noqa: E501
+        """Get all triggers of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_all_triggers(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :return: Triggers
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_all_triggers_with_http_info(bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_all_triggers_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_all_vcs_roots_of_build_type(self, bt_locator, **kwargs):  # noqa: E501
+        """Get all VCS roots of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_all_vcs_roots_of_build_type(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :return: VcsRootEntries
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_all_vcs_roots_of_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_all_vcs_roots_of_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_artifact_dependency(self, bt_locator, artifact_dep_locator, **kwargs):  # noqa: E501
+        """Get an artifact dependency of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_artifact_dependency(bt_locator, artifact_dep_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str artifact_dep_locator: (required)
+        :param str fields:
+        :return: ArtifactDependency
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_artifact_dependency_with_http_info(bt_locator, artifact_dep_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_artifact_dependency_with_http_info(bt_locator, artifact_dep_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_artifact_dependency_parameter(self, bt_locator, artifact_dep_locator, field_name, **kwargs):  # noqa: E501
+        """Get a parameter of an artifact dependency of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_artifact_dependency_parameter(bt_locator, artifact_dep_locator, field_name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str artifact_dep_locator: (required)
+        :param str field_name: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_artifact_dependency_parameter_with_http_info(bt_locator, artifact_dep_locator, field_name, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_artifact_dependency_parameter_with_http_info(bt_locator, artifact_dep_locator, field_name, **kwargs)  # noqa: E501
+            return data
+
+    def get_build_feature(self, bt_locator, feature_id, **kwargs):  # noqa: E501
+        """Get a build feature of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_build_feature(bt_locator, feature_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str feature_id: (required)
+        :param str fields:
+        :return: Feature
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_build_feature_with_http_info(bt_locator, feature_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_build_feature_with_http_info(bt_locator, feature_id, **kwargs)  # noqa: E501
+            return data
+
+    def get_build_feature_parameter(self, bt_locator, feature_id, parameter_name, **kwargs):  # noqa: E501
+        """Get a parameter of a build feature of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_build_feature_parameter(bt_locator, feature_id, parameter_name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str feature_id: (required)
+        :param str parameter_name: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_build_feature_parameter_with_http_info(bt_locator, feature_id, parameter_name, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_build_feature_parameter_with_http_info(bt_locator, feature_id, parameter_name, **kwargs)  # noqa: E501
+            return data
+
+    def get_build_feature_setting(self, bt_locator, feature_id, name, **kwargs):  # noqa: E501
+        """Get the setting of a build feature of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_build_feature_setting(bt_locator, feature_id, name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str feature_id: (required)
+        :param str name: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_build_feature_setting_with_http_info(bt_locator, feature_id, name, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_build_feature_setting_with_http_info(bt_locator, feature_id, name, **kwargs)  # noqa: E501
+            return data
+
+    def get_build_parameter_of_build_type(self, name, bt_locator, **kwargs):  # noqa: E501
+        """Get build parameter.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_build_parameter_of_build_type(name, bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str name: (required)
+        :param str bt_locator: (required)
+        :param str fields:
+        :return: ModelProperty
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_build_parameter_of_build_type_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_build_parameter_of_build_type_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_build_parameter_specification_of_build_type(self, name, bt_locator, **kwargs):  # noqa: E501
+        """Get build parameter specification.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_build_parameter_specification_of_build_type(name, bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str name: (required)
+        :param str bt_locator: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_build_parameter_specification_of_build_type_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_build_parameter_specification_of_build_type_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_build_parameter_type_of_build_type(self, name, bt_locator, **kwargs):  # noqa: E501
+        """Get type of build parameter.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_build_parameter_type_of_build_type(name, bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str name: (required)
+        :param str bt_locator: (required)
+        :return: Type
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_build_parameter_type_of_build_type_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_build_parameter_type_of_build_type_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_build_parameter_value_of_build_type(self, name, bt_locator, **kwargs):  # noqa: E501
+        """Get value of build parameter.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_build_parameter_value_of_build_type(name, bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str name: (required)
+        :param str bt_locator: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_build_parameter_value_of_build_type_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_build_parameter_value_of_build_type_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_build_parameters_of_build_type(self, bt_locator, **kwargs):  # noqa: E501
+        """Get build parameters.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_build_parameters_of_build_type(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str locator:
+        :param str fields:
+        :return: Properties
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_build_parameters_of_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_build_parameters_of_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_build_step(self, bt_locator, step_id, **kwargs):  # noqa: E501
+        """Get a build step of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_build_step(bt_locator, step_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str step_id: (required)
+        :param str fields:
+        :return: Step
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_build_step_with_http_info(bt_locator, step_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_build_step_with_http_info(bt_locator, step_id, **kwargs)  # noqa: E501
+            return data
+
+    def get_build_step_parameter(self, bt_locator, step_id, parameter_name, **kwargs):  # noqa: E501
+        """Get a parameter of a build step of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_build_step_parameter(bt_locator, step_id, parameter_name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str step_id: (required)
+        :param str parameter_name: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_build_step_parameter_with_http_info(bt_locator, step_id, parameter_name, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_build_step_parameter_with_http_info(bt_locator, step_id, parameter_name, **kwargs)  # noqa: E501
+            return data
+
+    def get_build_step_setting(self, bt_locator, step_id, field_name, **kwargs):  # noqa: E501
+        """Get the setting of a build step of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_build_step_setting(bt_locator, step_id, field_name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str step_id: (required)
+        :param str field_name: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_build_step_setting_with_http_info(bt_locator, step_id, field_name, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_build_step_setting_with_http_info(bt_locator, step_id, field_name, **kwargs)  # noqa: E501
+            return data
+
+    def get_build_template(self, bt_locator, template_locator, **kwargs):  # noqa: E501
+        """Get a template of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_build_template(bt_locator, template_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str template_locator: (required)
+        :param str fields:
+        :return: BuildType
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_build_template_with_http_info(bt_locator, template_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_build_template_with_http_info(bt_locator, template_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_build_type(self, bt_locator, **kwargs):  # noqa: E501
+        """Get build configuration matching the locator.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_build_type(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :return: BuildType
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_build_type_build_tags(self, bt_locator, **kwargs):  # noqa: E501
+        """Get tags of builds of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_build_type_build_tags(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str field:
+        :return: Tags
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_build_type_build_tags_with_http_info(bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_build_type_build_tags_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_build_type_builds(self, bt_locator, **kwargs):  # noqa: E501
+        """Get builds of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_build_type_builds(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :return: Builds
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_build_type_builds_with_http_info(bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_build_type_builds_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_build_type_field(self, bt_locator, field, **kwargs):  # noqa: E501
+        """Get a field of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_build_type_field(bt_locator, field, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str field: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_build_type_field_with_http_info(bt_locator, field, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_build_type_field_with_http_info(bt_locator, field, **kwargs)  # noqa: E501
+            return data
+
+    def get_build_type_settings_file(self, bt_locator, **kwargs):  # noqa: E501
+        """Get the settings file of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_build_type_settings_file(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_build_type_settings_file_with_http_info(bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_build_type_settings_file_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_file_metadata_of_build_type(self, path, bt_locator, **kwargs):  # noqa: E501
+        """Get metadata of specific file.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_file_metadata_of_build_type(path, bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str path: (required)
+        :param str bt_locator: (required)
+        :param str fields:
+        :param bool resolve_parameters:
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_file_metadata_of_build_type_with_http_info(path, bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_file_metadata_of_build_type_with_http_info(path, bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_files_list_for_subpath_of_build_type(self, path, bt_locator, **kwargs):  # noqa: E501
+        """List files under this path.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_files_list_for_subpath_of_build_type(path, bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str path: (required)
+        :param str bt_locator: (required)
+        :param str base_path:
+        :param str locator:
+        :param str fields:
+        :param bool resolve_parameters:
+        :return: Files
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_files_list_for_subpath_of_build_type_with_http_info(path, bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_files_list_for_subpath_of_build_type_with_http_info(path, bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_files_list_of_build_type(self, bt_locator, **kwargs):  # noqa: E501
+        """List all files.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_files_list_of_build_type(bt_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -1423,38 +1519,18 @@ class BuildTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__get_root_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return self.__get_files_list_of_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__get_root_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            (data) = self.__get_files_list_of_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-    def get_settings_file(self, bt_locator, **kwargs):  # noqa: E501
-        """get_settings_file  # noqa: E501
+    def get_snapshot_dependency(self, bt_locator, snapshot_dep_locator, **kwargs):  # noqa: E501
+        """Get a snapshot dependency of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_settings_file(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_settings_file_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_settings_file_with_http_info(bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_snapshot_dep(self, bt_locator, snapshot_dep_locator, **kwargs):  # noqa: E501
-        """get_snapshot_dep  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_snapshot_dep(bt_locator, snapshot_dep_locator, async_req=True)
+        >>> thread = api.get_snapshot_dependency(bt_locator, snapshot_dep_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -1467,195 +1543,15 @@ class BuildTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__get_snapshot_dep_with_http_info(bt_locator, snapshot_dep_locator, **kwargs)  # noqa: E501
+            return self.__get_snapshot_dependency_with_http_info(bt_locator, snapshot_dep_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__get_snapshot_dep_with_http_info(bt_locator, snapshot_dep_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_snapshot_deps(self, bt_locator, **kwargs):  # noqa: E501
-        """get_snapshot_deps  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_snapshot_deps(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str fields:
-        :return: SnapshotDependencies
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_snapshot_deps_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_snapshot_deps_with_http_info(bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_step(self, bt_locator, step_id, **kwargs):  # noqa: E501
-        """get_step  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_step(bt_locator, step_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str step_id: (required)
-        :param str fields:
-        :return: Step
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_step_with_http_info(bt_locator, step_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_step_with_http_info(bt_locator, step_id, **kwargs)  # noqa: E501
-            return data
-
-    def get_step_parameter(self, bt_locator, step_id, parameter_name, **kwargs):  # noqa: E501
-        """get_step_parameter  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_step_parameter(bt_locator, step_id, parameter_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str step_id: (required)
-        :param str parameter_name: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_step_parameter_with_http_info(bt_locator, step_id, parameter_name, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_step_parameter_with_http_info(bt_locator, step_id, parameter_name, **kwargs)  # noqa: E501
-            return data
-
-    def get_step_parameters(self, bt_locator, step_id, **kwargs):  # noqa: E501
-        """get_step_parameters  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_step_parameters(bt_locator, step_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str step_id: (required)
-        :param str fields:
-        :return: Properties
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_step_parameters_with_http_info(bt_locator, step_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_step_parameters_with_http_info(bt_locator, step_id, **kwargs)  # noqa: E501
-            return data
-
-    def get_step_setting(self, bt_locator, step_id, field_name, **kwargs):  # noqa: E501
-        """get_step_setting  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_step_setting(bt_locator, step_id, field_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str step_id: (required)
-        :param str field_name: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_step_setting_with_http_info(bt_locator, step_id, field_name, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_step_setting_with_http_info(bt_locator, step_id, field_name, **kwargs)  # noqa: E501
-            return data
-
-    def get_steps(self, bt_locator, **kwargs):  # noqa: E501
-        """get_steps  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_steps(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str fields:
-        :return: Steps
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_steps_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_steps_with_http_info(bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_template(self, bt_locator, template_locator, **kwargs):  # noqa: E501
-        """get_template  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_template(bt_locator, template_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str template_locator: (required)
-        :param str fields:
-        :return: BuildType
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_template_with_http_info(bt_locator, template_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_template_with_http_info(bt_locator, template_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_templates(self, bt_locator, **kwargs):  # noqa: E501
-        """get_templates  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_templates(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str fields:
-        :return: BuildTypes
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_templates_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_templates_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            (data) = self.__get_snapshot_dependency_with_http_info(bt_locator, snapshot_dep_locator, **kwargs)  # noqa: E501
             return data
 
     def get_trigger(self, bt_locator, trigger_locator, **kwargs):  # noqa: E501
-        """get_trigger  # noqa: E501
+        """Get a trigger of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_trigger(bt_locator, trigger_locator, async_req=True)
@@ -1676,12 +1572,13 @@ class BuildTypeApi(object):
             (data) = self.__get_trigger_with_http_info(bt_locator, trigger_locator, **kwargs)  # noqa: E501
             return data
 
-    def get_trigger_setting(self, bt_locator, trigger_locator, field_name, **kwargs):  # noqa: E501
-        """get_trigger_setting  # noqa: E501
+    def get_trigger_parameter(self, bt_locator, trigger_locator, field_name, **kwargs):  # noqa: E501
+        """Get a parameter of a trigger of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_trigger_setting(bt_locator, trigger_locator, field_name, async_req=True)
+        >>> thread = api.get_trigger_parameter(bt_locator, trigger_locator, field_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -1694,82 +1591,18 @@ class BuildTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__get_trigger_setting_with_http_info(bt_locator, trigger_locator, field_name, **kwargs)  # noqa: E501
+            return self.__get_trigger_parameter_with_http_info(bt_locator, trigger_locator, field_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.__get_trigger_setting_with_http_info(bt_locator, trigger_locator, field_name, **kwargs)  # noqa: E501
+            (data) = self.__get_trigger_parameter_with_http_info(bt_locator, trigger_locator, field_name, **kwargs)  # noqa: E501
             return data
 
-    def get_triggers(self, bt_locator, **kwargs):  # noqa: E501
-        """get_triggers  # noqa: E501
+    def get_vcs_root(self, bt_locator, vcs_root_locator, **kwargs):  # noqa: E501
+        """Get a VCS root of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_triggers(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str fields:
-        :return: Triggers
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_triggers_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_triggers_with_http_info(bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_vcs_labeling_options(self, bt_locator, **kwargs):  # noqa: E501
-        """get_vcs_labeling_options  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_vcs_labeling_options(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :return: VcsLabeling
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_vcs_labeling_options_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_vcs_labeling_options_with_http_info(bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_vcs_root_entries(self, bt_locator, **kwargs):  # noqa: E501
-        """get_vcs_root_entries  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_vcs_root_entries(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str fields:
-        :return: VcsRootEntries
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_vcs_root_entries_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_vcs_root_entries_with_http_info(bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_vcs_root_entry(self, bt_locator, vcs_root_locator, **kwargs):  # noqa: E501
-        """get_vcs_root_entry  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_vcs_root_entry(bt_locator, vcs_root_locator, async_req=True)
+        >>> thread = api.get_vcs_root(bt_locator, vcs_root_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -1782,17 +1615,18 @@ class BuildTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__get_vcs_root_entry_with_http_info(bt_locator, vcs_root_locator, **kwargs)  # noqa: E501
+            return self.__get_vcs_root_with_http_info(bt_locator, vcs_root_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__get_vcs_root_entry_with_http_info(bt_locator, vcs_root_locator, **kwargs)  # noqa: E501
+            (data) = self.__get_vcs_root_with_http_info(bt_locator, vcs_root_locator, **kwargs)  # noqa: E501
             return data
 
-    def get_vcs_root_entry_checkout_rules(self, bt_locator, vcs_root_locator, **kwargs):  # noqa: E501
-        """get_vcs_root_entry_checkout_rules  # noqa: E501
+    def get_vcs_root_checkout_rules(self, bt_locator, vcs_root_locator, **kwargs):  # noqa: E501
+        """Get checkout rules of a VCS root of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_vcs_root_entry_checkout_rules(bt_locator, vcs_root_locator, async_req=True)
+        >>> thread = api.get_vcs_root_checkout_rules(bt_locator, vcs_root_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -1804,17 +1638,41 @@ class BuildTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__get_vcs_root_entry_checkout_rules_with_http_info(bt_locator, vcs_root_locator, **kwargs)  # noqa: E501
+            return self.__get_vcs_root_checkout_rules_with_http_info(bt_locator, vcs_root_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__get_vcs_root_entry_checkout_rules_with_http_info(bt_locator, vcs_root_locator, **kwargs)  # noqa: E501
+            (data) = self.__get_vcs_root_checkout_rules_with_http_info(bt_locator, vcs_root_locator, **kwargs)  # noqa: E501
             return data
 
-    def get_zipped(self, path, bt_locator, **kwargs):  # noqa: E501
-        """get_zipped  # noqa: E501
+    def get_vcs_root_instances_of_build_type(self, bt_locator, **kwargs):  # noqa: E501
+        """Get all VCS root instances of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_zipped(path, bt_locator, async_req=True)
+        >>> thread = api.get_vcs_root_instances_of_build_type(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :return: VcsRootInstances
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_vcs_root_instances_of_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_vcs_root_instances_of_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_zipped_file_of_build_type(self, path, bt_locator, **kwargs):  # noqa: E501
+        """Get specific file zipped.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_zipped_file_of_build_type(path, bt_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -1830,14 +1688,15 @@ class BuildTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__get_zipped_with_http_info(path, bt_locator, **kwargs)  # noqa: E501
+            return self.__get_zipped_file_of_build_type_with_http_info(path, bt_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__get_zipped_with_http_info(path, bt_locator, **kwargs)  # noqa: E501
+            (data) = self.__get_zipped_file_of_build_type_with_http_info(path, bt_locator, **kwargs)  # noqa: E501
             return data
 
     def remove_all_templates(self, bt_locator, **kwargs):  # noqa: E501
-        """remove_all_templates  # noqa: E501
+        """Detach all templates from the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.remove_all_templates(bt_locator, async_req=True)
@@ -1858,8 +1717,9 @@ class BuildTypeApi(object):
             return data
 
     def remove_template(self, bt_locator, template_locator, **kwargs):  # noqa: E501
-        """remove_template  # noqa: E501
+        """Detach a template from the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.remove_template(bt_locator, template_locator, async_req=True)
@@ -1881,8 +1741,9 @@ class BuildTypeApi(object):
             return data
 
     def replace_agent_requirement(self, bt_locator, agent_requirement_locator, **kwargs):  # noqa: E501
-        """replace_agent_requirement  # noqa: E501
+        """Update an agent requirement of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.replace_agent_requirement(bt_locator, agent_requirement_locator, async_req=True)
@@ -1904,12 +1765,13 @@ class BuildTypeApi(object):
             (data) = self.__replace_agent_requirement_with_http_info(bt_locator, agent_requirement_locator, **kwargs)  # noqa: E501
             return data
 
-    def replace_agent_requirements(self, bt_locator, **kwargs):  # noqa: E501
-        """replace_agent_requirements  # noqa: E501
+    def replace_all_agent_requirements(self, bt_locator, **kwargs):  # noqa: E501
+        """Update all agent requirements of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.replace_agent_requirements(bt_locator, async_req=True)
+        >>> thread = api.replace_all_agent_requirements(bt_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -1922,17 +1784,162 @@ class BuildTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__replace_agent_requirements_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return self.__replace_all_agent_requirements_with_http_info(bt_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__replace_agent_requirements_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            (data) = self.__replace_all_agent_requirements_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-    def replace_artifact_dep(self, bt_locator, artifact_dep_locator, **kwargs):  # noqa: E501
-        """replace_artifact_dep  # noqa: E501
+    def replace_all_artifact_dependencies(self, bt_locator, **kwargs):  # noqa: E501
+        """Update all artifact dependencies of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.replace_artifact_dep(bt_locator, artifact_dep_locator, async_req=True)
+        >>> thread = api.replace_all_artifact_dependencies(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :param ArtifactDependencies body:
+        :return: ArtifactDependencies
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__replace_all_artifact_dependencies_with_http_info(bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__replace_all_artifact_dependencies_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def replace_all_build_features(self, bt_locator, **kwargs):  # noqa: E501
+        """Update all build features of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.replace_all_build_features(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :param Features body:
+        :return: Features
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__replace_all_build_features_with_http_info(bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__replace_all_build_features_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def replace_all_build_steps(self, bt_locator, **kwargs):  # noqa: E501
+        """Update all build steps of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.replace_all_build_steps(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :param Steps body:
+        :return: Steps
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__replace_all_build_steps_with_http_info(bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__replace_all_build_steps_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def replace_all_snapshot_dependencies(self, bt_locator, **kwargs):  # noqa: E501
+        """Update all snapshot dependencies of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.replace_all_snapshot_dependencies(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :param SnapshotDependencies body:
+        :return: SnapshotDependencies
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__replace_all_snapshot_dependencies_with_http_info(bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__replace_all_snapshot_dependencies_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def replace_all_triggers(self, bt_locator, **kwargs):  # noqa: E501
+        """Update all triggers of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.replace_all_triggers(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :param Triggers body:
+        :return: Triggers
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__replace_all_triggers_with_http_info(bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__replace_all_triggers_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def replace_all_vcs_roots(self, bt_locator, **kwargs):  # noqa: E501
+        """Update all VCS roots of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.replace_all_vcs_roots(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param VcsRootEntries body:
+        :param str fields:
+        :return: VcsRootEntries
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__replace_all_vcs_roots_with_http_info(bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__replace_all_vcs_roots_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def replace_artifact_dependency(self, bt_locator, artifact_dep_locator, **kwargs):  # noqa: E501
+        """Update an artifact dependency of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.replace_artifact_dependency(bt_locator, artifact_dep_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -1946,40 +1953,18 @@ class BuildTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__replace_artifact_dep_with_http_info(bt_locator, artifact_dep_locator, **kwargs)  # noqa: E501
+            return self.__replace_artifact_dependency_with_http_info(bt_locator, artifact_dep_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__replace_artifact_dep_with_http_info(bt_locator, artifact_dep_locator, **kwargs)  # noqa: E501
+            (data) = self.__replace_artifact_dependency_with_http_info(bt_locator, artifact_dep_locator, **kwargs)  # noqa: E501
             return data
 
-    def replace_artifact_deps(self, bt_locator, **kwargs):  # noqa: E501
-        """replace_artifact_deps  # noqa: E501
+    def replace_build_feature(self, bt_locator, feature_id, **kwargs):  # noqa: E501
+        """Update a build feature of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.replace_artifact_deps(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str fields:
-        :param ArtifactDependencies body:
-        :return: ArtifactDependencies
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__replace_artifact_deps_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__replace_artifact_deps_with_http_info(bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def replace_feature(self, bt_locator, feature_id, **kwargs):  # noqa: E501
-        """replace_feature  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.replace_feature(bt_locator, feature_id, async_req=True)
+        >>> thread = api.replace_build_feature(bt_locator, feature_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -1993,17 +1978,18 @@ class BuildTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__replace_feature_with_http_info(bt_locator, feature_id, **kwargs)  # noqa: E501
+            return self.__replace_build_feature_with_http_info(bt_locator, feature_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.__replace_feature_with_http_info(bt_locator, feature_id, **kwargs)  # noqa: E501
+            (data) = self.__replace_build_feature_with_http_info(bt_locator, feature_id, **kwargs)  # noqa: E501
             return data
 
-    def replace_feature_parameters(self, bt_locator, feature_id, **kwargs):  # noqa: E501
-        """replace_feature_parameters  # noqa: E501
+    def replace_build_feature_parameters(self, bt_locator, feature_id, **kwargs):  # noqa: E501
+        """Update a parameter of a build feature of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.replace_feature_parameters(bt_locator, feature_id, async_req=True)
+        >>> thread = api.replace_build_feature_parameters(bt_locator, feature_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -2017,87 +2003,18 @@ class BuildTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__replace_feature_parameters_with_http_info(bt_locator, feature_id, **kwargs)  # noqa: E501
+            return self.__replace_build_feature_parameters_with_http_info(bt_locator, feature_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.__replace_feature_parameters_with_http_info(bt_locator, feature_id, **kwargs)  # noqa: E501
+            (data) = self.__replace_build_feature_parameters_with_http_info(bt_locator, feature_id, **kwargs)  # noqa: E501
             return data
 
-    def replace_features(self, bt_locator, **kwargs):  # noqa: E501
-        """replace_features  # noqa: E501
+    def replace_build_step(self, bt_locator, step_id, **kwargs):  # noqa: E501
+        """Replace a build step of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.replace_features(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str fields:
-        :param Features body:
-        :return: Features
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__replace_features_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__replace_features_with_http_info(bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def replace_snapshot_dep(self, bt_locator, snapshot_dep_locator, **kwargs):  # noqa: E501
-        """replace_snapshot_dep  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.replace_snapshot_dep(bt_locator, snapshot_dep_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str snapshot_dep_locator: (required)
-        :param str fields:
-        :param SnapshotDependency body:
-        :return: SnapshotDependency
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__replace_snapshot_dep_with_http_info(bt_locator, snapshot_dep_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__replace_snapshot_dep_with_http_info(bt_locator, snapshot_dep_locator, **kwargs)  # noqa: E501
-            return data
-
-    def replace_snapshot_deps(self, bt_locator, **kwargs):  # noqa: E501
-        """replace_snapshot_deps  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.replace_snapshot_deps(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str fields:
-        :param SnapshotDependencies body:
-        :return: SnapshotDependencies
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__replace_snapshot_deps_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__replace_snapshot_deps_with_http_info(bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def replace_step(self, bt_locator, step_id, **kwargs):  # noqa: E501
-        """replace_step  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.replace_step(bt_locator, step_id, async_req=True)
+        >>> thread = api.replace_build_step(bt_locator, step_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -2111,61 +2028,40 @@ class BuildTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__replace_step_with_http_info(bt_locator, step_id, **kwargs)  # noqa: E501
+            return self.__replace_build_step_with_http_info(bt_locator, step_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.__replace_step_with_http_info(bt_locator, step_id, **kwargs)  # noqa: E501
+            (data) = self.__replace_build_step_with_http_info(bt_locator, step_id, **kwargs)  # noqa: E501
             return data
 
-    def replace_step_parameters(self, bt_locator, step_id, **kwargs):  # noqa: E501
-        """replace_step_parameters  # noqa: E501
+    def replace_snapshot_dependency(self, bt_locator, snapshot_dep_locator, **kwargs):  # noqa: E501
+        """Update a snapshot dependency of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.replace_step_parameters(bt_locator, step_id, async_req=True)
+        >>> thread = api.replace_snapshot_dependency(bt_locator, snapshot_dep_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
         :param str bt_locator: (required)
-        :param str step_id: (required)
-        :param Properties body:
+        :param str snapshot_dep_locator: (required)
         :param str fields:
-        :return: Properties
+        :param SnapshotDependency body:
+        :return: SnapshotDependency
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__replace_step_parameters_with_http_info(bt_locator, step_id, **kwargs)  # noqa: E501
+            return self.__replace_snapshot_dependency_with_http_info(bt_locator, snapshot_dep_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__replace_step_parameters_with_http_info(bt_locator, step_id, **kwargs)  # noqa: E501
-            return data
-
-    def replace_steps(self, bt_locator, **kwargs):  # noqa: E501
-        """replace_steps  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.replace_steps(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str fields:
-        :param Steps body:
-        :return: Steps
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__replace_steps_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__replace_steps_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            (data) = self.__replace_snapshot_dependency_with_http_info(bt_locator, snapshot_dep_locator, **kwargs)  # noqa: E501
             return data
 
     def replace_trigger(self, bt_locator, trigger_locator, **kwargs):  # noqa: E501
-        """replace_trigger  # noqa: E501
+        """Update a trigger of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.replace_trigger(bt_locator, trigger_locator, async_req=True)
@@ -2187,224 +2083,110 @@ class BuildTypeApi(object):
             (data) = self.__replace_trigger_with_http_info(bt_locator, trigger_locator, **kwargs)  # noqa: E501
             return data
 
-    def replace_triggers(self, bt_locator, **kwargs):  # noqa: E501
-        """replace_triggers  # noqa: E501
+    def set_agent_requirement_parameter(self, bt_locator, agent_requirement_locator, field_name, **kwargs):  # noqa: E501
+        """Update a parameter of an agent requirement of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.replace_triggers(bt_locator, async_req=True)
+        >>> thread = api.set_agent_requirement_parameter(bt_locator, agent_requirement_locator, field_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
         :param str bt_locator: (required)
-        :param str fields:
-        :param Triggers body:
-        :return: Triggers
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__replace_triggers_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__replace_triggers_with_http_info(bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def replace_vcs_root_entries(self, bt_locator, **kwargs):  # noqa: E501
-        """replace_vcs_root_entries  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.replace_vcs_root_entries(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param VcsRootEntries body:
-        :param str fields:
-        :return: VcsRootEntries
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__replace_vcs_root_entries_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__replace_vcs_root_entries_with_http_info(bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def serve_branches(self, bt_locator, **kwargs):  # noqa: E501
-        """serve_branches  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_branches(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str locator:
-        :param str fields:
-        :return: Branches
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_branches_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_branches_with_http_info(bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def serve_build_field(self, bt_locator, build_locator, field, **kwargs):  # noqa: E501
-        """serve_build_field  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_build_field(bt_locator, build_locator, field, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str build_locator: (required)
-        :param str field: (required)
+        :param str agent_requirement_locator: (required)
+        :param str field_name: (required)
+        :param str body:
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__serve_build_field_with_http_info(bt_locator, build_locator, field, **kwargs)  # noqa: E501
+            return self.__set_agent_requirement_parameter_with_http_info(bt_locator, agent_requirement_locator, field_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.__serve_build_field_with_http_info(bt_locator, build_locator, field, **kwargs)  # noqa: E501
+            (data) = self.__set_agent_requirement_parameter_with_http_info(bt_locator, agent_requirement_locator, field_name, **kwargs)  # noqa: E501
             return data
 
-    def serve_build_type_builds_tags(self, bt_locator, field, **kwargs):  # noqa: E501
-        """serve_build_type_builds_tags  # noqa: E501
+    def set_artifact_dependency_parameter(self, bt_locator, artifact_dep_locator, field_name, **kwargs):  # noqa: E501
+        """Update a parameter of an artifact dependency of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_build_type_builds_tags(bt_locator, field, async_req=True)
+        >>> thread = api.set_artifact_dependency_parameter(bt_locator, artifact_dep_locator, field_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
         :param str bt_locator: (required)
-        :param str field: (required)
-        :return: Tags
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_build_type_builds_tags_with_http_info(bt_locator, field, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_build_type_builds_tags_with_http_info(bt_locator, field, **kwargs)  # noqa: E501
-            return data
-
-    def serve_build_type_field(self, bt_locator, field, **kwargs):  # noqa: E501
-        """serve_build_type_field  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_build_type_field(bt_locator, field, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str field: (required)
+        :param str artifact_dep_locator: (required)
+        :param str field_name: (required)
+        :param str body:
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__serve_build_type_field_with_http_info(bt_locator, field, **kwargs)  # noqa: E501
+            return self.__set_artifact_dependency_parameter_with_http_info(bt_locator, artifact_dep_locator, field_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.__serve_build_type_field_with_http_info(bt_locator, field, **kwargs)  # noqa: E501
+            (data) = self.__set_artifact_dependency_parameter_with_http_info(bt_locator, artifact_dep_locator, field_name, **kwargs)  # noqa: E501
             return data
 
-    def serve_build_type_xml(self, bt_locator, **kwargs):  # noqa: E501
-        """serve_build_type_xml  # noqa: E501
+    def set_build_feature_parameter(self, bt_locator, feature_id, name, **kwargs):  # noqa: E501
+        """Update a parameter of a build feature of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_build_type_xml(bt_locator, async_req=True)
+        >>> thread = api.set_build_feature_parameter(bt_locator, feature_id, name, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
         :param str bt_locator: (required)
-        :param str fields:
-        :return: BuildType
+        :param str feature_id: (required)
+        :param str name: (required)
+        :param str body:
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__serve_build_type_xml_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return self.__set_build_feature_parameter_with_http_info(bt_locator, feature_id, name, **kwargs)  # noqa: E501
         else:
-            (data) = self.__serve_build_type_xml_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            (data) = self.__set_build_feature_parameter_with_http_info(bt_locator, feature_id, name, **kwargs)  # noqa: E501
             return data
 
-    def serve_build_with_project(self, bt_locator, build_locator, **kwargs):  # noqa: E501
-        """serve_build_with_project  # noqa: E501
+    def set_build_step_parameter(self, bt_locator, step_id, field_name, **kwargs):  # noqa: E501
+        """Update a parameter of a build step of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_build_with_project(bt_locator, build_locator, async_req=True)
+        >>> thread = api.set_build_step_parameter(bt_locator, step_id, field_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
         :param str bt_locator: (required)
-        :param str build_locator: (required)
-        :param str fields:
-        :return: Build
+        :param str step_id: (required)
+        :param str field_name: (required)
+        :param str body:
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__serve_build_with_project_with_http_info(bt_locator, build_locator, **kwargs)  # noqa: E501
+            return self.__set_build_step_parameter_with_http_info(bt_locator, step_id, field_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.__serve_build_with_project_with_http_info(bt_locator, build_locator, **kwargs)  # noqa: E501
-            return data
-
-    def serve_builds(self, bt_locator, **kwargs):  # noqa: E501
-        """serve_builds  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_builds(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param str status:
-        :param str triggered_by_user:
-        :param bool include_personal:
-        :param bool include_canceled:
-        :param bool only_pinned:
-        :param list[str] tag:
-        :param str agent_name:
-        :param str since_build:
-        :param str since_date:
-        :param int start:
-        :param int count:
-        :param str locator:
-        :param str fields:
-        :return: Builds
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_builds_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_builds_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            (data) = self.__set_build_step_parameter_with_http_info(bt_locator, step_id, field_name, **kwargs)  # noqa: E501
             return data
 
     def set_build_type_field(self, bt_locator, field, **kwargs):  # noqa: E501
-        """set_build_type_field  # noqa: E501
+        """Update a field of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.set_build_type_field(bt_locator, field, async_req=True)
@@ -2425,244 +2207,13 @@ class BuildTypeApi(object):
             (data) = self.__set_build_type_field_with_http_info(bt_locator, field, **kwargs)  # noqa: E501
             return data
 
-    def set_parameter(self, bt_locator, **kwargs):  # noqa: E501
-        """set_parameter  # noqa: E501
+    def set_build_type_templates(self, bt_locator, **kwargs):  # noqa: E501
+        """Update all templates of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_parameter(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param ModelProperty body:
-        :param str fields:
-        :return: ModelProperty
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__set_parameter_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__set_parameter_with_http_info(bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def set_parameter_0(self, name, bt_locator, **kwargs):  # noqa: E501
-        """set_parameter_0  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_parameter_0(name, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str name: (required)
-        :param str bt_locator: (required)
-        :param ModelProperty body:
-        :param str fields:
-        :return: ModelProperty
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__set_parameter_0_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__set_parameter_0_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def set_parameter_1(self, bt_locator, **kwargs):  # noqa: E501
-        """set_parameter_1  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_parameter_1(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param ModelProperty body:
-        :param str fields:
-        :return: ModelProperty
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__set_parameter_1_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__set_parameter_1_with_http_info(bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def set_parameter_2(self, name, bt_locator, **kwargs):  # noqa: E501
-        """set_parameter_2  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_parameter_2(name, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str name: (required)
-        :param str bt_locator: (required)
-        :param ModelProperty body:
-        :param str fields:
-        :return: ModelProperty
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__set_parameter_2_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__set_parameter_2_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def set_parameter_type(self, name, bt_locator, **kwargs):  # noqa: E501
-        """set_parameter_type  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_parameter_type(name, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str name: (required)
-        :param str bt_locator: (required)
-        :param Type body:
-        :return: Type
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__set_parameter_type_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__set_parameter_type_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def set_parameter_type_raw_value(self, name, bt_locator, **kwargs):  # noqa: E501
-        """set_parameter_type_raw_value  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_parameter_type_raw_value(name, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str name: (required)
-        :param str bt_locator: (required)
-        :param str body:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__set_parameter_type_raw_value_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__set_parameter_type_raw_value_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def set_parameter_value_long(self, name, bt_locator, **kwargs):  # noqa: E501
-        """set_parameter_value_long  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_parameter_value_long(name, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str name: (required)
-        :param str bt_locator: (required)
-        :param str body:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__set_parameter_value_long_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__set_parameter_value_long_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def set_parameter_value_long_0(self, name, bt_locator, **kwargs):  # noqa: E501
-        """set_parameter_value_long_0  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_parameter_value_long_0(name, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str name: (required)
-        :param str bt_locator: (required)
-        :param str body:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__set_parameter_value_long_0_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__set_parameter_value_long_0_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def set_parameters(self, bt_locator, **kwargs):  # noqa: E501
-        """set_parameters  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_parameters(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param Properties body:
-        :param str fields:
-        :return: Properties
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__set_parameters_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__set_parameters_with_http_info(bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def set_parameters_0(self, bt_locator, **kwargs):  # noqa: E501
-        """set_parameters_0  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_parameters_0(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str bt_locator: (required)
-        :param Properties body:
-        :param str fields:
-        :return: Properties
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__set_parameters_0_with_http_info(bt_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__set_parameters_0_with_http_info(bt_locator, **kwargs)  # noqa: E501
-            return data
-
-    def set_templates(self, bt_locator, **kwargs):  # noqa: E501
-        """set_templates  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_templates(bt_locator, async_req=True)
+        >>> thread = api.set_build_type_templates(bt_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -2676,39 +2227,164 @@ class BuildTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__set_templates_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return self.__set_build_type_templates_with_http_info(bt_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__set_templates_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            (data) = self.__set_build_type_templates_with_http_info(bt_locator, **kwargs)  # noqa: E501
             return data
 
-    def set_vcs_labeling_options(self, bt_locator, **kwargs):  # noqa: E501
-        """set_vcs_labeling_options  # noqa: E501
+    def set_trigger_parameter(self, bt_locator, trigger_locator, field_name, **kwargs):  # noqa: E501
+        """Update a parameter of a trigger of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_vcs_labeling_options(bt_locator, async_req=True)
+        >>> thread = api.set_trigger_parameter(bt_locator, trigger_locator, field_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
         :param str bt_locator: (required)
-        :param VcsLabeling body:
-        :return: VcsLabeling
+        :param str trigger_locator: (required)
+        :param str field_name: (required)
+        :param str body:
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__set_vcs_labeling_options_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return self.__set_trigger_parameter_with_http_info(bt_locator, trigger_locator, field_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.__set_vcs_labeling_options_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            (data) = self.__set_trigger_parameter_with_http_info(bt_locator, trigger_locator, field_name, **kwargs)  # noqa: E501
             return data
 
-    def update_vcs_root_entry(self, bt_locator, vcs_root_locator, **kwargs):  # noqa: E501
-        """update_vcs_root_entry  # noqa: E501
+    def update_build_parameter_of_build_type(self, name, bt_locator, **kwargs):  # noqa: E501
+        """Update build parameter.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_vcs_root_entry(bt_locator, vcs_root_locator, async_req=True)
+        >>> thread = api.update_build_parameter_of_build_type(name, bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str name: (required)
+        :param str bt_locator: (required)
+        :param ModelProperty body:
+        :param str fields:
+        :return: ModelProperty
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__update_build_parameter_of_build_type_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__update_build_parameter_of_build_type_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def update_build_parameter_specification_of_build_type(self, name, bt_locator, **kwargs):  # noqa: E501
+        """Update build parameter specification.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_build_parameter_specification_of_build_type(name, bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str name: (required)
+        :param str bt_locator: (required)
+        :param str body:
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__update_build_parameter_specification_of_build_type_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__update_build_parameter_specification_of_build_type_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def update_build_parameter_type_of_build_type(self, name, bt_locator, **kwargs):  # noqa: E501
+        """Update type of build parameter.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_build_parameter_type_of_build_type(name, bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str name: (required)
+        :param str bt_locator: (required)
+        :param Type body:
+        :return: Type
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__update_build_parameter_type_of_build_type_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__update_build_parameter_type_of_build_type_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def update_build_parameter_value_of_build_type(self, name, bt_locator, **kwargs):  # noqa: E501
+        """Update value of build parameter.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_build_parameter_value_of_build_type(name, bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str name: (required)
+        :param str bt_locator: (required)
+        :param str body:
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__update_build_parameter_value_of_build_type_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__update_build_parameter_value_of_build_type_with_http_info(name, bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def update_build_parameters_of_build_type(self, bt_locator, **kwargs):  # noqa: E501
+        """Update build parameters.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_build_parameters_of_build_type(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str bt_locator: (required)
+        :param Properties body:
+        :param str fields:
+        :return: Properties
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__update_build_parameters_of_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__update_build_parameters_of_build_type_with_http_info(bt_locator, **kwargs)  # noqa: E501
+            return data
+
+    def update_build_type_vcs_root(self, bt_locator, vcs_root_locator, **kwargs):  # noqa: E501
+        """Update a VCS root of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_build_type_vcs_root(bt_locator, vcs_root_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -2722,17 +2398,18 @@ class BuildTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__update_vcs_root_entry_with_http_info(bt_locator, vcs_root_locator, **kwargs)  # noqa: E501
+            return self.__update_build_type_vcs_root_with_http_info(bt_locator, vcs_root_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__update_vcs_root_entry_with_http_info(bt_locator, vcs_root_locator, **kwargs)  # noqa: E501
+            (data) = self.__update_build_type_vcs_root_with_http_info(bt_locator, vcs_root_locator, **kwargs)  # noqa: E501
             return data
 
-    def update_vcs_root_entry_checkout_rules(self, bt_locator, vcs_root_locator, **kwargs):  # noqa: E501
-        """update_vcs_root_entry_checkout_rules  # noqa: E501
+    def update_build_type_vcs_root_checkout_rules(self, bt_locator, vcs_root_locator, **kwargs):  # noqa: E501
+        """Update checkout rules of a VCS root of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_vcs_root_entry_checkout_rules(bt_locator, vcs_root_locator, async_req=True)
+        >>> thread = api.update_build_type_vcs_root_checkout_rules(bt_locator, vcs_root_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -2745,17 +2422,18 @@ class BuildTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__update_vcs_root_entry_checkout_rules_with_http_info(bt_locator, vcs_root_locator, **kwargs)  # noqa: E501
+            return self.__update_build_type_vcs_root_checkout_rules_with_http_info(bt_locator, vcs_root_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__update_vcs_root_entry_checkout_rules_with_http_info(bt_locator, vcs_root_locator, **kwargs)  # noqa: E501
+            (data) = self.__update_build_type_vcs_root_checkout_rules_with_http_info(bt_locator, vcs_root_locator, **kwargs)  # noqa: E501
             return data
 
-    def __add_agent_requirement_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """add_agent_requirement  # noqa: E501
+    def __add_agent_requirement_to_build_type_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Add an agent requirement to the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__add_agent_requirement_with_http_info(bt_locator, async_req=True)
+        >>> thread = api.__add_agent_requirement_to_build_type_with_http_info(bt_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -2778,14 +2456,14 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method add_agent_requirement" % key
+                    " to method add_agent_requirement_to_build_type" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `add_agent_requirement`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `add_agent_requirement_to_build_type`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2808,6 +2486,14 @@ class BuildTypeApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -2827,12 +2513,13 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __add_artifact_dep_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """add_artifact_dep  # noqa: E501
+    def __add_artifact_dependency_to_build_type_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Add an artifact dependency to the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__add_artifact_dep_with_http_info(bt_locator, async_req=True)
+        >>> thread = api.__add_artifact_dependency_to_build_type_with_http_info(bt_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -2855,14 +2542,14 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method add_artifact_dep" % key
+                    " to method add_artifact_dependency_to_build_type" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `add_artifact_dep`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `add_artifact_dependency_to_build_type`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2885,6 +2572,14 @@ class BuildTypeApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -2904,79 +2599,13 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __add_build_type_with_http_info(self, **kwargs):  # noqa: E501
-        """add_build_type  # noqa: E501
+    def __add_build_feature_to_build_type_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Add build feature to the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__add_build_type_with_http_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param BuildType body:
-        :param str fields:
-        :return: BuildType
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_build_type" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='BuildType',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __add_feature_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """add_feature  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__add_feature_with_http_info(bt_locator, async_req=True)
+        >>> thread = api.__add_build_feature_to_build_type_with_http_info(bt_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -2999,14 +2628,14 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method add_feature" % key
+                    " to method add_build_feature_to_build_type" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `add_feature`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `add_build_feature_to_build_type`")  # noqa: E501
 
         collection_formats = {}
 
@@ -3029,6 +2658,14 @@ class BuildTypeApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -3048,183 +2685,13 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __add_feature_parameter_with_http_info(self, bt_locator, feature_id, parameter_name, **kwargs):  # noqa: E501
-        """add_feature_parameter  # noqa: E501
+    def __add_build_step_to_build_type_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Add a build step to the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__add_feature_parameter_with_http_info(bt_locator, feature_id, parameter_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str feature_id: (required)
-        :param str parameter_name: (required)
-        :param str body:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'feature_id', 'parameter_name', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_feature_parameter" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `add_feature_parameter`")  # noqa: E501
-        # verify the required parameter 'feature_id' is set
-        if ('feature_id' not in params or
-                params['feature_id'] is None):
-            raise ValueError("Missing the required parameter `feature_id` when calling `add_feature_parameter`")  # noqa: E501
-        # verify the required parameter 'parameter_name' is set
-        if ('parameter_name' not in params or
-                params['parameter_name'] is None):
-            raise ValueError("Missing the required parameter `parameter_name` when calling `add_feature_parameter`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-        if 'feature_id' in params:
-            if isinstance(params['feature_id'], TeamCityObject):
-                path_params['featureId'] = params['feature_id'].locator_id
-            else:
-                path_params['featureId'] = params['feature_id']  # noqa: E501
-        if 'parameter_name' in params:
-            if isinstance(params['parameter_name'], TeamCityObject):
-                path_params['parameterName'] = params['parameter_name'].locator_id
-            else:
-                path_params['parameterName'] = params['parameter_name']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/features/{featureId}/parameters/{parameterName}', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __add_snapshot_dep_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """add_snapshot_dep  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__add_snapshot_dep_with_http_info(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str fields:
-        :param SnapshotDependency body:
-        :return: SnapshotDependency
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'fields', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_snapshot_dep" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `add_snapshot_dep`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/snapshot-dependencies', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='SnapshotDependency',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __add_step_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """add_step  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__add_step_with_http_info(bt_locator, async_req=True)
+        >>> thread = api.__add_build_step_to_build_type_with_http_info(bt_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -3247,14 +2714,14 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method add_step" % key
+                    " to method add_build_step_to_build_type" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `add_step`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `add_build_step_to_build_type`")  # noqa: E501
 
         collection_formats = {}
 
@@ -3277,6 +2744,14 @@ class BuildTypeApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -3296,106 +2771,13 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __add_step_parameter_with_http_info(self, bt_locator, step_id, parameter_name, **kwargs):  # noqa: E501
-        """add_step_parameter  # noqa: E501
+    def __add_build_template_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Add a build template to the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__add_step_parameter_with_http_info(bt_locator, step_id, parameter_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str step_id: (required)
-        :param str parameter_name: (required)
-        :param str body:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'step_id', 'parameter_name', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_step_parameter" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `add_step_parameter`")  # noqa: E501
-        # verify the required parameter 'step_id' is set
-        if ('step_id' not in params or
-                params['step_id'] is None):
-            raise ValueError("Missing the required parameter `step_id` when calling `add_step_parameter`")  # noqa: E501
-        # verify the required parameter 'parameter_name' is set
-        if ('parameter_name' not in params or
-                params['parameter_name'] is None):
-            raise ValueError("Missing the required parameter `parameter_name` when calling `add_step_parameter`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-        if 'step_id' in params:
-            if isinstance(params['step_id'], TeamCityObject):
-                path_params['stepId'] = params['step_id'].locator_id
-            else:
-                path_params['stepId'] = params['step_id']  # noqa: E501
-        if 'parameter_name' in params:
-            if isinstance(params['parameter_name'], TeamCityObject):
-                path_params['parameterName'] = params['parameter_name'].locator_id
-            else:
-                path_params['parameterName'] = params['parameter_name']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/steps/{stepId}/parameters/{parameterName}', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __add_template_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """add_template  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__add_template_with_http_info(bt_locator, async_req=True)
+        >>> thread = api.__add_build_template_with_http_info(bt_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -3419,14 +2801,14 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method add_template" % key
+                    " to method add_build_template" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `add_template`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `add_build_template`")  # noqa: E501
 
         collection_formats = {}
 
@@ -3451,6 +2833,14 @@ class BuildTypeApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -3470,12 +2860,305 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __add_trigger_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """add_trigger  # noqa: E501
+    def __add_parameter_to_build_feature_with_http_info(self, bt_locator, feature_id, parameter_name, **kwargs):  # noqa: E501
+        """Update build feature parameter for the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__add_trigger_with_http_info(bt_locator, async_req=True)
+        >>> thread = api.__add_parameter_to_build_feature_with_http_info(bt_locator, feature_id, parameter_name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str feature_id: (required)
+        :param str parameter_name: (required)
+        :param str body:
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'feature_id', 'parameter_name', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_parameter_to_build_feature" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `add_parameter_to_build_feature`")  # noqa: E501
+        # verify the required parameter 'feature_id' is set
+        if ('feature_id' not in params or
+                params['feature_id'] is None):
+            raise ValueError("Missing the required parameter `feature_id` when calling `add_parameter_to_build_feature`")  # noqa: E501
+        # verify the required parameter 'parameter_name' is set
+        if ('parameter_name' not in params or
+                params['parameter_name'] is None):
+            raise ValueError("Missing the required parameter `parameter_name` when calling `add_parameter_to_build_feature`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+        if 'feature_id' in params:
+            if isinstance(params['feature_id'], TeamCityObject):
+                path_params['featureId'] = params['feature_id'].locator_id
+            else:
+                path_params['featureId'] = params['feature_id']  # noqa: E501
+        if 'parameter_name' in params:
+            if isinstance(params['parameter_name'], TeamCityObject):
+                path_params['parameterName'] = params['parameter_name'].locator_id
+            else:
+                path_params['parameterName'] = params['parameter_name']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['text/plain'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/features/{featureId}/parameters/{parameterName}', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __add_parameter_to_build_step_with_http_info(self, bt_locator, step_id, parameter_name, **kwargs):  # noqa: E501
+        """Add a parameter to a build step of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__add_parameter_to_build_step_with_http_info(bt_locator, step_id, parameter_name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str step_id: (required)
+        :param str parameter_name: (required)
+        :param str body:
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'step_id', 'parameter_name', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_parameter_to_build_step" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `add_parameter_to_build_step`")  # noqa: E501
+        # verify the required parameter 'step_id' is set
+        if ('step_id' not in params or
+                params['step_id'] is None):
+            raise ValueError("Missing the required parameter `step_id` when calling `add_parameter_to_build_step`")  # noqa: E501
+        # verify the required parameter 'parameter_name' is set
+        if ('parameter_name' not in params or
+                params['parameter_name'] is None):
+            raise ValueError("Missing the required parameter `parameter_name` when calling `add_parameter_to_build_step`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+        if 'step_id' in params:
+            if isinstance(params['step_id'], TeamCityObject):
+                path_params['stepId'] = params['step_id'].locator_id
+            else:
+                path_params['stepId'] = params['step_id']  # noqa: E501
+        if 'parameter_name' in params:
+            if isinstance(params['parameter_name'], TeamCityObject):
+                path_params['parameterName'] = params['parameter_name'].locator_id
+            else:
+                path_params['parameterName'] = params['parameter_name']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['text/plain'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/steps/{stepId}/parameters/{parameterName}', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __add_snapshot_dependency_to_build_type_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Add a snapshot dependency to the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__add_snapshot_dependency_to_build_type_with_http_info(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :param SnapshotDependency body:
+        :return: SnapshotDependency
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'fields', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_snapshot_dependency_to_build_type" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `add_snapshot_dependency_to_build_type`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/snapshot-dependencies', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='SnapshotDependency',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __add_trigger_to_build_type_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Add a trigger to the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__add_trigger_to_build_type_with_http_info(bt_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -3498,14 +3181,14 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method add_trigger" % key
+                    " to method add_trigger_to_build_type" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `add_trigger`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `add_trigger_to_build_type`")  # noqa: E501
 
         collection_formats = {}
 
@@ -3528,6 +3211,14 @@ class BuildTypeApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -3547,12 +3238,13 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __add_vcs_root_entry_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """add_vcs_root_entry  # noqa: E501
+    def __add_vcs_root_to_build_type_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Add a VCS root to the matching build.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__add_vcs_root_entry_with_http_info(bt_locator, async_req=True)
+        >>> thread = api.__add_vcs_root_to_build_type_with_http_info(bt_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -3575,14 +3267,14 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method add_vcs_root_entry" % key
+                    " to method add_vcs_root_to_build_type" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `add_vcs_root_entry`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `add_vcs_root_to_build_type`")  # noqa: E501
 
         collection_formats = {}
 
@@ -3605,6 +3297,14 @@ class BuildTypeApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -3624,25 +3324,25 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __change_artifact_dep_setting_with_http_info(self, bt_locator, artifact_dep_locator, field_name, **kwargs):  # noqa: E501
-        """change_artifact_dep_setting  # noqa: E501
+    def __create_build_parameter_of_build_type_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Create a build parameter.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__change_artifact_dep_setting_with_http_info(bt_locator, artifact_dep_locator, field_name, async_req=True)
+        >>> thread = api.__create_build_parameter_of_build_type_with_http_info(bt_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str bt_locator: (required)
-        :param str artifact_dep_locator: (required)
-        :param str field_name: (required)
-        :param str body:
-        :return: str
+        :param ModelProperty body:
+        :param str fields:
+        :return: ModelProperty
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['bt_locator', 'artifact_dep_locator', 'field_name', 'body']  # noqa: E501
+        all_params = ['bt_locator', 'body', 'fields']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3653,22 +3353,14 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method change_artifact_dep_setting" % key
+                    " to method create_build_parameter_of_build_type" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `change_artifact_dep_setting`")  # noqa: E501
-        # verify the required parameter 'artifact_dep_locator' is set
-        if ('artifact_dep_locator' not in params or
-                params['artifact_dep_locator'] is None):
-            raise ValueError("Missing the required parameter `artifact_dep_locator` when calling `change_artifact_dep_setting`")  # noqa: E501
-        # verify the required parameter 'field_name' is set
-        if ('field_name' not in params or
-                params['field_name'] is None):
-            raise ValueError("Missing the required parameter `field_name` when calling `change_artifact_dep_setting`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `create_build_parameter_of_build_type`")  # noqa: E501
 
         collection_formats = {}
 
@@ -3678,18 +3370,10 @@ class BuildTypeApi(object):
                 path_params['btLocator'] = params['bt_locator'].locator_id
             else:
                 path_params['btLocator'] = params['bt_locator']  # noqa: E501
-        if 'artifact_dep_locator' in params:
-            if isinstance(params['artifact_dep_locator'], TeamCityObject):
-                path_params['artifactDepLocator'] = params['artifact_dep_locator'].locator_id
-            else:
-                path_params['artifactDepLocator'] = params['artifact_dep_locator']  # noqa: E501
-        if 'field_name' in params:
-            if isinstance(params['field_name'], TeamCityObject):
-                path_params['fieldName'] = params['field_name'].locator_id
-            else:
-                path_params['fieldName'] = params['field_name']  # noqa: E501
 
         query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
 
         header_params = {}
 
@@ -3699,18 +3383,26 @@ class BuildTypeApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/artifact-dependencies/{artifactDepLocator}/{fieldName}', 'PUT',
+            '/app/rest/buildTypes/{btLocator}/parameters', 'POST',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type='ModelProperty',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -3718,25 +3410,24 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __change_feature_setting_with_http_info(self, bt_locator, feature_id, name, **kwargs):  # noqa: E501
-        """change_feature_setting  # noqa: E501
+    def __create_build_type_with_http_info(self, **kwargs):  # noqa: E501
+        """Create a new build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__change_feature_setting_with_http_info(bt_locator, feature_id, name, async_req=True)
+        >>> thread = api.__create_build_type_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str bt_locator: (required)
-        :param str feature_id: (required)
-        :param str name: (required)
-        :param str body:
-        :return: str
+        :param BuildType body:
+        :param str fields:
+        :return: BuildType
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['bt_locator', 'feature_id', 'name', 'body']  # noqa: E501
+        all_params = ['body', 'fields']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3747,43 +3438,18 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method change_feature_setting" % key
+                    " to method create_build_type" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `change_feature_setting`")  # noqa: E501
-        # verify the required parameter 'feature_id' is set
-        if ('feature_id' not in params or
-                params['feature_id'] is None):
-            raise ValueError("Missing the required parameter `feature_id` when calling `change_feature_setting`")  # noqa: E501
-        # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `change_feature_setting`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-        if 'feature_id' in params:
-            if isinstance(params['feature_id'], TeamCityObject):
-                path_params['featureId'] = params['feature_id'].locator_id
-            else:
-                path_params['featureId'] = params['feature_id']  # noqa: E501
-        if 'name' in params:
-            if isinstance(params['name'], TeamCityObject):
-                path_params['name'] = params['name'].locator_id
-            else:
-                path_params['name'] = params['name']  # noqa: E501
 
         query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
 
         header_params = {}
 
@@ -3793,300 +3459,26 @@ class BuildTypeApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/features/{featureId}/{name}', 'PUT',
+            '/app/rest/buildTypes', 'POST',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __change_requirement_setting_with_http_info(self, bt_locator, agent_requirement_locator, field_name, **kwargs):  # noqa: E501
-        """change_requirement_setting  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__change_requirement_setting_with_http_info(bt_locator, agent_requirement_locator, field_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str agent_requirement_locator: (required)
-        :param str field_name: (required)
-        :param str body:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'agent_requirement_locator', 'field_name', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method change_requirement_setting" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `change_requirement_setting`")  # noqa: E501
-        # verify the required parameter 'agent_requirement_locator' is set
-        if ('agent_requirement_locator' not in params or
-                params['agent_requirement_locator'] is None):
-            raise ValueError("Missing the required parameter `agent_requirement_locator` when calling `change_requirement_setting`")  # noqa: E501
-        # verify the required parameter 'field_name' is set
-        if ('field_name' not in params or
-                params['field_name'] is None):
-            raise ValueError("Missing the required parameter `field_name` when calling `change_requirement_setting`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-        if 'agent_requirement_locator' in params:
-            if isinstance(params['agent_requirement_locator'], TeamCityObject):
-                path_params['agentRequirementLocator'] = params['agent_requirement_locator'].locator_id
-            else:
-                path_params['agentRequirementLocator'] = params['agent_requirement_locator']  # noqa: E501
-        if 'field_name' in params:
-            if isinstance(params['field_name'], TeamCityObject):
-                path_params['fieldName'] = params['field_name'].locator_id
-            else:
-                path_params['fieldName'] = params['field_name']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/agent-requirements/{agentRequirementLocator}/{fieldName}', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __change_step_setting_with_http_info(self, bt_locator, step_id, field_name, **kwargs):  # noqa: E501
-        """change_step_setting  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__change_step_setting_with_http_info(bt_locator, step_id, field_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str step_id: (required)
-        :param str field_name: (required)
-        :param str body:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'step_id', 'field_name', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method change_step_setting" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `change_step_setting`")  # noqa: E501
-        # verify the required parameter 'step_id' is set
-        if ('step_id' not in params or
-                params['step_id'] is None):
-            raise ValueError("Missing the required parameter `step_id` when calling `change_step_setting`")  # noqa: E501
-        # verify the required parameter 'field_name' is set
-        if ('field_name' not in params or
-                params['field_name'] is None):
-            raise ValueError("Missing the required parameter `field_name` when calling `change_step_setting`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-        if 'step_id' in params:
-            if isinstance(params['step_id'], TeamCityObject):
-                path_params['stepId'] = params['step_id'].locator_id
-            else:
-                path_params['stepId'] = params['step_id']  # noqa: E501
-        if 'field_name' in params:
-            if isinstance(params['field_name'], TeamCityObject):
-                path_params['fieldName'] = params['field_name'].locator_id
-            else:
-                path_params['fieldName'] = params['field_name']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/steps/{stepId}/{fieldName}', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __change_trigger_setting_with_http_info(self, bt_locator, trigger_locator, field_name, **kwargs):  # noqa: E501
-        """change_trigger_setting  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__change_trigger_setting_with_http_info(bt_locator, trigger_locator, field_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str trigger_locator: (required)
-        :param str field_name: (required)
-        :param str body:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'trigger_locator', 'field_name', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method change_trigger_setting" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `change_trigger_setting`")  # noqa: E501
-        # verify the required parameter 'trigger_locator' is set
-        if ('trigger_locator' not in params or
-                params['trigger_locator'] is None):
-            raise ValueError("Missing the required parameter `trigger_locator` when calling `change_trigger_setting`")  # noqa: E501
-        # verify the required parameter 'field_name' is set
-        if ('field_name' not in params or
-                params['field_name'] is None):
-            raise ValueError("Missing the required parameter `field_name` when calling `change_trigger_setting`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-        if 'trigger_locator' in params:
-            if isinstance(params['trigger_locator'], TeamCityObject):
-                path_params['triggerLocator'] = params['trigger_locator'].locator_id
-            else:
-                path_params['triggerLocator'] = params['trigger_locator']  # noqa: E501
-        if 'field_name' in params:
-            if isinstance(params['field_name'], TeamCityObject):
-                path_params['fieldName'] = params['field_name'].locator_id
-            else:
-                path_params['fieldName'] = params['field_name']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/triggers/{triggerLocator}/{fieldName}', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type='BuildType',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -4095,8 +3487,9 @@ class BuildTypeApi(object):
             collection_formats=collection_formats)
 
     def __delete_agent_requirement_with_http_info(self, bt_locator, agent_requirement_locator, **kwargs):  # noqa: E501
-        """delete_agent_requirement  # noqa: E501
+        """Remove an agent requirement of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.__delete_agent_requirement_with_http_info(bt_locator, agent_requirement_locator, async_req=True)
@@ -4175,154 +3568,13 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __delete_all_parameters_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """delete_all_parameters  # noqa: E501
+    def __delete_artifact_dependency_with_http_info(self, bt_locator, artifact_dep_locator, **kwargs):  # noqa: E501
+        """Remove an artifact dependency from the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__delete_all_parameters_with_http_info(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_all_parameters" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `delete_all_parameters`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/parameters', 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type=None,  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __delete_all_parameters_0_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """delete_all_parameters_0  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__delete_all_parameters_0_with_http_info(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_all_parameters_0" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `delete_all_parameters_0`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/settings', 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type=None,  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __delete_artifact_dep_with_http_info(self, bt_locator, artifact_dep_locator, **kwargs):  # noqa: E501
-        """delete_artifact_dep  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__delete_artifact_dep_with_http_info(bt_locator, artifact_dep_locator, async_req=True)
+        >>> thread = api.__delete_artifact_dependency_with_http_info(bt_locator, artifact_dep_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -4344,18 +3596,18 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_artifact_dep" % key
+                    " to method delete_artifact_dependency" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `delete_artifact_dep`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `delete_artifact_dependency`")  # noqa: E501
         # verify the required parameter 'artifact_dep_locator' is set
         if ('artifact_dep_locator' not in params or
                 params['artifact_dep_locator'] is None):
-            raise ValueError("Missing the required parameter `artifact_dep_locator` when calling `delete_artifact_dep`")  # noqa: E501
+            raise ValueError("Missing the required parameter `artifact_dep_locator` when calling `delete_artifact_dependency`")  # noqa: E501
 
         collection_formats = {}
 
@@ -4398,9 +3650,342 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __delete_build_type_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """delete_build_type  # noqa: E501
+    def __delete_build_parameter_of_build_type_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
+        """Delete build parameter.  # noqa: E501
 
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__delete_build_parameter_of_build_type_with_http_info(name, bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str name: (required)
+        :param str bt_locator: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['name', 'bt_locator']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_build_parameter_of_build_type" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if ('name' not in params or
+                params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `delete_build_parameter_of_build_type`")  # noqa: E501
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `delete_build_parameter_of_build_type`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'name' in params:
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/parameters/{name}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __delete_build_parameters_of_build_type_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Delete all build parameters.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__delete_build_parameters_of_build_type_with_http_info(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_build_parameters_of_build_type" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `delete_build_parameters_of_build_type`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/parameters', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __delete_build_step_with_http_info(self, bt_locator, step_id, **kwargs):  # noqa: E501
+        """Delete a build step of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__delete_build_step_with_http_info(bt_locator, step_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str step_id: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'step_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_build_step" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `delete_build_step`")  # noqa: E501
+        # verify the required parameter 'step_id' is set
+        if ('step_id' not in params or
+                params['step_id'] is None):
+            raise ValueError("Missing the required parameter `step_id` when calling `delete_build_step`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+        if 'step_id' in params:
+            if isinstance(params['step_id'], TeamCityObject):
+                path_params['stepId'] = params['step_id'].locator_id
+            else:
+                path_params['stepId'] = params['step_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/steps/{stepId}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __delete_build_step_parameters_with_http_info(self, bt_locator, step_id, **kwargs):  # noqa: E501
+        """Update a parameter of a build step of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__delete_build_step_parameters_with_http_info(bt_locator, step_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str step_id: (required)
+        :param Properties body:
+        :param str fields:
+        :return: Properties
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'step_id', 'body', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_build_step_parameters" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `delete_build_step_parameters`")  # noqa: E501
+        # verify the required parameter 'step_id' is set
+        if ('step_id' not in params or
+                params['step_id'] is None):
+            raise ValueError("Missing the required parameter `step_id` when calling `delete_build_step_parameters`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+        if 'step_id' in params:
+            if isinstance(params['step_id'], TeamCityObject):
+                path_params['stepId'] = params['step_id'].locator_id
+            else:
+                path_params['stepId'] = params['step_id']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/steps/{stepId}/parameters', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Properties',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __delete_build_type_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Delete build configuration matching the locator.  # noqa: E501
+
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.__delete_build_type_with_http_info(bt_locator, async_req=True)
@@ -4469,12 +4054,13 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __delete_feature_with_http_info(self, bt_locator, feature_id, **kwargs):  # noqa: E501
-        """delete_feature  # noqa: E501
+    def __delete_feature_of_build_type_with_http_info(self, bt_locator, feature_id, **kwargs):  # noqa: E501
+        """Remove a build feature of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__delete_feature_with_http_info(bt_locator, feature_id, async_req=True)
+        >>> thread = api.__delete_feature_of_build_type_with_http_info(bt_locator, feature_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -4496,18 +4082,18 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_feature" % key
+                    " to method delete_feature_of_build_type" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `delete_feature`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `delete_feature_of_build_type`")  # noqa: E501
         # verify the required parameter 'feature_id' is set
         if ('feature_id' not in params or
                 params['feature_id'] is None):
-            raise ValueError("Missing the required parameter `feature_id` when calling `delete_feature`")  # noqa: E501
+            raise ValueError("Missing the required parameter `feature_id` when calling `delete_feature_of_build_type`")  # noqa: E501
 
         collection_formats = {}
 
@@ -4550,174 +4136,13 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __delete_parameter_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
-        """delete_parameter  # noqa: E501
+    def __delete_snapshot_dependency_with_http_info(self, bt_locator, snapshot_dep_locator, **kwargs):  # noqa: E501
+        """Delete a snapshot dependency of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__delete_parameter_with_http_info(name, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str name: (required)
-        :param str bt_locator: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['name', 'bt_locator']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_parameter" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `delete_parameter`")  # noqa: E501
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `delete_parameter`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'name' in params:
-            if isinstance(params['name'], TeamCityObject):
-                path_params['name'] = params['name'].locator_id
-            else:
-                path_params['name'] = params['name']  # noqa: E501
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/parameters/{name}', 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type=None,  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __delete_parameter_0_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
-        """delete_parameter_0  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__delete_parameter_0_with_http_info(name, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str name: (required)
-        :param str bt_locator: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['name', 'bt_locator']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_parameter_0" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `delete_parameter_0`")  # noqa: E501
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `delete_parameter_0`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'name' in params:
-            if isinstance(params['name'], TeamCityObject):
-                path_params['name'] = params['name'].locator_id
-            else:
-                path_params['name'] = params['name']  # noqa: E501
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/settings/{name}', 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type=None,  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __delete_snapshot_dep_with_http_info(self, bt_locator, snapshot_dep_locator, **kwargs):  # noqa: E501
-        """delete_snapshot_dep  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__delete_snapshot_dep_with_http_info(bt_locator, snapshot_dep_locator, async_req=True)
+        >>> thread = api.__delete_snapshot_dependency_with_http_info(bt_locator, snapshot_dep_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -4739,18 +4164,18 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_snapshot_dep" % key
+                    " to method delete_snapshot_dependency" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `delete_snapshot_dep`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `delete_snapshot_dependency`")  # noqa: E501
         # verify the required parameter 'snapshot_dep_locator' is set
         if ('snapshot_dep_locator' not in params or
                 params['snapshot_dep_locator'] is None):
-            raise ValueError("Missing the required parameter `snapshot_dep_locator` when calling `delete_snapshot_dep`")  # noqa: E501
+            raise ValueError("Missing the required parameter `snapshot_dep_locator` when calling `delete_snapshot_dependency`")  # noqa: E501
 
         collection_formats = {}
 
@@ -4793,90 +4218,10 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __delete_step_with_http_info(self, bt_locator, step_id, **kwargs):  # noqa: E501
-        """delete_step  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__delete_step_with_http_info(bt_locator, step_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str step_id: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'step_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_step" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `delete_step`")  # noqa: E501
-        # verify the required parameter 'step_id' is set
-        if ('step_id' not in params or
-                params['step_id'] is None):
-            raise ValueError("Missing the required parameter `step_id` when calling `delete_step`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-        if 'step_id' in params:
-            if isinstance(params['step_id'], TeamCityObject):
-                path_params['stepId'] = params['step_id'].locator_id
-            else:
-                path_params['stepId'] = params['step_id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/steps/{stepId}', 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type=None,  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
     def __delete_trigger_with_http_info(self, bt_locator, trigger_locator, **kwargs):  # noqa: E501
-        """delete_trigger  # noqa: E501
+        """Delete a trigger of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.__delete_trigger_with_http_info(bt_locator, trigger_locator, async_req=True)
@@ -4955,12 +4300,13 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __delete_vcs_root_entry_with_http_info(self, bt_locator, vcs_root_locator, **kwargs):  # noqa: E501
-        """delete_vcs_root_entry  # noqa: E501
+    def __delete_vcs_root_of_build_type_with_http_info(self, bt_locator, vcs_root_locator, **kwargs):  # noqa: E501
+        """Remove a VCS root of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__delete_vcs_root_entry_with_http_info(bt_locator, vcs_root_locator, async_req=True)
+        >>> thread = api.__delete_vcs_root_of_build_type_with_http_info(bt_locator, vcs_root_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -4982,18 +4328,18 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_vcs_root_entry" % key
+                    " to method delete_vcs_root_of_build_type" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `delete_vcs_root_entry`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `delete_vcs_root_of_build_type`")  # noqa: E501
         # verify the required parameter 'vcs_root_locator' is set
         if ('vcs_root_locator' not in params or
                 params['vcs_root_locator'] is None):
-            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `delete_vcs_root_entry`")  # noqa: E501
+            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `delete_vcs_root_of_build_type`")  # noqa: E501
 
         collection_formats = {}
 
@@ -5036,9 +4382,101 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __get_agent_requirement_with_http_info(self, bt_locator, agent_requirement_locator, **kwargs):  # noqa: E501
-        """get_agent_requirement  # noqa: E501
+    def __download_file_of_build_type_with_http_info(self, path, bt_locator, **kwargs):  # noqa: E501
+        """Download specific file.  # noqa: E501
 
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__download_file_of_build_type_with_http_info(path, bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str path: (required)
+        :param str bt_locator: (required)
+        :param bool resolve_parameters:
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['path', 'bt_locator', 'resolve_parameters']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method download_file_of_build_type" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'path' is set
+        if ('path' not in params or
+                params['path'] is None):
+            raise ValueError("Missing the required parameter `path` when calling `download_file_of_build_type`")  # noqa: E501
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `download_file_of_build_type`")  # noqa: E501
+
+        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError("Invalid value for parameter `path` when calling `download_file_of_build_type`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+        if 'path' in params:
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+        if 'resolve_parameters' in params:
+            query_params.append(('resolveParameters', params['resolve_parameters']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['*/*'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/vcs/files/latest/files{path}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_agent_requirement_with_http_info(self, bt_locator, agent_requirement_locator, **kwargs):  # noqa: E501
+        """Get an agent requirement of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.__get_agent_requirement_with_http_info(bt_locator, agent_requirement_locator, async_req=True)
@@ -5101,6 +4539,10 @@ class BuildTypeApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -5120,2371 +4562,13 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __get_agent_requirements_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """get_agent_requirements  # noqa: E501
+    def __get_agent_requirement_parameter_with_http_info(self, bt_locator, agent_requirement_locator, field_name, **kwargs):  # noqa: E501
+        """Get a setting of an agent requirement of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_agent_requirements_with_http_info(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str fields:
-        :return: AgentRequirements
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_agent_requirements" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_agent_requirements`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/agent-requirements', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='AgentRequirements',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_aliases_with_http_info(self, bt_locator, field, **kwargs):  # noqa: E501
-        """get_aliases  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_aliases_with_http_info(bt_locator, field, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str field: (required)
-        :return: Items
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'field']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_aliases" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_aliases`")  # noqa: E501
-        # verify the required parameter 'field' is set
-        if ('field' not in params or
-                params['field'] is None):
-            raise ValueError("Missing the required parameter `field` when calling `get_aliases`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-        if 'field' in params:
-            if isinstance(params['field'], TeamCityObject):
-                path_params['field'] = params['field'].locator_id
-            else:
-                path_params['field'] = params['field']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/aliases', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Items',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_artifact_dep_with_http_info(self, bt_locator, artifact_dep_locator, **kwargs):  # noqa: E501
-        """get_artifact_dep  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_artifact_dep_with_http_info(bt_locator, artifact_dep_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str artifact_dep_locator: (required)
-        :param str fields:
-        :return: ArtifactDependency
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'artifact_dep_locator', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_artifact_dep" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_artifact_dep`")  # noqa: E501
-        # verify the required parameter 'artifact_dep_locator' is set
-        if ('artifact_dep_locator' not in params or
-                params['artifact_dep_locator'] is None):
-            raise ValueError("Missing the required parameter `artifact_dep_locator` when calling `get_artifact_dep`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-        if 'artifact_dep_locator' in params:
-            if isinstance(params['artifact_dep_locator'], TeamCityObject):
-                path_params['artifactDepLocator'] = params['artifact_dep_locator'].locator_id
-            else:
-                path_params['artifactDepLocator'] = params['artifact_dep_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/artifact-dependencies/{artifactDepLocator}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='ArtifactDependency',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_artifact_dep_setting_with_http_info(self, bt_locator, artifact_dep_locator, field_name, **kwargs):  # noqa: E501
-        """get_artifact_dep_setting  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_artifact_dep_setting_with_http_info(bt_locator, artifact_dep_locator, field_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str artifact_dep_locator: (required)
-        :param str field_name: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'artifact_dep_locator', 'field_name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_artifact_dep_setting" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_artifact_dep_setting`")  # noqa: E501
-        # verify the required parameter 'artifact_dep_locator' is set
-        if ('artifact_dep_locator' not in params or
-                params['artifact_dep_locator'] is None):
-            raise ValueError("Missing the required parameter `artifact_dep_locator` when calling `get_artifact_dep_setting`")  # noqa: E501
-        # verify the required parameter 'field_name' is set
-        if ('field_name' not in params or
-                params['field_name'] is None):
-            raise ValueError("Missing the required parameter `field_name` when calling `get_artifact_dep_setting`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-        if 'artifact_dep_locator' in params:
-            if isinstance(params['artifact_dep_locator'], TeamCityObject):
-                path_params['artifactDepLocator'] = params['artifact_dep_locator'].locator_id
-            else:
-                path_params['artifactDepLocator'] = params['artifact_dep_locator']  # noqa: E501
-        if 'field_name' in params:
-            if isinstance(params['field_name'], TeamCityObject):
-                path_params['fieldName'] = params['field_name'].locator_id
-            else:
-                path_params['fieldName'] = params['field_name']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/artifact-dependencies/{artifactDepLocator}/{fieldName}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_artifact_deps_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """get_artifact_deps  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_artifact_deps_with_http_info(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str fields:
-        :return: ArtifactDependencies
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_artifact_deps" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_artifact_deps`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/artifact-dependencies', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='ArtifactDependencies',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_build_types_with_http_info(self, **kwargs):  # noqa: E501
-        """get_build_types  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_build_types_with_http_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str locator:
-        :param str fields:
-        :return: BuildTypes
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['locator', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_build_types" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'locator' in params:
-            query_params.append(('locator', params['locator']))  # noqa: E501
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='BuildTypes',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_children_with_http_info(self, path, bt_locator, **kwargs):  # noqa: E501
-        """get_children  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_children_with_http_info(path, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str path: (required)
-        :param str bt_locator: (required)
-        :param str base_path:
-        :param str locator:
-        :param str fields:
-        :param bool resolve_parameters:
-        :return: Files
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['path', 'bt_locator', 'base_path', 'locator', 'fields', 'resolve_parameters']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_children" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'path' is set
-        if ('path' not in params or
-                params['path'] is None):
-            raise ValueError("Missing the required parameter `path` when calling `get_children`")  # noqa: E501
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_children`")  # noqa: E501
-
-        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_children`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
-        collection_formats = {}
-
-        path_params = {}
-        if 'path' in params:
-            if isinstance(params['path'], TeamCityObject):
-                path_params['path'] = params['path'].locator_id
-            else:
-                path_params['path'] = params['path']  # noqa: E501
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'base_path' in params:
-            query_params.append(('basePath', params['base_path']))  # noqa: E501
-        if 'locator' in params:
-            query_params.append(('locator', params['locator']))  # noqa: E501
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-        if 'resolve_parameters' in params:
-            query_params.append(('resolveParameters', params['resolve_parameters']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/vcs/files/latest/children{path}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Files',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_children_alias_with_http_info(self, path, bt_locator, **kwargs):  # noqa: E501
-        """get_children_alias  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_children_alias_with_http_info(path, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str path: (required)
-        :param str bt_locator: (required)
-        :param str base_path:
-        :param str locator:
-        :param str fields:
-        :param bool resolve_parameters:
-        :return: Files
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['path', 'bt_locator', 'base_path', 'locator', 'fields', 'resolve_parameters']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_children_alias" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'path' is set
-        if ('path' not in params or
-                params['path'] is None):
-            raise ValueError("Missing the required parameter `path` when calling `get_children_alias`")  # noqa: E501
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_children_alias`")  # noqa: E501
-
-        if 'path' in params and not re.search('(.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_children_alias`, must conform to the pattern `/(.*)?/`")  # noqa: E501
-        collection_formats = {}
-
-        path_params = {}
-        if 'path' in params:
-            if isinstance(params['path'], TeamCityObject):
-                path_params['path'] = params['path'].locator_id
-            else:
-                path_params['path'] = params['path']  # noqa: E501
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'base_path' in params:
-            query_params.append(('basePath', params['base_path']))  # noqa: E501
-        if 'locator' in params:
-            query_params.append(('locator', params['locator']))  # noqa: E501
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-        if 'resolve_parameters' in params:
-            query_params.append(('resolveParameters', params['resolve_parameters']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/vcs/files/latest/{path}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Files',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_content_with_http_info(self, path, bt_locator, **kwargs):  # noqa: E501
-        """get_content  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_content_with_http_info(path, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str path: (required)
-        :param str bt_locator: (required)
-        :param str response_builder:
-        :param bool resolve_parameters:
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['path', 'bt_locator', 'response_builder', 'resolve_parameters']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_content" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'path' is set
-        if ('path' not in params or
-                params['path'] is None):
-            raise ValueError("Missing the required parameter `path` when calling `get_content`")  # noqa: E501
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_content`")  # noqa: E501
-
-        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_content`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
-        collection_formats = {}
-
-        path_params = {}
-        if 'path' in params:
-            if isinstance(params['path'], TeamCityObject):
-                path_params['path'] = params['path'].locator_id
-            else:
-                path_params['path'] = params['path']  # noqa: E501
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'response_builder' in params:
-            query_params.append(('responseBuilder', params['response_builder']))  # noqa: E501
-        if 'resolve_parameters' in params:
-            query_params.append(('resolveParameters', params['resolve_parameters']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/vcs/files/latest/content{path}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type=None,  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_content_alias_with_http_info(self, path, bt_locator, **kwargs):  # noqa: E501
-        """get_content_alias  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_content_alias_with_http_info(path, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str path: (required)
-        :param str bt_locator: (required)
-        :param bool resolve_parameters:
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['path', 'bt_locator', 'resolve_parameters']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_content_alias" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'path' is set
-        if ('path' not in params or
-                params['path'] is None):
-            raise ValueError("Missing the required parameter `path` when calling `get_content_alias`")  # noqa: E501
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_content_alias`")  # noqa: E501
-
-        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_content_alias`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
-        collection_formats = {}
-
-        path_params = {}
-        if 'path' in params:
-            if isinstance(params['path'], TeamCityObject):
-                path_params['path'] = params['path'].locator_id
-            else:
-                path_params['path'] = params['path']  # noqa: E501
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'resolve_parameters' in params:
-            query_params.append(('resolveParameters', params['resolve_parameters']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/vcs/files/latest/files{path}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type=None,  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_current_vcs_instances_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """get_current_vcs_instances  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_current_vcs_instances_with_http_info(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str fields:
-        :return: VcsRootInstances
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_current_vcs_instances" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_current_vcs_instances`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/vcsRootInstances', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='VcsRootInstances',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_current_vcs_instances_obsolete_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """get_current_vcs_instances_obsolete  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_current_vcs_instances_obsolete_with_http_info(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str fields:
-        :return: VcsRootInstances
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_current_vcs_instances_obsolete" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_current_vcs_instances_obsolete`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/vcs-root-instances', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='VcsRootInstances',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_example_new_project_description_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """get_example_new_project_description  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_example_new_project_description_with_http_info(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :return: NewBuildTypeDescription
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_example_new_project_description" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_example_new_project_description`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/example/newBuildTypeDescription', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='NewBuildTypeDescription',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_example_new_project_description_compatibility_version1_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """get_example_new_project_description_compatibility_version1  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_example_new_project_description_compatibility_version1_with_http_info(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :return: NewBuildTypeDescription
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_example_new_project_description_compatibility_version1" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_example_new_project_description_compatibility_version1`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/newBuildTypeDescription', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='NewBuildTypeDescription',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_feature_with_http_info(self, bt_locator, feature_id, **kwargs):  # noqa: E501
-        """get_feature  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_feature_with_http_info(bt_locator, feature_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str feature_id: (required)
-        :param str fields:
-        :return: Feature
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'feature_id', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_feature" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_feature`")  # noqa: E501
-        # verify the required parameter 'feature_id' is set
-        if ('feature_id' not in params or
-                params['feature_id'] is None):
-            raise ValueError("Missing the required parameter `feature_id` when calling `get_feature`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-        if 'feature_id' in params:
-            if isinstance(params['feature_id'], TeamCityObject):
-                path_params['featureId'] = params['feature_id'].locator_id
-            else:
-                path_params['featureId'] = params['feature_id']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/features/{featureId}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Feature',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_feature_parameter_with_http_info(self, bt_locator, feature_id, parameter_name, **kwargs):  # noqa: E501
-        """get_feature_parameter  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_feature_parameter_with_http_info(bt_locator, feature_id, parameter_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str feature_id: (required)
-        :param str parameter_name: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'feature_id', 'parameter_name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_feature_parameter" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_feature_parameter`")  # noqa: E501
-        # verify the required parameter 'feature_id' is set
-        if ('feature_id' not in params or
-                params['feature_id'] is None):
-            raise ValueError("Missing the required parameter `feature_id` when calling `get_feature_parameter`")  # noqa: E501
-        # verify the required parameter 'parameter_name' is set
-        if ('parameter_name' not in params or
-                params['parameter_name'] is None):
-            raise ValueError("Missing the required parameter `parameter_name` when calling `get_feature_parameter`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-        if 'feature_id' in params:
-            if isinstance(params['feature_id'], TeamCityObject):
-                path_params['featureId'] = params['feature_id'].locator_id
-            else:
-                path_params['featureId'] = params['feature_id']  # noqa: E501
-        if 'parameter_name' in params:
-            if isinstance(params['parameter_name'], TeamCityObject):
-                path_params['parameterName'] = params['parameter_name'].locator_id
-            else:
-                path_params['parameterName'] = params['parameter_name']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/features/{featureId}/parameters/{parameterName}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_feature_parameters_with_http_info(self, bt_locator, feature_id, **kwargs):  # noqa: E501
-        """get_feature_parameters  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_feature_parameters_with_http_info(bt_locator, feature_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str feature_id: (required)
-        :param str fields:
-        :return: Properties
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'feature_id', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_feature_parameters" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_feature_parameters`")  # noqa: E501
-        # verify the required parameter 'feature_id' is set
-        if ('feature_id' not in params or
-                params['feature_id'] is None):
-            raise ValueError("Missing the required parameter `feature_id` when calling `get_feature_parameters`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-        if 'feature_id' in params:
-            if isinstance(params['feature_id'], TeamCityObject):
-                path_params['featureId'] = params['feature_id'].locator_id
-            else:
-                path_params['featureId'] = params['feature_id']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/features/{featureId}/parameters', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Properties',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_feature_setting_with_http_info(self, bt_locator, feature_id, name, **kwargs):  # noqa: E501
-        """get_feature_setting  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_feature_setting_with_http_info(bt_locator, feature_id, name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str feature_id: (required)
-        :param str name: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'feature_id', 'name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_feature_setting" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_feature_setting`")  # noqa: E501
-        # verify the required parameter 'feature_id' is set
-        if ('feature_id' not in params or
-                params['feature_id'] is None):
-            raise ValueError("Missing the required parameter `feature_id` when calling `get_feature_setting`")  # noqa: E501
-        # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `get_feature_setting`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-        if 'feature_id' in params:
-            if isinstance(params['feature_id'], TeamCityObject):
-                path_params['featureId'] = params['feature_id'].locator_id
-            else:
-                path_params['featureId'] = params['feature_id']  # noqa: E501
-        if 'name' in params:
-            if isinstance(params['name'], TeamCityObject):
-                path_params['name'] = params['name'].locator_id
-            else:
-                path_params['name'] = params['name']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/features/{featureId}/{name}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_features_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """get_features  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_features_with_http_info(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str fields:
-        :return: Features
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_features" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_features`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/features', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Features',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_investigations_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """get_investigations  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_investigations_with_http_info(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str fields:
-        :return: Investigations
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_investigations" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_investigations`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/investigations', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Investigations',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_metadata_with_http_info(self, path, bt_locator, **kwargs):  # noqa: E501
-        """get_metadata  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_metadata_with_http_info(path, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str path: (required)
-        :param str bt_locator: (required)
-        :param str fields:
-        :param bool resolve_parameters:
-        :return: File
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['path', 'bt_locator', 'fields', 'resolve_parameters']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_metadata" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'path' is set
-        if ('path' not in params or
-                params['path'] is None):
-            raise ValueError("Missing the required parameter `path` when calling `get_metadata`")  # noqa: E501
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_metadata`")  # noqa: E501
-
-        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_metadata`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
-        collection_formats = {}
-
-        path_params = {}
-        if 'path' in params:
-            if isinstance(params['path'], TeamCityObject):
-                path_params['path'] = params['path'].locator_id
-            else:
-                path_params['path'] = params['path']  # noqa: E501
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-        if 'resolve_parameters' in params:
-            query_params.append(('resolveParameters', params['resolve_parameters']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/vcs/files/latest/metadata{path}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='File',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_parameter_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
-        """get_parameter  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_parameter_with_http_info(name, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str name: (required)
-        :param str bt_locator: (required)
-        :param str fields:
-        :return: ModelProperty
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['name', 'bt_locator', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_parameter" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `get_parameter`")  # noqa: E501
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_parameter`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'name' in params:
-            if isinstance(params['name'], TeamCityObject):
-                path_params['name'] = params['name'].locator_id
-            else:
-                path_params['name'] = params['name']  # noqa: E501
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/parameters/{name}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='ModelProperty',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_parameter_0_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
-        """get_parameter_0  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_parameter_0_with_http_info(name, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str name: (required)
-        :param str bt_locator: (required)
-        :param str fields:
-        :return: ModelProperty
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['name', 'bt_locator', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_parameter_0" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `get_parameter_0`")  # noqa: E501
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_parameter_0`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'name' in params:
-            if isinstance(params['name'], TeamCityObject):
-                path_params['name'] = params['name'].locator_id
-            else:
-                path_params['name'] = params['name']  # noqa: E501
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/settings/{name}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='ModelProperty',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_parameter_type_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
-        """get_parameter_type  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_parameter_type_with_http_info(name, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str name: (required)
-        :param str bt_locator: (required)
-        :return: Type
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['name', 'bt_locator']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_parameter_type" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `get_parameter_type`")  # noqa: E501
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_parameter_type`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'name' in params:
-            if isinstance(params['name'], TeamCityObject):
-                path_params['name'] = params['name'].locator_id
-            else:
-                path_params['name'] = params['name']  # noqa: E501
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/parameters/{name}/type', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Type',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_parameter_type_raw_value_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
-        """get_parameter_type_raw_value  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_parameter_type_raw_value_with_http_info(name, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str name: (required)
-        :param str bt_locator: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['name', 'bt_locator']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_parameter_type_raw_value" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `get_parameter_type_raw_value`")  # noqa: E501
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_parameter_type_raw_value`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'name' in params:
-            if isinstance(params['name'], TeamCityObject):
-                path_params['name'] = params['name'].locator_id
-            else:
-                path_params['name'] = params['name']  # noqa: E501
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/parameters/{name}/type/rawValue', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_parameter_value_long_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
-        """get_parameter_value_long  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_parameter_value_long_with_http_info(name, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str name: (required)
-        :param str bt_locator: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['name', 'bt_locator']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_parameter_value_long" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `get_parameter_value_long`")  # noqa: E501
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_parameter_value_long`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'name' in params:
-            if isinstance(params['name'], TeamCityObject):
-                path_params['name'] = params['name'].locator_id
-            else:
-                path_params['name'] = params['name']  # noqa: E501
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/parameters/{name}/value', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_parameter_value_long_0_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
-        """get_parameter_value_long_0  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_parameter_value_long_0_with_http_info(name, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str name: (required)
-        :param str bt_locator: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['name', 'bt_locator']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_parameter_value_long_0" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `get_parameter_value_long_0`")  # noqa: E501
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_parameter_value_long_0`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'name' in params:
-            if isinstance(params['name'], TeamCityObject):
-                path_params['name'] = params['name'].locator_id
-            else:
-                path_params['name'] = params['name']  # noqa: E501
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/settings/{name}/value', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_parameters_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """get_parameters  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_parameters_with_http_info(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str locator:
-        :param str fields:
-        :return: Properties
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'locator', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_parameters" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_parameters`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'locator' in params:
-            query_params.append(('locator', params['locator']))  # noqa: E501
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/parameters', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Properties',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_parameters_0_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """get_parameters_0  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_parameters_0_with_http_info(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str locator:
-        :param str fields:
-        :return: Properties
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'locator', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_parameters_0" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_parameters_0`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'locator' in params:
-            query_params.append(('locator', params['locator']))  # noqa: E501
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/settings', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Properties',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_requirement_setting_with_http_info(self, bt_locator, agent_requirement_locator, field_name, **kwargs):  # noqa: E501
-        """get_requirement_setting  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_requirement_setting_with_http_info(bt_locator, agent_requirement_locator, field_name, async_req=True)
+        >>> thread = api.__get_agent_requirement_parameter_with_http_info(bt_locator, agent_requirement_locator, field_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -7507,22 +4591,22 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_requirement_setting" % key
+                    " to method get_agent_requirement_parameter" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_requirement_setting`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_agent_requirement_parameter`")  # noqa: E501
         # verify the required parameter 'agent_requirement_locator' is set
         if ('agent_requirement_locator' not in params or
                 params['agent_requirement_locator'] is None):
-            raise ValueError("Missing the required parameter `agent_requirement_locator` when calling `get_requirement_setting`")  # noqa: E501
+            raise ValueError("Missing the required parameter `agent_requirement_locator` when calling `get_agent_requirement_parameter`")  # noqa: E501
         # verify the required parameter 'field_name' is set
         if ('field_name' not in params or
                 params['field_name'] is None):
-            raise ValueError("Missing the required parameter `field_name` when calling `get_requirement_setting`")  # noqa: E501
+            raise ValueError("Missing the required parameter `field_name` when calling `get_agent_requirement_parameter`")  # noqa: E501
 
         collection_formats = {}
 
@@ -7551,6 +4635,10 @@ class BuildTypeApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -7570,26 +4658,24 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __get_root_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """get_root  # noqa: E501
+    def __get_aliases_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Get external IDs of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_root_with_http_info(bt_locator, async_req=True)
+        >>> thread = api.__get_aliases_with_http_info(bt_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str bt_locator: (required)
-        :param str base_path:
-        :param str locator:
-        :param str fields:
-        :param bool resolve_parameters:
-        :return: Files
+        :param str field:
+        :return: Items
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['bt_locator', 'base_path', 'locator', 'fields', 'resolve_parameters']  # noqa: E501
+        all_params = ['bt_locator', 'field']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -7600,14 +4686,14 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_root" % key
+                    " to method get_aliases" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_root`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_aliases`")  # noqa: E501
 
         collection_formats = {}
 
@@ -7619,14 +4705,8 @@ class BuildTypeApi(object):
                 path_params['btLocator'] = params['bt_locator']  # noqa: E501
 
         query_params = []
-        if 'base_path' in params:
-            query_params.append(('basePath', params['base_path']))  # noqa: E501
-        if 'locator' in params:
-            query_params.append(('locator', params['locator']))  # noqa: E501
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-        if 'resolve_parameters' in params:
-            query_params.append(('resolveParameters', params['resolve_parameters']))  # noqa: E501
+        if 'field' in params:
+            query_params.append(('field', params['field']))  # noqa: E501
 
         header_params = {}
 
@@ -7634,18 +4714,22 @@ class BuildTypeApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/vcs/files/latest', 'GET',
+            '/app/rest/buildTypes/{btLocator}/aliases', 'GET',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Files',  # noqa: E501
+            response_type='Items',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -7653,173 +4737,19 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __get_settings_file_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """get_settings_file  # noqa: E501
+    def __get_all_agent_requirements_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Get all agent requirements of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_settings_file_with_http_info(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_settings_file" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_settings_file`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/settingsFile', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_snapshot_dep_with_http_info(self, bt_locator, snapshot_dep_locator, **kwargs):  # noqa: E501
-        """get_snapshot_dep  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_snapshot_dep_with_http_info(bt_locator, snapshot_dep_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str snapshot_dep_locator: (required)
-        :param str fields:
-        :return: SnapshotDependency
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'snapshot_dep_locator', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_snapshot_dep" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_snapshot_dep`")  # noqa: E501
-        # verify the required parameter 'snapshot_dep_locator' is set
-        if ('snapshot_dep_locator' not in params or
-                params['snapshot_dep_locator'] is None):
-            raise ValueError("Missing the required parameter `snapshot_dep_locator` when calling `get_snapshot_dep`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-        if 'snapshot_dep_locator' in params:
-            if isinstance(params['snapshot_dep_locator'], TeamCityObject):
-                path_params['snapshotDepLocator'] = params['snapshot_dep_locator'].locator_id
-            else:
-                path_params['snapshotDepLocator'] = params['snapshot_dep_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/snapshot-dependencies/{snapshotDepLocator}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='SnapshotDependency',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_snapshot_deps_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """get_snapshot_deps  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_snapshot_deps_with_http_info(bt_locator, async_req=True)
+        >>> thread = api.__get_all_agent_requirements_with_http_info(bt_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str bt_locator: (required)
         :param str fields:
-        :return: SnapshotDependencies
+        :return: AgentRequirements
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -7835,14 +4765,14 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_snapshot_deps" % key
+                    " to method get_all_agent_requirements" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_snapshot_deps`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_all_agent_requirements`")  # noqa: E501
 
         collection_formats = {}
 
@@ -7863,18 +4793,22 @@ class BuildTypeApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/snapshot-dependencies', 'GET',
+            '/app/rest/buildTypes/{btLocator}/agent-requirements', 'GET',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SnapshotDependencies',  # noqa: E501
+            response_type='AgentRequirements',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -7882,19 +4816,349 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __get_step_with_http_info(self, bt_locator, step_id, **kwargs):  # noqa: E501
-        """get_step  # noqa: E501
+    def __get_all_artifact_dependencies_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Get all artifact dependencies of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_step_with_http_info(bt_locator, step_id, async_req=True)
+        >>> thread = api.__get_all_artifact_dependencies_with_http_info(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :return: ArtifactDependencies
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_artifact_dependencies" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_all_artifact_dependencies`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/artifact-dependencies', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ArtifactDependencies',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_all_branches_of_build_type_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Get all branches of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_all_branches_of_build_type_with_http_info(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str locator:
+        :param str fields:
+        :return: Branches
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'locator', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_branches_of_build_type" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_all_branches_of_build_type`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+        if 'locator' in params:
+            query_params.append(('locator', params['locator']))  # noqa: E501
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/branches', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Branches',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_all_build_feature_parameters_with_http_info(self, bt_locator, feature_id, **kwargs):  # noqa: E501
+        """Get all parameters of a build feature of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_all_build_feature_parameters_with_http_info(bt_locator, feature_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str feature_id: (required)
+        :param str fields:
+        :return: Properties
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'feature_id', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_build_feature_parameters" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_all_build_feature_parameters`")  # noqa: E501
+        # verify the required parameter 'feature_id' is set
+        if ('feature_id' not in params or
+                params['feature_id'] is None):
+            raise ValueError("Missing the required parameter `feature_id` when calling `get_all_build_feature_parameters`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+        if 'feature_id' in params:
+            if isinstance(params['feature_id'], TeamCityObject):
+                path_params['featureId'] = params['feature_id'].locator_id
+            else:
+                path_params['featureId'] = params['feature_id']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/features/{featureId}/parameters', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Properties',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_all_build_features_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Get all build features of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_all_build_features_with_http_info(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :return: Features
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_build_features" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_all_build_features`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/features', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Features',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_all_build_step_parameters_with_http_info(self, bt_locator, step_id, **kwargs):  # noqa: E501
+        """Get all parameters of a build step of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_all_build_step_parameters_with_http_info(bt_locator, step_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str bt_locator: (required)
         :param str step_id: (required)
         :param str fields:
-        :return: Step
+        :return: Properties
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -7910,18 +5174,18 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_step" % key
+                    " to method get_all_build_step_parameters" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_step`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_all_build_step_parameters`")  # noqa: E501
         # verify the required parameter 'step_id' is set
         if ('step_id' not in params or
                 params['step_id'] is None):
-            raise ValueError("Missing the required parameter `step_id` when calling `get_step`")  # noqa: E501
+            raise ValueError("Missing the required parameter `step_id` when calling `get_all_build_step_parameters`")  # noqa: E501
 
         collection_formats = {}
 
@@ -7947,6 +5211,1540 @@ class BuildTypeApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/steps/{stepId}/parameters', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Properties',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_all_build_steps_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Get all build steps of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_all_build_steps_with_http_info(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :return: Steps
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_build_steps" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_all_build_steps`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/steps', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Steps',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_all_build_templates_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Get all build templates of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_all_build_templates_with_http_info(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :return: BuildTypes
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_build_templates" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_all_build_templates`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/templates', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='BuildTypes',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_all_build_types_with_http_info(self, **kwargs):  # noqa: E501
+        """Get all build configurations.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_all_build_types_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str locator:
+        :param str fields:
+        :return: BuildTypes
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['locator', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_build_types" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'locator' in params:
+            query_params.append(('locator', params['locator']))  # noqa: E501
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='BuildTypes',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_all_investigations_of_build_type_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Get all investigations of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_all_investigations_of_build_type_with_http_info(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :return: Investigations
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_investigations_of_build_type" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_all_investigations_of_build_type`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/investigations', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Investigations',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_all_snapshot_dependencies_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Get all snapshot dependencies of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_all_snapshot_dependencies_with_http_info(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :return: SnapshotDependencies
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_snapshot_dependencies" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_all_snapshot_dependencies`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/snapshot-dependencies', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='SnapshotDependencies',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_all_triggers_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Get all triggers of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_all_triggers_with_http_info(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :return: Triggers
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_triggers" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_all_triggers`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/triggers', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Triggers',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_all_vcs_roots_of_build_type_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Get all VCS roots of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_all_vcs_roots_of_build_type_with_http_info(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :return: VcsRootEntries
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_vcs_roots_of_build_type" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_all_vcs_roots_of_build_type`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/vcs-root-entries', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='VcsRootEntries',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_artifact_dependency_with_http_info(self, bt_locator, artifact_dep_locator, **kwargs):  # noqa: E501
+        """Get an artifact dependency of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_artifact_dependency_with_http_info(bt_locator, artifact_dep_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str artifact_dep_locator: (required)
+        :param str fields:
+        :return: ArtifactDependency
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'artifact_dep_locator', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_artifact_dependency" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_artifact_dependency`")  # noqa: E501
+        # verify the required parameter 'artifact_dep_locator' is set
+        if ('artifact_dep_locator' not in params or
+                params['artifact_dep_locator'] is None):
+            raise ValueError("Missing the required parameter `artifact_dep_locator` when calling `get_artifact_dependency`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+        if 'artifact_dep_locator' in params:
+            if isinstance(params['artifact_dep_locator'], TeamCityObject):
+                path_params['artifactDepLocator'] = params['artifact_dep_locator'].locator_id
+            else:
+                path_params['artifactDepLocator'] = params['artifact_dep_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/artifact-dependencies/{artifactDepLocator}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ArtifactDependency',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_artifact_dependency_parameter_with_http_info(self, bt_locator, artifact_dep_locator, field_name, **kwargs):  # noqa: E501
+        """Get a parameter of an artifact dependency of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_artifact_dependency_parameter_with_http_info(bt_locator, artifact_dep_locator, field_name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str artifact_dep_locator: (required)
+        :param str field_name: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'artifact_dep_locator', 'field_name']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_artifact_dependency_parameter" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_artifact_dependency_parameter`")  # noqa: E501
+        # verify the required parameter 'artifact_dep_locator' is set
+        if ('artifact_dep_locator' not in params or
+                params['artifact_dep_locator'] is None):
+            raise ValueError("Missing the required parameter `artifact_dep_locator` when calling `get_artifact_dependency_parameter`")  # noqa: E501
+        # verify the required parameter 'field_name' is set
+        if ('field_name' not in params or
+                params['field_name'] is None):
+            raise ValueError("Missing the required parameter `field_name` when calling `get_artifact_dependency_parameter`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+        if 'artifact_dep_locator' in params:
+            if isinstance(params['artifact_dep_locator'], TeamCityObject):
+                path_params['artifactDepLocator'] = params['artifact_dep_locator'].locator_id
+            else:
+                path_params['artifactDepLocator'] = params['artifact_dep_locator']  # noqa: E501
+        if 'field_name' in params:
+            if isinstance(params['field_name'], TeamCityObject):
+                path_params['fieldName'] = params['field_name'].locator_id
+            else:
+                path_params['fieldName'] = params['field_name']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/artifact-dependencies/{artifactDepLocator}/{fieldName}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_build_feature_with_http_info(self, bt_locator, feature_id, **kwargs):  # noqa: E501
+        """Get a build feature of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_build_feature_with_http_info(bt_locator, feature_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str feature_id: (required)
+        :param str fields:
+        :return: Feature
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'feature_id', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_build_feature" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_build_feature`")  # noqa: E501
+        # verify the required parameter 'feature_id' is set
+        if ('feature_id' not in params or
+                params['feature_id'] is None):
+            raise ValueError("Missing the required parameter `feature_id` when calling `get_build_feature`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+        if 'feature_id' in params:
+            if isinstance(params['feature_id'], TeamCityObject):
+                path_params['featureId'] = params['feature_id'].locator_id
+            else:
+                path_params['featureId'] = params['feature_id']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/features/{featureId}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Feature',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_build_feature_parameter_with_http_info(self, bt_locator, feature_id, parameter_name, **kwargs):  # noqa: E501
+        """Get a parameter of a build feature of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_build_feature_parameter_with_http_info(bt_locator, feature_id, parameter_name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str feature_id: (required)
+        :param str parameter_name: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'feature_id', 'parameter_name']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_build_feature_parameter" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_build_feature_parameter`")  # noqa: E501
+        # verify the required parameter 'feature_id' is set
+        if ('feature_id' not in params or
+                params['feature_id'] is None):
+            raise ValueError("Missing the required parameter `feature_id` when calling `get_build_feature_parameter`")  # noqa: E501
+        # verify the required parameter 'parameter_name' is set
+        if ('parameter_name' not in params or
+                params['parameter_name'] is None):
+            raise ValueError("Missing the required parameter `parameter_name` when calling `get_build_feature_parameter`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+        if 'feature_id' in params:
+            if isinstance(params['feature_id'], TeamCityObject):
+                path_params['featureId'] = params['feature_id'].locator_id
+            else:
+                path_params['featureId'] = params['feature_id']  # noqa: E501
+        if 'parameter_name' in params:
+            if isinstance(params['parameter_name'], TeamCityObject):
+                path_params['parameterName'] = params['parameter_name'].locator_id
+            else:
+                path_params['parameterName'] = params['parameter_name']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/features/{featureId}/parameters/{parameterName}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_build_feature_setting_with_http_info(self, bt_locator, feature_id, name, **kwargs):  # noqa: E501
+        """Get the setting of a build feature of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_build_feature_setting_with_http_info(bt_locator, feature_id, name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str feature_id: (required)
+        :param str name: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'feature_id', 'name']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_build_feature_setting" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_build_feature_setting`")  # noqa: E501
+        # verify the required parameter 'feature_id' is set
+        if ('feature_id' not in params or
+                params['feature_id'] is None):
+            raise ValueError("Missing the required parameter `feature_id` when calling `get_build_feature_setting`")  # noqa: E501
+        # verify the required parameter 'name' is set
+        if ('name' not in params or
+                params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `get_build_feature_setting`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+        if 'feature_id' in params:
+            if isinstance(params['feature_id'], TeamCityObject):
+                path_params['featureId'] = params['feature_id'].locator_id
+            else:
+                path_params['featureId'] = params['feature_id']  # noqa: E501
+        if 'name' in params:
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/features/{featureId}/{name}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_build_parameter_of_build_type_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
+        """Get build parameter.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_build_parameter_of_build_type_with_http_info(name, bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str name: (required)
+        :param str bt_locator: (required)
+        :param str fields:
+        :return: ModelProperty
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['name', 'bt_locator', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_build_parameter_of_build_type" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if ('name' not in params or
+                params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `get_build_parameter_of_build_type`")  # noqa: E501
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_build_parameter_of_build_type`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'name' in params:
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/parameters/{name}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ModelProperty',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_build_parameter_specification_of_build_type_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
+        """Get build parameter specification.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_build_parameter_specification_of_build_type_with_http_info(name, bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str name: (required)
+        :param str bt_locator: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['name', 'bt_locator']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_build_parameter_specification_of_build_type" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if ('name' not in params or
+                params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `get_build_parameter_specification_of_build_type`")  # noqa: E501
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_build_parameter_specification_of_build_type`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'name' in params:
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/parameters/{name}/type/rawValue', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_build_parameter_type_of_build_type_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
+        """Get type of build parameter.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_build_parameter_type_of_build_type_with_http_info(name, bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str name: (required)
+        :param str bt_locator: (required)
+        :return: Type
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['name', 'bt_locator']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_build_parameter_type_of_build_type" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if ('name' not in params or
+                params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `get_build_parameter_type_of_build_type`")  # noqa: E501
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_build_parameter_type_of_build_type`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'name' in params:
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/parameters/{name}/type', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Type',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_build_parameter_value_of_build_type_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
+        """Get value of build parameter.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_build_parameter_value_of_build_type_with_http_info(name, bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str name: (required)
+        :param str bt_locator: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['name', 'bt_locator']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_build_parameter_value_of_build_type" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if ('name' not in params or
+                params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `get_build_parameter_value_of_build_type`")  # noqa: E501
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_build_parameter_value_of_build_type`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'name' in params:
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/parameters/{name}/value', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_build_parameters_of_build_type_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Get build parameters.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_build_parameters_of_build_type_with_http_info(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str locator:
+        :param str fields:
+        :return: Properties
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'locator', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_build_parameters_of_build_type" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_build_parameters_of_build_type`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+        if 'locator' in params:
+            query_params.append(('locator', params['locator']))  # noqa: E501
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/parameters', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Properties',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_build_step_with_http_info(self, bt_locator, step_id, **kwargs):  # noqa: E501
+        """Get a build step of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_build_step_with_http_info(bt_locator, step_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str step_id: (required)
+        :param str fields:
+        :return: Step
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'step_id', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_build_step" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_build_step`")  # noqa: E501
+        # verify the required parameter 'step_id' is set
+        if ('step_id' not in params or
+                params['step_id'] is None):
+            raise ValueError("Missing the required parameter `step_id` when calling `get_build_step`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+        if 'step_id' in params:
+            if isinstance(params['step_id'], TeamCityObject):
+                path_params['stepId'] = params['step_id'].locator_id
+            else:
+                path_params['stepId'] = params['step_id']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -7966,12 +6764,13 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __get_step_parameter_with_http_info(self, bt_locator, step_id, parameter_name, **kwargs):  # noqa: E501
-        """get_step_parameter  # noqa: E501
+    def __get_build_step_parameter_with_http_info(self, bt_locator, step_id, parameter_name, **kwargs):  # noqa: E501
+        """Get a parameter of a build step of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_step_parameter_with_http_info(bt_locator, step_id, parameter_name, async_req=True)
+        >>> thread = api.__get_build_step_parameter_with_http_info(bt_locator, step_id, parameter_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -7994,22 +6793,22 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_step_parameter" % key
+                    " to method get_build_step_parameter" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_step_parameter`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_build_step_parameter`")  # noqa: E501
         # verify the required parameter 'step_id' is set
         if ('step_id' not in params or
                 params['step_id'] is None):
-            raise ValueError("Missing the required parameter `step_id` when calling `get_step_parameter`")  # noqa: E501
+            raise ValueError("Missing the required parameter `step_id` when calling `get_build_step_parameter`")  # noqa: E501
         # verify the required parameter 'parameter_name' is set
         if ('parameter_name' not in params or
                 params['parameter_name'] is None):
-            raise ValueError("Missing the required parameter `parameter_name` when calling `get_step_parameter`")  # noqa: E501
+            raise ValueError("Missing the required parameter `parameter_name` when calling `get_build_step_parameter`")  # noqa: E501
 
         collection_formats = {}
 
@@ -8038,6 +6837,10 @@ class BuildTypeApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -8057,96 +6860,13 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __get_step_parameters_with_http_info(self, bt_locator, step_id, **kwargs):  # noqa: E501
-        """get_step_parameters  # noqa: E501
+    def __get_build_step_setting_with_http_info(self, bt_locator, step_id, field_name, **kwargs):  # noqa: E501
+        """Get the setting of a build step of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_step_parameters_with_http_info(bt_locator, step_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str step_id: (required)
-        :param str fields:
-        :return: Properties
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'step_id', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_step_parameters" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_step_parameters`")  # noqa: E501
-        # verify the required parameter 'step_id' is set
-        if ('step_id' not in params or
-                params['step_id'] is None):
-            raise ValueError("Missing the required parameter `step_id` when calling `get_step_parameters`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-        if 'step_id' in params:
-            if isinstance(params['step_id'], TeamCityObject):
-                path_params['stepId'] = params['step_id'].locator_id
-            else:
-                path_params['stepId'] = params['step_id']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/steps/{stepId}/parameters', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Properties',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_step_setting_with_http_info(self, bt_locator, step_id, field_name, **kwargs):  # noqa: E501
-        """get_step_setting  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_step_setting_with_http_info(bt_locator, step_id, field_name, async_req=True)
+        >>> thread = api.__get_build_step_setting_with_http_info(bt_locator, step_id, field_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -8169,22 +6889,22 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_step_setting" % key
+                    " to method get_build_step_setting" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_step_setting`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_build_step_setting`")  # noqa: E501
         # verify the required parameter 'step_id' is set
         if ('step_id' not in params or
                 params['step_id'] is None):
-            raise ValueError("Missing the required parameter `step_id` when calling `get_step_setting`")  # noqa: E501
+            raise ValueError("Missing the required parameter `step_id` when calling `get_build_step_setting`")  # noqa: E501
         # verify the required parameter 'field_name' is set
         if ('field_name' not in params or
                 params['field_name'] is None):
-            raise ValueError("Missing the required parameter `field_name` when calling `get_step_setting`")  # noqa: E501
+            raise ValueError("Missing the required parameter `field_name` when calling `get_build_step_setting`")  # noqa: E501
 
         collection_formats = {}
 
@@ -8213,6 +6933,10 @@ class BuildTypeApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -8232,86 +6956,13 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __get_steps_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """get_steps  # noqa: E501
+    def __get_build_template_with_http_info(self, bt_locator, template_locator, **kwargs):  # noqa: E501
+        """Get a template of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_steps_with_http_info(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str fields:
-        :return: Steps
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_steps" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_steps`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/steps', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Steps',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_template_with_http_info(self, bt_locator, template_locator, **kwargs):  # noqa: E501
-        """get_template  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_template_with_http_info(bt_locator, template_locator, async_req=True)
+        >>> thread = api.__get_build_template_with_http_info(bt_locator, template_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -8334,18 +6985,18 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_template" % key
+                    " to method get_build_template" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_template`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_build_template`")  # noqa: E501
         # verify the required parameter 'template_locator' is set
         if ('template_locator' not in params or
                 params['template_locator'] is None):
-            raise ValueError("Missing the required parameter `template_locator` when calling `get_template`")  # noqa: E501
+            raise ValueError("Missing the required parameter `template_locator` when calling `get_build_template`")  # noqa: E501
 
         collection_formats = {}
 
@@ -8371,6 +7022,10 @@ class BuildTypeApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -8390,18 +7045,19 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __get_templates_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """get_templates  # noqa: E501
+    def __get_build_type_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Get build configuration matching the locator.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_templates_with_http_info(bt_locator, async_req=True)
+        >>> thread = api.__get_build_type_with_http_info(bt_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str bt_locator: (required)
         :param str fields:
-        :return: BuildTypes
+        :return: BuildType
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -8417,14 +7073,14 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_templates" % key
+                    " to method get_build_type" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_templates`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_build_type`")  # noqa: E501
 
         collection_formats = {}
 
@@ -8445,18 +7101,713 @@ class BuildTypeApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/templates', 'GET',
+            '/app/rest/buildTypes/{btLocator}', 'GET',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='BuildTypes',  # noqa: E501
+            response_type='BuildType',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_build_type_build_tags_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Get tags of builds of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_build_type_build_tags_with_http_info(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str field:
+        :return: Tags
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'field']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_build_type_build_tags" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_build_type_build_tags`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+        if 'field' in params:
+            query_params.append(('field', params['field']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/buildTags', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Tags',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_build_type_builds_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Get builds of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_build_type_builds_with_http_info(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :return: Builds
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_build_type_builds" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_build_type_builds`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/builds', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Builds',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_build_type_field_with_http_info(self, bt_locator, field, **kwargs):  # noqa: E501
+        """Get a field of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_build_type_field_with_http_info(bt_locator, field, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str field: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'field']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_build_type_field" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_build_type_field`")  # noqa: E501
+        # verify the required parameter 'field' is set
+        if ('field' not in params or
+                params['field'] is None):
+            raise ValueError("Missing the required parameter `field` when calling `get_build_type_field`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+        if 'field' in params:
+            if isinstance(params['field'], TeamCityObject):
+                path_params['field'] = params['field'].locator_id
+            else:
+                path_params['field'] = params['field']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/{field}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_build_type_settings_file_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Get the settings file of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_build_type_settings_file_with_http_info(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_build_type_settings_file" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_build_type_settings_file`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/settingsFile', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_file_metadata_of_build_type_with_http_info(self, path, bt_locator, **kwargs):  # noqa: E501
+        """Get metadata of specific file.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_file_metadata_of_build_type_with_http_info(path, bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str path: (required)
+        :param str bt_locator: (required)
+        :param str fields:
+        :param bool resolve_parameters:
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['path', 'bt_locator', 'fields', 'resolve_parameters']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_file_metadata_of_build_type" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'path' is set
+        if ('path' not in params or
+                params['path'] is None):
+            raise ValueError("Missing the required parameter `path` when calling `get_file_metadata_of_build_type`")  # noqa: E501
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_file_metadata_of_build_type`")  # noqa: E501
+
+        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError("Invalid value for parameter `path` when calling `get_file_metadata_of_build_type`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+        if 'path' in params:
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+        if 'resolve_parameters' in params:
+            query_params.append(('resolveParameters', params['resolve_parameters']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/vcs/files/latest/metadata{path}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='file',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_files_list_for_subpath_of_build_type_with_http_info(self, path, bt_locator, **kwargs):  # noqa: E501
+        """List files under this path.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_files_list_for_subpath_of_build_type_with_http_info(path, bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str path: (required)
+        :param str bt_locator: (required)
+        :param str base_path:
+        :param str locator:
+        :param str fields:
+        :param bool resolve_parameters:
+        :return: Files
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['path', 'bt_locator', 'base_path', 'locator', 'fields', 'resolve_parameters']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_files_list_for_subpath_of_build_type" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'path' is set
+        if ('path' not in params or
+                params['path'] is None):
+            raise ValueError("Missing the required parameter `path` when calling `get_files_list_for_subpath_of_build_type`")  # noqa: E501
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_files_list_for_subpath_of_build_type`")  # noqa: E501
+
+        if 'path' in params and not re.search('(.*)?', params['path']):  # noqa: E501
+            raise ValueError("Invalid value for parameter `path` when calling `get_files_list_for_subpath_of_build_type`, must conform to the pattern `/(.*)?/`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+        if 'path' in params:
+            if isinstance(params['path'], TeamCityObject):
+                path_params['path'] = params['path'].locator_id
+            else:
+                path_params['path'] = params['path']  # noqa: E501
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+        if 'base_path' in params:
+            query_params.append(('basePath', params['base_path']))  # noqa: E501
+        if 'locator' in params:
+            query_params.append(('locator', params['locator']))  # noqa: E501
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+        if 'resolve_parameters' in params:
+            query_params.append(('resolveParameters', params['resolve_parameters']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/vcs/files/latest/{path}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Files',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_files_list_of_build_type_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """List all files.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_files_list_of_build_type_with_http_info(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str base_path:
+        :param str locator:
+        :param str fields:
+        :param bool resolve_parameters:
+        :return: Files
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'base_path', 'locator', 'fields', 'resolve_parameters']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_files_list_of_build_type" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_files_list_of_build_type`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+        if 'base_path' in params:
+            query_params.append(('basePath', params['base_path']))  # noqa: E501
+        if 'locator' in params:
+            query_params.append(('locator', params['locator']))  # noqa: E501
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+        if 'resolve_parameters' in params:
+            query_params.append(('resolveParameters', params['resolve_parameters']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/vcs/files/latest', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Files',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_snapshot_dependency_with_http_info(self, bt_locator, snapshot_dep_locator, **kwargs):  # noqa: E501
+        """Get a snapshot dependency of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_snapshot_dependency_with_http_info(bt_locator, snapshot_dep_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str snapshot_dep_locator: (required)
+        :param str fields:
+        :return: SnapshotDependency
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'snapshot_dep_locator', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_snapshot_dependency" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_snapshot_dependency`")  # noqa: E501
+        # verify the required parameter 'snapshot_dep_locator' is set
+        if ('snapshot_dep_locator' not in params or
+                params['snapshot_dep_locator'] is None):
+            raise ValueError("Missing the required parameter `snapshot_dep_locator` when calling `get_snapshot_dependency`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+        if 'snapshot_dep_locator' in params:
+            if isinstance(params['snapshot_dep_locator'], TeamCityObject):
+                path_params['snapshotDepLocator'] = params['snapshot_dep_locator'].locator_id
+            else:
+                path_params['snapshotDepLocator'] = params['snapshot_dep_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/snapshot-dependencies/{snapshotDepLocator}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='SnapshotDependency',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -8465,8 +7816,9 @@ class BuildTypeApi(object):
             collection_formats=collection_formats)
 
     def __get_trigger_with_http_info(self, bt_locator, trigger_locator, **kwargs):  # noqa: E501
-        """get_trigger  # noqa: E501
+        """Get a trigger of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.__get_trigger_with_http_info(bt_locator, trigger_locator, async_req=True)
@@ -8529,6 +7881,10 @@ class BuildTypeApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -8548,12 +7904,13 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __get_trigger_setting_with_http_info(self, bt_locator, trigger_locator, field_name, **kwargs):  # noqa: E501
-        """get_trigger_setting  # noqa: E501
+    def __get_trigger_parameter_with_http_info(self, bt_locator, trigger_locator, field_name, **kwargs):  # noqa: E501
+        """Get a parameter of a trigger of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_trigger_setting_with_http_info(bt_locator, trigger_locator, field_name, async_req=True)
+        >>> thread = api.__get_trigger_parameter_with_http_info(bt_locator, trigger_locator, field_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -8576,22 +7933,22 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_trigger_setting" % key
+                    " to method get_trigger_parameter" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_trigger_setting`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_trigger_parameter`")  # noqa: E501
         # verify the required parameter 'trigger_locator' is set
         if ('trigger_locator' not in params or
                 params['trigger_locator'] is None):
-            raise ValueError("Missing the required parameter `trigger_locator` when calling `get_trigger_setting`")  # noqa: E501
+            raise ValueError("Missing the required parameter `trigger_locator` when calling `get_trigger_parameter`")  # noqa: E501
         # verify the required parameter 'field_name' is set
         if ('field_name' not in params or
                 params['field_name'] is None):
-            raise ValueError("Missing the required parameter `field_name` when calling `get_trigger_setting`")  # noqa: E501
+            raise ValueError("Missing the required parameter `field_name` when calling `get_trigger_parameter`")  # noqa: E501
 
         collection_formats = {}
 
@@ -8620,6 +7977,10 @@ class BuildTypeApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -8639,231 +8000,13 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __get_triggers_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """get_triggers  # noqa: E501
+    def __get_vcs_root_with_http_info(self, bt_locator, vcs_root_locator, **kwargs):  # noqa: E501
+        """Get a VCS root of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_triggers_with_http_info(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str fields:
-        :return: Triggers
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_triggers" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_triggers`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/triggers', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Triggers',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_vcs_labeling_options_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """get_vcs_labeling_options  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_vcs_labeling_options_with_http_info(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :return: VcsLabeling
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_vcs_labeling_options" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_vcs_labeling_options`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/vcsLabeling', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='VcsLabeling',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_vcs_root_entries_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """get_vcs_root_entries  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_vcs_root_entries_with_http_info(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str fields:
-        :return: VcsRootEntries
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_vcs_root_entries" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_vcs_root_entries`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/vcs-root-entries', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='VcsRootEntries',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_vcs_root_entry_with_http_info(self, bt_locator, vcs_root_locator, **kwargs):  # noqa: E501
-        """get_vcs_root_entry  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_vcs_root_entry_with_http_info(bt_locator, vcs_root_locator, async_req=True)
+        >>> thread = api.__get_vcs_root_with_http_info(bt_locator, vcs_root_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -8886,18 +8029,18 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_vcs_root_entry" % key
+                    " to method get_vcs_root" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_vcs_root_entry`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_vcs_root`")  # noqa: E501
         # verify the required parameter 'vcs_root_locator' is set
         if ('vcs_root_locator' not in params or
                 params['vcs_root_locator'] is None):
-            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `get_vcs_root_entry`")  # noqa: E501
+            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `get_vcs_root`")  # noqa: E501
 
         collection_formats = {}
 
@@ -8923,6 +8066,10 @@ class BuildTypeApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -8942,12 +8089,13 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __get_vcs_root_entry_checkout_rules_with_http_info(self, bt_locator, vcs_root_locator, **kwargs):  # noqa: E501
-        """get_vcs_root_entry_checkout_rules  # noqa: E501
+    def __get_vcs_root_checkout_rules_with_http_info(self, bt_locator, vcs_root_locator, **kwargs):  # noqa: E501
+        """Get checkout rules of a VCS root of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_vcs_root_entry_checkout_rules_with_http_info(bt_locator, vcs_root_locator, async_req=True)
+        >>> thread = api.__get_vcs_root_checkout_rules_with_http_info(bt_locator, vcs_root_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -8969,18 +8117,18 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_vcs_root_entry_checkout_rules" % key
+                    " to method get_vcs_root_checkout_rules" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_vcs_root_entry_checkout_rules`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_vcs_root_checkout_rules`")  # noqa: E501
         # verify the required parameter 'vcs_root_locator' is set
         if ('vcs_root_locator' not in params or
                 params['vcs_root_locator'] is None):
-            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `get_vcs_root_entry_checkout_rules`")  # noqa: E501
+            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `get_vcs_root_checkout_rules`")  # noqa: E501
 
         collection_formats = {}
 
@@ -9004,6 +8152,10 @@ class BuildTypeApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -9023,12 +8175,92 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __get_zipped_with_http_info(self, path, bt_locator, **kwargs):  # noqa: E501
-        """get_zipped  # noqa: E501
+    def __get_vcs_root_instances_of_build_type_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Get all VCS root instances of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_zipped_with_http_info(path, bt_locator, async_req=True)
+        >>> thread = api.__get_vcs_root_instances_of_build_type_with_http_info(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :return: VcsRootInstances
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_vcs_root_instances_of_build_type" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_vcs_root_instances_of_build_type`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/vcsRootInstances', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='VcsRootInstances',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_zipped_file_of_build_type_with_http_info(self, path, bt_locator, **kwargs):  # noqa: E501
+        """Get specific file zipped.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_zipped_file_of_build_type_with_http_info(path, bt_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -9054,21 +8286,21 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_zipped" % key
+                    " to method get_zipped_file_of_build_type" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'path' is set
         if ('path' not in params or
                 params['path'] is None):
-            raise ValueError("Missing the required parameter `path` when calling `get_zipped`")  # noqa: E501
+            raise ValueError("Missing the required parameter `path` when calling `get_zipped_file_of_build_type`")  # noqa: E501
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `get_zipped`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `get_zipped_file_of_build_type`")  # noqa: E501
 
         if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_zipped`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+            raise ValueError("Invalid value for parameter `path` when calling `get_zipped_file_of_build_type`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -9099,6 +8331,10 @@ class BuildTypeApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['*/*'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -9119,8 +8355,9 @@ class BuildTypeApi(object):
             collection_formats=collection_formats)
 
     def __remove_all_templates_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """remove_all_templates  # noqa: E501
+        """Detach all templates from the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.__remove_all_templates_with_http_info(bt_locator, async_req=True)
@@ -9193,8 +8430,9 @@ class BuildTypeApi(object):
             collection_formats=collection_formats)
 
     def __remove_template_with_http_info(self, bt_locator, template_locator, **kwargs):  # noqa: E501
-        """remove_template  # noqa: E501
+        """Detach a template from the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.__remove_template_with_http_info(bt_locator, template_locator, async_req=True)
@@ -9277,8 +8515,9 @@ class BuildTypeApi(object):
             collection_formats=collection_formats)
 
     def __replace_agent_requirement_with_http_info(self, bt_locator, agent_requirement_locator, **kwargs):  # noqa: E501
-        """replace_agent_requirement  # noqa: E501
+        """Update an agent requirement of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.__replace_agent_requirement_with_http_info(bt_locator, agent_requirement_locator, async_req=True)
@@ -9344,6 +8583,14 @@ class BuildTypeApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -9363,12 +8610,13 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __replace_agent_requirements_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """replace_agent_requirements  # noqa: E501
+    def __replace_all_agent_requirements_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Update all agent requirements of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__replace_agent_requirements_with_http_info(bt_locator, async_req=True)
+        >>> thread = api.__replace_all_agent_requirements_with_http_info(bt_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -9391,14 +8639,14 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method replace_agent_requirements" % key
+                    " to method replace_all_agent_requirements" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `replace_agent_requirements`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `replace_all_agent_requirements`")  # noqa: E501
 
         collection_formats = {}
 
@@ -9421,6 +8669,14 @@ class BuildTypeApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -9440,12 +8696,529 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __replace_artifact_dep_with_http_info(self, bt_locator, artifact_dep_locator, **kwargs):  # noqa: E501
-        """replace_artifact_dep  # noqa: E501
+    def __replace_all_artifact_dependencies_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Update all artifact dependencies of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__replace_artifact_dep_with_http_info(bt_locator, artifact_dep_locator, async_req=True)
+        >>> thread = api.__replace_all_artifact_dependencies_with_http_info(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :param ArtifactDependencies body:
+        :return: ArtifactDependencies
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'fields', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method replace_all_artifact_dependencies" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `replace_all_artifact_dependencies`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/artifact-dependencies', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ArtifactDependencies',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __replace_all_build_features_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Update all build features of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__replace_all_build_features_with_http_info(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :param Features body:
+        :return: Features
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'fields', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method replace_all_build_features" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `replace_all_build_features`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/features', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Features',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __replace_all_build_steps_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Update all build steps of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__replace_all_build_steps_with_http_info(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :param Steps body:
+        :return: Steps
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'fields', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method replace_all_build_steps" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `replace_all_build_steps`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/steps', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Steps',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __replace_all_snapshot_dependencies_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Update all snapshot dependencies of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__replace_all_snapshot_dependencies_with_http_info(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :param SnapshotDependencies body:
+        :return: SnapshotDependencies
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'fields', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method replace_all_snapshot_dependencies" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `replace_all_snapshot_dependencies`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/snapshot-dependencies', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='SnapshotDependencies',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __replace_all_triggers_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Update all triggers of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__replace_all_triggers_with_http_info(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param str fields:
+        :param Triggers body:
+        :return: Triggers
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'fields', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method replace_all_triggers" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `replace_all_triggers`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/triggers', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Triggers',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __replace_all_vcs_roots_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Update all VCS roots of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__replace_all_vcs_roots_with_http_info(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param VcsRootEntries body:
+        :param str fields:
+        :return: VcsRootEntries
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'body', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method replace_all_vcs_roots" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `replace_all_vcs_roots`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/vcs-root-entries', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='VcsRootEntries',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __replace_artifact_dependency_with_http_info(self, bt_locator, artifact_dep_locator, **kwargs):  # noqa: E501
+        """Update an artifact dependency of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__replace_artifact_dependency_with_http_info(bt_locator, artifact_dep_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -9469,18 +9242,18 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method replace_artifact_dep" % key
+                    " to method replace_artifact_dependency" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `replace_artifact_dep`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `replace_artifact_dependency`")  # noqa: E501
         # verify the required parameter 'artifact_dep_locator' is set
         if ('artifact_dep_locator' not in params or
                 params['artifact_dep_locator'] is None):
-            raise ValueError("Missing the required parameter `artifact_dep_locator` when calling `replace_artifact_dep`")  # noqa: E501
+            raise ValueError("Missing the required parameter `artifact_dep_locator` when calling `replace_artifact_dependency`")  # noqa: E501
 
         collection_formats = {}
 
@@ -9508,6 +9281,14 @@ class BuildTypeApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -9527,89 +9308,13 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __replace_artifact_deps_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """replace_artifact_deps  # noqa: E501
+    def __replace_build_feature_with_http_info(self, bt_locator, feature_id, **kwargs):  # noqa: E501
+        """Update a build feature of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__replace_artifact_deps_with_http_info(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str fields:
-        :param ArtifactDependencies body:
-        :return: ArtifactDependencies
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'fields', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method replace_artifact_deps" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `replace_artifact_deps`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/artifact-dependencies', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='ArtifactDependencies',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __replace_feature_with_http_info(self, bt_locator, feature_id, **kwargs):  # noqa: E501
-        """replace_feature  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__replace_feature_with_http_info(bt_locator, feature_id, async_req=True)
+        >>> thread = api.__replace_build_feature_with_http_info(bt_locator, feature_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -9633,18 +9338,18 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method replace_feature" % key
+                    " to method replace_build_feature" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `replace_feature`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `replace_build_feature`")  # noqa: E501
         # verify the required parameter 'feature_id' is set
         if ('feature_id' not in params or
                 params['feature_id'] is None):
-            raise ValueError("Missing the required parameter `feature_id` when calling `replace_feature`")  # noqa: E501
+            raise ValueError("Missing the required parameter `feature_id` when calling `replace_build_feature`")  # noqa: E501
 
         collection_formats = {}
 
@@ -9672,6 +9377,14 @@ class BuildTypeApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -9691,12 +9404,13 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __replace_feature_parameters_with_http_info(self, bt_locator, feature_id, **kwargs):  # noqa: E501
-        """replace_feature_parameters  # noqa: E501
+    def __replace_build_feature_parameters_with_http_info(self, bt_locator, feature_id, **kwargs):  # noqa: E501
+        """Update a parameter of a build feature of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__replace_feature_parameters_with_http_info(bt_locator, feature_id, async_req=True)
+        >>> thread = api.__replace_build_feature_parameters_with_http_info(bt_locator, feature_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -9720,18 +9434,18 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method replace_feature_parameters" % key
+                    " to method replace_build_feature_parameters" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `replace_feature_parameters`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `replace_build_feature_parameters`")  # noqa: E501
         # verify the required parameter 'feature_id' is set
         if ('feature_id' not in params or
                 params['feature_id'] is None):
-            raise ValueError("Missing the required parameter `feature_id` when calling `replace_feature_parameters`")  # noqa: E501
+            raise ValueError("Missing the required parameter `feature_id` when calling `replace_build_feature_parameters`")  # noqa: E501
 
         collection_formats = {}
 
@@ -9759,6 +9473,14 @@ class BuildTypeApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -9778,24 +9500,26 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __replace_features_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """replace_features  # noqa: E501
+    def __replace_build_step_with_http_info(self, bt_locator, step_id, **kwargs):  # noqa: E501
+        """Replace a build step of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__replace_features_with_http_info(bt_locator, async_req=True)
+        >>> thread = api.__replace_build_step_with_http_info(bt_locator, step_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str bt_locator: (required)
+        :param str step_id: (required)
         :param str fields:
-        :param Features body:
-        :return: Features
+        :param Step body:
+        :return: Step
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['bt_locator', 'fields', 'body']  # noqa: E501
+        all_params = ['bt_locator', 'step_id', 'fields', 'body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -9806,14 +9530,18 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method replace_features" % key
+                    " to method replace_build_step" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `replace_features`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `replace_build_step`")  # noqa: E501
+        # verify the required parameter 'step_id' is set
+        if ('step_id' not in params or
+                params['step_id'] is None):
+            raise ValueError("Missing the required parameter `step_id` when calling `replace_build_step`")  # noqa: E501
 
         collection_formats = {}
 
@@ -9823,6 +9551,11 @@ class BuildTypeApi(object):
                 path_params['btLocator'] = params['bt_locator'].locator_id
             else:
                 path_params['btLocator'] = params['bt_locator']  # noqa: E501
+        if 'step_id' in params:
+            if isinstance(params['step_id'], TeamCityObject):
+                path_params['stepId'] = params['step_id'].locator_id
+            else:
+                path_params['stepId'] = params['step_id']  # noqa: E501
 
         query_params = []
         if 'fields' in params:
@@ -9836,18 +9569,26 @@ class BuildTypeApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/features', 'PUT',
+            '/app/rest/buildTypes/{btLocator}/steps/{stepId}', 'PUT',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Features',  # noqa: E501
+            response_type='Step',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -9855,12 +9596,13 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __replace_snapshot_dep_with_http_info(self, bt_locator, snapshot_dep_locator, **kwargs):  # noqa: E501
-        """replace_snapshot_dep  # noqa: E501
+    def __replace_snapshot_dependency_with_http_info(self, bt_locator, snapshot_dep_locator, **kwargs):  # noqa: E501
+        """Update a snapshot dependency of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__replace_snapshot_dep_with_http_info(bt_locator, snapshot_dep_locator, async_req=True)
+        >>> thread = api.__replace_snapshot_dependency_with_http_info(bt_locator, snapshot_dep_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -9884,18 +9626,18 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method replace_snapshot_dep" % key
+                    " to method replace_snapshot_dependency" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `replace_snapshot_dep`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `replace_snapshot_dependency`")  # noqa: E501
         # verify the required parameter 'snapshot_dep_locator' is set
         if ('snapshot_dep_locator' not in params or
                 params['snapshot_dep_locator'] is None):
-            raise ValueError("Missing the required parameter `snapshot_dep_locator` when calling `replace_snapshot_dep`")  # noqa: E501
+            raise ValueError("Missing the required parameter `snapshot_dep_locator` when calling `replace_snapshot_dependency`")  # noqa: E501
 
         collection_formats = {}
 
@@ -9923,6 +9665,14 @@ class BuildTypeApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -9942,337 +9692,10 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __replace_snapshot_deps_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """replace_snapshot_deps  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__replace_snapshot_deps_with_http_info(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str fields:
-        :param SnapshotDependencies body:
-        :return: SnapshotDependencies
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'fields', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method replace_snapshot_deps" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `replace_snapshot_deps`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/snapshot-dependencies', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='SnapshotDependencies',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __replace_step_with_http_info(self, bt_locator, step_id, **kwargs):  # noqa: E501
-        """replace_step  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__replace_step_with_http_info(bt_locator, step_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str step_id: (required)
-        :param str fields:
-        :param Step body:
-        :return: Step
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'step_id', 'fields', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method replace_step" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `replace_step`")  # noqa: E501
-        # verify the required parameter 'step_id' is set
-        if ('step_id' not in params or
-                params['step_id'] is None):
-            raise ValueError("Missing the required parameter `step_id` when calling `replace_step`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-        if 'step_id' in params:
-            if isinstance(params['step_id'], TeamCityObject):
-                path_params['stepId'] = params['step_id'].locator_id
-            else:
-                path_params['stepId'] = params['step_id']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/steps/{stepId}', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Step',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __replace_step_parameters_with_http_info(self, bt_locator, step_id, **kwargs):  # noqa: E501
-        """replace_step_parameters  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__replace_step_parameters_with_http_info(bt_locator, step_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str step_id: (required)
-        :param Properties body:
-        :param str fields:
-        :return: Properties
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'step_id', 'body', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method replace_step_parameters" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `replace_step_parameters`")  # noqa: E501
-        # verify the required parameter 'step_id' is set
-        if ('step_id' not in params or
-                params['step_id'] is None):
-            raise ValueError("Missing the required parameter `step_id` when calling `replace_step_parameters`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-        if 'step_id' in params:
-            if isinstance(params['step_id'], TeamCityObject):
-                path_params['stepId'] = params['step_id'].locator_id
-            else:
-                path_params['stepId'] = params['step_id']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/steps/{stepId}/parameters', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Properties',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __replace_steps_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """replace_steps  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__replace_steps_with_http_info(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str fields:
-        :param Steps body:
-        :return: Steps
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'fields', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method replace_steps" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `replace_steps`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/steps', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Steps',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
     def __replace_trigger_with_http_info(self, bt_locator, trigger_locator, **kwargs):  # noqa: E501
-        """replace_trigger  # noqa: E501
+        """Update a trigger of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.__replace_trigger_with_http_info(bt_locator, trigger_locator, async_req=True)
@@ -10338,6 +9761,14 @@ class BuildTypeApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -10357,255 +9788,26 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __replace_triggers_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """replace_triggers  # noqa: E501
+    def __set_agent_requirement_parameter_with_http_info(self, bt_locator, agent_requirement_locator, field_name, **kwargs):  # noqa: E501
+        """Update a parameter of an agent requirement of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__replace_triggers_with_http_info(bt_locator, async_req=True)
+        >>> thread = api.__set_agent_requirement_parameter_with_http_info(bt_locator, agent_requirement_locator, field_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str bt_locator: (required)
-        :param str fields:
-        :param Triggers body:
-        :return: Triggers
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'fields', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method replace_triggers" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `replace_triggers`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/triggers', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Triggers',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __replace_vcs_root_entries_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """replace_vcs_root_entries  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__replace_vcs_root_entries_with_http_info(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param VcsRootEntries body:
-        :param str fields:
-        :return: VcsRootEntries
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'body', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method replace_vcs_root_entries" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `replace_vcs_root_entries`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/vcs-root-entries', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='VcsRootEntries',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __serve_branches_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """serve_branches  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_branches_with_http_info(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str locator:
-        :param str fields:
-        :return: Branches
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'locator', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method serve_branches" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `serve_branches`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'locator' in params:
-            query_params.append(('locator', params['locator']))  # noqa: E501
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/branches', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Branches',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __serve_build_field_with_http_info(self, bt_locator, build_locator, field, **kwargs):  # noqa: E501
-        """serve_build_field  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_build_field_with_http_info(bt_locator, build_locator, field, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str build_locator: (required)
-        :param str field: (required)
+        :param str agent_requirement_locator: (required)
+        :param str field_name: (required)
+        :param str body:
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['bt_locator', 'build_locator', 'field']  # noqa: E501
+        all_params = ['bt_locator', 'agent_requirement_locator', 'field_name', 'body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -10616,22 +9818,22 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method serve_build_field" % key
+                    " to method set_agent_requirement_parameter" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `serve_build_field`")  # noqa: E501
-        # verify the required parameter 'build_locator' is set
-        if ('build_locator' not in params or
-                params['build_locator'] is None):
-            raise ValueError("Missing the required parameter `build_locator` when calling `serve_build_field`")  # noqa: E501
-        # verify the required parameter 'field' is set
-        if ('field' not in params or
-                params['field'] is None):
-            raise ValueError("Missing the required parameter `field` when calling `serve_build_field`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `set_agent_requirement_parameter`")  # noqa: E501
+        # verify the required parameter 'agent_requirement_locator' is set
+        if ('agent_requirement_locator' not in params or
+                params['agent_requirement_locator'] is None):
+            raise ValueError("Missing the required parameter `agent_requirement_locator` when calling `set_agent_requirement_parameter`")  # noqa: E501
+        # verify the required parameter 'field_name' is set
+        if ('field_name' not in params or
+                params['field_name'] is None):
+            raise ValueError("Missing the required parameter `field_name` when calling `set_agent_requirement_parameter`")  # noqa: E501
 
         collection_formats = {}
 
@@ -10641,16 +9843,16 @@ class BuildTypeApi(object):
                 path_params['btLocator'] = params['bt_locator'].locator_id
             else:
                 path_params['btLocator'] = params['bt_locator']  # noqa: E501
-        if 'build_locator' in params:
-            if isinstance(params['build_locator'], TeamCityObject):
-                path_params['buildLocator'] = params['build_locator'].locator_id
+        if 'agent_requirement_locator' in params:
+            if isinstance(params['agent_requirement_locator'], TeamCityObject):
+                path_params['agentRequirementLocator'] = params['agent_requirement_locator'].locator_id
             else:
-                path_params['buildLocator'] = params['build_locator']  # noqa: E501
-        if 'field' in params:
-            if isinstance(params['field'], TeamCityObject):
-                path_params['field'] = params['field'].locator_id
+                path_params['agentRequirementLocator'] = params['agent_requirement_locator']  # noqa: E501
+        if 'field_name' in params:
+            if isinstance(params['field_name'], TeamCityObject):
+                path_params['fieldName'] = params['field_name'].locator_id
             else:
-                path_params['field'] = params['field']  # noqa: E501
+                path_params['fieldName'] = params['field_name']  # noqa: E501
 
         query_params = []
 
@@ -10660,11 +9862,21 @@ class BuildTypeApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['text/plain'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/builds/{buildLocator}/{field}', 'GET',
+            '/app/rest/buildTypes/{btLocator}/agent-requirements/{agentRequirementLocator}/{fieldName}', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -10679,104 +9891,26 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __serve_build_type_builds_tags_with_http_info(self, bt_locator, field, **kwargs):  # noqa: E501
-        """serve_build_type_builds_tags  # noqa: E501
+    def __set_artifact_dependency_parameter_with_http_info(self, bt_locator, artifact_dep_locator, field_name, **kwargs):  # noqa: E501
+        """Update a parameter of an artifact dependency of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_build_type_builds_tags_with_http_info(bt_locator, field, async_req=True)
+        >>> thread = api.__set_artifact_dependency_parameter_with_http_info(bt_locator, artifact_dep_locator, field_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str bt_locator: (required)
-        :param str field: (required)
-        :return: Tags
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'field']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method serve_build_type_builds_tags" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `serve_build_type_builds_tags`")  # noqa: E501
-        # verify the required parameter 'field' is set
-        if ('field' not in params or
-                params['field'] is None):
-            raise ValueError("Missing the required parameter `field` when calling `serve_build_type_builds_tags`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-        if 'field' in params:
-            if isinstance(params['field'], TeamCityObject):
-                path_params['field'] = params['field'].locator_id
-            else:
-                path_params['field'] = params['field']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/buildTags', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Tags',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __serve_build_type_field_with_http_info(self, bt_locator, field, **kwargs):  # noqa: E501
-        """serve_build_type_field  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_build_type_field_with_http_info(bt_locator, field, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str field: (required)
+        :param str artifact_dep_locator: (required)
+        :param str field_name: (required)
+        :param str body:
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['bt_locator', 'field']  # noqa: E501
+        all_params = ['bt_locator', 'artifact_dep_locator', 'field_name', 'body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -10787,18 +9921,22 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method serve_build_type_field" % key
+                    " to method set_artifact_dependency_parameter" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `serve_build_type_field`")  # noqa: E501
-        # verify the required parameter 'field' is set
-        if ('field' not in params or
-                params['field'] is None):
-            raise ValueError("Missing the required parameter `field` when calling `serve_build_type_field`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `set_artifact_dependency_parameter`")  # noqa: E501
+        # verify the required parameter 'artifact_dep_locator' is set
+        if ('artifact_dep_locator' not in params or
+                params['artifact_dep_locator'] is None):
+            raise ValueError("Missing the required parameter `artifact_dep_locator` when calling `set_artifact_dependency_parameter`")  # noqa: E501
+        # verify the required parameter 'field_name' is set
+        if ('field_name' not in params or
+                params['field_name'] is None):
+            raise ValueError("Missing the required parameter `field_name` when calling `set_artifact_dependency_parameter`")  # noqa: E501
 
         collection_formats = {}
 
@@ -10808,11 +9946,16 @@ class BuildTypeApi(object):
                 path_params['btLocator'] = params['bt_locator'].locator_id
             else:
                 path_params['btLocator'] = params['bt_locator']  # noqa: E501
-        if 'field' in params:
-            if isinstance(params['field'], TeamCityObject):
-                path_params['field'] = params['field'].locator_id
+        if 'artifact_dep_locator' in params:
+            if isinstance(params['artifact_dep_locator'], TeamCityObject):
+                path_params['artifactDepLocator'] = params['artifact_dep_locator'].locator_id
             else:
-                path_params['field'] = params['field']  # noqa: E501
+                path_params['artifactDepLocator'] = params['artifact_dep_locator']  # noqa: E501
+        if 'field_name' in params:
+            if isinstance(params['field_name'], TeamCityObject):
+                path_params['fieldName'] = params['field_name'].locator_id
+            else:
+                path_params['fieldName'] = params['field_name']  # noqa: E501
 
         query_params = []
 
@@ -10822,11 +9965,21 @@ class BuildTypeApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['text/plain'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/{field}', 'GET',
+            '/app/rest/buildTypes/{btLocator}/artifact-dependencies/{artifactDepLocator}/{fieldName}', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -10841,23 +9994,26 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __serve_build_type_xml_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """serve_build_type_xml  # noqa: E501
+    def __set_build_feature_parameter_with_http_info(self, bt_locator, feature_id, name, **kwargs):  # noqa: E501
+        """Update a parameter of a build feature of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_build_type_xml_with_http_info(bt_locator, async_req=True)
+        >>> thread = api.__set_build_feature_parameter_with_http_info(bt_locator, feature_id, name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str bt_locator: (required)
-        :param str fields:
-        :return: BuildType
+        :param str feature_id: (required)
+        :param str name: (required)
+        :param str body:
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['bt_locator', 'fields']  # noqa: E501
+        all_params = ['bt_locator', 'feature_id', 'name', 'body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -10868,14 +10024,22 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method serve_build_type_xml" % key
+                    " to method set_build_feature_parameter" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `serve_build_type_xml`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `set_build_feature_parameter`")  # noqa: E501
+        # verify the required parameter 'feature_id' is set
+        if ('feature_id' not in params or
+                params['feature_id'] is None):
+            raise ValueError("Missing the required parameter `feature_id` when calling `set_build_feature_parameter`")  # noqa: E501
+        # verify the required parameter 'name' is set
+        if ('name' not in params or
+                params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `set_build_feature_parameter`")  # noqa: E501
 
         collection_formats = {}
 
@@ -10885,10 +10049,18 @@ class BuildTypeApi(object):
                 path_params['btLocator'] = params['bt_locator'].locator_id
             else:
                 path_params['btLocator'] = params['bt_locator']  # noqa: E501
+        if 'feature_id' in params:
+            if isinstance(params['feature_id'], TeamCityObject):
+                path_params['featureId'] = params['feature_id'].locator_id
+            else:
+                path_params['featureId'] = params['feature_id']  # noqa: E501
+        if 'name' in params:
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
 
         query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
 
         header_params = {}
 
@@ -10896,18 +10068,28 @@ class BuildTypeApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['text/plain'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}', 'GET',
+            '/app/rest/buildTypes/{btLocator}/features/{featureId}/{name}', 'PUT',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='BuildType',  # noqa: E501
+            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -10915,24 +10097,26 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __serve_build_with_project_with_http_info(self, bt_locator, build_locator, **kwargs):  # noqa: E501
-        """serve_build_with_project  # noqa: E501
+    def __set_build_step_parameter_with_http_info(self, bt_locator, step_id, field_name, **kwargs):  # noqa: E501
+        """Update a parameter of a build step of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_build_with_project_with_http_info(bt_locator, build_locator, async_req=True)
+        >>> thread = api.__set_build_step_parameter_with_http_info(bt_locator, step_id, field_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str bt_locator: (required)
-        :param str build_locator: (required)
-        :param str fields:
-        :return: Build
+        :param str step_id: (required)
+        :param str field_name: (required)
+        :param str body:
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['bt_locator', 'build_locator', 'fields']  # noqa: E501
+        all_params = ['bt_locator', 'step_id', 'field_name', 'body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -10943,18 +10127,22 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method serve_build_with_project" % key
+                    " to method set_build_step_parameter" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `serve_build_with_project`")  # noqa: E501
-        # verify the required parameter 'build_locator' is set
-        if ('build_locator' not in params or
-                params['build_locator'] is None):
-            raise ValueError("Missing the required parameter `build_locator` when calling `serve_build_with_project`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `set_build_step_parameter`")  # noqa: E501
+        # verify the required parameter 'step_id' is set
+        if ('step_id' not in params or
+                params['step_id'] is None):
+            raise ValueError("Missing the required parameter `step_id` when calling `set_build_step_parameter`")  # noqa: E501
+        # verify the required parameter 'field_name' is set
+        if ('field_name' not in params or
+                params['field_name'] is None):
+            raise ValueError("Missing the required parameter `field_name` when calling `set_build_step_parameter`")  # noqa: E501
 
         collection_formats = {}
 
@@ -10964,15 +10152,18 @@ class BuildTypeApi(object):
                 path_params['btLocator'] = params['bt_locator'].locator_id
             else:
                 path_params['btLocator'] = params['bt_locator']  # noqa: E501
-        if 'build_locator' in params:
-            if isinstance(params['build_locator'], TeamCityObject):
-                path_params['buildLocator'] = params['build_locator'].locator_id
+        if 'step_id' in params:
+            if isinstance(params['step_id'], TeamCityObject):
+                path_params['stepId'] = params['step_id'].locator_id
             else:
-                path_params['buildLocator'] = params['build_locator']  # noqa: E501
+                path_params['stepId'] = params['step_id']  # noqa: E501
+        if 'field_name' in params:
+            if isinstance(params['field_name'], TeamCityObject):
+                path_params['fieldName'] = params['field_name'].locator_id
+            else:
+                path_params['fieldName'] = params['field_name']  # noqa: E501
 
         query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
 
         header_params = {}
 
@@ -10980,129 +10171,28 @@ class BuildTypeApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['text/plain'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/builds/{buildLocator}', 'GET',
+            '/app/rest/buildTypes/{btLocator}/steps/{stepId}/{fieldName}', 'PUT',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Build',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __serve_builds_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """serve_builds  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_builds_with_http_info(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param str status:
-        :param str triggered_by_user:
-        :param bool include_personal:
-        :param bool include_canceled:
-        :param bool only_pinned:
-        :param list[str] tag:
-        :param str agent_name:
-        :param str since_build:
-        :param str since_date:
-        :param int start:
-        :param int count:
-        :param str locator:
-        :param str fields:
-        :return: Builds
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'status', 'triggered_by_user', 'include_personal', 'include_canceled', 'only_pinned', 'tag', 'agent_name', 'since_build', 'since_date', 'start', 'count', 'locator', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method serve_builds" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `serve_builds`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'status' in params:
-            query_params.append(('status', params['status']))  # noqa: E501
-        if 'triggered_by_user' in params:
-            query_params.append(('triggeredByUser', params['triggered_by_user']))  # noqa: E501
-        if 'include_personal' in params:
-            query_params.append(('includePersonal', params['include_personal']))  # noqa: E501
-        if 'include_canceled' in params:
-            query_params.append(('includeCanceled', params['include_canceled']))  # noqa: E501
-        if 'only_pinned' in params:
-            query_params.append(('onlyPinned', params['only_pinned']))  # noqa: E501
-        if 'tag' in params:
-            query_params.append(('tag', params['tag']))  # noqa: E501
-            collection_formats['tag'] = 'multi'  # noqa: E501
-        if 'agent_name' in params:
-            query_params.append(('agentName', params['agent_name']))  # noqa: E501
-        if 'since_build' in params:
-            query_params.append(('sinceBuild', params['since_build']))  # noqa: E501
-        if 'since_date' in params:
-            query_params.append(('sinceDate', params['since_date']))  # noqa: E501
-        if 'start' in params:
-            query_params.append(('start', params['start']))  # noqa: E501
-        if 'count' in params:
-            query_params.append(('count', params['count']))  # noqa: E501
-        if 'locator' in params:
-            query_params.append(('locator', params['locator']))  # noqa: E501
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/builds', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Builds',  # noqa: E501
+            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -11111,8 +10201,9 @@ class BuildTypeApi(object):
             collection_formats=collection_formats)
 
     def __set_build_type_field_with_http_info(self, bt_locator, field, **kwargs):  # noqa: E501
-        """set_build_type_field  # noqa: E501
+        """Update a field of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.__set_build_type_field_with_http_info(bt_locator, field, async_req=True)
@@ -11175,6 +10266,14 @@ class BuildTypeApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['text/plain'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -11194,830 +10293,13 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __set_parameter_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """set_parameter  # noqa: E501
+    def __set_build_type_templates_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Update all templates of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__set_parameter_with_http_info(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param ModelProperty body:
-        :param str fields:
-        :return: ModelProperty
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'body', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method set_parameter" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `set_parameter`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/parameters', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='ModelProperty',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __set_parameter_0_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
-        """set_parameter_0  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__set_parameter_0_with_http_info(name, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str name: (required)
-        :param str bt_locator: (required)
-        :param ModelProperty body:
-        :param str fields:
-        :return: ModelProperty
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['name', 'bt_locator', 'body', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method set_parameter_0" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `set_parameter_0`")  # noqa: E501
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `set_parameter_0`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'name' in params:
-            if isinstance(params['name'], TeamCityObject):
-                path_params['name'] = params['name'].locator_id
-            else:
-                path_params['name'] = params['name']  # noqa: E501
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/parameters/{name}', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='ModelProperty',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __set_parameter_1_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """set_parameter_1  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__set_parameter_1_with_http_info(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param ModelProperty body:
-        :param str fields:
-        :return: ModelProperty
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'body', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method set_parameter_1" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `set_parameter_1`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/settings', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='ModelProperty',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __set_parameter_2_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
-        """set_parameter_2  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__set_parameter_2_with_http_info(name, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str name: (required)
-        :param str bt_locator: (required)
-        :param ModelProperty body:
-        :param str fields:
-        :return: ModelProperty
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['name', 'bt_locator', 'body', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method set_parameter_2" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `set_parameter_2`")  # noqa: E501
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `set_parameter_2`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'name' in params:
-            if isinstance(params['name'], TeamCityObject):
-                path_params['name'] = params['name'].locator_id
-            else:
-                path_params['name'] = params['name']  # noqa: E501
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/settings/{name}', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='ModelProperty',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __set_parameter_type_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
-        """set_parameter_type  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__set_parameter_type_with_http_info(name, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str name: (required)
-        :param str bt_locator: (required)
-        :param Type body:
-        :return: Type
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['name', 'bt_locator', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method set_parameter_type" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `set_parameter_type`")  # noqa: E501
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `set_parameter_type`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'name' in params:
-            if isinstance(params['name'], TeamCityObject):
-                path_params['name'] = params['name'].locator_id
-            else:
-                path_params['name'] = params['name']  # noqa: E501
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/parameters/{name}/type', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Type',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __set_parameter_type_raw_value_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
-        """set_parameter_type_raw_value  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__set_parameter_type_raw_value_with_http_info(name, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str name: (required)
-        :param str bt_locator: (required)
-        :param str body:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['name', 'bt_locator', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method set_parameter_type_raw_value" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `set_parameter_type_raw_value`")  # noqa: E501
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `set_parameter_type_raw_value`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'name' in params:
-            if isinstance(params['name'], TeamCityObject):
-                path_params['name'] = params['name'].locator_id
-            else:
-                path_params['name'] = params['name']  # noqa: E501
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/parameters/{name}/type/rawValue', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __set_parameter_value_long_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
-        """set_parameter_value_long  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__set_parameter_value_long_with_http_info(name, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str name: (required)
-        :param str bt_locator: (required)
-        :param str body:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['name', 'bt_locator', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method set_parameter_value_long" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `set_parameter_value_long`")  # noqa: E501
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `set_parameter_value_long`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'name' in params:
-            if isinstance(params['name'], TeamCityObject):
-                path_params['name'] = params['name'].locator_id
-            else:
-                path_params['name'] = params['name']  # noqa: E501
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/parameters/{name}/value', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __set_parameter_value_long_0_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
-        """set_parameter_value_long_0  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__set_parameter_value_long_0_with_http_info(name, bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str name: (required)
-        :param str bt_locator: (required)
-        :param str body:
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['name', 'bt_locator', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method set_parameter_value_long_0" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `set_parameter_value_long_0`")  # noqa: E501
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `set_parameter_value_long_0`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'name' in params:
-            if isinstance(params['name'], TeamCityObject):
-                path_params['name'] = params['name'].locator_id
-            else:
-                path_params['name'] = params['name']  # noqa: E501
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/settings/{name}/value', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __set_parameters_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """set_parameters  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__set_parameters_with_http_info(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param Properties body:
-        :param str fields:
-        :return: Properties
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'body', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method set_parameters" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `set_parameters`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/parameters', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Properties',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __set_parameters_0_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """set_parameters_0  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__set_parameters_0_with_http_info(bt_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str bt_locator: (required)
-        :param Properties body:
-        :param str fields:
-        :return: Properties
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['bt_locator', 'body', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method set_parameters_0" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'bt_locator' is set
-        if ('bt_locator' not in params or
-                params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `set_parameters_0`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'bt_locator' in params:
-            if isinstance(params['bt_locator'], TeamCityObject):
-                path_params['btLocator'] = params['bt_locator'].locator_id
-            else:
-                path_params['btLocator'] = params['bt_locator']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/settings', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Properties',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __set_templates_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """set_templates  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__set_templates_with_http_info(bt_locator, async_req=True)
+        >>> thread = api.__set_build_type_templates_with_http_info(bt_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -12041,14 +10323,14 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method set_templates" % key
+                    " to method set_build_type_templates" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `set_templates`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `set_build_type_templates`")  # noqa: E501
 
         collection_formats = {}
 
@@ -12073,6 +10355,14 @@ class BuildTypeApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -12092,23 +10382,26 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __set_vcs_labeling_options_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
-        """set_vcs_labeling_options  # noqa: E501
+    def __set_trigger_parameter_with_http_info(self, bt_locator, trigger_locator, field_name, **kwargs):  # noqa: E501
+        """Update a parameter of a trigger of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__set_vcs_labeling_options_with_http_info(bt_locator, async_req=True)
+        >>> thread = api.__set_trigger_parameter_with_http_info(bt_locator, trigger_locator, field_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str bt_locator: (required)
-        :param VcsLabeling body:
-        :return: VcsLabeling
+        :param str trigger_locator: (required)
+        :param str field_name: (required)
+        :param str body:
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['bt_locator', 'body']  # noqa: E501
+        all_params = ['bt_locator', 'trigger_locator', 'field_name', 'body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -12119,18 +10412,225 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method set_vcs_labeling_options" % key
+                    " to method set_trigger_parameter" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `set_vcs_labeling_options`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `set_trigger_parameter`")  # noqa: E501
+        # verify the required parameter 'trigger_locator' is set
+        if ('trigger_locator' not in params or
+                params['trigger_locator'] is None):
+            raise ValueError("Missing the required parameter `trigger_locator` when calling `set_trigger_parameter`")  # noqa: E501
+        # verify the required parameter 'field_name' is set
+        if ('field_name' not in params or
+                params['field_name'] is None):
+            raise ValueError("Missing the required parameter `field_name` when calling `set_trigger_parameter`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+        if 'trigger_locator' in params:
+            if isinstance(params['trigger_locator'], TeamCityObject):
+                path_params['triggerLocator'] = params['trigger_locator'].locator_id
+            else:
+                path_params['triggerLocator'] = params['trigger_locator']  # noqa: E501
+        if 'field_name' in params:
+            if isinstance(params['field_name'], TeamCityObject):
+                path_params['fieldName'] = params['field_name'].locator_id
+            else:
+                path_params['fieldName'] = params['field_name']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['text/plain'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/triggers/{triggerLocator}/{fieldName}', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __update_build_parameter_of_build_type_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
+        """Update build parameter.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__update_build_parameter_of_build_type_with_http_info(name, bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str name: (required)
+        :param str bt_locator: (required)
+        :param ModelProperty body:
+        :param str fields:
+        :return: ModelProperty
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['name', 'bt_locator', 'body', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_build_parameter_of_build_type" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if ('name' not in params or
+                params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `update_build_parameter_of_build_type`")  # noqa: E501
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `update_build_parameter_of_build_type`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'name' in params:
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/parameters/{name}', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ModelProperty',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __update_build_parameter_specification_of_build_type_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
+        """Update build parameter specification.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__update_build_parameter_specification_of_build_type_with_http_info(name, bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str name: (required)
+        :param str bt_locator: (required)
+        :param str body:
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['name', 'bt_locator', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_build_parameter_specification_of_build_type" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if ('name' not in params or
+                params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `update_build_parameter_specification_of_build_type`")  # noqa: E501
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `update_build_parameter_specification_of_build_type`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'name' in params:
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
         if 'bt_locator' in params:
             if isinstance(params['bt_locator'], TeamCityObject):
                 path_params['btLocator'] = params['bt_locator'].locator_id
@@ -12147,18 +10647,26 @@ class BuildTypeApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['text/plain'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/app/rest/buildTypes/{btLocator}/vcsLabeling', 'PUT',
+            '/app/rest/buildTypes/{btLocator}/parameters/{name}/type/rawValue', 'PUT',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='VcsLabeling',  # noqa: E501
+            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -12166,12 +10674,285 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __update_vcs_root_entry_with_http_info(self, bt_locator, vcs_root_locator, **kwargs):  # noqa: E501
-        """update_vcs_root_entry  # noqa: E501
+    def __update_build_parameter_type_of_build_type_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
+        """Update type of build parameter.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__update_vcs_root_entry_with_http_info(bt_locator, vcs_root_locator, async_req=True)
+        >>> thread = api.__update_build_parameter_type_of_build_type_with_http_info(name, bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str name: (required)
+        :param str bt_locator: (required)
+        :param Type body:
+        :return: Type
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['name', 'bt_locator', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_build_parameter_type_of_build_type" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if ('name' not in params or
+                params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `update_build_parameter_type_of_build_type`")  # noqa: E501
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `update_build_parameter_type_of_build_type`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'name' in params:
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/parameters/{name}/type', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Type',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __update_build_parameter_value_of_build_type_with_http_info(self, name, bt_locator, **kwargs):  # noqa: E501
+        """Update value of build parameter.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__update_build_parameter_value_of_build_type_with_http_info(name, bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str name: (required)
+        :param str bt_locator: (required)
+        :param str body:
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['name', 'bt_locator', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_build_parameter_value_of_build_type" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if ('name' not in params or
+                params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `update_build_parameter_value_of_build_type`")  # noqa: E501
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `update_build_parameter_value_of_build_type`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'name' in params:
+            if isinstance(params['name'], TeamCityObject):
+                path_params['name'] = params['name'].locator_id
+            else:
+                path_params['name'] = params['name']  # noqa: E501
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['text/plain'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/parameters/{name}/value', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __update_build_parameters_of_build_type_with_http_info(self, bt_locator, **kwargs):  # noqa: E501
+        """Update build parameters.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__update_build_parameters_of_build_type_with_http_info(bt_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bt_locator: (required)
+        :param Properties body:
+        :param str fields:
+        :return: Properties
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bt_locator', 'body', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_build_parameters_of_build_type" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bt_locator' is set
+        if ('bt_locator' not in params or
+                params['bt_locator'] is None):
+            raise ValueError("Missing the required parameter `bt_locator` when calling `update_build_parameters_of_build_type`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'bt_locator' in params:
+            if isinstance(params['bt_locator'], TeamCityObject):
+                path_params['btLocator'] = params['bt_locator'].locator_id
+            else:
+                path_params['btLocator'] = params['bt_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildTypes/{btLocator}/parameters', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Properties',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __update_build_type_vcs_root_with_http_info(self, bt_locator, vcs_root_locator, **kwargs):  # noqa: E501
+        """Update a VCS root of the matching build configuration.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__update_build_type_vcs_root_with_http_info(bt_locator, vcs_root_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -12195,18 +10976,18 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_vcs_root_entry" % key
+                    " to method update_build_type_vcs_root" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `update_vcs_root_entry`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `update_build_type_vcs_root`")  # noqa: E501
         # verify the required parameter 'vcs_root_locator' is set
         if ('vcs_root_locator' not in params or
                 params['vcs_root_locator'] is None):
-            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `update_vcs_root_entry`")  # noqa: E501
+            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `update_build_type_vcs_root`")  # noqa: E501
 
         collection_formats = {}
 
@@ -12234,6 +11015,14 @@ class BuildTypeApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -12253,12 +11042,13 @@ class BuildTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __update_vcs_root_entry_checkout_rules_with_http_info(self, bt_locator, vcs_root_locator, **kwargs):  # noqa: E501
-        """update_vcs_root_entry_checkout_rules  # noqa: E501
+    def __update_build_type_vcs_root_checkout_rules_with_http_info(self, bt_locator, vcs_root_locator, **kwargs):  # noqa: E501
+        """Update checkout rules of a VCS root of the matching build configuration.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__update_vcs_root_entry_checkout_rules_with_http_info(bt_locator, vcs_root_locator, async_req=True)
+        >>> thread = api.__update_build_type_vcs_root_checkout_rules_with_http_info(bt_locator, vcs_root_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -12281,18 +11071,18 @@ class BuildTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_vcs_root_entry_checkout_rules" % key
+                    " to method update_build_type_vcs_root_checkout_rules" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bt_locator' is set
         if ('bt_locator' not in params or
                 params['bt_locator'] is None):
-            raise ValueError("Missing the required parameter `bt_locator` when calling `update_vcs_root_entry_checkout_rules`")  # noqa: E501
+            raise ValueError("Missing the required parameter `bt_locator` when calling `update_build_type_vcs_root_checkout_rules`")  # noqa: E501
         # verify the required parameter 'vcs_root_locator' is set
         if ('vcs_root_locator' not in params or
                 params['vcs_root_locator'] is None):
-            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `update_vcs_root_entry_checkout_rules`")  # noqa: E501
+            raise ValueError("Missing the required parameter `vcs_root_locator` when calling `update_build_type_vcs_root_checkout_rules`")  # noqa: E501
 
         collection_formats = {}
 
@@ -12318,6 +11108,14 @@ class BuildTypeApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['text/plain'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 

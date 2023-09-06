@@ -7,7 +7,11 @@ from dohq_teamcity.custom.base_model import TeamCityObject
 # from dohq_teamcity.models.authorized_info import AuthorizedInfo  # noqa: F401,E501
 # from dohq_teamcity.models.build import Build  # noqa: F401,E501
 # from dohq_teamcity.models.build_types import BuildTypes  # noqa: F401,E501
+# from dohq_teamcity.models.builds import Builds  # noqa: F401,E501
+# from dohq_teamcity.models.cloud_image import CloudImage  # noqa: F401,E501
+# from dohq_teamcity.models.cloud_instance import CloudInstance  # noqa: F401,E501
 # from dohq_teamcity.models.compatibilities import Compatibilities  # noqa: F401,E501
+# from dohq_teamcity.models.compatibility_policy import CompatibilityPolicy  # noqa: F401,E501
 # from dohq_teamcity.models.enabled_info import EnabledInfo  # noqa: F401,E501
 # from dohq_teamcity.models.environment import Environment  # noqa: F401,E501
 # from dohq_teamcity.models.links import Links  # noqa: F401,E501
@@ -35,11 +39,20 @@ class Agent(TeamCityObject):
         'enabled': 'bool',
         'authorized': 'bool',
         'uptodate': 'bool',
+        'outdated': 'bool',
+        'plugins_outdated': 'bool',
+        'java_outdated': 'bool',
         'ip': 'str',
         'protocol': 'str',
         'version': 'str',
+        'current_agent_version': 'str',
         'last_activity_time': 'str',
+        'idle_since_time': 'str',
         'disconnection_comment': 'str',
+        'registration_timestamp': 'str',
+        'host': 'str',
+        'cpu_rank': 'int',
+        'port': 'int',
         'href': 'str',
         'web_url': 'str',
         'build': 'Build',
@@ -47,10 +60,14 @@ class Agent(TeamCityObject):
         'enabled_info': 'EnabledInfo',
         'authorized_info': 'AuthorizedInfo',
         'properties': 'Properties',
+        'cloud_instance': 'CloudInstance',
+        'cloud_image': 'CloudImage',
         'environment': 'Environment',
         'pool': 'AgentPool',
+        'compatibility_policy': 'CompatibilityPolicy',
         'compatible_build_types': 'BuildTypes',
         'incompatible_build_types': 'Compatibilities',
+        'builds': 'Builds',
         'locator': 'str'
     }
 
@@ -62,11 +79,20 @@ class Agent(TeamCityObject):
         'enabled': 'enabled',
         'authorized': 'authorized',
         'uptodate': 'uptodate',
+        'outdated': 'outdated',
+        'plugins_outdated': 'pluginsOutdated',
+        'java_outdated': 'javaOutdated',
         'ip': 'ip',
         'protocol': 'protocol',
         'version': 'version',
+        'current_agent_version': 'currentAgentVersion',
         'last_activity_time': 'lastActivityTime',
+        'idle_since_time': 'idleSinceTime',
         'disconnection_comment': 'disconnectionComment',
+        'registration_timestamp': 'registrationTimestamp',
+        'host': 'host',
+        'cpu_rank': 'cpuRank',
+        'port': 'port',
         'href': 'href',
         'web_url': 'webUrl',
         'build': 'build',
@@ -74,14 +100,18 @@ class Agent(TeamCityObject):
         'enabled_info': 'enabledInfo',
         'authorized_info': 'authorizedInfo',
         'properties': 'properties',
+        'cloud_instance': 'cloudInstance',
+        'cloud_image': 'cloudImage',
         'environment': 'environment',
         'pool': 'pool',
+        'compatibility_policy': 'compatibilityPolicy',
         'compatible_build_types': 'compatibleBuildTypes',
         'incompatible_build_types': 'incompatibleBuildTypes',
+        'builds': 'builds',
         'locator': 'locator'
     }
 
-    def __init__(self, id=None, name=None, type_id=None, connected=False, enabled=False, authorized=False, uptodate=False, ip=None, protocol=None, version=None, last_activity_time=None, disconnection_comment=None, href=None, web_url=None, build=None, links=None, enabled_info=None, authorized_info=None, properties=None, environment=None, pool=None, compatible_build_types=None, incompatible_build_types=None, locator=None, teamcity=None):  # noqa: E501
+    def __init__(self, id=None, name=None, type_id=None, connected=None, enabled=None, authorized=None, uptodate=None, outdated=None, plugins_outdated=None, java_outdated=None, ip=None, protocol=None, version=None, current_agent_version=None, last_activity_time=None, idle_since_time=None, disconnection_comment=None, registration_timestamp=None, host=None, cpu_rank=None, port=None, href=None, web_url=None, build=None, links=None, enabled_info=None, authorized_info=None, properties=None, cloud_instance=None, cloud_image=None, environment=None, pool=None, compatibility_policy=None, compatible_build_types=None, incompatible_build_types=None, builds=None, locator=None, teamcity=None):  # noqa: E501
         """Agent - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -91,11 +121,20 @@ class Agent(TeamCityObject):
         self._enabled = None
         self._authorized = None
         self._uptodate = None
+        self._outdated = None
+        self._plugins_outdated = None
+        self._java_outdated = None
         self._ip = None
         self._protocol = None
         self._version = None
+        self._current_agent_version = None
         self._last_activity_time = None
+        self._idle_since_time = None
         self._disconnection_comment = None
+        self._registration_timestamp = None
+        self._host = None
+        self._cpu_rank = None
+        self._port = None
         self._href = None
         self._web_url = None
         self._build = None
@@ -103,10 +142,14 @@ class Agent(TeamCityObject):
         self._enabled_info = None
         self._authorized_info = None
         self._properties = None
+        self._cloud_instance = None
+        self._cloud_image = None
         self._environment = None
         self._pool = None
+        self._compatibility_policy = None
         self._compatible_build_types = None
         self._incompatible_build_types = None
+        self._builds = None
         self._locator = None
         self.discriminator = None
 
@@ -124,16 +167,34 @@ class Agent(TeamCityObject):
             self.authorized = authorized
         if uptodate is not None:
             self.uptodate = uptodate
+        if outdated is not None:
+            self.outdated = outdated
+        if plugins_outdated is not None:
+            self.plugins_outdated = plugins_outdated
+        if java_outdated is not None:
+            self.java_outdated = java_outdated
         if ip is not None:
             self.ip = ip
         if protocol is not None:
             self.protocol = protocol
         if version is not None:
             self.version = version
+        if current_agent_version is not None:
+            self.current_agent_version = current_agent_version
         if last_activity_time is not None:
             self.last_activity_time = last_activity_time
+        if idle_since_time is not None:
+            self.idle_since_time = idle_since_time
         if disconnection_comment is not None:
             self.disconnection_comment = disconnection_comment
+        if registration_timestamp is not None:
+            self.registration_timestamp = registration_timestamp
+        if host is not None:
+            self.host = host
+        if cpu_rank is not None:
+            self.cpu_rank = cpu_rank
+        if port is not None:
+            self.port = port
         if href is not None:
             self.href = href
         if web_url is not None:
@@ -148,14 +209,22 @@ class Agent(TeamCityObject):
             self.authorized_info = authorized_info
         if properties is not None:
             self.properties = properties
+        if cloud_instance is not None:
+            self.cloud_instance = cloud_instance
+        if cloud_image is not None:
+            self.cloud_image = cloud_image
         if environment is not None:
             self.environment = environment
         if pool is not None:
             self.pool = pool
+        if compatibility_policy is not None:
+            self.compatibility_policy = compatibility_policy
         if compatible_build_types is not None:
             self.compatible_build_types = compatible_build_types
         if incompatible_build_types is not None:
             self.incompatible_build_types = incompatible_build_types
+        if builds is not None:
+            self.builds = builds
         if locator is not None:
             self.locator = locator
         super(Agent, self).__init__(teamcity=teamcity)
@@ -308,6 +377,69 @@ class Agent(TeamCityObject):
         self._uptodate = uptodate
 
     @property
+    def outdated(self):
+        """Gets the outdated of this Agent.  # noqa: E501
+
+
+        :return: The outdated of this Agent.  # noqa: E501
+        :rtype: bool
+        """
+        return self._outdated
+
+    @outdated.setter
+    def outdated(self, outdated):
+        """Sets the outdated of this Agent.
+
+
+        :param outdated: The outdated of this Agent.  # noqa: E501
+        :type: bool
+        """
+
+        self._outdated = outdated
+
+    @property
+    def plugins_outdated(self):
+        """Gets the plugins_outdated of this Agent.  # noqa: E501
+
+
+        :return: The plugins_outdated of this Agent.  # noqa: E501
+        :rtype: bool
+        """
+        return self._plugins_outdated
+
+    @plugins_outdated.setter
+    def plugins_outdated(self, plugins_outdated):
+        """Sets the plugins_outdated of this Agent.
+
+
+        :param plugins_outdated: The plugins_outdated of this Agent.  # noqa: E501
+        :type: bool
+        """
+
+        self._plugins_outdated = plugins_outdated
+
+    @property
+    def java_outdated(self):
+        """Gets the java_outdated of this Agent.  # noqa: E501
+
+
+        :return: The java_outdated of this Agent.  # noqa: E501
+        :rtype: bool
+        """
+        return self._java_outdated
+
+    @java_outdated.setter
+    def java_outdated(self, java_outdated):
+        """Sets the java_outdated of this Agent.
+
+
+        :param java_outdated: The java_outdated of this Agent.  # noqa: E501
+        :type: bool
+        """
+
+        self._java_outdated = java_outdated
+
+    @property
     def ip(self):
         """Gets the ip of this Agent.  # noqa: E501
 
@@ -346,6 +478,12 @@ class Agent(TeamCityObject):
         :param protocol: The protocol of this Agent.  # noqa: E501
         :type: str
         """
+        allowed_values = ["unidirectional", "bidirectional"]  # noqa: E501
+        if protocol not in allowed_values:
+            raise ValueError(
+                "Invalid value for `protocol` ({0}), must be one of {1}"  # noqa: E501
+                .format(protocol, allowed_values)
+            )
 
         self._protocol = protocol
 
@@ -371,6 +509,27 @@ class Agent(TeamCityObject):
         self._version = version
 
     @property
+    def current_agent_version(self):
+        """Gets the current_agent_version of this Agent.  # noqa: E501
+
+
+        :return: The current_agent_version of this Agent.  # noqa: E501
+        :rtype: str
+        """
+        return self._current_agent_version
+
+    @current_agent_version.setter
+    def current_agent_version(self, current_agent_version):
+        """Sets the current_agent_version of this Agent.
+
+
+        :param current_agent_version: The current_agent_version of this Agent.  # noqa: E501
+        :type: str
+        """
+
+        self._current_agent_version = current_agent_version
+
+    @property
     def last_activity_time(self):
         """Gets the last_activity_time of this Agent.  # noqa: E501
 
@@ -392,6 +551,27 @@ class Agent(TeamCityObject):
         self._last_activity_time = last_activity_time
 
     @property
+    def idle_since_time(self):
+        """Gets the idle_since_time of this Agent.  # noqa: E501
+
+
+        :return: The idle_since_time of this Agent.  # noqa: E501
+        :rtype: str
+        """
+        return self._idle_since_time
+
+    @idle_since_time.setter
+    def idle_since_time(self, idle_since_time):
+        """Sets the idle_since_time of this Agent.
+
+
+        :param idle_since_time: The idle_since_time of this Agent.  # noqa: E501
+        :type: str
+        """
+
+        self._idle_since_time = idle_since_time
+
+    @property
     def disconnection_comment(self):
         """Gets the disconnection_comment of this Agent.  # noqa: E501
 
@@ -411,6 +591,90 @@ class Agent(TeamCityObject):
         """
 
         self._disconnection_comment = disconnection_comment
+
+    @property
+    def registration_timestamp(self):
+        """Gets the registration_timestamp of this Agent.  # noqa: E501
+
+
+        :return: The registration_timestamp of this Agent.  # noqa: E501
+        :rtype: str
+        """
+        return self._registration_timestamp
+
+    @registration_timestamp.setter
+    def registration_timestamp(self, registration_timestamp):
+        """Sets the registration_timestamp of this Agent.
+
+
+        :param registration_timestamp: The registration_timestamp of this Agent.  # noqa: E501
+        :type: str
+        """
+
+        self._registration_timestamp = registration_timestamp
+
+    @property
+    def host(self):
+        """Gets the host of this Agent.  # noqa: E501
+
+
+        :return: The host of this Agent.  # noqa: E501
+        :rtype: str
+        """
+        return self._host
+
+    @host.setter
+    def host(self, host):
+        """Sets the host of this Agent.
+
+
+        :param host: The host of this Agent.  # noqa: E501
+        :type: str
+        """
+
+        self._host = host
+
+    @property
+    def cpu_rank(self):
+        """Gets the cpu_rank of this Agent.  # noqa: E501
+
+
+        :return: The cpu_rank of this Agent.  # noqa: E501
+        :rtype: int
+        """
+        return self._cpu_rank
+
+    @cpu_rank.setter
+    def cpu_rank(self, cpu_rank):
+        """Sets the cpu_rank of this Agent.
+
+
+        :param cpu_rank: The cpu_rank of this Agent.  # noqa: E501
+        :type: int
+        """
+
+        self._cpu_rank = cpu_rank
+
+    @property
+    def port(self):
+        """Gets the port of this Agent.  # noqa: E501
+
+
+        :return: The port of this Agent.  # noqa: E501
+        :rtype: int
+        """
+        return self._port
+
+    @port.setter
+    def port(self, port):
+        """Sets the port of this Agent.
+
+
+        :param port: The port of this Agent.  # noqa: E501
+        :type: int
+        """
+
+        self._port = port
 
     @property
     def href(self):
@@ -560,6 +824,48 @@ class Agent(TeamCityObject):
         self._properties = properties
 
     @property
+    def cloud_instance(self):
+        """Gets the cloud_instance of this Agent.  # noqa: E501
+
+
+        :return: The cloud_instance of this Agent.  # noqa: E501
+        :rtype: CloudInstance
+        """
+        return self._cloud_instance
+
+    @cloud_instance.setter
+    def cloud_instance(self, cloud_instance):
+        """Sets the cloud_instance of this Agent.
+
+
+        :param cloud_instance: The cloud_instance of this Agent.  # noqa: E501
+        :type: CloudInstance
+        """
+
+        self._cloud_instance = cloud_instance
+
+    @property
+    def cloud_image(self):
+        """Gets the cloud_image of this Agent.  # noqa: E501
+
+
+        :return: The cloud_image of this Agent.  # noqa: E501
+        :rtype: CloudImage
+        """
+        return self._cloud_image
+
+    @cloud_image.setter
+    def cloud_image(self, cloud_image):
+        """Sets the cloud_image of this Agent.
+
+
+        :param cloud_image: The cloud_image of this Agent.  # noqa: E501
+        :type: CloudImage
+        """
+
+        self._cloud_image = cloud_image
+
+    @property
     def environment(self):
         """Gets the environment of this Agent.  # noqa: E501
 
@@ -602,6 +908,27 @@ class Agent(TeamCityObject):
         self._pool = pool
 
     @property
+    def compatibility_policy(self):
+        """Gets the compatibility_policy of this Agent.  # noqa: E501
+
+
+        :return: The compatibility_policy of this Agent.  # noqa: E501
+        :rtype: CompatibilityPolicy
+        """
+        return self._compatibility_policy
+
+    @compatibility_policy.setter
+    def compatibility_policy(self, compatibility_policy):
+        """Sets the compatibility_policy of this Agent.
+
+
+        :param compatibility_policy: The compatibility_policy of this Agent.  # noqa: E501
+        :type: CompatibilityPolicy
+        """
+
+        self._compatibility_policy = compatibility_policy
+
+    @property
     def compatible_build_types(self):
         """Gets the compatible_build_types of this Agent.  # noqa: E501
 
@@ -642,6 +969,27 @@ class Agent(TeamCityObject):
         """
 
         self._incompatible_build_types = incompatible_build_types
+
+    @property
+    def builds(self):
+        """Gets the builds of this Agent.  # noqa: E501
+
+
+        :return: The builds of this Agent.  # noqa: E501
+        :rtype: Builds
+        """
+        return self._builds
+
+    @builds.setter
+    def builds(self, builds):
+        """Sets the builds of this Agent.
+
+
+        :param builds: The builds of this Agent.  # noqa: E501
+        :type: Builds
+        """
+
+        self._builds = builds
 
     @property
     def locator(self):

@@ -14,14 +14,14 @@ dohq_teamcity.ProblemApi
 
    * - Method
      - HTTP request
-   * - :ref:`get_problems`
+   * - :ref:`get_all_build_problems`
      - **GET** ``/app/rest/problems``
-   * - :ref:`serve_instance`
+   * - :ref:`get_build_problem`
      - **GET** ``/app/rest/problems/{problemLocator}``
 
-.. _get_problems:
+.. _get_all_build_problems:
 
-get_problems
+get_all_build_problems
 -----------------
 
 .. code-block:: python
@@ -36,10 +36,11 @@ get_problems
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.problem_api.get_problems(locator=locator, fields=fields)
+        # Get all build problems.
+        api_response = tc.problem_api.get_all_build_problems(locator=locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling ProblemApi->get_problems: %s\n" % e)
+        print("Exception when calling ProblemApi->get_all_build_problems: %s\n" % e)
 
 
 
@@ -63,9 +64,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _serve_instance:
+.. _get_build_problem:
 
-serve_instance
+get_build_problem
 -----------------
 
 .. code-block:: python
@@ -80,10 +81,11 @@ serve_instance
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.problem_api.serve_instance(problem_locator, fields=fields)
+        # Get a matching build problem.
+        api_response = tc.problem_api.get_build_problem(problem_locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling ProblemApi->serve_instance: %s\n" % e)
+        print("Exception when calling ProblemApi->get_build_problem: %s\n" % e)
 
 
 

@@ -28,7 +28,7 @@ class Permission(TeamCityObject):
         '_global': 'global'
     }
 
-    def __init__(self, id=None, name=None, _global=False, teamcity=None):  # noqa: E501
+    def __init__(self, id=None, name=None, _global=None, teamcity=None):  # noqa: E501
         """Permission - a model defined in Swagger"""  # noqa: E501
 
         self._id = None

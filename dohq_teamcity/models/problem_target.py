@@ -32,7 +32,7 @@ class ProblemTarget(TeamCityObject):
         'problems': 'problems'
     }
 
-    def __init__(self, any_problem=False, tests=None, problems=None, teamcity=None):  # noqa: E501
+    def __init__(self, any_problem=None, tests=None, problems=None, teamcity=None):  # noqa: E501
         """ProblemTarget - a model defined in Swagger"""  # noqa: E501
 
         self._any_problem = None

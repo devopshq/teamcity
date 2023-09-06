@@ -75,5 +75,11 @@ Properties
    * - **mutes**
      -  `Href <./Href.html>`_
      - `optional` 
+   * - **artifacts_url**
+     - **str**
+     - `optional` 
+   * - **nodes**
+     -  `Href <./Href.html>`_
+     - `optional` 
 
 

@@ -29,13 +29,19 @@ Properties
      - `optional` 
    * - **muted**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **currently_investigated**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **currently_muted**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
+   * - **log_anchor**
+     - **str**
+     - `optional` 
+   * - **new_failure**
+     - **bool**
+     - `optional` 
    * - **details**
      - **str**
      - `optional` 

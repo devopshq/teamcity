@@ -29,7 +29,7 @@ class AuthorizedInfo(TeamCityObject):
         'comment': 'comment'
     }
 
-    def __init__(self, status=False, comment=None, teamcity=None):  # noqa: E501
+    def __init__(self, status=None, comment=None, teamcity=None):  # noqa: E501
         """AuthorizedInfo - a model defined in Swagger"""  # noqa: E501
 
         self._status = None

@@ -14,22 +14,22 @@ dohq_teamcity.InvestigationApi
 
    * - Method
      - HTTP request
-   * - :ref:`create_instance`
+   * - :ref:`add_investigation`
      - **POST** ``/app/rest/investigations``
-   * - :ref:`create_instances`
+   * - :ref:`add_multiple_investigations`
      - **POST** ``/app/rest/investigations/multiple``
-   * - :ref:`delete_instance`
+   * - :ref:`delete_investigation`
      - **DELETE** ``/app/rest/investigations/{investigationLocator}``
-   * - :ref:`get_investigations`
+   * - :ref:`get_all_investigations`
      - **GET** ``/app/rest/investigations``
-   * - :ref:`replace_instance`
-     - **PUT** ``/app/rest/investigations/{investigationLocator}``
-   * - :ref:`serve_instance`
+   * - :ref:`get_investigation`
      - **GET** ``/app/rest/investigations/{investigationLocator}``
+   * - :ref:`replace_investigation`
+     - **PUT** ``/app/rest/investigations/{investigationLocator}``
 
-.. _create_instance:
+.. _add_investigation:
 
-create_instance
+add_investigation
 -----------------
 
 .. code-block:: python
@@ -44,10 +44,11 @@ create_instance
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.investigation_api.create_instance(body=body, fields=fields)
+        # Create a new investigation.
+        api_response = tc.investigation_api.add_investigation(body=body, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling InvestigationApi->create_instance: %s\n" % e)
+        print("Exception when calling InvestigationApi->add_investigation: %s\n" % e)
 
 
 
@@ -71,9 +72,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _create_instances:
+.. _add_multiple_investigations:
 
-create_instances
+add_multiple_investigations
 -----------------
 
 .. code-block:: python
@@ -88,10 +89,11 @@ create_instances
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.investigation_api.create_instances(body=body, fields=fields)
+        # Create multiple new investigations.
+        api_response = tc.investigation_api.add_multiple_investigations(body=body, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling InvestigationApi->create_instances: %s\n" % e)
+        print("Exception when calling InvestigationApi->add_multiple_investigations: %s\n" % e)
 
 
 
@@ -115,9 +117,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _delete_instance:
+.. _delete_investigation:
 
-delete_instance
+delete_investigation
 -----------------
 
 .. code-block:: python
@@ -131,9 +133,10 @@ delete_instance
     investigation_locator = 'investigation_locator_example' # str | 
 
     try:
-        tc.investigation_api.delete_instance(investigation_locator)
+        # Delete investigation matching the locator.
+        tc.investigation_api.delete_investigation(investigation_locator)
     except ApiException as e:
-        print("Exception when calling InvestigationApi->delete_instance: %s\n" % e)
+        print("Exception when calling InvestigationApi->delete_investigation: %s\n" % e)
 
 
 
@@ -154,9 +157,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _get_investigations:
+.. _get_all_investigations:
 
-get_investigations
+get_all_investigations
 -----------------
 
 .. code-block:: python
@@ -171,10 +174,11 @@ get_investigations
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.investigation_api.get_investigations(locator=locator, fields=fields)
+        # Get all investigations.
+        api_response = tc.investigation_api.get_all_investigations(locator=locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling InvestigationApi->get_investigations: %s\n" % e)
+        print("Exception when calling InvestigationApi->get_all_investigations: %s\n" % e)
 
 
 
@@ -198,9 +202,54 @@ Return type:
 
 `Back to top <#>`_
 
-.. _replace_instance:
+.. _get_investigation:
 
-replace_instance
+get_investigation
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    investigation_locator = 'investigation_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get investigation matching the locator.
+        api_response = tc.investigation_api.get_investigation(investigation_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling InvestigationApi->get_investigation: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **investigation_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Investigation <../models/Investigation.html>`_
+
+`Back to top <#>`_
+
+.. _replace_investigation:
+
+replace_investigation
 -----------------
 
 .. code-block:: python
@@ -216,10 +265,11 @@ replace_instance
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.investigation_api.replace_instance(investigation_locator, body=body, fields=fields)
+        # Update investigation matching the locator.
+        api_response = tc.investigation_api.replace_investigation(investigation_locator, body=body, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling InvestigationApi->replace_instance: %s\n" % e)
+        print("Exception when calling InvestigationApi->replace_investigation: %s\n" % e)
 
 
 
@@ -237,50 +287,6 @@ replace_instance
    * - **body**
      - `Investigation <../models/Investigation.html>`_
      - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Investigation <../models/Investigation.html>`_
-
-`Back to top <#>`_
-
-.. _serve_instance:
-
-serve_instance
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    investigation_locator = 'investigation_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.investigation_api.serve_instance(investigation_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling InvestigationApi->serve_instance: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **investigation_locator**
-     - **str**
-     - 
    * - **fields**
      - **str**
      - [optional] 

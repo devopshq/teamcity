@@ -5,6 +5,7 @@ from dohq_teamcity.custom.base_model import TeamCityObject
 
 # from dohq_teamcity.models.build_type import BuildType  # noqa: F401,E501
 # from dohq_teamcity.models.build_types import BuildTypes  # noqa: F401,E501
+# from dohq_teamcity.models.cloud_profiles import CloudProfiles  # noqa: F401,E501
 # from dohq_teamcity.models.links import Links  # noqa: F401,E501
 # from dohq_teamcity.models.project import Project  # noqa: F401,E501
 # from dohq_teamcity.models.project_features import ProjectFeatures  # noqa: F401,E501
@@ -36,6 +37,7 @@ class Project(TeamCityObject):
         'parent_project_internal_id': 'str',
         'parent_project_name': 'str',
         'archived': 'bool',
+        'virtual': 'bool',
         'description': 'str',
         'href': 'str',
         'web_url': 'str',
@@ -49,6 +51,8 @@ class Project(TeamCityObject):
         'vcs_roots': 'VcsRoots',
         'project_features': 'ProjectFeatures',
         'projects': 'Projects',
+        'cloud_profiles': 'CloudProfiles',
+        'ancestor_projects': 'Projects',
         'locator': 'str'
     }
 
@@ -61,6 +65,7 @@ class Project(TeamCityObject):
         'parent_project_internal_id': 'parentProjectInternalId',
         'parent_project_name': 'parentProjectName',
         'archived': 'archived',
+        'virtual': 'virtual',
         'description': 'description',
         'href': 'href',
         'web_url': 'webUrl',
@@ -74,10 +79,12 @@ class Project(TeamCityObject):
         'vcs_roots': 'vcsRoots',
         'project_features': 'projectFeatures',
         'projects': 'projects',
+        'cloud_profiles': 'cloudProfiles',
+        'ancestor_projects': 'ancestorProjects',
         'locator': 'locator'
     }
 
-    def __init__(self, id=None, internal_id=None, uuid=None, name=None, parent_project_id=None, parent_project_internal_id=None, parent_project_name=None, archived=False, description=None, href=None, web_url=None, links=None, parent_project=None, read_only_ui=None, default_template=None, build_types=None, templates=None, parameters=None, vcs_roots=None, project_features=None, projects=None, locator=None, teamcity=None):  # noqa: E501
+    def __init__(self, id=None, internal_id=None, uuid=None, name=None, parent_project_id=None, parent_project_internal_id=None, parent_project_name=None, archived=None, virtual=None, description=None, href=None, web_url=None, links=None, parent_project=None, read_only_ui=None, default_template=None, build_types=None, templates=None, parameters=None, vcs_roots=None, project_features=None, projects=None, cloud_profiles=None, ancestor_projects=None, locator=None, teamcity=None):  # noqa: E501
         """Project - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -88,6 +95,7 @@ class Project(TeamCityObject):
         self._parent_project_internal_id = None
         self._parent_project_name = None
         self._archived = None
+        self._virtual = None
         self._description = None
         self._href = None
         self._web_url = None
@@ -101,6 +109,8 @@ class Project(TeamCityObject):
         self._vcs_roots = None
         self._project_features = None
         self._projects = None
+        self._cloud_profiles = None
+        self._ancestor_projects = None
         self._locator = None
         self.discriminator = None
 
@@ -120,6 +130,8 @@ class Project(TeamCityObject):
             self.parent_project_name = parent_project_name
         if archived is not None:
             self.archived = archived
+        if virtual is not None:
+            self.virtual = virtual
         if description is not None:
             self.description = description
         if href is not None:
@@ -146,6 +158,10 @@ class Project(TeamCityObject):
             self.project_features = project_features
         if projects is not None:
             self.projects = projects
+        if cloud_profiles is not None:
+            self.cloud_profiles = cloud_profiles
+        if ancestor_projects is not None:
+            self.ancestor_projects = ancestor_projects
         if locator is not None:
             self.locator = locator
         super(Project, self).__init__(teamcity=teamcity)
@@ -317,6 +333,27 @@ class Project(TeamCityObject):
         """
 
         self._archived = archived
+
+    @property
+    def virtual(self):
+        """Gets the virtual of this Project.  # noqa: E501
+
+
+        :return: The virtual of this Project.  # noqa: E501
+        :rtype: bool
+        """
+        return self._virtual
+
+    @virtual.setter
+    def virtual(self, virtual):
+        """Sets the virtual of this Project.
+
+
+        :param virtual: The virtual of this Project.  # noqa: E501
+        :type: bool
+        """
+
+        self._virtual = virtual
 
     @property
     def description(self):
@@ -590,6 +627,48 @@ class Project(TeamCityObject):
         """
 
         self._projects = projects
+
+    @property
+    def cloud_profiles(self):
+        """Gets the cloud_profiles of this Project.  # noqa: E501
+
+
+        :return: The cloud_profiles of this Project.  # noqa: E501
+        :rtype: CloudProfiles
+        """
+        return self._cloud_profiles
+
+    @cloud_profiles.setter
+    def cloud_profiles(self, cloud_profiles):
+        """Sets the cloud_profiles of this Project.
+
+
+        :param cloud_profiles: The cloud_profiles of this Project.  # noqa: E501
+        :type: CloudProfiles
+        """
+
+        self._cloud_profiles = cloud_profiles
+
+    @property
+    def ancestor_projects(self):
+        """Gets the ancestor_projects of this Project.  # noqa: E501
+
+
+        :return: The ancestor_projects of this Project.  # noqa: E501
+        :rtype: Projects
+        """
+        return self._ancestor_projects
+
+    @ancestor_projects.setter
+    def ancestor_projects(self, ancestor_projects):
+        """Sets the ancestor_projects of this Project.
+
+
+        :param ancestor_projects: The ancestor_projects of this Project.  # noqa: E501
+        :type: Projects
+        """
+
+        self._ancestor_projects = ancestor_projects
 
     @property
     def locator(self):

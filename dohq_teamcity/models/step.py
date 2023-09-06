@@ -39,7 +39,7 @@ class Step(TeamCityObject):
         'properties': 'properties'
     }
 
-    def __init__(self, id=None, name=None, type=None, disabled=False, inherited=False, href=None, properties=None, teamcity=None):  # noqa: E501
+    def __init__(self, id=None, name=None, type=None, disabled=None, inherited=None, href=None, properties=None, teamcity=None):  # noqa: E501
         """Step - a model defined in Swagger"""  # noqa: E501
 
         self._id = None

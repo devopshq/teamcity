@@ -14,48 +14,44 @@ dohq_teamcity.VcsRootInstanceApi
 
    * - Method
      - HTTP request
-   * - :ref:`delete_instance_field`
+   * - :ref:`delete_vcs_root_instance_field`
      - **DELETE** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/{field}``
-   * - :ref:`delete_repository_state`
+   * - :ref:`delete_vcs_root_instance_repository_state`
      - **DELETE** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/repositoryState``
-   * - :ref:`get_children`
-     - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/files/latest/children{path}``
-   * - :ref:`get_children_alias`
-     - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/files/latest/{path}``
-   * - :ref:`get_content`
-     - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/files/latest/content{path}``
-   * - :ref:`get_content_alias`
+   * - :ref:`download_file`
      - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/files/latest/files{path}``
-   * - :ref:`get_metadata`
-     - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/files/latest/metadata{path}``
-   * - :ref:`get_repository_state`
-     - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/repositoryState``
-   * - :ref:`get_repository_state_creation_date`
-     - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/repositoryState/creationDate``
-   * - :ref:`get_root`
-     - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/files/latest``
-   * - :ref:`get_zipped`
-     - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/files/latest/archived{path}``
-   * - :ref:`schedule_checking_for_changes`
-     - **POST** ``/app/rest/vcs-root-instances/checkingForChangesQueue``
-   * - :ref:`schedule_checking_for_changes_0`
-     - **POST** ``/app/rest/vcs-root-instances/commitHookNotification``
-   * - :ref:`serve_instance`
-     - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}``
-   * - :ref:`serve_instance_field`
-     - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/{field}``
-   * - :ref:`serve_instances`
+   * - :ref:`get_all_vcs_root_instances`
      - **GET** ``/app/rest/vcs-root-instances``
-   * - :ref:`serve_root_instance_properties`
+   * - :ref:`get_file_metadata`
+     - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/files/latest/metadata{path}``
+   * - :ref:`get_files_list`
+     - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/files/latest``
+   * - :ref:`get_files_list_for_subpath`
+     - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/files/latest/{path}``
+   * - :ref:`get_vcs_root_instance`
+     - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}``
+   * - :ref:`get_vcs_root_instance_creation_date`
+     - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/repositoryState/creationDate``
+   * - :ref:`get_vcs_root_instance_field`
+     - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/{field}``
+   * - :ref:`get_vcs_root_instance_properties`
      - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/properties``
-   * - :ref:`set_instance_field`
+   * - :ref:`get_vcs_root_instance_repository_state`
+     - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/repositoryState``
+   * - :ref:`get_zipped_file`
+     - **GET** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/files/latest/archived{path}``
+   * - :ref:`request_pending_changes_check`
+     - **POST** ``/app/rest/vcs-root-instances/checkingForChangesQueue``
+   * - :ref:`set_vcs_root_instance_field`
      - **PUT** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/{field}``
-   * - :ref:`set_repository_state`
+   * - :ref:`set_vcs_root_instance_repository_state`
      - **PUT** ``/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/repositoryState``
+   * - :ref:`trigger_commit_hook_notification`
+     - **POST** ``/app/rest/vcs-root-instances/commitHookNotification``
 
-.. _delete_instance_field:
+.. _delete_vcs_root_instance_field:
 
-delete_instance_field
+delete_vcs_root_instance_field
 -----------------
 
 .. code-block:: python
@@ -70,9 +66,10 @@ delete_instance_field
     field = 'field_example' # str | 
 
     try:
-        tc.vcs_root_instance_api.delete_instance_field(vcs_root_instance_locator, field)
+        # Remove a field of the matching VCS root instance.
+        tc.vcs_root_instance_api.delete_vcs_root_instance_field(vcs_root_instance_locator, field)
     except ApiException as e:
-        print("Exception when calling VcsRootInstanceApi->delete_instance_field: %s\n" % e)
+        print("Exception when calling VcsRootInstanceApi->delete_vcs_root_instance_field: %s\n" % e)
 
 
 
@@ -96,9 +93,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _delete_repository_state:
+.. _delete_vcs_root_instance_repository_state:
 
-delete_repository_state
+delete_vcs_root_instance_repository_state
 -----------------
 
 .. code-block:: python
@@ -112,9 +109,10 @@ delete_repository_state
     vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
 
     try:
-        tc.vcs_root_instance_api.delete_repository_state(vcs_root_instance_locator)
+        # Delete the last repository state of the matching VCS root instance.
+        tc.vcs_root_instance_api.delete_vcs_root_instance_repository_state(vcs_root_instance_locator)
     except ApiException as e:
-        print("Exception when calling VcsRootInstanceApi->delete_repository_state: %s\n" % e)
+        print("Exception when calling VcsRootInstanceApi->delete_vcs_root_instance_repository_state: %s\n" % e)
 
 
 
@@ -135,9 +133,200 @@ Return type:
 
 `Back to top <#>`_
 
-.. _get_children:
+.. _download_file:
 
-get_children
+download_file
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    path = 'path_example' # str | 
+    vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
+
+    try:
+        # Download specific file.
+        tc.vcs_root_instance_api.download_file(path, vcs_root_instance_locator)
+    except ApiException as e:
+        print("Exception when calling VcsRootInstanceApi->download_file: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **path**
+     - **str**
+     - 
+   * - **vcs_root_instance_locator**
+     - **str**
+     - 
+
+Return type:
+    void (empty response body)
+
+`Back to top <#>`_
+
+.. _get_all_vcs_root_instances:
+
+get_all_vcs_root_instances
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    locator = 'locator_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get all VCS root instances.
+        api_response = tc.vcs_root_instance_api.get_all_vcs_root_instances(locator=locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VcsRootInstanceApi->get_all_vcs_root_instances: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **locator**
+     - **str**
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `VcsRootInstances <../models/VcsRootInstances.html>`_
+
+`Back to top <#>`_
+
+.. _get_file_metadata:
+
+get_file_metadata
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    path = 'path_example' # str | 
+    vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get metadata of specific file.
+        api_response = tc.vcs_root_instance_api.get_file_metadata(path, vcs_root_instance_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VcsRootInstanceApi->get_file_metadata: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **path**
+     - **str**
+     - 
+   * - **vcs_root_instance_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `file <../models/file.html>`_
+
+`Back to top <#>`_
+
+.. _get_files_list:
+
+get_files_list
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
+    base_path = 'base_path_example' # str |  (optional)
+    locator = 'locator_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # List all files.
+        api_response = tc.vcs_root_instance_api.get_files_list(vcs_root_instance_locator, base_path=base_path, locator=locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VcsRootInstanceApi->get_files_list: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **vcs_root_instance_locator**
+     - **str**
+     - 
+   * - **base_path**
+     - **str**
+     - [optional] 
+   * - **locator**
+     - **str**
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Files <../models/Files.html>`_
+
+`Back to top <#>`_
+
+.. _get_files_list_for_subpath:
+
+get_files_list_for_subpath
 -----------------
 
 .. code-block:: python
@@ -155,10 +344,11 @@ get_children
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.vcs_root_instance_api.get_children(path, vcs_root_instance_locator, base_path=base_path, locator=locator, fields=fields)
+        # List files under this path.
+        api_response = tc.vcs_root_instance_api.get_files_list_for_subpath(path, vcs_root_instance_locator, base_path=base_path, locator=locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling VcsRootInstanceApi->get_children: %s\n" % e)
+        print("Exception when calling VcsRootInstanceApi->get_files_list_for_subpath: %s\n" % e)
 
 
 
@@ -191,9 +381,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _get_children_alias:
+.. _get_vcs_root_instance:
 
-get_children_alias
+get_vcs_root_instance
 -----------------
 
 .. code-block:: python
@@ -204,161 +394,15 @@ get_children_alias
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-    path = 'path_example' # str | 
-    vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
-    base_path = 'base_path_example' # str |  (optional)
-    locator = 'locator_example' # str |  (optional)
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.vcs_root_instance_api.get_children_alias(path, vcs_root_instance_locator, base_path=base_path, locator=locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling VcsRootInstanceApi->get_children_alias: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **path**
-     - **str**
-     - 
-   * - **vcs_root_instance_locator**
-     - **str**
-     - 
-   * - **base_path**
-     - **str**
-     - [optional] 
-   * - **locator**
-     - **str**
-     - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Files <../models/Files.html>`_
-
-`Back to top <#>`_
-
-.. _get_content:
-
-get_content
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    path = 'path_example' # str | 
-    vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
-    response_builder = 'response_builder_example' # str |  (optional)
-
-    try:
-        tc.vcs_root_instance_api.get_content(path, vcs_root_instance_locator, response_builder=response_builder)
-    except ApiException as e:
-        print("Exception when calling VcsRootInstanceApi->get_content: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **path**
-     - **str**
-     - 
-   * - **vcs_root_instance_locator**
-     - **str**
-     - 
-   * - **response_builder**
-     - **str**
-     - [optional] 
-
-Return type:
-    void (empty response body)
-
-`Back to top <#>`_
-
-.. _get_content_alias:
-
-get_content_alias
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    path = 'path_example' # str | 
-    vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
-
-    try:
-        tc.vcs_root_instance_api.get_content_alias(path, vcs_root_instance_locator)
-    except ApiException as e:
-        print("Exception when calling VcsRootInstanceApi->get_content_alias: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **path**
-     - **str**
-     - 
-   * - **vcs_root_instance_locator**
-     - **str**
-     - 
-
-Return type:
-    void (empty response body)
-
-`Back to top <#>`_
-
-.. _get_metadata:
-
-get_metadata
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    path = 'path_example' # str | 
     vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.vcs_root_instance_api.get_metadata(path, vcs_root_instance_locator, fields=fields)
+        # Get VCS root instance matching the locator.
+        api_response = tc.vcs_root_instance_api.get_vcs_root_instance(vcs_root_instance_locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling VcsRootInstanceApi->get_metadata: %s\n" % e)
+        print("Exception when calling VcsRootInstanceApi->get_vcs_root_instance: %s\n" % e)
 
 
 
@@ -370,9 +414,6 @@ get_metadata
      - Types
      - Notes
 
-   * - **path**
-     - **str**
-     - 
    * - **vcs_root_instance_locator**
      - **str**
      - 
@@ -381,13 +422,99 @@ get_metadata
      - [optional] 
 
 Return type:
-    `File <../models/File.html>`_
+    `VcsRootInstance <../models/VcsRootInstance.html>`_
 
 `Back to top <#>`_
 
-.. _get_repository_state:
+.. _get_vcs_root_instance_creation_date:
 
-get_repository_state
+get_vcs_root_instance_creation_date
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
+
+    try:
+        # Get the creation date of the matching VCS root instance.
+        api_response = tc.vcs_root_instance_api.get_vcs_root_instance_creation_date(vcs_root_instance_locator)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VcsRootInstanceApi->get_vcs_root_instance_creation_date: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **vcs_root_instance_locator**
+     - **str**
+     - 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
+.. _get_vcs_root_instance_field:
+
+get_vcs_root_instance_field
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
+    field = 'field_example' # str | 
+
+    try:
+        # Get a field of the matching VCS root instance.
+        api_response = tc.vcs_root_instance_api.get_vcs_root_instance_field(vcs_root_instance_locator, field)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VcsRootInstanceApi->get_vcs_root_instance_field: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **vcs_root_instance_locator**
+     - **str**
+     - 
+   * - **field**
+     - **str**
+     - 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
+.. _get_vcs_root_instance_properties:
+
+get_vcs_root_instance_properties
 -----------------
 
 .. code-block:: python
@@ -402,10 +529,56 @@ get_repository_state
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.vcs_root_instance_api.get_repository_state(vcs_root_instance_locator, fields=fields)
+        # Get all properties of the matching VCS root instance.
+        api_response = tc.vcs_root_instance_api.get_vcs_root_instance_properties(vcs_root_instance_locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling VcsRootInstanceApi->get_repository_state: %s\n" % e)
+        print("Exception when calling VcsRootInstanceApi->get_vcs_root_instance_properties: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **vcs_root_instance_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Properties <../models/Properties.html>`_
+
+`Back to top <#>`_
+
+.. _get_vcs_root_instance_repository_state:
+
+get_vcs_root_instance_repository_state
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get the repository state of the matching VCS root instance.
+        api_response = tc.vcs_root_instance_api.get_vcs_root_instance_repository_state(vcs_root_instance_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VcsRootInstanceApi->get_vcs_root_instance_repository_state: %s\n" % e)
 
 
 
@@ -429,101 +602,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _get_repository_state_creation_date:
+.. _get_zipped_file:
 
-get_repository_state_creation_date
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
-
-    try:
-        api_response = tc.vcs_root_instance_api.get_repository_state_creation_date(vcs_root_instance_locator)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling VcsRootInstanceApi->get_repository_state_creation_date: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **vcs_root_instance_locator**
-     - **str**
-     - 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _get_root:
-
-get_root
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
-    base_path = 'base_path_example' # str |  (optional)
-    locator = 'locator_example' # str |  (optional)
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.vcs_root_instance_api.get_root(vcs_root_instance_locator, base_path=base_path, locator=locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling VcsRootInstanceApi->get_root: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **vcs_root_instance_locator**
-     - **str**
-     - 
-   * - **base_path**
-     - **str**
-     - [optional] 
-   * - **locator**
-     - **str**
-     - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Files <../models/Files.html>`_
-
-`Back to top <#>`_
-
-.. _get_zipped:
-
-get_zipped
+get_zipped_file
 -----------------
 
 .. code-block:: python
@@ -541,9 +622,10 @@ get_zipped
     name = 'name_example' # str |  (optional)
 
     try:
-        tc.vcs_root_instance_api.get_zipped(path, vcs_root_instance_locator, base_path=base_path, locator=locator, name=name)
+        # Get specific file zipped.
+        tc.vcs_root_instance_api.get_zipped_file(path, vcs_root_instance_locator, base_path=base_path, locator=locator, name=name)
     except ApiException as e:
-        print("Exception when calling VcsRootInstanceApi->get_zipped: %s\n" % e)
+        print("Exception when calling VcsRootInstanceApi->get_zipped_file: %s\n" % e)
 
 
 
@@ -576,9 +658,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _schedule_checking_for_changes:
+.. _request_pending_changes_check:
 
-schedule_checking_for_changes
+request_pending_changes_check
 -----------------
 
 .. code-block:: python
@@ -594,10 +676,11 @@ schedule_checking_for_changes
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.vcs_root_instance_api.schedule_checking_for_changes(locator=locator, requestor=requestor, fields=fields)
+        # Check for the pending changes for all VCS root instances.
+        api_response = tc.vcs_root_instance_api.request_pending_changes_check(locator=locator, requestor=requestor, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling VcsRootInstanceApi->schedule_checking_for_changes: %s\n" % e)
+        print("Exception when calling VcsRootInstanceApi->request_pending_changes_check: %s\n" % e)
 
 
 
@@ -624,228 +707,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _schedule_checking_for_changes_0:
+.. _set_vcs_root_instance_field:
 
-schedule_checking_for_changes_0
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    locator = 'locator_example' # str |  (optional)
-    ok_on_nothing_found = true # bool |  (optional)
-
-    try:
-        tc.vcs_root_instance_api.schedule_checking_for_changes_0(locator=locator, ok_on_nothing_found=ok_on_nothing_found)
-    except ApiException as e:
-        print("Exception when calling VcsRootInstanceApi->schedule_checking_for_changes_0: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **locator**
-     - **str**
-     - [optional] 
-   * - **ok_on_nothing_found**
-     - **bool**
-     - [optional] 
-
-Return type:
-    void (empty response body)
-
-`Back to top <#>`_
-
-.. _serve_instance:
-
-serve_instance
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.vcs_root_instance_api.serve_instance(vcs_root_instance_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling VcsRootInstanceApi->serve_instance: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **vcs_root_instance_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `VcsRootInstance <../models/VcsRootInstance.html>`_
-
-`Back to top <#>`_
-
-.. _serve_instance_field:
-
-serve_instance_field
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
-    field = 'field_example' # str | 
-
-    try:
-        api_response = tc.vcs_root_instance_api.serve_instance_field(vcs_root_instance_locator, field)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling VcsRootInstanceApi->serve_instance_field: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **vcs_root_instance_locator**
-     - **str**
-     - 
-   * - **field**
-     - **str**
-     - 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _serve_instances:
-
-serve_instances
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    locator = 'locator_example' # str |  (optional)
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.vcs_root_instance_api.serve_instances(locator=locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling VcsRootInstanceApi->serve_instances: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **locator**
-     - **str**
-     - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `VcsRootInstances <../models/VcsRootInstances.html>`_
-
-`Back to top <#>`_
-
-.. _serve_root_instance_properties:
-
-serve_root_instance_properties
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.vcs_root_instance_api.serve_root_instance_properties(vcs_root_instance_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling VcsRootInstanceApi->serve_root_instance_properties: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **vcs_root_instance_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Properties <../models/Properties.html>`_
-
-`Back to top <#>`_
-
-.. _set_instance_field:
-
-set_instance_field
+set_vcs_root_instance_field
 -----------------
 
 .. code-block:: python
@@ -861,10 +725,11 @@ set_instance_field
     body = 'body_example' # str |  (optional)
 
     try:
-        api_response = tc.vcs_root_instance_api.set_instance_field(vcs_root_instance_locator, field, body=body)
+        # Get a field of the matching VCS root instance.
+        api_response = tc.vcs_root_instance_api.set_vcs_root_instance_field(vcs_root_instance_locator, field, body=body)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling VcsRootInstanceApi->set_instance_field: %s\n" % e)
+        print("Exception when calling VcsRootInstanceApi->set_vcs_root_instance_field: %s\n" % e)
 
 
 
@@ -891,9 +756,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _set_repository_state:
+.. _set_vcs_root_instance_repository_state:
 
-set_repository_state
+set_vcs_root_instance_repository_state
 -----------------
 
 .. code-block:: python
@@ -909,10 +774,11 @@ set_repository_state
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.vcs_root_instance_api.set_repository_state(vcs_root_instance_locator, body=body, fields=fields)
+        # Update the repository state of the matching VCS root instance.
+        api_response = tc.vcs_root_instance_api.set_vcs_root_instance_repository_state(vcs_root_instance_locator, body=body, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling VcsRootInstanceApi->set_repository_state: %s\n" % e)
+        print("Exception when calling VcsRootInstanceApi->set_vcs_root_instance_repository_state: %s\n" % e)
 
 
 
@@ -936,6 +802,50 @@ set_repository_state
 
 Return type:
     `Entries <../models/Entries.html>`_
+
+`Back to top <#>`_
+
+.. _trigger_commit_hook_notification:
+
+trigger_commit_hook_notification
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    locator = 'locator_example' # str |  (optional)
+    ok_on_nothing_found = true # bool |  (optional)
+
+    try:
+        # Send the commit hook notification.
+        tc.vcs_root_instance_api.trigger_commit_hook_notification(locator=locator, ok_on_nothing_found=ok_on_nothing_found)
+    except ApiException as e:
+        print("Exception when calling VcsRootInstanceApi->trigger_commit_hook_notification: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **locator**
+     - **str**
+     - [optional] 
+   * - **ok_on_nothing_found**
+     - **bool**
+     - [optional] 
+
+Return type:
+    void (empty response body)
 
 `Back to top <#>`_
 

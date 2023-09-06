@@ -18,34 +18,36 @@ dohq_teamcity.ServerApi
      - **POST** ``/app/rest/server/licensingData/licenseKeys``
    * - :ref:`delete_license_key`
      - **DELETE** ``/app/rest/server/licensingData/licenseKeys/{licenseKey}``
+   * - :ref:`download_file_of_server`
+     - **GET** ``/app/rest/server/files/{areaId}/files{path}``
+   * - :ref:`get_all_metrics`
+     - **GET** ``/app/rest/server/metrics``
+   * - :ref:`get_all_plugins`
+     - **GET** ``/app/rest/server/plugins``
    * - :ref:`get_backup_status`
      - **GET** ``/app/rest/server/backup``
-   * - :ref:`get_children`
-     - **GET** ``/app/rest/server/files/{areaId}/children{path}``
-   * - :ref:`get_children_alias`
+   * - :ref:`get_cleanup_settings`
+     - **GET** ``/app/rest/server/cleanup``
+   * - :ref:`get_file_metadata_of_server`
+     - **GET** ``/app/rest/server/files/{areaId}/metadata{path}``
+   * - :ref:`get_files_list_for_subpath_of_server`
      - **GET** ``/app/rest/server/files/{areaId}/{path}``
-   * - :ref:`get_content`
-     - **GET** ``/app/rest/server/files/{areaId}/content{path}``
-   * - :ref:`get_content_alias`
-     - **GET** ``/app/rest/server/files/{areaId}/files{path}``
+   * - :ref:`get_files_list_of_server`
+     - **GET** ``/app/rest/server/files/{areaId}``
    * - :ref:`get_license_key`
      - **GET** ``/app/rest/server/licensingData/licenseKeys/{licenseKey}``
    * - :ref:`get_license_keys`
      - **GET** ``/app/rest/server/licensingData/licenseKeys``
    * - :ref:`get_licensing_data`
      - **GET** ``/app/rest/server/licensingData``
-   * - :ref:`get_metadata`
-     - **GET** ``/app/rest/server/files/{areaId}/metadata{path}``
-   * - :ref:`get_root`
-     - **GET** ``/app/rest/server/files/{areaId}``
-   * - :ref:`get_zipped`
-     - **GET** ``/app/rest/server/files/{areaId}/archived{path}``
-   * - :ref:`serve_plugins`
-     - **GET** ``/app/rest/server/plugins``
-   * - :ref:`serve_server_info`
-     - **GET** ``/app/rest/server``
-   * - :ref:`serve_server_version`
+   * - :ref:`get_server_field`
      - **GET** ``/app/rest/server/{field}``
+   * - :ref:`get_server_info`
+     - **GET** ``/app/rest/server``
+   * - :ref:`get_zipped_file_of_server`
+     - **GET** ``/app/rest/server/files/{areaId}/archived{path}``
+   * - :ref:`set_cleanup_settings`
+     - **PUT** ``/app/rest/server/cleanup``
    * - :ref:`start_backup`
      - **POST** ``/app/rest/server/backup``
 
@@ -66,6 +68,7 @@ add_license_keys
     fields = 'fields_example' # str |  (optional)
 
     try:
+        # Add license keys.
         api_response = tc.server_api.add_license_keys(body=body, fields=fields)
        pprint(api_response)
     except ApiException as e:
@@ -109,6 +112,7 @@ delete_license_key
     license_key = 'license_key_example' # str | 
 
     try:
+        # Delete a license key.
         tc.server_api.delete_license_key(license_key)
     except ApiException as e:
         print("Exception when calling ServerApi->delete_license_key: %s\n" % e)
@@ -132,6 +136,132 @@ Return type:
 
 `Back to top <#>`_
 
+.. _download_file_of_server:
+
+download_file_of_server
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    path = 'path_example' # str | 
+    area_id = 'area_id_example' # str | 
+
+    try:
+        # Download specific file.
+        tc.server_api.download_file_of_server(path, area_id)
+    except ApiException as e:
+        print("Exception when calling ServerApi->download_file_of_server: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **path**
+     - **str**
+     - 
+   * - **area_id**
+     - **str**
+     - 
+
+Return type:
+    void (empty response body)
+
+`Back to top <#>`_
+
+.. _get_all_metrics:
+
+get_all_metrics
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get metrics.
+        api_response = tc.server_api.get_all_metrics(fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ServerApi->get_all_metrics: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Metrics <../models/Metrics.html>`_
+
+`Back to top <#>`_
+
+.. _get_all_plugins:
+
+get_all_plugins
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get all plugins.
+        api_response = tc.server_api.get_all_plugins(fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ServerApi->get_all_plugins: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Plugins <../models/Plugins.html>`_
+
+`Back to top <#>`_
+
 .. _get_backup_status:
 
 get_backup_status
@@ -145,36 +275,103 @@ get_backup_status
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-    body = dohq_teamcity.BackupProcessManager() # BackupProcessManager |  (optional)
 
     try:
-        api_response = tc.server_api.get_backup_status(body=body)
+        # Get the latest backup status.
+        api_response = tc.server_api.get_backup_status()
        pprint(api_response)
     except ApiException as e:
         print("Exception when calling ServerApi->get_backup_status: %s\n" % e)
 
 
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **body**
-     - `BackupProcessManager <../models/BackupProcessManager.html>`_
-     - [optional] 
+This endpoint does not need any parameter.
 
 Return type:
     **str**
 
 `Back to top <#>`_
 
-.. _get_children:
+.. _get_cleanup_settings:
 
-get_children
+get_cleanup_settings
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+
+    try:
+        # Get clean-up settings.
+        api_response = tc.server_api.get_cleanup_settings()
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ServerApi->get_cleanup_settings: %s\n" % e)
+
+
+This endpoint does not need any parameter.
+
+Return type:
+    `Cleanup <../models/Cleanup.html>`_
+
+`Back to top <#>`_
+
+.. _get_file_metadata_of_server:
+
+get_file_metadata_of_server
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    path = 'path_example' # str | 
+    area_id = 'area_id_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get metadata of specific file.
+        api_response = tc.server_api.get_file_metadata_of_server(path, area_id, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ServerApi->get_file_metadata_of_server: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **path**
+     - **str**
+     - 
+   * - **area_id**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `file <../models/file.html>`_
+
+`Back to top <#>`_
+
+.. _get_files_list_for_subpath_of_server:
+
+get_files_list_for_subpath_of_server
 -----------------
 
 .. code-block:: python
@@ -192,10 +389,11 @@ get_children
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.server_api.get_children(path, area_id, base_path=base_path, locator=locator, fields=fields)
+        # List files under this path.
+        api_response = tc.server_api.get_files_list_for_subpath_of_server(path, area_id, base_path=base_path, locator=locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling ServerApi->get_children: %s\n" % e)
+        print("Exception when calling ServerApi->get_files_list_for_subpath_of_server: %s\n" % e)
 
 
 
@@ -228,9 +426,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _get_children_alias:
+.. _get_files_list_of_server:
 
-get_children_alias
+get_files_list_of_server
 -----------------
 
 .. code-block:: python
@@ -241,17 +439,17 @@ get_children_alias
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-    path = 'path_example' # str | 
     area_id = 'area_id_example' # str | 
     base_path = 'base_path_example' # str |  (optional)
     locator = 'locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.server_api.get_children_alias(path, area_id, base_path=base_path, locator=locator, fields=fields)
+        # List all files.
+        api_response = tc.server_api.get_files_list_of_server(area_id, base_path=base_path, locator=locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling ServerApi->get_children_alias: %s\n" % e)
+        print("Exception when calling ServerApi->get_files_list_of_server: %s\n" % e)
 
 
 
@@ -263,9 +461,6 @@ get_children_alias
      - Types
      - Notes
 
-   * - **path**
-     - **str**
-     - 
    * - **area_id**
      - **str**
      - 
@@ -281,96 +476,6 @@ get_children_alias
 
 Return type:
     `Files <../models/Files.html>`_
-
-`Back to top <#>`_
-
-.. _get_content:
-
-get_content
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    path = 'path_example' # str | 
-    area_id = 'area_id_example' # str | 
-    response_builder = 'response_builder_example' # str |  (optional)
-
-    try:
-        tc.server_api.get_content(path, area_id, response_builder=response_builder)
-    except ApiException as e:
-        print("Exception when calling ServerApi->get_content: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **path**
-     - **str**
-     - 
-   * - **area_id**
-     - **str**
-     - 
-   * - **response_builder**
-     - **str**
-     - [optional] 
-
-Return type:
-    void (empty response body)
-
-`Back to top <#>`_
-
-.. _get_content_alias:
-
-get_content_alias
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    path = 'path_example' # str | 
-    area_id = 'area_id_example' # str | 
-
-    try:
-        tc.server_api.get_content_alias(path, area_id)
-    except ApiException as e:
-        print("Exception when calling ServerApi->get_content_alias: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **path**
-     - **str**
-     - 
-   * - **area_id**
-     - **str**
-     - 
-
-Return type:
-    void (empty response body)
 
 `Back to top <#>`_
 
@@ -391,6 +496,7 @@ get_license_key
     fields = 'fields_example' # str |  (optional)
 
     try:
+        # Get a license key.
         api_response = tc.server_api.get_license_key(license_key, fields=fields)
        pprint(api_response)
     except ApiException as e:
@@ -434,6 +540,7 @@ get_license_keys
     fields = 'fields_example' # str |  (optional)
 
     try:
+        # Get all license keys.
         api_response = tc.server_api.get_license_keys(fields=fields)
        pprint(api_response)
     except ApiException as e:
@@ -474,6 +581,7 @@ get_licensing_data
     fields = 'fields_example' # str |  (optional)
 
     try:
+        # Get the licensing data.
         api_response = tc.server_api.get_licensing_data(fields=fields)
        pprint(api_response)
     except ApiException as e:
@@ -498,9 +606,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _get_metadata:
+.. _get_server_field:
 
-get_metadata
+get_server_field
 -----------------
 
 .. code-block:: python
@@ -511,15 +619,14 @@ get_metadata
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-    path = 'path_example' # str | 
-    area_id = 'area_id_example' # str | 
-    fields = 'fields_example' # str |  (optional)
+    field = 'field_example' # str | 
 
     try:
-        api_response = tc.server_api.get_metadata(path, area_id, fields=fields)
+        # Get a field of the server info.
+        api_response = tc.server_api.get_server_field(field)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling ServerApi->get_metadata: %s\n" % e)
+        print("Exception when calling ServerApi->get_server_field: %s\n" % e)
 
 
 
@@ -531,24 +638,18 @@ get_metadata
      - Types
      - Notes
 
-   * - **path**
+   * - **field**
      - **str**
      - 
-   * - **area_id**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
 
 Return type:
-    `File <../models/File.html>`_
+    **str**
 
 `Back to top <#>`_
 
-.. _get_root:
+.. _get_server_info:
 
-get_root
+get_server_info
 -----------------
 
 .. code-block:: python
@@ -559,16 +660,14 @@ get_root
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-    area_id = 'area_id_example' # str | 
-    base_path = 'base_path_example' # str |  (optional)
-    locator = 'locator_example' # str |  (optional)
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.server_api.get_root(area_id, base_path=base_path, locator=locator, fields=fields)
+        # Get the server info.
+        api_response = tc.server_api.get_server_info(fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling ServerApi->get_root: %s\n" % e)
+        print("Exception when calling ServerApi->get_server_info: %s\n" % e)
 
 
 
@@ -580,27 +679,18 @@ get_root
      - Types
      - Notes
 
-   * - **area_id**
-     - **str**
-     - 
-   * - **base_path**
-     - **str**
-     - [optional] 
-   * - **locator**
-     - **str**
-     - [optional] 
    * - **fields**
      - **str**
      - [optional] 
 
 Return type:
-    `Files <../models/Files.html>`_
+    `Server <../models/Server.html>`_
 
 `Back to top <#>`_
 
-.. _get_zipped:
+.. _get_zipped_file_of_server:
 
-get_zipped
+get_zipped_file_of_server
 -----------------
 
 .. code-block:: python
@@ -618,9 +708,10 @@ get_zipped
     name = 'name_example' # str |  (optional)
 
     try:
-        tc.server_api.get_zipped(path, area_id, base_path=base_path, locator=locator, name=name)
+        # Get specific file zipped.
+        tc.server_api.get_zipped_file_of_server(path, area_id, base_path=base_path, locator=locator, name=name)
     except ApiException as e:
-        print("Exception when calling ServerApi->get_zipped: %s\n" % e)
+        print("Exception when calling ServerApi->get_zipped_file_of_server: %s\n" % e)
 
 
 
@@ -653,9 +744,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _serve_plugins:
+.. _set_cleanup_settings:
 
-serve_plugins
+set_cleanup_settings
 -----------------
 
 .. code-block:: python
@@ -666,13 +757,14 @@ serve_plugins
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-    fields = 'fields_example' # str |  (optional)
+    body = dohq_teamcity.Cleanup() # Cleanup |  (optional)
 
     try:
-        api_response = tc.server_api.serve_plugins(fields=fields)
+        # Set clean-up settings.
+        api_response = tc.server_api.set_cleanup_settings(body=body)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling ServerApi->serve_plugins: %s\n" % e)
+        print("Exception when calling ServerApi->set_cleanup_settings: %s\n" % e)
 
 
 
@@ -684,92 +776,12 @@ serve_plugins
      - Types
      - Notes
 
-   * - **fields**
-     - **str**
+   * - **body**
+     - `Cleanup <../models/Cleanup.html>`_
      - [optional] 
 
 Return type:
-    `Plugins <../models/Plugins.html>`_
-
-`Back to top <#>`_
-
-.. _serve_server_info:
-
-serve_server_info
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.server_api.serve_server_info(fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling ServerApi->serve_server_info: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Server <../models/Server.html>`_
-
-`Back to top <#>`_
-
-.. _serve_server_version:
-
-serve_server_version
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    field = 'field_example' # str | 
-
-    try:
-        api_response = tc.server_api.serve_server_version(field)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling ServerApi->serve_server_version: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **field**
-     - **str**
-     - 
-
-Return type:
-    **str**
+    `Cleanup <../models/Cleanup.html>`_
 
 `Back to top <#>`_
 
@@ -794,10 +806,10 @@ start_backup
     include_personal_changes = true # bool |  (optional)
     include_running_builds = true # bool |  (optional)
     include_supplimentary_data = true # bool |  (optional)
-    body = dohq_teamcity.BackupProcessManager() # BackupProcessManager |  (optional)
 
     try:
-        api_response = tc.server_api.start_backup(file_name=file_name, add_timestamp=add_timestamp, include_configs=include_configs, include_database=include_database, include_build_logs=include_build_logs, include_personal_changes=include_personal_changes, include_running_builds=include_running_builds, include_supplimentary_data=include_supplimentary_data, body=body)
+        # Start a new backup.
+        api_response = tc.server_api.start_backup(file_name=file_name, add_timestamp=add_timestamp, include_configs=include_configs, include_database=include_database, include_build_logs=include_build_logs, include_personal_changes=include_personal_changes, include_running_builds=include_running_builds, include_supplimentary_data=include_supplimentary_data)
        pprint(api_response)
     except ApiException as e:
         print("Exception when calling ServerApi->start_backup: %s\n" % e)
@@ -835,9 +847,6 @@ start_backup
      - [optional] 
    * - **include_supplimentary_data**
      - **bool**
-     - [optional] 
-   * - **body**
-     - `BackupProcessManager <../models/BackupProcessManager.html>`_
      - [optional] 
 
 Return type:

@@ -27,6 +27,9 @@ Properties
    * - **max_agents**
      - **int**
      - `optional` 
+   * - **owner_project**
+     -  `Project <./Project.html>`_
+     - `optional` 
    * - **projects**
      -  `Projects <./Projects.html>`_
      - `optional` 

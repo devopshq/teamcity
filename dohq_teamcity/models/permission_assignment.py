@@ -21,27 +21,53 @@ class PermissionAssignment(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'is_global_scope': 'bool',
         'permission': 'Permission',
         'project': 'Project'
     }
 
     attribute_map = {
+        'is_global_scope': 'isGlobalScope',
         'permission': 'permission',
         'project': 'project'
     }
 
-    def __init__(self, permission=None, project=None, teamcity=None):  # noqa: E501
+    def __init__(self, is_global_scope=None, permission=None, project=None, teamcity=None):  # noqa: E501
         """PermissionAssignment - a model defined in Swagger"""  # noqa: E501
 
+        self._is_global_scope = None
         self._permission = None
         self._project = None
         self.discriminator = None
 
+        if is_global_scope is not None:
+            self.is_global_scope = is_global_scope
         if permission is not None:
             self.permission = permission
         if project is not None:
             self.project = project
         super(PermissionAssignment, self).__init__(teamcity=teamcity)
+
+    @property
+    def is_global_scope(self):
+        """Gets the is_global_scope of this PermissionAssignment.  # noqa: E501
+
+
+        :return: The is_global_scope of this PermissionAssignment.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_global_scope
+
+    @is_global_scope.setter
+    def is_global_scope(self, is_global_scope):
+        """Sets the is_global_scope of this PermissionAssignment.
+
+
+        :param is_global_scope: The is_global_scope of this PermissionAssignment.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_global_scope = is_global_scope
 
     @property
     def permission(self):

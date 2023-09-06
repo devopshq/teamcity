@@ -3,6 +3,7 @@
 from dohq_teamcity.custom.base_model import TeamCityObject
 
 
+# from dohq_teamcity.models.build_trigger_customization import BuildTriggerCustomization  # noqa: F401,E501
 # from dohq_teamcity.models.properties import Properties  # noqa: F401,E501
 
 
@@ -26,7 +27,8 @@ class Trigger(TeamCityObject):
         'disabled': 'bool',
         'inherited': 'bool',
         'href': 'str',
-        'properties': 'Properties'
+        'properties': 'Properties',
+        'build_customization': 'BuildTriggerCustomization'
     }
 
     attribute_map = {
@@ -36,10 +38,11 @@ class Trigger(TeamCityObject):
         'disabled': 'disabled',
         'inherited': 'inherited',
         'href': 'href',
-        'properties': 'properties'
+        'properties': 'properties',
+        'build_customization': 'buildCustomization'
     }
 
-    def __init__(self, id=None, name=None, type=None, disabled=False, inherited=False, href=None, properties=None, teamcity=None):  # noqa: E501
+    def __init__(self, id=None, name=None, type=None, disabled=None, inherited=None, href=None, properties=None, build_customization=None, teamcity=None):  # noqa: E501
         """Trigger - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -49,6 +52,7 @@ class Trigger(TeamCityObject):
         self._inherited = None
         self._href = None
         self._properties = None
+        self._build_customization = None
         self.discriminator = None
 
         if id is not None:
@@ -65,6 +69,8 @@ class Trigger(TeamCityObject):
             self.href = href
         if properties is not None:
             self.properties = properties
+        if build_customization is not None:
+            self.build_customization = build_customization
         super(Trigger, self).__init__(teamcity=teamcity)
 
     @property
@@ -213,3 +219,24 @@ class Trigger(TeamCityObject):
         """
 
         self._properties = properties
+
+    @property
+    def build_customization(self):
+        """Gets the build_customization of this Trigger.  # noqa: E501
+
+
+        :return: The build_customization of this Trigger.  # noqa: E501
+        :rtype: BuildTriggerCustomization
+        """
+        return self._build_customization
+
+    @build_customization.setter
+    def build_customization(self, build_customization):
+        """Sets the build_customization of this Trigger.
+
+
+        :param build_customization: The build_customization of this Trigger.  # noqa: E501
+        :type: BuildTriggerCustomization
+        """
+
+        self._build_customization = build_customization

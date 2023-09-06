@@ -38,7 +38,10 @@ Properties
      - `optional` 
    * - **archived**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
+   * - **virtual**
+     - **bool**
+     - `optional` 
    * - **description**
      - **str**
      - `optional` 
@@ -76,6 +79,12 @@ Properties
      -  `ProjectFeatures <./ProjectFeatures.html>`_
      - `optional` 
    * - **projects**
+     -  `Projects <./Projects.html>`_
+     - `optional` 
+   * - **cloud_profiles**
+     -  `CloudProfiles <./CloudProfiles.html>`_
+     - `optional` 
+   * - **ancestor_projects**
      -  `Projects <./Projects.html>`_
      - `optional` 
    * - **locator**

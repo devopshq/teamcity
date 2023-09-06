@@ -16,37 +16,35 @@ dohq_teamcity.GroupApi
      - HTTP request
    * - :ref:`add_group`
      - **POST** ``/app/rest/userGroups``
-   * - :ref:`add_role`
-     - **POST** ``/app/rest/userGroups/{groupLocator}/roles``
-   * - :ref:`add_role_simple`
+   * - :ref:`add_role_at_scope_to_group`
      - **POST** ``/app/rest/userGroups/{groupLocator}/roles/{roleId}/{scope}``
+   * - :ref:`add_role_to_group`
+     - **POST** ``/app/rest/userGroups/{groupLocator}/roles``
    * - :ref:`delete_group`
      - **DELETE** ``/app/rest/userGroups/{groupLocator}``
-   * - :ref:`delete_role`
-     - **DELETE** ``/app/rest/userGroups/{groupLocator}/roles/{roleId}/{scope}``
-   * - :ref:`get_parent_groups`
-     - **GET** ``/app/rest/userGroups/{groupLocator}/parent-groups``
-   * - :ref:`get_permissions`
-     - **GET** ``/app/rest/userGroups/{groupLocator}/debug/permissions``
-   * - :ref:`get_properties`
-     - **GET** ``/app/rest/userGroups/{groupLocator}/properties``
-   * - :ref:`list_role`
-     - **GET** ``/app/rest/userGroups/{groupLocator}/roles/{roleId}/{scope}``
-   * - :ref:`list_roles`
-     - **GET** ``/app/rest/userGroups/{groupLocator}/roles``
-   * - :ref:`put_user_property`
-     - **PUT** ``/app/rest/userGroups/{groupLocator}/properties/{name}``
-   * - :ref:`remove_user_property`
-     - **DELETE** ``/app/rest/userGroups/{groupLocator}/properties/{name}``
-   * - :ref:`serve_group`
-     - **GET** ``/app/rest/userGroups/{groupLocator}``
-   * - :ref:`serve_groups`
+   * - :ref:`get_all_groups`
      - **GET** ``/app/rest/userGroups``
-   * - :ref:`serve_user_properties`
+   * - :ref:`get_group_parent_groups`
+     - **GET** ``/app/rest/userGroups/{groupLocator}/parent-groups``
+   * - :ref:`get_group_properties`
+     - **GET** ``/app/rest/userGroups/{groupLocator}/properties``
+   * - :ref:`get_group_property`
      - **GET** ``/app/rest/userGroups/{groupLocator}/properties/{name}``
-   * - :ref:`set_parent_groups`
+   * - :ref:`get_group_role_at_scope`
+     - **GET** ``/app/rest/userGroups/{groupLocator}/roles/{roleId}/{scope}``
+   * - :ref:`get_group_roles`
+     - **GET** ``/app/rest/userGroups/{groupLocator}/roles``
+   * - :ref:`get_user_group_of_group`
+     - **GET** ``/app/rest/userGroups/{groupLocator}``
+   * - :ref:`remove_group_property`
+     - **DELETE** ``/app/rest/userGroups/{groupLocator}/properties/{name}``
+   * - :ref:`remove_role_at_scope_from_group`
+     - **DELETE** ``/app/rest/userGroups/{groupLocator}/roles/{roleId}/{scope}``
+   * - :ref:`set_group_parent_groups`
      - **PUT** ``/app/rest/userGroups/{groupLocator}/parent-groups``
-   * - :ref:`set_roles`
+   * - :ref:`set_group_property`
+     - **PUT** ``/app/rest/userGroups/{groupLocator}/properties/{name}``
+   * - :ref:`set_group_roles`
      - **PUT** ``/app/rest/userGroups/{groupLocator}/roles``
 
 .. _add_group:
@@ -66,6 +64,7 @@ add_group
     fields = 'fields_example' # str |  (optional)
 
     try:
+        # Add a new user group.
         api_response = tc.group_api.add_group(body=body, fields=fields)
        pprint(api_response)
     except ApiException as e:
@@ -93,9 +92,58 @@ Return type:
 
 `Back to top <#>`_
 
-.. _add_role:
+.. _add_role_at_scope_to_group:
 
-add_role
+add_role_at_scope_to_group
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    group_locator = 'group_locator_example' # str | 
+    role_id = 'role_id_example' # str | 
+    scope = 'scope_example' # str | 
+
+    try:
+        # Add a role with the specific scope to the matching user group.
+        api_response = tc.group_api.add_role_at_scope_to_group(group_locator, role_id, scope)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling GroupApi->add_role_at_scope_to_group: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **group_locator**
+     - **str**
+     - 
+   * - **role_id**
+     - **str**
+     - 
+   * - **scope**
+     - **str**
+     - 
+
+Return type:
+    `Role <../models/Role.html>`_
+
+`Back to top <#>`_
+
+.. _add_role_to_group:
+
+add_role_to_group
 -----------------
 
 .. code-block:: python
@@ -110,10 +158,11 @@ add_role
     body = dohq_teamcity.Role() # Role |  (optional)
 
     try:
-        api_response = tc.group_api.add_role(group_locator, body=body)
+        # Add a role to the matching user group.
+        api_response = tc.group_api.add_role_to_group(group_locator, body=body)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling GroupApi->add_role: %s\n" % e)
+        print("Exception when calling GroupApi->add_role_to_group: %s\n" % e)
 
 
 
@@ -137,54 +186,6 @@ Return type:
 
 `Back to top <#>`_
 
-.. _add_role_simple:
-
-add_role_simple
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    group_locator = 'group_locator_example' # str | 
-    role_id = 'role_id_example' # str | 
-    scope = 'scope_example' # str | 
-
-    try:
-        api_response = tc.group_api.add_role_simple(group_locator, role_id, scope)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling GroupApi->add_role_simple: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **group_locator**
-     - **str**
-     - 
-   * - **role_id**
-     - **str**
-     - 
-   * - **scope**
-     - **str**
-     - 
-
-Return type:
-    `Role <../models/Role.html>`_
-
-`Back to top <#>`_
-
 .. _delete_group:
 
 delete_group
@@ -201,6 +202,7 @@ delete_group
     group_locator = 'group_locator_example' # str | 
 
     try:
+        # Delete user group matching the locator.
         tc.group_api.delete_group(group_locator)
     except ApiException as e:
         print("Exception when calling GroupApi->delete_group: %s\n" % e)
@@ -224,9 +226,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _delete_role:
+.. _get_all_groups:
 
-delete_role
+get_all_groups
 -----------------
 
 .. code-block:: python
@@ -237,14 +239,14 @@ delete_role
     # username/password authentication
     tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
 
-    group_locator = 'group_locator_example' # str | 
-    role_id = 'role_id_example' # str | 
-    scope = 'scope_example' # str | 
+    fields = 'fields_example' # str |  (optional)
 
     try:
-        tc.group_api.delete_role(group_locator, role_id, scope)
+        # Get all user groups.
+        api_response = tc.group_api.get_all_groups(fields=fields)
+       pprint(api_response)
     except ApiException as e:
-        print("Exception when calling GroupApi->delete_role: %s\n" % e)
+        print("Exception when calling GroupApi->get_all_groups: %s\n" % e)
 
 
 
@@ -256,24 +258,18 @@ delete_role
      - Types
      - Notes
 
-   * - **group_locator**
+   * - **fields**
      - **str**
-     - 
-   * - **role_id**
-     - **str**
-     - 
-   * - **scope**
-     - **str**
-     - 
+     - [optional] 
 
 Return type:
-    void (empty response body)
+    `Groups <../models/Groups.html>`_
 
 `Back to top <#>`_
 
-.. _get_parent_groups:
+.. _get_group_parent_groups:
 
-get_parent_groups
+get_group_parent_groups
 -----------------
 
 .. code-block:: python
@@ -288,10 +284,11 @@ get_parent_groups
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.group_api.get_parent_groups(group_locator, fields=fields)
+        # Get parent groups of the matching user group.
+        api_response = tc.group_api.get_group_parent_groups(group_locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling GroupApi->get_parent_groups: %s\n" % e)
+        print("Exception when calling GroupApi->get_group_parent_groups: %s\n" % e)
 
 
 
@@ -315,49 +312,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _get_permissions:
+.. _get_group_properties:
 
-get_permissions
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    group_locator = 'group_locator_example' # str | 
-
-    try:
-        api_response = tc.group_api.get_permissions(group_locator)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling GroupApi->get_permissions: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **group_locator**
-     - **str**
-     - 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _get_properties:
-
-get_properties
+get_group_properties
 -----------------
 
 .. code-block:: python
@@ -372,10 +329,11 @@ get_properties
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.group_api.get_properties(group_locator, fields=fields)
+        # Get properties of the matching user group.
+        api_response = tc.group_api.get_group_properties(group_locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling GroupApi->get_properties: %s\n" % e)
+        print("Exception when calling GroupApi->get_group_properties: %s\n" % e)
 
 
 
@@ -399,9 +357,54 @@ Return type:
 
 `Back to top <#>`_
 
-.. _list_role:
+.. _get_group_property:
 
-list_role
+get_group_property
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    group_locator = 'group_locator_example' # str | 
+    name = 'name_example' # str | 
+
+    try:
+        # Get a property of the matching user group.
+        api_response = tc.group_api.get_group_property(group_locator, name)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling GroupApi->get_group_property: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **group_locator**
+     - **str**
+     - 
+   * - **name**
+     - **str**
+     - 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
+.. _get_group_role_at_scope:
+
+get_group_role_at_scope
 -----------------
 
 .. code-block:: python
@@ -417,10 +420,11 @@ list_role
     scope = 'scope_example' # str | 
 
     try:
-        api_response = tc.group_api.list_role(group_locator, role_id, scope)
+        # Get a role with the specific scope of the matching user group.
+        api_response = tc.group_api.get_group_role_at_scope(group_locator, role_id, scope)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling GroupApi->list_role: %s\n" % e)
+        print("Exception when calling GroupApi->get_group_role_at_scope: %s\n" % e)
 
 
 
@@ -447,9 +451,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _list_roles:
+.. _get_group_roles:
 
-list_roles
+get_group_roles
 -----------------
 
 .. code-block:: python
@@ -463,10 +467,11 @@ list_roles
     group_locator = 'group_locator_example' # str | 
 
     try:
-        api_response = tc.group_api.list_roles(group_locator)
+        # Get all roles of the matching user group.
+        api_response = tc.group_api.get_group_roles(group_locator)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling GroupApi->list_roles: %s\n" % e)
+        print("Exception when calling GroupApi->get_group_roles: %s\n" % e)
 
 
 
@@ -487,100 +492,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _put_user_property:
+.. _get_user_group_of_group:
 
-put_user_property
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    group_locator = 'group_locator_example' # str | 
-    name = 'name_example' # str | 
-    body = 'body_example' # str |  (optional)
-
-    try:
-        api_response = tc.group_api.put_user_property(group_locator, name, body=body)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling GroupApi->put_user_property: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **group_locator**
-     - **str**
-     - 
-   * - **name**
-     - **str**
-     - 
-   * - **body**
-     - **str**
-     - [optional] 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _remove_user_property:
-
-remove_user_property
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    group_locator = 'group_locator_example' # str | 
-    name = 'name_example' # str | 
-
-    try:
-        tc.group_api.remove_user_property(group_locator, name)
-    except ApiException as e:
-        print("Exception when calling GroupApi->remove_user_property: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **group_locator**
-     - **str**
-     - 
-   * - **name**
-     - **str**
-     - 
-
-Return type:
-    void (empty response body)
-
-`Back to top <#>`_
-
-.. _serve_group:
-
-serve_group
+get_user_group_of_group
 -----------------
 
 .. code-block:: python
@@ -595,10 +509,11 @@ serve_group
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.group_api.serve_group(group_locator, fields=fields)
+        # Get user group matching the locator.
+        api_response = tc.group_api.get_user_group_of_group(group_locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling GroupApi->serve_group: %s\n" % e)
+        print("Exception when calling GroupApi->get_user_group_of_group: %s\n" % e)
 
 
 
@@ -622,49 +537,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _serve_groups:
+.. _remove_group_property:
 
-serve_groups
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.group_api.serve_groups(fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling GroupApi->serve_groups: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Groups <../models/Groups.html>`_
-
-`Back to top <#>`_
-
-.. _serve_user_properties:
-
-serve_user_properties
+remove_group_property
 -----------------
 
 .. code-block:: python
@@ -679,10 +554,10 @@ serve_user_properties
     name = 'name_example' # str | 
 
     try:
-        api_response = tc.group_api.serve_user_properties(group_locator, name)
-       pprint(api_response)
+        # Remove a property of the matching user group.
+        tc.group_api.remove_group_property(group_locator, name)
     except ApiException as e:
-        print("Exception when calling GroupApi->serve_user_properties: %s\n" % e)
+        print("Exception when calling GroupApi->remove_group_property: %s\n" % e)
 
 
 
@@ -702,13 +577,61 @@ serve_user_properties
      - 
 
 Return type:
-    **str**
+    void (empty response body)
 
 `Back to top <#>`_
 
-.. _set_parent_groups:
+.. _remove_role_at_scope_from_group:
 
-set_parent_groups
+remove_role_at_scope_from_group
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    group_locator = 'group_locator_example' # str | 
+    role_id = 'role_id_example' # str | 
+    scope = 'scope_example' # str | 
+
+    try:
+        # Remove a role with the specific scope from the matching user group.
+        tc.group_api.remove_role_at_scope_from_group(group_locator, role_id, scope)
+    except ApiException as e:
+        print("Exception when calling GroupApi->remove_role_at_scope_from_group: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **group_locator**
+     - **str**
+     - 
+   * - **role_id**
+     - **str**
+     - 
+   * - **scope**
+     - **str**
+     - 
+
+Return type:
+    void (empty response body)
+
+`Back to top <#>`_
+
+.. _set_group_parent_groups:
+
+set_group_parent_groups
 -----------------
 
 .. code-block:: python
@@ -724,10 +647,11 @@ set_parent_groups
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.group_api.set_parent_groups(group_locator, body=body, fields=fields)
+        # Update parent groups of the matching user group.
+        api_response = tc.group_api.set_group_parent_groups(group_locator, body=body, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling GroupApi->set_parent_groups: %s\n" % e)
+        print("Exception when calling GroupApi->set_group_parent_groups: %s\n" % e)
 
 
 
@@ -754,9 +678,58 @@ Return type:
 
 `Back to top <#>`_
 
-.. _set_roles:
+.. _set_group_property:
 
-set_roles
+set_group_property
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    group_locator = 'group_locator_example' # str | 
+    name = 'name_example' # str | 
+    body = 'body_example' # str |  (optional)
+
+    try:
+        # Update a property of the matching user group.
+        api_response = tc.group_api.set_group_property(group_locator, name, body=body)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling GroupApi->set_group_property: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **group_locator**
+     - **str**
+     - 
+   * - **name**
+     - **str**
+     - 
+   * - **body**
+     - **str**
+     - [optional] 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
+.. _set_group_roles:
+
+set_group_roles
 -----------------
 
 .. code-block:: python
@@ -771,10 +744,11 @@ set_roles
     body = dohq_teamcity.Roles() # Roles |  (optional)
 
     try:
-        api_response = tc.group_api.set_roles(group_locator, body=body)
+        # Update roles of the matching user group.
+        api_response = tc.group_api.set_group_roles(group_locator, body=body)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling GroupApi->set_roles: %s\n" % e)
+        print("Exception when calling GroupApi->set_group_roles: %s\n" % e)
 
 
 

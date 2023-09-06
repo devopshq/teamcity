@@ -26,15 +26,18 @@ Properties
      - `optional` 
    * - **disabled**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **inherited**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **href**
      - **str**
      - `optional` 
    * - **properties**
      -  `Properties <./Properties.html>`_
+     - `optional` 
+   * - **build_customization**
+     -  `BuildTriggerCustomization <./BuildTriggerCustomization.html>`_
      - `optional` 
 
 

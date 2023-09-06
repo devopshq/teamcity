@@ -14,14 +14,14 @@ dohq_teamcity.TestOccurrenceApi
 
    * - Method
      - HTTP request
-   * - :ref:`get_test_occurrences`
+   * - :ref:`get_all_test_occurrences`
      - **GET** ``/app/rest/testOccurrences``
-   * - :ref:`serve_instance`
+   * - :ref:`get_test_occurrence`
      - **GET** ``/app/rest/testOccurrences/{testLocator}``
 
-.. _get_test_occurrences:
+.. _get_all_test_occurrences:
 
-get_test_occurrences
+get_all_test_occurrences
 -----------------
 
 .. code-block:: python
@@ -36,10 +36,11 @@ get_test_occurrences
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.test_occurrence_api.get_test_occurrences(locator=locator, fields=fields)
+        # Get all test occurrences.
+        api_response = tc.test_occurrence_api.get_all_test_occurrences(locator=locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling TestOccurrenceApi->get_test_occurrences: %s\n" % e)
+        print("Exception when calling TestOccurrenceApi->get_all_test_occurrences: %s\n" % e)
 
 
 
@@ -63,9 +64,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _serve_instance:
+.. _get_test_occurrence:
 
-serve_instance
+get_test_occurrence
 -----------------
 
 .. code-block:: python
@@ -80,10 +81,11 @@ serve_instance
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.test_occurrence_api.serve_instance(test_locator, fields=fields)
+        # Get a matching test occurrence.
+        api_response = tc.test_occurrence_api.get_test_occurrence(test_locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling TestOccurrenceApi->serve_instance: %s\n" % e)
+        print("Exception when calling TestOccurrenceApi->get_test_occurrence: %s\n" % e)
 
 
 

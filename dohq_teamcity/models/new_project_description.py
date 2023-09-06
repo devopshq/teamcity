@@ -44,7 +44,7 @@ class NewProjectDescription(TeamCityObject):
         'parent_project': 'parentProject'
     }
 
-    def __init__(self, copy_all_associated_settings=False, projects_ids_map=None, build_types_ids_map=None, vcs_roots_ids_map=None, name=None, id=None, source_project_locator=None, source_project=None, parent_project=None, teamcity=None):  # noqa: E501
+    def __init__(self, copy_all_associated_settings=None, projects_ids_map=None, build_types_ids_map=None, vcs_roots_ids_map=None, name=None, id=None, source_project_locator=None, source_project=None, parent_project=None, teamcity=None):  # noqa: E501
         """NewProjectDescription - a model defined in Swagger"""  # noqa: E501
 
         self._copy_all_associated_settings = None

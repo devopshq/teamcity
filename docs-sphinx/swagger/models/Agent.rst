@@ -26,16 +26,25 @@ Properties
      - `optional` 
    * - **connected**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **enabled**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **authorized**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **uptodate**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
+   * - **outdated**
+     - **bool**
+     - `optional` 
+   * - **plugins_outdated**
+     - **bool**
+     - `optional` 
+   * - **java_outdated**
+     - **bool**
+     - `optional` 
    * - **ip**
      - **str**
      - `optional` 
@@ -45,11 +54,29 @@ Properties
    * - **version**
      - **str**
      - `optional` 
+   * - **current_agent_version**
+     - **str**
+     - `optional` 
    * - **last_activity_time**
+     - **str**
+     - `optional` 
+   * - **idle_since_time**
      - **str**
      - `optional` 
    * - **disconnection_comment**
      - **str**
+     - `optional` 
+   * - **registration_timestamp**
+     - **str**
+     - `optional` 
+   * - **host**
+     - **str**
+     - `optional` 
+   * - **cpu_rank**
+     - **int**
+     - `optional` 
+   * - **port**
+     - **int**
      - `optional` 
    * - **href**
      - **str**
@@ -72,17 +99,29 @@ Properties
    * - **properties**
      -  `Properties <./Properties.html>`_
      - `optional` 
+   * - **cloud_instance**
+     -  `CloudInstance <./CloudInstance.html>`_
+     - `optional` 
+   * - **cloud_image**
+     -  `CloudImage <./CloudImage.html>`_
+     - `optional` 
    * - **environment**
      -  `Environment <./Environment.html>`_
      - `optional` 
    * - **pool**
      -  `AgentPool <./AgentPool.html>`_
      - `optional` 
+   * - **compatibility_policy**
+     -  `CompatibilityPolicy <./CompatibilityPolicy.html>`_
+     - `optional` 
    * - **compatible_build_types**
      -  `BuildTypes <./BuildTypes.html>`_
      - `optional` 
    * - **incompatible_build_types**
      -  `Compatibilities <./Compatibilities.html>`_
+     - `optional` 
+   * - **builds**
+     -  `Builds <./Builds.html>`_
      - `optional` 
    * - **locator**
      - **str**

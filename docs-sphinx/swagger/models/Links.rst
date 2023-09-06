@@ -15,11 +15,11 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **count**
-     - **int**
-     - `optional` 
    * - **link**
      -  `list[Link] <./Link.html>`_
+     - `optional` 
+   * - **count**
+     - **int**
      - `optional` 
 
 

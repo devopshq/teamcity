@@ -14,10 +14,55 @@ dohq_teamcity.TestApi
 
    * - Method
      - HTTP request
+   * - :ref:`get_test`
+     - **GET** ``/app/rest/tests/{testLocator}``
    * - :ref:`get_tests`
      - **GET** ``/app/rest/tests``
-   * - :ref:`serve_instance`
-     - **GET** ``/app/rest/tests/{testLocator}``
+
+.. _get_test:
+
+get_test
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    test_locator = 'test_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get a matching test.
+        api_response = tc.test_api.get_test(test_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TestApi->get_test: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **test_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Test <../models/Test.html>`_
+
+`Back to top <#>`_
 
 .. _get_tests:
 
@@ -36,6 +81,7 @@ get_tests
     fields = 'fields_example' # str |  (optional)
 
     try:
+        # Get all tests.
         api_response = tc.test_api.get_tests(locator=locator, fields=fields)
        pprint(api_response)
     except ApiException as e:
@@ -60,50 +106,6 @@ get_tests
 
 Return type:
     `Tests <../models/Tests.html>`_
-
-`Back to top <#>`_
-
-.. _serve_instance:
-
-serve_instance
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    test_locator = 'test_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.test_api.serve_instance(test_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling TestApi->serve_instance: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **test_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Test <../models/Test.html>`_
 
 `Back to top <#>`_
 

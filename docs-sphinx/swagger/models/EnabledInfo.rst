@@ -17,7 +17,7 @@ Properties
      - Notes
    * - **status**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **comment**
      -  `Comment <./Comment.html>`_
      - `optional` 

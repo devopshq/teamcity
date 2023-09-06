@@ -6,6 +6,7 @@ from dohq_teamcity.custom.base_model import TeamCityObject
 # from dohq_teamcity.models.groups import Groups  # noqa: F401,E501
 # from dohq_teamcity.models.properties import Properties  # noqa: F401,E501
 # from dohq_teamcity.models.roles import Roles  # noqa: F401,E501
+# from dohq_teamcity.models.user_avatars import UserAvatars  # noqa: F401,E501
 
 
 class User(TeamCityObject):
@@ -34,7 +35,9 @@ class User(TeamCityObject):
         'properties': 'Properties',
         'roles': 'Roles',
         'groups': 'Groups',
-        'locator': 'str'
+        'locator': 'str',
+        'avatars': 'UserAvatars',
+        'enabled2_fa': 'bool'
     }
 
     attribute_map = {
@@ -50,10 +53,12 @@ class User(TeamCityObject):
         'properties': 'properties',
         'roles': 'roles',
         'groups': 'groups',
-        'locator': 'locator'
+        'locator': 'locator',
+        'avatars': 'avatars',
+        'enabled2_fa': 'enabled2FA'
     }
 
-    def __init__(self, username=None, name=None, id=None, email=None, last_login=None, password=None, has_password=False, realm=None, href=None, properties=None, roles=None, groups=None, locator=None, teamcity=None):  # noqa: E501
+    def __init__(self, username=None, name=None, id=None, email=None, last_login=None, password=None, has_password=None, realm=None, href=None, properties=None, roles=None, groups=None, locator=None, avatars=None, enabled2_fa=None, teamcity=None):  # noqa: E501
         """User - a model defined in Swagger"""  # noqa: E501
 
         self._username = None
@@ -69,6 +74,8 @@ class User(TeamCityObject):
         self._roles = None
         self._groups = None
         self._locator = None
+        self._avatars = None
+        self._enabled2_fa = None
         self.discriminator = None
 
         if username is not None:
@@ -97,6 +104,10 @@ class User(TeamCityObject):
             self.groups = groups
         if locator is not None:
             self.locator = locator
+        if avatars is not None:
+            self.avatars = avatars
+        if enabled2_fa is not None:
+            self.enabled2_fa = enabled2_fa
         super(User, self).__init__(teamcity=teamcity)
 
     @property
@@ -371,3 +382,45 @@ class User(TeamCityObject):
         """
 
         self._locator = locator
+
+    @property
+    def avatars(self):
+        """Gets the avatars of this User.  # noqa: E501
+
+
+        :return: The avatars of this User.  # noqa: E501
+        :rtype: UserAvatars
+        """
+        return self._avatars
+
+    @avatars.setter
+    def avatars(self, avatars):
+        """Sets the avatars of this User.
+
+
+        :param avatars: The avatars of this User.  # noqa: E501
+        :type: UserAvatars
+        """
+
+        self._avatars = avatars
+
+    @property
+    def enabled2_fa(self):
+        """Gets the enabled2_fa of this User.  # noqa: E501
+
+
+        :return: The enabled2_fa of this User.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enabled2_fa
+
+    @enabled2_fa.setter
+    def enabled2_fa(self, enabled2_fa):
+        """Sets the enabled2_fa of this User.
+
+
+        :param enabled2_fa: The enabled2_fa of this User.  # noqa: E501
+        :type: bool
+        """
+
+        self._enabled2_fa = enabled2_fa

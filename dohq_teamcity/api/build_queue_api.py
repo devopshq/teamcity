@@ -20,6 +20,7 @@ import re  # noqa: F401
 import six
 
 from dohq_teamcity.models.agents import Agents  # noqa: F401,E501
+from dohq_teamcity.models.approval_info import ApprovalInfo  # noqa: F401,E501
 from dohq_teamcity.models.build import Build  # noqa: F401,E501
 from dohq_teamcity.models.build_cancel_request import BuildCancelRequest  # noqa: F401,E501
 from dohq_teamcity.models.builds import Builds  # noqa: F401,E501
@@ -37,164 +38,13 @@ class BuildQueueApi(object):
     def __init__(self, api_client=None):
         self.api_client = api_client
 
-    def add_tags(self, build_locator, **kwargs):  # noqa: E501
-        """add_tags  # noqa: E501
+    def add_build_to_queue(self, **kwargs):  # noqa: E501
+        """Add a new build to the queue.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_tags(build_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str build_locator: (required)
-        :param Tags body:
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__add_tags_with_http_info(build_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__add_tags_with_http_info(build_locator, **kwargs)  # noqa: E501
-            return data
-
-    def cancel_build(self, build_locator, **kwargs):  # noqa: E501
-        """cancel_build  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.cancel_build(build_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str build_locator: (required)
-        :return: BuildCancelRequest
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__cancel_build_with_http_info(build_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__cancel_build_with_http_info(build_locator, **kwargs)  # noqa: E501
-            return data
-
-    def cancel_build_0(self, queued_build_locator, **kwargs):  # noqa: E501
-        """cancel_build_0  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.cancel_build_0(queued_build_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str queued_build_locator: (required)
-        :param BuildCancelRequest body:
-        :return: Build
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__cancel_build_0_with_http_info(queued_build_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__cancel_build_0_with_http_info(queued_build_locator, **kwargs)  # noqa: E501
-            return data
-
-    def delete_build(self, queued_build_locator, **kwargs):  # noqa: E501
-        """delete_build  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_build(queued_build_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str queued_build_locator: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__delete_build_with_http_info(queued_build_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__delete_build_with_http_info(queued_build_locator, **kwargs)  # noqa: E501
-            return data
-
-    def delete_builds_experimental(self, **kwargs):  # noqa: E501
-        """delete_builds_experimental  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_builds_experimental(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str locator:
-        :param str fields:
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__delete_builds_experimental_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__delete_builds_experimental_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def get_build(self, queued_build_locator, **kwargs):  # noqa: E501
-        """get_build  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_build(queued_build_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str queued_build_locator: (required)
-        :param str fields:
-        :return: Build
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_build_with_http_info(queued_build_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_build_with_http_info(queued_build_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_builds(self, **kwargs):  # noqa: E501
-        """get_builds  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_builds(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str locator:
-        :param str fields:
-        :return: Builds
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_builds_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__get_builds_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def queue_new_build(self, **kwargs):  # noqa: E501
-        """queue_new_build  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.queue_new_build(async_req=True)
+        >>> thread = api.add_build_to_queue(async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -206,21 +56,137 @@ class BuildQueueApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__queue_new_build_with_http_info(**kwargs)  # noqa: E501
+            return self.__add_build_to_queue_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.__queue_new_build_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.__add_build_to_queue_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def replace_builds(self, **kwargs):  # noqa: E501
-        """replace_builds  # noqa: E501
+    def add_tags_to_build_of_build_queue(self, build_locator, **kwargs):  # noqa: E501
+        """Add tags to the matching build.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.replace_builds(async_req=True)
+        >>> thread = api.add_tags_to_build_of_build_queue(build_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
-        :param Builds body:
+        :param str build_locator: (required)
+        :param Tags body:
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__add_tags_to_build_of_build_queue_with_http_info(build_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__add_tags_to_build_of_build_queue_with_http_info(build_locator, **kwargs)  # noqa: E501
+            return data
+
+    def approve_queued_build(self, build_locator, **kwargs):  # noqa: E501
+        """Approve queued build with approval feature enabled.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.approve_queued_build(build_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str build_locator: (required)
+        :param str body:
+        :param str fields:
+        :return: ApprovalInfo
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__approve_queued_build_with_http_info(build_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__approve_queued_build_with_http_info(build_locator, **kwargs)  # noqa: E501
+            return data
+
+    def cancel_queued_build(self, queued_build_locator, **kwargs):  # noqa: E501
+        """Cancel a queued matching build.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.cancel_queued_build(queued_build_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str queued_build_locator: (required)
+        :param BuildCancelRequest body:
+        :return: Build
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__cancel_queued_build_with_http_info(queued_build_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__cancel_queued_build_with_http_info(queued_build_locator, **kwargs)  # noqa: E501
+            return data
+
+    def delete_all_queued_builds(self, **kwargs):  # noqa: E501
+        """Delete all queued builds.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_all_queued_builds(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str locator:
+        :param str fields:
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__delete_all_queued_builds_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__delete_all_queued_builds_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def delete_queued_build(self, queued_build_locator, **kwargs):  # noqa: E501
+        """Delete a queued matching build.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_queued_build(queued_build_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str queued_build_locator: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__delete_queued_build_with_http_info(queued_build_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__delete_queued_build_with_http_info(queued_build_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_all_queued_builds(self, **kwargs):  # noqa: E501
+        """Get all queued builds.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_all_queued_builds(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str locator:
         :param str fields:
         :return: Builds
                  If the method is called asynchronously,
@@ -228,63 +194,41 @@ class BuildQueueApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__replace_builds_with_http_info(**kwargs)  # noqa: E501
+            return self.__get_all_queued_builds_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.__replace_builds_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.__get_all_queued_builds_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def replace_tags(self, build_locator, **kwargs):  # noqa: E501
-        """replace_tags  # noqa: E501
+    def get_approval_info(self, build_locator, **kwargs):  # noqa: E501
+        """Get approval info of a queued matching build.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.replace_tags(build_locator, async_req=True)
+        >>> thread = api.get_approval_info(build_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
         :param str build_locator: (required)
-        :param str locator:
-        :param Tags body:
         :param str fields:
-        :return: Tags
+        :return: ApprovalInfo
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__replace_tags_with_http_info(build_locator, **kwargs)  # noqa: E501
+            return self.__get_approval_info_with_http_info(build_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__replace_tags_with_http_info(build_locator, **kwargs)  # noqa: E501
+            (data) = self.__get_approval_info_with_http_info(build_locator, **kwargs)  # noqa: E501
             return data
 
-    def serve_build_field_by_build_only(self, build_locator, field, **kwargs):  # noqa: E501
-        """serve_build_field_by_build_only  # noqa: E501
+    def get_compatible_agents_for_build(self, queued_build_locator, **kwargs):  # noqa: E501
+        """Get compatible agents for a queued matching build.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_build_field_by_build_only(build_locator, field, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str build_locator: (required)
-        :param str field: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__serve_build_field_by_build_only_with_http_info(build_locator, field, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__serve_build_field_by_build_only_with_http_info(build_locator, field, **kwargs)  # noqa: E501
-            return data
-
-    def serve_compatible_agents(self, queued_build_locator, **kwargs):  # noqa: E501
-        """serve_compatible_agents  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_compatible_agents(queued_build_locator, async_req=True)
+        >>> thread = api.get_compatible_agents_for_build(queued_build_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -296,17 +240,64 @@ class BuildQueueApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__serve_compatible_agents_with_http_info(queued_build_locator, **kwargs)  # noqa: E501
+            return self.__get_compatible_agents_for_build_with_http_info(queued_build_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__serve_compatible_agents_with_http_info(queued_build_locator, **kwargs)  # noqa: E501
+            (data) = self.__get_compatible_agents_for_build_with_http_info(queued_build_locator, **kwargs)  # noqa: E501
             return data
 
-    def serve_tags(self, build_locator, **kwargs):  # noqa: E501
-        """serve_tags  # noqa: E501
+    def get_queued_build(self, queued_build_locator, **kwargs):  # noqa: E501
+        """Get a queued matching build.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_tags(build_locator, async_req=True)
+        >>> thread = api.get_queued_build(queued_build_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str queued_build_locator: (required)
+        :param str fields:
+        :return: Build
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_queued_build_with_http_info(queued_build_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_queued_build_with_http_info(queued_build_locator, **kwargs)  # noqa: E501
+            return data
+
+    def get_queued_build_position(self, queue_position, **kwargs):  # noqa: E501
+        """Get the queue position of a queued matching build.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_queued_build_position(queue_position, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param str queue_position: (required)
+        :param str fields:
+        :return: Build
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_queued_build_position_with_http_info(queue_position, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__get_queued_build_position_with_http_info(queue_position, **kwargs)  # noqa: E501
+            return data
+
+    def get_queued_build_tags(self, build_locator, **kwargs):  # noqa: E501
+        """Get tags of the queued matching build.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_queued_build_tags(build_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -319,61 +310,18 @@ class BuildQueueApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__serve_tags_with_http_info(build_locator, **kwargs)  # noqa: E501
+            return self.__get_queued_build_tags_with_http_info(build_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__serve_tags_with_http_info(build_locator, **kwargs)  # noqa: E501
+            (data) = self.__get_queued_build_tags_with_http_info(build_locator, **kwargs)  # noqa: E501
             return data
 
-    def set_build_queue_order(self, **kwargs):  # noqa: E501
-        """set_build_queue_order  # noqa: E501
+    def set_queued_build_position(self, queue_position, **kwargs):  # noqa: E501
+        """Update the queue position of a queued matching build.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_build_queue_order(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param Builds body:
-        :param str fields:
-        :return: Builds
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__set_build_queue_order_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__set_build_queue_order_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def set_build_queue_position(self, queue_position, **kwargs):  # noqa: E501
-        """set_build_queue_position  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_build_queue_position(queue_position, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str queue_position: (required)
-        :param str fields:
-        :return: Build
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__set_build_queue_position_with_http_info(queue_position, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__set_build_queue_position_with_http_info(queue_position, **kwargs)  # noqa: E501
-            return data
-
-    def set_build_queue_position_0(self, queue_position, **kwargs):  # noqa: E501
-        """set_build_queue_position_0  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_build_queue_position_0(queue_position, async_req=True)
+        >>> thread = api.set_queued_build_position(queue_position, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -386,17 +334,117 @@ class BuildQueueApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__set_build_queue_position_0_with_http_info(queue_position, **kwargs)  # noqa: E501
+            return self.__set_queued_build_position_with_http_info(queue_position, **kwargs)  # noqa: E501
         else:
-            (data) = self.__set_build_queue_position_0_with_http_info(queue_position, **kwargs)  # noqa: E501
+            (data) = self.__set_queued_build_position_with_http_info(queue_position, **kwargs)  # noqa: E501
             return data
 
-    def __add_tags_with_http_info(self, build_locator, **kwargs):  # noqa: E501
-        """add_tags  # noqa: E501
+    def set_queued_builds_order(self, **kwargs):  # noqa: E501
+        """Update the build queue order.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__add_tags_with_http_info(build_locator, async_req=True)
+        >>> thread = api.set_queued_builds_order(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
+        :param Builds body:
+        :param str fields:
+        :return: Builds
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__set_queued_builds_order_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__set_queued_builds_order_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def __add_build_to_queue_with_http_info(self, **kwargs):  # noqa: E501
+        """Add a new build to the queue.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__add_build_to_queue_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param Build body:
+        :param bool move_to_top:
+        :return: Build
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'move_to_top']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_build_to_queue" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'move_to_top' in params:
+            query_params.append(('moveToTop', params['move_to_top']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildQueue', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Build',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __add_tags_to_build_of_build_queue_with_http_info(self, build_locator, **kwargs):  # noqa: E501
+        """Add tags to the matching build.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__add_tags_to_build_of_build_queue_with_http_info(build_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -418,14 +466,14 @@ class BuildQueueApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method add_tags" % key
+                    " to method add_tags_to_build_of_build_queue" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'build_locator' is set
         if ('build_locator' not in params or
                 params['build_locator'] is None):
-            raise ValueError("Missing the required parameter `build_locator` when calling `add_tags`")  # noqa: E501
+            raise ValueError("Missing the required parameter `build_locator` when calling `add_tags_to_build_of_build_queue`")  # noqa: E501
 
         collection_formats = {}
 
@@ -446,6 +494,10 @@ class BuildQueueApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -465,22 +517,25 @@ class BuildQueueApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __cancel_build_with_http_info(self, build_locator, **kwargs):  # noqa: E501
-        """cancel_build  # noqa: E501
+    def __approve_queued_build_with_http_info(self, build_locator, **kwargs):  # noqa: E501
+        """Approve queued build with approval feature enabled.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__cancel_build_with_http_info(build_locator, async_req=True)
+        >>> thread = api.__approve_queued_build_with_http_info(build_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str build_locator: (required)
-        :return: BuildCancelRequest
+        :param str body:
+        :param str fields:
+        :return: ApprovalInfo
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['build_locator']  # noqa: E501
+        all_params = ['build_locator', 'body', 'fields']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -491,14 +546,14 @@ class BuildQueueApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method cancel_build" % key
+                    " to method approve_queued_build" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'build_locator' is set
         if ('build_locator' not in params or
                 params['build_locator'] is None):
-            raise ValueError("Missing the required parameter `build_locator` when calling `cancel_build`")  # noqa: E501
+            raise ValueError("Missing the required parameter `build_locator` when calling `approve_queued_build`")  # noqa: E501
 
         collection_formats = {}
 
@@ -510,6 +565,8 @@ class BuildQueueApi(object):
                 path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
 
         header_params = {}
 
@@ -517,18 +574,24 @@ class BuildQueueApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/app/rest/buildQueue/{buildLocator}/example/buildCancelRequest', 'GET',
+            '/app/rest/buildQueue/{buildLocator}/approve', 'POST',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='BuildCancelRequest',  # noqa: E501
+            response_type='ApprovalInfo',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -536,12 +599,13 @@ class BuildQueueApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __cancel_build_0_with_http_info(self, queued_build_locator, **kwargs):  # noqa: E501
-        """cancel_build_0  # noqa: E501
+    def __cancel_queued_build_with_http_info(self, queued_build_locator, **kwargs):  # noqa: E501
+        """Cancel a queued matching build.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__cancel_build_0_with_http_info(queued_build_locator, async_req=True)
+        >>> thread = api.__cancel_queued_build_with_http_info(queued_build_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -563,14 +627,14 @@ class BuildQueueApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method cancel_build_0" % key
+                    " to method cancel_queued_build" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'queued_build_locator' is set
         if ('queued_build_locator' not in params or
                 params['queued_build_locator'] is None):
-            raise ValueError("Missing the required parameter `queued_build_locator` when calling `cancel_build_0`")  # noqa: E501
+            raise ValueError("Missing the required parameter `queued_build_locator` when calling `cancel_queued_build`")  # noqa: E501
 
         collection_formats = {}
 
@@ -591,6 +655,14 @@ class BuildQueueApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -610,83 +682,13 @@ class BuildQueueApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __delete_build_with_http_info(self, queued_build_locator, **kwargs):  # noqa: E501
-        """delete_build  # noqa: E501
+    def __delete_all_queued_builds_with_http_info(self, **kwargs):  # noqa: E501
+        """Delete all queued builds.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__delete_build_with_http_info(queued_build_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str queued_build_locator: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['queued_build_locator']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_build" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'queued_build_locator' is set
-        if ('queued_build_locator' not in params or
-                params['queued_build_locator'] is None):
-            raise ValueError("Missing the required parameter `queued_build_locator` when calling `delete_build`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'queued_build_locator' in params:
-            if isinstance(params['queued_build_locator'], TeamCityObject):
-                path_params['queuedBuildLocator'] = params['queued_build_locator'].locator_id
-            else:
-                path_params['queuedBuildLocator'] = params['queued_build_locator']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildQueue/{queuedBuildLocator}', 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type=None,  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __delete_builds_experimental_with_http_info(self, **kwargs):  # noqa: E501
-        """delete_builds_experimental  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__delete_builds_experimental_with_http_info(async_req=True)
+        >>> thread = api.__delete_all_queued_builds_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -708,7 +710,7 @@ class BuildQueueApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_builds_experimental" % key
+                    " to method delete_all_queued_builds" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -748,23 +750,23 @@ class BuildQueueApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __get_build_with_http_info(self, queued_build_locator, **kwargs):  # noqa: E501
-        """get_build  # noqa: E501
+    def __delete_queued_build_with_http_info(self, queued_build_locator, **kwargs):  # noqa: E501
+        """Delete a queued matching build.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_build_with_http_info(queued_build_locator, async_req=True)
+        >>> thread = api.__delete_queued_build_with_http_info(queued_build_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str queued_build_locator: (required)
-        :param str fields:
-        :return: Build
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['queued_build_locator', 'fields']  # noqa: E501
+        all_params = ['queued_build_locator']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -775,14 +777,14 @@ class BuildQueueApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_build" % key
+                    " to method delete_queued_build" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'queued_build_locator' is set
         if ('queued_build_locator' not in params or
                 params['queued_build_locator'] is None):
-            raise ValueError("Missing the required parameter `queued_build_locator` when calling `get_build`")  # noqa: E501
+            raise ValueError("Missing the required parameter `queued_build_locator` when calling `delete_queued_build`")  # noqa: E501
 
         collection_formats = {}
 
@@ -794,8 +796,6 @@ class BuildQueueApi(object):
                 path_params['queuedBuildLocator'] = params['queued_build_locator']  # noqa: E501
 
         query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
 
         header_params = {}
 
@@ -807,14 +807,14 @@ class BuildQueueApi(object):
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/app/rest/buildQueue/{queuedBuildLocator}', 'GET',
+            '/app/rest/buildQueue/{queuedBuildLocator}', 'DELETE',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Build',  # noqa: E501
+            response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -822,12 +822,13 @@ class BuildQueueApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __get_builds_with_http_info(self, **kwargs):  # noqa: E501
-        """get_builds  # noqa: E501
+    def __get_all_queued_builds_with_http_info(self, **kwargs):  # noqa: E501
+        """Get all queued builds.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_builds_with_http_info(async_req=True)
+        >>> thread = api.__get_all_queued_builds_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -849,7 +850,7 @@ class BuildQueueApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_builds" % key
+                    " to method get_all_queued_builds" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -870,6 +871,10 @@ class BuildQueueApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -889,159 +894,24 @@ class BuildQueueApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __queue_new_build_with_http_info(self, **kwargs):  # noqa: E501
-        """queue_new_build  # noqa: E501
+    def __get_approval_info_with_http_info(self, build_locator, **kwargs):  # noqa: E501
+        """Get approval info of a queued matching build.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__queue_new_build_with_http_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param Build body:
-        :param bool move_to_top:
-        :return: Build
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'move_to_top']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method queue_new_build" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'move_to_top' in params:
-            query_params.append(('moveToTop', params['move_to_top']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildQueue', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Build',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __replace_builds_with_http_info(self, **kwargs):  # noqa: E501
-        """replace_builds  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__replace_builds_with_http_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param Builds body:
-        :param str fields:
-        :return: Builds
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method replace_builds" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildQueue', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Builds',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __replace_tags_with_http_info(self, build_locator, **kwargs):  # noqa: E501
-        """replace_tags  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__replace_tags_with_http_info(build_locator, async_req=True)
+        >>> thread = api.__get_approval_info_with_http_info(build_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str build_locator: (required)
-        :param str locator:
-        :param Tags body:
         :param str fields:
-        :return: Tags
+        :return: ApprovalInfo
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['build_locator', 'locator', 'body', 'fields']  # noqa: E501
+        all_params = ['build_locator', 'fields']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1052,14 +922,14 @@ class BuildQueueApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method replace_tags" % key
+                    " to method get_approval_info" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'build_locator' is set
         if ('build_locator' not in params or
                 params['build_locator'] is None):
-            raise ValueError("Missing the required parameter `build_locator` when calling `replace_tags`")  # noqa: E501
+            raise ValueError("Missing the required parameter `build_locator` when calling `get_approval_info`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1071,8 +941,6 @@ class BuildQueueApi(object):
                 path_params['buildLocator'] = params['build_locator']  # noqa: E501
 
         query_params = []
-        if 'locator' in params:
-            query_params.append(('locator', params['locator']))  # noqa: E501
         if 'fields' in params:
             query_params.append(('fields', params['fields']))  # noqa: E501
 
@@ -1082,20 +950,22 @@ class BuildQueueApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/app/rest/buildQueue/{buildLocator}/tags', 'PUT',
+            '/app/rest/buildQueue/{buildLocator}/approvalInfo', 'GET',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Tags',  # noqa: E501
+            response_type='ApprovalInfo',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1103,93 +973,13 @@ class BuildQueueApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __serve_build_field_by_build_only_with_http_info(self, build_locator, field, **kwargs):  # noqa: E501
-        """serve_build_field_by_build_only  # noqa: E501
+    def __get_compatible_agents_for_build_with_http_info(self, queued_build_locator, **kwargs):  # noqa: E501
+        """Get compatible agents for a queued matching build.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_build_field_by_build_only_with_http_info(build_locator, field, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str build_locator: (required)
-        :param str field: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['build_locator', 'field']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method serve_build_field_by_build_only" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'build_locator' is set
-        if ('build_locator' not in params or
-                params['build_locator'] is None):
-            raise ValueError("Missing the required parameter `build_locator` when calling `serve_build_field_by_build_only`")  # noqa: E501
-        # verify the required parameter 'field' is set
-        if ('field' not in params or
-                params['field'] is None):
-            raise ValueError("Missing the required parameter `field` when calling `serve_build_field_by_build_only`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'build_locator' in params:
-            if isinstance(params['build_locator'], TeamCityObject):
-                path_params['buildLocator'] = params['build_locator'].locator_id
-            else:
-                path_params['buildLocator'] = params['build_locator']  # noqa: E501
-        if 'field' in params:
-            if isinstance(params['field'], TeamCityObject):
-                path_params['field'] = params['field'].locator_id
-            else:
-                path_params['field'] = params['field']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildQueue/{buildLocator}/{field}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __serve_compatible_agents_with_http_info(self, queued_build_locator, **kwargs):  # noqa: E501
-        """serve_compatible_agents  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_compatible_agents_with_http_info(queued_build_locator, async_req=True)
+        >>> thread = api.__get_compatible_agents_for_build_with_http_info(queued_build_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1211,14 +1001,14 @@ class BuildQueueApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method serve_compatible_agents" % key
+                    " to method get_compatible_agents_for_build" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'queued_build_locator' is set
         if ('queued_build_locator' not in params or
                 params['queued_build_locator'] is None):
-            raise ValueError("Missing the required parameter `queued_build_locator` when calling `serve_compatible_agents`")  # noqa: E501
+            raise ValueError("Missing the required parameter `queued_build_locator` when calling `get_compatible_agents_for_build`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1239,6 +1029,10 @@ class BuildQueueApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -1258,12 +1052,175 @@ class BuildQueueApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __serve_tags_with_http_info(self, build_locator, **kwargs):  # noqa: E501
-        """serve_tags  # noqa: E501
+    def __get_queued_build_with_http_info(self, queued_build_locator, **kwargs):  # noqa: E501
+        """Get a queued matching build.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_tags_with_http_info(build_locator, async_req=True)
+        >>> thread = api.__get_queued_build_with_http_info(queued_build_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str queued_build_locator: (required)
+        :param str fields:
+        :return: Build
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['queued_build_locator', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_queued_build" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'queued_build_locator' is set
+        if ('queued_build_locator' not in params or
+                params['queued_build_locator'] is None):
+            raise ValueError("Missing the required parameter `queued_build_locator` when calling `get_queued_build`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'queued_build_locator' in params:
+            if isinstance(params['queued_build_locator'], TeamCityObject):
+                path_params['queuedBuildLocator'] = params['queued_build_locator'].locator_id
+            else:
+                path_params['queuedBuildLocator'] = params['queued_build_locator']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildQueue/{queuedBuildLocator}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Build',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_queued_build_position_with_http_info(self, queue_position, **kwargs):  # noqa: E501
+        """Get the queue position of a queued matching build.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_queued_build_position_with_http_info(queue_position, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str queue_position: (required)
+        :param str fields:
+        :return: Build
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['queue_position', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_queued_build_position" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'queue_position' is set
+        if ('queue_position' not in params or
+                params['queue_position'] is None):
+            raise ValueError("Missing the required parameter `queue_position` when calling `get_queued_build_position`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'queue_position' in params:
+            if isinstance(params['queue_position'], TeamCityObject):
+                path_params['queuePosition'] = params['queue_position'].locator_id
+            else:
+                path_params['queuePosition'] = params['queue_position']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildQueue/order/{queuePosition}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Build',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __get_queued_build_tags_with_http_info(self, build_locator, **kwargs):  # noqa: E501
+        """Get tags of the queued matching build.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__get_queued_build_tags_with_http_info(build_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1286,14 +1243,14 @@ class BuildQueueApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method serve_tags" % key
+                    " to method get_queued_build_tags" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'build_locator' is set
         if ('build_locator' not in params or
                 params['build_locator'] is None):
-            raise ValueError("Missing the required parameter `build_locator` when calling `serve_tags`")  # noqa: E501
+            raise ValueError("Missing the required parameter `build_locator` when calling `get_queued_build_tags`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1316,6 +1273,10 @@ class BuildQueueApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -1335,153 +1296,13 @@ class BuildQueueApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __set_build_queue_order_with_http_info(self, **kwargs):  # noqa: E501
-        """set_build_queue_order  # noqa: E501
+    def __set_queued_build_position_with_http_info(self, queue_position, **kwargs):  # noqa: E501
+        """Update the queue position of a queued matching build.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__set_build_queue_order_with_http_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param Builds body:
-        :param str fields:
-        :return: Builds
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method set_build_queue_order" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildQueue/order', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Builds',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __set_build_queue_position_with_http_info(self, queue_position, **kwargs):  # noqa: E501
-        """set_build_queue_position  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__set_build_queue_position_with_http_info(queue_position, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str queue_position: (required)
-        :param str fields:
-        :return: Build
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['queue_position', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method set_build_queue_position" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'queue_position' is set
-        if ('queue_position' not in params or
-                params['queue_position'] is None):
-            raise ValueError("Missing the required parameter `queue_position` when calling `set_build_queue_position`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'queue_position' in params:
-            if isinstance(params['queue_position'], TeamCityObject):
-                path_params['queuePosition'] = params['queue_position'].locator_id
-            else:
-                path_params['queuePosition'] = params['queue_position']  # noqa: E501
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/buildQueue/order/{queuePosition}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Build',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __set_build_queue_position_0_with_http_info(self, queue_position, **kwargs):  # noqa: E501
-        """set_build_queue_position_0  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__set_build_queue_position_0_with_http_info(queue_position, async_req=True)
+        >>> thread = api.__set_queued_build_position_with_http_info(queue_position, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1504,14 +1325,14 @@ class BuildQueueApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method set_build_queue_position_0" % key
+                    " to method set_queued_build_position" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'queue_position' is set
         if ('queue_position' not in params or
                 params['queue_position'] is None):
-            raise ValueError("Missing the required parameter `queue_position` when calling `set_build_queue_position_0`")  # noqa: E501
+            raise ValueError("Missing the required parameter `queue_position` when calling `set_queued_build_position`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1534,6 +1355,14 @@ class BuildQueueApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -1546,6 +1375,82 @@ class BuildQueueApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='Build',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __set_queued_builds_order_with_http_info(self, **kwargs):  # noqa: E501
+        """Update the build queue order.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__set_queued_builds_order_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param Builds body:
+        :param str fields:
+        :return: Builds
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method set_queued_builds_order" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/buildQueue/order', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Builds',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

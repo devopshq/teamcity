@@ -10,6 +10,8 @@ from dohq_teamcity.custom.base_model import TeamCityObject
 # from dohq_teamcity.models.build_type import BuildType  # noqa: F401,E501
 # from dohq_teamcity.models.build_types import BuildTypes  # noqa: F401,E501
 # from dohq_teamcity.models.builds import Builds  # noqa: F401,E501
+# from dohq_teamcity.models.cloud_images import CloudImages  # noqa: F401,E501
+# from dohq_teamcity.models.comment import Comment  # noqa: F401,E501
 # from dohq_teamcity.models.features import Features  # noqa: F401,E501
 # from dohq_teamcity.models.investigations import Investigations  # noqa: F401,E501
 # from dohq_teamcity.models.links import Links  # noqa: F401,E501
@@ -67,7 +69,10 @@ class BuildType(TeamCityObject):
         'builds': 'Builds',
         'investigations': 'Investigations',
         'compatible_agents': 'Agents',
+        'compatible_cloud_images': 'CloudImages',
         'vcs_root_instances': 'VcsRootInstances',
+        'external_status_allowed': 'bool',
+        'pause_comment': 'Comment',
         'locator': 'str'
     }
 
@@ -103,11 +108,14 @@ class BuildType(TeamCityObject):
         'builds': 'builds',
         'investigations': 'investigations',
         'compatible_agents': 'compatibleAgents',
+        'compatible_cloud_images': 'compatibleCloudImages',
         'vcs_root_instances': 'vcsRootInstances',
+        'external_status_allowed': 'externalStatusAllowed',
+        'pause_comment': 'pauseComment',
         'locator': 'locator'
     }
 
-    def __init__(self, id=None, internal_id=None, name=None, template_flag=False, type=None, paused=False, uuid=None, description=None, project_name=None, project_id=None, project_internal_id=None, href=None, web_url=None, inherited=False, links=None, project=None, templates=None, template=None, vcs_root_entries=None, settings=None, parameters=None, steps=None, features=None, triggers=None, snapshot_dependencies=None, artifact_dependencies=None, agent_requirements=None, branches=None, builds=None, investigations=None, compatible_agents=None, vcs_root_instances=None, locator=None, teamcity=None):  # noqa: E501
+    def __init__(self, id=None, internal_id=None, name=None, template_flag=None, type=None, paused=None, uuid=None, description=None, project_name=None, project_id=None, project_internal_id=None, href=None, web_url=None, inherited=None, links=None, project=None, templates=None, template=None, vcs_root_entries=None, settings=None, parameters=None, steps=None, features=None, triggers=None, snapshot_dependencies=None, artifact_dependencies=None, agent_requirements=None, branches=None, builds=None, investigations=None, compatible_agents=None, compatible_cloud_images=None, vcs_root_instances=None, external_status_allowed=None, pause_comment=None, locator=None, teamcity=None):  # noqa: E501
         """BuildType - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -141,7 +149,10 @@ class BuildType(TeamCityObject):
         self._builds = None
         self._investigations = None
         self._compatible_agents = None
+        self._compatible_cloud_images = None
         self._vcs_root_instances = None
+        self._external_status_allowed = None
+        self._pause_comment = None
         self._locator = None
         self.discriminator = None
 
@@ -207,8 +218,14 @@ class BuildType(TeamCityObject):
             self.investigations = investigations
         if compatible_agents is not None:
             self.compatible_agents = compatible_agents
+        if compatible_cloud_images is not None:
+            self.compatible_cloud_images = compatible_cloud_images
         if vcs_root_instances is not None:
             self.vcs_root_instances = vcs_root_instances
+        if external_status_allowed is not None:
+            self.external_status_allowed = external_status_allowed
+        if pause_comment is not None:
+            self.pause_comment = pause_comment
         if locator is not None:
             self.locator = locator
         super(BuildType, self).__init__(teamcity=teamcity)
@@ -315,6 +332,12 @@ class BuildType(TeamCityObject):
         :param type: The type of this BuildType.  # noqa: E501
         :type: str
         """
+        allowed_values = ["regular", "composite", "deployment"]  # noqa: E501
+        if type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                .format(type, allowed_values)
+            )
 
         self._type = type
 
@@ -865,6 +888,27 @@ class BuildType(TeamCityObject):
         self._compatible_agents = compatible_agents
 
     @property
+    def compatible_cloud_images(self):
+        """Gets the compatible_cloud_images of this BuildType.  # noqa: E501
+
+
+        :return: The compatible_cloud_images of this BuildType.  # noqa: E501
+        :rtype: CloudImages
+        """
+        return self._compatible_cloud_images
+
+    @compatible_cloud_images.setter
+    def compatible_cloud_images(self, compatible_cloud_images):
+        """Sets the compatible_cloud_images of this BuildType.
+
+
+        :param compatible_cloud_images: The compatible_cloud_images of this BuildType.  # noqa: E501
+        :type: CloudImages
+        """
+
+        self._compatible_cloud_images = compatible_cloud_images
+
+    @property
     def vcs_root_instances(self):
         """Gets the vcs_root_instances of this BuildType.  # noqa: E501
 
@@ -884,6 +928,48 @@ class BuildType(TeamCityObject):
         """
 
         self._vcs_root_instances = vcs_root_instances
+
+    @property
+    def external_status_allowed(self):
+        """Gets the external_status_allowed of this BuildType.  # noqa: E501
+
+
+        :return: The external_status_allowed of this BuildType.  # noqa: E501
+        :rtype: bool
+        """
+        return self._external_status_allowed
+
+    @external_status_allowed.setter
+    def external_status_allowed(self, external_status_allowed):
+        """Sets the external_status_allowed of this BuildType.
+
+
+        :param external_status_allowed: The external_status_allowed of this BuildType.  # noqa: E501
+        :type: bool
+        """
+
+        self._external_status_allowed = external_status_allowed
+
+    @property
+    def pause_comment(self):
+        """Gets the pause_comment of this BuildType.  # noqa: E501
+
+
+        :return: The pause_comment of this BuildType.  # noqa: E501
+        :rtype: Comment
+        """
+        return self._pause_comment
+
+    @pause_comment.setter
+    def pause_comment(self, pause_comment):
+        """Sets the pause_comment of this BuildType.
+
+
+        :param pause_comment: The pause_comment of this BuildType.  # noqa: E501
+        :type: Comment
+        """
+
+        self._pause_comment = pause_comment
 
     @property
     def locator(self):

@@ -26,7 +26,7 @@ class StateField(TeamCityObject):
         'inherited': 'inherited'
     }
 
-    def __init__(self, value=False, inherited=False, teamcity=None):  # noqa: E501
+    def __init__(self, value=None, inherited=None, teamcity=None):  # noqa: E501
         """StateField - a model defined in Swagger"""  # noqa: E501
 
         self._value = None

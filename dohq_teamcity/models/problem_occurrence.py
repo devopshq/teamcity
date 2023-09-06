@@ -29,6 +29,8 @@ class ProblemOccurrence(TeamCityObject):
         'muted': 'bool',
         'currently_investigated': 'bool',
         'currently_muted': 'bool',
+        'log_anchor': 'str',
+        'new_failure': 'bool',
         'details': 'str',
         'additional_data': 'str',
         'problem': 'Problem',
@@ -44,6 +46,8 @@ class ProblemOccurrence(TeamCityObject):
         'muted': 'muted',
         'currently_investigated': 'currentlyInvestigated',
         'currently_muted': 'currentlyMuted',
+        'log_anchor': 'logAnchor',
+        'new_failure': 'newFailure',
         'details': 'details',
         'additional_data': 'additionalData',
         'problem': 'problem',
@@ -51,7 +55,7 @@ class ProblemOccurrence(TeamCityObject):
         'build': 'build'
     }
 
-    def __init__(self, id=None, type=None, identity=None, href=None, muted=False, currently_investigated=False, currently_muted=False, details=None, additional_data=None, problem=None, mute=None, build=None, teamcity=None):  # noqa: E501
+    def __init__(self, id=None, type=None, identity=None, href=None, muted=None, currently_investigated=None, currently_muted=None, log_anchor=None, new_failure=None, details=None, additional_data=None, problem=None, mute=None, build=None, teamcity=None):  # noqa: E501
         """ProblemOccurrence - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -61,6 +65,8 @@ class ProblemOccurrence(TeamCityObject):
         self._muted = None
         self._currently_investigated = None
         self._currently_muted = None
+        self._log_anchor = None
+        self._new_failure = None
         self._details = None
         self._additional_data = None
         self._problem = None
@@ -82,6 +88,10 @@ class ProblemOccurrence(TeamCityObject):
             self.currently_investigated = currently_investigated
         if currently_muted is not None:
             self.currently_muted = currently_muted
+        if log_anchor is not None:
+            self.log_anchor = log_anchor
+        if new_failure is not None:
+            self.new_failure = new_failure
         if details is not None:
             self.details = details
         if additional_data is not None:
@@ -240,6 +250,48 @@ class ProblemOccurrence(TeamCityObject):
         """
 
         self._currently_muted = currently_muted
+
+    @property
+    def log_anchor(self):
+        """Gets the log_anchor of this ProblemOccurrence.  # noqa: E501
+
+
+        :return: The log_anchor of this ProblemOccurrence.  # noqa: E501
+        :rtype: str
+        """
+        return self._log_anchor
+
+    @log_anchor.setter
+    def log_anchor(self, log_anchor):
+        """Sets the log_anchor of this ProblemOccurrence.
+
+
+        :param log_anchor: The log_anchor of this ProblemOccurrence.  # noqa: E501
+        :type: str
+        """
+
+        self._log_anchor = log_anchor
+
+    @property
+    def new_failure(self):
+        """Gets the new_failure of this ProblemOccurrence.  # noqa: E501
+
+
+        :return: The new_failure of this ProblemOccurrence.  # noqa: E501
+        :rtype: bool
+        """
+        return self._new_failure
+
+    @new_failure.setter
+    def new_failure(self, new_failure):
+        """Sets the new_failure of this ProblemOccurrence.
+
+
+        :param new_failure: The new_failure of this ProblemOccurrence.  # noqa: E501
+        :type: bool
+        """
+
+        self._new_failure = new_failure
 
     @property
     def details(self):

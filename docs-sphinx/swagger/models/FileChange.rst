@@ -35,6 +35,6 @@ Properties
      - `optional` 
    * - **directory**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
 
 

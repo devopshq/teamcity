@@ -35,7 +35,7 @@ class Compatibility(TeamCityObject):
         'unmet_requirements': 'unmetRequirements'
     }
 
-    def __init__(self, compatible=False, agent=None, build_type=None, unmet_requirements=None, teamcity=None):  # noqa: E501
+    def __init__(self, compatible=None, agent=None, build_type=None, unmet_requirements=None, teamcity=None):  # noqa: E501
         """Compatibility - a model defined in Swagger"""  # noqa: E501
 
         self._compatible = None

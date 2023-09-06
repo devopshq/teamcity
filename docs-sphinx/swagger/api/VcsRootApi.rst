@@ -14,46 +14,38 @@ dohq_teamcity.VcsRootApi
 
    * - Method
      - HTTP request
-   * - :ref:`add_root`
+   * - :ref:`add_vcs_root`
      - **POST** ``/app/rest/vcs-roots``
-   * - :ref:`change_properties`
-     - **PUT** ``/app/rest/vcs-roots/{vcsRootLocator}/properties``
-   * - :ref:`delete_all_properties`
+   * - :ref:`delete_all_vcs_root_properties`
      - **DELETE** ``/app/rest/vcs-roots/{vcsRootLocator}/properties``
-   * - :ref:`delete_parameter`
-     - **DELETE** ``/app/rest/vcs-roots/{vcsRootLocator}/properties/{name}``
-   * - :ref:`delete_root`
+   * - :ref:`delete_vcs_root`
      - **DELETE** ``/app/rest/vcs-roots/{vcsRootLocator}``
-   * - :ref:`get_settings_file`
-     - **GET** ``/app/rest/vcs-roots/{vcsRootLocator}/settingsFile``
-   * - :ref:`put_parameter`
-     - **PUT** ``/app/rest/vcs-roots/{vcsRootLocator}/properties/{name}``
-   * - :ref:`serve_field`
-     - **GET** ``/app/rest/vcs-roots/{vcsRootLocator}/{field}``
-   * - :ref:`serve_instance_field`
-     - **GET** ``/app/rest/vcs-roots/{vcsRootLocator}/instances/{vcsRootInstanceLocator}/{field}``
-   * - :ref:`serve_properties`
+   * - :ref:`delete_vcs_root_property`
+     - **DELETE** ``/app/rest/vcs-roots/{vcsRootLocator}/properties/{name}``
+   * - :ref:`get_all_vcs_root_properties`
      - **GET** ``/app/rest/vcs-roots/{vcsRootLocator}/properties``
-   * - :ref:`serve_property`
-     - **GET** ``/app/rest/vcs-roots/{vcsRootLocator}/properties/{name}``
-   * - :ref:`serve_root`
-     - **GET** ``/app/rest/vcs-roots/{vcsRootLocator}``
-   * - :ref:`serve_root_instance`
-     - **GET** ``/app/rest/vcs-roots/{vcsRootLocator}/instances/{vcsRootInstanceLocator}``
-   * - :ref:`serve_root_instance_properties`
-     - **GET** ``/app/rest/vcs-roots/{vcsRootLocator}/instances/{vcsRootInstanceLocator}/properties``
-   * - :ref:`serve_root_instances`
-     - **GET** ``/app/rest/vcs-roots/{vcsRootLocator}/instances``
-   * - :ref:`serve_roots`
+   * - :ref:`get_all_vcs_roots`
      - **GET** ``/app/rest/vcs-roots``
-   * - :ref:`set_field`
+   * - :ref:`get_root_endpoints`
+     - **GET** ``/app/rest/vcs-roots/{vcsRootLocator}``
+   * - :ref:`get_vcs_root_field`
+     - **GET** ``/app/rest/vcs-roots/{vcsRootLocator}/{field}``
+   * - :ref:`get_vcs_root_instances`
+     - **GET** ``/app/rest/vcs-roots/{vcsRootLocator}/instances``
+   * - :ref:`get_vcs_root_property`
+     - **GET** ``/app/rest/vcs-roots/{vcsRootLocator}/properties/{name}``
+   * - :ref:`get_vcs_root_settings_file`
+     - **GET** ``/app/rest/vcs-roots/{vcsRootLocator}/settingsFile``
+   * - :ref:`set_vcs_root_field`
      - **PUT** ``/app/rest/vcs-roots/{vcsRootLocator}/{field}``
-   * - :ref:`set_instance_field`
-     - **PUT** ``/app/rest/vcs-roots/{vcsRootLocator}/instances/{vcsRootInstanceLocator}/{field}``
+   * - :ref:`set_vcs_root_properties`
+     - **PUT** ``/app/rest/vcs-roots/{vcsRootLocator}/properties``
+   * - :ref:`set_vcs_root_property`
+     - **PUT** ``/app/rest/vcs-roots/{vcsRootLocator}/properties/{name}``
 
-.. _add_root:
+.. _add_vcs_root:
 
-add_root
+add_vcs_root
 -----------------
 
 .. code-block:: python
@@ -68,10 +60,11 @@ add_root
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.vcs_root_api.add_root(body=body, fields=fields)
+        # Add a new VCS root.
+        api_response = tc.vcs_root_api.add_vcs_root(body=body, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling VcsRootApi->add_root: %s\n" % e)
+        print("Exception when calling VcsRootApi->add_vcs_root: %s\n" % e)
 
 
 
@@ -95,9 +88,493 @@ Return type:
 
 `Back to top <#>`_
 
-.. _change_properties:
+.. _delete_all_vcs_root_properties:
 
-change_properties
+delete_all_vcs_root_properties
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    vcs_root_locator = 'vcs_root_locator_example' # str | 
+
+    try:
+        # Delete all properties of the matching VCS root.
+        tc.vcs_root_api.delete_all_vcs_root_properties(vcs_root_locator)
+    except ApiException as e:
+        print("Exception when calling VcsRootApi->delete_all_vcs_root_properties: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **vcs_root_locator**
+     - **str**
+     - 
+
+Return type:
+    void (empty response body)
+
+`Back to top <#>`_
+
+.. _delete_vcs_root:
+
+delete_vcs_root
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    vcs_root_locator = 'vcs_root_locator_example' # str | 
+
+    try:
+        # Remove VCS root matching the locator.
+        tc.vcs_root_api.delete_vcs_root(vcs_root_locator)
+    except ApiException as e:
+        print("Exception when calling VcsRootApi->delete_vcs_root: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **vcs_root_locator**
+     - **str**
+     - 
+
+Return type:
+    void (empty response body)
+
+`Back to top <#>`_
+
+.. _delete_vcs_root_property:
+
+delete_vcs_root_property
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    vcs_root_locator = 'vcs_root_locator_example' # str | 
+    name = 'name_example' # str | 
+
+    try:
+        # Delete a property of the matching VCS root.
+        tc.vcs_root_api.delete_vcs_root_property(vcs_root_locator, name)
+    except ApiException as e:
+        print("Exception when calling VcsRootApi->delete_vcs_root_property: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **vcs_root_locator**
+     - **str**
+     - 
+   * - **name**
+     - **str**
+     - 
+
+Return type:
+    void (empty response body)
+
+`Back to top <#>`_
+
+.. _get_all_vcs_root_properties:
+
+get_all_vcs_root_properties
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    vcs_root_locator = 'vcs_root_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get all properties of the matching VCS root.
+        api_response = tc.vcs_root_api.get_all_vcs_root_properties(vcs_root_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VcsRootApi->get_all_vcs_root_properties: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **vcs_root_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `Properties <../models/Properties.html>`_
+
+`Back to top <#>`_
+
+.. _get_all_vcs_roots:
+
+get_all_vcs_roots
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    locator = 'locator_example' # str |  (optional)
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get all VCS roots.
+        api_response = tc.vcs_root_api.get_all_vcs_roots(locator=locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VcsRootApi->get_all_vcs_roots: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **locator**
+     - **str**
+     - [optional] 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `VcsRoots <../models/VcsRoots.html>`_
+
+`Back to top <#>`_
+
+.. _get_root_endpoints:
+
+get_root_endpoints
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    vcs_root_locator = 'vcs_root_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get root endpoints.
+        api_response = tc.vcs_root_api.get_root_endpoints(vcs_root_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VcsRootApi->get_root_endpoints: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **vcs_root_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `VcsRoot <../models/VcsRoot.html>`_
+
+`Back to top <#>`_
+
+.. _get_vcs_root_field:
+
+get_vcs_root_field
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    vcs_root_locator = 'vcs_root_locator_example' # str | 
+    field = 'field_example' # str | 
+
+    try:
+        # Get a field of the matching VCS root.
+        api_response = tc.vcs_root_api.get_vcs_root_field(vcs_root_locator, field)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VcsRootApi->get_vcs_root_field: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **vcs_root_locator**
+     - **str**
+     - 
+   * - **field**
+     - **str**
+     - 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
+.. _get_vcs_root_instances:
+
+get_vcs_root_instances
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    vcs_root_locator = 'vcs_root_locator_example' # str | 
+    fields = 'fields_example' # str |  (optional)
+
+    try:
+        # Get all VCS root instances of the matching VCS root.
+        api_response = tc.vcs_root_api.get_vcs_root_instances(vcs_root_locator, fields=fields)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VcsRootApi->get_vcs_root_instances: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **vcs_root_locator**
+     - **str**
+     - 
+   * - **fields**
+     - **str**
+     - [optional] 
+
+Return type:
+    `VcsRootInstances <../models/VcsRootInstances.html>`_
+
+`Back to top <#>`_
+
+.. _get_vcs_root_property:
+
+get_vcs_root_property
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    vcs_root_locator = 'vcs_root_locator_example' # str | 
+    name = 'name_example' # str | 
+
+    try:
+        # Get a property on the matching VCS root.
+        api_response = tc.vcs_root_api.get_vcs_root_property(vcs_root_locator, name)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VcsRootApi->get_vcs_root_property: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **vcs_root_locator**
+     - **str**
+     - 
+   * - **name**
+     - **str**
+     - 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
+.. _get_vcs_root_settings_file:
+
+get_vcs_root_settings_file
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    vcs_root_locator = 'vcs_root_locator_example' # str | 
+
+    try:
+        # Get the settings file of the matching VCS root.
+        api_response = tc.vcs_root_api.get_vcs_root_settings_file(vcs_root_locator)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VcsRootApi->get_vcs_root_settings_file: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **vcs_root_locator**
+     - **str**
+     - 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
+.. _set_vcs_root_field:
+
+set_vcs_root_field
+-----------------
+
+.. code-block:: python
+
+    from pprint import pprint
+    from dohq_teamcity import TeamCity, ApiException
+
+    # username/password authentication
+    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
+
+    vcs_root_locator = 'vcs_root_locator_example' # str | 
+    field = 'field_example' # str | 
+    body = 'body_example' # str |  (optional)
+
+    try:
+        # Update a field of the matching VCS root.
+        api_response = tc.vcs_root_api.set_vcs_root_field(vcs_root_locator, field, body=body)
+       pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VcsRootApi->set_vcs_root_field: %s\n" % e)
+
+
+
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
+
+   * - Name
+     - Types
+     - Notes
+
+   * - **vcs_root_locator**
+     - **str**
+     - 
+   * - **field**
+     - **str**
+     - 
+   * - **body**
+     - **str**
+     - [optional] 
+
+Return type:
+    **str**
+
+`Back to top <#>`_
+
+.. _set_vcs_root_properties:
+
+set_vcs_root_properties
 -----------------
 
 .. code-block:: python
@@ -113,10 +590,11 @@ change_properties
     fields = 'fields_example' # str |  (optional)
 
     try:
-        api_response = tc.vcs_root_api.change_properties(vcs_root_locator, body=body, fields=fields)
+        # Update all properties of the matching VCS root.
+        api_response = tc.vcs_root_api.set_vcs_root_properties(vcs_root_locator, body=body, fields=fields)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling VcsRootApi->change_properties: %s\n" % e)
+        print("Exception when calling VcsRootApi->set_vcs_root_properties: %s\n" % e)
 
 
 
@@ -143,170 +621,9 @@ Return type:
 
 `Back to top <#>`_
 
-.. _delete_all_properties:
+.. _set_vcs_root_property:
 
-delete_all_properties
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    vcs_root_locator = 'vcs_root_locator_example' # str | 
-
-    try:
-        tc.vcs_root_api.delete_all_properties(vcs_root_locator)
-    except ApiException as e:
-        print("Exception when calling VcsRootApi->delete_all_properties: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **vcs_root_locator**
-     - **str**
-     - 
-
-Return type:
-    void (empty response body)
-
-`Back to top <#>`_
-
-.. _delete_parameter:
-
-delete_parameter
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    vcs_root_locator = 'vcs_root_locator_example' # str | 
-    name = 'name_example' # str | 
-
-    try:
-        tc.vcs_root_api.delete_parameter(vcs_root_locator, name)
-    except ApiException as e:
-        print("Exception when calling VcsRootApi->delete_parameter: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **vcs_root_locator**
-     - **str**
-     - 
-   * - **name**
-     - **str**
-     - 
-
-Return type:
-    void (empty response body)
-
-`Back to top <#>`_
-
-.. _delete_root:
-
-delete_root
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    vcs_root_locator = 'vcs_root_locator_example' # str | 
-
-    try:
-        tc.vcs_root_api.delete_root(vcs_root_locator)
-    except ApiException as e:
-        print("Exception when calling VcsRootApi->delete_root: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **vcs_root_locator**
-     - **str**
-     - 
-
-Return type:
-    void (empty response body)
-
-`Back to top <#>`_
-
-.. _get_settings_file:
-
-get_settings_file
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    vcs_root_locator = 'vcs_root_locator_example' # str | 
-
-    try:
-        api_response = tc.vcs_root_api.get_settings_file(vcs_root_locator)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling VcsRootApi->get_settings_file: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **vcs_root_locator**
-     - **str**
-     - 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _put_parameter:
-
-put_parameter
+set_vcs_root_property
 -----------------
 
 .. code-block:: python
@@ -322,10 +639,11 @@ put_parameter
     body = 'body_example' # str |  (optional)
 
     try:
-        api_response = tc.vcs_root_api.put_parameter(vcs_root_locator, name, body=body)
+        # Update a property of the matching VCS root.
+        api_response = tc.vcs_root_api.set_vcs_root_property(vcs_root_locator, name, body=body)
        pprint(api_response)
     except ApiException as e:
-        print("Exception when calling VcsRootApi->put_parameter: %s\n" % e)
+        print("Exception when calling VcsRootApi->set_vcs_root_property: %s\n" % e)
 
 
 
@@ -341,514 +659,6 @@ put_parameter
      - **str**
      - 
    * - **name**
-     - **str**
-     - 
-   * - **body**
-     - **str**
-     - [optional] 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _serve_field:
-
-serve_field
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    vcs_root_locator = 'vcs_root_locator_example' # str | 
-    field = 'field_example' # str | 
-
-    try:
-        api_response = tc.vcs_root_api.serve_field(vcs_root_locator, field)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling VcsRootApi->serve_field: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **vcs_root_locator**
-     - **str**
-     - 
-   * - **field**
-     - **str**
-     - 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _serve_instance_field:
-
-serve_instance_field
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    vcs_root_locator = 'vcs_root_locator_example' # str | 
-    vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
-    field = 'field_example' # str | 
-
-    try:
-        api_response = tc.vcs_root_api.serve_instance_field(vcs_root_locator, vcs_root_instance_locator, field)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling VcsRootApi->serve_instance_field: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **vcs_root_locator**
-     - **str**
-     - 
-   * - **vcs_root_instance_locator**
-     - **str**
-     - 
-   * - **field**
-     - **str**
-     - 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _serve_properties:
-
-serve_properties
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    vcs_root_locator = 'vcs_root_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.vcs_root_api.serve_properties(vcs_root_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling VcsRootApi->serve_properties: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **vcs_root_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Properties <../models/Properties.html>`_
-
-`Back to top <#>`_
-
-.. _serve_property:
-
-serve_property
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    vcs_root_locator = 'vcs_root_locator_example' # str | 
-    name = 'name_example' # str | 
-
-    try:
-        api_response = tc.vcs_root_api.serve_property(vcs_root_locator, name)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling VcsRootApi->serve_property: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **vcs_root_locator**
-     - **str**
-     - 
-   * - **name**
-     - **str**
-     - 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _serve_root:
-
-serve_root
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    vcs_root_locator = 'vcs_root_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.vcs_root_api.serve_root(vcs_root_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling VcsRootApi->serve_root: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **vcs_root_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `VcsRoot <../models/VcsRoot.html>`_
-
-`Back to top <#>`_
-
-.. _serve_root_instance:
-
-serve_root_instance
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    vcs_root_locator = 'vcs_root_locator_example' # str | 
-    vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.vcs_root_api.serve_root_instance(vcs_root_locator, vcs_root_instance_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling VcsRootApi->serve_root_instance: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **vcs_root_locator**
-     - **str**
-     - 
-   * - **vcs_root_instance_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `VcsRootInstance <../models/VcsRootInstance.html>`_
-
-`Back to top <#>`_
-
-.. _serve_root_instance_properties:
-
-serve_root_instance_properties
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    vcs_root_locator = 'vcs_root_locator_example' # str | 
-    vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.vcs_root_api.serve_root_instance_properties(vcs_root_locator, vcs_root_instance_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling VcsRootApi->serve_root_instance_properties: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **vcs_root_locator**
-     - **str**
-     - 
-   * - **vcs_root_instance_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `Properties <../models/Properties.html>`_
-
-`Back to top <#>`_
-
-.. _serve_root_instances:
-
-serve_root_instances
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    vcs_root_locator = 'vcs_root_locator_example' # str | 
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.vcs_root_api.serve_root_instances(vcs_root_locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling VcsRootApi->serve_root_instances: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **vcs_root_locator**
-     - **str**
-     - 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `VcsRootInstances <../models/VcsRootInstances.html>`_
-
-`Back to top <#>`_
-
-.. _serve_roots:
-
-serve_roots
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    locator = 'locator_example' # str |  (optional)
-    fields = 'fields_example' # str |  (optional)
-
-    try:
-        api_response = tc.vcs_root_api.serve_roots(locator=locator, fields=fields)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling VcsRootApi->serve_roots: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **locator**
-     - **str**
-     - [optional] 
-   * - **fields**
-     - **str**
-     - [optional] 
-
-Return type:
-    `VcsRoots <../models/VcsRoots.html>`_
-
-`Back to top <#>`_
-
-.. _set_field:
-
-set_field
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    vcs_root_locator = 'vcs_root_locator_example' # str | 
-    field = 'field_example' # str | 
-    body = 'body_example' # str |  (optional)
-
-    try:
-        api_response = tc.vcs_root_api.set_field(vcs_root_locator, field, body=body)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling VcsRootApi->set_field: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **vcs_root_locator**
-     - **str**
-     - 
-   * - **field**
-     - **str**
-     - 
-   * - **body**
-     - **str**
-     - [optional] 
-
-Return type:
-    **str**
-
-`Back to top <#>`_
-
-.. _set_instance_field:
-
-set_instance_field
------------------
-
-.. code-block:: python
-
-    from pprint import pprint
-    from dohq_teamcity import TeamCity, ApiException
-
-    # username/password authentication
-    tc = TeamCity("https://teamcity.example.com", auth=('username', 'password'))
-
-    vcs_root_locator = 'vcs_root_locator_example' # str | 
-    vcs_root_instance_locator = 'vcs_root_instance_locator_example' # str | 
-    field = 'field_example' # str | 
-    body = 'body_example' # str |  (optional)
-
-    try:
-        api_response = tc.vcs_root_api.set_instance_field(vcs_root_locator, vcs_root_instance_locator, field, body=body)
-       pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling VcsRootApi->set_instance_field: %s\n" % e)
-
-
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Name
-     - Types
-     - Notes
-
-   * - **vcs_root_locator**
-     - **str**
-     - 
-   * - **vcs_root_instance_locator**
-     - **str**
-     - 
-   * - **field**
      - **str**
      - 
    * - **body**

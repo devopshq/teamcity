@@ -36,7 +36,7 @@ class FileChange(TeamCityObject):
         'directory': 'directory'
     }
 
-    def __init__(self, before_revision=None, after_revision=None, change_type=None, change_type_comment=None, file=None, relative_file=None, directory=False, teamcity=None):  # noqa: E501
+    def __init__(self, before_revision=None, after_revision=None, change_type=None, change_type_comment=None, file=None, relative_file=None, directory=None, teamcity=None):  # noqa: E501
         """FileChange - a model defined in Swagger"""  # noqa: E501
 
         self._before_revision = None

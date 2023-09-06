@@ -17,22 +17,25 @@ Properties
      - Notes
    * - **clean_sources**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **clean_sources_in_all_dependencies**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **rebuild_all_dependencies**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
+   * - **rebuild_failed_or_incomplete_dependencies**
+     - **bool**
+     - `optional` 
    * - **queue_at_top**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **freeze_settings**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **tag_dependencies**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **rebuild_dependencies**
      -  `BuildTypes <./BuildTypes.html>`_
      - `optional` 

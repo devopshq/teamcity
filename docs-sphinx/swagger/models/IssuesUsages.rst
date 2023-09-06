@@ -15,11 +15,11 @@ Properties
    * - Name
      - Type
      - Notes
-   * - **issue_usage**
-     -  `list[IssueUsage] <./IssueUsage.html>`_
-     - `optional` 
    * - **href**
      - **str**
+     - `optional` 
+   * - **issue_usage**
+     -  `list[IssueUsage] <./IssueUsage.html>`_
      - `optional` 
    * - **count**
      - **int**

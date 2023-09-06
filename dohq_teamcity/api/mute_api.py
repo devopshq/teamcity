@@ -34,78 +34,13 @@ class MuteApi(object):
     def __init__(self, api_client=None):
         self.api_client = api_client
 
-    def create_instance(self, **kwargs):  # noqa: E501
-        """create_instance  # noqa: E501
+    def get_all_muted_tests(self, **kwargs):  # noqa: E501
+        """Get all muted tests.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_instance(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param Mute body:
-        :param str fields:
-        :return: Mute
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__create_instance_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__create_instance_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def create_instances(self, **kwargs):  # noqa: E501
-        """create_instances  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_instances(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param Mutes body:
-        :param str fields:
-        :return: Mutes
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__create_instances_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.__create_instances_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def delete_instance(self, mute_locator, **kwargs):  # noqa: E501
-        """delete_instance  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_instance(mute_locator, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req: bool
-        :param str mute_locator: (required)
-        :param str body:
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__delete_instance_with_http_info(mute_locator, **kwargs)  # noqa: E501
-        else:
-            (data) = self.__delete_instance_with_http_info(mute_locator, **kwargs)  # noqa: E501
-            return data
-
-    def get_mutes(self, **kwargs):  # noqa: E501
-        """get_mutes  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_mutes(async_req=True)
+        >>> thread = api.get_all_muted_tests(async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -117,17 +52,18 @@ class MuteApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__get_mutes_with_http_info(**kwargs)  # noqa: E501
+            return self.__get_all_muted_tests_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.__get_mutes_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.__get_all_muted_tests_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def serve_instance(self, mute_locator, **kwargs):  # noqa: E501
-        """serve_instance  # noqa: E501
+    def get_muted_test(self, mute_locator, **kwargs):  # noqa: E501
+        """Get a muted test.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serve_instance(mute_locator, async_req=True)
+        >>> thread = api.get_muted_test(mute_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req: bool
@@ -139,225 +75,87 @@ class MuteApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__serve_instance_with_http_info(mute_locator, **kwargs)  # noqa: E501
+            return self.__get_muted_test_with_http_info(mute_locator, **kwargs)  # noqa: E501
         else:
-            (data) = self.__serve_instance_with_http_info(mute_locator, **kwargs)  # noqa: E501
+            (data) = self.__get_muted_test_with_http_info(mute_locator, **kwargs)  # noqa: E501
             return data
 
-    def __create_instance_with_http_info(self, **kwargs):  # noqa: E501
-        """create_instance  # noqa: E501
+    def mute_multiple_tests(self, **kwargs):  # noqa: E501
+        """Mute multiple tests.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__create_instance_with_http_info(async_req=True)
+        >>> thread = api.mute_multiple_tests(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
-        :param Mute body:
-        :param str fields:
-        :return: Mute
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_instance" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/mutes', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Mute',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __create_instances_with_http_info(self, **kwargs):  # noqa: E501
-        """create_instances  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__create_instances_with_http_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
+        :param async_req: bool
         :param Mutes body:
         :param str fields:
         :return: Mutes
                  If the method is called asynchronously,
                  returns the request thread.
         """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__mute_multiple_tests_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__mute_multiple_tests_with_http_info(**kwargs)  # noqa: E501
+            return data
 
-        all_params = ['body', 'fields']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+    def mute_test(self, **kwargs):  # noqa: E501
+        """Mute a test.  # noqa: E501
 
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_instances" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/mutes/multiple', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Mutes',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __delete_instance_with_http_info(self, mute_locator, **kwargs):  # noqa: E501
-        """delete_instance  # noqa: E501
-
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__delete_instance_with_http_info(mute_locator, async_req=True)
+        >>> thread = api.mute_test(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param async_req: bool
+        :param Mute body:
+        :param str fields:
+        :return: Mute
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__mute_test_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.__mute_test_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def unmute_test(self, mute_locator, **kwargs):  # noqa: E501
+        """Unmute the matching test.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.unmute_test(mute_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req: bool
         :param str mute_locator: (required)
         :param str body:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__unmute_test_with_http_info(mute_locator, **kwargs)  # noqa: E501
+        else:
+            (data) = self.__unmute_test_with_http_info(mute_locator, **kwargs)  # noqa: E501
+            return data
 
-        all_params = ['mute_locator', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+    def __get_all_muted_tests_with_http_info(self, **kwargs):  # noqa: E501
+        """Get all muted tests.  # noqa: E501
 
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_instance" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'mute_locator' is set
-        if ('mute_locator' not in params or
-                params['mute_locator'] is None):
-            raise ValueError("Missing the required parameter `mute_locator` when calling `delete_instance`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'mute_locator' in params:
-            if isinstance(params['mute_locator'], TeamCityObject):
-                path_params['muteLocator'] = params['mute_locator'].locator_id
-            else:
-                path_params['muteLocator'] = params['mute_locator']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/app/rest/mutes/{muteLocator}', 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type=None,  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def __get_mutes_with_http_info(self, **kwargs):  # noqa: E501
-        """get_mutes  # noqa: E501
-
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__get_mutes_with_http_info(async_req=True)
+        >>> thread = api.__get_all_muted_tests_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -379,7 +177,7 @@ class MuteApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_mutes" % key
+                    " to method get_all_muted_tests" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -400,6 +198,10 @@ class MuteApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -419,12 +221,13 @@ class MuteApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def __serve_instance_with_http_info(self, mute_locator, **kwargs):  # noqa: E501
-        """serve_instance  # noqa: E501
+    def __get_muted_test_with_http_info(self, mute_locator, **kwargs):  # noqa: E501
+        """Get a muted test.  # noqa: E501
 
+          # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.__serve_instance_with_http_info(mute_locator, async_req=True)
+        >>> thread = api.__get_muted_test_with_http_info(mute_locator, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -446,14 +249,14 @@ class MuteApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method serve_instance" % key
+                    " to method get_muted_test" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'mute_locator' is set
         if ('mute_locator' not in params or
                 params['mute_locator'] is None):
-            raise ValueError("Missing the required parameter `mute_locator` when calling `serve_instance`")  # noqa: E501
+            raise ValueError("Missing the required parameter `mute_locator` when calling `get_muted_test`")  # noqa: E501
 
         collection_formats = {}
 
@@ -474,6 +277,10 @@ class MuteApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -486,6 +293,237 @@ class MuteApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='Mute',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __mute_multiple_tests_with_http_info(self, **kwargs):  # noqa: E501
+        """Mute multiple tests.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__mute_multiple_tests_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param Mutes body:
+        :param str fields:
+        :return: Mutes
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method mute_multiple_tests" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/mutes/multiple', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Mutes',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __mute_test_with_http_info(self, **kwargs):  # noqa: E501
+        """Mute a test.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__mute_test_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param Mute body:
+        :param str fields:
+        :return: Mute
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'fields']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method mute_test" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/mutes', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Mute',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def __unmute_test_with_http_info(self, mute_locator, **kwargs):  # noqa: E501
+        """Unmute the matching test.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.__unmute_test_with_http_info(mute_locator, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str mute_locator: (required)
+        :param str body:
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['mute_locator', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method unmute_test" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'mute_locator' is set
+        if ('mute_locator' not in params or
+                params['mute_locator'] is None):
+            raise ValueError("Missing the required parameter `mute_locator` when calling `unmute_test`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'mute_locator' in params:
+            if isinstance(params['mute_locator'], TeamCityObject):
+                path_params['muteLocator'] = params['mute_locator'].locator_id
+            else:
+                path_params['muteLocator'] = params['mute_locator']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/rest/mutes/{muteLocator}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

@@ -42,7 +42,7 @@ class SnapshotDependency(TeamCityObject):
         'source_build_type': 'source-buildType'
     }
 
-    def __init__(self, id=None, name=None, type=None, disabled=False, inherited=False, href=None, properties=None, source_build_type=None, teamcity=None):  # noqa: E501
+    def __init__(self, id=None, name=None, type=None, disabled=None, inherited=None, href=None, properties=None, source_build_type=None, teamcity=None):  # noqa: E501
         """SnapshotDependency - a model defined in Swagger"""  # noqa: E501
 
         self._id = None

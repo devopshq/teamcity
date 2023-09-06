@@ -17,21 +17,26 @@ class Environment(TeamCityObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'os_type': 'str'
+        'os_type': 'str',
+        'os_name': 'str'
     }
 
     attribute_map = {
-        'os_type': 'osType'
+        'os_type': 'osType',
+        'os_name': 'osName'
     }
 
-    def __init__(self, os_type=None, teamcity=None):  # noqa: E501
+    def __init__(self, os_type=None, os_name=None, teamcity=None):  # noqa: E501
         """Environment - a model defined in Swagger"""  # noqa: E501
 
         self._os_type = None
+        self._os_name = None
         self.discriminator = None
 
         if os_type is not None:
             self.os_type = os_type
+        if os_name is not None:
+            self.os_name = os_name
         super(Environment, self).__init__(teamcity=teamcity)
 
     @property
@@ -54,3 +59,24 @@ class Environment(TeamCityObject):
         """
 
         self._os_type = os_type
+
+    @property
+    def os_name(self):
+        """Gets the os_name of this Environment.  # noqa: E501
+
+
+        :return: The os_name of this Environment.  # noqa: E501
+        :rtype: str
+        """
+        return self._os_name
+
+    @os_name.setter
+    def os_name(self, os_name):
+        """Sets the os_name of this Environment.
+
+
+        :param os_name: The os_name of this Environment.  # noqa: E501
+        :type: str
+        """
+
+        self._os_name = os_name

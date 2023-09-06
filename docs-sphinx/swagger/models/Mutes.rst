@@ -24,9 +24,6 @@ Properties
    * - **prev_href**
      - **str**
      - `optional` 
-   * - **default**
-     - **bool**
-     - `optional` [default to ``False``]
    * - **href**
      - **str**
      - `optional` 

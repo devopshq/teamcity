@@ -4,6 +4,7 @@ from dohq_teamcity.custom.base_model import TeamCityObject
 
 
 # from dohq_teamcity.models.agents import Agents  # noqa: F401,E501
+# from dohq_teamcity.models.project import Project  # noqa: F401,E501
 # from dohq_teamcity.models.projects import Projects  # noqa: F401,E501
 
 
@@ -25,6 +26,7 @@ class AgentPool(TeamCityObject):
         'name': 'str',
         'href': 'str',
         'max_agents': 'int',
+        'owner_project': 'Project',
         'projects': 'Projects',
         'agents': 'Agents',
         'locator': 'str'
@@ -35,18 +37,20 @@ class AgentPool(TeamCityObject):
         'name': 'name',
         'href': 'href',
         'max_agents': 'maxAgents',
+        'owner_project': 'ownerProject',
         'projects': 'projects',
         'agents': 'agents',
         'locator': 'locator'
     }
 
-    def __init__(self, id=None, name=None, href=None, max_agents=None, projects=None, agents=None, locator=None, teamcity=None):  # noqa: E501
+    def __init__(self, id=None, name=None, href=None, max_agents=None, owner_project=None, projects=None, agents=None, locator=None, teamcity=None):  # noqa: E501
         """AgentPool - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._name = None
         self._href = None
         self._max_agents = None
+        self._owner_project = None
         self._projects = None
         self._agents = None
         self._locator = None
@@ -60,6 +64,8 @@ class AgentPool(TeamCityObject):
             self.href = href
         if max_agents is not None:
             self.max_agents = max_agents
+        if owner_project is not None:
+            self.owner_project = owner_project
         if projects is not None:
             self.projects = projects
         if agents is not None:
@@ -151,6 +157,27 @@ class AgentPool(TeamCityObject):
         """
 
         self._max_agents = max_agents
+
+    @property
+    def owner_project(self):
+        """Gets the owner_project of this AgentPool.  # noqa: E501
+
+
+        :return: The owner_project of this AgentPool.  # noqa: E501
+        :rtype: Project
+        """
+        return self._owner_project
+
+    @owner_project.setter
+    def owner_project(self, owner_project):
+        """Sets the owner_project of this AgentPool.
+
+
+        :param owner_project: The owner_project of this AgentPool.  # noqa: E501
+        :type: Project
+        """
+
+        self._owner_project = owner_project
 
     @property
     def projects(self):

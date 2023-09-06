@@ -35,7 +35,7 @@ Properties
      - `optional` 
    * - **personal**
      - **bool**
-     - `optional` [default to ``False``]
+     - `optional` 
    * - **href**
      - **str**
      - `optional` 
@@ -48,6 +48,12 @@ Properties
    * - **user**
      -  `User <./User.html>`_
      - `optional` 
+   * - **type**
+     - **str**
+     - `optional` 
+   * - **snapshot_dependency_link**
+     -  `SnapshotDependencyLink <./SnapshotDependencyLink.html>`_
+     - `optional` 
    * - **files**
      -  `FileChanges <./FileChanges.html>`_
      - `optional` 
@@ -59,6 +65,21 @@ Properties
      - `optional` 
    * - **parent_revisions**
      -  `Items <./Items.html>`_
+     - `optional` 
+   * - **attributes**
+     -  `Properties <./Properties.html>`_
+     - `optional` 
+   * - **stores_project_settings**
+     - **bool**
+     - `optional` 
+   * - **status**
+     -  `ChangeStatus <./ChangeStatus.html>`_
+     - `optional` 
+   * - **commiter**
+     -  `Commiter <./Commiter.html>`_
+     - `optional` 
+   * - **can_edit_comment**
+     - **bool**
      - `optional` 
    * - **locator**
      - **str**

@@ -34,8 +34,8 @@ class VcsRoot(TeamCityObject):
         'properties': 'Properties',
         'vcs_root_instances': 'VcsRootInstances',
         'repository_id_strings': 'Items',
-        'project_locator': 'str',
-        'locator': 'str'
+        'locator': 'str',
+        'project_locator': 'str'
     }
 
     attribute_map = {
@@ -50,11 +50,11 @@ class VcsRoot(TeamCityObject):
         'properties': 'properties',
         'vcs_root_instances': 'vcsRootInstances',
         'repository_id_strings': 'repositoryIdStrings',
-        'project_locator': 'projectLocator',
-        'locator': 'locator'
+        'locator': 'locator',
+        'project_locator': 'projectLocator'
     }
 
-    def __init__(self, id=None, internal_id=None, uuid=None, name=None, vcs_name=None, modification_check_interval=None, href=None, project=None, properties=None, vcs_root_instances=None, repository_id_strings=None, project_locator=None, locator=None, teamcity=None):  # noqa: E501
+    def __init__(self, id=None, internal_id=None, uuid=None, name=None, vcs_name=None, modification_check_interval=None, href=None, project=None, properties=None, vcs_root_instances=None, repository_id_strings=None, locator=None, project_locator=None, teamcity=None):  # noqa: E501
         """VcsRoot - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -68,8 +68,8 @@ class VcsRoot(TeamCityObject):
         self._properties = None
         self._vcs_root_instances = None
         self._repository_id_strings = None
-        self._project_locator = None
         self._locator = None
+        self._project_locator = None
         self.discriminator = None
 
         if id is not None:
@@ -94,10 +94,10 @@ class VcsRoot(TeamCityObject):
             self.vcs_root_instances = vcs_root_instances
         if repository_id_strings is not None:
             self.repository_id_strings = repository_id_strings
-        if project_locator is not None:
-            self.project_locator = project_locator
         if locator is not None:
             self.locator = locator
+        if project_locator is not None:
+            self.project_locator = project_locator
         super(VcsRoot, self).__init__(teamcity=teamcity)
 
     @property
@@ -332,27 +332,6 @@ class VcsRoot(TeamCityObject):
         self._repository_id_strings = repository_id_strings
 
     @property
-    def project_locator(self):
-        """Gets the project_locator of this VcsRoot.  # noqa: E501
-
-
-        :return: The project_locator of this VcsRoot.  # noqa: E501
-        :rtype: str
-        """
-        return self._project_locator
-
-    @project_locator.setter
-    def project_locator(self, project_locator):
-        """Sets the project_locator of this VcsRoot.
-
-
-        :param project_locator: The project_locator of this VcsRoot.  # noqa: E501
-        :type: str
-        """
-
-        self._project_locator = project_locator
-
-    @property
     def locator(self):
         """Gets the locator of this VcsRoot.  # noqa: E501
 
@@ -372,3 +351,24 @@ class VcsRoot(TeamCityObject):
         """
 
         self._locator = locator
+
+    @property
+    def project_locator(self):
+        """Gets the project_locator of this VcsRoot.  # noqa: E501
+
+
+        :return: The project_locator of this VcsRoot.  # noqa: E501
+        :rtype: str
+        """
+        return self._project_locator
+
+    @project_locator.setter
+    def project_locator(self, project_locator):
+        """Sets the project_locator of this VcsRoot.
+
+
+        :param project_locator: The project_locator of this VcsRoot.  # noqa: E501
+        :type: str
+        """
+
+        self._project_locator = project_locator

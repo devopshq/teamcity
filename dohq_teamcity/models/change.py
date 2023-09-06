@@ -3,9 +3,13 @@
 from dohq_teamcity.custom.base_model import TeamCityObject
 
 
+# from dohq_teamcity.models.change_status import ChangeStatus  # noqa: F401,E501
 # from dohq_teamcity.models.changes import Changes  # noqa: F401,E501
+# from dohq_teamcity.models.commiter import Commiter  # noqa: F401,E501
 # from dohq_teamcity.models.file_changes import FileChanges  # noqa: F401,E501
 # from dohq_teamcity.models.items import Items  # noqa: F401,E501
+# from dohq_teamcity.models.properties import Properties  # noqa: F401,E501
+# from dohq_teamcity.models.snapshot_dependency_link import SnapshotDependencyLink  # noqa: F401,E501
 # from dohq_teamcity.models.user import User  # noqa: F401,E501
 # from dohq_teamcity.models.vcs_root_instance import VcsRootInstance  # noqa: F401,E501
 
@@ -35,10 +39,17 @@ class Change(TeamCityObject):
         'web_url': 'str',
         'comment': 'str',
         'user': 'User',
+        'type': 'str',
+        'snapshot_dependency_link': 'SnapshotDependencyLink',
         'files': 'FileChanges',
         'vcs_root_instance': 'VcsRootInstance',
         'parent_changes': 'Changes',
         'parent_revisions': 'Items',
+        'attributes': 'Properties',
+        'stores_project_settings': 'bool',
+        'status': 'ChangeStatus',
+        'commiter': 'Commiter',
+        'can_edit_comment': 'bool',
         'locator': 'str'
     }
 
@@ -54,14 +65,21 @@ class Change(TeamCityObject):
         'web_url': 'webUrl',
         'comment': 'comment',
         'user': 'user',
+        'type': 'type',
+        'snapshot_dependency_link': 'snapshotDependencyLink',
         'files': 'files',
         'vcs_root_instance': 'vcsRootInstance',
         'parent_changes': 'parentChanges',
         'parent_revisions': 'parentRevisions',
+        'attributes': 'attributes',
+        'stores_project_settings': 'storesProjectSettings',
+        'status': 'status',
+        'commiter': 'commiter',
+        'can_edit_comment': 'canEditComment',
         'locator': 'locator'
     }
 
-    def __init__(self, id=None, version=None, internal_version=None, username=None, _date=None, registration_date=None, personal=False, href=None, web_url=None, comment=None, user=None, files=None, vcs_root_instance=None, parent_changes=None, parent_revisions=None, locator=None, teamcity=None):  # noqa: E501
+    def __init__(self, id=None, version=None, internal_version=None, username=None, _date=None, registration_date=None, personal=None, href=None, web_url=None, comment=None, user=None, type=None, snapshot_dependency_link=None, files=None, vcs_root_instance=None, parent_changes=None, parent_revisions=None, attributes=None, stores_project_settings=None, status=None, commiter=None, can_edit_comment=None, locator=None, teamcity=None):  # noqa: E501
         """Change - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -75,10 +93,17 @@ class Change(TeamCityObject):
         self._web_url = None
         self._comment = None
         self._user = None
+        self._type = None
+        self._snapshot_dependency_link = None
         self._files = None
         self._vcs_root_instance = None
         self._parent_changes = None
         self._parent_revisions = None
+        self._attributes = None
+        self._stores_project_settings = None
+        self._status = None
+        self._commiter = None
+        self._can_edit_comment = None
         self._locator = None
         self.discriminator = None
 
@@ -104,6 +129,10 @@ class Change(TeamCityObject):
             self.comment = comment
         if user is not None:
             self.user = user
+        if type is not None:
+            self.type = type
+        if snapshot_dependency_link is not None:
+            self.snapshot_dependency_link = snapshot_dependency_link
         if files is not None:
             self.files = files
         if vcs_root_instance is not None:
@@ -112,6 +141,16 @@ class Change(TeamCityObject):
             self.parent_changes = parent_changes
         if parent_revisions is not None:
             self.parent_revisions = parent_revisions
+        if attributes is not None:
+            self.attributes = attributes
+        if stores_project_settings is not None:
+            self.stores_project_settings = stores_project_settings
+        if status is not None:
+            self.status = status
+        if commiter is not None:
+            self.commiter = commiter
+        if can_edit_comment is not None:
+            self.can_edit_comment = can_edit_comment
         if locator is not None:
             self.locator = locator
         super(Change, self).__init__(teamcity=teamcity)
@@ -348,6 +387,48 @@ class Change(TeamCityObject):
         self._user = user
 
     @property
+    def type(self):
+        """Gets the type of this Change.  # noqa: E501
+
+
+        :return: The type of this Change.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this Change.
+
+
+        :param type: The type of this Change.  # noqa: E501
+        :type: str
+        """
+
+        self._type = type
+
+    @property
+    def snapshot_dependency_link(self):
+        """Gets the snapshot_dependency_link of this Change.  # noqa: E501
+
+
+        :return: The snapshot_dependency_link of this Change.  # noqa: E501
+        :rtype: SnapshotDependencyLink
+        """
+        return self._snapshot_dependency_link
+
+    @snapshot_dependency_link.setter
+    def snapshot_dependency_link(self, snapshot_dependency_link):
+        """Sets the snapshot_dependency_link of this Change.
+
+
+        :param snapshot_dependency_link: The snapshot_dependency_link of this Change.  # noqa: E501
+        :type: SnapshotDependencyLink
+        """
+
+        self._snapshot_dependency_link = snapshot_dependency_link
+
+    @property
     def files(self):
         """Gets the files of this Change.  # noqa: E501
 
@@ -430,6 +511,111 @@ class Change(TeamCityObject):
         """
 
         self._parent_revisions = parent_revisions
+
+    @property
+    def attributes(self):
+        """Gets the attributes of this Change.  # noqa: E501
+
+
+        :return: The attributes of this Change.  # noqa: E501
+        :rtype: Properties
+        """
+        return self._attributes
+
+    @attributes.setter
+    def attributes(self, attributes):
+        """Sets the attributes of this Change.
+
+
+        :param attributes: The attributes of this Change.  # noqa: E501
+        :type: Properties
+        """
+
+        self._attributes = attributes
+
+    @property
+    def stores_project_settings(self):
+        """Gets the stores_project_settings of this Change.  # noqa: E501
+
+
+        :return: The stores_project_settings of this Change.  # noqa: E501
+        :rtype: bool
+        """
+        return self._stores_project_settings
+
+    @stores_project_settings.setter
+    def stores_project_settings(self, stores_project_settings):
+        """Sets the stores_project_settings of this Change.
+
+
+        :param stores_project_settings: The stores_project_settings of this Change.  # noqa: E501
+        :type: bool
+        """
+
+        self._stores_project_settings = stores_project_settings
+
+    @property
+    def status(self):
+        """Gets the status of this Change.  # noqa: E501
+
+
+        :return: The status of this Change.  # noqa: E501
+        :rtype: ChangeStatus
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this Change.
+
+
+        :param status: The status of this Change.  # noqa: E501
+        :type: ChangeStatus
+        """
+
+        self._status = status
+
+    @property
+    def commiter(self):
+        """Gets the commiter of this Change.  # noqa: E501
+
+
+        :return: The commiter of this Change.  # noqa: E501
+        :rtype: Commiter
+        """
+        return self._commiter
+
+    @commiter.setter
+    def commiter(self, commiter):
+        """Sets the commiter of this Change.
+
+
+        :param commiter: The commiter of this Change.  # noqa: E501
+        :type: Commiter
+        """
+
+        self._commiter = commiter
+
+    @property
+    def can_edit_comment(self):
+        """Gets the can_edit_comment of this Change.  # noqa: E501
+
+
+        :return: The can_edit_comment of this Change.  # noqa: E501
+        :rtype: bool
+        """
+        return self._can_edit_comment
+
+    @can_edit_comment.setter
+    def can_edit_comment(self, can_edit_comment):
+        """Sets the can_edit_comment of this Change.
+
+
+        :param can_edit_comment: The can_edit_comment of this Change.  # noqa: E501
+        :type: bool
+        """
+
+        self._can_edit_comment = can_edit_comment
 
     @property
     def locator(self):

@@ -21,25 +21,30 @@ class Revisions(TeamCityObject):
     """
     swagger_types = {
         'count': 'int',
-        'revision': 'list[Revision]'
+        'revision': 'list[Revision]',
+        'fail_on_missing_revisions': 'bool'
     }
 
     attribute_map = {
         'count': 'count',
-        'revision': 'revision'
+        'revision': 'revision',
+        'fail_on_missing_revisions': 'failOnMissingRevisions'
     }
 
-    def __init__(self, count=None, revision=None, teamcity=None):  # noqa: E501
+    def __init__(self, count=None, revision=None, fail_on_missing_revisions=None, teamcity=None):  # noqa: E501
         """Revisions - a model defined in Swagger"""  # noqa: E501
 
         self._count = None
         self._revision = None
+        self._fail_on_missing_revisions = None
         self.discriminator = None
 
         if count is not None:
             self.count = count
         if revision is not None:
             self.revision = revision
+        if fail_on_missing_revisions is not None:
+            self.fail_on_missing_revisions = fail_on_missing_revisions
         super(Revisions, self).__init__(teamcity=teamcity)
 
     @property
@@ -83,3 +88,24 @@ class Revisions(TeamCityObject):
         """
 
         self._revision = revision
+
+    @property
+    def fail_on_missing_revisions(self):
+        """Gets the fail_on_missing_revisions of this Revisions.  # noqa: E501
+
+
+        :return: The fail_on_missing_revisions of this Revisions.  # noqa: E501
+        :rtype: bool
+        """
+        return self._fail_on_missing_revisions
+
+    @fail_on_missing_revisions.setter
+    def fail_on_missing_revisions(self, fail_on_missing_revisions):
+        """Sets the fail_on_missing_revisions of this Revisions.
+
+
+        :param fail_on_missing_revisions: The fail_on_missing_revisions of this Revisions.  # noqa: E501
+        :type: bool
+        """
+
+        self._fail_on_missing_revisions = fail_on_missing_revisions
