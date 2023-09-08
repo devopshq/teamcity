@@ -40,6 +40,7 @@ class Agent(TeamCityObject):
         'version': 'str',
         'last_activity_time': 'str',
         'disconnection_comment': 'str',
+        'host': 'str',
         'href': 'str',
         'web_url': 'str',
         'build': 'Build',
@@ -67,6 +68,7 @@ class Agent(TeamCityObject):
         'version': 'version',
         'last_activity_time': 'lastActivityTime',
         'disconnection_comment': 'disconnectionComment',
+        'host': 'host',
         'href': 'href',
         'web_url': 'webUrl',
         'build': 'build',
@@ -81,7 +83,7 @@ class Agent(TeamCityObject):
         'locator': 'locator'
     }
 
-    def __init__(self, id=None, name=None, type_id=None, connected=False, enabled=False, authorized=False, uptodate=False, ip=None, protocol=None, version=None, last_activity_time=None, disconnection_comment=None, href=None, web_url=None, build=None, links=None, enabled_info=None, authorized_info=None, properties=None, environment=None, pool=None, compatible_build_types=None, incompatible_build_types=None, locator=None, teamcity=None):  # noqa: E501
+    def __init__(self, id=None, name=None, type_id=None, connected=False, enabled=False, authorized=False, uptodate=False, ip=None, protocol=None, version=None, last_activity_time=None, disconnection_comment=None, host=None, href=None, web_url=None, build=None, links=None, enabled_info=None, authorized_info=None, properties=None, environment=None, pool=None, compatible_build_types=None, incompatible_build_types=None, locator=None, teamcity=None):  # noqa: E501
         """Agent - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -96,6 +98,7 @@ class Agent(TeamCityObject):
         self._version = None
         self._last_activity_time = None
         self._disconnection_comment = None
+        self._host = None
         self._href = None
         self._web_url = None
         self._build = None
@@ -134,6 +137,8 @@ class Agent(TeamCityObject):
             self.last_activity_time = last_activity_time
         if disconnection_comment is not None:
             self.disconnection_comment = disconnection_comment
+        if host is not None:
+            self.host = host
         if href is not None:
             self.href = href
         if web_url is not None:
@@ -411,6 +416,27 @@ class Agent(TeamCityObject):
         """
 
         self._disconnection_comment = disconnection_comment
+
+    @property
+    def host(self):
+        """Gets the host of this Agent.  # noqa: E501
+
+
+        :return: The host of this Agent.  # noqa: E501
+        :rtype: str
+        """
+        return self._host
+
+    @host.setter
+    def host(self, host):
+        """Sets the host of this Agent.
+
+
+        :param host: The host of this Agent.  # noqa: E501
+        :type: str
+        """
+
+        self._host = host
 
     @property
     def href(self):
