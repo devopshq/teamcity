@@ -10,6 +10,7 @@ from dohq_teamcity.custom.base_model import TeamCityObject
 # from dohq_teamcity.models.build_type import BuildType  # noqa: F401,E501
 # from dohq_teamcity.models.build_types import BuildTypes  # noqa: F401,E501
 # from dohq_teamcity.models.builds import Builds  # noqa: F401,E501
+# from dohq_teamcity.models.comment import Comment  # noqa: F401,E501
 # from dohq_teamcity.models.features import Features  # noqa: F401,E501
 # from dohq_teamcity.models.investigations import Investigations  # noqa: F401,E501
 # from dohq_teamcity.models.links import Links  # noqa: F401,E501
@@ -42,6 +43,7 @@ class BuildType(TeamCityObject):
         'template_flag': 'bool',
         'type': 'str',
         'paused': 'bool',
+        'pause_comment': 'Comment',
         'uuid': 'str',
         'description': 'str',
         'project_name': 'str',
@@ -78,6 +80,7 @@ class BuildType(TeamCityObject):
         'template_flag': 'templateFlag',
         'type': 'type',
         'paused': 'paused',
+        'pause_comment': 'pauseComment',
         'uuid': 'uuid',
         'description': 'description',
         'project_name': 'projectName',
@@ -107,7 +110,7 @@ class BuildType(TeamCityObject):
         'locator': 'locator'
     }
 
-    def __init__(self, id=None, internal_id=None, name=None, template_flag=False, type=None, paused=False, uuid=None, description=None, project_name=None, project_id=None, project_internal_id=None, href=None, web_url=None, inherited=False, links=None, project=None, templates=None, template=None, vcs_root_entries=None, settings=None, parameters=None, steps=None, features=None, triggers=None, snapshot_dependencies=None, artifact_dependencies=None, agent_requirements=None, branches=None, builds=None, investigations=None, compatible_agents=None, vcs_root_instances=None, locator=None, teamcity=None):  # noqa: E501
+    def __init__(self, id=None, internal_id=None, name=None, template_flag=False, type=None, paused=False, pause_comment=None, uuid=None, description=None, project_name=None, project_id=None, project_internal_id=None, href=None, web_url=None, inherited=False, links=None, project=None, templates=None, template=None, vcs_root_entries=None, settings=None, parameters=None, steps=None, features=None, triggers=None, snapshot_dependencies=None, artifact_dependencies=None, agent_requirements=None, branches=None, builds=None, investigations=None, compatible_agents=None, vcs_root_instances=None, locator=None, teamcity=None):  # noqa: E501
         """BuildType - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -116,6 +119,7 @@ class BuildType(TeamCityObject):
         self._template_flag = None
         self._type = None
         self._paused = None
+        self._pause_comment = None
         self._uuid = None
         self._description = None
         self._project_name = None
@@ -157,6 +161,8 @@ class BuildType(TeamCityObject):
             self.type = type
         if paused is not None:
             self.paused = paused
+        if pause_comment is not None:
+            self.pause_comment = pause_comment
         if uuid is not None:
             self.uuid = uuid
         if description is not None:
@@ -338,6 +344,27 @@ class BuildType(TeamCityObject):
         """
 
         self._paused = paused
+
+    @property
+    def pause_comment(self):
+        """Gets the pause_comment of this BuildType.  # noqa: E501
+
+
+        :return: The pause_comment of this BuildType.  # noqa: E501
+        :rtype: Comment
+        """
+        return self._pause_comment
+
+    @pause_comment.setter
+    def pause_comment(self, pause_comment):
+        """Sets the pause_comment of this BuildType.
+
+
+        :param pause_comment: The pause_comment of this BuildType.  # noqa: E501
+        :type: Comment
+        """
+
+        self._pause_comment = pause_comment
 
     @property
     def uuid(self):

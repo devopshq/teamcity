@@ -33,6 +33,9 @@ Properties
    * - **paused**
      - **bool**
      - `optional` [default to ``False``]
+   * - **pause_comment**
+     -  `Comment <./Comment.html>`_
+     - `optional` 
    * - **uuid**
      - **str**
      - `optional` 
