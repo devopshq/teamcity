@@ -16491,6 +16491,9 @@
           },
           "default": false
         },
+        "pauseComment": {
+          "$ref": "#/definitions/comment"
+        },
         "uuid": {
           "type": "string",
           "xml": {
