@@ -51,6 +51,9 @@ Properties
    * - **disconnection_comment**
      - **str**
      - `optional` 
+   * - **host**
+     - **str**
+     - `optional` 
    * - **href**
      - **str**
      - `optional` 

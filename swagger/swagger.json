@@ -15569,6 +15569,12 @@
             "attribute": true
           }
         },
+        "host": {
+          "type": "string",
+          "xml": {
+            "attribute": true
+          }
+        },
         "href": {
           "type": "string",
           "xml": {
@@ -16484,6 +16490,9 @@
             "attribute": true
           },
           "default": false
+        },
+        "pauseComment": {
+          "$ref": "#/definitions/comment"
         },
         "uuid": {
           "type": "string",
