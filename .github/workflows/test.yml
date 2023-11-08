@@ -6,6 +6,7 @@ on:
       - develop
 
 jobs:
+# TODO: https://github.com/devopshq/teamcity/issues/3 - comment carried over from .travis.yml
 #   style:
 #     runs-on: ubuntu-latest
 #     steps:
@@ -14,10 +15,12 @@ jobs:
 #       uses: actions/setup-python@v4
 #       with:
 #         python-version: '3.x'
-#     - name: Install tox
-#       run: pip install tox
-#     - name: Style check
-#       run : tox -e style
+
+#     - name: requirements
+#       run: pip install -r test-requirements.txt
+
+#     - name: run checker
+#       run: flake8
 
   tests:
     runs-on: ubuntu-latest
