@@ -4,6 +4,12 @@ on:
   pull_request:
     branches:
       - develop
+    branches-ignore:
+      # tests are ran by publish_test for these branches
+      - testpypi
+      - testpypi-*
+      - testpypi/*
+
   workflow_call:
 
 jobs:

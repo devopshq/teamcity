@@ -11,6 +11,8 @@ on:
     - testpypi/*
 
 jobs:
+  tests:
+    uses: ./.github/workflows/tests.yml
   publish_test:
     runs-on: ubuntu-latest
     steps:
