@@ -14,6 +14,7 @@ jobs:
   tests:
     uses: ./.github/workflows/tests.yml
   publish_test:
+    needs: [tests]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
