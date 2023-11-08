@@ -1,0 +1,34 @@
+name: tests
+
+on:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+#   style:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v4
+#     - name: Set up Python
+#       uses: actions/setup-python@v4
+#       with:
+#         python-version: '3.x'
+#     - name: Install tox
+#       run: pip install tox
+#     - name: Style check
+#       run : tox -e style
+
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: requirements
+      run: |
+        pip install -r requirements.txt
+        pip install -r test-requirements.txt
