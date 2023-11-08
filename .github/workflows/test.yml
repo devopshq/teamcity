@@ -4,6 +4,7 @@ on:
   pull_request:
     branches:
       - develop
+  workflow_call:
 
 jobs:
 # TODO: https://github.com/devopshq/teamcity/issues/3 - comment carried over from .travis.yml
