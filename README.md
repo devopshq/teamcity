@@ -55,3 +55,8 @@ bt = bt.read()
 
 ## What next?
 See more examples and full documantation on page: https://devopshq.github.io/teamcity
+
+## How to release?
+1. Bump version in `dohq_teamcity/version.py`
+2. Merge changes to **master** branch
+3. Create Github Release
