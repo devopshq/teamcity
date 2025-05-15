@@ -1836,8 +1836,8 @@ class DebugApi(object):
                 params['extra'] is None):
             raise ValueError("Missing the required parameter `extra` when calling `get_request_details`")  # noqa: E501
 
-        if 'extra' in params and not re.search('(\/.*)?', params['extra']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `extra` when calling `get_request_details`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'extra' in params and not re.search(r'(\/.*)?', params['extra']):  # noqa: E501
+            raise ValueError("Invalid value for parameter `extra` when calling `get_request_details`, must conform to the pattern "+r"`/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -2566,8 +2566,8 @@ class DebugApi(object):
                 params['extra'] is None):
             raise ValueError("Missing the required parameter `extra` when calling `post_request_details`")  # noqa: E501
 
-        if 'extra' in params and not re.search('(\/.*)?', params['extra']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `extra` when calling `post_request_details`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'extra' in params and not re.search(r'(\/.*)?', params['extra']):  # noqa: E501
+            raise ValueError("Invalid value for parameter `extra` when calling `post_request_details`, must conform to the pattern "+r"`/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -2639,8 +2639,8 @@ class DebugApi(object):
                 params['extra'] is None):
             raise ValueError("Missing the required parameter `extra` when calling `put_request_details`")  # noqa: E501
 
-        if 'extra' in params and not re.search('(\/.*)?', params['extra']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `extra` when calling `put_request_details`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'extra' in params and not re.search(r'(\/.*)?', params['extra']):  # noqa: E501
+            raise ValueError("Invalid value for parameter `extra` when calling `put_request_details`, must conform to the pattern "+r"`/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}

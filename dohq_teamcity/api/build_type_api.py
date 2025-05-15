@@ -5635,8 +5635,8 @@ class BuildTypeApi(object):
                 params['bt_locator'] is None):
             raise ValueError("Missing the required parameter `bt_locator` when calling `get_children`")  # noqa: E501
 
-        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_children`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'path' in params and not re.search(r'(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError("Invalid value for parameter `path` when calling `get_children`, must conform to the pattern "+r"`/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -5823,8 +5823,8 @@ class BuildTypeApi(object):
                 params['bt_locator'] is None):
             raise ValueError("Missing the required parameter `bt_locator` when calling `get_content`")  # noqa: E501
 
-        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_content`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'path' in params and not re.search(r'(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError("Invalid value for parameter `path` when calling `get_content`, must conform to the pattern "+r"`/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -5911,8 +5911,8 @@ class BuildTypeApi(object):
                 params['bt_locator'] is None):
             raise ValueError("Missing the required parameter `bt_locator` when calling `get_content_alias`")  # noqa: E501
 
-        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_content_alias`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'path' in params and not re.search(r'(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError("Invalid value for parameter `path` when calling `get_content_alias`, must conform to the pattern "+r"`/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -6786,8 +6786,8 @@ class BuildTypeApi(object):
                 params['bt_locator'] is None):
             raise ValueError("Missing the required parameter `bt_locator` when calling `get_metadata`")  # noqa: E501
 
-        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_metadata`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'path' in params and not re.search(r'(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError("Invalid value for parameter `path` when calling `get_metadata`, must conform to the pattern "+r"`/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -9067,8 +9067,8 @@ class BuildTypeApi(object):
                 params['bt_locator'] is None):
             raise ValueError("Missing the required parameter `bt_locator` when calling `get_zipped`")  # noqa: E501
 
-        if 'path' in params and not re.search('(\/.*)?', params['path']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `path` when calling `get_zipped`, must conform to the pattern `/(\/.*)?/`")  # noqa: E501
+        if 'path' in params and not re.search(r'(\/.*)?', params['path']):  # noqa: E501
+            raise ValueError("Invalid value for parameter `path` when calling `get_zipped`, must conform to the pattern "+r"`/(\/.*)?/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
