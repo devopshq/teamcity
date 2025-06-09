@@ -76,7 +76,13 @@ class ApiClient(object):
         self.user_agent = 'Swagger-Codegen/1.0.0/python'
 
     def __del__(self):
-        self.pool.close()
+        """Cleanup thread pool when the client object is garbage collected."""
+        try:
+            self.pool.close()
+        except OSError:
+            # Python 3.13 can raise OSError("Bad file descriptor") when
+            # closing a pool during interpreter shutdown. Ignore it.
+            pass
 
     @property
     def user_agent(self):
